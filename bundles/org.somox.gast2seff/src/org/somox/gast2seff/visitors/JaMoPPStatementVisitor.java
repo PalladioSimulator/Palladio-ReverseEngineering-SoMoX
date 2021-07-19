@@ -247,6 +247,7 @@ public class JaMoPPStatementVisitor extends AbstractJaMoPPStatementVisitor {
             this.createAbstracActionClassMethodLink(branchAction, switchStatement);
             this.seff.getSteps_Behaviour().add(branchAction);
             branchAction.setEntityName(JaMoPPStatementVisitor.this.positionToString(switchStatement));
+            this.linkSeffElement(branchAction, switchStatement);
 
             final List<List<Statement>> branches = SwitchStatementHelper
                     .createBlockListFromSwitchStatement(switchStatement);
@@ -351,6 +352,7 @@ public class JaMoPPStatementVisitor extends AbstractJaMoPPStatementVisitor {
             this.createAbstracActionClassMethodLink(branch, condition);
             JaMoPPStatementVisitor.this.seff.getSteps_Behaviour().add(branch);
             branch.setEntityName(JaMoPPStatementVisitor.this.positionToString(condition));
+            this.linkSeffElement(branch, condition);
 
             final Statement ifStatement = condition.getStatement();
             this.handleIfOrElseBranch(condition, branch, ifStatement);
@@ -401,6 +403,7 @@ public class JaMoPPStatementVisitor extends AbstractJaMoPPStatementVisitor {
         final InternalCallAction internalCallAction = SeffFactory.eINSTANCE.createInternalCallAction();
         internalCallAction.setCalledResourceDemandingInternalBehaviour(resourceDemandingBehavior);
         internalCallAction.setEntityName(this.positionToString(callStatement));
+        this.linkSeffElement(internalCallAction, callStatement);
         if (null != callStatement) {
             this.createAbstracActionClassMethodLink(internalCallAction, callStatement);
         } else {
@@ -470,7 +473,7 @@ public class JaMoPPStatementVisitor extends AbstractJaMoPPStatementVisitor {
                 .createProbabilisticBranchTransition();
         final ResourceDemandingBehaviour branchBehaviour = SeffFactory.eINSTANCE.createResourceDemandingBehaviour();
         bt.setBranchBehaviour_BranchTransition(branchBehaviour);
-        this.linkSeffElement(branchBehaviour, ifElseStatement);
+//        this.linkSeffElement(branchBehaviour, ifElseStatement);
 
         final StartAction startAction = SeffFactory.eINSTANCE.createStartAction();
         this.createAbstracActionClassMethodLink(startAction, ifElseStatement);
