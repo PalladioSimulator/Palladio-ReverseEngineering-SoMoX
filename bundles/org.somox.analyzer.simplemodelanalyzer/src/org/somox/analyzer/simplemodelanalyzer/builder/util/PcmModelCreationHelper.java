@@ -55,7 +55,7 @@ public class PcmModelCreationHelper {
 			final org.emftext.language.java.members.Method jaMoPPMethod = (org.emftext.language.java.members.Method) jaMoPPMember;
 			if (null != jaMoPPMethod.getTypeReference() && null != jaMoPPMethod.getTypeReference().getTarget()) {
 				final DataType returnType = this.getDataTypeAndUpdateSourceCodeDecorator(repo,
-						jaMoPPMethod.getTypeReference().getTarget(), jaMoPPMethod);
+						jaMoPPMethod.getTypeReference().getTarget(), jaMoPPMethod.getTypeReference());
 				opSignature.setReturnType__OperationSignature(returnType);
 			} else {
 				PcmModelCreationHelper.logger
@@ -156,7 +156,7 @@ public class PcmModelCreationHelper {
 
 		if (null != jaMoPPParam.getTypeReference() && null != jaMoPPParam.getTypeReference().getTarget()) {
 			final DataType dataType = this.getDataTypeAndUpdateSourceCodeDecorator(repo,
-					jaMoPPParam.getTypeReference().getTarget(), jaMoPPParam);
+					jaMoPPParam.getTypeReference().getTarget(), jaMoPPParam.getTypeReference());
 			pcmParam.setDataType__Parameter(dataType);
 		} else {
 			PcmModelCreationHelper.logger.info("No PCM param build for parameter: " + jaMoPPParam + " for parameter "
