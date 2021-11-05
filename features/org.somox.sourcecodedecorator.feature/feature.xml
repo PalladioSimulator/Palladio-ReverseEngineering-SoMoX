@@ -18,9 +18,6 @@
       <import plugin="org.palladiosimulator.pcm"/>
       <import plugin="de.uka.ipd.sdq.probfunction"/>
       <import plugin="org.emftext.language.java"/>
-      <import plugin="org.emftext.commons.layout"/>
-      <import plugin="org.emftext.commons.jdt"/>
-      <import plugin="org.emftext.commons.layout.edit"/>
       <import plugin="org.emftext.language.java.edit"/>
       <import plugin="org.somox.sourcecodedecorator"/>
       <import plugin="org.eclipse.emf.edit"/>
