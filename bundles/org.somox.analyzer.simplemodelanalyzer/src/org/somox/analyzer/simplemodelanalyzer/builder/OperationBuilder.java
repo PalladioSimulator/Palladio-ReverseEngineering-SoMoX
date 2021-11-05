@@ -147,7 +147,7 @@ public class OperationBuilder extends AbstractBuilder {
             final Type accessedType = GetAccessedType.getAccessedType(inputParameter.getTypeReference());
             if (inputParameter.getTypeReference() != null && null != accessedType) {
                 final DataType type = this.getType(accessedType, this.analysisResult.getInternalArchitectureModel(),
-                        inputParameter);
+                        inputParameter.getTypeReference());
 
                 opSigParam.setDataType__Parameter(type);
                 logger.info("type to build for variable: " + inputParameter + ":" + type);
@@ -167,13 +167,13 @@ public class OperationBuilder extends AbstractBuilder {
         if (null != method.getTypeReference() && null != GetAccessedType.getAccessedType(method.getTypeReference())
                 && !(method.getTypeReference() instanceof org.emftext.language.java.types.Void)) {
             final DataType returnType = this.getType(GetAccessedType.getAccessedType(method.getTypeReference()),
-                    this.analysisResult.getInternalArchitectureModel(), method);
+                    this.analysisResult.getInternalArchitectureModel(), method.getTypeReference());
             operation.setReturnType__OperationSignature(returnType);
         } else if (null != method.getTypeReference()
                 && !(method.getTypeReference() instanceof org.emftext.language.java.types.Void)) {
             final Type accessedType = GetAccessedType.getAccessedType(method.getTypeReference());
             final DataType type = this.getType(accessedType, this.analysisResult.getInternalArchitectureModel(),
-                    method);
+                    method.getTypeReference());
             operation.setReturnType__OperationSignature(type);
         } else {
             logger.info("no fitting return type found " + method.getName() + "-- ret type" + method.getTypeReference());
@@ -513,7 +513,7 @@ public class OperationBuilder extends AbstractBuilder {
             if (!fieldType.equals(concreteClassifier) && !fieldTypeName.equals(typeName)
                     && !fieldTypeName.equals(VOID_TYPE)) {
                 final InnerDeclaration innerElement = RepositoryFactory.eINSTANCE.createInnerDeclaration();
-                final DataType innerDataType = this.getType(fieldType, repository, field);
+                final DataType innerDataType = this.getType(fieldType, repository, field.getTypeReference());
                 final String innerTypeName = field.getName();
                 innerElement.setEntityName(innerTypeName);
                 if (innerDataType instanceof CollectionDataType) {

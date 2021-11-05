@@ -4,7 +4,6 @@ package org.somox.sourcecodedecorator.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.emftext.commons.layout.provider.LayoutEditPlugin;
 import org.emftext.language.java.annotations.provider.JavaEditPlugin;
 import org.palladiosimulator.pcm.core.provider.PalladioComponentModelEditPlugin;
 
@@ -44,7 +43,6 @@ public final class FEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     IdentifierEditPlugin.INSTANCE,
 		     JavaEditPlugin.INSTANCE,
-		     LayoutEditPlugin.INSTANCE,
 		     PalladioComponentModelEditPlugin.INSTANCE,
 		     ProbabilityFunctionEditPlugin.INSTANCE,
 		     StoexEditPlugin.INSTANCE,
