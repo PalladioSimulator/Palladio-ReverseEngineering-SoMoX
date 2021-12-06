@@ -2,7 +2,7 @@
 <feature
       id="org.palladiosimulator.annotationmox.feature"
       label="AnnotaionMoX core"
-      version="5.0.0.qualifier"
+      version="5.1.0.qualifier"
       provider-name="annotationmox.org"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license.epl2"
@@ -46,9 +46,9 @@
       <import plugin="org.eclipse.debug.ui"/>
       <import plugin="org.emftext.language.java" version="5.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.debug.ui.source"/>
-      <import plugin="org.somox.analyzer.simplemodelanalyzer" version="5.0.0" match="greaterOrEqual"/>
-      <import plugin="org.somox.analyzer.simplemodelanalyzer.ui" version="5.0.0" match="greaterOrEqual"/>
-      <import plugin="org.somox.gast2seff" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.somox.analyzer.simplemodelanalyzer" version="5.1.0" match="greaterOrEqual"/>
+      <import plugin="org.somox.analyzer.simplemodelanalyzer.ui" version="5.1.0" match="greaterOrEqual"/>
+      <import plugin="org.somox.gast2seff" version="5.1.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.pcm.resources" version="5.0.0" match="greaterOrEqual"/>
    </requires>
 
@@ -56,49 +56,49 @@
          id="org.somox.sourcecodedecorator"
          download-size="0"
          install-size="0"
-         version="5.0.0.qualifier"
+         version="5.1.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="org.somox.core"
          download-size="0"
          install-size="0"
-         version="5.0.0.qualifier"
+         version="5.1.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="org.somox.filter"
          download-size="0"
          install-size="0"
-         version="5.0.0.qualifier"
+         version="5.1.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="org.somox.kdmhelper"
          download-size="0"
          install-size="0"
-         version="5.0.0.qualifier"
+         version="5.1.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="org.somox.ui"
          download-size="0"
          install-size="0"
-         version="5.0.0.qualifier"
+         version="5.1.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="org.somox.util"
          download-size="0"
          install-size="0"
-         version="5.0.0.qualifier"
+         version="5.1.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="org.annotationsmox"
          download-size="0"
          install-size="0"
-         version="5.0.0.qualifier"
+         version="5.1.0.qualifier"
          unpack="false"/>
 
 </feature>
