@@ -20,13 +20,11 @@
       <import plugin="org.emftext.language.java"/>
       <import plugin="org.emftext.language.java.edit"/>
       <import plugin="de.uka.ipd.sdq.workflow" version="1.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.palladiosimulator.pcm" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.apache.log4j" version="1.2.13" match="greaterOrEqual"/>
-      <import plugin="org.somox.kdmhelper"/>
       <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
       <import plugin="com.google.guava" version="15.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.common"/>
@@ -34,21 +32,10 @@
       <import plugin="jamopp.resource"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.apache.commons.io" version="2.2.0" match="greaterOrEqual"/>
-      <import plugin="jamopp.parser.jdt"/>
-      <import plugin="org.eclipse.debug.ui"/>
-      <import plugin="org.eclipse.emf.common.ui"/>
       <import plugin="de.uka.ipd.sdq.workflow.launchconfig" version="1.1.0" match="greaterOrEqual"/>
-      <import plugin="org.somox.sourcecodedecorator"/>
-      <import plugin="org.somox.core"/>
       <import plugin="org.junit"/>
       <import plugin="de.uka.ipd.sdq.workflow.launchconfig" version="5.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.debug.core"/>
-      <import plugin="org.eclipse.debug.ui"/>
       <import plugin="org.emftext.language.java" version="5.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.debug.ui.source"/>
-      <import plugin="org.somox.analyzer.simplemodelanalyzer" version="5.1.0" match="greaterOrEqual"/>
-      <import plugin="org.somox.analyzer.simplemodelanalyzer.ui" version="5.1.0" match="greaterOrEqual"/>
-      <import plugin="org.somox.gast2seff" version="5.1.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.pcm.resources" version="5.0.0" match="greaterOrEqual"/>
    </requires>
 
@@ -96,6 +83,48 @@
 
    <plugin
          id="org.annotationsmox"
+         download-size="0"
+         install-size="0"
+         version="5.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.analyzer.simplemodelanalyzer"
+         download-size="0"
+         install-size="0"
+         version="5.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.analyzer.simplemodelanalyzer.ui"
+         download-size="0"
+         install-size="0"
+         version="5.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.metrics"
+         download-size="0"
+         install-size="0"
+         version="5.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.metricvaluesstorage"
+         download-size="0"
+         install-size="0"
+         version="5.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.metrics.dsl"
+         download-size="0"
+         install-size="0"
+         version="5.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.gast2seff"
          download-size="0"
          install-size="0"
          version="5.1.0.qualifier"
