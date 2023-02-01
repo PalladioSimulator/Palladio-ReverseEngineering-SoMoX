@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.palladiosimulator.pcm;bundle-version="3.2.0",
  org.emftext.language.java,
  org.somox.util
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.somox.gast2seff.jobs,
  org.somox.gast2seff.visitors

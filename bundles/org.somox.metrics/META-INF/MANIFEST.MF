@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.somox.sourcecodedecorator;bundle-version="5.1.0",
  org.emftext.language.java
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.somox.metrics,
  org.somox.metrics.abstractmetrics,
  org.somox.metrics.basic,

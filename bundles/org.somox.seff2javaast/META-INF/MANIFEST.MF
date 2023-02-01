@@ -6,7 +6,7 @@ Bundle-Version: 5.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.somox.seff2javaast,
  org.somox.seff2javaast.impl,
  org.somox.seff2javaast.util
