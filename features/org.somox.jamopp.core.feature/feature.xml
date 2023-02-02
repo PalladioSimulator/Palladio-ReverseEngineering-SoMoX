@@ -22,8 +22,6 @@
       <import plugin="de.uka.ipd.sdq.probfunction"/>
       <import plugin="org.emftext.language.java"/>
       <import plugin="org.emftext.language.java.edit"/>
-      <import plugin="org.somox.core"/>
-      <import plugin="org.eclipse.emf.edit"/>
       <import plugin="de.uka.ipd.sdq.identifier.edit"/>
       <import plugin="org.palladiosimulator.pcm.edit"/>
       <import plugin="de.uka.ipd.sdq.probfunction.edit"/>
