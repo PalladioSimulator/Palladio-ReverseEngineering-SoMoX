@@ -4,7 +4,7 @@ Bundle-Name: Kdmhelper
 Bundle-SymbolicName: org.somox.kdmhelper
 Bundle-Version: 5.1.0.qualifier
 Bundle-Activator: org.somox.kdmhelper.Activator
-Require-Bundle: org.apache.log4j;bundle-version="1.2.15",
+Require-Bundle: org.apache.log4j,
  com.google.guava;bundle-version="15.0.0",
  org.eclipse.emf.common,
  org.eclipse.emf.ecore,
@@ -14,7 +14,7 @@ Require-Bundle: org.apache.log4j;bundle-version="1.2.15",
  org.eclipse.equinox.registry,
  jamopp.resource,
  org.eclipse.osgi,
- org.apache.commons.io;bundle-version="2.2.0"
+ org.apache.commons.io
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.somox.kdmhelper,
