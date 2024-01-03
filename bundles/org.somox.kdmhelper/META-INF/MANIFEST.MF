@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Kdmhelper
 Bundle-SymbolicName: org.somox.kdmhelper
-Bundle-Version: 5.1.0.qualifier
+Bundle-Version: 5.2.0.qualifier
 Bundle-Activator: org.somox.kdmhelper.Activator
 Require-Bundle: org.apache.log4j,
  com.google.guava;bundle-version="15.0.0",

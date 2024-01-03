@@ -2,19 +2,19 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AnnotationsMox Architecture Extractor
 Bundle-SymbolicName: org.annotationsmox;singleton:=true
-Bundle-Version: 5.1.0.qualifier
+Bundle-Version: 5.2.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: de.uka.ipd.sdq.workflow.launchconfig;bundle-version="5.0.0",
  org.eclipse.debug.ui,
  org.emftext.language.java;bundle-version="5.0.0",
- org.somox.core;bundle-version="5.1.0",
- org.somox.ui;bundle-version="5.1.0",
- org.somox.analyzer.simplemodelanalyzer;bundle-version="5.1.0",
- org.somox.analyzer.simplemodelanalyzer.ui;bundle-version="5.1.0",
- org.somox.sourcecodedecorator;bundle-version="5.1.0",
- org.somox.gast2seff;bundle-version="5.1.0",
- org.somox.util;bundle-version="5.1.0",
- org.somox.kdmhelper;bundle-version="5.1.0",
+ org.somox.core;bundle-version="5.2.0",
+ org.somox.ui;bundle-version="5.2.0",
+ org.somox.analyzer.simplemodelanalyzer;bundle-version="5.2.0",
+ org.somox.analyzer.simplemodelanalyzer.ui;bundle-version="5.2.0",
+ org.somox.sourcecodedecorator;bundle-version="5.2.0",
+ org.somox.gast2seff;bundle-version="5.2.0",
+ org.somox.util;bundle-version="5.2.0",
+ org.somox.kdmhelper;bundle-version="5.2.0",
  org.palladiosimulator.pcm.resources;bundle-version="5.0.0"
 Export-Package: org.annotationsmox.analyzer,
  org.annotationsmox.commandline,
