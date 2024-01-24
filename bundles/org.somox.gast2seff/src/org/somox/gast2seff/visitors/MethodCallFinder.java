@@ -18,8 +18,8 @@ import org.emftext.language.java.references.Reference;
 import org.emftext.language.java.statements.Statement;
 
 /**
- * The class finds methodCalls within a statement. It also caches the found method calls for
- * statements to improve performance.
+ * The class finds methodCalls within a statement. It also caches the found
+ * method calls for statements to improve performance.
  *
  */
 public class MethodCallFinder {
@@ -29,25 +29,26 @@ public class MethodCallFinder {
     private final HashMap<Statement, List<Method>> methodListCacheForStatement;
 
     public MethodCallFinder() {
-        this.methodListCacheForStatement = new HashMap<Statement, List<Method>>();
+        methodListCacheForStatement = new HashMap<>();
     }
 
     /**
-     * Get and returns the child method or constructor called contained in the statement.
+     * Get and returns the child method or constructor called contained in the
+     * statement.
      *
-     * @param statement
-     *            A statement
-     * @return A list of methods called if the statement contains one. Otherwise: an empty list
+     * @param statement A statement
+     * @return A list of methods called if the statement contains one. Otherwise: an
+     *         empty list
      */
     public List<Method> getMethodCalls(final Statement statement) {
-        if (!this.methodListCacheForStatement.containsKey(statement)) {
-            final LinkedList<Method> calledMethods = new LinkedList<Method>();
-            final Set<EObject> investigatedEObjects = new HashSet<EObject>();
+        if (!methodListCacheForStatement.containsKey(statement)) {
+            final LinkedList<Method> calledMethods = new LinkedList<>();
+            final Set<EObject> investigatedEObjects = new HashSet<>();
 
-            this.findMethodCallsInChildren(statement, calledMethods, investigatedEObjects);
-            this.methodListCacheForStatement.put(statement, calledMethods);
+            findMethodCallsInChildren(statement, calledMethods, investigatedEObjects);
+            methodListCacheForStatement.put(statement, calledMethods);
         }
-        return this.methodListCacheForStatement.get(statement);
+        return methodListCacheForStatement.get(statement);
     }
 
     private void findMethodCallsInChildren(final EObject eObject, final LinkedList<Method> calledMethods,
@@ -62,18 +63,17 @@ public class MethodCallFinder {
                 continue;
             }
             investigatedEObjects.add(current);
-            if (current instanceof MethodCall) {
-                final MethodCall methodCall = (MethodCall) current;
-                this.findMethodCallsInArguments(methodCall.getArguments(), calledMethods, investigatedEObjects);
-                this.addMethodToCollection(calledMethods, methodCall);
-                this.findMethodCallsInNext(methodCall.getNext(), calledMethods, investigatedEObjects);
+            if (current instanceof final MethodCall methodCall) {
+                findMethodCallsInArguments(methodCall.getArguments(), calledMethods, investigatedEObjects);
+                addMethodToCollection(calledMethods, methodCall);
+                findMethodCallsInNext(methodCall.getNext(), calledMethods, investigatedEObjects);
             }
         }
     }
 
     private void findMethodCallsInNext(final Reference next, final LinkedList<Method> calledMethods,
             final Set<EObject> investigatedEObjects) {
-        this.findMethodCallsInChildren(next, calledMethods, investigatedEObjects);
+        findMethodCallsInChildren(next, calledMethods, investigatedEObjects);
 
     }
 
@@ -82,9 +82,9 @@ public class MethodCallFinder {
         for (final Expression expression : arguments) {
             if (expression instanceof MethodCall) {
                 investigatedEObjects.add(expression);
-                this.addMethodToCollection(calledMethods, (MethodCall) expression);
+                addMethodToCollection(calledMethods, (MethodCall) expression);
             }
-            this.findMethodCallsInChildren(expression, calledMethods, investigatedEObjects);
+            findMethodCallsInChildren(expression, calledMethods, investigatedEObjects);
         }
 
     }
@@ -93,13 +93,14 @@ public class MethodCallFinder {
         if (methodCall.getTarget() instanceof Method) {
             final Method target = (Method) methodCall.getTarget();
             // if (target instanceof AnnotationAttribute) {
-            // MethodCallFinder.logger.info("Annotation Attribut found within methodCall in a method of the
+            // MethodCallFinder.logger.info("Annotation Attribut found within methodCall in
+            // a method of the
             // class"
             // + methodCall.getContainingConcreteClassifier() + " target: "
             // + methodCall.getTarget().getName());
             // calledMethods.add(target);
             // } else if (target instanceof Method) {
-                calledMethods.add(target);
+            calledMethods.add(target);
             // }
         }
     }

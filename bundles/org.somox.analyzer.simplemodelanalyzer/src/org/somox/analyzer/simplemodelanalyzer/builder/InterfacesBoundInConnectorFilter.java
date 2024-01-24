@@ -3,10 +3,6 @@ package org.somox.analyzer.simplemodelanalyzer.builder;
 import java.util.Collection;
 
 import org.apache.log4j.Logger;
-import org.palladiosimulator.pcm.repository.Interface;
-import org.palladiosimulator.pcm.repository.OperationProvidedRole;
-import org.palladiosimulator.pcm.repository.OperationRequiredRole;
-import org.palladiosimulator.pcm.repository.Role;
 import org.somox.analyzer.simplemodelanalyzer.builder.util.EndpointInformation;
 import org.somox.filter.BaseFilter;
 
@@ -21,16 +17,14 @@ public class InterfacesBoundInConnectorFilter extends BaseFilter<EndpointInforma
     private static final Logger LOGGER = Logger.getLogger(InterfacesBoundInConnectorFilter.class);
 
     private final Collection<EndpointInformation> connectorEndpoints;
-    
+
     /**
      * Filter constructor
      *
-     * @param connectorEndpoints
-     *            Collection of all roles which are part of any connector in the surrounding
-     *            composed structure
+     * @param connectorEndpoints Collection of all roles which are part of any
+     *                           connector in the surrounding composed structure
      */
     public InterfacesBoundInConnectorFilter(final Collection<EndpointInformation> connectorEndpoints) {
-        super();
         this.connectorEndpoints = connectorEndpoints;
     }
 
@@ -39,8 +33,8 @@ public class InterfacesBoundInConnectorFilter extends BaseFilter<EndpointInforma
         boolean isUnboundEndpoint = true;
 
         for (final EndpointInformation current : connectorEndpoints) {
-            if (current.getAssemblyContext().equals(endpointInformation.getAssemblyContext()) &&
-                    current.getRole().equals(endpointInformation.getRole())) {
+            if (current.getAssemblyContext().equals(endpointInformation.getAssemblyContext())
+                    && current.getRole().equals(endpointInformation.getRole())) {
                 isUnboundEndpoint = false;
                 break;
             }

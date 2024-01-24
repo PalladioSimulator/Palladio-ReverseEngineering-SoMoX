@@ -7,16 +7,17 @@ import org.emftext.language.java.statements.StatementListContainer;
 import org.palladiosimulator.pcm.seff.ServiceEffectSpecification;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>SEFF2 Method Mapping</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>SEFF2
+ * Method Mapping</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.somox.seff2javaast.SEFF2MethodMapping#getBlockstatement <em>Blockstatement</em>}
- * </li>
- * <li>{@link org.somox.seff2javaast.SEFF2MethodMapping#getSeff <em>Seff</em>}</li>
+ * <li>{@link org.somox.seff2javaast.SEFF2MethodMapping#getBlockstatement
+ * <em>Blockstatement</em>}</li>
+ * <li>{@link org.somox.seff2javaast.SEFF2MethodMapping#getSeff
+ * <em>Seff</em>}</li>
  * </ul>
  *
  * @see org.somox.seff2javaast.Seff2javaastPackage#getSEFF2MethodMapping()
@@ -25,10 +26,11 @@ import org.palladiosimulator.pcm.seff.ServiceEffectSpecification;
  */
 public interface SEFF2MethodMapping extends EObject {
     /**
-     * Returns the value of the '<em><b>Blockstatement</b></em>' reference. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Blockstatement</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Blockstatement</em>' reference isn't clear, there really should be
-     * more of a description here...
+     * If the meaning of the '<em>Blockstatement</em>' reference isn't clear, there
+     * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
@@ -41,21 +43,23 @@ public interface SEFF2MethodMapping extends EObject {
     StatementListContainer getBlockstatement();
 
     /**
-     * Sets the value of the '{@link org.somox.seff2javaast.SEFF2MethodMapping#getBlockstatement
-     * <em>Blockstatement</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Sets the value of the
+     * '{@link org.somox.seff2javaast.SEFF2MethodMapping#getBlockstatement
+     * <em>Blockstatement</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
-     * @param value
-     *            the new value of the '<em>Blockstatement</em>' reference.
+     * @param value the new value of the '<em>Blockstatement</em>' reference.
      * @see #getBlockstatement()
      * @generated
      */
     void setBlockstatement(StatementListContainer value);
 
     /**
-     * Returns the value of the '<em><b>Seff</b></em>' reference. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Seff</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Seff</em>' reference isn't clear, there really should be more of a
-     * description here...
+     * If the meaning of the '<em>Seff</em>' reference isn't clear, there really
+     * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
@@ -68,11 +72,11 @@ public interface SEFF2MethodMapping extends EObject {
     ServiceEffectSpecification getSeff();
 
     /**
-     * Sets the value of the '{@link org.somox.seff2javaast.SEFF2MethodMapping#getSeff <em>Seff</em>
-     * }' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Sets the value of the
+     * '{@link org.somox.seff2javaast.SEFF2MethodMapping#getSeff <em>Seff</em> }'
+     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @param value
-     *            the new value of the '<em>Seff</em>' reference.
+     * @param value the new value of the '<em>Seff</em>' reference.
      * @see #getSeff()
      * @generated
      */

@@ -18,8 +18,7 @@ public final class Seff2JavaCreatorUtil {
         final Seff2JavaASTBuilder seff2JavaASTBuilder = new Seff2JavaASTBuilder(root, null, analysisResult);
         final Repository repo = analysisResult.getInternalArchitectureModel();
         for (final RepositoryComponent repoComponent : repo.getComponents__Repository()) {
-            if (repoComponent instanceof BasicComponent) {
-                final BasicComponent bc = (BasicComponent) repoComponent;
+            if (repoComponent instanceof final BasicComponent bc) {
                 for (final ProvidedRole providedRole : bc.getProvidedRoles_InterfaceProvidingEntity()) {
                     seff2JavaASTBuilder.addSeffsToBasicComponent(bc, providedRole);
                 }

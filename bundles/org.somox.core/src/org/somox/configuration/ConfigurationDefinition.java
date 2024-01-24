@@ -81,12 +81,12 @@ public class ConfigurationDefinition {
      *
      * @uml.property name="possibleValues"
      */
-    private List<String> possibleValues = new LinkedList<String>();
+    private List<String> possibleValues = new LinkedList<>();
 
     /**
      * The number of allowed possibleValues. A value equals to
-     * ConfigurationDefinition.MULIPLICITY_UNLIMITED means an unlimited number of possibleValues is
-     * allowed
+     * ConfigurationDefinition.MULIPLICITY_UNLIMITED means an unlimited number of
+     * possibleValues is allowed
      *
      * @uml.property name="multiplicity"
      */
@@ -106,20 +106,14 @@ public class ConfigurationDefinition {
     /**
      * Constructor requiring the complete set of definitions
      *
-     * @param id
-     *            The identifier for the parameter
-     * @param name
-     *            The name of the parameter
-     * @param type
-     *            The type of the parameter
-     * @param defaultValue
-     *            The defaultValue
-     * @param possibleValues
-     *            The possible values for this configuration
-     * @param multiplicity
-     *            The maximum number of possibleValues for this configuration
-     * @param required
-     *            Flag whether this configuration is required
+     * @param id             The identifier for the parameter
+     * @param name           The name of the parameter
+     * @param type           The type of the parameter
+     * @param defaultValue   The defaultValue
+     * @param possibleValues The possible values for this configuration
+     * @param multiplicity   The maximum number of possibleValues for this
+     *                       configuration
+     * @param required       Flag whether this configuration is required
      */
     public ConfigurationDefinition(final String id, final String name, final ConfigurationDefinition.Type type,
             final String defaultValue, final List<String> possibleValues, final int multiplicity,
@@ -127,20 +121,16 @@ public class ConfigurationDefinition {
         this(id, name, type, defaultValue);
         this.possibleValues = possibleValues;
         this.multiplicity = multiplicity;
-        this.setRequired(required);
+        setRequired(required);
     }
 
     /**
      * Constructor requiring the basic information and the default value
      *
-     * @param id
-     *            The identifier for the parameter
-     * @param name
-     *            The name of the parameter
-     * @param type
-     *            The type of the parameter
-     * @param defaultValue
-     *            The defaultValue
+     * @param id           The identifier for the parameter
+     * @param name         The name of the parameter
+     * @param type         The type of the parameter
+     * @param defaultValue The defaultValue
      */
     public ConfigurationDefinition(final String id, final String name, final ConfigurationDefinition.Type type,
             final String defaultValue) {
@@ -151,32 +141,24 @@ public class ConfigurationDefinition {
     /**
      * Constructor requiring the basic information and the default value
      *
-     * @param id
-     *            The identifier for the parameter
-     * @param name
-     *            The name of the parameter
-     * @param type
-     *            The type of the parameter
-     * @param defaultValue
-     *            The defaultValue
-     * @param required
-     *            Flag whether this configuration is required
+     * @param id           The identifier for the parameter
+     * @param name         The name of the parameter
+     * @param type         The type of the parameter
+     * @param defaultValue The defaultValue
+     * @param required     Flag whether this configuration is required
      */
     public ConfigurationDefinition(final String id, final String name, final ConfigurationDefinition.Type type,
             final String defaultValue, final boolean required) {
         this(id, name, type, defaultValue);
-        this.setRequired(required);
+        setRequired(required);
     }
 
     /**
      * Constructor requiring the minimum of definitions
      *
-     * @param id
-     *            The identifier for the parameter
-     * @param name
-     *            The name of the parameter
-     * @param type
-     *            The type of the parameter
+     * @param id   The identifier for the parameter
+     * @param name The name of the parameter
+     * @param type The type of the parameter
      */
     public ConfigurationDefinition(final String id, final String name, final ConfigurationDefinition.Type type) {
         this.id = id;
@@ -201,12 +183,11 @@ public class ConfigurationDefinition {
      * @uml.property name="id"
      */
     public String getId() {
-        return this.id;
+        return id;
     }
 
     /**
-     * @param id
-     *            the id to set
+     * @param id the id to set
      * @uml.property name="id"
      */
     public void setId(final String id) {
@@ -218,12 +199,11 @@ public class ConfigurationDefinition {
      * @uml.property name="name"
      */
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**
-     * @param name
-     *            the name to set
+     * @param name the name to set
      * @uml.property name="name"
      */
     public void setName(final String name) {
@@ -235,12 +215,11 @@ public class ConfigurationDefinition {
      * @uml.property name="type"
      */
     public ConfigurationDefinition.Type getType() {
-        return this.type;
+        return type;
     }
 
     /**
-     * @param type
-     *            the type to set
+     * @param type the type to set
      * @uml.property name="type"
      */
     public void setType(final ConfigurationDefinition.Type type) {
@@ -252,12 +231,11 @@ public class ConfigurationDefinition {
      * @uml.property name="defaultValue"
      */
     public String getDefaultValue() {
-        return this.defaultValue;
+        return defaultValue;
     }
 
     /**
-     * @param defaultValue
-     *            the defaultValue to set
+     * @param defaultValue the defaultValue to set
      * @uml.property name="defaultValue"
      */
     public void setDefaultValue(final String defaultValue) {
@@ -265,8 +243,7 @@ public class ConfigurationDefinition {
     }
 
     /**
-     * @param possibleValues
-     *            the possibleValues to set
+     * @param possibleValues the possibleValues to set
      * @uml.property name="possibleValues"
      */
     public void setPossibleValues(final List<String> possibleValues) {
@@ -278,12 +255,11 @@ public class ConfigurationDefinition {
      * @uml.property name="possibleValues"
      */
     public List<String> getPossibleValues() {
-        return this.possibleValues;
+        return possibleValues;
     }
 
     /**
-     * @param multiplicity
-     *            the multiplicity to set
+     * @param multiplicity the multiplicity to set
      * @uml.property name="multiplicity"
      */
     public void setMultiplicity(final int multiplicity) {
@@ -295,12 +271,11 @@ public class ConfigurationDefinition {
      * @uml.property name="multiplicity"
      */
     public int getMultiplicity() {
-        return this.multiplicity;
+        return multiplicity;
     }
 
     /**
-     * @param required
-     *            the required to set
+     * @param required the required to set
      * @uml.property name="required"
      */
     public void setRequired(final boolean required) {
@@ -312,6 +287,6 @@ public class ConfigurationDefinition {
      * @uml.property name="required"
      */
     public boolean isRequired() {
-        return this.required;
+        return required;
     }
 }

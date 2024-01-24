@@ -17,7 +17,7 @@ public class InterfaceAccessesCount extends AbstractCountingMetric {
 
     public static final MetricID METRIC_ID = new MetricID("org.somox.metrics.basic.InterfaceAccessesCount");
 
-    private final static BaseFilter<ConcreteClassifier> interfaceClassesFilter = new BaseFilter<ConcreteClassifier>() {
+    private final static BaseFilter<ConcreteClassifier> interfaceClassesFilter = new BaseFilter<>() {
 
         @Override
         public boolean passes(final ConcreteClassifier clazz) {
@@ -28,19 +28,19 @@ public class InterfaceAccessesCount extends AbstractCountingMetric {
     @Override
     protected void internalComputeDirected(final ClusteringRelation relationToCompute) {
 
-        final Set<ConcreteClassifier> classes1 = this.getComponentToClassHelper()
+        final Set<ConcreteClassifier> classes1 = getComponentToClassHelper()
                 .deriveImplementingClasses(relationToCompute.getSourceComponent());
-        final Set<ConcreteClassifier> classes2 = this.getComponentToClassHelper()
+        final Set<ConcreteClassifier> classes2 = getComponentToClassHelper()
                 .deriveImplementingClasses(relationToCompute.getTargetComponent());
 
-        final long accessesToInterfaces = this.getAccessGraphCache().calculateNumberOfAccessesToClassesInSet(classes1,
+        final long accessesToInterfaces = getAccessGraphCache().calculateNumberOfAccessesToClassesInSet(classes1,
                 FilteredCollectionsFactory.getFilteredHashSet(interfaceClassesFilter, classes2));
         if (logger.isTraceEnabled()) {
             logger.trace(relationToCompute.getSourceComponent() + " --> " + relationToCompute.getTargetComponent()
                     + " Interface Accesses = " + accessesToInterfaces);
         }
 
-        relationToCompute.setResultMetric(this.getMID(), accessesToInterfaces);
+        relationToCompute.setResultMetric(getMID(), accessesToInterfaces);
     }
 
     @Override

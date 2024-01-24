@@ -9,8 +9,8 @@ import org.somox.kdmhelper.KDMHelper;
 import org.somox.metrics.MetricID;
 
 /**
- * PackageMapping metric: Checks how well component candidates are arranged in the same or at least
- * comparable packages.
+ * PackageMapping metric: Checks how well component candidates are arranged in
+ * the same or at least comparable packages.
  *
  * @author Klaus Krogmann
  *

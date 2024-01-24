@@ -18,8 +18,8 @@ import org.somox.metrics.MetricID;
 //import org.somox.metrics.dslvisitor.DSLConfigurationVisitor;
 
 /**
- * A registry storing all registered metrics in the running Eclipse instance. Note that this assumes
- * a reboot of Eclipse on configuration changes.
+ * A registry storing all registered metrics in the running Eclipse instance.
+ * Note that this assumes a reboot of Eclipse on configuration changes.
  *
  * @author Steffen Becker
  */
@@ -28,7 +28,6 @@ public class MetricsRegistry {
     private static final String METRIC_CLASS_ATTRIBUTE = "class";
     private static final String METRIC_ATTRIBUTE_NAME = "metric";
     private static final String METRIC_FORMULA_ATTRIBUTE_NAME = "metricformula";
-    private static final String METRIC_DEFINITION_ATTRIBUTE_NAME = "metric_definition";
     private static final String ORG_SOMOX_CORE_METRIC_EXTENSION_ID = "org.somox.core.metric";
     private static final Logger LOG = Logger.getLogger(MetricsRegistry.class);
     private static final Map<MetricID, IMetric> registeredMetrics;
@@ -45,16 +44,16 @@ public class MetricsRegistry {
     }
 
     private static Map<MetricID, IMetric> internalGetRegisteredMetrics() {
-        final Map<MetricID, IMetric> allMetrics = new HashMap<MetricID, IMetric>();
+        final Map<MetricID, IMetric> allMetrics = new HashMap<>();
         final IConfigurationElement[] metricExtensions = Platform.getExtensionRegistry()
                 .getConfigurationElementsFor(ORG_SOMOX_CORE_METRIC_EXTENSION_ID);
         for (final IConfigurationElement metricExtension : metricExtensions) {
-            if (metricExtension.getName().equals(METRIC_ATTRIBUTE_NAME)) {
+            if (METRIC_ATTRIBUTE_NAME.equals(metricExtension.getName())) {
                 parseBasicMetric(allMetrics, metricExtension);
             }
         }
         for (final IConfigurationElement metricExtension : metricExtensions) {
-            if (metricExtension.getName().equals(METRIC_FORMULA_ATTRIBUTE_NAME)) {
+            if (METRIC_FORMULA_ATTRIBUTE_NAME.equals(metricExtension.getName())) {
                 parseMetricDefinitionModel(allMetrics, metricExtension);
             }
         }
@@ -84,7 +83,8 @@ public class MetricsRegistry {
         // .getPlugin()
         // .getLog()
         // .log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
-        // "Unable to parse metric from metric defintion, ID was "+metricDefinition.getName()));
+        // "Unable to parse metric from metric defintion, ID was
+        // "+metricDefinition.getName()));
         // }
         // }
         // } else {
@@ -92,7 +92,8 @@ public class MetricsRegistry {
         // .getPlugin()
         // .getLog()
         // .log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
-        // "Failed to load a metric definition from a metric DSL file. Some metrics might"
+        // "Failed to load a metric definition from a metric DSL file. Some metrics
+        // might"
         // + "be unavailable and further errors may occur during SoMoX runs"));
         // }
     }
@@ -111,7 +112,7 @@ public class MetricsRegistry {
                     "Warning: Specified Analyzer Metric " + metricExtension.getName() + " cannot be loaded."));
             throw new RuntimeException("Eclipse core failure", e);
         }
-        if (o == null || !(o instanceof IMetric)) {
+        if ((o == null) || !(o instanceof IMetric)) {
             Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
                     "Warning: Specified Analyzer Metric " + metricExtension.getName() + " cannot be loaded."));
             throw new RuntimeException("Eclipse core failure. Could not instanciate metric", null);
@@ -119,7 +120,8 @@ public class MetricsRegistry {
         allMetrics.put(((IMetric) o).getMID(), (IMetric) o);
     }
 
-    // private static IMetric parseMetricDefintion(final Map<MetricID, IMetric> allMetrics, final
+    // private static IMetric parseMetricDefintion(final Map<MetricID, IMetric>
+    // allMetrics, final
     // Metric metric) {
     // LOG.info("Parsing metric definition " + metric.getName());
     // return new DSLConfigurationVisitor(allMetrics).doSwitch(metric);
@@ -127,7 +129,8 @@ public class MetricsRegistry {
     //
     // private static MetricModel loadResource(final String resourcePath) {
     // final ResourceSet rs = new ResourceSetImpl();
-    // final Resource r = rs.createResource(URI.createPlatformPluginURI(resourcePath, true));
+    // final Resource r =
+    // rs.createResource(URI.createPlatformPluginURI(resourcePath, true));
     // try {
     // r.load(new HashMap<Object, Object>());
     // } catch (final IOException e) {

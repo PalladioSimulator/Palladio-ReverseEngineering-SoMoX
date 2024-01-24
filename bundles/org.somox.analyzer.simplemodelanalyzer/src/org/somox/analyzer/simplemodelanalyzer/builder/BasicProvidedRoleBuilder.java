@@ -17,8 +17,8 @@ import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
 
 /**
- * Simple strategy for deriving provided interfaces. Creates a new provided role for all inner
- * interfaces and updates the source code decorator accordingly.
+ * Simple strategy for deriving provided interfaces. Creates a new provided role
+ * for all inner interfaces and updates the source code decorator accordingly.
  *
  * @author Klaus Krogmann
  */
@@ -41,7 +41,7 @@ public class BasicProvidedRoleBuilder extends AbstractBuilder implements IRoleBu
     @Override
     public List<OperationProvidedRole> buildProvidedRole(final ComponentImplementingClassesLink result) {
 
-        final List<OperationProvidedRole> roles = new LinkedList<OperationProvidedRole>();
+        final List<OperationProvidedRole> roles = new LinkedList<>();
 
         for (final ComponentImplementingClassesLink componentLink : result.getSubComponents()) {
             final List<InterfaceSourceCodeLink> interfaceLinkSubList = componentLink.getProvidedInterfaces();
@@ -68,8 +68,8 @@ public class BasicProvidedRoleBuilder extends AbstractBuilder implements IRoleBu
                     roles.add(newProvidedRole);
 
                     // Source code decorator:
-                    if (currentInterfaceLinkSub.getInterface() != null
-                            && currentInterfaceLinkSub.getInterface() != null) {
+                    if ((currentInterfaceLinkSub.getInterface() != null)
+                            && (currentInterfaceLinkSub.getInterface() != null)) {
                         final InterfaceSourceCodeLink newInterfaceLink = SourcecodedecoratorFactory.eINSTANCE
                                 .createInterfaceSourceCodeLink();
                         newInterfaceLink.setInterface(currentInterfaceLinkSub.getInterface());
@@ -95,9 +95,11 @@ public class BasicProvidedRoleBuilder extends AbstractBuilder implements IRoleBu
 
     @Override
     public List<OperationRequiredRole> buildRequiredRole(final ComponentImplementingClassesLink result) {
-        // Yes we know this is a bloody dirty hack but we want to get this nasty migration run the
+        // Yes we know this is a bloody dirty hack but we want to get this nasty
+        // migration run the
         // first time.
-        // if you see this comment in more than 1 year from now (today: 2013-04-04) just shake your
+        // if you see this comment in more than 1 year from now (today: 2013-04-04) just
+        // shake your
         // had and curse us
         throw new RuntimeException("this method should not be executed.");
     }

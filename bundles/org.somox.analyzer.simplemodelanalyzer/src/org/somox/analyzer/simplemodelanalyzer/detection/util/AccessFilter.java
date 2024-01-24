@@ -41,17 +41,18 @@ public class AccessFilter {
     public static List<ConcreteClassifier> filterAccessList(final List<TypeReference> allAccesses,
             final EClassBasedFilter<TypeReference> filter) {
 
-        final ArrayList<ConcreteClassifier> returnAccessedClasses = new ArrayList<ConcreteClassifier>();
+        final ArrayList<ConcreteClassifier> returnAccessedClasses = new ArrayList<>();
 
         for (final TypeReference access : filter.filter(allAccesses)) {
 
-            // if (KDMHelper.isInheritanceTypeAccess(access)) {// REALLYADDED//SOMOXTODOCHANGE
+            // if (KDMHelper.isInheritanceTypeAccess(access)) {//
+            // REALLYADDED//SOMOXTODOCHANGE
             // // logger.warn("found Inheritance type access, will not be considered");
             // continue;// REALLYADDED//SOMOXTODOCHANGE
             // }// REALLYADDED//SOMOXTODOCHANGE
 
             final Type accessedType = GetAccessedType.getAccessedType(access);
-            if (accessedType != null && accessedType instanceof ConcreteClassifier) {
+            if ((accessedType != null) && (accessedType instanceof ConcreteClassifier)) {
                 // composite accesses are not considered
                 returnAccessedClasses.add((ConcreteClassifier) accessedType);
             } else {

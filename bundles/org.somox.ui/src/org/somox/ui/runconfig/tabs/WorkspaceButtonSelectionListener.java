@@ -16,9 +16,10 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  *
- * This is a helper class that provides a Listener for buttons that dispay a workspace selection
- * dialog. The dialog can select files, directories or projects and displays the selected element
- * with a relative of absolute path in the given text field.
+ * This is a helper class that provides a Listener for buttons that dispay a
+ * workspace selection dialog. The dialog can select files, directories or
+ * projects and displays the selected element with a relative of absolute path
+ * in the given text field.
  *
  * @author Michael Hauck
  *
@@ -32,17 +33,14 @@ public class WorkspaceButtonSelectionListener extends SelectionAdapter {
 
     /**
      *
-     * @param ownerTab
-     *            the owner: an abstractlaunchconfigurationtab in which the button of the listener
-     *            is contained
-     * @param field
-     *            the text field which should contain the selected value
-     * @param selectDirectories
-     *            true if only directories are selectable
-     * @param selectProjects
-     *            true if only projects are selectable
-     * @param showRelativePath
-     *            true if the path should be displayed relative to the project
+     * @param ownerTab          the owner: an abstractlaunchconfigurationtab in
+     *                          which the button of the listener is contained
+     * @param field             the text field which should contain the selected
+     *                          value
+     * @param selectDirectories true if only directories are selectable
+     * @param selectProjects    true if only projects are selectable
+     * @param showRelativePath  true if the path should be displayed relative to the
+     *                          project
      */
     public WorkspaceButtonSelectionListener(final Text field, final boolean selectDirectories,
             final boolean selectProjects, final boolean showRelativePath) {
@@ -63,12 +61,12 @@ public class WorkspaceButtonSelectionListener extends SelectionAdapter {
     public void widgetSelected(final SelectionEvent e) {
         String resultOpenFileDialog = "";
         /** create the dialog message */
-        if (this.selectDirectories == true) {
+        if (selectDirectories) {
             final String msg = "Select a folder.";
 
             IResource dir = null;
-            final List<ViewerFilter> filters = new ArrayList<ViewerFilter>();
-            if (this.selectProjects == true) {
+            final List<ViewerFilter> filters = new ArrayList<>();
+            if (selectProjects) {
                 filters.add(new ViewerFilter() {
                     @Override
                     public boolean select(final Viewer viewer, final Object parentElement, final Object element) {
@@ -86,12 +84,8 @@ public class WorkspaceButtonSelectionListener extends SelectionAdapter {
                     dir = dirs[0];
                 }
                 if (dir != null) {
-                    if (this.showRelativePath == true) {
-                        if (this.selectProjects == true) {
-                            resultOpenFileDialog = dir.getFullPath().toOSString().substring(1);
-                        } else {
-                            resultOpenFileDialog = dir.getFullPath().toOSString().substring(1);
-                        }
+                    if (showRelativePath) {
+                        resultOpenFileDialog = dir.getFullPath().toOSString().substring(1);
                     } else {
                         resultOpenFileDialog = dir.getLocation().toOSString();
                     }
@@ -103,14 +97,14 @@ public class WorkspaceButtonSelectionListener extends SelectionAdapter {
             final String msg = "Select a file.";
 
             IResource file = null;
-            final List<ViewerFilter> filters = new ArrayList<ViewerFilter>();
+            final List<ViewerFilter> filters = new ArrayList<>();
             final IFile[] files = WorkspaceResourceDialog.openFileSelection(null, null, msg, false, null, filters);
             try {
                 if (files.length != 0) {
                     file = files[0];
                 }
                 if (file != null) {
-                    if (this.showRelativePath == true) {
+                    if (showRelativePath) {
                         resultOpenFileDialog = file.getFullPath().toOSString().substring(1);
                     } else {
                         resultOpenFileDialog = file.getLocation().toOSString();
@@ -120,8 +114,8 @@ public class WorkspaceButtonSelectionListener extends SelectionAdapter {
                 ce.printStackTrace();
             }
         }
-        if (!resultOpenFileDialog.equals(new String(""))) {
-            this.field.setText(resultOpenFileDialog);
+        if (!"".equals(resultOpenFileDialog)) {
+            field.setText(resultOpenFileDialog);
         }
     }
 }

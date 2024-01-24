@@ -1,7 +1,6 @@
 package org.somox.ui.preferences;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.somox.ui.Activator;
 
 /**
@@ -17,7 +16,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
      */
     @Override
     public void initializeDefaultPreferences() {
-        final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
+        Activator.getDefault().getPreferenceStore();
     }
 
 }

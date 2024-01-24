@@ -43,7 +43,8 @@ import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
 
 /**
- * Builder used to add GAST behaviour to methods detected as provided operations of components
+ * Builder used to add GAST behaviour to methods detected as provided operations
+ * of components
  *
  * @author Steffen Becker, Michael Hauck
  */
@@ -56,37 +57,36 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
     /**
      * Constructor of the GAST behaviour builder
      *
-     * @param gastModel
-     *            GAST model used for queries to the source code representation
-     * @param somoxConfiguration
-     *            Somox configuaration used to retrieve settings
-     * @param analysisResult
-     *            Contains the root model elemts used to store the generated model elements
+     * @param gastModel          GAST model used for queries to the source code
+     *                           representation
+     * @param somoxConfiguration Somox configuaration used to retrieve settings
+     * @param analysisResult     Contains the root model elemts used to store the
+     *                           generated model elements
      */
     public Seff2JavaASTBuilder(final Root gastModel, final SoMoXConfiguration somoxConfiguration,
             final AnalysisResult analysisResult) {
         super(gastModel, somoxConfiguration, analysisResult);
-        this.sourceCodeDecorator = analysisResult.getSourceCodeDecoratorRepository();
-        this.seff2MethodMappings = analysisResult.getSourceCodeDecoratorRepository().getSeff2MethodMappings();
+        sourceCodeDecorator = analysisResult.getSourceCodeDecoratorRepository();
+        seff2MethodMappings = analysisResult.getSourceCodeDecoratorRepository().getSeff2MethodMappings();
     }
 
     /**
-     * Add seffs to the given basic component for all methods passed in the provided roles parameter
+     * Add seffs to the given basic component for all methods passed in the provided
+     * roles parameter
      *
-     * @param component
-     *            The component to which the behaviour will be added
-     * @param providedRole
-     *            The provided role for which each of its operations is to be added.
+     * @param component    The component to which the behaviour will be added
+     * @param providedRole The provided role for which each of its operations is to
+     *                     be added.
      */
     public void addSeffsToBasicComponent(final BasicComponent component, final ProvidedRole providedRole) {
         if (providedRole instanceof OperationProvidedRole) {
             final OperationInterface providedInterface = ((OperationProvidedRole) providedRole)
                     .getProvidedInterface__OperationProvidedRole();
-            this.addSEFFsForInterfaceToComponent(component, providedInterface, new HashSet<OperationInterface>());
+            addSEFFsForInterfaceToComponent(component, providedInterface, new HashSet<OperationInterface>());
         } else if (providedRole instanceof SinkRole) {
             final EventGroup providedInterface = ((SinkRole) providedRole).getEventGroup__SinkRole();
             for (final EventType signature : providedInterface.getEventTypes__EventGroup()) {
-                this.addSeffToBasicComponent(component, signature);
+                addSeffToBasicComponent(component, signature);
             }
         }
     }
@@ -98,26 +98,25 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
         }
         alreadyAddedInterfaces.add(providedInterface);
         for (final OperationSignature signature : providedInterface.getSignatures__OperationInterface()) {
-            this.addSeffToBasicComponent(component, signature);
+            addSeffToBasicComponent(component, signature);
         }
         for (final Interface parentIf : providedInterface.getParentInterfaces__Interface()) {
             if (parentIf instanceof OperationInterface) {
-                this.addSEFFsForInterfaceToComponent(component, (OperationInterface) parentIf, alreadyAddedInterfaces);
+                addSEFFsForInterfaceToComponent(component, (OperationInterface) parentIf, alreadyAddedInterfaces);
             }
         }
     }
 
     /**
-     * Add a seff to a basic component including the mapping to the method in the AST model.
+     * Add a seff to a basic component including the mapping to the method in the
+     * AST model.
      *
-     * @param component
-     *            The component to add the seff for
-     * @param operation
-     *            The interface operation
+     * @param component The component to add the seff for
+     * @param operation The interface operation
      */
     private void addSeffToBasicComponent(final BasicComponent component, final Signature operation) {
 
-        final MethodLevelSourceCodeLink link = this.getMethodLevelSourceCodeLink(operation);
+        final MethodLevelSourceCodeLink link = getMethodLevelSourceCodeLink(operation);
 
         if (link == null) {
             throw new RuntimeException(
@@ -129,20 +128,19 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
         // this.sourceCodeDecorator.getMethodLevelSourceCodeLink().add(link);
 
         final ResourceDemandingSEFF seff = SeffFactory.eINSTANCE.createResourceDemandingSEFF();
-        // TODO burkha 22.05.2013 this can violate a OCL constraint, when there is more than one
+        // TODO burkha 22.05.2013 this can violate a OCL constraint, when there is more
+        // than one
         // seff implementing the same signature
-        if (link.getOperation().getEntityName().equals("refresh")) {
-            @SuppressWarnings("unused")
-            final int a = 0;
+        if ("refresh".equals(link.getOperation().getEntityName())) {
         }
         seff.setDescribedService__SEFF(link.getOperation());
         final SEFF2MethodMapping seff2MethodMapping = SourcecodedecoratorFactory.eINSTANCE.createSEFF2MethodMapping();
         component.getServiceEffectSpecifications__BasicComponent().add(seff);
 
         // links steems from interface; thus get component-specific implementation:
-        final ComponentImplementingClassesLink compClassLink = this.findComponenentLink(component);
-        final StatementListContainer methodBody = this.getFunctionImplementation(link.getFunction(), compClassLink,
-                this.astModel);
+        final ComponentImplementingClassesLink compClassLink = findComponenentLink(component);
+        final StatementListContainer methodBody = getFunctionImplementation(link.getFunction(), compClassLink,
+                astModel);
 
         seff2MethodMapping.setStatementListContainer(methodBody);
         if (seff2MethodMapping.getStatementListContainer() == null) {
@@ -152,19 +150,18 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
         }
         seff2MethodMapping.setSeff(seff);
 
-        this.seff2MethodMappings.add(seff2MethodMapping);
+        seff2MethodMappings.add(seff2MethodMapping);
 
     }
 
     /**
-     * Finds a implementation block statement for the function realised by the passed component.
+     * Finds a implementation block statement for the function realised by the
+     * passed component.
      *
-     * @param function
-     *            interface function
-     * @param component
-     *            The component to find the method implementation for
-     * @return The block statement realising the function for the component; null in a case of
-     *         error.
+     * @param function  interface function
+     * @param component The component to find the method implementation for
+     * @return The block statement realising the function for the component; null in
+     *         a case of error.
      */
     private StatementListContainer getFunctionImplementationFromClassMethod(final ClassMethod function,
             final ComponentImplementingClassesLink component) {
@@ -202,24 +199,25 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
     }
 
     /**
-     * Finds a implementation block statement for the Member realised by the passed component.
+     * Finds a implementation block statement for the Member realised by the passed
+     * component.
      *
-     * @param function
-     *            interface function
-     * @param component
-     *            The component to find the method implementation for
+     * @param function  interface function
+     * @param component The component to find the method implementation for
      * @param astModel
-     * @return The block statement realising the function for the component; null in a case of
-     *         error.
+     * @return The block statement realising the function for the component; null in
+     *         a case of error.
      */
     private StatementListContainer getFunctionImplementation(final Member member,
             final ComponentImplementingClassesLink component, final Root astModel) {
 
         if (member instanceof ClassMethod) {
-            return this.getFunctionImplementationFromClassMethod((ClassMethod) member, component);
-        } else if (member instanceof Constructor) {
-            return this.getFunctionImplementationFromConstructor((Constructor) member, component);
-        } else if (member instanceof InterfaceMethod) {
+            return getFunctionImplementationFromClassMethod((ClassMethod) member, component);
+        }
+        if (member instanceof Constructor) {
+            return getFunctionImplementationFromConstructor((Constructor) member, component);
+        }
+        if (member instanceof InterfaceMethod) {
             logger.info("Found interface method " + member.getName());
             return this.getFunctionImplementationFromInterfaceMethod((InterfaceMethod) member, component, astModel);
         }
@@ -230,10 +228,10 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
     }
 
     /**
-     * Since an interface method does not have any implementation the method looks for a method in
-     * the current component that implements the interface method. if the method is not found:
-     * return an empty statement list container. If more than one method are found just return the
-     * first one.
+     * Since an interface method does not have any implementation the method looks
+     * for a method in the current component that implements the interface method.
+     * if the method is not found: return an empty statement list container. If more
+     * than one method are found just return the first one.
      *
      *
      * @param interfaceMethod
@@ -254,8 +252,8 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
     private StatementListContainer getFunctionImplementationFromInterfaceMethod(final InterfaceMethod interfaceMethod,
             final List<ConcreteClassifier> implementingClasses, final Root astModel,
             final boolean searchInAstModelIfNotFound) {
-        final Collection<StatementListContainer> implementingStatementListContainers = SoMoXUtil.findImplementingMethods(interfaceMethod,
-                implementingClasses);
+        final Collection<StatementListContainer> implementingStatementListContainers = SoMoXUtil
+                .findImplementingMethods(interfaceMethod, implementingClasses);
         logger.info("Found " + implementingStatementListContainers.size()
                 + " implementing StatementListContainers for interface method " + interfaceMethod.getName());
         if (1 < implementingStatementListContainers.size()) {
@@ -263,20 +261,19 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
                     "Found more than one statement list container for interface method " + interfaceMethod.getName());
         }
         if (0 == implementingStatementListContainers.size()) {
-            if (searchInAstModelIfNotFound) {
-                logger.info("Not found any statement list container (aka. overriden method) for interface method "
-                        + interfaceMethod.getName() + " in component implementing classes. Looking in all classes...");
-                final List<ConcreteClassifier> classifiersToLookAt = new ArrayList<ConcreteClassifier>();
-                for (final CompilationUnit cu : astModel.getCompilationUnits()) {
-                    classifiersToLookAt.addAll(cu.getClassifiers());
-                }
-                return this.getFunctionImplementationFromInterfaceMethod(interfaceMethod, classifiersToLookAt, astModel,
-                        false);
-            } else {
+            if (!searchInAstModelIfNotFound) {
                 logger.info("Not found any statement list container (aka. overriden method) for interface method "
                         + interfaceMethod.getName() + " in astModel. Returning null.");
                 return null;
             }
+            logger.info("Not found any statement list container (aka. overriden method) for interface method "
+                    + interfaceMethod.getName() + " in component implementing classes. Looking in all classes...");
+            final List<ConcreteClassifier> classifiersToLookAt = new ArrayList<>();
+            for (final CompilationUnit cu : astModel.getCompilationUnits()) {
+                classifiersToLookAt.addAll(cu.getClassifiers());
+            }
+            return this.getFunctionImplementationFromInterfaceMethod(interfaceMethod, classifiersToLookAt, astModel,
+                    false);
 
         }
         return implementingStatementListContainers.iterator().next();
@@ -289,7 +286,7 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
      * @return ComponentLink for component.
      */
     private ComponentImplementingClassesLink findComponenentLink(final RepositoryComponent component) {
-        for (final ComponentImplementingClassesLink compLink : this.analysisResult.getSourceCodeDecoratorRepository()
+        for (final ComponentImplementingClassesLink compLink : analysisResult.getSourceCodeDecoratorRepository()
                 .getComponentImplementingClassesLink()) {
             if (compLink.getComponent().equals(component)) {
                 return compLink;
@@ -300,8 +297,8 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
     }
 
     private MethodLevelSourceCodeLink getMethodLevelSourceCodeLink(final Signature operation) {
-        assert this.operationUnique(operation);
-        for (final MethodLevelSourceCodeLink link : this.sourceCodeDecorator.getMethodLevelSourceCodeLink()) {
+        assert operationUnique(operation);
+        for (final MethodLevelSourceCodeLink link : sourceCodeDecorator.getMethodLevelSourceCodeLink()) {
             if (operation == link.getOperation()) {
                 return link;
             }
@@ -310,17 +307,17 @@ public class Seff2JavaASTBuilder extends AbstractBuilder {
     }
 
     /**
-     * Check if an operation is already present in the source code decorator repository.
+     * Check if an operation is already present in the source code decorator
+     * repository.
      *
      * Attention: For assertion only!
      *
-     * @param signature
-     *            The signature to look up in the repository.
+     * @param signature The signature to look up in the repository.
      * @return true/false whether already present or not.
      */
     private boolean operationUnique(final Signature signature) {
         boolean alreadyFound = false;
-        for (final MethodLevelSourceCodeLink link : this.sourceCodeDecorator.getMethodLevelSourceCodeLink()) {
+        for (final MethodLevelSourceCodeLink link : sourceCodeDecorator.getMethodLevelSourceCodeLink()) {
             if (signature == link.getOperation()) {
 
                 if (alreadyFound) {

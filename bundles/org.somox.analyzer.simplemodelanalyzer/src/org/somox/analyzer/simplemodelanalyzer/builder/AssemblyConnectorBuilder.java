@@ -32,12 +32,9 @@ public class AssemblyConnectorBuilder extends AbstractBuilder {
     /**
      * Create a new instance of an assembly connector.
      *
-     * @param parentComponent
-     *            the outer composite component
-     * @param requiredRole
-     *            the required port of an inner component
-     * @param providedPort
-     *            the provided port of an inner component
+     * @param parentComponent           the outer composite component
+     * @param requiredRole              the required port of an inner component
+     * @param providedPort              the provided port of an inner component
      * @param requiredComponentInstance
      * @param providedComponentInstance
      */
@@ -65,12 +62,9 @@ public class AssemblyConnectorBuilder extends AbstractBuilder {
     /**
      * Create a new instance of an assembly connector.
      *
-     * @param parentComponent
-     *            the outer composite component
-     * @param requiredPort
-     *            the required port of an inner component
-     * @param providedPort
-     *            the provided port of an inner component
+     * @param parentComponent       the outer composite component
+     * @param requiredPort          the required port of an inner component
+     * @param providedPort          the provided port of an inner component
      * @param requiredComponentType
      * @param providedComponentType
      */

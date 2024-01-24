@@ -9,7 +9,8 @@ import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 
 public class VisitorUtils {
 
-    // private static final Logger logger = Logger.getLogger(VisitorUtils.class.getSimpleName());
+    // private static final Logger logger =
+    // Logger.getLogger(VisitorUtils.class.getSimpleName());
 
     // no public ctors
     private VisitorUtils() {
@@ -44,10 +45,10 @@ public class VisitorUtils {
     }
 
     /**
-     * Add connections to the SEFF actions assuming the actions are stored in a sequential order
+     * Add connections to the SEFF actions assuming the actions are stored in a
+     * sequential order
      *
-     * @param seff
-     *            The behaviour for which connections will be created
+     * @param seff The behaviour for which connections will be created
      */
     public static void connectActions(final ResourceDemandingBehaviour seff) {
         AbstractAction previous = null;

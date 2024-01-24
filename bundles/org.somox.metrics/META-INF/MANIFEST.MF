@@ -5,14 +5,17 @@ Bundle-SymbolicName: org.somox.metrics;singleton:=true
 Bundle-Version: 5.2.0.qualifier
 Bundle-Activator: org.somox.metrics.Activator
 Require-Bundle: org.eclipse.core.runtime,
- org.somox.metrics.dsl;bundle-version="5.2.0",
- org.eclipse.emf.edit.ui;bundle-version="2.4.1",
- org.eclipse.debug.ui;bundle-version="3.4.1",
- org.somox.core;bundle-version="5.2.0",
- org.somox.filter;bundle-version="5.2.0",
- org.somox.kdmhelper;bundle-version="5.2.0",
- org.somox.sourcecodedecorator;bundle-version="5.2.0",
- org.emftext.language.java
+ org.somox.metrics.dsl,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.debug.ui,
+ org.somox.core,
+ org.somox.filter,
+ org.somox.kdmhelper,
+ org.somox.sourcecodedecorator,
+ org.emftext.language.java,
+ org.jgrapht.core,
+ org.apache.log4j,
+ org.somox.sourcecodedecorator
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.somox.metrics,
@@ -29,8 +32,3 @@ Export-Package: org.somox.metrics,
  org.somox.metrics.tabs,
  org.somox.metrics.util
 Bundle-Vendor: SDQ, KIT + FZI Karlsruhe + EU Q-ImPrESS
-Bundle-ClassPath: bundles/org.somox.metrics/lib/swt.jar,
- lib/jgrapht-0.8.1.jar,
- lib/com.wcohen.secondstring-0.1.jar,
- lib/log4j-1.2.8.jar,
- .

@@ -20,16 +20,18 @@ import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.somox.sourcecodedecorator.impl.InterfaceSourceCodeLinkImpl#getInterface <em>Interface</em>}</li>
- *   <li>{@link org.somox.sourcecodedecorator.impl.InterfaceSourceCodeLinkImpl#getGastClass <em>Gast Class</em>}</li>
+ * <li>{@link org.somox.sourcecodedecorator.impl.InterfaceSourceCodeLinkImpl#getInterface
+ * <em>Interface</em>}</li>
+ * <li>{@link org.somox.sourcecodedecorator.impl.InterfaceSourceCodeLinkImpl#getGastClass
+ * <em>Gast Class</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class InterfaceSourceCodeLinkImpl extends MinimalEObjectImpl.Container implements InterfaceSourceCodeLink {
     /**
-     * The cached value of the '{@link #getInterface() <em>Interface</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getInterface() <em>Interface</em>}'
+     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getInterface()
      * @generated
@@ -38,8 +40,8 @@ public class InterfaceSourceCodeLinkImpl extends MinimalEObjectImpl.Container im
     protected Interface interface_;
 
     /**
-     * The cached value of the '{@link #getGastClass() <em>Gast Class</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getGastClass() <em>Gast Class</em>}'
+     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getGastClass()
      * @generated
@@ -49,14 +51,15 @@ public class InterfaceSourceCodeLinkImpl extends MinimalEObjectImpl.Container im
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     protected InterfaceSourceCodeLinkImpl() {
-        super();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
@@ -66,16 +69,17 @@ public class InterfaceSourceCodeLinkImpl extends MinimalEObjectImpl.Container im
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public Interface getInterface() {
-        if (interface_ != null && ((EObject)interface_).eIsProxy()) {
-            InternalEObject oldInterface = (InternalEObject)interface_;
-            interface_ = (Interface)eResolveProxy(oldInterface);
-            if (interface_ != oldInterface) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE, oldInterface, interface_));
+        if ((interface_ != null) && ((EObject) interface_).eIsProxy()) {
+            final InternalEObject oldInterface = (InternalEObject) interface_;
+            interface_ = (Interface) eResolveProxy(oldInterface);
+            if ((interface_ != oldInterface) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE, oldInterface, interface_));
             }
         }
         return interface_;
@@ -83,6 +87,7 @@ public class InterfaceSourceCodeLinkImpl extends MinimalEObjectImpl.Container im
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     public Interface basicGetInterface() {
@@ -91,28 +96,32 @@ public class InterfaceSourceCodeLinkImpl extends MinimalEObjectImpl.Container im
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
-    public void setInterface(Interface newInterface) {
-        Interface oldInterface = interface_;
+    public void setInterface(final Interface newInterface) {
+        final Interface oldInterface = interface_;
         interface_ = newInterface;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE, oldInterface, interface_));
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET,
+                    SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE, oldInterface, interface_));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public ConcreteClassifier getGastClass() {
-        if (gastClass != null && gastClass.eIsProxy()) {
-            InternalEObject oldGastClass = (InternalEObject)gastClass;
-            gastClass = (ConcreteClassifier)eResolveProxy(oldGastClass);
-            if (gastClass != oldGastClass) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS, oldGastClass, gastClass));
+        if ((gastClass != null) && gastClass.eIsProxy()) {
+            final InternalEObject oldGastClass = (InternalEObject) gastClass;
+            gastClass = (ConcreteClassifier) eResolveProxy(oldGastClass);
+            if ((gastClass != oldGastClass) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS, oldGastClass, gastClass));
             }
         }
         return gastClass;
@@ -120,6 +129,7 @@ public class InterfaceSourceCodeLinkImpl extends MinimalEObjectImpl.Container im
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     public ConcreteClassifier basicGetGastClass() {
@@ -128,78 +138,89 @@ public class InterfaceSourceCodeLinkImpl extends MinimalEObjectImpl.Container im
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
-    public void setGastClass(ConcreteClassifier newGastClass) {
-        ConcreteClassifier oldGastClass = gastClass;
+    public void setGastClass(final ConcreteClassifier newGastClass) {
+        final ConcreteClassifier oldGastClass = gastClass;
         gastClass = newGastClass;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS, oldGastClass, gastClass));
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET,
+                    SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS, oldGastClass, gastClass));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE:
-                if (resolve) return getInterface();
-                return basicGetInterface();
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS:
-                if (resolve) return getGastClass();
-                return basicGetGastClass();
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE:
+            if (resolve) {
+                return getInterface();
+            }
+            return basicGetInterface();
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS:
+            if (resolve) {
+                return getGastClass();
+            }
+            return basicGetGastClass();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE:
-                setInterface((Interface)newValue);
-                return;
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS:
-                setGastClass((ConcreteClassifier)newValue);
-                return;
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE:
+            setInterface((Interface) newValue);
+            return;
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS:
+            setGastClass((ConcreteClassifier) newValue);
+            return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE:
-                setInterface((Interface)null);
-                return;
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS:
-                setGastClass((ConcreteClassifier)null);
-                return;
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE:
+            setInterface((Interface) null);
+            return;
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS:
+            setGastClass((ConcreteClassifier) null);
+            return;
         }
         super.eUnset(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE:
-                return interface_ != null;
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS:
-                return gastClass != null;
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__INTERFACE:
+            return interface_ != null;
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK__GAST_CLASS:
+            return gastClass != null;
         }
         return super.eIsSet(featureID);
     }

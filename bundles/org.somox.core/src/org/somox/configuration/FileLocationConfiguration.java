@@ -8,8 +8,7 @@ public class FileLocationConfiguration {
     private String outputFolder;
 
     /**
-     * @param analyserInputFile
-     *            the analyserInputFile to set
+     * @param analyserInputFile the analyserInputFile to set
      */
     public void setAnalyserInputFile(final String analyserInputFile) {
         this.analyserInputFile = analyserInputFile;
@@ -19,12 +18,11 @@ public class FileLocationConfiguration {
      * @return the analyserInputFile
      */
     public String getAnalyserInputFile() {
-        return this.analyserInputFile;
+        return analyserInputFile;
     }
 
     /**
-     * @param projectNames
-     *            the projectName to set
+     * @param projectNames the projectName to set
      */
     public void setProjectNames(final Set<String> projectNames) {
         this.projectNames = projectNames;
@@ -34,23 +32,23 @@ public class FileLocationConfiguration {
      * @return The names of all projects to be analysed.
      */
     public Set<String> getProjectNames() {
-        return this.projectNames;
+        return projectNames;
     }
 
     /**
-     * @param outputFolder
-     *            The (workspace-relative) path to the folder to put all analysis results in. May
-     *            also be a platform resource URI or a file URI.
+     * @param outputFolder The (workspace-relative) path to the folder to put all
+     *                     analysis results in. May also be a platform resource URI
+     *                     or a file URI.
      */
     public void setOutputFolder(final String outputFolder) {
         this.outputFolder = outputFolder;
     }
 
     /**
-     * @return The (workspace-relative) path to the folder to put all analysis results in. May also
-     *         be a platform resource URI or a file URI.
+     * @return The (workspace-relative) path to the folder to put all analysis
+     *         results in. May also be a platform resource URI or a file URI.
      */
     public String getOutputFolder() {
-        return this.outputFolder;
+        return outputFolder;
     }
 }

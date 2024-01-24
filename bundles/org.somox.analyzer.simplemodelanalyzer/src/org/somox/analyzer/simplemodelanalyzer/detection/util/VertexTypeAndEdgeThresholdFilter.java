@@ -8,8 +8,8 @@ import org.somox.metrics.MetricID;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 
 /**
- * Filters based on edge threshold and vertex type: only initial (primitive) components and at most
- * one composite component pass.
+ * Filters based on edge threshold and vertex type: only initial (primitive)
+ * components and at most one composite component pass.
  *
  * @author Klaus Krogmann
  *
@@ -20,17 +20,16 @@ public class VertexTypeAndEdgeThresholdFilter extends BaseFilter<ClusteringRelat
     private final double threshold;
 
     public VertexTypeAndEdgeThresholdFilter(final MetricID metric, final double threshold) {
-        super();
         this.metric = metric;
         this.threshold = threshold;
     }
 
     @Override
     public boolean passes(final ClusteringRelation object) {
-        assert object.getResult().containsKey(this.metric);
-        final double relationValue = object.getResult().get(this.metric);
+        assert object.getResult().containsKey(metric);
+        final double relationValue = object.getResult().get(metric);
 
-        return (relationValue > this.threshold) && this.onlyPrimitiveComponents(object.getComponents());
+        return (relationValue > threshold) && onlyPrimitiveComponents(object.getComponents());
     }
 
     private boolean onlyPrimitiveComponents(final List<ComponentImplementingClassesLink> componentLinks) {
@@ -42,4 +41,4 @@ public class VertexTypeAndEdgeThresholdFilter extends BaseFilter<ClusteringRelat
         }
         return true;
     }
-};
+}

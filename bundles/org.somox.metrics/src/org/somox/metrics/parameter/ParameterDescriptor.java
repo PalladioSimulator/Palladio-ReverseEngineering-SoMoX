@@ -6,7 +6,6 @@ public class ParameterDescriptor {
     private final double defaultValue;
 
     public ParameterDescriptor(final String shortName, final String description, final double defaultValue) {
-        super();
         this.shortName = shortName;
         this.description = description;
         this.defaultValue = defaultValue;
@@ -16,20 +15,20 @@ public class ParameterDescriptor {
      * @return the shortName
      */
     public String getShortName() {
-        return this.shortName;
+        return shortName;
     }
 
     /**
      * @return the description
      */
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     /**
      * @return the defaultValue
      */
     public double getDefaultValue() {
-        return this.defaultValue;
+        return defaultValue;
     }
 }

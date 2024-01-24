@@ -31,7 +31,6 @@ public class BasicSoMoXStrategiesFactory implements ISoMoXStrategiesFactory {
     private SoMoXConfiguration somoxConfiguration = null;
 
     public BasicSoMoXStrategiesFactory(final Root gastModel, final SoMoXConfiguration somoxConfiguration) {
-        super();
         this.gastModel = gastModel;
         this.somoxConfiguration = somoxConfiguration;
     }
@@ -40,19 +39,20 @@ public class BasicSoMoXStrategiesFactory implements ISoMoXStrategiesFactory {
      * (non-Javadoc)
      *
      * @see
-     * org.somox.analyzer.simplemodelanalyzer.factories.ISoMoXStrategiesFactory#getDetectionStrategy
-     * ()
+     * org.somox.analyzer.simplemodelanalyzer.factories.ISoMoXStrategiesFactory#
+     * getDetectionStrategy ()
      */
     @Override
     public IDetectionStrategy getDetectionStrategy(final List<ComponentImplementingClassesLink> components) {
         logger.info("Use Clustering Detection Strategy");
-        return new ComponentDetectionByClustering(this.gastModel, components, this.somoxConfiguration);
+        return new ComponentDetectionByClustering(gastModel, components, somoxConfiguration);
     }
 
     /*
      * (non-Javadoc)
      *
-     * @see org.somox.analyzer.simplemodelanalyzer.factories.ISoMoXStrategiesFactory#
+     * @see
+     * org.somox.analyzer.simplemodelanalyzer.factories.ISoMoXStrategiesFactory#
      * getInitializationStrategy()
      */
     @Override
@@ -62,17 +62,17 @@ public class BasicSoMoXStrategiesFactory implements ISoMoXStrategiesFactory {
         if (gastToPrimitiveComponentStrategy) {
             logger.info("GAST to primitive component initialisation strategy.");
             return new GastToPrimitiveComponentInitializationStrategy();
-        } else {
-            logger.info("GAST classes component initialisation strategy.");
-            logger.error("Currently does NOT WORK!.");
-            return new NoGastClassToPrimitiveComponentInitializationStrategy();
         }
+        logger.info("GAST classes component initialisation strategy.");
+        logger.error("Currently does NOT WORK!.");
+        return new NoGastClassToPrimitiveComponentInitializationStrategy();
     }
 
     /*
      * (non-Javadoc)
      *
-     * @see org.somox.analyzer.simplemodelanalyzer.factories.ISoMoXStrategiesFactory#
+     * @see
+     * org.somox.analyzer.simplemodelanalyzer.factories.ISoMoXStrategiesFactory#
      * getPostComponentDetectionStrategy()
      */
     @Override
@@ -82,8 +82,7 @@ public class BasicSoMoXStrategiesFactory implements ISoMoXStrategiesFactory {
         // should later be false by default
         if (PostDetectionStrategyDummy) {
             return new DummyPostComponentDetectionStrategy();
-        } else {
-            return new DeleteInitialComponentCandidatesStrategy();
         }
+        return new DeleteInitialComponentCandidatesStrategy();
     }
 }

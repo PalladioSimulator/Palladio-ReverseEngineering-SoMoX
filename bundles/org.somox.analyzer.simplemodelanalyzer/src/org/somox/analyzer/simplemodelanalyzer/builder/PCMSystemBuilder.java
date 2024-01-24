@@ -23,8 +23,8 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment;
 import org.palladiosimulator.pcm.system.System;
 import org.somox.analyzer.AnalysisResult;
-import org.somox.analyzer.simplemodelanalyzer.builder.util.InterfacePortBuilderHelper;
 import org.somox.analyzer.simplemodelanalyzer.builder.util.EndpointInformation;
+import org.somox.analyzer.simplemodelanalyzer.builder.util.InterfacePortBuilderHelper;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.metamodeladdition.Root;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
@@ -35,7 +35,8 @@ import org.somox.util.DefaultResourceEnvironment;
 //import de.fzi.gast.core.Root;
 
 /**
- * Builder for SAMM system + architecture model structures. Additionally creates default allocation.
+ * Builder for SAMM system + architecture model structures. Additionally creates
+ * default allocation.
  *
  * @author Klaus Krogmann
  */
@@ -48,14 +49,13 @@ public class PCMSystemBuilder extends AbstractBuilder {
     private final NonDuplicatingInterfacePortBuilder providedRoleBuilder;
 
     /**
-     * Main builder used to create model elements of the SAMM during component detection with SoMoX.
+     * Main builder used to create model elements of the SAMM during component
+     * detection with SoMoX.
      *
-     * @param gastModel
-     *            The GAST model containing the analyzed source code
-     * @param somoxConfiguration
-     *            SoMoX configuration object
-     * @param analysisResult
-     *            Object holding the root elements of the models to create
+     * @param gastModel          The GAST model containing the analyzed source code
+     * @param somoxConfiguration SoMoX configuration object
+     * @param analysisResult     Object holding the root elements of the models to
+     *                           create
      */
     public PCMSystemBuilder(final Root gastModel, final SoMoXConfiguration somoxConfiguration,
             final AnalysisResult analysisResult, final ComponentBuilder componentBuilder) {
@@ -64,31 +64,33 @@ public class PCMSystemBuilder extends AbstractBuilder {
         logger.debug("Initialising PCM system builder");
 
         this.componentBuilder = componentBuilder;
-        this.namingStrategy = componentBuilder.getComponentAndTypeNamingStrategy();
+        namingStrategy = componentBuilder.getComponentAndTypeNamingStrategy();
 
-        this.providedRoleBuilder = new NonDuplicatingInterfacePortBuilder(gastModel, somoxConfiguration, analysisResult,
-                this.namingStrategy);
+        providedRoleBuilder = new NonDuplicatingInterfacePortBuilder(gastModel, somoxConfiguration, analysisResult,
+                namingStrategy);
     }
 
     /**
-     * Replicates roles of inner components and establishes delegation connectors for them. Updates
-     * the PCM system. Creates a PCM for the last composite component of the repository model.
-     * Creates a default allocation with to a default target environment.
+     * Replicates roles of inner components and establishes delegation connectors
+     * for them. Updates the PCM system. Creates a PCM for the last composite
+     * component of the repository model. Creates a default allocation with to a
+     * default target environment.
      */
     public void buildSystemModel() {
-        this.buildSystemModel(this.getNonContainedComponents());
+        this.buildSystemModel(getNonContainedComponents());
     }
 
     /**
-     * Returns all components which are not used (subcomponent) in another composite component.
+     * Returns all components which are not used (subcomponent) in another composite
+     * component.
      *
      * @return List of non-contained components
      */
     private List<ComponentImplementingClassesLink> getNonContainedComponents() {
 
-        final ArrayList<ComponentImplementingClassesLink> nonContainedComponents = new ArrayList<ComponentImplementingClassesLink>();
+        final ArrayList<ComponentImplementingClassesLink> nonContainedComponents = new ArrayList<>();
 
-        final EList<ComponentImplementingClassesLink> componentImplementingClassesLinks = this.analysisResult
+        final EList<ComponentImplementingClassesLink> componentImplementingClassesLinks = analysisResult
                 .getSourceCodeDecoratorRepository().getComponentImplementingClassesLink();
 
         for (final ComponentImplementingClassesLink compLinkToCheckWhetherContained : componentImplementingClassesLinks) {
@@ -112,14 +114,14 @@ public class PCMSystemBuilder extends AbstractBuilder {
     }
 
     /**
-     * Replicates ports of inner components and establishes delegation connectors for them. Updates
-     * the SAMM system.
+     * Replicates ports of inner components and establishes delegation connectors
+     * for them. Updates the SAMM system.
      *
-     * @param innerComponents
-     *            List of Component which shall become instances of the SAMM system.
+     * @param innerComponents List of Component which shall become instances of the
+     *                        SAMM system.
      */
     private void buildSystemModel(final List<ComponentImplementingClassesLink> innerComponents) {
-        final System pcmSystem = this.analysisResult.getSystemModel();
+        final System pcmSystem = analysisResult.getSystemModel();
         pcmSystem.setEntityName("SoMoX Reverse Engineered System");
 
         final PCMSystemImplementatingClassesLink pcmLink = SourcecodedecoratorFactory.eINSTANCE
@@ -128,13 +130,13 @@ public class PCMSystemBuilder extends AbstractBuilder {
         // FIXME: currently saving results in invalid serialisation
         // this.analysisResult.getSourceCodeDecoratorRepository().getComponentImplementingClassesLink().add(sammLink);
 
-        final Set<EndpointInformation> subComponentInformationSet = new HashSet<EndpointInformation>();
+        final Set<EndpointInformation> subComponentInformationSet = new HashSet<>();
 
         final ResourceEnvironment resourceEnvironment = DefaultResourceEnvironment.getDefaultResourceEnvironment();
         final ResourceContainer defaultContainer = resourceEnvironment.getResourceContainer_ResourceEnvironment()
                 .get(0);
 
-        final Allocation allocation = this.analysisResult.getAllocation();
+        final Allocation allocation = analysisResult.getAllocation();
         allocation.setEntityName("SoMoX Reverse Engineered Allocation Model");
         allocation.setSystem_Allocation(pcmSystem);
         allocation.setTargetResourceEnvironment_Allocation(resourceEnvironment);
@@ -158,9 +160,7 @@ public class PCMSystemBuilder extends AbstractBuilder {
             // create delegation connectors between system and inner component
             // provided roles
             for (final ProvidedRole role : compLink.getComponent().getProvidedRoles_InterfaceProvidingEntity()) {
-                if (role instanceof OperationProvidedRole) {
-                    final OperationProvidedRole opProvRole = (OperationProvidedRole) role;
-
+                if (role instanceof final OperationProvidedRole opProvRole) {
                     this.createSystemProvidedRoleAndDelegationConnector(pcmSystem, compLink, assemblyContext,
                             opProvRole);
 
@@ -172,7 +172,7 @@ public class PCMSystemBuilder extends AbstractBuilder {
 
         // create assembly connectors among system components
         // execute only once: possible since here no decorator is used
-        this.componentBuilder.getInsideCompositeComponentAssemblyConnectorStrategy().buildAssemblyConnectors(pcmSystem,
+        componentBuilder.getInsideCompositeComponentAssemblyConnectorStrategy().buildAssemblyConnectors(pcmSystem,
                 innerComponents);
 
         // collect information on non-connected interfaces
@@ -190,10 +190,10 @@ public class PCMSystemBuilder extends AbstractBuilder {
         // build assembly connectors for the newly created dummy component:
         /*
          * final BasicComponent dummyComponent =
-         * DummyComponentBuilder.createDummyComponent(subComponentInformationSet, pcmSystem,
-         * resourceEnvironment, this.analysisResult);
-         * this.analysisResult.getInternalArchitectureModel().getComponents__Repository().add(
-         * dummyComponent);
+         * DummyComponentBuilder.createDummyComponent(subComponentInformationSet,
+         * pcmSystem, resourceEnvironment, this.analysisResult);
+         * this.analysisResult.getInternalArchitectureModel().getComponents__Repository(
+         * ).add( dummyComponent);
          */
     }
 
@@ -214,7 +214,7 @@ public class PCMSystemBuilder extends AbstractBuilder {
             final ComponentImplementingClassesLink compLink, final AssemblyContext assemblyContext,
             final OperationProvidedRole innerProvidedRole) {
         final RepositoryComponent component = compLink.getComponent();
-        final String name = this.namingStrategy.createProvidedSystemPortName(
+        final String name = namingStrategy.createProvidedSystemPortName(
                 innerProvidedRole.getProvidedInterface__OperationProvidedRole(), component);
         createSystemProvidedRoleAndDelegationConnector(pcmSystem, assemblyContext, innerProvidedRole, name);
     }

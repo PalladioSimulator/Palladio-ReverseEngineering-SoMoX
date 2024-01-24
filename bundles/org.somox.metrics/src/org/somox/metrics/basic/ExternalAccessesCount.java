@@ -20,14 +20,15 @@ public class ExternalAccessesCount extends AbstractCountingMetric {
      */
     @Override
     public MetricTab getLaunchConfigurationTab() {
-        // TODO: Move to general SoMoX config as this is not specific for a single metric...
+        // TODO: Move to general SoMoX config as this is not specific for a single
+        // metric...
         return new BlacklistTab();
     }
 
     @Override
     protected void internalComputeDirected(final ClusteringRelation relationToCompute) {
-        relationToCompute.setResultMetric(this.getMID(), this.getAccessGraphCache().calculateNumberOfExternalAccesses(
-                this.getComponentToClassHelper().deriveImplementingClasses(relationToCompute.getSourceComponent())));
+        relationToCompute.setResultMetric(getMID(), getAccessGraphCache().calculateNumberOfExternalAccesses(
+                getComponentToClassHelper().deriveImplementingClasses(relationToCompute.getSourceComponent())));
     }
 
     @Override

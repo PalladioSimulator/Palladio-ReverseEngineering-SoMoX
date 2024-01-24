@@ -1,8 +1,9 @@
 package org.somox.common;
 
 /**
- * This class provides a data object for message encapsulation. It can be used to create more
- * structures messages especially if messages with variable levels have to be supported.
+ * This class provides a data object for message encapsulation. It can be used
+ * to create more structures messages especially if messages with variable
+ * levels have to be supported.
  *
  * @author Benjamin Klatt
  */
@@ -58,8 +59,8 @@ public class Message {
     private String message = null;
 
     /**
-     * An optional throwable to be assigned to the message. This is useful especially for error or
-     * debug messages.
+     * An optional throwable to be assigned to the message. This is useful
+     * especially for error or debug messages.
      *
      * @uml.property name="throwable"
      */
@@ -87,7 +88,8 @@ public class Message {
     }
 
     /**
-     * Constructor requiring minimum information. This will result in an info message.
+     * Constructor requiring minimum information. This will result in an info
+     * message.
      */
     public Message(final String message) {
         this.message = message;
@@ -106,8 +108,7 @@ public class Message {
     // ---------------------------------
 
     /**
-     * @param message
-     *            the message to set
+     * @param message the message to set
      * @uml.property name="message"
      */
     public void setMessage(final String message) {
@@ -119,12 +120,11 @@ public class Message {
      * @uml.property name="message"
      */
     public String getMessage() {
-        return this.message;
+        return message;
     }
 
     /**
-     * @param level
-     *            the level to set
+     * @param level the level to set
      * @uml.property name="level"
      */
     public void setLevel(final Message.MessageLevel level) {
@@ -136,12 +136,11 @@ public class Message {
      * @uml.property name="level"
      */
     public Message.MessageLevel getLevel() {
-        return this.level;
+        return level;
     }
 
     /**
-     * @param throwable
-     *            the throwable to set
+     * @param throwable the throwable to set
      * @uml.property name="throwable"
      */
     public void setThrowable(final Throwable throwable) {
@@ -153,6 +152,6 @@ public class Message {
      * @uml.property name="throwable"
      */
     public Throwable getThrowable() {
-        return this.throwable;
+        return throwable;
     }
 }

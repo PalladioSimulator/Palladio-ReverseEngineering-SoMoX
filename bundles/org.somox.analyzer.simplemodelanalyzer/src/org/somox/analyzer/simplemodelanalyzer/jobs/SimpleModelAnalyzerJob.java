@@ -34,7 +34,7 @@ public class SimpleModelAnalyzerJob implements IBlackboardInteractingJob<SoMoXBl
 
     private final GUISoMoXCoreController controller;
 
-    private HashMap<String, String> globalPreferences = new HashMap<String, String>();
+    private HashMap<String, String> globalPreferences = new HashMap<>();
 
     private final SoMoXConfiguration somoxConfiguration;
 
@@ -42,13 +42,11 @@ public class SimpleModelAnalyzerJob implements IBlackboardInteractingJob<SoMoXBl
     private SoMoXBlackboard blackboard = null;
 
     public SimpleModelAnalyzerJob(final SoMoXModelAnalyzerConfiguration config) throws CoreException {
-        super();
+        controller = getSoMoXController();
 
-        this.controller = this.getSoMoXController();
+        somoxConfiguration = config.getMoxConfiguration();
 
-        this.somoxConfiguration = config.getMoxConfiguration();
-
-        this.globalPreferences = this.getGlobalSoMoXPluginPreferences();
+        globalPreferences = getGlobalSoMoXPluginPreferences();
     }
 
     private GUISoMoXCoreController getSoMoXController() throws CoreException {
@@ -63,7 +61,7 @@ public class SimpleModelAnalyzerJob implements IBlackboardInteractingJob<SoMoXBl
     }
 
     private HashMap<String, String> getGlobalSoMoXPluginPreferences() throws CoreException {
-        final HashMap<String, String> globalPreferences = new HashMap<String, String>();
+        final HashMap<String, String> globalPreferences = new HashMap<>();
 
         final IEclipsePreferences pluginPreferences = new DefaultScope().getNode(Activator.PLUGIN_ID);
         String[] availableProperties;
@@ -84,9 +82,9 @@ public class SimpleModelAnalyzerJob implements IBlackboardInteractingJob<SoMoXBl
     @Override
     public void execute(final IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
         try {
-            final AnalysisResult result = this.controller.startAnalyze(SimpleModelAnalyzer.class.getName(), monitor,
-                    this.globalPreferences, this.somoxConfiguration);
-            this.blackboard.setAnalysisResult(result);
+            final AnalysisResult result = controller.startAnalyze(SimpleModelAnalyzer.class.getName(), monitor,
+                    globalPreferences, somoxConfiguration);
+            blackboard.setAnalysisResult(result);
         } catch (final ModelAnalyzerException e) {
             throw new JobFailedException("SoMoX Failed", e);
         }
@@ -98,12 +96,11 @@ public class SimpleModelAnalyzerJob implements IBlackboardInteractingJob<SoMoXBl
     }
 
     /**
-     * @param blackBoard
-     *            the blackBoard to set
+     * @param blackBoard the blackBoard to set
      */
     @Override
     public void setBlackboard(final SoMoXBlackboard blackBoard) {
-        this.blackboard = blackBoard;
+        blackboard = blackBoard;
     }
 
     @Override

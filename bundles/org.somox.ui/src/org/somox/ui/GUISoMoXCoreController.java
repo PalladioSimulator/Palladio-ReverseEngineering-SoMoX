@@ -30,7 +30,8 @@ public class GUISoMoXCoreController implements SoMoXCoreController {
     // ---------------------------------
 
     /** Internal list of available somox core controller listenern */
-    // private LinkedList<SoMoXCoreControllerListener> soMoXCoreControllerListenerList = new
+    // private LinkedList<SoMoXCoreControllerListener>
+    // soMoXCoreControllerListenerList = new
     // LinkedList<SoMoXCoreControllerListener>();
 
     /**
@@ -51,7 +52,7 @@ public class GUISoMoXCoreController implements SoMoXCoreController {
     }
 
     public GUISoMoXCoreController(final SoMoXCore soMoXCore) {
-        this.setSoMoXCore(soMoXCore);
+        setSoMoXCore(soMoXCore);
     }
 
     // ---------------------------------
@@ -61,12 +62,11 @@ public class GUISoMoXCoreController implements SoMoXCoreController {
     /**
      * Create a start extraction event and fire it to all controller listeners
      *
-     * @param progressMonitor
-     *            The progress monitor to hand over
+     * @param progressMonitor The progress monitor to hand over
      */
     public void startExtraction(final IProgressMonitor progressMonitor, final HashMap<String, String> preferences) {
         // TODO what if soMoXCore is null?
-        this.soMoXCore.runExtraction(progressMonitor, preferences);
+        soMoXCore.runExtraction(progressMonitor, preferences);
     }
 
     /**
@@ -77,10 +77,10 @@ public class GUISoMoXCoreController implements SoMoXCoreController {
      */
     public AnalysisResult startAnalyze(final String analyzerID, final IProgressMonitor progressMonitor,
             final HashMap<String, String> globalPreferences, final SoMoXConfiguration somoxConfiguration)
-                    throws ModelAnalyzerException {
+            throws ModelAnalyzerException {
         // TODO what if soMoXCore is null?
         try {
-            return this.soMoXCore.runAnalyzer(analyzerID, progressMonitor, globalPreferences, somoxConfiguration);
+            return soMoXCore.runAnalyzer(analyzerID, progressMonitor, globalPreferences, somoxConfiguration);
         } catch (final ModelAnalyzerException e) {
             throw e;
         }
@@ -96,15 +96,15 @@ public class GUISoMoXCoreController implements SoMoXCoreController {
      */
     @Override
     public void setSoMoXCore(final SoMoXCore somoxCore) {
-        this.soMoXCore = somoxCore;
+        soMoXCore = somoxCore;
     }
 
     @Override
     public LinkedList<ConfigurationDefinition> getConfigurationDefinitions() {
-        return this.soMoXCore.getConfigurationDefinitions();
+        return soMoXCore.getConfigurationDefinitions();
     }
 
     public LinkedList<ConfigurationDefinition> getGlobalConfigurationDefinitions() {
-        return this.soMoXCore.getGlobalConfigurationDefinitions();
+        return soMoXCore.getGlobalConfigurationDefinitions();
     }
 }

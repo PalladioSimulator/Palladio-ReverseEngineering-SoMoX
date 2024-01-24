@@ -67,7 +67,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
      *
      * @uml.property name="messages"
      */
-    private final List<Message> messages = new LinkedList<Message>();
+    private final List<Message> messages = new LinkedList<>();
 
     private Root root;
 
@@ -76,7 +76,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
     // ---------------------------------
 
     public SimpleAnalysisResult(final ModelAnalyzer analyzer) {
-        this.modelAnalyzer = analyzer;
+        modelAnalyzer = analyzer;
     }
 
     // ---------------------------------
@@ -97,7 +97,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
      */
     @Override
     public ModelAnalyzer getModelAnalyzer() {
-        return this.modelAnalyzer;
+        return modelAnalyzer;
     }
 
     /**
@@ -106,7 +106,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
      */
     @Override
     public ResultStatus getResultStatus() {
-        return this.resultStatus;
+        return resultStatus;
     }
 
     /**
@@ -115,12 +115,11 @@ public class SimpleAnalysisResult implements AnalysisResult {
      */
     @Override
     public Repository getInternalArchitectureModel() {
-        return this.internalArchitectureModel;
+        return internalArchitectureModel;
     }
 
     /**
-     * @param internalArchitectureModel
-     *            the internalArchitectureModel to set
+     * @param internalArchitectureModel the internalArchitectureModel to set
      * @uml.property name="internalArchitectureModel"
      */
     public void setInternalArchitectureModel(final Repository internalArchitectureModel) {
@@ -133,7 +132,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
      */
     @Override
     public SourceCodeDecoratorRepository getSourceCodeDecoratorRepository() {
-        return this.sourceCodeDecoratorRepository;
+        return sourceCodeDecoratorRepository;
     }
 
     /**
@@ -146,7 +145,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
 
     @Override
     public void addMessage(final Message message) {
-        this.messages.add(message);
+        messages.add(message);
     }
 
     /**
@@ -155,12 +154,11 @@ public class SimpleAnalysisResult implements AnalysisResult {
      */
     @Override
     public List<Message> getMessages() {
-        return this.messages;
+        return messages;
     }
 
     /**
-     * @param status
-     *            the status to set
+     * @param status the status to set
      * @uml.property name="resultStatus"
      */
     public void setResultStatus(final ResultStatus resultStatus) {
@@ -174,7 +172,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
      */
     @Override
     public System getSystemModel() {
-        return this.system;
+        return system;
     }
 
     public void setSystemModel(final System system) {
@@ -183,7 +181,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
 
     @Override
     public QoSAnnotations getQosAnnotationModel() {
-        return this.qosAnnotationModel;
+        return qosAnnotationModel;
     }
 
     public void setQosAnnotationModel(final QoSAnnotations qosAnnotationModel) {
@@ -196,7 +194,7 @@ public class SimpleAnalysisResult implements AnalysisResult {
 
     @Override
     public Allocation getAllocation() {
-        return this.allocation;
+        return allocation;
     }
 
     @Override
@@ -206,6 +204,6 @@ public class SimpleAnalysisResult implements AnalysisResult {
 
     @Override
     public Root getRoot() {
-        return this.root;
+        return root;
     }
 }

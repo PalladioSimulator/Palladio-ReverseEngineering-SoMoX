@@ -35,7 +35,8 @@ import metricvalues.MetricvaluesFactory;
 import metricvalues.MetricvaluesPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
+ * end-user-doc -->
  *
  * @generated
  */
@@ -77,12 +78,13 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
-     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI
-     * value.
+     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+     * package package URI value.
      * <p>
-     * Note: the correct way to create the package is via the static factory method {@link #init
-     * init()}, which also performs initialization of the package, or returns the registered
-     * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Note: the correct way to create the package is via the static factory method
+     * {@link #init init()}, which also performs initialization of the package, or
+     * returns the registered package, if one already exists. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
      *
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see metricvalues.MetricvaluesPackage#eNS_URI
@@ -101,13 +103,14 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
     private static boolean isInited = false;
 
     /**
-     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others
-     * upon which it depends.
+     * Creates, registers, and initializes the <b>Package</b> for this model, and
+     * for any others upon which it depends.
      *
      * <p>
-     * This method is used to initialize {@link MetricvaluesPackage#eINSTANCE} when that field is
-     * accessed. Clients should not invoke it directly. Instead, they should simply access that
-     * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This method is used to initialize {@link MetricvaluesPackage#eINSTANCE} when
+     * that field is accessed. Clients should not invoke it directly. Instead, they
+     * should simply access that field to obtain the package. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
      *
      * @see #eNS_URI
      * @see #createPackageContents()
@@ -167,7 +170,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EClass getComponent() {
-        return this.componentEClass;
+        return componentEClass;
     }
 
     /**
@@ -177,7 +180,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EReference getComponent_SubComponents() {
-        return (EReference) this.componentEClass.getEStructuralFeatures().get(0);
+        return (EReference) componentEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -187,7 +190,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getComponent_Name() {
-        return (EAttribute) this.componentEClass.getEStructuralFeatures().get(1);
+        return (EAttribute) componentEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -197,7 +200,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getComponent_Id() {
-        return (EAttribute) this.componentEClass.getEStructuralFeatures().get(2);
+        return (EAttribute) componentEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -207,7 +210,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EReference getComponent_Classes() {
-        return (EReference) this.componentEClass.getEStructuralFeatures().get(3);
+        return (EReference) componentEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -217,7 +220,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EClass getComponentCandidate() {
-        return this.componentCandidateEClass;
+        return componentCandidateEClass;
     }
 
     /**
@@ -227,7 +230,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EReference getComponentCandidate_MetricValues() {
-        return (EReference) this.componentCandidateEClass.getEStructuralFeatures().get(0);
+        return (EReference) componentCandidateEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -237,7 +240,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EReference getComponentCandidate_FirstComponent() {
-        return (EReference) this.componentCandidateEClass.getEStructuralFeatures().get(1);
+        return (EReference) componentCandidateEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -247,7 +250,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EReference getComponentCandidate_SecondComponent() {
-        return (EReference) this.componentCandidateEClass.getEStructuralFeatures().get(2);
+        return (EReference) componentCandidateEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -257,7 +260,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EClass getIteration() {
-        return this.iterationEClass;
+        return iterationEClass;
     }
 
     /**
@@ -267,7 +270,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EReference getIteration_ComponentCandidates() {
-        return (EReference) this.iterationEClass.getEStructuralFeatures().get(0);
+        return (EReference) iterationEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -277,7 +280,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EReference getIteration_Components() {
-        return (EReference) this.iterationEClass.getEStructuralFeatures().get(1);
+        return (EReference) iterationEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -287,7 +290,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getIteration_Number() {
-        return (EAttribute) this.iterationEClass.getEStructuralFeatures().get(2);
+        return (EAttribute) iterationEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -297,7 +300,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getIteration_CurCompThreshold() {
-        return (EAttribute) this.iterationEClass.getEStructuralFeatures().get(3);
+        return (EAttribute) iterationEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -307,7 +310,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getIteration_CurMergeThreshold() {
-        return (EAttribute) this.iterationEClass.getEStructuralFeatures().get(4);
+        return (EAttribute) iterationEClass.getEStructuralFeatures().get(4);
     }
 
     /**
@@ -317,7 +320,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getIteration_IsMergeIteration() {
-        return (EAttribute) this.iterationEClass.getEStructuralFeatures().get(5);
+        return (EAttribute) iterationEClass.getEStructuralFeatures().get(5);
     }
 
     /**
@@ -327,7 +330,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EClass getMetricValue() {
-        return this.metricValueEClass;
+        return metricValueEClass;
     }
 
     /**
@@ -337,7 +340,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValue_MetricID() {
-        return (EAttribute) this.metricValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute) metricValueEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -347,7 +350,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValue_Value() {
-        return (EAttribute) this.metricValueEClass.getEStructuralFeatures().get(1);
+        return (EAttribute) metricValueEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -357,7 +360,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EClass getMetricValuesModel() {
-        return this.metricValuesModelEClass;
+        return metricValuesModelEClass;
     }
 
     /**
@@ -367,7 +370,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EReference getMetricValuesModel_Iterations() {
-        return (EReference) this.metricValuesModelEClass.getEStructuralFeatures().get(0);
+        return (EReference) metricValuesModelEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -377,7 +380,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_MinCompThreshold() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(1);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -387,7 +390,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_MaxMergeThreshold() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(2);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -397,7 +400,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightLowCoupling() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(3);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -407,7 +410,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightHighCoupling() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(4);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(4);
     }
 
     /**
@@ -417,7 +420,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightLowNameResemblance() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(5);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(5);
     }
 
     /**
@@ -427,7 +430,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightMidNameResemblance() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(6);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(6);
     }
 
     /**
@@ -437,7 +440,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightHighNameResemblance() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(7);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(7);
     }
 
     /**
@@ -447,7 +450,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightInterfaceViolationRelevant() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(8);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(8);
     }
 
     /**
@@ -457,7 +460,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightInterfaceViolationIrrelevant() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(9);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(9);
     }
 
     /**
@@ -467,7 +470,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightHighSLAQ() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(10);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(10);
     }
 
     /**
@@ -477,7 +480,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightLowSLAQ() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(11);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(11);
     }
 
     /**
@@ -487,7 +490,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightPackageMapping() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(12);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(12);
     }
 
     /**
@@ -497,7 +500,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightDirectoryMapping() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(13);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(13);
     }
 
     /**
@@ -507,7 +510,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightDMS() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(14);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(14);
     }
 
     /**
@@ -517,7 +520,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WeightHighestNameResemblance() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(15);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(15);
     }
 
     /**
@@ -527,7 +530,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_WildcardKey() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(16);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(16);
     }
 
     /**
@@ -537,7 +540,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_AdditionalWildcards() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(17);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(17);
     }
 
     /**
@@ -547,7 +550,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_MinMergeThreshold() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(18);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(18);
     }
 
     /**
@@ -557,7 +560,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_MaxComposeThreshold() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(19);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(19);
     }
 
     /**
@@ -567,7 +570,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_ComposeThresholdDecrement() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(20);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(20);
     }
 
     /**
@@ -577,7 +580,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_MergeThresholdDecrement() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(21);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(21);
     }
 
     /**
@@ -587,7 +590,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_ExcludedPrefixesForNameResemblance() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(22);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(22);
     }
 
     /**
@@ -597,7 +600,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public EAttribute getMetricValuesModel_ExcludedSuffixesForNameResemblance() {
-        return (EAttribute) this.metricValuesModelEClass.getEStructuralFeatures().get(23);
+        return (EAttribute) metricValuesModelEClass.getEStructuralFeatures().get(23);
     }
 
     /**
@@ -607,7 +610,7 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
      */
     @Override
     public MetricvaluesFactory getMetricvaluesFactory() {
-        return (MetricvaluesFactory) this.getEFactoryInstance();
+        return (MetricvaluesFactory) getEFactoryInstance();
     }
 
     /**
@@ -618,68 +621,67 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
     private boolean isCreated = false;
 
     /**
-     * Creates the meta-model objects for the package. This method is guarded to have no affect on
-     * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates the meta-model objects for the package. This method is guarded to
+     * have no affect on any invocation but its first. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
     public void createPackageContents() {
-        if (this.isCreated) {
+        if (isCreated) {
             return;
         }
-        this.isCreated = true;
+        isCreated = true;
 
         // Create classes and their features
-        this.componentEClass = this.createEClass(COMPONENT);
-        this.createEReference(this.componentEClass, COMPONENT__SUB_COMPONENTS);
-        this.createEAttribute(this.componentEClass, COMPONENT__NAME);
-        this.createEAttribute(this.componentEClass, COMPONENT__ID);
-        this.createEReference(this.componentEClass, COMPONENT__CLASSES);
+        componentEClass = createEClass(COMPONENT);
+        createEReference(componentEClass, COMPONENT__SUB_COMPONENTS);
+        createEAttribute(componentEClass, COMPONENT__NAME);
+        createEAttribute(componentEClass, COMPONENT__ID);
+        createEReference(componentEClass, COMPONENT__CLASSES);
 
-        this.componentCandidateEClass = this.createEClass(COMPONENT_CANDIDATE);
-        this.createEReference(this.componentCandidateEClass, COMPONENT_CANDIDATE__METRIC_VALUES);
-        this.createEReference(this.componentCandidateEClass, COMPONENT_CANDIDATE__FIRST_COMPONENT);
-        this.createEReference(this.componentCandidateEClass, COMPONENT_CANDIDATE__SECOND_COMPONENT);
+        componentCandidateEClass = createEClass(COMPONENT_CANDIDATE);
+        createEReference(componentCandidateEClass, COMPONENT_CANDIDATE__METRIC_VALUES);
+        createEReference(componentCandidateEClass, COMPONENT_CANDIDATE__FIRST_COMPONENT);
+        createEReference(componentCandidateEClass, COMPONENT_CANDIDATE__SECOND_COMPONENT);
 
-        this.iterationEClass = this.createEClass(ITERATION);
-        this.createEReference(this.iterationEClass, ITERATION__COMPONENT_CANDIDATES);
-        this.createEReference(this.iterationEClass, ITERATION__COMPONENTS);
-        this.createEAttribute(this.iterationEClass, ITERATION__NUMBER);
-        this.createEAttribute(this.iterationEClass, ITERATION__CUR_COMP_THRESHOLD);
-        this.createEAttribute(this.iterationEClass, ITERATION__CUR_MERGE_THRESHOLD);
-        this.createEAttribute(this.iterationEClass, ITERATION__IS_MERGE_ITERATION);
+        iterationEClass = createEClass(ITERATION);
+        createEReference(iterationEClass, ITERATION__COMPONENT_CANDIDATES);
+        createEReference(iterationEClass, ITERATION__COMPONENTS);
+        createEAttribute(iterationEClass, ITERATION__NUMBER);
+        createEAttribute(iterationEClass, ITERATION__CUR_COMP_THRESHOLD);
+        createEAttribute(iterationEClass, ITERATION__CUR_MERGE_THRESHOLD);
+        createEAttribute(iterationEClass, ITERATION__IS_MERGE_ITERATION);
 
-        this.metricValueEClass = this.createEClass(METRIC_VALUE);
-        this.createEAttribute(this.metricValueEClass, METRIC_VALUE__METRIC_ID);
-        this.createEAttribute(this.metricValueEClass, METRIC_VALUE__VALUE);
+        metricValueEClass = createEClass(METRIC_VALUE);
+        createEAttribute(metricValueEClass, METRIC_VALUE__METRIC_ID);
+        createEAttribute(metricValueEClass, METRIC_VALUE__VALUE);
 
-        this.metricValuesModelEClass = this.createEClass(METRIC_VALUES_MODEL);
-        this.createEReference(this.metricValuesModelEClass, METRIC_VALUES_MODEL__ITERATIONS);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__MIN_COMP_THRESHOLD);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__MAX_MERGE_THRESHOLD);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_LOW_COUPLING);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_HIGH_COUPLING);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_LOW_NAME_RESEMBLANCE);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_MID_NAME_RESEMBLANCE);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_HIGH_NAME_RESEMBLANCE);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_INTERFACE_VIOLATION_RELEVANT);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_INTERFACE_VIOLATION_IRRELEVANT);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_HIGH_SLAQ);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_LOW_SLAQ);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_PACKAGE_MAPPING);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_DIRECTORY_MAPPING);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_DMS);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_HIGHEST_NAME_RESEMBLANCE);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__WILDCARD_KEY);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__ADDITIONAL_WILDCARDS);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__MIN_MERGE_THRESHOLD);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__MAX_COMPOSE_THRESHOLD);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__COMPOSE_THRESHOLD_DECREMENT);
-        this.createEAttribute(this.metricValuesModelEClass, METRIC_VALUES_MODEL__MERGE_THRESHOLD_DECREMENT);
-        this.createEAttribute(this.metricValuesModelEClass,
-                METRIC_VALUES_MODEL__EXCLUDED_PREFIXES_FOR_NAME_RESEMBLANCE);
-        this.createEAttribute(this.metricValuesModelEClass,
-                METRIC_VALUES_MODEL__EXCLUDED_SUFFIXES_FOR_NAME_RESEMBLANCE);
+        metricValuesModelEClass = createEClass(METRIC_VALUES_MODEL);
+        createEReference(metricValuesModelEClass, METRIC_VALUES_MODEL__ITERATIONS);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__MIN_COMP_THRESHOLD);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__MAX_MERGE_THRESHOLD);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_LOW_COUPLING);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_HIGH_COUPLING);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_LOW_NAME_RESEMBLANCE);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_MID_NAME_RESEMBLANCE);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_HIGH_NAME_RESEMBLANCE);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_INTERFACE_VIOLATION_RELEVANT);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_INTERFACE_VIOLATION_IRRELEVANT);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_HIGH_SLAQ);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_LOW_SLAQ);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_PACKAGE_MAPPING);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_DIRECTORY_MAPPING);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_DMS);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WEIGHT_HIGHEST_NAME_RESEMBLANCE);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__WILDCARD_KEY);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__ADDITIONAL_WILDCARDS);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__MIN_MERGE_THRESHOLD);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__MAX_COMPOSE_THRESHOLD);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__COMPOSE_THRESHOLD_DECREMENT);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__MERGE_THRESHOLD_DECREMENT);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__EXCLUDED_PREFIXES_FOR_NAME_RESEMBLANCE);
+        createEAttribute(metricValuesModelEClass, METRIC_VALUES_MODEL__EXCLUDED_SUFFIXES_FOR_NAME_RESEMBLANCE);
     }
 
     /**
@@ -690,21 +692,22 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
     private boolean isInitialized = false;
 
     /**
-     * Complete the initialization of the package and its meta-model. This method is guarded to have
-     * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Complete the initialization of the package and its meta-model. This method is
+     * guarded to have no affect on any invocation but its first. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     public void initializePackageContents() {
-        if (this.isInitialized) {
+        if (isInitialized) {
             return;
         }
-        this.isInitialized = true;
+        isInitialized = true;
 
         // Initialize package
-        this.setName(eNAME);
-        this.setNsPrefix(eNS_PREFIX);
-        this.setNsURI(eNS_URI);
+        setName(eNAME);
+        setNsPrefix(eNS_PREFIX);
+        setNsURI(eNS_URI);
 
         // Obtain other dependent packages
         final TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE
@@ -717,142 +720,136 @@ public class MetricvaluesPackageImpl extends EPackageImpl implements Metricvalue
         // Add supertypes to classes
 
         // Initialize classes, features, and operations; add parameters
-        this.initEClass(this.componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE,
+        this.initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getComponent_SubComponents(), this.getComponent(), null, "subComponents", null, 0, -1,
+        this.initEReference(getComponent_SubComponents(), getComponent(), null, "subComponents", null, 0, -1,
                 Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getComponent_Name(), this.ecorePackage.getEString(), "name", null, 0, 1,
-                Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getComponent_Id(), this.ecorePackage.getEString(), "id", null, 0, 1, Component.class,
+        this.initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getComponent_Classes(), theTypesPackage.getType(), null, "classes", null, 0, -1,
+        this.initEAttribute(getComponent_Id(), ecorePackage.getEString(), "id", null, 0, 1, Component.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(getComponent_Classes(), theTypesPackage.getType(), null, "classes", null, 0, -1,
                 Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        this.initEClass(this.componentCandidateEClass, ComponentCandidate.class, "ComponentCandidate", !IS_ABSTRACT,
+        this.initEClass(componentCandidateEClass, ComponentCandidate.class, "ComponentCandidate", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getComponentCandidate_MetricValues(), this.getMetricValue(), null, "metricValues",
-                null, 0, -1, ComponentCandidate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getComponentCandidate_FirstComponent(), this.getComponent(), null, "firstComponent",
-                null, 1, 1, ComponentCandidate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getComponentCandidate_SecondComponent(), this.getComponent(), null, "secondComponent",
-                null, 1, 1, ComponentCandidate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+        this.initEReference(getComponentCandidate_MetricValues(), getMetricValue(), null, "metricValues", null, 0, -1,
+                ComponentCandidate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(getComponentCandidate_FirstComponent(), getComponent(), null, "firstComponent", null, 1, 1,
+                ComponentCandidate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(getComponentCandidate_SecondComponent(), getComponent(), null, "secondComponent", null, 1,
+                1, ComponentCandidate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        this.initEClass(this.iterationEClass, Iteration.class, "Iteration", !IS_ABSTRACT, !IS_INTERFACE,
+        this.initEClass(iterationEClass, Iteration.class, "Iteration", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getIteration_ComponentCandidates(), this.getComponentCandidate(), null,
-                "componentCandidates", null, 0, -1, Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getIteration_Components(), this.getComponent(), null, "components", null, 0, -1,
-                Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getIteration_Number(), this.ecorePackage.getEInt(), "number", null, 0, 1,
+        this.initEReference(getIteration_ComponentCandidates(), getComponentCandidate(), null, "componentCandidates",
+                null, 0, -1, Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(getIteration_Components(), getComponent(), null, "components", null, 0, -1, Iteration.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getIteration_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Iteration.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getIteration_CurCompThreshold(), ecorePackage.getEDouble(), "curCompThreshold", null, 0, 1,
                 Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getIteration_CurCompThreshold(), this.ecorePackage.getEDouble(), "curCompThreshold",
-                null, 0, 1, Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getIteration_CurMergeThreshold(), this.ecorePackage.getEDouble(), "curMergeThreshold",
-                null, 0, 1, Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getIteration_IsMergeIteration(), this.ecorePackage.getEBoolean(), "isMergeIteration",
-                null, 0, 1, Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getIteration_CurMergeThreshold(), ecorePackage.getEDouble(), "curMergeThreshold", null, 0,
+                1, Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getIteration_IsMergeIteration(), ecorePackage.getEBoolean(), "isMergeIteration", null, 0, 1,
+                Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, IS_ORDERED);
 
-        this.initEClass(this.metricValueEClass, MetricValue.class, "MetricValue", !IS_ABSTRACT, !IS_INTERFACE,
+        this.initEClass(metricValueEClass, MetricValue.class, "MetricValue", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        this.initEAttribute(this.getMetricValue_MetricID(), this.ecorePackage.getEString(), "metricID", null, 0, 1,
+        this.initEAttribute(getMetricValue_MetricID(), ecorePackage.getEString(), "metricID", null, 0, 1,
                 MetricValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValue_Value(), this.ecorePackage.getEDouble(), "value", null, 0, 1,
-                MetricValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValue_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, MetricValue.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        this.initEClass(this.metricValuesModelEClass, MetricValuesModel.class, "MetricValuesModel", !IS_ABSTRACT,
+        this.initEClass(metricValuesModelEClass, MetricValuesModel.class, "MetricValuesModel", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getMetricValuesModel_Iterations(), this.getIteration(), null, "iterations", null, 0,
-                -1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_MinCompThreshold(), this.ecorePackage.getEDouble(),
-                "minCompThreshold", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_MaxMergeThreshold(), this.ecorePackage.getEDouble(),
-                "maxMergeThreshold", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightLowCoupling(), this.ecorePackage.getEDouble(),
-                "weightLowCoupling", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightHighCoupling(), this.ecorePackage.getEDouble(),
-                "weightHighCoupling", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightLowNameResemblance(), this.ecorePackage.getEDouble(),
+        this.initEReference(getMetricValuesModel_Iterations(), getIteration(), null, "iterations", null, 0, -1,
+                MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_MinCompThreshold(), ecorePackage.getEDouble(), "minCompThreshold",
+                null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_MaxMergeThreshold(), ecorePackage.getEDouble(), "maxMergeThreshold",
+                null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_WeightLowCoupling(), ecorePackage.getEDouble(), "weightLowCoupling",
+                null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_WeightHighCoupling(), ecorePackage.getEDouble(), "weightHighCoupling",
+                null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_WeightLowNameResemblance(), ecorePackage.getEDouble(),
                 "weightLowNameResemblance", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightMidNameResemblance(), this.ecorePackage.getEDouble(),
+        this.initEAttribute(getMetricValuesModel_WeightMidNameResemblance(), ecorePackage.getEDouble(),
                 "weightMidNameResemblance", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightHighNameResemblance(), this.ecorePackage.getEDouble(),
+        this.initEAttribute(getMetricValuesModel_WeightHighNameResemblance(), ecorePackage.getEDouble(),
                 "weightHighNameResemblance", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightInterfaceViolationRelevant(),
-                this.ecorePackage.getEDouble(), "weightInterfaceViolationRelevant", null, 0, 1, MetricValuesModel.class,
-                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightInterfaceViolationIrrelevant(),
-                this.ecorePackage.getEDouble(), "weightInterfaceViolationIrrelevant", null, 0, 1,
-                MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightHighSLAQ(), this.ecorePackage.getEDouble(),
-                "weightHighSLAQ", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightLowSLAQ(), this.ecorePackage.getEDouble(), "weightLowSLAQ",
-                null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightPackageMapping(), this.ecorePackage.getEDouble(),
-                "weightPackageMapping", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightDirectoryMapping(), this.ecorePackage.getEDouble(),
-                "weightDirectoryMapping", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
+        this.initEAttribute(getMetricValuesModel_WeightInterfaceViolationRelevant(), ecorePackage.getEDouble(),
+                "weightInterfaceViolationRelevant", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightDMS(), this.ecorePackage.getEDouble(), "weightDMS", null, 0,
+        this.initEAttribute(getMetricValuesModel_WeightInterfaceViolationIrrelevant(), ecorePackage.getEDouble(),
+                "weightInterfaceViolationIrrelevant", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_WeightHighSLAQ(), ecorePackage.getEDouble(), "weightHighSLAQ", null, 0,
                 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WeightHighestNameResemblance(), this.ecorePackage.getEDouble(),
+        this.initEAttribute(getMetricValuesModel_WeightLowSLAQ(), ecorePackage.getEDouble(), "weightLowSLAQ", null, 0,
+                1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_WeightPackageMapping(), ecorePackage.getEDouble(),
+                "weightPackageMapping", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_WeightDirectoryMapping(), ecorePackage.getEDouble(),
+                "weightDirectoryMapping", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_WeightDMS(), ecorePackage.getEDouble(), "weightDMS", null, 0, 1,
+                MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_WeightHighestNameResemblance(), ecorePackage.getEDouble(),
                 "weightHighestNameResemblance", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_WildcardKey(), this.ecorePackage.getEString(), "wildcardKey",
-                null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_AdditionalWildcards(), this.ecorePackage.getEString(),
+        this.initEAttribute(getMetricValuesModel_WildcardKey(), ecorePackage.getEString(), "wildcardKey", null, 0, 1,
+                MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_AdditionalWildcards(), ecorePackage.getEString(),
                 "additionalWildcards", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_MinMergeThreshold(), this.ecorePackage.getEDouble(),
-                "minMergeThreshold", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_MaxComposeThreshold(), this.ecorePackage.getEDouble(),
+        this.initEAttribute(getMetricValuesModel_MinMergeThreshold(), ecorePackage.getEDouble(), "minMergeThreshold",
+                null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_MaxComposeThreshold(), ecorePackage.getEDouble(),
                 "maxComposeThreshold", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_ComposeThresholdDecrement(), this.ecorePackage.getEDouble(),
+        this.initEAttribute(getMetricValuesModel_ComposeThresholdDecrement(), ecorePackage.getEDouble(),
                 "composeThresholdDecrement", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_MergeThresholdDecrement(), this.ecorePackage.getEDouble(),
+        this.initEAttribute(getMetricValuesModel_MergeThresholdDecrement(), ecorePackage.getEDouble(),
                 "mergeThresholdDecrement", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_ExcludedPrefixesForNameResemblance(),
-                this.ecorePackage.getEString(), "excludedPrefixesForNameResemblance", null, 0, 1,
-                MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getMetricValuesModel_ExcludedSuffixesForNameResemblance(),
-                this.ecorePackage.getEString(), "excludedSuffixesForNameResemblance", null, 0, 1,
-                MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_ExcludedPrefixesForNameResemblance(), ecorePackage.getEString(),
+                "excludedPrefixesForNameResemblance", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(getMetricValuesModel_ExcludedSuffixesForNameResemblance(), ecorePackage.getEString(),
+                "excludedSuffixesForNameResemblance", null, 0, 1, MetricValuesModel.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
-        this.createResource(eNS_URI);
+        createResource(eNS_URI);
     }
 
 } // MetricvaluesPackageImpl

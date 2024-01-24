@@ -48,17 +48,17 @@ public class NameResemblanceTab extends MetricTab {
      */
     @Override
     public void createControl(final Composite parent) {
-        this.control = new Composite(parent, SWT.BORDER);
-        this.control.setLayout(new FillLayout(SWT.HORIZONTAL));
+        control = new Composite(parent, SWT.BORDER);
+        control.setLayout(new FillLayout(SWT.HORIZONTAL));
         {
-            final Group grpPrefixes = new Group(this.control, SWT.BORDER);
+            final Group grpPrefixes = new Group(control, SWT.BORDER);
             grpPrefixes.setLayout(new FillLayout(SWT.VERTICAL));
             grpPrefixes.setText("Prefixes");
             {
                 final Composite composite = new Composite(grpPrefixes, SWT.NONE);
                 {
-                    this.prefixList = new List(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-                    this.prefixList.setBounds(0, 0, 314, 205);
+                    prefixList = new List(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+                    prefixList.setBounds(0, 0, 314, 205);
                 }
             }
             {
@@ -72,8 +72,7 @@ public class NameResemblanceTab extends MetricTab {
                     prefixRemoveButton.addMouseListener(new MouseAdapter() {
                         @Override
                         public void mouseDown(final MouseEvent e) {
-                            NameResemblanceTab.this.prefixList
-                                    .remove(NameResemblanceTab.this.prefixList.getFocusIndex());
+                            prefixList.remove(prefixList.getFocusIndex());
                             NameResemblanceTab.this.setDirty(true);
                             NameResemblanceTab.this.updateLaunchConfigurationDialog();
                         }
@@ -81,21 +80,21 @@ public class NameResemblanceTab extends MetricTab {
                     prefixRemoveButton.setText("Remove selected");
                 }
                 {
-                    this.prefixText = new Text(composite, SWT.BORDER);
-                    this.prefixText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+                    prefixText = new Text(composite, SWT.BORDER);
+                    prefixText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
                 }
                 {
                     final Button prefixAddButton = new Button(composite, SWT.NONE);
                     prefixAddButton.addMouseListener(new MouseAdapter() {
                         @Override
                         public void mouseDown(final MouseEvent e) {
-                            final String text = NameResemblanceTab.this.prefixText.getText();
-                            if (text != null && !text.equals("")) {
-                                NameResemblanceTab.this.prefixList.add(text);
+                            final String text = prefixText.getText();
+                            if ((text != null) && !"".equals(text)) {
+                                prefixList.add(text);
                                 NameResemblanceTab.this.setDirty(true);
                                 NameResemblanceTab.this.updateLaunchConfigurationDialog();
                             }
-                            NameResemblanceTab.this.prefixText.setText("");
+                            prefixText.setText("");
                         }
                     });
                     prefixAddButton.setText("Add prefix");
@@ -103,14 +102,14 @@ public class NameResemblanceTab extends MetricTab {
             }
         }
         {
-            final Group grpSuffixes = new Group(this.control, SWT.BORDER);
+            final Group grpSuffixes = new Group(control, SWT.BORDER);
             grpSuffixes.setLayout(new FillLayout(SWT.VERTICAL));
             grpSuffixes.setText("Suffixes");
             {
                 final Composite composite = new Composite(grpSuffixes, SWT.NONE);
                 {
-                    this.suffixList = new List(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-                    this.suffixList.setBounds(0, 0, 314, 205);
+                    suffixList = new List(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+                    suffixList.setBounds(0, 0, 314, 205);
                 }
             }
             {
@@ -124,8 +123,7 @@ public class NameResemblanceTab extends MetricTab {
                     suffixRemoveButton.addMouseListener(new MouseAdapter() {
                         @Override
                         public void mouseDown(final MouseEvent e) {
-                            NameResemblanceTab.this.suffixList
-                                    .remove(NameResemblanceTab.this.suffixList.getFocusIndex());
+                            suffixList.remove(suffixList.getFocusIndex());
                             NameResemblanceTab.this.setDirty(true);
                             NameResemblanceTab.this.updateLaunchConfigurationDialog();
                         }
@@ -133,21 +131,21 @@ public class NameResemblanceTab extends MetricTab {
                     suffixRemoveButton.setText("Remove selected");
                 }
                 {
-                    this.suffixText = new Text(composite, SWT.BORDER);
-                    this.suffixText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+                    suffixText = new Text(composite, SWT.BORDER);
+                    suffixText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
                 }
                 {
                     final Button suffixAddButton = new Button(composite, SWT.NONE);
                     suffixAddButton.addMouseListener(new MouseAdapter() {
                         @Override
                         public void mouseDown(final MouseEvent e) {
-                            final String text = NameResemblanceTab.this.suffixText.getText();
-                            if (text != null && !text.equals("")) {
-                                NameResemblanceTab.this.suffixList.add(text);
+                            final String text = suffixText.getText();
+                            if ((text != null) && !"".equals(text)) {
+                                suffixList.add(text);
                                 NameResemblanceTab.this.setDirty(true);
                                 NameResemblanceTab.this.updateLaunchConfigurationDialog();
                             }
-                            NameResemblanceTab.this.suffixText.setText("");
+                            suffixText.setText("");
                         }
                     });
                     suffixAddButton.setText("Add suffix");
@@ -167,7 +165,7 @@ public class NameResemblanceTab extends MetricTab {
 
     @Override
     public Control getControl() {
-        return this.control;
+        return control;
     }
 
     @Override
@@ -198,22 +196,22 @@ public class NameResemblanceTab extends MetricTab {
             final String prefixString = configuration.getAttribute(NAME_RESEMBLANCE_CONFIGURATION_EXCLUDED_PREFIXES,
                     "");
 
-            StringTokenizer tokenizer = new StringTokenizer(suffixString, this.DELIMITER);
+            StringTokenizer tokenizer = new StringTokenizer(suffixString, DELIMITER);
             int tokenCount = tokenizer.countTokens();
             final String[] suffixes = new String[tokenCount];
             for (int i = 0; i < tokenCount; i++) {
                 suffixes[i] = (tokenizer.nextToken());
             }
 
-            tokenizer = new StringTokenizer(prefixString, this.DELIMITER);
+            tokenizer = new StringTokenizer(prefixString, DELIMITER);
             tokenCount = tokenizer.countTokens();
             final String[] prefixes = new String[tokenCount];
             for (int i = 0; i < tokenCount; i++) {
                 prefixes[i] = (tokenizer.nextToken());
             }
 
-            this.prefixList.setItems(prefixes);
-            this.suffixList.setItems(suffixes);
+            prefixList.setItems(prefixes);
+            suffixList.setItems(suffixes);
         } catch (final CoreException e) {
 
         }
@@ -231,20 +229,20 @@ public class NameResemblanceTab extends MetricTab {
 
     @Override
     public void performApply(final ILaunchConfigurationWorkingCopy configuration) {
-        final String[] prefixes = this.prefixList.getItems();
-        final String[] suffixes = this.suffixList.getItems();
+        final String[] prefixes = prefixList.getItems();
+        final String[] suffixes = suffixList.getItems();
 
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         for (final String prefixe : prefixes) {
             buffer.append(prefixe);
-            buffer.append(this.DELIMITER);
+            buffer.append(DELIMITER);
         }
         configuration.setAttribute(NAME_RESEMBLANCE_CONFIGURATION_EXCLUDED_PREFIXES, buffer.toString());
 
-        buffer = new StringBuffer();
+        buffer = new StringBuilder();
         for (final String suffixe : suffixes) {
             buffer.append(suffixe);
-            buffer.append(this.DELIMITER);
+            buffer.append(DELIMITER);
         }
         configuration.setAttribute(NAME_RESEMBLANCE_CONFIGURATION_EXCLUDED_SUFFIXES, buffer.toString());
     }

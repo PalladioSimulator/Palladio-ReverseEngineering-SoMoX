@@ -15,7 +15,7 @@ public class TotalTypesCount extends AbstractCountingMetric {
     protected void internalComputeDirected(final ClusteringRelation relationToCompute) {
         final Set<ConcreteClassifier> allClasses = this.calculateUnion(relationToCompute.getSourceComponent(),
                 relationToCompute.getTargetComponent());
-        relationToCompute.setResultMetric(this.getMID(), allClasses.size());
+        relationToCompute.setResultMetric(getMID(), allClasses.size());
     }
 
     @Override

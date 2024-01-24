@@ -22,8 +22,8 @@ import org.palladiosimulator.pcm.repository.RepositoryFactory;
 import org.palladiosimulator.pcm.repository.RequiredRole;
 import org.palladiosimulator.pcm.repository.Role;
 import org.somox.analyzer.AnalysisResult;
-import org.somox.analyzer.simplemodelanalyzer.builder.util.InterfacePortBuilderHelper;
 import org.somox.analyzer.simplemodelanalyzer.builder.util.EndpointInformation;
+import org.somox.analyzer.simplemodelanalyzer.builder.util.InterfacePortBuilderHelper;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.metamodeladdition.Root;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
@@ -32,9 +32,9 @@ import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
 
 /**
- * Idea: All interfaces which are not required by internal interfaces (and consequently captured in
- * assembly connectors) are exposed as provided interfaces (interface ports) of the composite
- * component. <br>
+ * Idea: All interfaces which are not required by internal interfaces (and
+ * consequently captured in assembly connectors) are exposed as provided
+ * interfaces (interface ports) of the composite component. <br>
  * Additionally creates provided and required delegation connectors.
  *
  * @author Klaus Krogmann
@@ -53,62 +53,60 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
     }
 
     /**
-     * Strategy: Create a new provided role for all inner interfaces which are not associated in
-     * assembly connectors. Additionally creates provided and required delegation connectors.
+     * Strategy: Create a new provided role for all inner interfaces which are not
+     * associated in assembly connectors. Additionally creates provided and required
+     * delegation connectors.
      *
-     * @param componentLink
-     *            The composite component for which to build interface ports
+     * @param componentLink The composite component for which to build interface
+     *                      ports
      */
     @Override
     public List<OperationProvidedRole> buildProvidedRole(final ComponentImplementingClassesLink componentLink) {
         assert (componentLink.isIsCompositeComponent());
 
-        final List<OperationProvidedRole> roles = new LinkedList<OperationProvidedRole>();
+        final List<OperationProvidedRole> roles = new LinkedList<>();
 
-        if (componentLink.getComponent() instanceof ComposedStructure) {
-            final ComposedStructure resultCompositeComponent = (ComposedStructure) componentLink.getComponent();
-
-            final Iterable<EndpointInformation> interfaceLinksNotUsedInConnectors = InterfacePortBuilderHelper
-                    .collectInformationOnNonBoundInterfaces(componentLink, resultCompositeComponent, true);
-
-            // build each interface + connector
-            for (final EndpointInformation currentInterfaceLink : interfaceLinksNotUsedInConnectors) {
-                roles.add(this.createProvidedRoleAndConnector(componentLink, currentInterfaceLink));
-            }
-
-        } else {
+        if (!(componentLink.getComponent() instanceof ComposedStructure)) {
             throw new IllegalArgumentException("Only composite components should use this builder.");
+        }
+        final ComposedStructure resultCompositeComponent = (ComposedStructure) componentLink.getComponent();
+
+        final Iterable<EndpointInformation> interfaceLinksNotUsedInConnectors = InterfacePortBuilderHelper
+                .collectInformationOnNonBoundInterfaces(componentLink, resultCompositeComponent, true);
+
+        // build each interface + connector
+        for (final EndpointInformation currentInterfaceLink : interfaceLinksNotUsedInConnectors) {
+            roles.add(createProvidedRoleAndConnector(componentLink, currentInterfaceLink));
         }
 
         return roles;
     }
 
     /**
-     * Strategy: Create a new interface port for all inner interfaces which are not associated in
-     * assembly connectors. Additionally creates provided and required delegation connectors.
+     * Strategy: Create a new interface port for all inner interfaces which are not
+     * associated in assembly connectors. Additionally creates provided and required
+     * delegation connectors.
      *
-     * @param componentLink
-     *            The composite component for which to build interface ports
+     * @param componentLink The composite component for which to build interface
+     *                      ports
      */
     @Override
     public List<OperationRequiredRole> buildRequiredRole(final ComponentImplementingClassesLink componentLink) {
         assert (componentLink.isIsCompositeComponent());
 
-        final List<OperationRequiredRole> roles = new LinkedList<OperationRequiredRole>();
+        final List<OperationRequiredRole> roles = new LinkedList<>();
 
-        if (componentLink.getComponent() instanceof ComposedStructure) {
-            final ComposedStructure resultCompositeComponent = (ComposedStructure) componentLink.getComponent();
-
-            final Iterable<EndpointInformation> interfaceLinksNotUsedInConnectors = InterfacePortBuilderHelper
-                    .collectInformationOnNonBoundInterfaces(componentLink, resultCompositeComponent, false);
-
-            // build each interface + connector
-            for (final EndpointInformation currentInterfaceLink : interfaceLinksNotUsedInConnectors) {
-                roles.add(this.createRequiredRoleAndConnector(componentLink, currentInterfaceLink));
-            }
-
-        } else {
+        if (!(componentLink.getComponent() instanceof ComposedStructure)) {
             throw new IllegalArgumentException("Only composite components should use this builder.");
+        }
+        final ComposedStructure resultCompositeComponent = (ComposedStructure) componentLink.getComponent();
+
+        final Iterable<EndpointInformation> interfaceLinksNotUsedInConnectors = InterfacePortBuilderHelper
+                .collectInformationOnNonBoundInterfaces(componentLink, resultCompositeComponent, false);
+
+        // build each interface + connector
+        for (final EndpointInformation currentInterfaceLink : interfaceLinksNotUsedInConnectors) {
+            roles.add(createRequiredRoleAndConnector(componentLink, currentInterfaceLink));
         }
 
         return roles;
@@ -129,7 +127,7 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
         }
 
         final Interface searchedInterface = subComponentInformation.getInterfaceSourceCodeLink().getInterface();
-        OperationProvidedRole providedRole = this.findProvidedRoleInComponent(compositeComponentLink.getComponent(),
+        OperationProvidedRole providedRole = findProvidedRoleInComponent(compositeComponentLink.getComponent(),
                 searchedInterface);
 
         // add a role for the interface if it does not exist yet
@@ -137,7 +135,7 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
 
             providedRole = RepositoryFactory.eINSTANCE.createOperationProvidedRole();
 
-            providedRole.setEntityName(this.componentTypeNaming.createProvidedPortName(searchedInterface,
+            providedRole.setEntityName(componentTypeNaming.createProvidedPortName(searchedInterface,
                     compositeComponentLink.getComponent()));
 
             if (searchedInterface instanceof OperationInterface) {
@@ -154,7 +152,8 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
             // Source code decorator:
             // Create interface source code link for parent class.
             // TODO: Check if this really makes sense. The method already operates on a
-            // SourceCodeLink (see above: subComponentInformation.getInterfaceSourceCodeLink())
+            // SourceCodeLink (see above:
+            // subComponentInformation.getInterfaceSourceCodeLink())
             if (subComponentInformation.getInterfaceSourceCodeLink().getInterface() != null) {
                 final InterfaceSourceCodeLink newInterfaceLink = SourcecodedecoratorFactory.eINSTANCE
                         .createInterfaceSourceCodeLink();
@@ -192,7 +191,7 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
             final EndpointInformation subComponentInformation) {
 
         OperationRequiredRole requiredRole = null;
-        final Set<Interface> allRequiredInterfaces = this.collectInterfacesForComponent(compositeComponentLink, false);
+        final Set<Interface> allRequiredInterfaces = collectInterfacesForComponent(compositeComponentLink, false);
 
         final Interface linkedInterface = subComponentInformation.getInterfaceSourceCodeLink().getInterface();
 
@@ -204,7 +203,7 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
                 logger.warn("Source code decorator: InterfaceLink had no interface or class set.");
             } else if (linkedInterface instanceof OperationInterface) {
                 requiredRole.setRequiredInterface__OperationRequiredRole((OperationInterface) linkedInterface);
-                requiredRole.setEntityName(this.componentTypeNaming.createRequiredPortName(
+                requiredRole.setEntityName(componentTypeNaming.createRequiredPortName(
                         subComponentInformation.getInterfaceSourceCodeLink().getInterface(),
                         compositeComponentLink.getComponent()));
                 // requiredRole.setDocumentation(subComponentInformation.getInterfaceSourceCodeLink().getInterface().getEntityName());
@@ -230,8 +229,7 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
             // query existing port
             for (final RequiredRole currentRequiredRole : compositeComponentLink.getComponent()
                     .getRequiredRoles_InterfaceRequiringEntity()) {
-                if (currentRequiredRole instanceof OperationRequiredRole) {
-                    final OperationRequiredRole opReqRole = (OperationRequiredRole) currentRequiredRole;
+                if (currentRequiredRole instanceof final OperationRequiredRole opReqRole) {
                     if (opReqRole.getRequiredInterface__OperationRequiredRole().equals(linkedInterface)) {
                         requiredRole = opReqRole;
                     }
@@ -242,7 +240,8 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
                 }
             }
         }
-        // create required delegation connector -- even for already created required ports (can be
+        // create required delegation connector -- even for already created required
+        // ports (can be
         // used by multiple components)
         if (requiredRole != null) {
             this.createDelegationConnector(compositeComponentLink, requiredRole, subComponentInformation);
@@ -257,14 +256,11 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
     /**
      * Creates a new provides delegation connector.
      *
-     * @param compositeComponentLink
-     *            Outer Composite component
-     * @param outerRole
-     *            newly added outer port
-     * @param subComponentInformation
-     *            information on the inner component instance and its ports
-     * @param isProvidedDelegationConnector
-     *            switch provided and required
+     * @param compositeComponentLink        Outer Composite component
+     * @param outerRole                     newly added outer port
+     * @param subComponentInformation       information on the inner component
+     *                                      instance and its ports
+     * @param isProvidedDelegationConnector switch provided and required
      */
     private void createDelegationConnector(final ComponentImplementingClassesLink compositeComponentLink,
             final OperationProvidedRole outerRole, final EndpointInformation subComponentInformation) {
@@ -286,20 +282,17 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
         } else {
             logger.warn("Role not supported yet: " + innerRole.getClass().getSimpleName());
         }
-        this.componentTypeNaming.createProvidedDelegationConnectorName(delegationConnector);
+        componentTypeNaming.createProvidedDelegationConnectorName(delegationConnector);
     }
 
     /**
      * Creates a new required delegation connector.
      *
-     * @param compositeComponentLink
-     *            Outer Composite component
-     * @param outerRole
-     *            newly added outer port
-     * @param subComponentInformation
-     *            information on the inner component instance and its ports
-     * @param isProvidedDelegationConnector
-     *            switch provided and required
+     * @param compositeComponentLink        Outer Composite component
+     * @param outerRole                     newly added outer port
+     * @param subComponentInformation       information on the inner component
+     *                                      instance and its ports
+     * @param isProvidedDelegationConnector switch provided and required
      */
     private void createDelegationConnector(final ComponentImplementingClassesLink compositeComponentLink,
             final OperationRequiredRole outerRole, final EndpointInformation subComponentInformation) {
@@ -318,7 +311,7 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
         } else {
             logger.warn("Role not supported yet: " + innerRole.getClass().getSimpleName());
         }
-        this.componentTypeNaming.createRequiredDelegationConnectorName(delegationConnector);
+        componentTypeNaming.createRequiredDelegationConnectorName(delegationConnector);
         ((CompositeComponent) compositeComponentLink.getComponent()).getConnectors__ComposedStructure()
                 .add(delegationConnector);
     }
@@ -326,10 +319,8 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
     /**
      * Try to find a provided role for a specific interface in a component.
      *
-     * @param component
-     *            The component to check
-     * @param searchedInterface
-     *            The interface to search for.
+     * @param component         The component to check
+     * @param searchedInterface The interface to search for.
      * @return
      */
     private OperationProvidedRole findProvidedRoleInComponent(final RepositoryComponent component,
@@ -337,14 +328,10 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
 
         for (final ProvidedRole existingRole : component.getProvidedRoles_InterfaceProvidingEntity()) {
 
-            if (existingRole instanceof OperationProvidedRole) {
-
-                final OperationProvidedRole opProvRole = (OperationProvidedRole) existingRole;
-                if (opProvRole.getProvidedInterface__OperationProvidedRole() != null
-                        && opProvRole.getProvidedInterface__OperationProvidedRole().equals(searchedInterface)) {
-                    return opProvRole;
-                }
-
+            if ((existingRole instanceof final OperationProvidedRole opProvRole)
+                    && ((opProvRole.getProvidedInterface__OperationProvidedRole() != null)
+                            && opProvRole.getProvidedInterface__OperationProvidedRole().equals(searchedInterface))) {
+                return opProvRole;
             }
 
         }
@@ -355,15 +342,15 @@ public class NonDuplicatingInterfacePortBuilder extends AbstractBuilder implemen
     /**
      * Collects all interfaces of a given component.
      *
-     * @param compositeComponentLink
-     *            component for which to search existing interfaces
-     * @param collectProvided
-     *            if set to true collects provided interface; required interfaces otherwise
+     * @param compositeComponentLink component for which to search existing
+     *                               interfaces
+     * @param collectProvided        if set to true collects provided interface;
+     *                               required interfaces otherwise
      * @return
      */
     private Set<Interface> collectInterfacesForComponent(final ComponentImplementingClassesLink compositeComponentLink,
             final boolean collectProvided) {
-        final Set<Interface> returnInterfaces = new HashSet<Interface>();
+        final Set<Interface> returnInterfaces = new HashSet<>();
 
         EList<InterfaceSourceCodeLink> ifLinks;
         if (collectProvided) {

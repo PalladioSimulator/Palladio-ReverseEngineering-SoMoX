@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 import org.apache.log4j.Logger;
 import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.emftext.language.java.types.Type;
-import org.jgrapht.DirectedGraph;
+import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.kdmhelper.metamodeladdition.Root;
@@ -23,17 +23,12 @@ import org.somox.metrics.helper.ComponentToImplementingClassesHelper;
 import org.somox.metrics.tabs.MetricTab;
 import org.somox.metrics.tabs.NameResemblanceTab;
 
-import com.wcohen.ss.JaroWinkler;
-import com.wcohen.ss.api.StringDistance;
-
 class NamePair {
     private final Type class1;
     private final Type class2;
 
     public NamePair(final Type class1, final Type class2) {
-        super();
-
-        if (class1 == null || class2 == null) {
+        if ((class1 == null) || (class2 == null)) {
             throw new IllegalArgumentException("Names must not be null");
         }
         this.class1 = class1;
@@ -47,7 +42,7 @@ class NamePair {
      */
     @Override
     public int hashCode() {
-        return this.class1.hashCode() ^ this.class2.hashCode();
+        return class1.hashCode() ^ class2.hashCode();
     }
 
     /*
@@ -60,23 +55,20 @@ class NamePair {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
-            return false;
-        }
-        if (this.getClass() != obj.getClass()) {
+        if ((obj == null) || (this.getClass() != obj.getClass())) {
             return false;
         }
         final NamePair other = (NamePair) obj;
-        return this.class1 == other.class1 && this.class2 == other.class2
-                || this.class2 == other.class1 && this.class1 == other.class2;
+        return ((class1 == other.class1) && (class2 == other.class2))
+                || ((class2 == other.class1) && (class1 == other.class2));
     }
 }
 
 /**
- * NameResemblance metric. Counts for all {@link Type}s in any of the two component candidates the
- * similar names and divides it by the total amount of names. The names are trimmed before they are
- * compared, i.e., their prefixes and suffixes are removed as configured on this metric's
- * configuration tab.
+ * NameResemblance metric. Counts for all {@link Type}s in any of the two
+ * component candidates the similar names and divides it by the total amount of
+ * names. The names are trimmed before they are compared, i.e., their prefixes
+ * and suffixes are removed as configured on this metric's configuration tab.
  *
  * @author Grischa Liebel, Steffen Becker
  *
@@ -87,8 +79,6 @@ public class NameResemblance extends AbstractMetric {
     private static final String DELIMITER = "��";
 
     private static Logger logger = Logger.getLogger(NameResemblance.class);
-
-    private static final StringDistance resemblanceMetric = new JaroWinkler();
 
     /**
      * Cache the pairwise computed name resemblances for a given pair of strings
@@ -109,30 +99,31 @@ public class NameResemblance extends AbstractMetric {
      * (non-Javadoc)
      *
      * @see org.somox.metrics.Metric#initialize(de.fzi.gast.core.Root,
-     * org.somox.configuration.SoMoXConfiguration, java.util.Map, org.jgrapht.DirectedGraph)
+     * org.somox.configuration.SoMoXConfiguration, java.util.Map,
+     * org.jgrapht.DirectedGraph)
      */
     @Override
     public void initialize(final Root gastModel, final SoMoXConfiguration somoxConfiguration,
             final Map<MetricID, IMetric> allMetrics,
-            final DirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph,
+            final DefaultDirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph,
             final ComponentToImplementingClassesHelper componentToImplementingClassesHelper) {
         super.initialize(gastModel, somoxConfiguration, allMetrics, accessGraph, componentToImplementingClassesHelper);
-        this.nameResemblanceMap = new HashMap<NamePair, Double>();
+        nameResemblanceMap = new HashMap<>();
 
-        this.excludedPrefixes = this.tokenizeString(somoxConfiguration.getExcludedPrefixesForNameResemblance());
-        this.excludedSuffixes = this.tokenizeString(somoxConfiguration.getExcludedSuffixesForNameResemblance());
+        excludedPrefixes = tokenizeString(somoxConfiguration.getExcludedPrefixesForNameResemblance());
+        excludedSuffixes = tokenizeString(somoxConfiguration.getExcludedSuffixesForNameResemblance());
 
         for (final Type class1 : accessGraph.vertexSet()) {
             for (final Type class2 : accessGraph.vertexSet()) {
-                Double resemblance = this.nameResemblanceMap.get(new NamePair(class1, class2));
+                Double resemblance = nameResemblanceMap.get(new NamePair(class1, class2));
                 if (resemblance == null) {
-                    resemblance = resemblanceMetric.score(this.trimString(KDMHelper.getName(class1)),
-                            this.trimString(KDMHelper.getName(class2)));
-                    this.nameResemblanceMap.put(new NamePair(class1, class2), resemblance);
+                    resemblance = JaroWinkler.distance(trimString(KDMHelper.getName(class1)),
+                            trimString(KDMHelper.getName(class2)));
+                    nameResemblanceMap.put(new NamePair(class1, class2), resemblance);
                 }
             }
         }
-        this.nameResemblanceMap = Collections.unmodifiableMap(this.nameResemblanceMap);
+        nameResemblanceMap = Collections.unmodifiableMap(nameResemblanceMap);
     }
 
     /**
@@ -141,18 +132,20 @@ public class NameResemblance extends AbstractMetric {
     @Override
     protected void internalComputeDirected(final ClusteringRelation relationToCompute) {
 
-        // TODO: Klaus, check for plausibility. Rationale is that the inner classes' names of a
+        // TODO: Klaus, check for plausibility. Rationale is that the inner classes'
+        // names of a
         // composite component
-        // should not be compared for their names, otherwise we end up with a composite component
+        // should not be compared for their names, otherwise we end up with a composite
+        // component
         // containing everything
         // in the end...
         // if (componentCandidate1.isCompositeComponent() ||
         // componentCandidate2.isCompositeComponent())
         // return 0.0;
 
-        final Set<ConcreteClassifier> classes1 = this.getComponentToClassHelper()
+        final Set<ConcreteClassifier> classes1 = getComponentToClassHelper()
                 .deriveImplementingClasses(relationToCompute.getSourceComponent());
-        final Set<ConcreteClassifier> classes2 = this.getComponentToClassHelper()
+        final Set<ConcreteClassifier> classes2 = getComponentToClassHelper()
                 .deriveImplementingClasses(relationToCompute.getTargetComponent());
 
         final int totalCompares = classes1.size() * classes2.size();
@@ -160,7 +153,7 @@ public class NameResemblance extends AbstractMetric {
         double nameResemblance = 0.0;
         for (final Type class1 : classes1) {
             for (final Type class2 : classes2) {
-                final Double resemblance = this.nameResemblanceMap.get(new NamePair(class1, class2));
+                final Double resemblance = nameResemblanceMap.get(new NamePair(class1, class2));
                 if (resemblance == null) {
                     throw new RuntimeException("This should not happen as all classes are precomputed");
                 }
@@ -169,11 +162,11 @@ public class NameResemblance extends AbstractMetric {
         }
         if (totalCompares == 0) {
             logger.debug("Resemblance Map had a size of 0");
-            relationToCompute.setResultMetric(this.getMID(), 0.0);
+            relationToCompute.setResultMetric(getMID(), 0.0);
             return;
         }
 
-        relationToCompute.setResultMetric(this.getMID(), nameResemblance / totalCompares);
+        relationToCompute.setResultMetric(getMID(), nameResemblance / totalCompares);
     }
 
     /**
@@ -201,27 +194,24 @@ public class NameResemblance extends AbstractMetric {
     }
 
     /**
-     * Helper interface for a strategy to manipulate a string in a certain way. Used to encapsulate
-     * the strategies to remove prefixes and suffixes
+     * Helper interface for a strategy to manipulate a string in a certain way. Used
+     * to encapsulate the strategies to remove prefixes and suffixes
      */
     private interface IStringChangerStrategy {
         /**
-         * @param s
-         *            String to manipulate
-         * @param parameter
-         *            Strategy specific parameter
-         * @return true if the given string s needs to be manipulated under the given parameter
+         * @param s         String to manipulate
+         * @param parameter Strategy specific parameter
+         * @return true if the given string s needs to be manipulated under the given
+         *         parameter
          */
-        public boolean isAffected(String s, String parameter);
+        boolean isAffected(String s, String parameter);
 
         /**
-         * @param s
-         *            String to manipulate
-         * @param parameter
-         *            Strategy specific parameter
+         * @param s         String to manipulate
+         * @param parameter Strategy specific parameter
          * @return The modified string according to this strategy
          */
-        public String modify(String s, String parameter);
+        String modify(String s, String parameter);
     }
 
     /**
@@ -256,25 +246,15 @@ public class NameResemblance extends AbstractMetric {
         }
     };
 
-    private Set<String> collectAllSimpleNames(final Set<Type> classes) {
-        final Set<String> allSimpleTrimmedNames = new HashSet<String>();
-        for (final Type clazz : classes) {
-            allSimpleTrimmedNames.add(this.trimString(KDMHelper.getName(clazz)));
-        }
-        return allSimpleTrimmedNames;
-    }
-
     /**
      * Helper method to remove all prefixes and all suffixes from a string
      *
-     * @param name
-     *            string to trim
+     * @param name string to trim
      * @return trimmed string
      */
     private String trimString(final String name) {
-        String result = this.modifyString(name, this.excludedPrefixes, prefixRemover);
-        result = this.modifyString(name, this.excludedSuffixes, suffixRemover);
-        return result;
+        modifyString(name, excludedPrefixes, prefixRemover);
+        return modifyString(name, excludedSuffixes, suffixRemover);
     }
 
     private String modifyString(String name, final Set<String> parameters, final IStringChangerStrategy strategy) {
@@ -293,7 +273,7 @@ public class NameResemblance extends AbstractMetric {
     }
 
     private Set<String> tokenizeString(final String nameResemblancePrefixString) {
-        final HashSet<String> nameResemblancePrefixes = new HashSet<String>();
+        final HashSet<String> nameResemblancePrefixes = new HashSet<>();
         final StringTokenizer tokenizer = new StringTokenizer(nameResemblancePrefixString, DELIMITER);
 
         while (tokenizer.hasMoreTokens()) {

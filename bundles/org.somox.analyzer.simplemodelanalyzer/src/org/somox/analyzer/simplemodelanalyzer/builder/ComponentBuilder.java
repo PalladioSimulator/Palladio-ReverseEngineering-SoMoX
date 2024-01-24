@@ -29,8 +29,8 @@ import org.somox.sourcecodedecorator.FileLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
 
 /**
- * Builder for SAMM structures. Takes care of updating the source code decorator. The core builder
- * facility.
+ * Builder for SAMM structures. Takes care of updating the source code
+ * decorator. The core builder facility.
  *
  */
 public class ComponentBuilder extends AbstractBuilder {
@@ -47,14 +47,13 @@ public class ComponentBuilder extends AbstractBuilder {
     private static Logger logger = Logger.getLogger(ComponentBuilder.class);
 
     /**
-     * Main builder used to create model elements of the SAMM during component detection with SoMoX.
+     * Main builder used to create model elements of the SAMM during component
+     * detection with SoMoX.
      *
-     * @param gastModel
-     *            The GAST model containing the analyzed source code
-     * @param somoxConfiguration
-     *            SoMoX configuration object
-     * @param analysisResult
-     *            Object holding the root elements of the models to create
+     * @param gastModel          The GAST model containing the analyzed source code
+     * @param somoxConfiguration SoMoX configuration object
+     * @param analysisResult     Object holding the root elements of the models to
+     *                           create
      */
     public ComponentBuilder(final Root gastModel, final SoMoXConfiguration somoxConfiguration,
             final AnalysisResult analysisResult) {
@@ -62,46 +61,48 @@ public class ComponentBuilder extends AbstractBuilder {
 
         logger.debug("Initialising PCM model builder");
 
-        this.componentNamingStrategy = new ComponentAndTypeNaming();
-        this.interfaceBuilder = new InterfaceBuilder(gastModel, somoxConfiguration, analysisResult);
+        componentNamingStrategy = new ComponentAndTypeNaming();
+        interfaceBuilder = new InterfaceBuilder(gastModel, somoxConfiguration, analysisResult);
 
         final AssemblyConnectorBuilder connectorBuilder = new AssemblyConnectorBuilder(gastModel, somoxConfiguration,
                 analysisResult);
 
         // TODO: get concrete strategy instance from configuration:
-        this.assemblyConnectorDeFactoBuilder = new AssemblyConnectorDeFactoStrategy(connectorBuilder);
-        this.assemblyConnectorInnerBuilder = new AssemblyConnectorsInsideCompositeComponentStrategy();
+        assemblyConnectorDeFactoBuilder = new AssemblyConnectorDeFactoStrategy(connectorBuilder);
+        assemblyConnectorInnerBuilder = new AssemblyConnectorsInsideCompositeComponentStrategy();
 
         // outdated builder: this.providedInterfaceBuilder = new
         // BasicProvidedInterfaceBuilder(gastModel, somoxConfiguration, analysisResult);
-        this.roleBuilder = new NonDuplicatingInterfacePortBuilder(gastModel, somoxConfiguration, analysisResult,
-                this.componentNamingStrategy);
+        roleBuilder = new NonDuplicatingInterfacePortBuilder(gastModel, somoxConfiguration, analysisResult,
+                componentNamingStrategy);
 
         // debug-like option for non-assigned interfaces:
         if (somoxConfiguration.isReverseEngineerInterfacesNotAssignedToComponent()) {
-            this.interfaceBuilder.reverseEngineerRemainingInterfacesAsFreeFloatingInterfaces(analysisResult, gastModel);
+            interfaceBuilder.reverseEngineerRemainingInterfacesAsFreeFloatingInterfaces(analysisResult, gastModel);
         }
     }
 
     /**
-     * Compose case. Method to create a new composite component. The new composite component will
-     * contain the components referenced by the list of innerComponents as sub-components.
+     * Compose case. Method to create a new composite component. The new composite
+     * component will contain the components referenced by the list of
+     * innerComponents as sub-components.
      *
-     * @param compositeComponentSubgraph
-     *            Already detected components that should become the subcomponent instances of the
-     *            new composite component
-     * @return The {@link ComponentImplementingClassesLink} annotation describing the new composite
-     *         component and its code origin
+     * @param compositeComponentSubgraph Already detected components that should
+     *                                   become the subcomponent instances of the
+     *                                   new composite component
+     * @return The {@link ComponentImplementingClassesLink} annotation describing
+     *         the new composite component and its code origin
      */
     public ComponentImplementingClassesLink createCompositeComponent(
             final Graph<ComponentImplementingClassesLink, ClusteringRelation> compositeComponentSubgraph) {
 
-        // For the found pair of component candidates: merge them into a new component candidate
+        // For the found pair of component candidates: merge them into a new component
+        // candidate
         final ComponentImplementingClassesLink result = SourcecodedecoratorFactory.eINSTANCE
                 .createComponentImplementingClassesLink();
         final CompositeComponent newComponentType = RepositoryFactory.eINSTANCE.createCompositeComponent();
 
-        final String componentName = this.componentNamingStrategy
+        final String componentName = componentNamingStrategy
                 .createCompositeComponentName(compositeComponentSubgraph.vertexSet());
         logger.info("Creating composite component with name: " + componentName);
         newComponentType.setEntityName(componentName);
@@ -109,19 +110,19 @@ public class ComponentBuilder extends AbstractBuilder {
         // this.componentNamingStrategy.createCompositeComponentName(
         // compositeComponentSubgraph.vertexSet(), false)); //full name
 
-        this.createAssemblyContext(compositeComponentSubgraph.vertexSet(), newComponentType);
+        createAssemblyContext(compositeComponentSubgraph.vertexSet(), newComponentType);
 
         result.setComponent(newComponentType);
         result.getSubComponents().addAll(compositeComponentSubgraph.vertexSet());
 
-        this.analysisResult.getSourceCodeDecoratorRepository().getComponentImplementingClassesLink().add(result);
-        this.analysisResult.getInternalArchitectureModel().getComponents__Repository().add(newComponentType);
+        analysisResult.getSourceCodeDecoratorRepository().getComponentImplementingClassesLink().add(result);
+        analysisResult.getInternalArchitectureModel().getComponents__Repository().add(newComponentType);
 
-        this.assemblyConnectorDeFactoBuilder.buildAssemblyConnectors(result, compositeComponentSubgraph);
-        this.assemblyConnectorInnerBuilder.buildAssemblyConnectors(result, compositeComponentSubgraph);
+        assemblyConnectorDeFactoBuilder.buildAssemblyConnectors(result, compositeComponentSubgraph);
+        assemblyConnectorInnerBuilder.buildAssemblyConnectors(result, compositeComponentSubgraph);
 
-        this.roleBuilder.buildProvidedRole(result);
-        this.roleBuilder.buildRequiredRole(result);
+        roleBuilder.buildProvidedRole(result);
+        roleBuilder.buildRequiredRole(result);
 
         return result;
     }
@@ -129,24 +130,23 @@ public class ComponentBuilder extends AbstractBuilder {
     /**
      * Create subcomponent instances for the components
      *
-     * @param subComponents
-     *            Inner Components for which to create the instances
-     * @param newComponentType
-     *            The outer component for which to add the instances
+     * @param subComponents    Inner Components for which to create the instances
+     * @param newComponentType The outer component for which to add the instances
      * @return created subcomponent instances
      */
     public List<AssemblyContext> createAssemblyContext(final Set<ComponentImplementingClassesLink> subComponents,
             final ComposedStructure newComponentType) {
-        final ArrayList<AssemblyContext> subComponentInstance = new ArrayList<AssemblyContext>(subComponents.size());
+        final ArrayList<AssemblyContext> subComponentInstance = new ArrayList<>(subComponents.size());
 
         for (final ComponentImplementingClassesLink innerComponent : subComponents) {
             final AssemblyContext assemblyContext = CompositionFactory.eINSTANCE.createAssemblyContext();
             assemblyContext.setParentStructure__AssemblyContext(newComponentType);
             assemblyContext.setEncapsulatedComponent__AssemblyContext(innerComponent.getComponent());
-            assemblyContext.setEntityName(
-                    this.componentNamingStrategy.createComponentInstanceName(innerComponent.getComponent()));
+            assemblyContext
+                    .setEntityName(componentNamingStrategy.createComponentInstanceName(innerComponent.getComponent()));
 
-            // for those inner components which might have been initial ones: no more initial when
+            // for those inner components which might have been initial ones: no more
+            // initial when
             // used in composite component:
             innerComponent.setIsInitialComponent(false);
         }
@@ -155,62 +155,62 @@ public class ComponentBuilder extends AbstractBuilder {
     }
 
     /**
-     * Merge case. Creates a new primitive component: either as subcomponent of a given composite
-     * component or as a separate primitive component.
+     * Merge case. Creates a new primitive component: either as subcomponent of a
+     * given composite component or as a separate primitive component.
      *
-     * @param compositeComponentSubgraph
-     *            if composite component contained: The primitive component becomes child of this
-     *            component.
+     * @param compositeComponentSubgraph if composite component contained: The
+     *                                   primitive component becomes child of this
+     *                                   component.
      * @return Existing composite with children or new primitive component
      */
     public ComponentImplementingClassesLink createMergedComponent(
             final Graph<ComponentImplementingClassesLink, ClusteringRelation> compositeComponentSubgraph) {
 
-        final ComponentImplementingClassesLink compositeComponentLink = this
-                .findExistingComposite(compositeComponentSubgraph.vertexSet());
+        final ComponentImplementingClassesLink compositeComponentLink = findExistingComposite(
+                compositeComponentSubgraph.vertexSet());
 
         if (compositeComponentLink != null) { // add to existing composite component
-            // case currently not used since no composite component link is included in the subgraph
+            // case currently not used since no composite component link is included in the
+            // subgraph
             logger.trace("creating merged component CC + children");
-            return this.addAsChildPrimitiveComponentToExistingComposite(compositeComponentSubgraph,
-                    compositeComponentLink);
-
-        } else { // new primitive component from classes (these component link only represent
-            // classes)
-            // default case
-            logger.trace("creating merged single component");
-            return this.createSinglePrimitiveComponent(compositeComponentSubgraph);
+            return addAsChildPrimitiveComponentToExistingComposite(compositeComponentSubgraph, compositeComponentLink);
 
         }
+        // classes)
+        // default case
+        logger.trace("creating merged single component");
+        return createSinglePrimitiveComponent(compositeComponentSubgraph);
     }
 
     /**
-     * Method to create a primitive component, its source decoration and its provided and required
-     * interfaces. The primitive component generated contains the given GASTClass plus all inner
-     * classes of that GASTClass as its implementation.
+     * Method to create a primitive component, its source decoration and its
+     * provided and required interfaces. The primitive component generated contains
+     * the given GASTClass plus all inner classes of that GASTClass as its
+     * implementation.
      *
-     * @param gastClass
-     *            The main GASTClass for which a new primitive component is being created
-     * @return The {@link ComponentImplementingClassesLink} annotation describing the new component
-     *         and its origin in the source code
+     * @param gastClass The main GASTClass for which a new primitive component is
+     *                  being created
+     * @return The {@link ComponentImplementingClassesLink} annotation describing
+     *         the new component and its origin in the source code
      */
     public ComponentImplementingClassesLink createPrimitiveComponentFromGASTClass(final ConcreteClassifier gastClass) {
 
-        final List<ConcreteClassifier> singleClassList = new ArrayList<ConcreteClassifier>();
+        final List<ConcreteClassifier> singleClassList = new ArrayList<>();
         singleClassList.add(gastClass);
         return this.createSinglePrimitiveComponentFromGASTClasses(singleClassList);
     }
 
     /**
-     * Create a NEW single large primitive component (SAMM and Class link) comprising multiple
-     * classes. Method to create a primitive component, its source decoration and its provided and
-     * required interfaces. The primitive component generated contains the given GASTClass plus all
-     * inner classes of that GASTClass as its implementation.
+     * Create a NEW single large primitive component (SAMM and Class link)
+     * comprising multiple classes. Method to create a primitive component, its
+     * source decoration and its provided and required interfaces. The primitive
+     * component generated contains the given GASTClass plus all inner classes of
+     * that GASTClass as its implementation.
      *
-     * @param gastClasses
-     *            The main GASTClasses for which a new primitive component is being created
-     * @return The {@link ComponentImplementingClassesLink} annotation describing the new component
-     *         and its origin in the source code
+     * @param gastClasses The main GASTClasses for which a new primitive component
+     *                    is being created
+     * @return The {@link ComponentImplementingClassesLink} annotation describing
+     *         the new component and its origin in the source code
      */
     public ComponentImplementingClassesLink createSinglePrimitiveComponentFromGASTClasses(
             final List<ConcreteClassifier> gastClasses) {
@@ -221,37 +221,38 @@ public class ComponentBuilder extends AbstractBuilder {
     }
 
     /**
-     * Create a new single large SAMM primitive component comprising multiple classes using an
-     * existing class link. Method to create a primitive component, its source decoration and its
-     * provided and required interfaces. The primitive component generated contains the given
-     * GASTClass plus all inner classes of that GASTClass as its implementation.
+     * Create a new single large SAMM primitive component comprising multiple
+     * classes using an existing class link. Method to create a primitive component,
+     * its source decoration and its provided and required interfaces. The primitive
+     * component generated contains the given GASTClass plus all inner classes of
+     * that GASTClass as its implementation.
      *
-     * @param gastClasses
-     *            The main GASTClasses for which a new primitive component is being created
-     * @param primitiveComponent
-     *            Existing component link for which to add the SAMM component
-     * @return The {@link ComponentImplementingClassesLink} annotation describing the new component
-     *         and its origin in the source code
+     * @param gastClasses        The main GASTClasses for which a new primitive
+     *                           component is being created
+     * @param primitiveComponent Existing component link for which to add the SAMM
+     *                           component
+     * @return The {@link ComponentImplementingClassesLink} annotation describing
+     *         the new component and its origin in the source code
      */
     public ComponentImplementingClassesLink createSinglePrimitiveComponentFromGASTClasses(
             final List<ConcreteClassifier> gastClasses, final ComponentImplementingClassesLink primitiveComponent) {
 
         // removelater
-        // String componentName = componentNamingStrategy.createSimpleComponentName(gastClasses,
+        // String componentName =
+        // componentNamingStrategy.createSimpleComponentName(gastClasses,
         // true);
-        final String componentName = this.componentNamingStrategy.createSimpleComponentName(gastClasses, false);
+        final String componentName = componentNamingStrategy.createSimpleComponentName(gastClasses, false);
         // for metric compare reasons
 
         logger.info("Creating primitive component " + componentName);
 
-        this.analysisResult.getSourceCodeDecoratorRepository().getComponentImplementingClassesLink()
-                .add(primitiveComponent);
+        analysisResult.getSourceCodeDecoratorRepository().getComponentImplementingClassesLink().add(primitiveComponent);
 
         final RepositoryComponent newComponentType = RepositoryFactory.eINSTANCE.createBasicComponent();
         newComponentType.setEntityName(componentName); // short name
         // newComponentType.setDocumentation(componentNamingStrategy.createSimpleComponentName(gastClasses,
         // false)); //long description
-        this.analysisResult.getInternalArchitectureModel().getComponents__Repository().add(newComponentType);
+        analysisResult.getInternalArchitectureModel().getComponents__Repository().add(newComponentType);
         primitiveComponent.setComponent(newComponentType);
 
         // TODO: check whether now duplicate classes are added
@@ -260,28 +261,28 @@ public class ComponentBuilder extends AbstractBuilder {
                     .addAll(this.getInnerClasses(currentGASTclass, newComponentType));
         }
 
-        this.interfaceBuilder.findAndAddRequiredInterfaces(primitiveComponent);
-        this.interfaceBuilder.addProvidedInterfaces(primitiveComponent);
+        interfaceBuilder.findAndAddRequiredInterfaces(primitiveComponent);
+        interfaceBuilder.addProvidedInterfaces(primitiveComponent);
         // remove duplicate interfaces which are provided AND required
-        this.interfaceBuilder.removeInterfaceSelfAccesses(primitiveComponent);
+        interfaceBuilder.removeInterfaceSelfAccesses(primitiveComponent);
 
         return primitiveComponent;
     }
 
     /**
-     * Create a component link from a GAST class only. Attention: Does not create the SAMM
-     * component! Only sets the gast class.
+     * Create a component link from a GAST class only. Attention: Does not create
+     * the SAMM component! Only sets the gast class.
      *
-     * @param gastClass
-     *            The main GASTClass for which a component link is being created
-     * @return The {@link ComponentImplementingClassesLink} annotation describing the new component
-     *         link and its origin in the source code
+     * @param gastClass The main GASTClass for which a component link is being
+     *                  created
+     * @return The {@link ComponentImplementingClassesLink} annotation describing
+     *         the new component link and its origin in the source code
      */
     public ComponentImplementingClassesLink createComponentLinkFromGASTClass(final ConcreteClassifier gastClass) {
 
         final ComponentImplementingClassesLink newPrimitiveComponent = SourcecodedecoratorFactory.eINSTANCE
                 .createComponentImplementingClassesLink();
-        this.analysisResult.getSourceCodeDecoratorRepository().getComponentImplementingClassesLink()
+        analysisResult.getSourceCodeDecoratorRepository().getComponentImplementingClassesLink()
                 .add(newPrimitiveComponent);
 
         newPrimitiveComponent.getImplementingClasses().addAll(this.getInnerClasses(gastClass));
@@ -290,7 +291,8 @@ public class ComponentBuilder extends AbstractBuilder {
     }
 
     /**
-     * New primitive component from classes (these component links only represent classes)
+     * New primitive component from classes (these component links only represent
+     * classes)
      *
      * @param compositeComponentSubgraph
      * @return
@@ -298,24 +300,22 @@ public class ComponentBuilder extends AbstractBuilder {
     private ComponentImplementingClassesLink createSinglePrimitiveComponent(
             final Graph<ComponentImplementingClassesLink, ClusteringRelation> compositeComponentSubgraph) {
         logger.trace("creating single primitive component (merge)");
-        final EList<ConcreteClassifier> classesOfPrimitiveComponent = new BasicEList<ConcreteClassifier>();
+        final EList<ConcreteClassifier> classesOfPrimitiveComponent = new BasicEList<>();
         for (final ComponentImplementingClassesLink currentComponent : compositeComponentSubgraph.vertexSet()) {
             assert currentComponent.isIsInitialComponent();
             classesOfPrimitiveComponent.addAll(currentComponent.getImplementingClasses());
         }
-        // Create a single large primitive component comprising multiple classes:
-        ComponentImplementingClassesLink result = SourcecodedecoratorFactory.eINSTANCE
-                .createComponentImplementingClassesLink();
-        result = this.createSinglePrimitiveComponentFromGASTClasses(classesOfPrimitiveComponent);
-        return result;
+        SourcecodedecoratorFactory.eINSTANCE.createComponentImplementingClassesLink();
+        return this.createSinglePrimitiveComponentFromGASTClasses(classesOfPrimitiveComponent);
     }
 
     /**
-     * Attaches children to existing composite component. The attached classes are all reside in a
-     * single large primitive components which becomes child of the composite component.
+     * Attaches children to existing composite component. The attached classes are
+     * all reside in a single large primitive components which becomes child of the
+     * composite component.
      *
-     * @param compositeComponentSubgraph
-     *            the associated component links only represent classes
+     * @param compositeComponentSubgraph the associated component links only
+     *                                   represent classes
      * @param compositeComponentLink
      * @return
      */
@@ -327,17 +327,19 @@ public class ComponentBuilder extends AbstractBuilder {
             // create primitive components for empty component links:
             if (innerComponent.isIsInitialComponent()) { // a component from the initialisation
                 // phase
-                // Create a single large primitive component comprising multiple classes / handle
+                // Create a single large primitive component comprising multiple classes /
+                // handle
                 // the new :
                 final ComponentImplementingClassesLink newInnerPrimitiveComponent = this
                         .createSinglePrimitiveComponentFromGASTClasses(innerComponent.getImplementingClasses());
 
-                // for all other inner components corresponding inner components have already been
+                // for all other inner components corresponding inner components have already
+                // been
                 // created:
                 final AssemblyContext assemblyContext = CompositionFactory.eINSTANCE.createAssemblyContext();
                 assemblyContext.setEncapsulatedComponent__AssemblyContext(newInnerPrimitiveComponent.getComponent());
-                assemblyContext.setEntityName(this.componentNamingStrategy
-                        .createComponentInstanceName(newInnerPrimitiveComponent.getComponent()));
+                assemblyContext.setEntityName(
+                        componentNamingStrategy.createComponentInstanceName(newInnerPrimitiveComponent.getComponent()));
 
                 ((CompositeComponent) compositeComponentLink.getComponent()).getAssemblyContexts__ComposedStructure()
                         .add(assemblyContext);
@@ -350,12 +352,11 @@ public class ComponentBuilder extends AbstractBuilder {
 
         }
 
-        this.roleBuilder.buildProvidedRole(compositeComponentLink);
-        this.roleBuilder.buildRequiredRole(compositeComponentLink);
+        roleBuilder.buildProvidedRole(compositeComponentLink);
+        roleBuilder.buildRequiredRole(compositeComponentLink);
 
-        this.assemblyConnectorDeFactoBuilder.buildAssemblyConnectors(compositeComponentLink,
-                compositeComponentSubgraph);
-        this.assemblyConnectorInnerBuilder.buildAssemblyConnectors(compositeComponentLink, compositeComponentSubgraph);
+        assemblyConnectorDeFactoBuilder.buildAssemblyConnectors(compositeComponentLink, compositeComponentSubgraph);
+        assemblyConnectorInnerBuilder.buildAssemblyConnectors(compositeComponentLink, compositeComponentSubgraph);
 
         return compositeComponentLink;
     }
@@ -363,15 +364,16 @@ public class ComponentBuilder extends AbstractBuilder {
     /**
      * Finds an existing composite component in the set of component links.
      *
-     * @param componentLinks
-     *            Structure to search. Must not contain more than one composite component!
+     * @param componentLinks Structure to search. Must not contain more than one
+     *                       composite component!
      * @return the composite component if found; null else
      */
     private ComponentImplementingClassesLink findExistingComposite(
             final Set<ComponentImplementingClassesLink> componentLinks) {
-        assert this.assertOnlyASingleComposite(componentLinks);
+        assert assertOnlyASingleComposite(componentLinks);
 
-        // find a composite component for which to add the classes to merge as a primitive component
+        // find a composite component for which to add the classes to merge as a
+        // primitive component
         for (final ComponentImplementingClassesLink innerComponent : componentLinks) {
             if (innerComponent.isIsCompositeComponent()) {
                 return innerComponent;
@@ -395,29 +397,28 @@ public class ComponentBuilder extends AbstractBuilder {
         }
         if (compositeCount <= 1) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     /*
-     * ---------------------------- Begin of helper methods ----------------------------
+     * ---------------------------- Begin of helper methods
+     * ----------------------------
      */
 
     /**
      * Returns a list of the given class itself and all of its inner classes
      *
-     * @param element
-     *            A GASTClass object
+     * @param element          A GASTClass object
      * @param newComponentType
      * @return a list containing the given class plus all inner classes
      */
     // SOMOXTODOCHANGE rename this class to getInputElementAndInnerClasses
     private Set<ConcreteClassifier> getInnerClasses(final ConcreteClassifier element,
             final RepositoryComponent newComponentType) {
-        final Set<ConcreteClassifier> currentList = new HashSet<ConcreteClassifier>();
+        final Set<ConcreteClassifier> currentList = new HashSet<>();
         currentList.add(element);
-        this.storeFileLocationInSourceCodeDecorator(element, newComponentType);
+        storeFileLocationInSourceCodeDecorator(element, newComponentType);
 
         final List<ConcreteClassifier> innerClasses = KDMHelper.getInnerClasses(element);
 
@@ -432,16 +433,15 @@ public class ComponentBuilder extends AbstractBuilder {
     }
 
     /**
-     * Returns a list of the given class itself and all of its inner classes. Does NOT update the
-     * file location in the source code decorator!
+     * Returns a list of the given class itself and all of its inner classes. Does
+     * NOT update the file location in the source code decorator!
      *
-     * @param element
-     *            A GASTClass object
+     * @param element          A GASTClass object
      * @param newComponentType
      * @return a list containing the given class plus all inner classes
      */
     private Set<ConcreteClassifier> getInnerClasses(final ConcreteClassifier element) {
-        final Set<ConcreteClassifier> currentList = new HashSet<ConcreteClassifier>();
+        final Set<ConcreteClassifier> currentList = new HashSet<>();
         currentList.add(element);
 
         final List<ConcreteClassifier> innerClasses = KDMHelper.getInnerClasses(element);
@@ -470,16 +470,16 @@ public class ComponentBuilder extends AbstractBuilder {
         if (KDMHelper.getJavaNodeSourceRegion(gastClass) != null) { // can be null for C code
             link.setFile(KDMHelper.getJavaNodeSourceRegion(gastClass));
         }
-        this.analysisResult.getSourceCodeDecoratorRepository().getFileLevelSourceCodeLink().add(link);
+        analysisResult.getSourceCodeDecoratorRepository().getFileLevelSourceCodeLink().add(link);
     }
 
     /**
-     * Updates the component interfaces of all interface existing until now in the source code
-     * decorator. The interfaces might have changed due to newly discovered interfaces during
-     * reverse engineering.
+     * Updates the component interfaces of all interface existing until now in the
+     * source code decorator. The interfaces might have changed due to newly
+     * discovered interfaces during reverse engineering.
      */
     public void updateRequiredInterfacesOfExistingPrimitiveComponents() {
-        this.interfaceBuilder.updateRequiredInterfacesOfExistingPrimitiveComponents();
+        interfaceBuilder.updateRequiredInterfacesOfExistingPrimitiveComponents();
     }
 
     /*
@@ -487,15 +487,15 @@ public class ComponentBuilder extends AbstractBuilder {
      */
 
     public InterfaceBuilder getInterfaceBuilder() {
-        return this.interfaceBuilder;
+        return interfaceBuilder;
     }
 
     public ComponentAndTypeNaming getComponentAndTypeNamingStrategy() {
-        return this.componentNamingStrategy;
+        return componentNamingStrategy;
     }
 
     public IAssemblyConnectorStrategy getInsideCompositeComponentAssemblyConnectorStrategy() {
-        return this.assemblyConnectorInnerBuilder;
+        return assemblyConnectorInnerBuilder;
     }
 
 }

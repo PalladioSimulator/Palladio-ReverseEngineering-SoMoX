@@ -21,8 +21,9 @@ public class DummyPostComponentDetectionStrategy implements IPostComponentDetect
     /*
      * (non-Javadoc)
      *
-     * @see org.somox.analyzer.simplemodelanalyzer.detection.IPostComponentDetectionStrategy#
-     * postComponentDetection(java.util.List, org.somox.configuration.SoMoXConfiguration)
+     * @see org.somox.analyzer.simplemodelanalyzer.detection.
+     * IPostComponentDetectionStrategy# postComponentDetection(java.util.List,
+     * org.somox.configuration.SoMoXConfiguration)
      */
     @Override
     public void postComponentDetection(final AbstractMoxConfiguration somoxConfiguration,

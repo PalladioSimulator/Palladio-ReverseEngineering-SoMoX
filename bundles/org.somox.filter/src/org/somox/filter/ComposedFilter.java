@@ -8,14 +8,12 @@ public class ComposedFilter<T> extends BaseFilter<T> {
     final private ArrayList<BaseFilter<T>> innerFilter = new ArrayList<>();
 
     public ComposedFilter(final BaseFilter<T>... innerFilter) {
-        super();
-
         this.addFilter(innerFilter);
     }
 
     @Override
     public boolean passes(final T object) {
-        for (final BaseFilter<T> inner : this.innerFilter) {
+        for (final BaseFilter<T> inner : innerFilter) {
             if (!inner.passes(object)) {
                 return false;
             }
@@ -23,8 +21,8 @@ public class ComposedFilter<T> extends BaseFilter<T> {
         return true;
     }
 
-    public void addFilter(BaseFilter<T>... filters) {
-        this.innerFilter.addAll(Arrays.asList(filters));
+    public void addFilter(final BaseFilter<T>... filters) {
+        innerFilter.addAll(Arrays.asList(filters));
     }
 
 }

@@ -14,7 +14,8 @@ import org.eclipse.swt.widgets.TabItem;
 import org.somox.analyzer.ModelAnalyzerTabGroupBlackboard;
 
 /**
- * This class provides an AbstractLaunchConfigurationTab that holds the MetricTabs as sub tabs.
+ * This class provides an AbstractLaunchConfigurationTab that holds the
+ * MetricTabs as sub tabs.
  *
  * @author Michael Hauck
  *
@@ -33,16 +34,16 @@ public class MetricTabGroup extends AbstractLaunchConfigurationTab {
         composite.setLayout(new org.eclipse.swt.layout.GridLayout(1, false));
 
         final TabFolder tabs = new TabFolder(composite, SWT.NONE);
-        for (int i = 0; i < this.metricTabs.size(); i++) {
+        for (final MetricTab metricTab : metricTabs) {
             final TabItem tabItem = new TabItem(tabs, SWT.NONE);
-            this.metricTabs.get(i).createControl(tabs);
-            this.metricTabs.get(i).setParentLaunchConfigurationTab(this);
-            tabItem.setControl(this.metricTabs.get(i).getControl());
-            tabItem.setText(this.metricTabs.get(i).getName());
+            metricTab.createControl(tabs);
+            metricTab.setParentLaunchConfigurationTab(this);
+            tabItem.setControl(metricTab.getControl());
+            tabItem.setText(metricTab.getName());
         }
         tabs.pack();
         tabs.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-        this.setControl(composite);
+        setControl(composite);
     }
 
     @Override
@@ -52,31 +53,31 @@ public class MetricTabGroup extends AbstractLaunchConfigurationTab {
 
     @Override
     public void initializeFrom(final ILaunchConfiguration configuration) {
-        for (final ILaunchConfigurationTab tab : this.metricTabs) {
+        for (final ILaunchConfigurationTab tab : metricTabs) {
             tab.initializeFrom(configuration);
         }
     }
 
     @Override
     public void performApply(final ILaunchConfigurationWorkingCopy configuration) {
-        for (final ILaunchConfigurationTab tab : this.metricTabs) {
+        for (final ILaunchConfigurationTab tab : metricTabs) {
             tab.performApply(configuration);
         }
     }
 
     @Override
     public void setDefaults(final ILaunchConfigurationWorkingCopy configuration) {
-        for (final ILaunchConfigurationTab tab : this.metricTabs) {
+        for (final ILaunchConfigurationTab tab : metricTabs) {
             tab.setDefaults(configuration);
         }
     }
 
     public void updateLaunchConfigurationDialogFromChild() {
-        this.updateLaunchConfigurationDialog();
+        updateLaunchConfigurationDialog();
     }
 
     public void setDirtyFromChild(final boolean dirty) {
-        this.setDirty(dirty);
+        setDirty(dirty);
     }
 
     @Override

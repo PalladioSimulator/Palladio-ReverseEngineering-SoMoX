@@ -19,8 +19,8 @@ import org.emftext.language.java.types.TypeReference;
 public class EqualityChecker {
 
     /**
-     * Checks the equality of two functions by comparing their signatures. Checks name, return type,
-     * number of parameters and types of parameters.
+     * Checks the equality of two functions by comparing their signatures. Checks
+     * name, return type, number of parameters and types of parameters.
      *
      * @param function1
      * @param function2
@@ -37,16 +37,13 @@ public class EqualityChecker {
             return false;
         }
 
-        if (getReturnTypeAccess(function1) == null || getReturnTypeAccess(function2) == null
-                || function1.getParameters() == null || function2.getParameters() == null) {
+        if ((getReturnTypeAccess(function1) == null) || (getReturnTypeAccess(function2) == null)
+                || (function1.getParameters() == null) || (function2.getParameters() == null)) {
             return false;
         }
 
-        if (!targetInTypeReferenceEquals(getReturnTypeAccess(function1), getReturnTypeAccess(function2))) {
-            return false;
-        }
-
-        if (!checkParametersEqual(function1, function2)) {
+        if (!targetInTypeReferenceEquals(getReturnTypeAccess(function1), getReturnTypeAccess(function2))
+                || !checkParametersEqual(function1, function2)) {
             return false;
         }
 
@@ -58,10 +55,9 @@ public class EqualityChecker {
     }
 
     private static boolean checkParametersEqual(final Parametrizable function1, final Parametrizable function2) {
-        if (function1.getParameters() != null && function2.getParameters() != null) { // parameter
-            if (!(function1.getParameters().size() == function2.getParameters().size())) {
-                return false;
-            }
+        if ((function1.getParameters() != null) && (function2.getParameters() != null)
+                && (function1.getParameters().size() != function2.getParameters().size())) {
+            return false;
         }
 
         for (int i = 0; i < function1.getParameters().size(); i++) { // parameter types
@@ -84,26 +80,18 @@ public class EqualityChecker {
         if (constructor1 == constructor2) {
             return true;
         }
-        if (!checkNameEqual(constructor1, constructor2)) {
-            return false;
-        }
-        if (!checkParametersEqual(constructor1, constructor2)) {
+        if (!checkNameEqual(constructor1, constructor2) || !checkParametersEqual(constructor1, constructor2)) {
             return false;
         }
         return true;
     }
 
     private static boolean targetInTypeReferenceEquals(final TypeReference typeRef1, final TypeReference typeRef2) {
-        if (typeRef1.getTarget() == null && typeRef2.getTarget() == null) {
+        if ((typeRef1.getTarget() == null) && (typeRef2.getTarget() == null)) {
             return true;
         }
-        if (typeRef1.getTarget() == null) {
-            return false;
-        }
-        if (typeRef2.getTarget() == null) {
-            return false;
-        }
-        if (!typeEquals(typeRef1.getTarget(), typeRef2.getTarget())) {
+        if ((typeRef1.getTarget() == null) || (typeRef2.getTarget() == null)
+                || !typeEquals(typeRef1.getTarget(), typeRef2.getTarget())) {
             return false;
         }
         return true;
@@ -126,13 +114,11 @@ public class EqualityChecker {
             // both types have to be from the same type e.g. ConcreteClassifier
             return false;
         }
-        if (type1 instanceof PrimitiveType && type2 instanceof PrimitiveType) {
+        if ((type1 instanceof PrimitiveType) && (type2 instanceof PrimitiveType)) {
             // both have the same type and they are primitive types-->same type
             return true;
         }
-        if (type1 instanceof NamedElement && type2 instanceof NamedElement) {
-            final NamedElement ne1 = (NamedElement) type1;
-            final NamedElement ne2 = (NamedElement) type2;
+        if (type1 instanceof final NamedElement ne1 && type2 instanceof final NamedElement ne2) {
             return ne1.getName().equals(ne2.getName());
         }
         return false;
@@ -142,8 +128,7 @@ public class EqualityChecker {
         if (function instanceof Method) {
             final Method method = function;
             return method.getTypeReference();
-        } else {
-            return null;
         }
+        return null;
     }
 }

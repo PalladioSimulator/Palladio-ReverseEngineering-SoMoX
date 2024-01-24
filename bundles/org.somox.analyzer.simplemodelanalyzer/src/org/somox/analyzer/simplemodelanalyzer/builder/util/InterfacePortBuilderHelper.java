@@ -43,15 +43,13 @@ public class InterfacePortBuilderHelper {
     private static final boolean EXHIBIT_ALL_INNER_PROVIDED_INTERFACES = true;
 
     /**
-     * Collects information on interfaces which are not bound in connectors (in the required case)
-     * and all interfaces in the provided case.
+     * Collects information on interfaces which are not bound in connectors (in the
+     * required case) and all interfaces in the provided case.
      *
-     * @param componentLink
-     *            fitting to the component argument.
-     * @param outerComponentToCheck
-     *            Component to look up non-connected interfaces for.
-     * @param isProvided
-     *            Check for provided or required interfaces.
+     * @param componentLink         fitting to the component argument.
+     * @param outerComponentToCheck Component to look up non-connected interfaces
+     *                              for.
+     * @param isProvided            Check for provided or required interfaces.
      * @return
      */
     public static Iterable<EndpointInformation> collectInformationOnNonBoundInterfaces(
@@ -63,19 +61,11 @@ public class InterfacePortBuilderHelper {
         final Collection<EndpointInformation> connectorEndpoints = collectConnectorEndpoints(outerComponentToCheck);
 
         Iterable<EndpointInformation> interfaceLinksNotUsedInConnectors;
-        if (isProvided) {
-            if (EXHIBIT_ALL_INNER_PROVIDED_INTERFACES) {
-                // exhibit all provided interfaces of inner components
-                interfaceLinksNotUsedInConnectors = allSubComponentEndpoints;
-            } else {
-                // delegate only provided interfaces which are not bound internally
-                // filter: allSubComponentInterfaceLinks - connectorEndpoints
-                final InterfacesBoundInConnectorFilter filter = new InterfacesBoundInConnectorFilter(
-                        connectorEndpoints);
-                interfaceLinksNotUsedInConnectors = filter.filter(allSubComponentEndpoints);
-            }
+        if (isProvided && EXHIBIT_ALL_INNER_PROVIDED_INTERFACES) {
+            // exhibit all provided interfaces of inner components
+            interfaceLinksNotUsedInConnectors = allSubComponentEndpoints;
         } else {
-            // require only interfaces which are not bound internally
+            // delegate only provided interfaces which are not bound internally
             // filter: allSubComponentInterfaceLinks - connectorEndpoints
             final InterfacesBoundInConnectorFilter filter = new InterfacesBoundInConnectorFilter(connectorEndpoints);
             interfaceLinksNotUsedInConnectors = filter.filter(allSubComponentEndpoints);
@@ -84,21 +74,21 @@ public class InterfacePortBuilderHelper {
     }
 
     /**
-     * Collects inner connector roles of this composite component (first level no inner
-     * containments).
+     * Collects inner connector roles of this composite component (first level no
+     * inner containments).
      *
-     * @param compositeComponent
-     *            Connectors of this component (inner)
+     * @param compositeComponent Connectors of this component (inner)
      * @return
      */
-    private static Collection<EndpointInformation> collectConnectorEndpoints(final ComposedStructure compositeComponent) {
-        final Collection<EndpointInformation> connectorEndpoints = new LinkedList<EndpointInformation>();
-        final CompositionSwitch<Collection<EndpointInformation>> connectorSwitch = new CompositionSwitch<Collection<EndpointInformation>>() {
+    private static Collection<EndpointInformation> collectConnectorEndpoints(
+            final ComposedStructure compositeComponent) {
+        final Collection<EndpointInformation> connectorEndpoints = new LinkedList<>();
+        final CompositionSwitch<Collection<EndpointInformation>> connectorSwitch = new CompositionSwitch<>() {
 
             @Override
             public Collection<EndpointInformation> caseProvidedDelegationConnector(
                     final ProvidedDelegationConnector object) {
-                final List<EndpointInformation> result = new LinkedList<EndpointInformation>();
+                final List<EndpointInformation> result = new LinkedList<>();
                 result.add(new EndpointInformation(null, object.getInnerProvidedRole_ProvidedDelegationConnector(),
                         object.getAssemblyContext_ProvidedDelegationConnector()));
                 return result;
@@ -107,7 +97,7 @@ public class InterfacePortBuilderHelper {
             @Override
             public Collection<EndpointInformation> caseRequiredDelegationConnector(
                     final RequiredDelegationConnector object) {
-                final List<EndpointInformation> result = new LinkedList<EndpointInformation>();
+                final List<EndpointInformation> result = new LinkedList<>();
                 result.add(new EndpointInformation(null, object.getInnerRequiredRole_RequiredDelegationConnector(),
                         object.getAssemblyContext_RequiredDelegationConnector()));
                 return result;
@@ -115,7 +105,7 @@ public class InterfacePortBuilderHelper {
 
             @Override
             public Collection<EndpointInformation> caseAssemblyConnector(final AssemblyConnector object) {
-                final List<EndpointInformation> result = new LinkedList<EndpointInformation>();
+                final List<EndpointInformation> result = new LinkedList<>();
                 result.add(new EndpointInformation(null, object.getProvidedRole_AssemblyConnector(),
                         object.getProvidingAssemblyContext_AssemblyConnector()));
                 result.add(new EndpointInformation(null, object.getRequiredRole_AssemblyConnector(),
@@ -141,16 +131,14 @@ public class InterfacePortBuilderHelper {
     /**
      * Collect all interfaces links of all direct sub components.
      *
-     * @param componentLink
-     *            Component Link which to find subcomponents and collect the sub component's
-     *            interface links
-     * @param collectProvided
-     *            switch for collecting provided or required interfaces
+     * @param componentLink   Component Link which to find subcomponents and collect
+     *                        the sub component's interface links
+     * @param collectProvided switch for collecting provided or required interfaces
      * @return interface links of direct sub component
      */
     private static Collection<EndpointInformation> collectComponentEndpoints(
             final ComponentImplementingClassesLink componentLink, final boolean collectProvided) {
-        final Collection<EndpointInformation> allInterfaceLinks = new ArrayList<EndpointInformation>();
+        final Collection<EndpointInformation> allInterfaceLinks = new ArrayList<>();
         for (final ComponentImplementingClassesLink currentSubComponentLink : componentLink.getSubComponents()) {
             List<InterfaceSourceCodeLink> interfaceLinkSubList;
             if (collectProvided) {
@@ -164,12 +152,10 @@ public class InterfacePortBuilderHelper {
                 if (componentLink.getComponent() != null) { // regular case: a component link
                     matchingSubComponentInstance = getSubComponentInstance(
                             (CompositeComponent) componentLink.getComponent(), currentSubComponentLink);
-                } else { // SAMM system architecture case:
-                    if (componentLink instanceof PCMSystemImplementatingClassesLink) {
-                        matchingSubComponentInstance = getSubComponentInstance(
-                                ((PCMSystemImplementatingClassesLink) componentLink).getSystemModel(),
-                                currentSubComponentLink);
-                    }
+                } else if (componentLink instanceof PCMSystemImplementatingClassesLink) {
+                    matchingSubComponentInstance = getSubComponentInstance(
+                            ((PCMSystemImplementatingClassesLink) componentLink).getSystemModel(),
+                            currentSubComponentLink);
                 }
                 final Role role = getInterfacePort(currentSubComponentLink, currentInterfaceLinkSub, collectProvided);
 
@@ -189,12 +175,12 @@ public class InterfacePortBuilderHelper {
 
     /**
      * Search matching Role.<br>
-     * Condition: The linked subcomponent must provide/require the given linked interface
+     * Condition: The linked subcomponent must provide/require the given linked
+     * interface
      *
      * @param subComponentLink
      * @param interfaceLinkSub
-     * @param searchProvidedRoles
-     *            switch provided / required search
+     * @param searchProvidedRoles switch provided / required search
      * @return
      */
     public static Role getInterfacePort(final ComponentImplementingClassesLink subComponentLink,
@@ -235,8 +221,8 @@ public class InterfacePortBuilderHelper {
     }
 
     /**
-     * Search matching SubcomponentInstance. Condition: outerCompositeComponent must have the linked
-     * subcomponent.
+     * Search matching SubcomponentInstance. Condition: outerCompositeComponent must
+     * have the linked subcomponent.
      *
      * @param outerCompositeComponent
      * @param subComponentLink

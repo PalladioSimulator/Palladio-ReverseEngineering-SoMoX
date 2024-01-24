@@ -35,7 +35,7 @@ public class Activator extends Plugin {
     public void start(final BundleContext context) throws Exception {
         super.start(context);
         plugin = this;
-        this.getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID, "Analyzer Activator called"));
+        getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID, "Analyzer Activator called"));
 
         // debug:
         // Logger rootLogger = Logger.getRootLogger();

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Set;
-import java.util.regex.Matcher;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IContainer;
@@ -20,8 +19,8 @@ import org.somox.metrics.helper.ComponentToImplementingClassesHelper;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 
 /**
- * Helper class used in SoMoX to dump internal graphs in GraphML and DOT file format for debugging
- * and metric calibration
+ * Helper class used in SoMoX to dump internal graphs in GraphML and DOT file
+ * format for debugging and metric calibration
  *
  * @author Steffen Becker
  */
@@ -40,8 +39,7 @@ public class GraphPrinter {
     /**
      * Clean the given folder recursively to allow dumping of new graphs
      *
-     * @param outputFolder
-     *            The folder to delete
+     * @param outputFolder The folder to delete
      */
     public static void cleanOutputFolder(final String outputFolder) {
         if (logger.isTraceEnabled()) { // only run in trace mode
@@ -61,20 +59,14 @@ public class GraphPrinter {
     /**
      * Dump the given graph in both DOT and GraphML format
      *
-     * @param <V>
-     *            Type of the graph's vertices
-     * @param <T>
-     *            Type of the graph's edges
-     * @param componentToClassesHelper
-     *            Helper class used to retrieve the classes implementing a component
-     * @param relationshipGraph
-     *            The graph to dump
-     * @param outputFolder
-     *            The folder in which the graph is dumped
-     * @param iteration
-     *            Iteration number used to create the filename
-     * @param subgraphNo
-     *            Subgraph number used to create the filename
+     * @param <V>                      Type of the graph's vertices
+     * @param <T>                      Type of the graph's edges
+     * @param componentToClassesHelper Helper class used to retrieve the classes
+     *                                 implementing a component
+     * @param relationshipGraph        The graph to dump
+     * @param outputFolder             The folder in which the graph is dumped
+     * @param iteration                Iteration number used to create the filename
+     * @param subgraphNo               Subgraph number used to create the filename
      */
     public static <V, T> void dumpGraph(final ComponentToImplementingClassesHelper componentToClassesHelper,
             final Graph<V, T> relationshipGraph, final String outputFolder, final int iteration, final int subgraphNo) {
@@ -103,8 +95,7 @@ public class GraphPrinter {
     /**
      * Retrieve for the given relative outputFolder an absolute folder name
      *
-     * @param outputFolder
-     *            The workspace relative path of the output folder
+     * @param outputFolder The workspace relative path of the output folder
      * @return The absolute path of the output folder
      */
     private static String getFileURI(final String outputFolder) {
@@ -120,9 +111,8 @@ public class GraphPrinter {
                     final IPath rawLocation = parent.getLocation();
                     if (rawLocation != null) {
                         return rawLocation.toOSString();
-                    } else {
-                        logger.warn("Did not get raw location of " + parent.toString());
                     }
+                    logger.warn("Did not get raw location of " + parent.toString());
                 } else {
                     logger.warn("Did not find parent of " + fileURI.toString());
                 }
@@ -144,7 +134,7 @@ public class GraphPrinter {
                 fw.write(getNodeId(componentToClassesHelper, relationshipGraph.getEdgeSource(edge), false));
                 fw.write(" -> ");
                 fw.write(getNodeId(componentToClassesHelper, relationshipGraph.getEdgeTarget(edge), false));
-                fw.write(" [label=\"" + edge.toString().replaceAll("\n", Matcher.quoteReplacement("\\n")) + "\"];\n");
+                fw.write(" [label=\"" + edge.toString().replace("\n", "\\n") + "\"];\n");
             }
             fw.write("}\n");
             fw.close();
@@ -182,7 +172,8 @@ public class GraphPrinter {
             final Object component, final boolean useRealBreak) {
         if (component instanceof Type) {
             return "\"" + KDMHelper.computeFullQualifiedName((Type) component) + "\"";
-        } else if (component instanceof ComponentImplementingClassesLink) {
+        }
+        if (component instanceof ComponentImplementingClassesLink) {
             return getNodeId(componentToClassesHelper, (ComponentImplementingClassesLink) component, useRealBreak);
         }
         return component.toString();

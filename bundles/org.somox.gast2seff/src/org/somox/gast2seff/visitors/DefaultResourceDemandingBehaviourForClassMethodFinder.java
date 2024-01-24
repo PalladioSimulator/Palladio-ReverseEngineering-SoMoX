@@ -25,12 +25,12 @@ public class DefaultResourceDemandingBehaviourForClassMethodFinder
     @Override
     public ResourceDemandingInternalBehaviour getCorrespondingResourceDemandingInternalBehaviour(
             final ClassMethod classMethod) {
-        for (final MethodLevelResourceDemandingInternalBehaviorLink methodLevelResourceDemandingInternalBehaviorLink : this.sourceCodeDecoratorRepository
+        for (final MethodLevelResourceDemandingInternalBehaviorLink methodLevelResourceDemandingInternalBehaviorLink : sourceCodeDecoratorRepository
                 .getMethodLevelResourceDemandingInternalBehaviorLink()) {
-            if (methodLevelResourceDemandingInternalBehaviorLink.getFunction() == classMethod) {
-                if (null != methodLevelResourceDemandingInternalBehaviorLink.getResourceDemandingInternalBehaviour()) {
-                    return methodLevelResourceDemandingInternalBehaviorLink.getResourceDemandingInternalBehaviour();
-                }
+            if ((methodLevelResourceDemandingInternalBehaviorLink.getFunction() == classMethod)
+                    && (null != methodLevelResourceDemandingInternalBehaviorLink
+                            .getResourceDemandingInternalBehaviour())) {
+                return methodLevelResourceDemandingInternalBehaviorLink.getResourceDemandingInternalBehaviour();
             }
         }
         return null;
@@ -38,11 +38,11 @@ public class DefaultResourceDemandingBehaviourForClassMethodFinder
 
     @Override
     public ResourceDemandingSEFF getCorrespondingRDSEFForClassMethod(final ClassMethod classMethod) {
-        final Signature signature = this.getCorrespondingSignatureForClassMethod(classMethod);
+        final Signature signature = getCorrespondingSignatureForClassMethod(classMethod);
         if (null == signature) {
             return null;
         }
-        return this.findSEFFInComponentForSignature(this.basicComponent, signature);
+        return findSEFFInComponentForSignature(basicComponent, signature);
     }
 
     private ResourceDemandingSEFF findSEFFInComponentForSignature(final BasicComponent basicComponent,
@@ -56,7 +56,7 @@ public class DefaultResourceDemandingBehaviourForClassMethodFinder
     }
 
     private Signature getCorrespondingSignatureForClassMethod(final ClassMethod classMethod) {
-        for (final MethodLevelSourceCodeLink methodLevelSourceCodeLink : this.sourceCodeDecoratorRepository
+        for (final MethodLevelSourceCodeLink methodLevelSourceCodeLink : sourceCodeDecoratorRepository
                 .getMethodLevelSourceCodeLink()) {
             if (methodLevelSourceCodeLink.getFunction() == classMethod) {
                 final Signature signature = methodLevelSourceCodeLink.getOperation();

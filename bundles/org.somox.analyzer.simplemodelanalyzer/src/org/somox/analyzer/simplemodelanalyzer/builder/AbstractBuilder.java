@@ -13,8 +13,6 @@ public class AbstractBuilder {
     public AbstractBuilder(final Root astModel, final SoMoXConfiguration somoxConfiguration,
             final AnalysisResult analysisResult) {
 
-        super();
-
         this.analysisResult = analysisResult;
         this.astModel = astModel;
         this.somoxConfiguration = somoxConfiguration;

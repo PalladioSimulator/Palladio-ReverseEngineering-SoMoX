@@ -10,7 +10,7 @@ import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 
 public interface IDetectionStrategy {
 
-    public List<ComponentImplementingClassesLink> startDetection(ComponentBuilder sammBuilder,
+    List<ComponentImplementingClassesLink> startDetection(ComponentBuilder sammBuilder,
             AbstractMoxConfiguration somoxConfig, IProgressMonitor progressMonitor,
             List<ComponentImplementingClassesLink> components) throws ModelAnalyzerException;
 }

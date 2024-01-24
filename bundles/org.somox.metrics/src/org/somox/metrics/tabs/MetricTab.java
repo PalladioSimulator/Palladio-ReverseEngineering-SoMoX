@@ -13,7 +13,7 @@ public abstract class MetricTab extends AbstractLaunchConfigurationTab {
     }
 
     public ModelAnalyzerTabGroupBlackboard getModelAnalyzerTabGroupBlackboard() {
-        return this.blackboard;
+        return blackboard;
     }
 
     public void setModelAnalyzerTabGroupBlackboard(final ModelAnalyzerTabGroupBlackboard blackboard) {
@@ -22,8 +22,8 @@ public abstract class MetricTab extends AbstractLaunchConfigurationTab {
 
     @Override
     protected void updateLaunchConfigurationDialog() {
-        if (this.parentLaunchConfigurationTab != null) {
-            this.parentLaunchConfigurationTab.updateLaunchConfigurationDialogFromChild();
+        if (parentLaunchConfigurationTab != null) {
+            parentLaunchConfigurationTab.updateLaunchConfigurationDialogFromChild();
         } else {
             super.updateLaunchConfigurationDialog();
         }
@@ -31,8 +31,8 @@ public abstract class MetricTab extends AbstractLaunchConfigurationTab {
 
     @Override
     protected void setDirty(final boolean dirty) {
-        if (this.parentLaunchConfigurationTab != null) {
-            this.parentLaunchConfigurationTab.setDirtyFromChild(dirty);
+        if (parentLaunchConfigurationTab != null) {
+            parentLaunchConfigurationTab.setDirtyFromChild(dirty);
         } else {
             super.setDirty(dirty);
         }

@@ -6,10 +6,10 @@ import org.somox.kdmhelper.KDMHelper;
 //import de.fzi.gast.types.GASTClass;
 
 /**
- * This class is a struct containing a {@link Type} and a counter. It is used to model an a link
- * from a node in a graph of classes to the contained class in this structure. The count is the
- * weight of the link. It is used to model the number of links going from the source node to the
- * class in this struct.
+ * This class is a struct containing a {@link Type} and a counter. It is used to
+ * model an a link from a node in a graph of classes to the contained class in
+ * this structure. The count is the weight of the link. It is used to model the
+ * number of links going from the source node to the class in this struct.
  *
  * @author Steffen Becker
  *
@@ -19,9 +19,8 @@ public class ClassAccessGraphEdge {
     private int count = 0;
 
     public ClassAccessGraphEdge(final Type source, final Type target, final int count) {
-        super();
-        this.sourceClazz = source;
-        this.targetClazz = target;
+        sourceClazz = source;
+        targetClazz = target;
         this.count = count;
     }
 
@@ -33,22 +32,22 @@ public class ClassAccessGraphEdge {
      * @return the clazz
      */
     public Type getSourceClazz() {
-        return this.sourceClazz;
+        return sourceClazz;
     }
 
     public Type getTargetClazz() {
-        return this.targetClazz;
+        return targetClazz;
     }
 
     /**
      * @return the count
      */
     public int getCount() {
-        return this.count;
+        return count;
     }
 
     public void incrementCount() {
-        this.count++;
+        count++;
     }
 
     /*
@@ -58,8 +57,8 @@ public class ClassAccessGraphEdge {
      */
     @Override
     public String toString() {
-        return "From: " + KDMHelper.getName(this.sourceClazz) + " To: " + KDMHelper.getName(this.targetClazz)
-                + " Count: " + this.count;
+        return "From: " + KDMHelper.getName(sourceClazz) + " To: " + KDMHelper.getName(targetClazz) + " Count: "
+                + count;
     }
 
 }

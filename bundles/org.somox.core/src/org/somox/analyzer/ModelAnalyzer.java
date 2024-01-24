@@ -31,47 +31,47 @@ public interface ModelAnalyzer<T extends AbstractMoxConfiguration> {
          * @uml.property name="rEADY"
          * @uml.associationEnd
          */
-        READY, /**
-                * @uml.property name="rUNNING"
-                * @uml.associationEnd
-                */
-        RUNNING, /**
-                  * @uml.property name="fINISHED"
-                  * @uml.associationEnd
-                  */
-        FINISHED, /**
-                   * @uml.property name="wAITING"
-                   * @uml.associationEnd
-                   */
+        READY,
+        /**
+         * @uml.property name="rUNNING"
+         * @uml.associationEnd
+         */
+        RUNNING,
+        /**
+         * @uml.property name="fINISHED"
+         * @uml.associationEnd
+         */
+        FINISHED,
+        /**
+         * @uml.property name="wAITING"
+         * @uml.associationEnd
+         */
         WAITING
     }
 
     /**
      * initialize the analyzer
      */
-    public void init();
+    void init();
 
     /**
      * Execute the analyzer
      *
-     * @param preferences
-     *            The preferences for this analyzer
-     * @param somoxConfiguration
-     *            Configuration of this analyzer
-     * @param extractionResultMap
-     *            The map of extraction results
+     * @param preferences         The preferences for this analyzer
+     * @param somoxConfiguration  Configuration of this analyzer
+     * @param extractionResultMap The map of extraction results
      * @return The analysis result object
      */
-    public AnalysisResult analyze(T moxConfiguration, HashMap<String, ExtractionResult> extractionResultMap,
+    AnalysisResult analyze(T moxConfiguration, HashMap<String, ExtractionResult> extractionResultMap,
             IProgressMonitor progressMonitor) throws ModelAnalyzerException;
 
     /**
      * Get the status from the analyzer
      *
-     * @return The current status of the analyzer. Has to be one of the defined status in this
-     *         interface
+     * @return The current status of the analyzer. Has to be one of the defined
+     *         status in this interface
      */
-    public ModelAnalyzer.Status getStatus();
+    ModelAnalyzer.Status getStatus();
 
     /**
      * Create an analysis result with newly initialized root models

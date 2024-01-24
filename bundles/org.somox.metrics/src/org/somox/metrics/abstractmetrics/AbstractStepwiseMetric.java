@@ -1,10 +1,7 @@
 package org.somox.metrics.abstractmetrics;
 
-import java.util.Map;
-
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.metrics.ICompositionFunction;
-import org.somox.metrics.MetricID;
 
 public abstract class AbstractStepwiseMetric extends AbstractComposedMetric {
 
@@ -13,7 +10,6 @@ public abstract class AbstractStepwiseMetric extends AbstractComposedMetric {
         private final double weight;
 
         public BoundAndWeightStruct(final double upperBound, final double weight) {
-            super();
             this.upperBound = upperBound;
             this.weight = weight;
         }
@@ -22,37 +18,32 @@ public abstract class AbstractStepwiseMetric extends AbstractComposedMetric {
          * @return the upperBound
          */
         public double getUpperBound() {
-            return this.upperBound;
+            return upperBound;
         }
 
         /**
          * @return the weight
          */
         public double getWeight() {
-            return this.weight;
+            return weight;
         }
     }
 
-    protected BoundAndWeightStruct[] boundsAndWeights = this.getBoundsAndWeights();
-    private final ICompositionFunction function = new ICompositionFunction() {
-
-        @Override
-        public double computeOverallDirectedMetricValue(final Map<MetricID, Double> metricValues) {
-            assert AbstractStepwiseMetric.this.getAllChildMetrics().length == 1;
-            final double innerMetricValue = metricValues
-                    .get(AbstractStepwiseMetric.this.getAllChildMetrics()[0].getMID());
-            for (final BoundAndWeightStruct range : AbstractStepwiseMetric.this.boundsAndWeights) {
-                if (innerMetricValue < range.getUpperBound()) {
-                    return innerMetricValue * range.getWeight();
-                }
+    protected BoundAndWeightStruct[] boundsAndWeights = getBoundsAndWeights();
+    private final ICompositionFunction function = metricValues -> {
+        assert getAllChildMetrics().length == 1;
+        final double innerMetricValue = metricValues.get(getAllChildMetrics()[0].getMID());
+        for (final BoundAndWeightStruct range : boundsAndWeights) {
+            if (innerMetricValue < range.getUpperBound()) {
+                return innerMetricValue * range.getWeight();
             }
-            return innerMetricValue;
         }
+        return innerMetricValue;
     };
 
     @Override
     protected ICompositionFunction getCompositionFunction(final SoMoXConfiguration somoxConfiguration) {
-        return this.function;
+        return function;
     }
 
     @Override

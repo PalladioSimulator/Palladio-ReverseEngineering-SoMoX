@@ -30,16 +30,17 @@ public class KDMReader {
     private final static Logger logger = Logger.getLogger(KDMReader.class.getName());
 
     public KDMReader() {
-        this.root = new Root();
+        root = new Root();
     }
 
     public Root getRoot() {
-        return this.root;
+        return root;
     }
 
     /**
-     * Load the specified projects into JaMoPP. If workspace is closed, i.e. we run standalone
-     * assume the projects arrays is a path array and load the specific paths into JaMoPP.
+     * Load the specified projects into JaMoPP. If workspace is closed, i.e. we run
+     * standalone assume the projects arrays is a path array and load the specific
+     * paths into JaMoPP.
      *
      * @param projects
      * @throws IOException
@@ -52,18 +53,18 @@ public class KDMReader {
 
         KDMReader.logger.trace("Start loading projects: " + Arrays.toString(projects));
 
-        List<File> sourceFolderPaths = new ArrayList<>();
+        final List<File> sourceFolderPaths = new ArrayList<>();
         if (SoMoXUtil.isStandalone()) {
-            for (String projectPath : projects) {
+            for (final String projectPath : projects) {
                 sourceFolderPaths.add(new File(projectPath));
             }
         } else {
             for (final String projectName : projects) {
-                IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+                final IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
                 final IProject project = workspaceRoot.getProject(projectName);
                 final IJavaProject javaProject = JavaCore.create(project);
                 if (javaProject.exists()) {
-                	sourceFolderPaths.add(project.getRawLocation().toFile());
+                    sourceFolderPaths.add(project.getRawLocation().toFile());
                 } else {
                     KDMReader.logger.warn(String
                             .format("Project %s is not a java project in this workspace. Ignoring it.", projectName));
@@ -71,35 +72,34 @@ public class KDMReader {
             }
         }
         softwareModelExtractor.extractSoftwareModelFromFolders(sourceFolderPaths, new NullProgressMonitor(),
-                    cacheFileDir.toString(), extractLayoutInformation);
+                cacheFileDir.toString(), extractLayoutInformation);
 
-        this.addModelsToRoot(softwareModelExtractor.getSourceResources());
+        addModelsToRoot(softwareModelExtractor.getSourceResources());
         KDMReader.logger.trace("Finished reading projects.");
     }
 
     public void loadProject(final IProject... projects) throws IOException {
-        final List<String> projectPaths = new ArrayList<String>();
+        final List<String> projectPaths = new ArrayList<>();
         for (final IProject project : projects) {
             projectPaths.add(project.getLocation().toString());
         }
-        this.loadPathes(projectPaths);
+        loadPathes();
     }
 
-    private void loadPathes(final List<String> projectPaths) {
-          throw new RuntimeException("not implemented yet");
+    private void loadPathes() {
+        throw new RuntimeException("not implemented yet");
     }
 
     public void addModelsToRoot(final Collection<Resource> resources) {
         for (final Resource resource : resources) {
-            this.root.addModels(this.getModelsFromResource(resource));
+            root.addModels(getModelsFromResource(resource));
         }
     }
 
     private Collection<CompilationUnit> getModelsFromResource(final Resource resource) {
-        final List<CompilationUnit> modelList = new ArrayList<CompilationUnit>();
+        final List<CompilationUnit> modelList = new ArrayList<>();
         for (final EObject obj : resource.getContents()) {
-            if (obj instanceof CompilationUnit) {
-                final CompilationUnit model = (CompilationUnit) obj;
+            if (obj instanceof final CompilationUnit model) {
                 modelList.add(model);
             }
         }

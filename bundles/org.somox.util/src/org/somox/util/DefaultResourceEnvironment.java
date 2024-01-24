@@ -25,20 +25,21 @@ import org.palladiosimulator.pcm.resourcetype.ResourceType;
 import org.palladiosimulator.pcm.resourcetype.SchedulingPolicy;
 
 /**
- * Utility method for creating an empty resource environment where the reconstructed components can
- * be put. Only static access via {@link #getDefaultResourceEnvironment()}
+ * Utility method for creating an empty resource environment where the
+ * reconstructed components can be put. Only static access via
+ * {@link #getDefaultResourceEnvironment()}
  *
  * @author kuester
  *
  */
 public class DefaultResourceEnvironment {
-    
+
     public static final String RESOURCETYPE_URI = "pathmap://PCM_MODELS/Palladio.resourcetype";
 
     public static final String PRIMITIVETYPES_URI = "pathmap://PCM_MODELS/PrimitiveTypes.repository";
-    
+
     private static final String CPU_RESOURCETYPE_NAME = "CPU";
-    
+
     private static final String DELAY_RESOURCETYPE_NAME = "DELAY";
 
     /** cached instance of default resource environment. */
@@ -55,8 +56,8 @@ public class DefaultResourceEnvironment {
 
     /**
      * Retrieves a cached instance of
-     * {@link org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment} as created by
-     * {@link #createDefaultResourceEnvironment()}.
+     * {@link org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment} as
+     * created by {@link #createDefaultResourceEnvironment()}.
      *
      * @return A cached instance of resource environment with default values. .
      */
@@ -68,19 +69,19 @@ public class DefaultResourceEnvironment {
     }
 
     /**
-     * Retrieves a map of {@link org.palladiosimulator.pcm.repository.PrimitiveDataType}s as defined
-     * in the standard PCM resource repository.
+     * Retrieves a map of
+     * {@link org.palladiosimulator.pcm.repository.PrimitiveDataType}s as defined in
+     * the standard PCM resource repository.
      *
      * @return A cached map of primitive data types.
      */
     private static Map<String, PrimitiveDataType> getPrimitiveDataTypes() {
-        final Map<String, PrimitiveDataType> primitives = new HashMap<String, PrimitiveDataType>();
+        final Map<String, PrimitiveDataType> primitives = new HashMap<>();
         if (primitiveTypesRepository == null) {
             primitiveTypesRepository = getPrimitiveTypesRepository();
         }
         for (final DataType d : primitiveTypesRepository.getDataTypes__Repository()) {
-            if (d instanceof PrimitiveDataType) {
-                final PrimitiveDataType pdt = (PrimitiveDataType) d;
+            if (d instanceof final PrimitiveDataType pdt) {
                 primitives.put(pdt.getType().getName(), pdt);
             }
         }
@@ -113,8 +114,8 @@ public class DefaultResourceEnvironment {
 
     /**
      * Creates and returns a new instance of
-     * {@link org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment} with initial
-     * values.
+     * {@link org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment}
+     * with initial values.
      *
      * @return A new instance of resource environment with default values.
      */
@@ -140,7 +141,7 @@ public class DefaultResourceEnvironment {
 
     }
 
-    protected static SchedulingPolicy getProcessorSharingSchedulingPolicy() {
+    public static SchedulingPolicy getProcessorSharingSchedulingPolicy() {
         return getResourceRepository().getSchedulingPolicies__ResourceRepository().get(0);
     }
 
@@ -152,16 +153,16 @@ public class DefaultResourceEnvironment {
         return getProcessingResourceType(DELAY_RESOURCETYPE_NAME);
     }
 
-    private static ProcessingResourceType getProcessingResourceType(String name) {
-        List<ResourceType> resourceTypes = getResourceRepository().getAvailableResourceTypes_ResourceRepository();
-        for (ResourceType type : resourceTypes) {
+    private static ProcessingResourceType getProcessingResourceType(final String name) {
+        final List<ResourceType> resourceTypes = getResourceRepository().getAvailableResourceTypes_ResourceRepository();
+        for (final ResourceType type : resourceTypes) {
             if (type.getEntityName().equals(name)) {
                 return (ProcessingResourceType) type;
             }
         }
         throw new RuntimeException("Could not find resource type named \"" + name + "\" in " + RESOURCETYPE_URI);
     }
-    
+
     protected static Repository getPrimitiveTypesRepository() {
         if (primitiveTypesRepository != null) {
             return primitiveTypesRepository;
@@ -180,7 +181,7 @@ public class DefaultResourceEnvironment {
         return primitiveTypesRepository;
     }
 
-    protected static ResourceRepository getResourceRepository() {
+    public static ResourceRepository getResourceRepository() {
         if (resourceRepository != null) {
             return resourceRepository;
         }

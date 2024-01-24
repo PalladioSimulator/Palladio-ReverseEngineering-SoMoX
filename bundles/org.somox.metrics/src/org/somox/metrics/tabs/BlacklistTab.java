@@ -1,5 +1,6 @@
 package org.somox.metrics.tabs;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -9,12 +10,10 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
-import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StackLayout;
-import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
@@ -31,7 +30,6 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.emftext.language.java.commons.Commentable;
 import org.emftext.language.java.types.Type;
-import org.somox.analyzer.BlackboardListener;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.kdmhelper.metamodeladdition.Root;
@@ -65,19 +63,19 @@ public class BlacklistTab extends MetricTab {
 
     public void setRoot(final Root root) {
         if (this.root != root) {
-            this.checkboxTreeViewer.getTree().dispose();
-            this.checkboxTreeViewer = new CheckboxTreeViewer(this.treeViewerControl, SWT.BORDER);
-            this.checkboxTreeViewer.setContentProvider(new CheckboxContentProvider());
-            this.checkboxTreeViewer.setLabelProvider(new CheckboxLabelProvider());
-            final Tree tree = this.checkboxTreeViewer.getTree();
+            checkboxTreeViewer.getTree().dispose();
+            checkboxTreeViewer = new CheckboxTreeViewer(treeViewerControl, SWT.BORDER);
+            checkboxTreeViewer.setContentProvider(new CheckboxContentProvider());
+            checkboxTreeViewer.setLabelProvider(new CheckboxLabelProvider());
+            final Tree tree = checkboxTreeViewer.getTree();
             tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-            this.checkboxTreeViewer.addCheckStateListener(this.checkStateListener);
+            checkboxTreeViewer.addCheckStateListener(checkStateListener);
         }
         this.root = root;
-        this.checkboxTreeViewer.setInput(this.root);
+        checkboxTreeViewer.setInput(this.root);
 
         if (this.root != null) {
-            this.checkboxTreeViewer.setGrayed(this.root, true);
+            checkboxTreeViewer.setGrayed(this.root, true);
         }
     }
 
@@ -86,53 +84,45 @@ public class BlacklistTab extends MetricTab {
      */
     @Override
     public void createControl(final Composite parent) {
-        this.checkStateListener = new ICheckStateListener() {
-            @Override
-            public void checkStateChanged(final CheckStateChangedEvent event) {
-                BlacklistTab.this.checkboxTreeViewer.setSubtreeChecked(event.getElement(), event.getChecked());
+        checkStateListener = event -> {
+            checkboxTreeViewer.setSubtreeChecked(event.getElement(), event.getChecked());
 
-                BlacklistTab.this.setDirty(true);
-                BlacklistTab.this.updateLaunchConfigurationDialog();
-            }
+            BlacklistTab.this.setDirty(true);
+            BlacklistTab.this.updateLaunchConfigurationDialog();
         };
 
-        this.control = new Composite(parent, SWT.NONE);
-        this.control.setLayout(new GridLayout(1, false));
+        control = new Composite(parent, SWT.NONE);
+        control.setLayout(new GridLayout(1, false));
 
-        final Composite mainComposite = new Composite(this.control, SWT.NONE);
+        final Composite mainComposite = new Composite(control, SWT.NONE);
         mainComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 
-        this.stackLayout = new StackLayout();
-        mainComposite.setLayout(this.stackLayout);
+        stackLayout = new StackLayout();
+        mainComposite.setLayout(stackLayout);
 
-        this.treeViewerControl = this.createControlTreeViewer(mainComposite);
-        this.textFieldControl = this.createTextField(mainComposite);
+        treeViewerControl = createControlTreeViewer(mainComposite);
+        textFieldControl = createTextField(mainComposite);
 
-        this.getModelAnalyzerTabGroupBlackboard().addBlackboardListener(new BlackboardListener() {
-
-            @Override
-            public void blackboardChanged() {
-                BlacklistTab.this.setRoot(BlacklistTab.this.getModelAnalyzerTabGroupBlackboard().getRoot());
-                if (BlacklistTab.this.root == null) {
-                    BlacklistTab.this.stackLayout.topControl = BlacklistTab.this.textFieldControl;
-                } else {
-                    BlacklistTab.this.stackLayout.topControl = BlacklistTab.this.treeViewerControl;
-                }
-
+        getModelAnalyzerTabGroupBlackboard().addBlackboardListener(() -> {
+            BlacklistTab.this.setRoot(BlacklistTab.this.getModelAnalyzerTabGroupBlackboard().getRoot());
+            if (root == null) {
+                stackLayout.topControl = textFieldControl;
+            } else {
+                stackLayout.topControl = treeViewerControl;
             }
 
         });
-        this.setRoot(this.getModelAnalyzerTabGroupBlackboard().getRoot());
-        if (this.root == null) {
-            this.switchFromTreeToText();
+        setRoot(getModelAnalyzerTabGroupBlackboard().getRoot());
+        if (root == null) {
+            switchFromTreeToText();
             // treeViewerControl.setVisible(false);
             // textFieldControl.setVisible(true);
-            this.stackLayout.topControl = this.textFieldControl;
+            stackLayout.topControl = textFieldControl;
         } else {
-            this.switchFromTextToTree();
+            switchFromTextToTree();
             // textFieldControl.setVisible(false);
             // treeViewerControl.setVisible(true);
-            this.stackLayout.topControl = this.treeViewerControl;
+            stackLayout.topControl = treeViewerControl;
         }
     }
 
@@ -142,42 +132,34 @@ public class BlacklistTab extends MetricTab {
         // treeViewerControl.setLayout(new FillLayout(SWT.HORIZONTAL));
         treeViewerControl.setLayout(new GridLayout(2, false));
 
-        this.checkStateListener = new ICheckStateListener() {
-            @Override
-            public void checkStateChanged(final CheckStateChangedEvent event) {
-                BlacklistTab.this.checkboxTreeViewer.setSubtreeChecked(event.getElement(), event.getChecked());
+        checkStateListener = event -> {
+            checkboxTreeViewer.setSubtreeChecked(event.getElement(), event.getChecked());
 
-                BlacklistTab.this.setDirty(true);
-                BlacklistTab.this.updateLaunchConfigurationDialog();
-            }
+            BlacklistTab.this.setDirty(true);
+            BlacklistTab.this.updateLaunchConfigurationDialog();
         };
 
         final Label lblSpecifiyBlacklist = new Label(treeViewerControl, SWT.CENTER);
         lblSpecifiyBlacklist.setText("Specify blacklist");
         lblSpecifiyBlacklist.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 
-        this.checkboxTreeViewer = new CheckboxTreeViewer(treeViewerControl, SWT.BORDER);
-        this.checkboxTreeViewer.setContentProvider(new CheckboxContentProvider());
-        this.checkboxTreeViewer.setLabelProvider(new CheckboxLabelProvider());
-        this.checkboxTreeViewer.addCheckStateListener(this.checkStateListener);
+        checkboxTreeViewer = new CheckboxTreeViewer(treeViewerControl, SWT.BORDER);
+        checkboxTreeViewer.setContentProvider(new CheckboxContentProvider());
+        checkboxTreeViewer.setLabelProvider(new CheckboxLabelProvider());
+        checkboxTreeViewer.addCheckStateListener(checkStateListener);
 
-        final Tree tree = this.checkboxTreeViewer.getTree();
+        final Tree tree = checkboxTreeViewer.getTree();
         tree.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 2, 1));
 
         final Label additionalFilterLabel = new Label(treeViewerControl, SWT.NONE);
         additionalFilterLabel.setText("Additional filter regex:");
         additionalFilterLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
 
-        this.addiditonalBlacklistTextfield = new Text(treeViewerControl, SWT.BORDER);
-        this.addiditonalBlacklistTextfield.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
-        this.addiditonalBlacklistTextfield.addModifyListener(new ModifyListener() {
-
-            @Override
-            public void modifyText(final ModifyEvent e) {
-                BlacklistTab.this.setDirty(true);
-                BlacklistTab.this.updateLaunchConfigurationDialog();
-            }
-
+        addiditonalBlacklistTextfield = new Text(treeViewerControl, SWT.BORDER);
+        addiditonalBlacklistTextfield.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
+        addiditonalBlacklistTextfield.addModifyListener(e -> {
+            BlacklistTab.this.setDirty(true);
+            BlacklistTab.this.updateLaunchConfigurationDialog();
         });
 
         final Composite composite = new Composite(treeViewerControl, SWT.NONE);
@@ -191,13 +173,13 @@ public class BlacklistTab extends MetricTab {
         invertB.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseDown(final MouseEvent e) {
-                BlacklistTab.this.checkboxTreeViewer.expandAll();
-                final Object[] elements = BlacklistTab.this.checkboxTreeViewer.getCheckedElements();
-                BlacklistTab.this.checkboxTreeViewer.setAllChecked(true);
+                checkboxTreeViewer.expandAll();
+                final Object[] elements = checkboxTreeViewer.getCheckedElements();
+                checkboxTreeViewer.setAllChecked(true);
                 for (final Object element : elements) {
-                    BlacklistTab.this.checkboxTreeViewer.setChecked(element, false);
+                    checkboxTreeViewer.setChecked(element, false);
                 }
-                BlacklistTab.this.checkboxTreeViewer.collapseAll();
+                checkboxTreeViewer.collapseAll();
                 BlacklistTab.this.setDirty(true);
                 BlacklistTab.this.updateLaunchConfigurationDialog();
             }
@@ -209,9 +191,9 @@ public class BlacklistTab extends MetricTab {
         selectB.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseDown(final MouseEvent e) {
-                BlacklistTab.this.checkboxTreeViewer.expandAll();
-                BlacklistTab.this.checkboxTreeViewer.setAllChecked(true);
-                BlacklistTab.this.checkboxTreeViewer.collapseAll();
+                checkboxTreeViewer.expandAll();
+                checkboxTreeViewer.setAllChecked(true);
+                checkboxTreeViewer.collapseAll();
                 BlacklistTab.this.setDirty(true);
                 BlacklistTab.this.updateLaunchConfigurationDialog();
             }
@@ -222,9 +204,9 @@ public class BlacklistTab extends MetricTab {
         deselectB.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseDown(final MouseEvent e) {
-                BlacklistTab.this.checkboxTreeViewer.expandAll();
-                BlacklistTab.this.checkboxTreeViewer.setAllChecked(false);
-                BlacklistTab.this.checkboxTreeViewer.collapseAll();
+                checkboxTreeViewer.expandAll();
+                checkboxTreeViewer.setAllChecked(false);
+                checkboxTreeViewer.collapseAll();
                 BlacklistTab.this.setDirty(true);
                 BlacklistTab.this.updateLaunchConfigurationDialog();
             }
@@ -234,31 +216,27 @@ public class BlacklistTab extends MetricTab {
     }
 
     private void switchFromTreeToText() {
-        final Set<String> wildcards = this.getTreeSelection();
-        wildcards.addAll(this.getTextField(this.addiditonalBlacklistTextfield));
-        this.initializeTextField(this.getTreeSelection());
+        final Set<String> wildcards = getTreeSelection();
+        wildcards.addAll(getTextField(addiditonalBlacklistTextfield));
+        initializeTextField(getTreeSelection());
     }
 
     private void switchFromTextToTree() {
-        this.initializeTreeViewer(this.getTextField(this.textField));
+        initializeTreeViewer(getTextField(textField));
     }
 
     private Composite createTextField(final Composite parentControl) {
         final Composite textFieldControl = new Group(parentControl, SWT.NONE);
         textFieldControl.setLayout(new FillLayout(SWT.HORIZONTAL));
         textFieldControl.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-        this.textField = new Text(textFieldControl, SWT.MULTI | SWT.BORDER | SWT.WRAP | SWT.V_SCROLL);
+        textField = new Text(textFieldControl, SWT.MULTI | SWT.BORDER | SWT.WRAP | SWT.V_SCROLL);
         // textField.setLayout(new FillLayout(SWT.HORIZONTAL));
         // textField.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-        final ModifyListener textChangedListener = new ModifyListener() {
-            @Override
-            public void modifyText(final ModifyEvent e) {
-                BlacklistTab.this.setDirty(true);
-                BlacklistTab.this.updateLaunchConfigurationDialog();
-            }
-
+        final ModifyListener textChangedListener = e -> {
+            BlacklistTab.this.setDirty(true);
+            BlacklistTab.this.updateLaunchConfigurationDialog();
         };
-        this.textField.addModifyListener(textChangedListener);
+        textField.addModifyListener(textChangedListener);
         // textField.setLayoutData(new FillData(FillData.FILL_BOTH));
         textFieldControl.setSize(textFieldControl.getParent().getSize());
         return textFieldControl;
@@ -275,7 +253,7 @@ public class BlacklistTab extends MetricTab {
 
     @Override
     public Control getControl() {
-        return this.control;
+        return control;
     }
 
     @Override
@@ -301,54 +279,53 @@ public class BlacklistTab extends MetricTab {
     @Override
     public void initializeFrom(final ILaunchConfiguration configuration) {
         try {
-            final String wildcardString = configuration
-                    .getAttribute(SoMoXConfiguration.SOMOX_ANALYZER_WILDCARD_KEY, "");
-            final StringTokenizer tokenizer = new StringTokenizer(wildcardString, this.DELIMITER);
+            final String wildcardString = configuration.getAttribute(SoMoXConfiguration.SOMOX_ANALYZER_WILDCARD_KEY,
+                    "");
+            final StringTokenizer tokenizer = new StringTokenizer(wildcardString, DELIMITER);
             final int tokenCount = tokenizer.countTokens();
-            final Set<String> wildcards = new HashSet<String>();
+            final Set<String> wildcards = new HashSet<>();
             for (int i = 0; i < tokenCount; i++) {
                 wildcards.add(tokenizer.nextToken());
             }
 
-            this.initializeTreeViewer(wildcards);
-            this.initializeTextField(wildcards);
+            initializeTreeViewer(wildcards);
+            initializeTextField(wildcards);
 
-            this.addiditonalBlacklistTextfield.setText(configuration
-                    .getAttribute(SoMoXConfiguration.BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL, ""));
+            addiditonalBlacklistTextfield.setText(
+                    configuration.getAttribute(SoMoXConfiguration.BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL, ""));
         } catch (final CoreException e) {
         }
     }
 
     private void initializeTreeViewer(final Set<String> wildcardSet) {
         // Restore check-state
-        this.checkboxTreeViewer.expandAll();
-        this.checkboxTreeViewer.setAllChecked(true);
-        final Object[] elements = this.checkboxTreeViewer.getCheckedElements();
-        this.checkboxTreeViewer.setAllChecked(false);
-        this.checkboxTreeViewer.collapseAll();
+        checkboxTreeViewer.expandAll();
+        checkboxTreeViewer.setAllChecked(true);
+        final Object[] elements = checkboxTreeViewer.getCheckedElements();
+        checkboxTreeViewer.setAllChecked(false);
+        checkboxTreeViewer.collapseAll();
 
         for (final Object currentElement : elements) {
             if (currentElement instanceof org.emftext.language.java.containers.Package) {
                 if (wildcardSet.contains(KDMHelper
                         .computeFullQualifiedName(((org.emftext.language.java.containers.Package) currentElement)))) {
-                    this.checkboxTreeViewer.setChecked(currentElement, true);
+                    checkboxTreeViewer.setChecked(currentElement, true);
                 }
-            } else if (currentElement instanceof Type) {
-                if (wildcardSet.contains(KDMHelper.computeFullQualifiedName((Commentable) currentElement))) {
-                    this.checkboxTreeViewer.setChecked(currentElement, true);
-                }
+            } else if ((currentElement instanceof Type)
+                    && wildcardSet.contains(KDMHelper.computeFullQualifiedName((Commentable) currentElement))) {
+                checkboxTreeViewer.setChecked(currentElement, true);
             }
         }
     }
 
     private void initializeTextField(final Set<String> wildcardSet) {
-        final StringBuffer buffer = new StringBuffer();
+        final StringBuilder buffer = new StringBuilder();
         final Iterator<String> iterator = wildcardSet.iterator();
         while (iterator.hasNext()) {
             buffer.append(iterator.next());
-            buffer.append(System.getProperty("line.separator"));
+            buffer.append(System.lineSeparator());
         }
-        this.textField.setText(buffer.toString());
+        textField.setText(buffer.toString());
     }
 
     @Override
@@ -362,9 +339,9 @@ public class BlacklistTab extends MetricTab {
     }
 
     private Set<String> getTreeSelection() {
-        final Object[] checked = this.checkboxTreeViewer.getCheckedElements();
+        final Object[] checked = checkboxTreeViewer.getCheckedElements();
         // String[] wildcards = new String[checked.length];
-        final Set<String> wildcards = new HashSet<String>();
+        final Set<String> wildcards = new HashSet<>();
         // int i = 0;
         for (final Object current : checked) {
             if (current instanceof Type) {
@@ -384,15 +361,13 @@ public class BlacklistTab extends MetricTab {
     }
 
     private Set<String> getTextField(final Text myTextField) {
-        final Set<String> completeResult = new HashSet<String>();
-        final String[] result = myTextField.getText().split(System.getProperty("line.separator"));
+        final Set<String> completeResult = new HashSet<>();
+        final String[] result = myTextField.getText().split(System.lineSeparator());
         for (final String element : result) {
             final String[] commaResult = element.split(",");
             for (final String element2 : commaResult) {
                 final String[] semicolonResult = element2.split(";");
-                for (final String element3 : semicolonResult) {
-                    completeResult.add(element3);
-                }
+                Collections.addAll(completeResult, semicolonResult);
             }
         }
         return completeResult;
@@ -402,27 +377,27 @@ public class BlacklistTab extends MetricTab {
     @Override
     public void performApply(final ILaunchConfigurationWorkingCopy configuration) {
         Set<String> wildcards;
-        if (this.stackLayout.topControl == this.textFieldControl) {
-            wildcards = this.getTextField(this.textField);
+        if (stackLayout.topControl == textFieldControl) {
+            wildcards = getTextField(textField);
         } else {
-            wildcards = this.getTreeSelection();
-            wildcards.addAll(this.getTextField(this.addiditonalBlacklistTextfield));
+            wildcards = getTreeSelection();
+            wildcards.addAll(getTextField(addiditonalBlacklistTextfield));
         }
-        final StringBuffer buffer = new StringBuffer();
+        final StringBuilder buffer = new StringBuilder();
         final Iterator<String> iterator = wildcards.iterator();
         while (iterator.hasNext()) {
             buffer.append(iterator.next());
-            buffer.append(this.DELIMITER);
+            buffer.append(DELIMITER);
         }
         configuration.setAttribute(SoMoXConfiguration.SOMOX_ANALYZER_WILDCARD_KEY, buffer.toString());
         configuration.setAttribute(SoMoXConfiguration.BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL,
-                this.addiditonalBlacklistTextfield.getText());
+                addiditonalBlacklistTextfield.getText());
     }
 
     @Override
     public void setDefaults(final ILaunchConfigurationWorkingCopy configuration) {
-        if (this.checkboxTreeViewer != null) {
-            this.checkboxTreeViewer.setInput(null);
+        if (checkboxTreeViewer != null) {
+            checkboxTreeViewer.setInput(null);
         }
         configuration.setAttribute(SoMoXConfiguration.BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL, "");
     }

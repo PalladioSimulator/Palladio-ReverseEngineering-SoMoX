@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.jgrapht.DirectedGraph;
+import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.metamodeladdition.Root;
 import org.somox.metrics.ClusteringRelation;
@@ -18,8 +18,8 @@ import org.somox.metrics.helper.ComponentToImplementingClassesHelper;
 //import de.fzi.gast.types.GASTClass;
 
 /**
- * Base class for a metric which uses other (child) metrics and a function to calculate the overall
- * metric value.
+ * Base class for a metric which uses other (child) metrics and a function to
+ * calculate the overall metric value.
  *
  * @author Steffen Becker
  */
@@ -33,8 +33,8 @@ public abstract class AbstractComposedMetric extends AbstractMetric {
     private IMetric[] allChildMetrics;
 
     /**
-     * Strategy pattern. Contains the strategy how to compose the overall metric based on the single
-     * metrics available
+     * Strategy pattern. Contains the strategy how to compose the overall metric
+     * based on the single metrics available
      */
     private ICompositionFunction compositionFunction = null;
 
@@ -42,43 +42,46 @@ public abstract class AbstractComposedMetric extends AbstractMetric {
      * (non-Javadoc)
      *
      * @see org.somox.metrics.Metric#initialize(de.fzi.gast.core.Root,
-     * org.somox.configuration.SoMoXConfiguration, java.util.Map, org.jgrapht.DirectedGraph,
+     * org.somox.configuration.SoMoXConfiguration, java.util.Map,
+     * org.jgrapht.DirectedGraph,
      * org.somox.metrics.helper.ComponentToImplementingClassesHelper)
      */
     @Override
     public void initialize(final Root gastModel, final SoMoXConfiguration somoxConfiguration,
             final Map<MetricID, IMetric> allMetrics,
-            final DirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph,
+            final DefaultDirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph,
             final ComponentToImplementingClassesHelper componentToImplementingClassesHelper) {
         super.initialize(gastModel, somoxConfiguration, allMetrics, accessGraph, componentToImplementingClassesHelper);
 
-        this.compositionFunction = this.getCompositionFunction(somoxConfiguration);
-        this.allChildMetrics = this.getChildMetrics(allMetrics);
+        compositionFunction = getCompositionFunction(somoxConfiguration);
+        allChildMetrics = getChildMetrics(allMetrics);
     }
 
     /*
      * (non-Javadoc)
      *
-     * @see org.somox.metrics.Metric#computeDirected(eu.qimpress.sourcecodedecorator.
+     * @see
+     * org.somox.metrics.Metric#computeDirected(eu.qimpress.sourcecodedecorator.
      * ComponentImplementingClassesLink,
-     * eu.qimpress.sourcecodedecorator.ComponentImplementingClassesLink, java.util.List)
+     * eu.qimpress.sourcecodedecorator.ComponentImplementingClassesLink,
+     * java.util.List)
      */
     @Override
     protected void internalComputeDirected(final ClusteringRelation relationToCompute) {
 
-        for (final IMetric m : this.allChildMetrics) {
+        for (final IMetric m : allChildMetrics) {
             if (!relationToCompute.getResult().containsKey(m.getMID())) {
                 m.computeDirected(relationToCompute);
             }
         }
         if (logger.isDebugEnabled()) {
-            for (final IMetric m : this.allChildMetrics) {
+            for (final IMetric m : allChildMetrics) {
                 assert relationToCompute.getResult().containsKey(m.getMID());
                 assert relationToCompute.getResult().get(m.getMID()) != null;
             }
         }
-        relationToCompute.setResultMetric(this.getMID(),
-                this.compositionFunction.computeOverallDirectedMetricValue(relationToCompute.getResult()));
+        relationToCompute.setResultMetric(getMID(),
+                compositionFunction.computeOverallDirectedMetricValue(relationToCompute.getResult()));
     }
 
     /*
@@ -89,18 +92,18 @@ public abstract class AbstractComposedMetric extends AbstractMetric {
     @Override
     public boolean isCommutative() {
         boolean result = true;
-        for (final IMetric m : this.allChildMetrics) {
+        for (final IMetric m : allChildMetrics) {
             result &= m.isCommutative();
         }
         return result;
     }
 
     /**
-     * In a subclass override this method and return the subset of metrics in allMetrics which are
-     * needed in this composed metric.
+     * In a subclass override this method and return the subset of metrics in
+     * allMetrics which are needed in this composed metric.
      *
-     * @param allMetrics
-     *            The set of all metrics registered in the system via the metric extension point
+     * @param allMetrics The set of all metrics registered in the system via the
+     *                   metric extension point
      * @return The subset of all metrics needed in this composed metric
      */
     protected abstract IMetric[] getChildMetrics(Map<MetricID, IMetric> allMetrics);
@@ -108,8 +111,8 @@ public abstract class AbstractComposedMetric extends AbstractMetric {
     /**
      * Return the function used to compose the set of child metrics
      *
-     * @param somoxConfiguration
-     *            The somox configuration object used to initialize the function
+     * @param somoxConfiguration The somox configuration object used to initialize
+     *                           the function
      * @return The function used to compute the composed metric
      */
     protected abstract ICompositionFunction getCompositionFunction(SoMoXConfiguration somoxConfiguration);
@@ -118,7 +121,7 @@ public abstract class AbstractComposedMetric extends AbstractMetric {
      * @return the allChildMetrics
      */
     public IMetric[] getAllChildMetrics() {
-        return this.allChildMetrics;
+        return allChildMetrics;
     }
 
     /**

@@ -15,7 +15,7 @@ public class AbstractTypesCount extends AbstractCountingMetric {
     public static final MetricID METRIC_ID = new MetricID("org.somox.metric.basic.AbstractTypesCount");
 
     // filter used in this metric, gets abstract classes and interfaces
-    private static final BaseFilter<ConcreteClassifier> abstractClassesFilter = new BaseFilter<ConcreteClassifier>() {
+    private static final BaseFilter<ConcreteClassifier> abstractClassesFilter = new BaseFilter<>() {
 
         @Override
         public boolean passes(final ConcreteClassifier object) {
@@ -28,7 +28,7 @@ public class AbstractTypesCount extends AbstractCountingMetric {
 
         final Set<ConcreteClassifier> allClasses = this.calculateUnion(relationToCompute.getSourceComponent(),
                 relationToCompute.getTargetComponent());
-        relationToCompute.setResultMetric(this.getMID(),
+        relationToCompute.setResultMetric(getMID(),
                 FilteredCollectionsFactory.getFilteredHashSet(abstractClassesFilter, allClasses).size());
     }
 

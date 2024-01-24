@@ -6,7 +6,7 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.jgrapht.DirectedGraph;
+import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.metamodeladdition.Root;
 import org.somox.metrics.ClusteringRelation;
@@ -22,8 +22,8 @@ import org.somox.metrics.util.AccessCacheGraph;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 
 /**
- * Abstract base class of all metrics, contains convenience functions and basic method
- * implementations
+ * Abstract base class of all metrics, contains convenience functions and basic
+ * method implementations
  *
  * @author Steffen Becker
  */
@@ -35,7 +35,8 @@ public abstract class AbstractMetric implements IMetric {
     private final Logger logger = Logger.getLogger(AbstractMetric.class);
 
     /**
-     * Helper used to convert source code decorators into sets of implementing classes
+     * Helper used to convert source code decorators into sets of implementing
+     * classes
      */
     private ComponentToImplementingClassesHelper componentToClassHelper;
 
@@ -47,15 +48,17 @@ public abstract class AbstractMetric implements IMetric {
     /*
      * (non-Javadoc)
      *
-     * @see org.somox.metrics.IMetric#computeDirected(eu.qimpress.sourcecodedecorator.
+     * @see
+     * org.somox.metrics.IMetric#computeDirected(eu.qimpress.sourcecodedecorator.
      * ComponentImplementingClassesLink,
-     * eu.qimpress.sourcecodedecorator.ComponentImplementingClassesLink, java.util.List)
+     * eu.qimpress.sourcecodedecorator.ComponentImplementingClassesLink,
+     * java.util.List)
      */
     @Override
     public void computeDirected(final ClusteringRelation relationToCompute) {
-        assert this.checkMetricPreCondition(relationToCompute);
-        this.internalComputeDirected(relationToCompute);
-        assert this.checkMetricPostCondition(relationToCompute);
+        assert checkMetricPreCondition(relationToCompute);
+        internalComputeDirected(relationToCompute);
+        assert checkMetricPostCondition(relationToCompute);
     }
 
     /*
@@ -90,69 +93,67 @@ public abstract class AbstractMetric implements IMetric {
      * (non-Javadoc)
      *
      * @see org.somox.metrics.IMetric#initialize(de.fzi.gast.core.Root,
-     * org.somox.configuration.SoMoXConfiguration, java.util.Map, org.jgrapht.DirectedGraph,
+     * org.somox.configuration.SoMoXConfiguration, java.util.Map,
+     * org.jgrapht.DirectedGraph,
      * org.somox.metrics.helper.ComponentToImplementingClassesHelper)
      */
     @Override
     public void initialize(final Root gastModel, final SoMoXConfiguration somoxConfiguration,
             final Map<MetricID, IMetric> allMetrics,
-            final DirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph,
+            final DefaultDirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph,
             final ComponentToImplementingClassesHelper componentToClassHelper) {
         if (accessGraph == null) {
-            this.logger.error("No access cache graph passed");
+            logger.error("No access cache graph passed");
             throw new IllegalArgumentException("Access graph must not be null");
         }
-        this.accessGraphCache = new AccessCacheGraph(accessGraph);
+        accessGraphCache = new AccessCacheGraph(accessGraph);
         this.componentToClassHelper = componentToClassHelper;
     }
 
     /**
-     * Template method to be implemented by subclasses to effectively compute the metric value
+     * Template method to be implemented by subclasses to effectively compute the
+     * metric value
      *
-     * @param relationToCompute
-     *            The relation to compute
-     * @return The computed relation, it is assumed to be the same than relationToCompute
+     * @param relationToCompute The relation to compute
+     * @return The computed relation, it is assumed to be the same than
+     *         relationToCompute
      */
     protected abstract void internalComputeDirected(ClusteringRelation relationToCompute);
 
     /**
-     * Method used to implement a metric postcondition. Used if Somox runs with assertions enabled
-     * and helps in debugging the metrics
+     * Method used to implement a metric postcondition. Used if Somox runs with
+     * assertions enabled and helps in debugging the metrics
      *
-     * @param relationToCompute
-     *            The computed metric relation
+     * @param relationToCompute The computed metric relation
      * @return true if the postcondition holds
      */
     protected boolean checkMetricPostCondition(final ClusteringRelation relationToCompute) {
-        return relationToCompute.getResult().containsKey(this.getMID());
+        return relationToCompute.getResult().containsKey(getMID());
     }
 
     /**
-     * Method used to implement a metric precondition. Used if Somox runs with assertions enabled
-     * and helps in debugging the metrics
+     * Method used to implement a metric precondition. Used if Somox runs with
+     * assertions enabled and helps in debugging the metrics
      *
-     * @param relationToCompute
-     *            The computed metric relation
+     * @param relationToCompute The computed metric relation
      * @return true if the precondition holds
      */
     protected boolean checkMetricPreCondition(final ClusteringRelation relationToCompute) {
-        return !relationToCompute.getResult().containsKey(this.getMID());
+        return !relationToCompute.getResult().containsKey(getMID());
     }
 
     /**
      * @return the accessGraphCache
      */
     protected AccessCacheGraph getAccessGraphCache() {
-        return this.accessGraphCache;
+        return accessGraphCache;
     }
 
     /**
      * Helper method used to securely retrieve a metric from a map of metrics
      *
-     * @param allMetrics
-     *            Map of metrics and their IDs
-     * @param metricId
-     *            ID to retrieve
+     * @param allMetrics Map of metrics and their IDs
+     * @param metricId   ID to retrieve
      * @return The requested metric
      */
     protected IMetric getMetric(final Map<MetricID, IMetric> allMetrics, final MetricID metricId) {
@@ -168,38 +169,35 @@ public abstract class AbstractMetric implements IMetric {
     /**
      * Helper method which computes the union of two sets of GASTClasses
      *
-     * @param classes1
-     *            first set
-     * @param classes2
-     *            second set
+     * @param classes1 first set
+     * @param classes2 second set
      * @return Union of set1 and set2
      */
     protected Set<ConcreteClassifier> calculateUnion(final Set<ConcreteClassifier> classes1,
             final Set<ConcreteClassifier> classes2) {
-        final Set<ConcreteClassifier> allInnerClasses = new HashSet<ConcreteClassifier>(classes1);
+        final Set<ConcreteClassifier> allInnerClasses = new HashSet<>(classes1);
         allInnerClasses.addAll(classes2);
         return allInnerClasses;
     }
 
     /**
-     * Helper method which computes the union of the classes implementing the two components
+     * Helper method which computes the union of the classes implementing the two
+     * components
      *
-     * @param component1
-     *            First component
-     * @param component2
-     *            Second component
+     * @param component1 First component
+     * @param component2 Second component
      * @return Union of all classes implementing component1 and component2
      */
     protected Set<ConcreteClassifier> calculateUnion(final ComponentImplementingClassesLink component1,
             final ComponentImplementingClassesLink component2) {
-        return this.calculateUnion(this.getComponentToClassHelper().deriveImplementingClasses(component1),
-                this.getComponentToClassHelper().deriveImplementingClasses(component2));
+        return this.calculateUnion(getComponentToClassHelper().deriveImplementingClasses(component1),
+                getComponentToClassHelper().deriveImplementingClasses(component2));
     }
 
     /**
      * @return the componentToClassHelper
      */
     protected ComponentToImplementingClassesHelper getComponentToClassHelper() {
-        return this.componentToClassHelper;
+        return componentToClassHelper;
     }
 }

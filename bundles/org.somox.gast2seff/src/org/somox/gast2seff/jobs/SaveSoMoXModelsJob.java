@@ -18,10 +18,10 @@ import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment;
 import org.palladiosimulator.pcm.system.System;
 import org.somox.analyzer.AnalysisResult;
-import org.somox.util.DefaultResourceEnvironment;
 import org.somox.configuration.AbstractMoxConfiguration;
 import org.somox.kdmhelper.SoMoXUtil;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
+import org.somox.util.DefaultResourceEnvironment;
 
 import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
 import de.uka.ipd.sdq.workflow.jobs.IBlackboardInteractingJob;
@@ -63,35 +63,32 @@ public class SaveSoMoXModelsJob implements IBlackboardInteractingJob<SoMoXBlackb
 
     public SaveSoMoXModelsJob(final AbstractMoxConfiguration somoxConfiguration) {
         this.somoxConfiguration = somoxConfiguration;
-        this.resourceSet = new ResourceSetImpl();
-        this.resourceSet.getResourceFactoryRegistry()
-            .getExtensionToFactoryMap()
-            .put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+        resourceSet = new ResourceSetImpl();
+        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
+                .put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
     }
 
     /**
-     * @param blackBoard
-     *            the blackBoard to set
+     * @param blackBoard the blackBoard to set
      */
     @Override
     public void setBlackboard(final SoMoXBlackboard blackBoard) {
-        this.blackboard = blackBoard;
+        blackboard = blackBoard;
     }
 
     @Override
     public void execute(final IProgressMonitor arg0) throws JobFailedException, UserCanceledException {
 
-        final AnalysisResult result = this.blackboard.getAnalysisResult();
+        final AnalysisResult result = blackboard.getAnalysisResult();
 
-        final String outputFolder = this.somoxConfiguration.getFileLocations()
-            .getOutputFolder();
+        final String outputFolder = somoxConfiguration.getFileLocations().getOutputFolder();
 
         URI outputFolderURI = null;
         boolean isValidURI;
         try {
             outputFolderURI = URI.createURI(outputFolder);
             isValidURI = outputFolderURI.isPlatformResource() || outputFolderURI.isFile();
-        } catch (IllegalArgumentException e) {
+        } catch (final IllegalArgumentException e) {
             isValidURI = false;
         }
 
@@ -115,7 +112,7 @@ public class SaveSoMoXModelsJob implements IBlackboardInteractingJob<SoMoXBlackb
                 this.saveAllocationModel(result.getAllocation(), outputFolder);
             }
         } catch (final IOException e) {
-            this.logger.error("Model Analyzer failed.", e);
+            logger.error("Model Analyzer failed.", e);
             throw new JobFailedException("Unable to save SoMoX Models", e);
         }
 
@@ -190,10 +187,9 @@ public class SaveSoMoXModelsJob implements IBlackboardInteractingJob<SoMoXBlackb
         // Create a resource for this file.
         final Resource resource = resourceSet.createResource(uri);
         // Add object to the contents.
-        resource.getContents()
-            .add(emfObject);
+        resource.getContents().add(emfObject);
 
-        final HashMap<Object, Object> saveOptions = new HashMap<Object, Object>();
+        final HashMap<Object, Object> saveOptions = new HashMap<>();
         saveOptions.put(XMLResource.OPTION_PROCESS_DANGLING_HREF, XMLResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
 
         resource.save(saveOptions);

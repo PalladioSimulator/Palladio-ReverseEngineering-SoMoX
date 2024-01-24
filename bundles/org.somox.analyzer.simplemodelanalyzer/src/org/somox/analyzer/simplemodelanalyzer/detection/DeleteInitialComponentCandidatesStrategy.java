@@ -27,10 +27,11 @@ import org.somox.sourcecodedecorator.SEFF2MethodMapping;
 import de.uka.ipd.sdq.workflow.ExecutionTimeLoggingProgressMonitor;
 
 /**
- * Deletes initial components which have been replaced by merged basic components and converts the
- * kept initial components into real basic component (is initial flag). Cleans up palladio model and
- * source code decorator. <br>
- * Does expect that composite components have NO references to transitively contained inner classes.
+ * Deletes initial components which have been replaced by merged basic
+ * components and converts the kept initial components into real basic component
+ * (is initial flag). Cleans up palladio model and source code decorator. <br>
+ * Does expect that composite components have NO references to transitively
+ * contained inner classes.
  *
  * @author Klaus Krogmann
  *
@@ -45,8 +46,9 @@ public class DeleteInitialComponentCandidatesStrategy implements IPostComponentD
     /*
      * (non-Javadoc)
      *
-     * @see org.somox.analyzer.simplemodelanalyzer.detection.IPostComponentDetectionStrategy#
-     * postComponentDetection(java.util.List, org.somox.configuration.SoMoXConfiguration)
+     * @see org.somox.analyzer.simplemodelanalyzer.detection.
+     * IPostComponentDetectionStrategy# postComponentDetection(java.util.List,
+     * org.somox.configuration.SoMoXConfiguration)
      */
     @Override
     public void postComponentDetection(final AbstractMoxConfiguration somoxConfiguration,
@@ -57,8 +59,8 @@ public class DeleteInitialComponentCandidatesStrategy implements IPostComponentD
         subProgressMonitor.beginTask("Post component detection", IProgressMonitor.UNKNOWN);
         logger.trace("Post component detection");
 
-        final Set<RepositoryComponent> componentsToDelete = new HashSet<RepositoryComponent>();
-        final Set<ComponentImplementingClassesLink> componentLinksToDelete = new HashSet<ComponentImplementingClassesLink>();
+        final Set<RepositoryComponent> componentsToDelete = new HashSet<>();
+        final Set<ComponentImplementingClassesLink> componentLinksToDelete = new HashSet<>();
         boolean lastCollectedForDeletion = false;
 
         for (final ComponentImplementingClassesLink componentLinkToCheck : analysisResult
@@ -67,7 +69,7 @@ public class DeleteInitialComponentCandidatesStrategy implements IPostComponentD
             if (componentLinkToCheck.isIsInitialComponent()) {
                 for (final ComponentImplementingClassesLink innerComponentLink : analysisResult
                         .getSourceCodeDecoratorRepository().getComponentImplementingClassesLink()) {
-                    if (innerComponentLink != componentLinkToCheck && innerComponentLink.getImplementingClasses()
+                    if ((innerComponentLink != componentLinkToCheck) && innerComponentLink.getImplementingClasses()
                             .containsAll(componentLinkToCheck.getImplementingClasses())) {
 
                         logger.trace(
@@ -92,8 +94,8 @@ public class DeleteInitialComponentCandidatesStrategy implements IPostComponentD
             subProgressMonitor.worked(1);
         }
 
-        this.cleanUpGastBehaviour(analysisResult, componentLinksToDelete);
-        this.cleanUpSourceCodeDecorator(analysisResult, componentLinksToDelete);
+        cleanUpGastBehaviour(analysisResult, componentLinksToDelete);
+        cleanUpSourceCodeDecorator(analysisResult, componentLinksToDelete);
 
         // Delete identified initial components:
         for (final ComponentImplementingClassesLink compLink : componentLinksToDelete) {
@@ -110,8 +112,8 @@ public class DeleteInitialComponentCandidatesStrategy implements IPostComponentD
     private void cleanUpSourceCodeDecorator(final SimpleAnalysisResult analysisResult,
             final Set<ComponentImplementingClassesLink> componentLinksToDelete) {
 
-        final Set<FileLevelSourceCodeLink> fileLevelSourceCodeLinksToDelete = new HashSet<FileLevelSourceCodeLink>();
-        final Set<MethodLevelSourceCodeLink> methodLevelSourceCodeLinksToDelete = new HashSet<MethodLevelSourceCodeLink>();
+        final Set<FileLevelSourceCodeLink> fileLevelSourceCodeLinksToDelete = new HashSet<>();
+        final Set<MethodLevelSourceCodeLink> methodLevelSourceCodeLinksToDelete = new HashSet<>();
         for (final ComponentImplementingClassesLink compLink : componentLinksToDelete) {
             for (final FileLevelSourceCodeLink sourceLink : analysisResult.getSourceCodeDecoratorRepository()
                     .getFileLevelSourceCodeLink()) {
@@ -121,7 +123,7 @@ public class DeleteInitialComponentCandidatesStrategy implements IPostComponentD
             }
             for (final MethodLevelSourceCodeLink sourceLink : analysisResult.getSourceCodeDecoratorRepository()
                     .getMethodLevelSourceCodeLink()) {
-                if (sourceLink.getRepositoryComponent() != null
+                if ((sourceLink.getRepositoryComponent() != null)
                         && sourceLink.getRepositoryComponent().equals(compLink.getComponent())) {
                     methodLevelSourceCodeLinksToDelete.add(sourceLink);
                 }
@@ -139,16 +141,15 @@ public class DeleteInitialComponentCandidatesStrategy implements IPostComponentD
     /**
      * Cleans up the gast behaviour: behaviour of deleted components is also removed
      *
-     * @param analysisResult
-     *            results containing the gast behaviour
-     * @param componentLinksToDelete
-     *            component which are going to be deleted.
+     * @param analysisResult         results containing the gast behaviour
+     * @param componentLinksToDelete component which are going to be deleted.
      */
     private void cleanUpGastBehaviour(final SimpleAnalysisResult analysisResult,
             final Set<ComponentImplementingClassesLink> componentLinksToDelete) {
 
-        final Set<SEFF2MethodMapping> mappingsToDelete = new HashSet<SEFF2MethodMapping>();
-        for (final SEFF2MethodMapping seff2MethodMapping : analysisResult.getSourceCodeDecoratorRepository().getSeff2MethodMappings()) {
+        final Set<SEFF2MethodMapping> mappingsToDelete = new HashSet<>();
+        for (final SEFF2MethodMapping seff2MethodMapping : analysisResult.getSourceCodeDecoratorRepository()
+                .getSeff2MethodMappings()) {
             final Signature signature = seff2MethodMapping.getSeff().getDescribedService__SEFF();
 
             outer: for (final ComponentImplementingClassesLink compLink : componentLinksToDelete) {

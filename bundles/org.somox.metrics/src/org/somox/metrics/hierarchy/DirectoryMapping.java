@@ -12,8 +12,8 @@ import org.somox.metrics.MetricID;
 //import de.fzi.gast.types.GASTClass;
 
 /**
- * DirectoryMapping metric: Checks how well are component candidates are arranged in the same or at
- * least comparable directory.
+ * DirectoryMapping metric: Checks how well are component candidates are
+ * arranged in the same or at least comparable directory.
  *
  * @author Klaus Krogmann
  */
@@ -30,7 +30,7 @@ public class DirectoryMapping extends AbstractHierarchyMapping<Package> {
 
     @Override
     protected Package getPath(final Type clazz) {
-        if (KDMHelper.getJavaNodeSourceRegion(clazz) == null || KDMHelper.getJavaNodeSourceRegion(clazz) == null) {
+        if ((KDMHelper.getJavaNodeSourceRegion(clazz) == null) || (KDMHelper.getJavaNodeSourceRegion(clazz) == null)) {
             return null;
         }
         return (Package) (KDMHelper.getJavaNodeSourceRegion(clazz)).eContainer();

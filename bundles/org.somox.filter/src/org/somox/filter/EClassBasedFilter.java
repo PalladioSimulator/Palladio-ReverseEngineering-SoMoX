@@ -15,18 +15,15 @@ public class EClassBasedFilter<T extends EObject> extends BaseFilter<T> {
     /**
      * Constructor of this filter
      *
-     * @param eClasses
-     *            The Accesses' EClass which should be removed by this filter
+     * @param eClasses The Accesses' EClass which should be removed by this filter
      */
     public EClassBasedFilter(final EClass... eClasses) {
-        super();
-
-        this.filteredEClasses = eClasses;
+        filteredEClasses = eClasses;
     }
 
     @Override
     public boolean passes(final EObject object) {
-        for (final EClass clazz : this.filteredEClasses) {
+        for (final EClass clazz : filteredEClasses) {
             if (object.eClass() == clazz) {
                 return false;
             }

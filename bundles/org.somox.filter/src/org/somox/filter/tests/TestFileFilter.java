@@ -22,23 +22,23 @@ public class TestFileFilter extends BaseFilter<ConcreteClassifier> {
     private final Map<ConcreteClassifier, Boolean> cache = new HashMap<>();
 
     /**
-     * The detectors that are used to determine whether a file is a test file. Because ordering
-     * affects performance, this is not a set.
+     * The detectors that are used to determine whether a file is a test file.
+     * Because ordering affects performance, this is not a set.
      */
-    private final TestDetector[] detectors = new TestDetector[] { new MavenProjectStructureTestFileDetector(),
+    private final TestDetector[] detectors = { new MavenProjectStructureTestFileDetector(),
             new JUnitAnnotationTestDetector() };
 
     @Override
-    public boolean passes(ConcreteClassifier object) {
+    public boolean passes(final ConcreteClassifier object) {
         return !cache.computeIfAbsent(object, this::isTestFile);
     }
 
     /**
      * Determines whether the provided {@code classifier} is a test file, using the
-     * {@link #detectors}. The method’s behaviour is equivalent to {@link #isTestFile(Path)}.
+     * {@link #detectors}. The method’s behaviour is equivalent to
+     * {@link #isTestFile(Path)}.
      *
-     * @param classifier
-     *            A JaMoPP concrete classifier.
+     * @param classifier A JaMoPP concrete classifier.
      * @return Whether the provided {@code classifier} is a test file.
      */
     private boolean isTestFile(final ConcreteClassifier classifier) {
@@ -58,12 +58,12 @@ public class TestFileFilter extends BaseFilter<ConcreteClassifier> {
     }
 
     /**
-     * Determines whether the provided {@code file} is a test file, using the {@link #detectors}. A
-     * file is a test file if any detector’s {@link TestDetector#isTest(Path)} returns {@code true}
-     * and no detector returns {@code false}.
+     * Determines whether the provided {@code file} is a test file, using the
+     * {@link #detectors}. A file is a test file if any detector’s
+     * {@link TestDetector#isTest(Path)} returns {@code true} and no detector
+     * returns {@code false}.
      *
-     * @param file
-     *            The path to a java source file.
+     * @param file The path to a java source file.
      * @return Whether the provided {@code file} is a test file.
      */
     private boolean isTestFile(final Path file) {
@@ -72,7 +72,7 @@ public class TestFileFilter extends BaseFilter<ConcreteClassifier> {
         // file.
         boolean mayBeTestFile = false;
 
-        for (final TestDetector detector : this.detectors) {
+        for (final TestDetector detector : detectors) {
             // don’t run the detector if we don’t need it
             if (!mayBeTestFile || detector.mayReturnFalse()) {
                 final Optional<Boolean> result;
@@ -86,7 +86,8 @@ public class TestFileFilter extends BaseFilter<ConcreteClassifier> {
                     // if any detector returns {@code false}, the file is definitely not a
                     // test file.
                     return false;
-                } else if (result.orElse(false)) {
+                }
+                if (result.orElse(false)) {
                     mayBeTestFile = true;
                 }
             }

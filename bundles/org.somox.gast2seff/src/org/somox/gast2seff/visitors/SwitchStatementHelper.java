@@ -11,8 +11,9 @@ import org.emftext.language.java.statements.Switch;
 import org.emftext.language.java.statements.SwitchCase;
 
 /**
- * Computes for a {@link SwitchStatement} the case branches in a way that to the case branches, that
- * do not end with break, the following case branch is added.
+ * Computes for a {@link SwitchStatement} the case branches in a way that to the
+ * case branches, that do not end with break, the following case branch is
+ * added.
  *
  * @author Oliver, Michael
  *
@@ -22,7 +23,7 @@ public class SwitchStatementHelper {
     private static final Logger logger = Logger.getLogger(SwitchStatementHelper.class.getSimpleName());
 
     public static List<List<Statement>> createBlockListFromSwitchStatement(final Switch switchStatement) {
-        final ArrayList<List<Statement>> blockList = new ArrayList<List<Statement>>();
+        final ArrayList<List<Statement>> blockList = new ArrayList<>();
 
         for (final SwitchCase switchCase : switchStatement.getCases()) {
             final List<Statement> currentBlock = findNextBlock(switchCase, switchStatement);
@@ -35,7 +36,7 @@ public class SwitchStatementHelper {
         if (endsWithBreakStatement(switchCase) || isLastBlock(switchCase, switchStatement.getCases())) {
             return switchCase.getStatements();
         }
-        final List<Statement> currentBlock = new ArrayList<Statement>(switchCase.getStatements().size() * 4);
+        final List<Statement> currentBlock = new ArrayList<>(switchCase.getStatements().size() * 4);
         currentBlock.addAll(switchCase.getStatements());
         final int nextIndex = switchStatement.getCases().indexOf(switchCase) + 1;
         final SwitchCase nextSwitchCase = switchStatement.getCases().get(nextIndex);
@@ -46,7 +47,7 @@ public class SwitchStatementHelper {
     }
 
     private static boolean isLastBlock(final SwitchCase switchCase, final EList<SwitchCase> cases) {
-        return cases.indexOf(switchCase) == cases.size() - 1;
+        return cases.indexOf(switchCase) == (cases.size() - 1);
     }
 
     private static boolean endsWithBreakStatement(final SwitchCase switchCase) {

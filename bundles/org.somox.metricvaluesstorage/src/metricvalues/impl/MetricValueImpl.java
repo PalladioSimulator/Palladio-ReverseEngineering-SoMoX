@@ -11,12 +11,13 @@ import metricvalues.MetricValue;
 import metricvalues.MetricvaluesPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Metric Value</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Metric
+ * Value</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link metricvalues.impl.MetricValueImpl#getMetricID <em>Metric ID</em>}</li>
+ * <li>{@link metricvalues.impl.MetricValueImpl#getMetricID <em>Metric
+ * ID</em>}</li>
  * <li>{@link metricvalues.impl.MetricValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -25,8 +26,8 @@ import metricvalues.MetricvaluesPackage;
  */
 public class MetricValueImpl extends MinimalEObjectImpl.Container implements MetricValue {
     /**
-     * The default value of the '{@link #getMetricID() <em>Metric ID</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getMetricID() <em>Metric ID</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getMetricID()
      * @generated
@@ -35,8 +36,8 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
     protected static final String METRIC_ID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getMetricID() <em>Metric ID</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getMetricID() <em>Metric ID</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getMetricID()
      * @generated
@@ -45,8 +46,8 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
     protected String metricID = METRIC_ID_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getValue()
      * @generated
@@ -55,8 +56,8 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
     protected static final double VALUE_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getValue()
      * @generated
@@ -70,7 +71,6 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
      * @generated
      */
     protected MetricValueImpl() {
-        super();
     }
 
     /**
@@ -90,7 +90,7 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
      */
     @Override
     public String getMetricID() {
-        return this.metricID;
+        return metricID;
     }
 
     /**
@@ -100,11 +100,11 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
      */
     @Override
     public void setMetricID(final String newMetricID) {
-        final String oldMetricID = this.metricID;
-        this.metricID = newMetricID;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.METRIC_VALUE__METRIC_ID,
-                    oldMetricID, this.metricID));
+        final String oldMetricID = metricID;
+        metricID = newMetricID;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.METRIC_VALUE__METRIC_ID,
+                    oldMetricID, metricID));
         }
     }
 
@@ -115,7 +115,7 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
      */
     @Override
     public double getValue() {
-        return this.value;
+        return value;
     }
 
     /**
@@ -125,11 +125,11 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
      */
     @Override
     public void setValue(final double newValue) {
-        final double oldValue = this.value;
-        this.value = newValue;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.METRIC_VALUE__VALUE,
-                    oldValue, this.value));
+        final double oldValue = value;
+        value = newValue;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.METRIC_VALUE__VALUE, oldValue,
+                    value));
         }
     }
 
@@ -142,9 +142,9 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricvaluesPackage.METRIC_VALUE__METRIC_ID:
-            return this.getMetricID();
+            return getMetricID();
         case MetricvaluesPackage.METRIC_VALUE__VALUE:
-            return this.getValue();
+            return getValue();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -158,10 +158,10 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricvaluesPackage.METRIC_VALUE__METRIC_ID:
-            this.setMetricID((String) newValue);
+            setMetricID((String) newValue);
             return;
         case MetricvaluesPackage.METRIC_VALUE__VALUE:
-            this.setValue((Double) newValue);
+            setValue((Double) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -176,10 +176,10 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricvaluesPackage.METRIC_VALUE__METRIC_ID:
-            this.setMetricID(METRIC_ID_EDEFAULT);
+            setMetricID(METRIC_ID_EDEFAULT);
             return;
         case MetricvaluesPackage.METRIC_VALUE__VALUE:
-            this.setValue(VALUE_EDEFAULT);
+            setValue(VALUE_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -194,9 +194,9 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricvaluesPackage.METRIC_VALUE__METRIC_ID:
-            return METRIC_ID_EDEFAULT == null ? this.metricID != null : !METRIC_ID_EDEFAULT.equals(this.metricID);
+            return METRIC_ID_EDEFAULT == null ? metricID != null : !METRIC_ID_EDEFAULT.equals(metricID);
         case MetricvaluesPackage.METRIC_VALUE__VALUE:
-            return this.value != VALUE_EDEFAULT;
+            return value != VALUE_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -208,15 +208,15 @@ public class MetricValueImpl extends MinimalEObjectImpl.Container implements Met
      */
     @Override
     public String toString() {
-        if (this.eIsProxy()) {
+        if (eIsProxy()) {
             return super.toString();
         }
 
-        final StringBuffer result = new StringBuffer(super.toString());
+        final StringBuilder result = new StringBuilder(super.toString());
         result.append(" (metricID: ");
-        result.append(this.metricID);
+        result.append(metricID);
         result.append(", value: ");
-        result.append(this.value);
+        result.append(value);
         result.append(')');
         return result.toString();
     }

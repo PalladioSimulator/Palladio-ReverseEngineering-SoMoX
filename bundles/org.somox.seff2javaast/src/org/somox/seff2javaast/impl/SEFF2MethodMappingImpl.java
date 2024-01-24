@@ -14,23 +14,25 @@ import org.somox.seff2javaast.SEFF2MethodMapping;
 import org.somox.seff2javaast.Seff2javaastPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>SEFF2 Method Mapping</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>SEFF2
+ * Method Mapping</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
  * <li>{@link org.somox.seff2javaast.impl.SEFF2MethodMappingImpl#getBlockstatement
  * <em>Blockstatement</em>}</li>
- * <li>{@link org.somox.seff2javaast.impl.SEFF2MethodMappingImpl#getSeff <em>Seff</em>}</li>
+ * <li>{@link org.somox.seff2javaast.impl.SEFF2MethodMappingImpl#getSeff
+ * <em>Seff</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container implements SEFF2MethodMapping {
     /**
-     * The cached value of the '{@link #getBlockstatement() <em>Blockstatement</em>}' reference.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getBlockstatement()
+     * <em>Blockstatement</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @see #getBlockstatement()
      * @generated
@@ -39,8 +41,8 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
     protected StatementListContainer blockstatement;
 
     /**
-     * The cached value of the '{@link #getSeff() <em>Seff</em>}' reference. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getSeff() <em>Seff</em>}' reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getSeff()
      * @generated
@@ -54,7 +56,6 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     protected SEFF2MethodMappingImpl() {
-        super();
     }
 
     /**
@@ -74,18 +75,15 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public StatementListContainer getBlockstatement() {
-        if (this.blockstatement != null && this.blockstatement.eIsProxy()) {
-            final InternalEObject oldBlockstatement = (InternalEObject) this.blockstatement;
-            this.blockstatement = (StatementListContainer) this.eResolveProxy(oldBlockstatement);
-            if (this.blockstatement != oldBlockstatement) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            Seff2javaastPackage.SEFF2_METHOD_MAPPING__BLOCKSTATEMENT, oldBlockstatement,
-                            this.blockstatement));
-                }
+        if ((blockstatement != null) && blockstatement.eIsProxy()) {
+            final InternalEObject oldBlockstatement = (InternalEObject) blockstatement;
+            blockstatement = (StatementListContainer) eResolveProxy(oldBlockstatement);
+            if ((blockstatement != oldBlockstatement) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        Seff2javaastPackage.SEFF2_METHOD_MAPPING__BLOCKSTATEMENT, oldBlockstatement, blockstatement));
             }
         }
-        return this.blockstatement;
+        return blockstatement;
     }
 
     /**
@@ -94,7 +92,7 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     public StatementListContainer basicGetBlockstatement() {
-        return this.blockstatement;
+        return blockstatement;
     }
 
     /**
@@ -104,11 +102,11 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public void setBlockstatement(final StatementListContainer newBlockstatement) {
-        final StatementListContainer oldBlockstatement = this.blockstatement;
-        this.blockstatement = newBlockstatement;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    Seff2javaastPackage.SEFF2_METHOD_MAPPING__BLOCKSTATEMENT, oldBlockstatement, this.blockstatement));
+        final StatementListContainer oldBlockstatement = blockstatement;
+        blockstatement = newBlockstatement;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET,
+                    Seff2javaastPackage.SEFF2_METHOD_MAPPING__BLOCKSTATEMENT, oldBlockstatement, blockstatement));
         }
     }
 
@@ -119,17 +117,15 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public ServiceEffectSpecification getSeff() {
-        if (this.seff != null && ((EObject) this.seff).eIsProxy()) {
-            final InternalEObject oldSeff = (InternalEObject) this.seff;
-            this.seff = (ServiceEffectSpecification) this.eResolveProxy(oldSeff);
-            if (this.seff != oldSeff) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            Seff2javaastPackage.SEFF2_METHOD_MAPPING__SEFF, oldSeff, this.seff));
-                }
+        if ((seff != null) && ((EObject) seff).eIsProxy()) {
+            final InternalEObject oldSeff = (InternalEObject) seff;
+            seff = (ServiceEffectSpecification) eResolveProxy(oldSeff);
+            if ((seff != oldSeff) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        Seff2javaastPackage.SEFF2_METHOD_MAPPING__SEFF, oldSeff, seff));
             }
         }
-        return this.seff;
+        return seff;
     }
 
     /**
@@ -138,7 +134,7 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     public ServiceEffectSpecification basicGetSeff() {
-        return this.seff;
+        return seff;
     }
 
     /**
@@ -148,11 +144,11 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public void setSeff(final ServiceEffectSpecification newSeff) {
-        final ServiceEffectSpecification oldSeff = this.seff;
-        this.seff = newSeff;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, Seff2javaastPackage.SEFF2_METHOD_MAPPING__SEFF,
-                    oldSeff, this.seff));
+        final ServiceEffectSpecification oldSeff = seff;
+        seff = newSeff;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, Seff2javaastPackage.SEFF2_METHOD_MAPPING__SEFF,
+                    oldSeff, seff));
         }
     }
 
@@ -166,14 +162,14 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_METHOD_MAPPING__BLOCKSTATEMENT:
             if (resolve) {
-                return this.getBlockstatement();
+                return getBlockstatement();
             }
-            return this.basicGetBlockstatement();
+            return basicGetBlockstatement();
         case Seff2javaastPackage.SEFF2_METHOD_MAPPING__SEFF:
             if (resolve) {
-                return this.getSeff();
+                return getSeff();
             }
-            return this.basicGetSeff();
+            return basicGetSeff();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -187,10 +183,10 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_METHOD_MAPPING__BLOCKSTATEMENT:
-            this.setBlockstatement((StatementListContainer) newValue);
+            setBlockstatement((StatementListContainer) newValue);
             return;
         case Seff2javaastPackage.SEFF2_METHOD_MAPPING__SEFF:
-            this.setSeff((ServiceEffectSpecification) newValue);
+            setSeff((ServiceEffectSpecification) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -205,10 +201,10 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
     public void eUnset(final int featureID) {
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_METHOD_MAPPING__BLOCKSTATEMENT:
-            this.setBlockstatement((StatementListContainer) null);
+            setBlockstatement((StatementListContainer) null);
             return;
         case Seff2javaastPackage.SEFF2_METHOD_MAPPING__SEFF:
-            this.setSeff((ServiceEffectSpecification) null);
+            setSeff((ServiceEffectSpecification) null);
             return;
         }
         super.eUnset(featureID);
@@ -223,9 +219,9 @@ public class SEFF2MethodMappingImpl extends MinimalEObjectImpl.Container impleme
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_METHOD_MAPPING__BLOCKSTATEMENT:
-            return this.blockstatement != null;
+            return blockstatement != null;
         case Seff2javaastPackage.SEFF2_METHOD_MAPPING__SEFF:
-            return this.seff != null;
+            return seff != null;
         }
         return super.eIsSet(featureID);
     }

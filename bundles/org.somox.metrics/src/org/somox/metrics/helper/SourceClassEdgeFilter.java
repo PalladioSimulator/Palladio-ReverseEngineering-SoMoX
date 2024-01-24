@@ -13,8 +13,7 @@ public class SourceClassEdgeFilter extends BaseFilter<ClassAccessGraphEdge> {
 
     /**
      *
-     * @param filteredTarget
-     *            positive list of non-filtered target class accesses
+     * @param filteredTarget positive list of non-filtered target class accesses
      */
     public SourceClassEdgeFilter(final Set<ConcreteClassifier> filteredTarget) {
         this.filteredTarget = filteredTarget;
@@ -22,7 +21,7 @@ public class SourceClassEdgeFilter extends BaseFilter<ClassAccessGraphEdge> {
 
     @Override
     public boolean passes(final ClassAccessGraphEdge object) {
-        return this.filteredTarget.contains(object.getSourceClazz());
+        return filteredTarget.contains(object.getSourceClazz());
     }
 
 }

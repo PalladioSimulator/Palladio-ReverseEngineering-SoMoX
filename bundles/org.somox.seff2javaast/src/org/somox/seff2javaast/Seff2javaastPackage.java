@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 /**
- * <!-- begin-user-doc --> The <b>Package</b> for the model. It contains accessors for the meta
- * objects to represent
+ * <!-- begin-user-doc --> The <b>Package</b> for the model. It contains
+ * accessors for the meta objects to represent
  * <ul>
  * <li>each class,</li>
  * <li>each feature of each class,</li>
@@ -45,15 +45,17 @@ public interface Seff2javaastPackage extends EPackage {
     String eNS_PREFIX = "org.somox";
 
     /**
-     * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The singleton instance of the package. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
     Seff2javaastPackage eINSTANCE = org.somox.seff2javaast.impl.Seff2javaastPackageImpl.init();
 
     /**
-     * The meta object id for the '{@link org.somox.seff2javaast.impl.SEFF2MethodMappingImpl
-     * <em>SEFF2 Method Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The meta object id for the
+     * '{@link org.somox.seff2javaast.impl.SEFF2MethodMappingImpl <em>SEFF2 Method
+     * Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see org.somox.seff2javaast.impl.SEFF2MethodMappingImpl
      * @see org.somox.seff2javaast.impl.Seff2javaastPackageImpl#getSEFF2MethodMapping()
@@ -62,8 +64,8 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_METHOD_MAPPING = 0;
 
     /**
-     * The feature id for the '<em><b>Blockstatement</b></em>' reference. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The feature id for the '<em><b>Blockstatement</b></em>' reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -71,8 +73,8 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_METHOD_MAPPING__BLOCKSTATEMENT = 0;
 
     /**
-     * The feature id for the '<em><b>Seff</b></em>' reference. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The feature id for the '<em><b>Seff</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -80,8 +82,8 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_METHOD_MAPPING__SEFF = 1;
 
     /**
-     * The number of structural features of the '<em>SEFF2 Method Mapping</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The number of structural features of the '<em>SEFF2 Method Mapping</em>'
+     * class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -89,8 +91,8 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_METHOD_MAPPING_FEATURE_COUNT = 2;
 
     /**
-     * The number of operations of the '<em>SEFF2 Method Mapping</em>' class. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The number of operations of the '<em>SEFF2 Method Mapping</em>' class. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -98,8 +100,9 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_METHOD_MAPPING_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link org.somox.seff2javaast.impl.SEFF2JavaASTImpl
-     * <em>SEFF2 Java AST</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The meta object id for the
+     * '{@link org.somox.seff2javaast.impl.SEFF2JavaASTImpl <em>SEFF2 Java
+     * AST</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see org.somox.seff2javaast.impl.SEFF2JavaASTImpl
      * @see org.somox.seff2javaast.impl.Seff2javaastPackageImpl#getSEFF2JavaAST()
@@ -108,8 +111,8 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_JAVA_AST = 1;
 
     /**
-     * The feature id for the '<em><b>Seff2 Method Mappings</b></em>' containment reference list.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The feature id for the '<em><b>Seff2 Method Mappings</b></em>' containment
+     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -117,8 +120,8 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS = 0;
 
     /**
-     * The number of structural features of the '<em>SEFF2 Java AST</em>' class. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The number of structural features of the '<em>SEFF2 Java AST</em>' class.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -126,8 +129,8 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_JAVA_AST_FEATURE_COUNT = 1;
 
     /**
-     * The number of operations of the '<em>SEFF2 Java AST</em>' class. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The number of operations of the '<em>SEFF2 Java AST</em>' class. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -135,8 +138,9 @@ public interface Seff2javaastPackage extends EPackage {
     int SEFF2_JAVA_AST_OPERATION_COUNT = 0;
 
     /**
-     * Returns the meta object for class '{@link org.somox.seff2javaast.SEFF2MethodMapping
-     * <em>SEFF2 Method Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Returns the meta object for class
+     * '{@link org.somox.seff2javaast.SEFF2MethodMapping <em>SEFF2 Method
+     * Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>SEFF2 Method Mapping</em>'.
      * @see org.somox.seff2javaast.SEFF2MethodMapping
@@ -146,8 +150,8 @@ public interface Seff2javaastPackage extends EPackage {
 
     /**
      * Returns the meta object for the reference '
-     * {@link org.somox.seff2javaast.SEFF2MethodMapping#getBlockstatement <em>Blockstatement</em>}'.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * {@link org.somox.seff2javaast.SEFF2MethodMapping#getBlockstatement
+     * <em>Blockstatement</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for the reference '<em>Blockstatement</em>'.
      * @see org.somox.seff2javaast.SEFF2MethodMapping#getBlockstatement()
@@ -158,8 +162,8 @@ public interface Seff2javaastPackage extends EPackage {
 
     /**
      * Returns the meta object for the reference '
-     * {@link org.somox.seff2javaast.SEFF2MethodMapping#getSeff <em>Seff</em>}'. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * {@link org.somox.seff2javaast.SEFF2MethodMapping#getSeff <em>Seff</em>}'.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for the reference '<em>Seff</em>'.
      * @see org.somox.seff2javaast.SEFF2MethodMapping#getSeff()
@@ -180,10 +184,11 @@ public interface Seff2javaastPackage extends EPackage {
 
     /**
      * Returns the meta object for the containment reference list '
-     * {@link org.somox.seff2javaast.SEFF2JavaAST#getSeff2MethodMappings
-     * <em>Seff2 Method Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * {@link org.somox.seff2javaast.SEFF2JavaAST#getSeff2MethodMappings <em>Seff2
+     * Method Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @return the meta object for the containment reference list '<em>Seff2 Method Mappings</em>'.
+     * @return the meta object for the containment reference list '<em>Seff2 Method
+     *         Mappings</em>'.
      * @see org.somox.seff2javaast.SEFF2JavaAST#getSeff2MethodMappings()
      * @see #getSEFF2JavaAST()
      * @generated
@@ -191,8 +196,8 @@ public interface Seff2javaastPackage extends EPackage {
     EReference getSEFF2JavaAST_Seff2MethodMappings();
 
     /**
-     * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * Returns the factory that creates the instances of the model. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the factory that creates the instances of the model.
      * @generated
@@ -215,8 +220,8 @@ public interface Seff2javaastPackage extends EPackage {
     interface Literals {
         /**
          * The meta object literal for the '
-         * {@link org.somox.seff2javaast.impl.SEFF2MethodMappingImpl <em>SEFF2 Method Mapping</em>}'
-         * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * {@link org.somox.seff2javaast.impl.SEFF2MethodMappingImpl <em>SEFF2 Method
+         * Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see org.somox.seff2javaast.impl.SEFF2MethodMappingImpl
          * @see org.somox.seff2javaast.impl.Seff2javaastPackageImpl#getSEFF2MethodMapping()
@@ -225,24 +230,25 @@ public interface Seff2javaastPackage extends EPackage {
         EClass SEFF2_METHOD_MAPPING = eINSTANCE.getSEFF2MethodMapping();
 
         /**
-         * The meta object literal for the '<em><b>Blockstatement</b></em>' reference feature. <!--
-         * begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the '<em><b>Blockstatement</b></em>' reference
+         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @generated
          */
         EReference SEFF2_METHOD_MAPPING__BLOCKSTATEMENT = eINSTANCE.getSEFF2MethodMapping_Blockstatement();
 
         /**
-         * The meta object literal for the '<em><b>Seff</b></em>' reference feature. <!--
-         * begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the '<em><b>Seff</b></em>' reference feature.
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @generated
          */
         EReference SEFF2_METHOD_MAPPING__SEFF = eINSTANCE.getSEFF2MethodMapping_Seff();
 
         /**
-         * The meta object literal for the '{@link org.somox.seff2javaast.impl.SEFF2JavaASTImpl
-         * <em>SEFF2 Java AST</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the
+         * '{@link org.somox.seff2javaast.impl.SEFF2JavaASTImpl <em>SEFF2 Java
+         * AST</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see org.somox.seff2javaast.impl.SEFF2JavaASTImpl
          * @see org.somox.seff2javaast.impl.Seff2javaastPackageImpl#getSEFF2JavaAST()
@@ -251,8 +257,9 @@ public interface Seff2javaastPackage extends EPackage {
         EClass SEFF2_JAVA_AST = eINSTANCE.getSEFF2JavaAST();
 
         /**
-         * The meta object literal for the '<em><b>Seff2 Method Mappings</b></em>' containment
-         * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the '<em><b>Seff2 Method Mappings</b></em>'
+         * containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc
+         * -->
          *
          * @generated
          */

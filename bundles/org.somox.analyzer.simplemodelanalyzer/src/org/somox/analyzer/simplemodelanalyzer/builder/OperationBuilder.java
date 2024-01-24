@@ -37,14 +37,14 @@ import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
 import org.somox.util.DefaultResourceEnvironment;
 
 /**
- * Builder for operations, parameters, message types, and data types. Keeps the source code
- * decorator updated.
+ * Builder for operations, parameters, message types, and data types. Keeps the
+ * source code decorator updated.
  *
  * @author Michael Hauck, Steffen Becker, Klaus Krogmann
  *
  */
 public class OperationBuilder extends AbstractBuilder {
-    
+
     private static final String VOID_TYPE = "void";
 
     private static Logger logger = Logger.getLogger(OperationBuilder.class);
@@ -54,7 +54,7 @@ public class OperationBuilder extends AbstractBuilder {
     public OperationBuilder(final Root gastModel, final SoMoXConfiguration somoxConfiguration,
             final AnalysisResult analysisResult) {
         super(gastModel, somoxConfiguration, analysisResult);
-        this.sourceCodeDecorator = analysisResult.getSourceCodeDecoratorRepository();
+        sourceCodeDecorator = analysisResult.getSourceCodeDecoratorRepository();
     }
 
     public void createOperations(final ConcreteClassifier implementationClass, final ConcreteClassifier interfaceClass,
@@ -64,7 +64,7 @@ public class OperationBuilder extends AbstractBuilder {
             if (method.isPublic()) {
                 Method realMethod = method;
                 if (implementationClass != null) {
-                    realMethod = this.getRealMethod(implementationClass, method);
+                    realMethod = getRealMethod(implementationClass, method);
                     if (realMethod == null) {
                         realMethod = method;
                         logger.error("GAST Model misses a method " + method.getName());
@@ -73,7 +73,7 @@ public class OperationBuilder extends AbstractBuilder {
                     logger.warn("no implementation class for method " + method.getName() + " of interface "
                             + KDMHelper.getName(interfaceClass));
                 }
-                final OperationSignature op = this.createOperationSignature(realMethod, interf);
+                final OperationSignature op = createOperationSignature(realMethod, interf);
                 interf.getSignatures__OperationInterface().add(op);
             }
         }
@@ -82,9 +82,9 @@ public class OperationBuilder extends AbstractBuilder {
     /**
      *
      * @param implementationClass
-     * @param inputMethod
-     *            interface method
-     * @return null if no implementation method was found; the queried method otherwise
+     * @param inputMethod         interface method
+     * @return null if no implementation method was found; the queried method
+     *         otherwise
      */
     private Method getRealMethod(final ConcreteClassifier implementationClass, final Method inputMethod) {
         assert implementationClass != null;
@@ -102,16 +102,15 @@ public class OperationBuilder extends AbstractBuilder {
                 while (overrideMethod != null) {
                     if (overrideMethod == inputMethod) {
                         return methodFromClass;
-                    } else {
-                        overrideMethod = KDMHelper.getOverriddenASTNode(overrideMethod);
                     }
+                    overrideMethod = KDMHelper.getOverriddenASTNode(overrideMethod);
                 }
             }
         }
         for (final ConcreteClassifier superClass : KDMHelper.getSuperTypes(implementationClass)) {
             if (!KDMHelper.isAbstract(superClass) && !KDMHelper.isInterface(superClass)
-                    && superClass instanceof org.emftext.language.java.classifiers.Class) {
-                final Method real = this.getRealMethod(superClass, inputMethod);
+                    && (superClass instanceof org.emftext.language.java.classifiers.Class)) {
+                final Method real = getRealMethod(superClass, inputMethod);
                 if (real != null) {
                     return real;
                 }
@@ -121,22 +120,22 @@ public class OperationBuilder extends AbstractBuilder {
     }
 
     /**
-     * Adds MessageTypes to the resultRepository, set parameter names and types. First looks if a
-     * MessageType already exists and creates one only if it does not exist in the repository.
+     * Adds MessageTypes to the resultRepository, set parameter names and types.
+     * First looks if a MessageType already exists and creates one only if it does
+     * not exist in the repository.
      *
-     * @param method
-     *            GAST method to add
+     * @param method GAST method to add
      * @param interf
-     * @return a new operation for which parameter names and types already exist in the
-     *         resultRepository
+     * @return a new operation for which parameter names and types already exist in
+     *         the resultRepository
      */
     private OperationSignature createOperationSignature(final Method method, final OperationInterface interf) {
 
         final OperationSignature operation = RepositoryFactory.eINSTANCE.createOperationSignature();
-        final String nameForMethod = this.createNonExistingNameInInterface(method, interf);
+        final String nameForMethod = createNonExistingNameInInterface(method, interf);
         operation.setEntityName(nameForMethod);
 
-        this.updateSourceCodeDecorator(operation, method);
+        updateSourceCodeDecorator(operation, method);
         // Variable statt SingleVariableDeclaration
         logger.info("processing input params for " + method.getName() + "; #params: " + method.getParameters().size()); // PDF
         for (final Variable inputParameter : method.getParameters()) {
@@ -145,13 +144,7 @@ public class OperationBuilder extends AbstractBuilder {
             // inputParameter.getTypeReference() statt inputParameter.getType()
 
             final Type accessedType = GetAccessedType.getAccessedType(inputParameter.getTypeReference());
-            if (inputParameter.getTypeReference() != null && null != accessedType) {
-                final DataType type = this.getType(accessedType, this.analysisResult.getInternalArchitectureModel(),
-                        inputParameter.getTypeReference());
-
-                opSigParam.setDataType__Parameter(type);
-                logger.info("type to build for variable: " + inputParameter + ":" + type);
-            } else {
+            if ((inputParameter.getTypeReference() == null) || (null == accessedType)) {
                 logger.error("Input parameter type was null. Could not set the parameter type \""
                         + inputParameter.getName() + "\" of method \"" + method.getName() + "\"");
                 // if(inputParameter.getTypeReference() == null)
@@ -161,19 +154,24 @@ public class OperationBuilder extends AbstractBuilder {
                 // inputParameter.getTypeReference().getTarget()); //PDF
                 continue;
             }
+            final DataType type = getType(accessedType, analysisResult.getInternalArchitectureModel(),
+                    (ArrayTypeable) inputParameter.getTypeReference());
+
+            opSigParam.setDataType__Parameter(type);
+            logger.info("type to build for variable: " + inputParameter + ":" + type);
             opSigParam.setOperationSignature__Parameter(operation);
         }
 
-        if (null != method.getTypeReference() && null != GetAccessedType.getAccessedType(method.getTypeReference())
+        if ((null != method.getTypeReference()) && (null != GetAccessedType.getAccessedType(method.getTypeReference()))
                 && !(method.getTypeReference() instanceof org.emftext.language.java.types.Void)) {
-            final DataType returnType = this.getType(GetAccessedType.getAccessedType(method.getTypeReference()),
-                    this.analysisResult.getInternalArchitectureModel(), method.getTypeReference());
+            final DataType returnType = getType(GetAccessedType.getAccessedType(method.getTypeReference()),
+                    analysisResult.getInternalArchitectureModel(), (ArrayTypeable) method.getTypeReference());
             operation.setReturnType__OperationSignature(returnType);
-        } else if (null != method.getTypeReference()
+        } else if ((null != method.getTypeReference())
                 && !(method.getTypeReference() instanceof org.emftext.language.java.types.Void)) {
             final Type accessedType = GetAccessedType.getAccessedType(method.getTypeReference());
-            final DataType type = this.getType(accessedType, this.analysisResult.getInternalArchitectureModel(),
-                    method.getTypeReference());
+            final DataType type = getType(accessedType, analysisResult.getInternalArchitectureModel(),
+                    (ArrayTypeable) method.getTypeReference());
             operation.setReturnType__OperationSignature(type);
         } else {
             logger.info("no fitting return type found " + method.getName() + "-- ret type" + method.getTypeReference());
@@ -184,16 +182,16 @@ public class OperationBuilder extends AbstractBuilder {
 
     private String createNonExistingNameInInterface(final Method method, final OperationInterface interf) {
         final String methodName = method.getName();
-        if (!this.containsName(interf, methodName)) {
+        if (!containsName(interf, methodName)) {
             return methodName;
         }
 
         int counter = 1;
 
-        while (this.containsName(interf, this.createMethodNameWithNumber(methodName, counter))) {
+        while (containsName(interf, createMethodNameWithNumber(methodName, counter))) {
             counter++;
         }
-        return this.createMethodNameWithNumber(methodName, counter);
+        return createMethodNameWithNumber(methodName, counter);
 
     }
 
@@ -225,15 +223,15 @@ public class OperationBuilder extends AbstractBuilder {
             link.setFile(KDMHelper.getJavaNodeSourceRegion(method));
         }
 
-        this.analysisResult.getSourceCodeDecoratorRepository().getMethodLevelSourceCodeLink().add(link);
+        analysisResult.getSourceCodeDecoratorRepository().getMethodLevelSourceCodeLink().add(link);
     }
 
     /**
-     * Look if a message type that contains the parameters specified by name and type already exists
-     * in the repository
+     * Look if a message type that contains the parameters specified by name and
+     * type already exists in the repository
      *
-     * @return the MessageType. Returns null, if no message type is found, or if the size of
-     *         parameterNames does not equal the size of parameterTypes.
+     * @return the MessageType. Returns null, if no message type is found, or if the
+     *         size of parameterNames does not equal the size of parameterTypes.
      */
     // private MessageType findMessageTypeInRepository(
     // List<String> parameterNames,
@@ -280,15 +278,14 @@ public class OperationBuilder extends AbstractBuilder {
     /**
      * Create a message type
      *
-     * @param parameterNames
-     *            the names of the parameters
-     * @param parameterTypes
-     *            the type names of the parameter. SAMM types are created (if they do not already
-     *            exist) for these types
-     * @param repository
-     *            the Repository in which the MessageType has to be stored
-     * @return the created message type. Returns null if the size of parameterNames does not equal
-     *         the size of parameterTypes or if only void parameters are present
+     * @param parameterNames the names of the parameters
+     * @param parameterTypes the type names of the parameter. SAMM types are created
+     *                       (if they do not already exist) for these types
+     * @param repository     the Repository in which the MessageType has to be
+     *                       stored
+     * @return the created message type. Returns null if the size of parameterNames
+     *         does not equal the size of parameterTypes or if only void parameters
+     *         are present
      */
     // private MessageType createMessageType(List<String> parameterNames,
     // List<Type> parameterTypes) {
@@ -334,27 +331,24 @@ public class OperationBuilder extends AbstractBuilder {
     /**
      * Data type creation or look up for existing data types.
      *
-     * @param typeName
-     *            type name to create
-     * @param repository
-     *            repository containing all present types
-     * @param arrayDimensions
-     *            array dimensions for the type
+     * @param typeName        type name to create
+     * @param repository      repository containing all present types
+     * @param arrayDimensions array dimensions for the type
      * @return a new data type for non-existing ones; the existing instance else
      */
     public DataType getType(final Type gastType, final Repository repository, final ArrayTypeable arrayTypeable) {
-        DataType innerType = this.getExistingType(gastType, repository);
+        DataType innerType = getExistingType(gastType, repository);
 
         if (innerType == null) {
-            innerType = this.createDataType(repository, gastType);
+            innerType = createDataType(repository, gastType);
         }
         DataType returnType = innerType;
 
-        if (null != arrayTypeable && null != returnType) {
-            final String unifiedListName = this.getUnifiedTypeName(KDMHelper.getName(gastType)) + "List";
-            final DataType exisingCollection = this.getExistingTypeByName(unifiedListName, repository);
+        if ((null != arrayTypeable) && (null != returnType)) {
+            final String unifiedListName = getUnifiedTypeName(KDMHelper.getName(gastType)) + "List";
+            final DataType exisingCollection = getExistingTypeByName(unifiedListName, repository);
             if (null == exisingCollection) {
-                returnType = this.createCollectionDatatypeForArray(innerType, arrayTypeable, repository);
+                returnType = createCollectionDatatypeForArray(innerType, arrayTypeable, repository);
             } else {
                 returnType = exisingCollection;
             }
@@ -364,28 +358,28 @@ public class OperationBuilder extends AbstractBuilder {
     }
 
     /**
-     * Creates a collection data type for each array dimension for the inner Data Type. For example:
+     * Creates a collection data type for each array dimension for the inner Data
+     * Type. For example:
      *
      * String[] --> CollectionDataType with String as InnerType
      *
-     * String[][]--> CollectionDataType with "CollectionDataType with String as inner type" as inner
-     * type
+     * String[][]--> CollectionDataType with "CollectionDataType with String as
+     * inner type" as inner type
      *
-     * @param innerDataType
-     *            the innertype
-     * @param arrayTypeable
-     *            the element that may is an array
+     * @param innerDataType the innertype
+     * @param arrayTypeable the element that may is an array
      * @return
      */
     private DataType createCollectionDatatypeForArray(final DataType innerDataType, final ArrayTypeable arrayTypeable,
             final Repository repository) {
         DataType currentInnerType = innerDataType;
-        // can not use arrayTypeable.getArrayDimension() since it is not implemented in JaMoPP
+        // can not use arrayTypeable.getArrayDimension() since it is not implemented in
+        // JaMoPP
         final int arrayDimenstions = arrayTypeable.getArrayDimensionsAfter().size()
                 + arrayTypeable.getArrayDimensionsBefore().size();
         for (long i = 0; i < arrayDimenstions; i++) {
             final CollectionDataType collectionDataType = RepositoryFactory.eINSTANCE.createCollectionDataType();
-            collectionDataType.setEntityName(this.getNameFromPCMDataType(currentInnerType) + "List");
+            collectionDataType.setEntityName(getNameFromPCMDataType(currentInnerType) + "List");
             collectionDataType.setInnerType_CollectionDataType(currentInnerType);
             collectionDataType.setRepository__DataType(repository);
             currentInnerType = collectionDataType;
@@ -397,46 +391,43 @@ public class OperationBuilder extends AbstractBuilder {
         if (dataType instanceof NamedElement) {
             return ((NamedElement) dataType).getEntityName();
         }
-        if (dataType instanceof PrimitiveDataType) {
-            final PrimitiveDataType primitiveDataType = (PrimitiveDataType) dataType;
+        if (dataType instanceof final PrimitiveDataType primitiveDataType) {
             return primitiveDataType.getType().getName();
         }
         return null;
     }
 
     /**
-     * Creates a new PCM data type for the given gastType. Note: in order to not return null the
-     * method implements a fall backmethod: if no type could be created (which actually should not
-     * happen) it just creates an empty CompositeDataType with the name of the type. If we even can
-     * not determine the name of the datatype we just return the generic type (java.lang.)Object. It
+     * Creates a new PCM data type for the given gastType. Note: in order to not
+     * return null the method implements a fall backmethod: if no type could be
+     * created (which actually should not happen) it just creates an empty
+     * CompositeDataType with the name of the type. If we even can not determine the
+     * name of the datatype we just return the generic type (java.lang.)Object. It
      * also creates an entry for in the sourceCodeDecorator if its possible
      *
-     * @param repository
-     *            The repository to add the new data type to
-     * @param gastType
-     *            The type to create a PCM data type for
+     * @param repository The repository to add the new data type to
+     * @param gastType   The type to create a PCM data type for
      * @return the newly created PCM data type
      */
     private DataType createDataType(final org.palladiosimulator.pcm.repository.Repository repository,
             final Type gastType) {
         if (null == gastType) {
-            return this.returnDefaultDataType(gastType, repository);
+            return returnDefaultDataType(gastType, repository);
         }
         String typeName = KDMHelper.getName(gastType);
         if (null == typeName) {
-            return this.returnDefaultDataType(gastType, repository);
+            return returnDefaultDataType(gastType, repository);
         }
-        if (typeName.equals(VOID_TYPE)) {
+        if (VOID_TYPE.equals(typeName)) {
             return null;
         }
-        DataType newType = null;
-        typeName = this.getUnifiedTypeName(typeName);
-        newType = this.checkAndCreatePrimitiveDataType(typeName);
+        typeName = getUnifiedTypeName(typeName);
+        DataType newType = checkAndCreatePrimitiveDataType(typeName);
         if (null != newType) {
             // do not create source code decorator entry for prmitive datatype
             return newType;
         }
-        newType = this.checkAndCreateComplexDataType(gastType, typeName, repository);
+        newType = checkAndCreateComplexDataType(gastType, typeName, repository);
         if (null != newType) {
             return newType;
         }
@@ -449,31 +440,27 @@ public class OperationBuilder extends AbstractBuilder {
     }
 
     /**
-     * ComplexDataTypes are extracted as follows: 1) if type is a ConcreteClassifier we generate a
-     * complex data type 2) if type is an instance of "Collection": we create a collection datatype
-     * 3) if not: create a CompositeDataType 4) innerDataTypes: get fields of classifier and their
-     * type
+     * ComplexDataTypes are extracted as follows: 1) if type is a ConcreteClassifier
+     * we generate a complex data type 2) if type is an instance of "Collection": we
+     * create a collection datatype 3) if not: create a CompositeDataType 4)
+     * innerDataTypes: get fields of classifier and their type
      *
      *
-     * @param gastType
-     *            the actual type
-     * @param typeName
-     *            the name of the type
-     * @param repository
-     *            the containing repository
+     * @param gastType   the actual type
+     * @param typeName   the name of the type
+     * @param repository the containing repository
      * @return
      */
     private DataType checkAndCreateComplexDataType(final Type gastType, final String typeName,
             final Repository repository) {
         DataType complexDataType = null;
         // 1)
-        if (gastType instanceof ConcreteClassifier) {
-            final ConcreteClassifier concreteClassifier = (ConcreteClassifier) gastType;
+        if (gastType instanceof final ConcreteClassifier concreteClassifier) {
             // 2)+6)
-            complexDataType = this.checkAndCreateCollectionDataType(concreteClassifier, typeName, repository);
+            complexDataType = checkAndCreateCollectionDataType(concreteClassifier, typeName, repository);
             if (null == complexDataType) {
                 // 3+4)
-                complexDataType = this.createCompositeDataType(concreteClassifier, typeName, repository);
+                complexDataType = createCompositeDataType(concreteClassifier, typeName, repository);
             }
         }
         return complexDataType;
@@ -484,14 +471,15 @@ public class OperationBuilder extends AbstractBuilder {
         final CompositeDataType compositeDataType = RepositoryFactory.eINSTANCE.createCompositeDataType();
         compositeDataType.setEntityName(typeName);
         repository.getDataTypes__Repository().add(compositeDataType);
-        // only create sourceCodeDecorator Entry for the classifier and investigate fields if the
+        // only create sourceCodeDecorator Entry for the classifier and investigate
+        // fields if the
         // classifier is in the java-source of the project and not on the blacklist
-        final boolean inSource = this.isClassifierInSourceProject(concreteClassifier);
-        final boolean isOnBlackList = this.isClassifierOnBlacklist(concreteClassifier);
+        final boolean inSource = isClassifierInSourceProject(concreteClassifier);
+        final boolean isOnBlackList = isClassifierOnBlacklist(concreteClassifier);
         if (inSource && !isOnBlackList) {
-            final DataTypeSourceCodeLink datatypeSourceCodeLink = this
-                    .createSourceCodeDecoratorEntryEntryForClassifier2DataType(concreteClassifier, compositeDataType);
-            this.investigateFields(concreteClassifier, typeName, repository, compositeDataType, datatypeSourceCodeLink);
+            final DataTypeSourceCodeLink datatypeSourceCodeLink = createSourceCodeDecoratorEntryEntryForClassifier2DataType(
+                    concreteClassifier, compositeDataType);
+            investigateFields(concreteClassifier, typeName, repository, compositeDataType, datatypeSourceCodeLink);
         }
         return compositeDataType;
     }
@@ -511,9 +499,9 @@ public class OperationBuilder extends AbstractBuilder {
             final String fieldTypeName = KDMHelper.getName(fieldType);
             // avoid self-references and void as access
             if (!fieldType.equals(concreteClassifier) && !fieldTypeName.equals(typeName)
-                    && !fieldTypeName.equals(VOID_TYPE)) {
+                    && !VOID_TYPE.equals(fieldTypeName)) {
                 final InnerDeclaration innerElement = RepositoryFactory.eINSTANCE.createInnerDeclaration();
-                final DataType innerDataType = this.getType(fieldType, repository, field.getTypeReference());
+                final DataType innerDataType = getType(fieldType, repository, (ArrayTypeable) field.getTypeReference());
                 final String innerTypeName = field.getName();
                 innerElement.setEntityName(innerTypeName);
                 if (innerDataType instanceof CollectionDataType) {
@@ -525,29 +513,29 @@ public class OperationBuilder extends AbstractBuilder {
                             .setEntityName(((CollectionDataType) innerDataType).getEntityName() + "_" + innerTypeName);
                     concreteCollectionDataType.setRepository__DataType(repository);
                     innerElement.setDatatype_InnerDeclaration(concreteCollectionDataType);
-                    final QualifiedTypeArgument qta = KDMHelper.getFirstChildWithType(field, QualifiedTypeArgument.class);
-                    if (null != qta) {
-                        if (null != qta.getTypeReference() && null != qta.getTypeReference().getTarget()) {
-                            final Type type = qta.getTypeReference().getTarget();
-                            final DataType collectionInnerType = this.getType(type, repository, qta);
-                            concreteCollectionDataType.setInnerType_CollectionDataType(collectionInnerType);
-                        }
+                    final QualifiedTypeArgument qta = KDMHelper.getFirstChildWithType(field,
+                            QualifiedTypeArgument.class);
+                    if ((null != qta)
+                            && ((null != qta.getTypeReference()) && (null != qta.getTypeReference().getTarget()))) {
+                        final Type type = qta.getTypeReference().getTarget();
+                        final DataType collectionInnerType = getType(type, repository, qta);
+                        concreteCollectionDataType.setInnerType_CollectionDataType(collectionInnerType);
                     }
                     logger.debug("created inner collection datatype composite data type " + innerTypeName);
                 } else {
                     innerElement.setDatatype_InnerDeclaration(innerDataType);
                     logger.debug("created inner element" + innerElement.getEntityName());
                 }
-                this.createSourceCodeDecoratorEntryForField2InnerDeclaration(field, innerElement,
-                        datatypeSourceCodeLink);
+                createSourceCodeDecoratorEntryForField2InnerDeclaration(field, innerElement, datatypeSourceCodeLink);
                 compositeDataType.getInnerDeclaration_CompositeDataType().add(innerElement);
             }
         }
     }
 
     private boolean isClassifierOnBlacklist(final ConcreteClassifier concreteClassifier) {
-        if (null == this.somoxConfiguration || null == this.somoxConfiguration.getClassifierFilter()) {
-            // if we do not have a somox configuration or a blacklist filter we assume that the
+        if ((null == somoxConfiguration) || (null == somoxConfiguration.getClassifierFilter())) {
+            // if we do not have a somox configuration or a blacklist filter we assume that
+            // the
             // classifier is not on the blacklist
             return false;
         }
@@ -555,7 +543,7 @@ public class OperationBuilder extends AbstractBuilder {
     }
 
     private boolean isClassifierInSourceProject(final ConcreteClassifier concreteClassifier) {
-        for (final CompilationUnit cu : this.astModel.getCompilationUnits()) {
+        for (final CompilationUnit cu : astModel.getCompilationUnits()) {
             for (final ConcreteClassifier currentClassifier : cu.getChildrenByType(ConcreteClassifier.class)) {
                 if (concreteClassifier == currentClassifier) {
                     return true;
@@ -581,14 +569,15 @@ public class OperationBuilder extends AbstractBuilder {
         dataTypeSourceCodeLink.setFile(concreteClassifier.getContainingCompilationUnit());
         dataTypeSourceCodeLink.setJaMoPPType(concreteClassifier);
         dataTypeSourceCodeLink.setPcmDataType(compositeDataType);
-        this.sourceCodeDecorator.getDataTypeSourceCodeLink().add(dataTypeSourceCodeLink);
+        sourceCodeDecorator.getDataTypeSourceCodeLink().add(dataTypeSourceCodeLink);
         return dataTypeSourceCodeLink;
     }
 
     /**
-     * Creates a CollectionDataType if the concreteClassifier is an instance of "Collection". We do
-     * use the default type as inner type here. If the type has a more specific inner type the type
-     * will be created in createCompositeDatatype
+     * Creates a CollectionDataType if the concreteClassifier is an instance of
+     * "Collection". We do use the default type as inner type here. If the type has
+     * a more specific inner type the type will be created in
+     * createCompositeDatatype
      *
      * @param gastType
      * @param typeName
@@ -598,22 +587,21 @@ public class OperationBuilder extends AbstractBuilder {
     private CollectionDataType checkAndCreateCollectionDataType(final ConcreteClassifier concreteClassifier,
             final String typeName, final Repository repository) {
         CollectionDataType collectionDataType = null;
-        if (this.extendsJavaLangCollection(concreteClassifier)) {
+        if (extendsJavaLangCollection(concreteClassifier)) {
             collectionDataType = RepositoryFactory.eINSTANCE.createCollectionDataType();
             collectionDataType.setEntityName(concreteClassifier.getName());
             collectionDataType.setRepository__DataType(repository);
-            collectionDataType.setInnerType_CollectionDataType(this.getObjectDataType(repository));
-            this.createSourceCodeDecoratorEntryEntryForClassifier2DataType(concreteClassifier, collectionDataType);
+            collectionDataType.setInnerType_CollectionDataType(getObjectDataType(repository));
+            createSourceCodeDecoratorEntryEntryForClassifier2DataType(concreteClassifier, collectionDataType);
         }
         return collectionDataType;
     }
 
     private boolean extendsJavaLangCollection(final Type type) {
-        if (type instanceof ConcreteClassifier) {
-            final ConcreteClassifier concreteClassifier = (ConcreteClassifier) type;
+        if (type instanceof final ConcreteClassifier concreteClassifier) {
             for (final ConcreteClassifier superClassifier : concreteClassifier.getAllSuperClassifiers()) {
-                if (superClassifier.getName().equals("Collection")
-                        || superClassifier.getName().equals("java.lang.Collection")) {
+                if ("Collection".equals(superClassifier.getName())
+                        || "java.lang.Collection".equals(superClassifier.getName())) {
                     return true;
                 }
             }
@@ -622,31 +610,32 @@ public class OperationBuilder extends AbstractBuilder {
     }
 
     private DataType checkAndCreatePrimitiveDataType(final String typeName) {
-        if (typeName.equalsIgnoreCase(VOID_TYPE)) {
+        if (VOID_TYPE.equalsIgnoreCase(typeName)) {
             // do nothing
-        } else if (typeName.equalsIgnoreCase("integer")) {
+        } else if ("integer".equalsIgnoreCase(typeName)) {
             return DefaultResourceEnvironment.getPrimitiveDataTypeInteger();
-        } else if (typeName.equalsIgnoreCase("double")) {
+        } else if ("double".equalsIgnoreCase(typeName)) {
             return DefaultResourceEnvironment.getPrimitiveDataTypeDouble();
-        } else if (typeName.equalsIgnoreCase("string")) {
+        } else if ("string".equalsIgnoreCase(typeName)) {
             return DefaultResourceEnvironment.getPrimitiveDataTypeString();
-        } else if (typeName.equalsIgnoreCase("boolean")) {
+        } else if ("boolean".equalsIgnoreCase(typeName)) {
             return DefaultResourceEnvironment.getPrimitiveDataTypeBool();
-        } else if (typeName.equalsIgnoreCase("char")) {
+        } else if ("char".equalsIgnoreCase(typeName)) {
             return DefaultResourceEnvironment.getPrimitiveDataTypeChar();
-        } else if (typeName.equalsIgnoreCase("byte")) {
+        } else if ("byte".equalsIgnoreCase(typeName)) {
             return DefaultResourceEnvironment.getPrimitiveDataTypeByte();
-            // PDF27.11: added java String data type as PCM-Repo composite datatype TODO: not
+            // PDF27.11: added java String data type as PCM-Repo composite datatype TODO:
+            // not
             // working?
-        } else if (typeName.equals("String") || typeName.equals("java.lang.String")) {
+        } else if ("String".equals(typeName) || "java.lang.String".equals(typeName)) {
             return DefaultResourceEnvironment.getPrimitiveDataTypeString();
         }
         return null;
     }
 
     /**
-     * Reduces comparable types to a single type and copes with potentially different naming of the
-     * same type.
+     * Reduces comparable types to a single type and copes with potentially
+     * different naming of the same type.
      *
      * @param typeName
      * @return
@@ -655,19 +644,19 @@ public class OperationBuilder extends AbstractBuilder {
         if (null == typeName) {
             return null;
         }
-        if (typeName.toLowerCase().equals("int") || typeName.toLowerCase().equals("long")
-                || typeName.toLowerCase().equals("short")) {
+        if ("int".equals(typeName.toLowerCase()) || "long".equals(typeName.toLowerCase())
+                || "short".equals(typeName.toLowerCase())) {
             // Do not create 2 datatypes for int and integer
             // maps int and long as well as short to integer
             typeName = "integer";
-        } else if (typeName.toLowerCase().equals("bool")) {
+        } else if ("bool".equals(typeName.toLowerCase())) {
             // Do not create 2 datatypes for bool and boolean
             typeName = "boolean";
-        } else if (typeName.toLowerCase().equals("char")) {
+        } else if ("char".equals(typeName.toLowerCase())) {
             typeName = "char";
-        } else if (typeName.toLowerCase().equals("float")) {
+        } else if ("float".equals(typeName.toLowerCase())) {
             typeName = "double"; // map double to float
-        } else if (typeName.equals("String")) {
+        } else if ("String".equals(typeName)) {
             typeName = "STRING";
         }
         return typeName;
@@ -675,16 +664,16 @@ public class OperationBuilder extends AbstractBuilder {
 
     public DataType returnDefaultDataType(final Commentable type, final Repository repository) {
         logger.warn("could not determine type name for type: " + type + " returning default object datatype)");
-        return this.getObjectDataType(repository);
+        return getObjectDataType(repository);
     }
 
     private DataType getObjectDataType(final Repository repository) {
-        if (null == this.objectDataType) {
-            this.objectDataType = RepositoryFactory.eINSTANCE.createCompositeDataType();
-            this.objectDataType.setEntityName("Object");
-            this.objectDataType.setRepository__DataType(repository);
+        if (null == objectDataType) {
+            objectDataType = RepositoryFactory.eINSTANCE.createCompositeDataType();
+            objectDataType.setEntityName("Object");
+            objectDataType.setRepository__DataType(repository);
         }
-        return this.objectDataType;
+        return objectDataType;
     }
 
     /**
@@ -695,7 +684,7 @@ public class OperationBuilder extends AbstractBuilder {
      */
     private DataType getExistingType(final Type gastType,
             final org.palladiosimulator.pcm.repository.Repository repository) {
-        return this.getExistingTypeByName(KDMHelper.getName(gastType), repository);
+        return getExistingTypeByName(KDMHelper.getName(gastType), repository);
     }
 
     /**
@@ -710,7 +699,7 @@ public class OperationBuilder extends AbstractBuilder {
             logger.warn("Type name is null. Could not get an exisiting data type.");
             return null;
         }
-        gastTypeName = this.getUnifiedTypeName(gastTypeName);
+        gastTypeName = getUnifiedTypeName(gastTypeName);
         // TODO: use hash map to look up instead of iterating over all datatypes
         for (final DataType currentType : repository.getDataTypes__Repository()) {
             String pcmTypeName = null;

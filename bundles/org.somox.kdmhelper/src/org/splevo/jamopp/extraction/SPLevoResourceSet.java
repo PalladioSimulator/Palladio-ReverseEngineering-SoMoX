@@ -26,25 +26,25 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import com.google.common.base.Strings;
 
 /**
- * ResourceSet for the SPLevo tooling. The resource set automatically converts URIs when
- * creating/loading resources. The exact behavior depends on the default settings in
- * FileResourceHandling.
+ * ResourceSet for the SPLevo tooling. The resource set automatically converts
+ * URIs when creating/loading resources. The exact behavior depends on the
+ * default settings in FileResourceHandling.
  */
 public class SPLevoResourceSet extends ResourceSetImpl {
 
     @Override
     public EObject getEObject(final URI uri, final boolean loadOnDemand) {
-        return super.getEObject(this.convertURI(uri), loadOnDemand);
+        return super.getEObject(convertURI(uri), loadOnDemand);
     }
 
     @Override
     public Resource getResource(final URI uri, final boolean loadOnDemand) {
-        return super.getResource(this.convertURI(uri), loadOnDemand);
+        return super.getResource(convertURI(uri), loadOnDemand);
     }
 
     @Override
     public Resource createResource(final URI uri, final String contentType) {
-        return super.createResource(this.convertURI(uri), contentType);
+        return super.createResource(convertURI(uri), contentType);
     }
 
     private URI convertURI(final URI uri) {
@@ -53,35 +53,32 @@ public class SPLevoResourceSet extends ResourceSetImpl {
 
             if (uri.isPlatform()) {
                 return uri;
-            } else if ("pathmap".equals(uri.scheme())) {
+            }
+            if ("pathmap".equals(uri.scheme())) {
                 // avoid pathmap if possible:
-                final URIConverter theURIConverter = this.getURIConverter();
+                final URIConverter theURIConverter = getURIConverter();
                 final URI normalizedURI = theURIConverter.normalize(uri);
                 if (normalizedURI.isPlatform()) {
                     return normalizedURI;
                 }
                 return uri;
-            } else if ("empty".equals(uri.scheme())) {
-            	return uri;
-            } else {
-                final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-                final IPath p = new Path(uri.toFileString());
-                final IFile f = root.getFileForLocation(p);
-                return SPLevoResourceSet.createURI(URI.createPlatformResourceURI(f.getFullPath().toString(), true),
-                        uri.fragment());
             }
-
-        } else {
-
-            if (uri.isPlatform()) {
-                final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-                final IResource f = root.findMember(uri.toPlatformString(true));
-                return URI.createFileURI(f.getLocationURI().toString());
-            } else {
+            if ("empty".equals(uri.scheme())) {
                 return uri;
             }
+            final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+            final IPath p = new Path(uri.toFileString());
+            final IFile f = root.getFileForLocation(p);
+            return SPLevoResourceSet.createURI(URI.createPlatformResourceURI(f.getFullPath().toString(), true),
+                    uri.fragment());
 
         }
+        if (uri.isPlatform()) {
+            final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+            final IResource f = root.findMember(uri.toPlatformString(true));
+            return URI.createFileURI(f.getLocationURI().toString());
+        }
+        return uri;
 
     }
 

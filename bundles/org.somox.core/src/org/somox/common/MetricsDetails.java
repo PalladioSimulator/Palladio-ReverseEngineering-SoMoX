@@ -28,7 +28,7 @@ public class MetricsDetails {
      */
     public enum GroupID {
         GROUP_CLUSTERING, GROUP_MERGING, GROUP_METRICS
-    };
+    }
 
     public GroupID group;
 
@@ -42,10 +42,10 @@ public class MetricsDetails {
      */
     public MetricsDetails(final String metricWeightPeferenceNameP, final String metricLabelP,
             final String metricExplanantionP, final GroupID groupInfo) {
-        this.metricWeightPeferenceName = metricWeightPeferenceNameP;
-        this.metricLabel = metricLabelP;
-        this.metricExplanantion = metricExplanantionP;
-        this.group = groupInfo;
+        metricWeightPeferenceName = metricWeightPeferenceNameP;
+        metricLabel = metricLabelP;
+        metricExplanantion = metricExplanantionP;
+        group = groupInfo;
     }
 
 }

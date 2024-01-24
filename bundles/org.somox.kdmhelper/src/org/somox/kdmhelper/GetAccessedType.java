@@ -14,8 +14,7 @@ public class GetAccessedType {
     /**
      * Computes the accessed type for an access.
      *
-     * @param input
-     *            The input access.
+     * @param input The input access.
      * @return The accessed Type from the access.
      */
     public static Type getAccessedType(final Commentable input) {
@@ -23,30 +22,30 @@ public class GetAccessedType {
         if (input instanceof IdentifierReference) {
 
             return getAccessedType((IdentifierReference) input);
-        } else if (input instanceof TypeReference) {
+        }
+        if (input instanceof TypeReference) {
 
             return getAccessedType((TypeReference) input);
-        } else if (input instanceof MethodCall) {
+        }
+        if (input instanceof MethodCall) {
 
             return getAccessedType((MethodCall) input);
-        } else {
-
-            return null;
         }
+        return null;
     }
 
     public static Type getAccessedType(final IdentifierReference reference) {
         if (reference != null) {
             return reference.getType();
-        } else {
-            return null;
         }
+        return null;
     }
 
     public static Type getAccessedType(final TypeReference reference) {
-        if (reference != null && reference.getTarget() instanceof ConcreteClassifier) {
+        if ((reference != null) && (reference.getTarget() instanceof ConcreteClassifier)) {
             return reference.getTarget();
-        } else if (reference instanceof PrimitiveType) {
+        }
+        if (reference instanceof PrimitiveType) {
             return (PrimitiveType) reference;
         }
         return null;
@@ -54,12 +53,11 @@ public class GetAccessedType {
     }
 
     public static ConcreteClassifier getAccessedType(final MethodCall methodCall) {
-        if (methodCall != null && methodCall.getType() != null) {
+        if ((methodCall != null) && (methodCall.getType() != null)) {
             final ReferenceableElement targetMethod = methodCall.getTarget();
             return targetMethod.getContainingConcreteClassifier();
-        } else {
-            return null;
         }
+        return null;
     }
 
 }

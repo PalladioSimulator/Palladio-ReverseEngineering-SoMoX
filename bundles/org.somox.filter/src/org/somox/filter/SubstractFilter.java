@@ -15,13 +15,12 @@ public class SubstractFilter extends BaseFilter<Type> {
     private final Set<Type> classesToRemove;
 
     public SubstractFilter(final Set<Type> classesToRemove) {
-        super();
         this.classesToRemove = classesToRemove;
     }
 
     @Override
     public boolean passes(final Type object) {
-        return !this.classesToRemove.contains(object);
+        return !classesToRemove.contains(object);
     }
 
 }

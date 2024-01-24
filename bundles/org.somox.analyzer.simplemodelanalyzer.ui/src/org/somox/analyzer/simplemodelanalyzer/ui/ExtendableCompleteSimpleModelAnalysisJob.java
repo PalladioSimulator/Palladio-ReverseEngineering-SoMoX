@@ -14,17 +14,18 @@ import de.uka.ipd.sdq.workflow.extension.AbstractExtendableJob;
 import de.uka.ipd.sdq.workflow.extension.ExtendableJobConfiguration;
 
 /**
- * Job running a complete analysis with SoMoX using a {@link SimpleModelAnalyzerJob}. The job is
- * extendible through extension points to allow 3rd party tools to easily integrate with it. Tools
- * can offer their {@link de.uka.ipd.sdq.workflow.extension.AbstractWorkflowExtensionJob
- * AbstractWorkflowExtensionJobs} through Palladio’s extendible job API at this class’ ID constants’
- * values.
+ * Job running a complete analysis with SoMoX using a
+ * {@link SimpleModelAnalyzerJob}. The job is extendible through extension
+ * points to allow 3rd party tools to easily integrate with it. Tools can offer
+ * their {@link de.uka.ipd.sdq.workflow.extension.AbstractWorkflowExtensionJob
+ * AbstractWorkflowExtensionJobs} through Palladio’s extendible job API at this
+ * class’ ID constants’ values.
  *
  * <p>
- * Extending jobs will get the {@link SoMoXBlackboard} used by all jobs passed as Blackboard. They
- * may modify it as they wish. The job’s configuration HashMap will be the
- * {@linkplain SoMoXConfiguration#toMap() attribute representation} of the used
- * {@link SoMoXConfiguration}.
+ * Extending jobs will get the {@link SoMoXBlackboard} used by all jobs passed
+ * as Blackboard. They may modify it as they wish. The job’s configuration
+ * HashMap will be the {@linkplain SoMoXConfiguration#toMap() attribute
+ * representation} of the used {@link SoMoXConfiguration}.
  *
  * @author Joshua Gleitze
  */
@@ -35,58 +36,56 @@ public class ExtendableCompleteSimpleModelAnalysisJob extends AbstractExtendable
      */
     public static final String BEFORE_ALL_JOBS_EXTENSION_ID = "org.somox.analyzer.simplemodelanalyzer.launch.start";
     /**
-     * Workflow extension ID for after SoMoX’ model jobs have run but before the model will be
-     * written to disk.
+     * Workflow extension ID for after SoMoX’ model jobs have run but before the
+     * model will be written to disk.
      */
     public static final String AFTER_MODELS_JOB_EXTENSION_ID = "org.somox.analyzer.simplemodelanalyzer.launch.modelavailable";
     /**
-     * Workflok extension ID for after all SoMoX’ jobs have run. The model has already been written
-     * to a file and SoMoX will terminate after this point.
+     * Workflok extension ID for after all SoMoX’ jobs have run. The model has
+     * already been written to a file and SoMoX will terminate after this point.
      */
     public static final String AFTER_ALL_JOBS_EXTENSION_ID = "org.somox.analyzer.simplemodelanalyzer.launch.end";
 
     /**
      * Creates the job. All extending jobs will be set up.
      *
-     * @param config
-     *            The configuration to use.
-     * @throws CoreException
-     *             If the used {@link SimpleModelAnalyzerJob} throws a CoreException.
+     * @param config The configuration to use.
+     * @throws CoreException If the used {@link SimpleModelAnalyzerJob} throws a
+     *                       CoreException.
      */
     public ExtendableCompleteSimpleModelAnalysisJob(final SoMoXModelAnalyzerConfiguration config) throws CoreException {
         final ExtendableJobConfiguration extensionJobsConfiguration = new SoMoXExtensionJobConfiguration(config);
 
-        this.handleJobExtensions(ExtendableCompleteSimpleModelAnalysisJob.BEFORE_ALL_JOBS_EXTENSION_ID,
+        handleJobExtensions(ExtendableCompleteSimpleModelAnalysisJob.BEFORE_ALL_JOBS_EXTENSION_ID,
                 extensionJobsConfiguration);
 
         this.add(new SimpleModelAnalyzerJob(config));
         this.add(new GAST2SEFFJob(
                 config.getMoxConfiguration().isReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour()));
 
-        this.handleJobExtensions(ExtendableCompleteSimpleModelAnalysisJob.AFTER_MODELS_JOB_EXTENSION_ID,
+        handleJobExtensions(ExtendableCompleteSimpleModelAnalysisJob.AFTER_MODELS_JOB_EXTENSION_ID,
                 extensionJobsConfiguration);
 
         this.add(new SaveSoMoXModelsJob(config.getMoxConfiguration()));
-        this.handleJobExtensions(ExtendableCompleteSimpleModelAnalysisJob.AFTER_ALL_JOBS_EXTENSION_ID,
+        handleJobExtensions(ExtendableCompleteSimpleModelAnalysisJob.AFTER_ALL_JOBS_EXTENSION_ID,
                 extensionJobsConfiguration);
 
     }
 
     /**
      * Builder of the configurations passed to jobs extending the
-     * {@link ExtendableCompleteSimpleModelAnalysisJob}. See its documentation for available
-     * attributes.
+     * {@link ExtendableCompleteSimpleModelAnalysisJob}. See its documentation for
+     * available attributes.
      *
      * @author Joshua Gleitze
      */
-    private final class SoMoXExtensionJobConfiguration implements ExtendableJobConfiguration {
+    private static final class SoMoXExtensionJobConfiguration implements ExtendableJobConfiguration {
         private final SoMoXModelAnalyzerConfiguration config;
 
         /**
          * Builds the configuration.
          *
-         * @param config
-         *            The configuration used by the main job.
+         * @param config The configuration used by the main job.
          */
         private SoMoXExtensionJobConfiguration(final SoMoXModelAnalyzerConfiguration config) {
             this.config = config;
@@ -94,7 +93,7 @@ public class ExtendableCompleteSimpleModelAnalysisJob extends AbstractExtendable
 
         @Override
         public Map<String, Object> getAttributes() {
-            return this.config.getMoxConfiguration().toMap();
+            return config.getMoxConfiguration().toMap();
         }
 
     }

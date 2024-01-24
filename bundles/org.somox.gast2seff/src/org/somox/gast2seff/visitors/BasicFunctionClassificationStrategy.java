@@ -16,8 +16,9 @@ import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 
 /**
- * Implementation of {@link IFunctionClassificationStrategy}. Uses basic heuristics based on the
- * source code decorator and the GAST model to decide on the type of function calls.
+ * Implementation of {@link IFunctionClassificationStrategy}. Uses basic
+ * heuristics based on the source code decorator and the GAST model to decide on
+ * the type of function calls.
  *
  * @author Steffen Becker, Klaus Krogmann
  *
@@ -32,12 +33,12 @@ public class BasicFunctionClassificationStrategy extends AbstractLibraryCallFunc
     protected final SourceCodeDecoratorRepository sourceCodeDecoratorRepository;
 
     /**
-     * @param sourceCodeDecoratorRepository
-     *            The source code decorator which links the component for which to classify
-     *            statements and the GAST.
-     * @param primitiveComponent
-     *            The primitive component for which to decide whether the function access represents
-     *            an external call.
+     * @param sourceCodeDecoratorRepository The source code decorator which links
+     *                                      the component for which to classify
+     *                                      statements and the GAST.
+     * @param primitiveComponent            The primitive component for which to
+     *                                      decide whether the function access
+     *                                      represents an external call.
      * @param methodCallFinder
      */
     public BasicFunctionClassificationStrategy(final SourceCodeDecoratorRepository sourceCodeDecoratorRepository,
@@ -49,7 +50,7 @@ public class BasicFunctionClassificationStrategy extends AbstractLibraryCallFunc
 
     @Override
     protected boolean isExternalCall(final Method method) {
-        final ComponentImplementingClassesLink compLink = this.queryComponentLink(this.primitiveComponent);
+        final ComponentImplementingClassesLink compLink = queryComponentLink(primitiveComponent);
         if (null == compLink) {
             return false;
         }
@@ -58,7 +59,7 @@ public class BasicFunctionClassificationStrategy extends AbstractLibraryCallFunc
             for (final Method methodInInterface : methodsInInterface) {
                 if (EqualityChecker.areFunctionsEqual(method, methodInInterface)) {
                     logger.debug("Classified call as external call: " + method.getName() + " for component "
-                            + this.primitiveComponent.getEntityName());
+                            + primitiveComponent.getEntityName());
                     return true;
                 }
             }
@@ -69,7 +70,7 @@ public class BasicFunctionClassificationStrategy extends AbstractLibraryCallFunc
     }
 
     private ComponentImplementingClassesLink queryComponentLink(final BasicComponent primitiveComponent) {
-        for (final ComponentImplementingClassesLink compLink : this.sourceCodeDecoratorRepository
+        for (final ComponentImplementingClassesLink compLink : sourceCodeDecoratorRepository
                 .getComponentImplementingClassesLink()) {
             if (compLink.getComponent().equals(primitiveComponent)) {
                 return compLink;

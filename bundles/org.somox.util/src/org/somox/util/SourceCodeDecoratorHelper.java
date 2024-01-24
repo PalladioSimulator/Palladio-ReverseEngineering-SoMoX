@@ -18,7 +18,7 @@ public class SourceCodeDecoratorHelper {
     private final SourceCodeDecoratorRepository sourceCodeDecorator;
 
     public SourceCodeDecoratorHelper(final SourceCodeDecoratorRepository sourceCodeDecoratorRepository) {
-        this.sourceCodeDecorator = sourceCodeDecoratorRepository;
+        sourceCodeDecorator = sourceCodeDecoratorRepository;
     }
 
     public void createComponentImplementingClassesLink(final BasicComponent basicComponent, final Class jaMoPPClass) {
@@ -26,23 +26,21 @@ public class SourceCodeDecoratorHelper {
                 .createComponentImplementingClassesLink();
         componentImplementingClassLink.setComponent(basicComponent);
         componentImplementingClassLink.getImplementingClasses().add(jaMoPPClass);
-        this.sourceCodeDecorator.getComponentImplementingClassesLink().add(componentImplementingClassLink);
+        sourceCodeDecorator.getComponentImplementingClassesLink().add(componentImplementingClassLink);
     }
 
-    public void createInterfaceSourceCodeLink(final Interface pcmInterface,
-            final ConcreteClassifier jaMoPPInterface) {
+    public void createInterfaceSourceCodeLink(final Interface pcmInterface, final ConcreteClassifier jaMoPPInterface) {
         final InterfaceSourceCodeLink interfaceSourceCodeLink = SourcecodedecoratorFactory.eINSTANCE
                 .createInterfaceSourceCodeLink();
         interfaceSourceCodeLink.setInterface(pcmInterface);
         interfaceSourceCodeLink.setGastClass(jaMoPPInterface);
-        this.sourceCodeDecorator.getInterfaceSourceCodeLink().add(interfaceSourceCodeLink);
+        sourceCodeDecorator.getInterfaceSourceCodeLink().add(interfaceSourceCodeLink);
     }
 
-    public <T> T findPCMInterfaceForJaMoPPType(final Type type, java.lang.Class<T> interfaceClass) {
-        final InterfaceSourceCodeLink ifSourceCodeLink = this.sourceCodeDecorator.getInterfaceSourceCodeLink()
-                .stream()
-                .filter(interfaceSourceCodeLink -> null != interfaceSourceCodeLink.getGastClass()
-                        && null != interfaceSourceCodeLink.getInterface()
+    public <T> T findPCMInterfaceForJaMoPPType(final Type type, final java.lang.Class<T> interfaceClass) {
+        final InterfaceSourceCodeLink ifSourceCodeLink = sourceCodeDecorator.getInterfaceSourceCodeLink().stream()
+                .filter(interfaceSourceCodeLink -> (null != interfaceSourceCodeLink.getGastClass())
+                        && (null != interfaceSourceCodeLink.getInterface())
                         && interfaceSourceCodeLink.getGastClass().equals(type)
                         && interfaceClass.isInstance(interfaceSourceCodeLink.getInterface()))
                 .findAny().orElse(null);
@@ -50,13 +48,13 @@ public class SourceCodeDecoratorHelper {
         return null == ifSourceCodeLink ? null : interfaceClass.cast(ifSourceCodeLink.getInterface());
     }
 
-	public void createMethodLevelSourceCodeLink(final Signature signature, final Member jaMoPPMember) {
-		final MethodLevelSourceCodeLink metodLevelLink = SourcecodedecoratorFactory.eINSTANCE
-				.createMethodLevelSourceCodeLink();
-		metodLevelLink.setFile(jaMoPPMember.getContainingCompilationUnit());
-		metodLevelLink.setFunction(jaMoPPMember);
-		metodLevelLink.setOperation(signature);
-		this.sourceCodeDecorator.getMethodLevelSourceCodeLink().add(metodLevelLink);
-	}
+    public void createMethodLevelSourceCodeLink(final Signature signature, final Member jaMoPPMember) {
+        final MethodLevelSourceCodeLink metodLevelLink = SourcecodedecoratorFactory.eINSTANCE
+                .createMethodLevelSourceCodeLink();
+        metodLevelLink.setFile(jaMoPPMember.getContainingCompilationUnit());
+        metodLevelLink.setFunction(jaMoPPMember);
+        metodLevelLink.setOperation(signature);
+        sourceCodeDecorator.getMethodLevelSourceCodeLink().add(metodLevelLink);
+    }
 
 }

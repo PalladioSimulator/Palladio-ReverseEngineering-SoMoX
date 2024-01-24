@@ -39,7 +39,6 @@ import org.emftext.language.java.parameters.VariableLengthParameter;
 import org.emftext.language.java.references.IdentifierReference;
 import org.emftext.language.java.references.MethodCall;
 import org.emftext.language.java.references.ReferenceableElement;
-import org.emftext.language.java.statements.Block;
 import org.emftext.language.java.statements.StatementListContainer;
 import org.emftext.language.java.statements.StatementsFactory;
 import org.emftext.language.java.types.ClassifierReference;
@@ -50,8 +49,8 @@ import org.emftext.language.java.types.Type;
 import org.emftext.language.java.types.TypeReference;
 
 /**
- * This class contains a set of methods that are missing in the MoDisco Java meta model in
- * comparison to the SISSy G-AST meta model.
+ * This class contains a set of methods that are missing in the MoDisco Java
+ * meta model in comparison to the SISSy G-AST meta model.
  *
  * @author Oliver
  *
@@ -67,8 +66,8 @@ public class KDMHelper {
      * </pre>
      *
      * only detects List as type access. <br>
-     * If this variable is true, then this class works like SISSy. Else, for the example it also
-     * returns the String type.
+     * If this variable is true, then this class works like SISSy. Else, for the
+     * example it also returns the String type.
      */
     private static boolean SISSYMODE = false;
 
@@ -94,56 +93,69 @@ public class KDMHelper {
         }
         if (type instanceof NamedElement) {
             return ((NamedElement) type).getName();
-        } else if (type instanceof Classifier) {
-            return ((Classifier) type).getName();
-        } else if (type instanceof Package) {
-            return ((Package) type).getName();
-        } else if (type instanceof CompilationUnit) {
-            return ((CompilationUnit) type).getName();
-        } else if (type instanceof Method) {
-            return ((Method) type).getName();
-        } else if (type instanceof Parameter) {
-            return ((Parameter) type).getName();
-        } else if (type instanceof Member) {
-            return ((Member) type).getName();
-        } else if (type instanceof Interface) {
-            return ((Interface) type).getName();
-        } else if (type instanceof PrimitiveType) {
-            return getName((PrimitiveType) type);
-        } else {
-            return type.toString();
         }
+        if (type instanceof Classifier) {
+            return ((Classifier) type).getName();
+        }
+        if (type instanceof Package) {
+            return ((Package) type).getName();
+        }
+        if (type instanceof CompilationUnit) {
+            return ((CompilationUnit) type).getName();
+        }
+        if (type instanceof Method) {
+            return ((Method) type).getName();
+        }
+        if (type instanceof Parameter) {
+            return ((Parameter) type).getName();
+        }
+        if (type instanceof Member) {
+            return ((Member) type).getName();
+        }
+        if (type instanceof Interface) {
+            return ((Interface) type).getName();
+        }
+        if (type instanceof PrimitiveType) {
+            return getName((PrimitiveType) type);
+        }
+        return type.toString();
     }
 
     public static String getName(final PrimitiveType type) {
         if (type instanceof org.emftext.language.java.types.Boolean) {
             return "bool";
-        } else if (type instanceof org.emftext.language.java.types.Byte) {
-            return "byte";
-        } else if (type instanceof org.emftext.language.java.types.Char) {
-            return "char";
-        } else if (type instanceof org.emftext.language.java.types.Double) {
-            return "double";
-        } else if (type instanceof org.emftext.language.java.types.Float) {
-            return "float";
-        } else if (type instanceof org.emftext.language.java.types.Int) {
-            return "int";
-        } else if (type instanceof org.emftext.language.java.types.Long) {
-            return "long";
-        } else if (type instanceof org.emftext.language.java.types.Short) {
-            return "short";
-        } else if (type instanceof org.emftext.language.java.types.Void) {
-            return "void";
-        } else {
-            return type.toString();
         }
+        if (type instanceof org.emftext.language.java.types.Byte) {
+            return "byte";
+        }
+        if (type instanceof org.emftext.language.java.types.Char) {
+            return "char";
+        }
+        if (type instanceof org.emftext.language.java.types.Double) {
+            return "double";
+        }
+        if (type instanceof org.emftext.language.java.types.Float) {
+            return "float";
+        }
+        if (type instanceof org.emftext.language.java.types.Int) {
+            return "int";
+        }
+        if (type instanceof org.emftext.language.java.types.Long) {
+            return "long";
+        }
+        if (type instanceof org.emftext.language.java.types.Short) {
+            return "short";
+        }
+        if (type instanceof org.emftext.language.java.types.Void) {
+            return "void";
+        }
+        return type.toString();
     }
 
     /**
      * Returns the qualified name for a type.
      *
-     * @param astClass
-     *            the {@link ASTNode} object
+     * @param astClass the {@link ASTNode} object
      * @return the full qualified name of the input object
      */
     public static String computeFullQualifiedName(final Commentable astClass) {
@@ -157,31 +169,28 @@ public class KDMHelper {
 
         while (pack != null) {
 
-            if (pack.eContainer() != null && pack.eContainer() instanceof NamedElement) {
+            if ((pack.eContainer() != null) && (pack.eContainer() instanceof NamedElement)) {
                 pack = pack.eContainer();
                 result = getNameOfNamedElement((NamedElement) pack) + "." + result;
             } else {
                 pack = pack.eContainer();
             }
         }
-        result = removeLastPoint(result);
-        return result;
+        return removeLastPoint(result);
     }
 
     public static Method getMethod(final MethodCall methodCall) {
         final ReferenceableElement re = methodCall.getTarget();
         if (re instanceof Method) {
-            final Method method = (Method) re;
-            return method;
-        } else {
-            return null;
-            // TODO: log error
+            return (Method) re;
         }
+        return null;
+        // TODO: log error
 
     }
 
     public static String removeLastPoint(final String result) {
-        if (result != null && result.endsWith(".")) {
+        if ((result != null) && result.endsWith(".")) {
             return result.substring(0, result.length() - 1);
         }
         return result;
@@ -199,39 +208,35 @@ public class KDMHelper {
 
     // TODO refactor with
     /**
-     * For an access, returns the accessed types. <b>The result set does not contain null
-     * pointer.</b>
+     * For an access, returns the accessed types. <b>The result set does not contain
+     * null pointer.</b>
      *
-     * @param element
-     *            an access element
+     * @param element an access element
      * @return the set of accessed types
      */
     private static Set<Type> getAccessedTypes(final Commentable element) {
-        final Set<Type> result = new HashSet<Type>();
+        final Set<Type> result = new HashSet<>();
 
         final Type accessedType = GetAccessedType.getAccessedType(element);
         if (SISSYMODE) {
             if (accessedType != null) {
                 result.add(accessedType);
             }
-        } else {// KDM Mode
-
-            if (accessedType instanceof VariableLengthParameter) {
-                final Parameter paramType = (Parameter) accessedType;
-                // 1. add main type
-                result.add(paramType.getTypeReference().getTarget());
-                // 2. add type arguments
-                for (final TypeArgument typeAccess : paramType.getTypeArguments()) {
-                    if (((TypeReference) typeAccess).getTarget() instanceof Parameter) {
-                        // recursive call
-                        result.addAll(getAccessedTypes(typeAccess));
-                    } else {
-                        result.add(GetAccessedType.getAccessedType(typeAccess));
-                    }
+        } else if (accessedType instanceof VariableLengthParameter) {
+            final Parameter paramType = (Parameter) accessedType;
+            // 1. add main type
+            result.add(paramType.getTypeReference().getTarget());
+            // 2. add type arguments
+            for (final TypeArgument typeAccess : paramType.getTypeArguments()) {
+                if (((TypeReference) typeAccess).getTarget() instanceof Parameter) {
+                    // recursive call
+                    result.addAll(getAccessedTypes(typeAccess));
+                } else {
+                    result.add(GetAccessedType.getAccessedType(typeAccess));
                 }
-            } else {// if a normal Type
-                result.add(accessedType);
             }
+        } else {// if a normal Type
+            result.add(accessedType);
         }
         return result;
 
@@ -240,50 +245,44 @@ public class KDMHelper {
     /**
      * For a {@link ParameterizedType} objects returns the accessed types.
      *
-     * @param input
-     *            a {@link ParameterizedType} object
+     * @param input a {@link ParameterizedType} object
      * @return a set of the accessed types
      */
 
     /**
      * Returns all accessed types inside a type.
      *
-     * @param input
-     *            the input {@link Type}
+     * @param input the input {@link Type}
      * @return the list of accessed types
      */
     public static List<Type> getAllAccessedClasses(final Type input) {
-        final Set<Type> resultList = new HashSet<Type>();
+        final Set<Type> resultList = new HashSet<>();
         final List<TypeReference> accesses = getAllAccesses(input);
 
         for (final Commentable node : accesses) {
             resultList.addAll(getAccessedTypes(node));
         }
-        final ArrayList<Type> returnSet = new ArrayList<Type>();
-        returnSet.addAll(resultList);
-        return returnSet;
+        return new ArrayList<>(resultList);
     }
 
     /**
      * Returns <b>all accesses inside an ASTNode object</b>. <br>
-     * Accesses <b>inside an {@link TagElement}</b> (for example in JavaDoc comments) <br>
+     * Accesses <b>inside an {@link TagElement}</b> (for example in JavaDoc
+     * comments) <br>
      * are <b>not in the result set</b>.
      *
-     * @param input
-     *            an {@link ASTNode} object
+     * @param input an {@link ASTNode} object
      * @return all accesses inside the ASTNode object
      */
     public static List<TypeReference> getAllAccesses(final Commentable input) {
-        final List<TypeReference> result = new ArrayList<TypeReference>();
+        final List<TypeReference> result = new ArrayList<>();
         final TreeIterator<EObject> iterator = input.eAllContents();
 
         while (iterator.hasNext()) {
             final EObject element = iterator.next();
-            if (element instanceof TypeReference) {
-                if (isAccess((TypeReference) element)) {
-                    result.add((TypeReference) element);
+            if ((element instanceof TypeReference) && isAccess((TypeReference) element)) {
+                result.add((TypeReference) element);
 
-                }
             }
         }
         return result;
@@ -292,22 +291,19 @@ public class KDMHelper {
     /**
      * For a type returns all inner classes.
      *
-     * @param clazz
-     *            the input type
+     * @param clazz the input type
      * @return the list of inner classes
      */
     // SOMOXTODOCHANGE inner classes in inner classes???
     public static List<ConcreteClassifier> getInnerClasses(final ConcreteClassifier clazz) {
-        final List<ConcreteClassifier> result = new ArrayList<ConcreteClassifier>();
+        final List<ConcreteClassifier> result = new ArrayList<>();
         if (!(clazz instanceof Class)) {
             return result;
         }
         for (final Iterator<EObject> iterator = clazz.eAllContents(); iterator.hasNext();) {
             final EObject element = iterator.next();
-            if (element instanceof Class) {
-                if (isInnerClass((ConcreteClassifier) element)) {
-                    result.add((Class) element);
-                }
+            if ((element instanceof Class) && isInnerClass((ConcreteClassifier) element)) {
+                result.add((Class) element);
             }
         }
         return result;
@@ -316,8 +312,7 @@ public class KDMHelper {
     /**
      * For an ASTNode computes the {@link JavaNodeSourceRegion} object.
      *
-     * @param node
-     *            the ASTNode object
+     * @param node the ASTNode object
      * @return the {@link JavaNodeSourceRegion}
      */
     // JavaNodeSourceRegion
@@ -331,8 +326,7 @@ public class KDMHelper {
     /**
      * Returns all real methods (not constructors) of a type.
      *
-     * @param input
-     *            the
+     * @param input the
      * @return the real methods (not constructors) of a Class
      */
     public static List<Method> getMethods(final ConcreteClassifier input) {
@@ -342,8 +336,7 @@ public class KDMHelper {
     /**
      * Returns, if exist, the overridden member, else null.
      *
-     * @param methDecInput
-     *            the method object
+     * @param methDecInput the method object
      * @return the overridden method
      */
     public static Method getOverriddenASTNode(final Method methDecInput) {
@@ -366,8 +359,7 @@ public class KDMHelper {
     /**
      * Returns a string representing the {@link Commentable} object.
      *
-     * @param node
-     *            the {@link ASTNode} object
+     * @param node the {@link ASTNode} object
      * @return the toString string of the input object
      */
     public static String getSISSyID(final Commentable node) {
@@ -375,18 +367,17 @@ public class KDMHelper {
     }
 
     /**
-     * Queries the {@link SourceFile} object for a {@link JavaNodeSourceRegion} object.
+     * Queries the {@link SourceFile} object for a {@link JavaNodeSourceRegion}
+     * object.
      *
-     * @param sourceRegion
-     *            the input object
+     * @param sourceRegion the input object
      * @return the {@link SourceFile} object
      */
 
     /**
      * Returns all super types of a type.
      *
-     * @param concreteClassifier
-     *            the input {@link ConcreteClassifier}
+     * @param concreteClassifier the input {@link ConcreteClassifier}
      * @return the list of super types
      */
     public static List<ConcreteClassifier> getSuperTypes(final ConcreteClassifier concreteClassifier) {
@@ -399,8 +390,7 @@ public class KDMHelper {
     /**
      * Returns the surrounding package of a type, else null.
      *
-     * @param input
-     *            the input {@link Type}
+     * @param input the input {@link Type}
      * @return the {@link Package} containing the type
      */
     public static Package getSurroundingPackage(final Type input) {
@@ -413,8 +403,7 @@ public class KDMHelper {
     /**
      * Returns whether the AnnotableAndModifiable object is abstract.
      *
-     * @param input
-     *            the {@link Type} object
+     * @param input the {@link Type} object
      * @return true or false
      */
     public static boolean isAbstract(final AnnotableAndModifiable input) {
@@ -430,13 +419,8 @@ public class KDMHelper {
      */
     public static boolean isAccess(final Commentable element) {
 
-        if (element instanceof MethodCall) {
-            return true;
-        }
-        if (element instanceof ClassifierReference) {
-            return true;
-        }
-        if (element instanceof IdentifierReference) {
+        if ((element instanceof MethodCall) || (element instanceof ClassifierReference)
+                || (element instanceof IdentifierReference)) {
             return true;
         }
 
@@ -468,8 +452,7 @@ public class KDMHelper {
     /**
      * Checks if a type access is an inheritance type access.
      *
-     * @param inputTypeAccess
-     *            The type access to verify.
+     * @param inputTypeAccess The type access to verify.
      * @return true or false.
      */
     public static boolean isInheritanceTypeAccess(final TypeReference inputTypeAccess) {
@@ -492,8 +475,7 @@ public class KDMHelper {
     /**
      * Returns if the type is an inner class.
      *
-     * @param clazz
-     *            the input {@link Type}
+     * @param clazz the input {@link Type}
      * @return true or false
      */
     public static boolean isInnerClass(final ConcreteClassifier clazz) {
@@ -501,15 +483,13 @@ public class KDMHelper {
     }
 
     public static EClass[] getNewEClassEnumeration() {
-        final EClass[] en = null;
-        return en;
+        return null;
     }
 
     /**
      * Returns if the type is an interface.
      *
-     * @param input
-     *            the input object
+     * @param input the input object
      * @return true or false
      */
     public static boolean isInterface(final Commentable input) {
@@ -518,18 +498,15 @@ public class KDMHelper {
 
     /**
      *
-     * @param method
-     *            The method to check the visibility.
-     * @param inputVisKind
-     *            the visibility kind to compare with
+     * @param method       The method to check the visibility.
+     * @param inputVisKind the visibility kind to compare with
      * @return true or false
      */
 
     /**
      * Returns whether the type is primitive or not.
      *
-     * @param input
-     *            the input {@link Type}
+     * @param input the input {@link Type}
      * @return true or false
      */
     public static boolean isPrimitive(final Type input) {
@@ -537,20 +514,19 @@ public class KDMHelper {
     }
 
     /**
-     * A virtual method can be overridden. In Java 1. Static methods cannot be overridden. 2. Non
-     * static private and final methods cannot be overridden.
+     * A virtual method can be overridden. In Java 1. Static methods cannot be
+     * overridden. 2. Non static private and final methods cannot be overridden.
      *
-     * @param method
-     *            the {@link BodyDeclaration} object
+     * @param method the {@link BodyDeclaration} object
      * @return true or false
      */
     public static boolean isVirtual(final Method method) {
-        if (method == null || method.getModifiers() == null) {
+        if ((method == null) || (method.getModifiers() == null)) {
             return false;
         }
 
         for (final Modifier modifier : method.getModifiers()) {
-            if (modifier instanceof Private || modifier instanceof Static || modifier instanceof Final) {
+            if ((modifier instanceof Private) || (modifier instanceof Static) || (modifier instanceof Final)) {
                 return false;
             }
         }
@@ -559,9 +535,10 @@ public class KDMHelper {
     }
 
     /**
-     * retruns the body of a method Since we use jamopp we return the class method itself since the
-     * ClassMethod is a StatementListContainer If the method is not a class method we just return an
-     * empty block (which is also a StatementListContainer)
+     * retruns the body of a method Since we use jamopp we return the class method
+     * itself since the ClassMethod is a StatementListContainer If the method is not
+     * a class method we just return an empty block (which is also a
+     * StatementListContainer)
      *
      * @param member
      * @return
@@ -570,8 +547,7 @@ public class KDMHelper {
         if (member instanceof StatementListContainer) {
             return (StatementListContainer) member;
         }
-        final Block emptyBlock = StatementsFactory.eINSTANCE.createBlock();
-        return emptyBlock;
+        return StatementsFactory.eINSTANCE.createBlock();
     }
 
     public static EList<Package> getOwnedPackages(final Package prefixPackage) {
@@ -600,9 +576,8 @@ public class KDMHelper {
     }
 
     public static List<Constructor> getConstructors(final Type implementingClass) {
-        final List<Constructor> constructors = new ArrayList<Constructor>();
-        if (implementingClass instanceof ConcreteClassifier) {
-            final ConcreteClassifier concreteClassifier = (ConcreteClassifier) implementingClass;
+        final List<Constructor> constructors = new ArrayList<>();
+        if (implementingClass instanceof final ConcreteClassifier concreteClassifier) {
             for (final Member member : concreteClassifier.getMembers()) {
                 if (member instanceof Constructor) {
                     constructors.add((Constructor) member);
@@ -614,7 +589,7 @@ public class KDMHelper {
 
     public static <T> T getFirstChildWithType(final Commentable commentable, final java.lang.Class<T> classType) {
         final EList<T> children = commentable.getChildrenByType(classType);
-        if (null != children && 0 < children.size()) {
+        if ((null != children) && (0 < children.size())) {
             return children.get(0);
         }
         return null;

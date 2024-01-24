@@ -20,9 +20,11 @@ public class CheckboxLabelProvider implements ILabelProvider {
     public String getText(final Object element) {
         if (element instanceof Root) {
             return ("Root");
-        } else if (element instanceof Package) {
+        }
+        if (element instanceof Package) {
             return ((Package) element).getName();
-        } else if (element instanceof Type) {
+        }
+        if (element instanceof Type) {
             return ((Type) element).toString();
         }
         return null;

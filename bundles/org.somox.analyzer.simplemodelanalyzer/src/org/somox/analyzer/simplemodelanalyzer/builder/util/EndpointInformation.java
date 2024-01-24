@@ -6,10 +6,11 @@ import org.palladiosimulator.pcm.repository.Role;
 import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 
 /**
- * Builder-related information for proper connector creation to inner components. An
- * EndpointInformation stores all information to identify an endpoint of a connector on a component.
- * An endpoint can be a provided role or required role offered by a component instance identified by
- * its assembly context.
+ * Builder-related information for proper connector creation to inner
+ * components. An EndpointInformation stores all information to identify an
+ * endpoint of a connector on a component. An endpoint can be a provided role or
+ * required role offered by a component instance identified by its assembly
+ * context.
  */
 public class EndpointInformation {
 
@@ -27,33 +28,31 @@ public class EndpointInformation {
     }
 
     public InterfaceSourceCodeLink getInterfaceSourceCodeLink() {
-        return this.interfaceSourceCodeLink;
+        return interfaceSourceCodeLink;
     }
 
     public Role getRole() {
-        return this.role;
+        return role;
     }
 
     public AssemblyContext getAssemblyContext() {
-        return this.assemblyContext;
+        return assemblyContext;
     }
 
     @Override
     public boolean equals(final Object obj) {
 
-        if (!(obj instanceof EndpointInformation)) {
+        if (!(obj instanceof final EndpointInformation instance)) {
             return false;
-        } else {
-            final EndpointInformation instance = (EndpointInformation) obj;
-            return (instance.getRole().equals(this.getRole())
-                    && instance.getInterfaceSourceCodeLink().equals(this.getInterfaceSourceCodeLink())
-                    && instance.getAssemblyContext().equals(this.getAssemblyContext()));
         }
+        return (instance.getRole().equals(getRole())
+                && instance.getInterfaceSourceCodeLink().equals(getInterfaceSourceCodeLink())
+                && instance.getAssemblyContext().equals(getAssemblyContext()));
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override

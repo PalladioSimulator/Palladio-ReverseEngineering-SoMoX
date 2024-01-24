@@ -26,10 +26,10 @@ public class ReferenceCacheData implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The list of reference URIs for reach resource. The resource itself is also identified by its
-     * URI.
+     * The list of reference URIs for reach resource. The resource itself is also
+     * identified by its URI.
      */
-    private Map<String, LinkedHashMap<String, String>> resourceToTargetURIListMap = Maps.newLinkedHashMap();
+    private final Map<String, LinkedHashMap<String, String>> resourceToTargetURIListMap = Maps.newLinkedHashMap();
 
     /**
      * Access to the resource reference map.
@@ -41,13 +41,13 @@ public class ReferenceCacheData implements Serializable {
     }
 
     /**
-     * Merge the data of the provided cache to this one. If the provided cache data contains data
-     * with a key stored in this cache already, the new one will override the existing one.
+     * Merge the data of the provided cache to this one. If the provided cache data
+     * contains data with a key stored in this cache already, the new one will
+     * override the existing one.
      *
-     * @param mergeInCacheData
-     *            The data to merge into this cache.
+     * @param mergeInCacheData The data to merge into this cache.
      */
-    public void merge(ReferenceCacheData mergeInCacheData) {
+    public void merge(final ReferenceCacheData mergeInCacheData) {
         resourceToTargetURIListMap.putAll(mergeInCacheData.getResourceToTargetURIListMap());
     }
 }

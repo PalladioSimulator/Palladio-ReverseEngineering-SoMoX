@@ -1,27 +1,29 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Automatic-Module-Name: org.somox.analyzer.simplemodelanalyzer
 Bundle-Name: SoMoX Simple Model Analyzer Plug-in
 Bundle-SymbolicName: org.somox.analyzer.simplemodelanalyzer;singleton:=true
 Bundle-Version: 5.2.0.qualifier
 Bundle-Activator: org.somox.analyzer.simplemodelanalyzer.Activator
 Bundle-Vendor: Palladio Project
-Require-Bundle: org.somox.core;bundle-version="5.2.0",
- org.somox.ui;bundle-version="5.2.0",
- org.eclipse.ui;bundle-version="3.4.1",
- de.uka.ipd.sdq.workflow.launchconfig;bundle-version="1.1.0",
- org.eclipse.gmf.runtime.emf.core;bundle-version="1.1.1",
- org.somox.filter;bundle-version="5.2.0",
- org.eclipse.debug.ui;bundle-version="3.5.0",
- org.somox.kdmhelper;bundle-version="5.2.0",
- org.somox.sourcecodedecorator;bundle-version="5.2.0",
- org.palladiosimulator.pcm;bundle-version="5.0.0",
- org.palladiosimulator.pcm.resources;bundle-version="5.0.0",
+Require-Bundle: org.somox.core,
+ org.somox.ui,
+ org.eclipse.ui,
+ de.uka.ipd.sdq.workflow.launchconfig,
+ org.eclipse.gmf.runtime.emf.core,
+ org.somox.filter,
+ org.eclipse.debug.ui,
+ org.somox.kdmhelper,
+ org.somox.sourcecodedecorator,
+ org.palladiosimulator.pcm,
+ org.palladiosimulator.pcm.resources,
  org.emftext.language.java,
  org.eclipse.emf.common,
- org.somox.metricvaluesstorage;bundle-version="5.2.0",
- org.somox.metrics;bundle-version="1.0.0",
+ org.somox.metricvaluesstorage,
+ org.somox.metrics,
  org.somox.util,
- org.somox.gast2seff
+ org.somox.gast2seff,
+ org.jgrapht.core
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.somox.analyzer.simplemodelanalyzer,
@@ -32,5 +34,3 @@ Export-Package: org.somox.analyzer.simplemodelanalyzer,
  org.somox.analyzer.simplemodelanalyzer.factories,
  org.somox.analyzer.simplemodelanalyzer.jobs,
  org.somox.analyzer.simplemodelanalyzer.metrics.tabs
-Bundle-ClassPath: .,
- lib/jgrapht-0.8.1.jar

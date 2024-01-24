@@ -23,8 +23,8 @@ import jamopp.resource.JavaResource2;
 /***
  * JaMoPP java resource using an internal cache for reference resolving.
  *
- * As long as the cache is not explicitly triggered to resolve a resource, proxies will be resolved
- * when required only.
+ * As long as the cache is not explicitly triggered to resolve a resource,
+ * proxies will be resolved when required only.
  */
 public class JavaSourceOrClassFileCachingResource extends JavaResource2 implements CachingResource {
 
@@ -37,10 +37,9 @@ public class JavaSourceOrClassFileCachingResource extends JavaResource2 implemen
     /**
      * Constructor to set the reference cache the resource should use for resolving.
      *
-     * @param uri
-     *            The URI identifying this resource.
-     * @param referenceCache
-     *            The reference cache to use. If null is provided no cache is used.
+     * @param uri            The URI identifying this resource.
+     * @param referenceCache The reference cache to use. If null is provided no
+     *                       cache is used.
      */
     public JavaSourceOrClassFileCachingResource(final URI uri, final ReferenceCache referenceCache) {
         super(uri);
@@ -51,20 +50,16 @@ public class JavaSourceOrClassFileCachingResource extends JavaResource2 implemen
     public EObject getEObject(final String id) {
 
         // without a cache trigger default behavior.
-        if (this.referenceCache == null) {
-            return super.getEObject(id);
-        }
-
         // resource internal ids must be picked up directly to prevent loops
-        if (Strings.isNullOrEmpty(id) || id.charAt(0) == '/') {
+        if ((referenceCache == null) || Strings.isNullOrEmpty(id) || (id.charAt(0) == '/')) {
             return super.getEObject(id);
         }
 
-        EObject resolvedEObject = this.referenceCache.getEObject(this, id);
+        EObject resolvedEObject = referenceCache.getEObject(this, id);
         if (resolvedEObject == null) {
             resolvedEObject = super.getEObject(id);
             if (resolvedEObject != null) {
-                this.referenceCache.registerEObject(this, id, resolvedEObject);
+                referenceCache.registerEObject(this, id, resolvedEObject);
             }
         }
         return resolvedEObject;
@@ -72,9 +67,9 @@ public class JavaSourceOrClassFileCachingResource extends JavaResource2 implemen
 
     @Override
     public void disableCaching() {
-        if (this.referenceCache != null) {
-            this.referenceCache.blacklist(this);
-            this.referenceCache = null;
+        if (referenceCache != null) {
+            referenceCache.blacklist(this);
+            referenceCache = null;
         }
     }
 

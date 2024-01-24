@@ -50,27 +50,26 @@ public interface ExtractionResult {
      *
      * @return
      */
-    public ExtractionResult.ResultStatus getResultStatus();
+    ExtractionResult.ResultStatus getResultStatus();
 
     /**
      * Get the Software Extractor that was performed
      *
      * @return
      */
-    public SoftwareExtractor getSoftwareExtractor();
+    SoftwareExtractor getSoftwareExtractor();
 
     /**
      * Add a message object to the result
      *
-     * @param message
-     *            The message object
+     * @param message The message object
      */
-    public void addMessage(Message message);
+    void addMessage(Message message);
 
     /**
      * Get a list of all message objects assigned to this result
      *
      * @return List of all assigned message objects
      */
-    public List<Message> getMessages();
+    List<Message> getMessages();
 }

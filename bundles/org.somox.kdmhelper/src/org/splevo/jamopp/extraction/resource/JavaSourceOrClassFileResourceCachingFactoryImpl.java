@@ -23,19 +23,20 @@ import org.splevo.jamopp.extraction.cache.ReferenceCache;
 public class JavaSourceOrClassFileResourceCachingFactoryImpl implements Resource.Factory {
 
     private final Resource.Factory factory;
-    
+
     /** The reference cache to use. */
     private ReferenceCache referenceCache = null;
 
     /**
      * Constructor to set the base directory for internal reference cache.
-     * 
-     * @param factory
-     *            The resource factory to which the requests are forwarded.
-     * @param cacheDirectories
-     *            The absolute paths of directories containing cache files.
+     *
+     * @param factory          The resource factory to which the requests are
+     *                         forwarded.
+     * @param cacheDirectories The absolute paths of directories containing cache
+     *                         files.
      */
-    public JavaSourceOrClassFileResourceCachingFactoryImpl(Resource.Factory factory, List<String> cacheDirectories) {
+    public JavaSourceOrClassFileResourceCachingFactoryImpl(final Resource.Factory factory,
+            final List<String> cacheDirectories) {
         this.factory = factory;
         referenceCache = new ReferenceCache(cacheDirectories);
     }
@@ -45,8 +46,8 @@ public class JavaSourceOrClassFileResourceCachingFactoryImpl implements Resource
      *
      * <p>
      * Depending on how the URI is created, one must call
-     * <code>new File("myRelativePath").getCanonicalPath()</code> before to ensure the URI starts
-     * with file://
+     * <code>new File("myRelativePath").getCanonicalPath()</code> before to ensure
+     * the URI starts with file://
      * </p>
      *
      * Otherwise a regular JaMoPP resource is created.
@@ -54,12 +55,11 @@ public class JavaSourceOrClassFileResourceCachingFactoryImpl implements Resource
      * {@inheritDoc}
      */
     @Override
-    public Resource createResource(URI uri) {
+    public Resource createResource(final URI uri) {
         if (uri.isFile() || uri.isPlatform()) {
             return new JavaSourceOrClassFileCachingResource(uri, referenceCache);
-        } else {
-            return factory.createResource(uri);
         }
+        return factory.createResource(uri);
     }
 
     /**

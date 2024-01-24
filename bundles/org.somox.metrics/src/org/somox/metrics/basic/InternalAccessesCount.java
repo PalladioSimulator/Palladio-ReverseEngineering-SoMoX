@@ -13,13 +13,13 @@ public class InternalAccessesCount extends AbstractCountingMetric {
 
     @Override
     protected void internalComputeDirected(final ClusteringRelation relationToCompute) {
-        final Set<ConcreteClassifier> classes1 = this.getComponentToClassHelper()
+        final Set<ConcreteClassifier> classes1 = getComponentToClassHelper()
                 .deriveImplementingClasses(relationToCompute.getSourceComponent());
-        final Set<ConcreteClassifier> classes2 = this.getComponentToClassHelper()
+        final Set<ConcreteClassifier> classes2 = getComponentToClassHelper()
                 .deriveImplementingClasses(relationToCompute.getTargetComponent());
 
-        relationToCompute.setResultMetric(this.getMID(),
-                this.getAccessGraphCache().calculateNumberOfAccessesToClassesInSet(classes1, classes2));
+        relationToCompute.setResultMetric(getMID(),
+                getAccessGraphCache().calculateNumberOfAccessesToClassesInSet(classes1, classes2));
     }
 
     @Override

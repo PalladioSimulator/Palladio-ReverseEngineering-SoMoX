@@ -13,15 +13,17 @@ import org.somox.filter.tests.TestFileFilter;
 
 /**
  * SoMoX’ central configuration.
- * <h4>attribute map</h4> This configuration has a bijective representation as an
- * <em>attribute map</em>. This is a {@code Map<String, Object>} containing the class’ attribute key
- * constants as keys and the configuration’s attributes as values. The value’s type is the same as
- * the corresponding setter’s return type. A value of {@code null} is interpreted as “not defined”
- * just like if the map did not contain the key in question.
+ * <h4>attribute map</h4> This configuration has a bijective representation as
+ * an <em>attribute map</em>. This is a {@code Map<String, Object>} containing
+ * the class’ attribute key constants as keys and the configuration’s attributes
+ * as values. The value’s type is the same as the corresponding setter’s return
+ * type. A value of {@code null} is interpreted as “not defined” just like if
+ * the map did not contain the key in question.
  * <p>
- * For a mapping of attribute constants to getters and setters, see their documentation. An
- * <em>attribute map</em> can be obtained by {@link #toMap()} and be converted into a
- * {@code SoMoXConfiguration} by {@link #SoMoXConfiguration(Map)}.
+ * For a mapping of attribute constants to getters and setters, see their
+ * documentation. An <em>attribute map</em> can be obtained by {@link #toMap()}
+ * and be converted into a {@code SoMoXConfiguration} by
+ * {@link #SoMoXConfiguration(Map)}.
  *
  * @author Unknown
  * @author Joshua Gleitze
@@ -30,7 +32,8 @@ import org.somox.filter.tests.TestFileFilter;
 public class SoMoXConfiguration extends AbstractMoxConfiguration {
 
     /**
-     * attribute key for {@link #getAdditionalWildcards()} / {@link #setAdditionalWildcards(String)}
+     * attribute key for {@link #getAdditionalWildcards()} /
+     * {@link #setAdditionalWildcards(String)}
      */
     public static final String BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL = "org.somox.metrics.wildcards.additional";
     /**
@@ -49,34 +52,40 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
     public static final String SOMOX_EXCLUDED_SUFFIXES = "org.somox.metrics.nameResemblance.excludedSuffixes";
     /**
      * attribute key for {@link #getClusteringConfig()}.
-     * {@code getClusteringComposeThresholdDecrement()} / {@link #getClusteringConfig()}.
+     * {@code getClusteringComposeThresholdDecrement()} /
+     * {@link #getClusteringConfig()}.
      * {@code setClusteringComposeThresholdDecrement(double)}
      */
     public static final String SOMOX_WEIGHT_CLUSTERING_THRESHOLD_DECREMENT_COMPOSE = "org.somox.clusteringThresholdDecrement.Compose";
     /**
      * attribute key for {@link #getClusteringConfig()}.
-     * {@code getClusteringMergeThresholdDecrement()} / {@link #getClusteringConfig()}.
+     * {@code getClusteringMergeThresholdDecrement()} /
+     * {@link #getClusteringConfig()}.
      * {@code setClusteringMergeThresholdDecrement(double)}
      */
     public static final String SOMOX_WEIGHT_CLUSTERING_THRESHOLD_DECREMENT_MERGE = "org.somox.clusteringThresholdDecrement.Merge";
     /**
-     * attribute key for {@link #getClusteringConfig()}. {@code getMaxComposeClusteringThreshold()}
-     * / {@link #getClusteringConfig()}. {@code setMaxComposeClusteringThreshold(double)}
+     * attribute key for {@link #getClusteringConfig()}.
+     * {@code getMaxComposeClusteringThreshold()} / {@link #getClusteringConfig()}.
+     * {@code setMaxComposeClusteringThreshold(double)}
      */
     public static final String SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MAX_COMPOSE = "org.somox.clusteringThresholdMax.Compose";
     /**
-     * attribute key for {@link #getClusteringConfig()}. {@code getMaxMergeClusteringThreshold()} /
-     * {@link #getClusteringConfig()}. {@code setMaxMergeClusteringThreshold(double)}
+     * attribute key for {@link #getClusteringConfig()}.
+     * {@code getMaxMergeClusteringThreshold()} / {@link #getClusteringConfig()}.
+     * {@code setMaxMergeClusteringThreshold(double)}
      */
     public static final String SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MAX_MERGE = "org.somox.clusteringThresholdMax.Merge";
     /**
-     * attribute key for {@link #getClusteringConfig()}. {@code getMinComposeClusteringThreshold()}
-     * / {@link #getClusteringConfig()}. {@code setMinComposeClusteringThreshold(double)}
+     * attribute key for {@link #getClusteringConfig()}.
+     * {@code getMinComposeClusteringThreshold()} / {@link #getClusteringConfig()}.
+     * {@code setMinComposeClusteringThreshold(double)}
      */
     public static final String SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MIN_COMPOSE = "org.somox.clusteringThresholdMin.Compose";
     /**
-     * attribute key for {@link #getClusteringConfig()}. {@code getMinMergeClusteringThreshold()} /
-     * {@link #getClusteringConfig()}. {@code setMinMergeClusteringThreshold(double)}
+     * attribute key for {@link #getClusteringConfig()}.
+     * {@code getMinMergeClusteringThreshold()} / {@link #getClusteringConfig()}.
+     * {@code setMinMergeClusteringThreshold(double)}
      */
     public static final String SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MIN_MERGE = "org.somox.clusteringThresholdMin.Merge";
     /**
@@ -89,7 +98,8 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
      */
     public static final String SOMOX_WEIGHT_DMS = "org.somox.dms.weightDMS";
     /**
-     * attribute key for {@link #getWeightHighCoupling()} / {@link #setWeightHighCoupling(double)}
+     * attribute key for {@link #getWeightHighCoupling()} /
+     * {@link #setWeightHighCoupling(double)}
      */
     public static final String SOMOX_WEIGHT_HIGH_COUPLING = "org.somox.nameResemblance.weightHighCoupling";
     /**
@@ -98,7 +108,8 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
      */
     public static final String SOMOX_WEIGHT_HIGH_NAME_RESEMBLANCE = "org.somox.nameResemblance.weightHighNameResemblance";
     /**
-     * attribute key for {@link #getWeightHighSLAQ()} / {@link #setWeightHighSLAQ(double)}
+     * attribute key for {@link #getWeightHighSLAQ()} /
+     * {@link #setWeightHighSLAQ(double)}
      */
     public static final String SOMOX_WEIGHT_HIGH_SLAQ = "org.somox.subsystemComponent.weightHighSLAQ";
     /**
@@ -117,7 +128,8 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
      */
     public static final String SOMOX_WEIGHT_INTERFACE_VIOLATION_RELEVANT = "org.somox.interfaceViolation.weightInterfaceViolationRelevant";
     /**
-     * attribute key for {@link #getWeightLowCoupling()} / {@link #setWeightLowCoupling(double)}
+     * attribute key for {@link #getWeightLowCoupling()} /
+     * {@link #setWeightLowCoupling(double)}
      */
     public static final String SOMOX_WEIGHT_LOW_COUPLING = "org.somox.nameResemblance.weightLowCoupling";
     /**
@@ -126,7 +138,8 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
      */
     public static final String SOMOX_WEIGHT_LOW_NAME_RESEMBLANCE = "org.somox.nameResemblance.weightLowNameResemblance";
     /**
-     * attribute key for {@link #getWeightLowSLAQ()} / {@link #setWeightLowSLAQ(double)}
+     * attribute key for {@link #getWeightLowSLAQ()} /
+     * {@link #setWeightLowSLAQ(double)}
      */
     public static final String SOMOX_WEIGHT_LOW_SLAQ = "org.somox.subsystemComponent.weightLowSLAQ";
     /**
@@ -144,7 +157,8 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
     private String additionalWildcards = "";
 
     private final BlacklistFilter blacklistFilter = new BlacklistFilter();
-    private ComposedFilter<ConcreteClassifier> classifierFilter = new ComposedFilter<>(new TestFileFilter(), blacklistFilter);
+    private final ComposedFilter<ConcreteClassifier> classifierFilter = new ComposedFilter<>(new TestFileFilter(),
+            blacklistFilter);
 
     private final ClusteringConfiguration clusteringConfig = new ClusteringConfiguration();
     private String excludedPrefixesForNameResemblance = "";
@@ -168,30 +182,29 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
      * Creates a new SoMoX configuration initialized with default values.
      */
     public SoMoXConfiguration() {
-        this.getFileLocations().setOutputFolder("/model");
-        this.updateBlacklistFilter();
+        getFileLocations().setOutputFolder("/model");
+        updateBlacklistFilter();
     }
 
     /**
-     * Creates a new SoMoX configuration initialized with the {@code attributeMap}’s values.
-     * Attributes not defined in the map will be set to their default values.
+     * Creates a new SoMoX configuration initialized with the {@code attributeMap}’s
+     * values. Attributes not defined in the map will be set to their default
+     * values.
      *
-     * @param attributeMap
-     *            An <em>attribute map</em>, as defined in the class description. It does not need
-     *            to contain all attributes.
+     * @param attributeMap An <em>attribute map</em>, as defined in the class
+     *                     description. It does not need to contain all attributes.
      */
     public SoMoXConfiguration(final Map<String, Object> attributeMap) {
         this();
-        this.applyAttributeMap(attributeMap);
+        applyAttributeMap(attributeMap);
     }
 
     /**
-     * Sets the attributes specified in the {@code attributeMap} on this configuration. Attributes
-     * not specified in the map will be left untouched.
+     * Sets the attributes specified in the {@code attributeMap} on this
+     * configuration. Attributes not specified in the map will be left untouched.
      *
-     * @param attributeMap
-     *            An <em>attribute map</em>, as defined in the class description. It does not need
-     *            to contain all attributes.
+     * @param attributeMap An <em>attribute map</em>, as defined in the class
+     *                     description. It does not need to contain all attributes.
      */
     @Override
     public void applyAttributeMap(final Map<String, Object> attributeMap) {
@@ -201,84 +214,83 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
         super.applyAttributeMap(attributeMap);
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_ANALYZER_WILDCARD_KEY) != null) {
-            this.setWildcardKey((String) attributeMap.get(SoMoXConfiguration.SOMOX_ANALYZER_WILDCARD_KEY));
+            setWildcardKey((String) attributeMap.get(SoMoXConfiguration.SOMOX_ANALYZER_WILDCARD_KEY));
         }
 
         if (attributeMap.get(SoMoXConfiguration.BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL) != null) {
-            this.setAdditionalWildcards(
+            setAdditionalWildcards(
                     (String) attributeMap.get(SoMoXConfiguration.BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_EXCLUDED_PREFIXES) != null) {
-            this.setExcludedPrefixesForNameResemblance(
+            setExcludedPrefixesForNameResemblance(
                     (String) attributeMap.get(SoMoXConfiguration.SOMOX_EXCLUDED_PREFIXES));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_EXCLUDED_SUFFIXES) != null) {
-            this.setExcludedSuffixesForNameResemblance(
+            setExcludedSuffixesForNameResemblance(
                     (String) attributeMap.get(SoMoXConfiguration.SOMOX_EXCLUDED_SUFFIXES));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_DIRECTORY_MAPPING) != null) {
-            this.setWeightDirectoryMapping(
-                    (Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_DIRECTORY_MAPPING));
+            setWeightDirectoryMapping((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_DIRECTORY_MAPPING));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_DMS) != null) {
-            this.setWeightDMS((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_DMS));
+            setWeightDMS((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_DMS));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_COUPLING) != null) {
-            this.setWeightHighCoupling((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_COUPLING));
+            setWeightHighCoupling((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_COUPLING));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGHEST_NAME_RESEMBLANCE) != null) {
-            this.setWeightHighestNameResemblance(
+            setWeightHighestNameResemblance(
                     (Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGHEST_NAME_RESEMBLANCE));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_NAME_RESEMBLANCE) != null) {
-            this.setWeightHighNameResemblance(
+            setWeightHighNameResemblance(
                     (Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_NAME_RESEMBLANCE));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_SLAQ) != null) {
-            this.setWeightHighSLAQ((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_SLAQ));
+            setWeightHighSLAQ((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_SLAQ));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_INTERFACE_VIOLATION_IRRELEVANT) != null) {
-            this.setWeightInterfaceViolationIrrelevant(
+            setWeightInterfaceViolationIrrelevant(
                     (Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_INTERFACE_VIOLATION_IRRELEVANT));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_INTERFACE_VIOLATION_RELEVANT) != null) {
-            this.setWeightInterfaceViolationRelevant(
+            setWeightInterfaceViolationRelevant(
                     (Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_INTERFACE_VIOLATION_RELEVANT));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_LOW_COUPLING) != null) {
-            this.setWeightLowCoupling((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_LOW_COUPLING));
+            setWeightLowCoupling((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_LOW_COUPLING));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_LOW_NAME_RESEMBLANCE) != null) {
-            this.setWeightLowNameResemblance(
+            setWeightLowNameResemblance(
                     (Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_LOW_NAME_RESEMBLANCE));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_LOW_SLAQ) != null) {
-            this.setWeightLowSLAQ((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_LOW_SLAQ));
+            setWeightLowSLAQ((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_LOW_SLAQ));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_MID_NAME_RESEMBLANCE) != null) {
-            this.setWeightMidNameResemblance(
+            setWeightMidNameResemblance(
                     (Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_MID_NAME_RESEMBLANCE));
         }
 
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_PACKAGE_MAPPING) != null) {
-            this.setWeightPackageMapping((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_PACKAGE_MAPPING));
+            setWeightPackageMapping((Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_PACKAGE_MAPPING));
         }
 
-        final ClusteringConfiguration clusteringConfiguration = this.getClusteringConfig();
+        final ClusteringConfiguration clusteringConfiguration = getClusteringConfig();
         if (attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MAX_COMPOSE) != null) {
             clusteringConfiguration.setMaxComposeClusteringThreshold(
                     (Double) attributeMap.get(SoMoXConfiguration.SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MAX_COMPOSE));
@@ -309,7 +321,7 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
     }
 
     public String getAdditionalWildcards() {
-        return this.additionalWildcards;
+        return additionalWildcards;
     }
 
     /**
@@ -318,12 +330,12 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
      * @return A set of blacklist entries
      */
     public Set<String> getBlacklist() {
-        final String wildcardString = this.wildcardKey;
+        final String wildcardString = wildcardKey;
 
         final StringTokenizer tokenizer = new StringTokenizer(wildcardString,
                 SoMoXConfiguration.SOMOX_WILDCARD_DELIMITER);
 
-        final Set<String> blacklist = new HashSet<String>();
+        final Set<String> blacklist = new HashSet<>();
         while (tokenizer.hasMoreElements()) {
             blacklist.add(tokenizer.nextToken());
         }
@@ -331,17 +343,19 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
     }
 
     /**
-     * @return The filter to use when deciding which concrete classifiers to take into account. Includes the filters configured through {@link #setAdditionalWildcards(String)}.
+     * @return The filter to use when deciding which concrete classifiers to take
+     *         into account. Includes the filters configured through
+     *         {@link #setAdditionalWildcards(String)}.
      */
     public BaseFilter<ConcreteClassifier> getClassifierFilter() {
-        return this.classifierFilter;
+        return classifierFilter;
     }
 
     /**
      * @return the clusteringConfig
      */
     public ClusteringConfiguration getClusteringConfig() {
-        return this.clusteringConfig;
+        return clusteringConfig;
     }
 
     @Override
@@ -350,72 +364,72 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
     }
 
     public String getExcludedPrefixesForNameResemblance() {
-        return this.excludedPrefixesForNameResemblance;
+        return excludedPrefixesForNameResemblance;
     }
 
     public String getExcludedSuffixesForNameResemblance() {
-        return this.excludedSuffixesForNameResemblance;
+        return excludedSuffixesForNameResemblance;
     }
 
     public double getWeightDirectoryMapping() {
-        return this.weightDirectoryMapping;
+        return weightDirectoryMapping;
     }
 
     public double getWeightDMS() {
-        return this.weightDMS;
+        return weightDMS;
     }
 
     public double getWeightHighCoupling() {
-        return this.weightHighCoupling;
+        return weightHighCoupling;
     }
 
     public double getWeightHighestNameResemblance() {
-        return this.weightHighestNameResemblance;
+        return weightHighestNameResemblance;
     }
 
     public double getWeightHighNameResemblance() {
-        return this.weightHighNameResemblance;
+        return weightHighNameResemblance;
     }
 
     public double getWeightHighSLAQ() {
-        return this.weightHighSLAQ;
+        return weightHighSLAQ;
     }
 
     public double getWeightInterfaceViolationIrrelevant() {
-        return this.weightInterfaceViolationIrrelevant;
+        return weightInterfaceViolationIrrelevant;
     }
 
     public double getWeightInterfaceViolationRelevant() {
-        return this.weightInterfaceViolationRelevant;
+        return weightInterfaceViolationRelevant;
     }
 
     public double getWeightLowCoupling() {
-        return this.weightLowCoupling;
+        return weightLowCoupling;
     }
 
     public double getWeightLowNameResemblance() {
-        return this.weightLowNameResemblance;
+        return weightLowNameResemblance;
     }
 
     public double getWeightLowSLAQ() {
-        return this.weightLowSLAQ;
+        return weightLowSLAQ;
     }
 
     public double getWeightMidNameResemblance() {
-        return this.weightMidNameResemblance;
+        return weightMidNameResemblance;
     }
 
     public double getWeightPackageMapping() {
-        return this.weightPackageMapping;
+        return weightPackageMapping;
     }
 
     public String getWildcardKey() {
-        return this.wildcardKey;
+        return wildcardKey;
     }
 
     public void setAdditionalWildcards(final String additionalWildcards) {
         this.additionalWildcards = additionalWildcards;
-        this.updateBlacklistFilter();
+        updateBlacklistFilter();
     }
 
     public void setExcludedPrefixesForNameResemblance(final String excludedPrefixesForNameResemblance) {
@@ -485,36 +499,37 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
     /**
      * Converts this configuration into an <em>attribute map</em>.
      *
-     * @return an <em>attribute map</em>, such that for any {@code SoMoXConfiguration c},
-     *         {@code new SoMoXConfiguration(c.toMap())} will behave exactly like {@code c}.
+     * @return an <em>attribute map</em>, such that for any
+     *         {@code SoMoXConfiguration c},
+     *         {@code new SoMoXConfiguration(c.toMap())} will behave exactly like
+     *         {@code c}.
      */
     @Override
     public Map<String, Object> toMap() {
         final Map<String, Object> result = super.toMap();
 
-        result.put(SoMoXConfiguration.SOMOX_ANALYZER_WILDCARD_KEY, this.getWildcardKey());
-        result.put(SoMoXConfiguration.BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL, this.getAdditionalWildcards());
-        result.put(SoMoXConfiguration.SOMOX_EXCLUDED_PREFIXES, this.getExcludedPrefixesForNameResemblance());
-        result.put(SoMoXConfiguration.SOMOX_EXCLUDED_SUFFIXES, this.getExcludedSuffixesForNameResemblance());
+        result.put(SoMoXConfiguration.SOMOX_ANALYZER_WILDCARD_KEY, getWildcardKey());
+        result.put(SoMoXConfiguration.BLACKLIST_CONFIGURATION_WILDCARDS_ADDITIONAL, getAdditionalWildcards());
+        result.put(SoMoXConfiguration.SOMOX_EXCLUDED_PREFIXES, getExcludedPrefixesForNameResemblance());
+        result.put(SoMoXConfiguration.SOMOX_EXCLUDED_SUFFIXES, getExcludedSuffixesForNameResemblance());
 
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_DIRECTORY_MAPPING, this.getWeightDirectoryMapping());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_DMS, this.getWeightDMS());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_COUPLING, this.getWeightHighCoupling());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_DIRECTORY_MAPPING, getWeightDirectoryMapping());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_DMS, getWeightDMS());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_COUPLING, getWeightHighCoupling());
 
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_HIGHEST_NAME_RESEMBLANCE, this.getWeightHighestNameResemblance());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_NAME_RESEMBLANCE, this.getWeightHighNameResemblance());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_SLAQ, this.getWeightHighSLAQ());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_HIGHEST_NAME_RESEMBLANCE, getWeightHighestNameResemblance());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_NAME_RESEMBLANCE, getWeightHighNameResemblance());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_HIGH_SLAQ, getWeightHighSLAQ());
         result.put(SoMoXConfiguration.SOMOX_WEIGHT_INTERFACE_VIOLATION_IRRELEVANT,
-                this.getWeightInterfaceViolationIrrelevant());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_INTERFACE_VIOLATION_RELEVANT,
-                this.getWeightInterfaceViolationRelevant());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_LOW_COUPLING, this.getWeightLowCoupling());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_LOW_NAME_RESEMBLANCE, this.getWeightLowNameResemblance());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_LOW_SLAQ, this.getWeightLowSLAQ());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_MID_NAME_RESEMBLANCE, this.getWeightMidNameResemblance());
-        result.put(SoMoXConfiguration.SOMOX_WEIGHT_PACKAGE_MAPPING, this.getWeightPackageMapping());
+                getWeightInterfaceViolationIrrelevant());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_INTERFACE_VIOLATION_RELEVANT, getWeightInterfaceViolationRelevant());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_LOW_COUPLING, getWeightLowCoupling());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_LOW_NAME_RESEMBLANCE, getWeightLowNameResemblance());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_LOW_SLAQ, getWeightLowSLAQ());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_MID_NAME_RESEMBLANCE, getWeightMidNameResemblance());
+        result.put(SoMoXConfiguration.SOMOX_WEIGHT_PACKAGE_MAPPING, getWeightPackageMapping());
 
-        final ClusteringConfiguration clusteringConfiguration = this.getClusteringConfig();
+        final ClusteringConfiguration clusteringConfiguration = getClusteringConfig();
         result.put(SoMoXConfiguration.SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MAX_COMPOSE,
                 clusteringConfiguration.getMaxComposeClusteringThreshold());
         result.put(SoMoXConfiguration.SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MIN_COMPOSE,
@@ -532,11 +547,11 @@ public class SoMoXConfiguration extends AbstractMoxConfiguration {
     }
 
     private void updateBlacklistFilter() {
-        final Set<String> wildCardList = this.getBlacklist();
-        if (this.additionalWildcards != null && this.additionalWildcards.length() > 0) {
-            wildCardList.add(this.additionalWildcards);
+        final Set<String> wildCardList = getBlacklist();
+        if ((additionalWildcards != null) && (additionalWildcards.length() > 0)) {
+            wildCardList.add(additionalWildcards);
         }
-        this.blacklistFilter.setBlacklist(wildCardList);
+        blacklistFilter.setBlacklist(wildCardList);
     }
 
 }

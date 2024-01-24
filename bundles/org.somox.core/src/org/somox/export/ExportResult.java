@@ -49,31 +49,31 @@ public interface ExportResult {
     // ---------------------------------
 
     /**
-     * The result status of the export. Will be one of the constants AnalysisResult.ResultStatus
+     * The result status of the export. Will be one of the constants
+     * AnalysisResult.ResultStatus
      *
      * @return The status of the export
      */
-    public AnalysisResult.ResultStatus getResultStatus();
+    AnalysisResult.ResultStatus getResultStatus();
 
     /**
      * Get the Exporter that was executed
      *
      * @return The exporter that was executed
      */
-    public Exporter getModelAnalyzer();
+    Exporter getModelAnalyzer();
 
     /**
      * Add a message object to the result
      *
-     * @param message
-     *            The message object
+     * @param message The message object
      */
-    public void addMessage(Message message);
+    void addMessage(Message message);
 
     /**
      * Get a list of all message objects assigned to this result
      *
      * @return List of all assigned message objects
      */
-    public List<Message> getMessages();
+    List<Message> getMessages();
 }

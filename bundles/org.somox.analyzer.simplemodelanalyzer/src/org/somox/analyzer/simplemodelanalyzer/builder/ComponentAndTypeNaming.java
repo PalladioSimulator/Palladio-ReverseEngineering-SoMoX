@@ -37,10 +37,10 @@ public class ComponentAndTypeNaming {
     private final int MAX_NUMBER_OF_PATH_SEGMENTS_IN_INTERFACE_NAME = 3;
 
     public ComponentAndTypeNaming() {
-        this.compositeComponentNumber = 0;
-        this.primitiveComponentNumber = 0;
-        this.requiredPortNumber = 0;
-        this.primitiveComponentNumber = 0;
+        compositeComponentNumber = 0;
+        primitiveComponentNumber = 0;
+        requiredPortNumber = 0;
+        primitiveComponentNumber = 0;
     }
 
     @Deprecated
@@ -52,15 +52,13 @@ public class ComponentAndTypeNaming {
     /**
      * Creates a primitive component name
      *
-     * @param gastClasses
-     *            : inner classes of the component
-     * @param shorten
-     *            true: a short name
+     * @param gastClasses : inner classes of the component
+     * @param shorten     true: a short name
      * @return
      */
     public String createSimpleComponentName(final List<ConcreteClassifier> astClasses, final boolean shorten) {
         final StringBuilder nameBuilder = new StringBuilder();
-        nameBuilder.append(" <PC No. " + this.primitiveComponentNumber++);
+        nameBuilder.append(" <PC No. " + primitiveComponentNumber++);
 
         final StringBuilder subComponentNames = new StringBuilder();
         for (final Type astClass : astClasses) {
@@ -80,7 +78,7 @@ public class ComponentAndTypeNaming {
     }
 
     public String createSimpleComponentName(final Type astClass) {
-        return KDMHelper.computeFullQualifiedName(astClass) + " <PC No. " + this.primitiveComponentNumber++ + ">";
+        return KDMHelper.computeFullQualifiedName(astClass) + " <PC No. " + primitiveComponentNumber++ + ">";
     }
 
     public String createSimpleComponentName(final int i, final List<ComponentImplementingClassesLink> currentList) {
@@ -106,11 +104,11 @@ public class ComponentAndTypeNaming {
 
     public String createCompositeComponentName(final Collection<ComponentImplementingClassesLink> innerComponents,
             final boolean shorten) {
-        this.compositeComponentNumber++;
+        compositeComponentNumber++;
         final StringBuilder nameBuilder = new StringBuilder();
         nameBuilder.append("CC No. ");
-        nameBuilder.append(this.compositeComponentNumber + " ");
-        nameBuilder.append(this.createComponentNameBasedOnPackageName(this.compositeComponentNumber, innerComponents));
+        nameBuilder.append(compositeComponentNumber + " ");
+        nameBuilder.append(createComponentNameBasedOnPackageName(compositeComponentNumber, innerComponents));
         nameBuilder.append(" <");
 
         // collect subcomponent names:
@@ -141,17 +139,15 @@ public class ComponentAndTypeNaming {
     /**
      * Search for the package name that occurs most often
      *
-     * @param i
-     *            running number
-     * @param currentList
-     *            List of classes belonging to the component
+     * @param i           running number
+     * @param currentList List of classes belonging to the component
      * @return Component name
      */
     private String createComponentNameBasedOnPackageName(final int i,
             final Collection<ComponentImplementingClassesLink> currentList) {
-        String returnComponentName = "";
-        final HashMap<String, Integer> numberOfPackageNames = new HashMap<String, Integer>();
-        final HashMap<String, String> packageNames = new HashMap<String, String>();
+        final StringBuilder returnComponentName = new StringBuilder();
+        final HashMap<String, Integer> numberOfPackageNames = new HashMap<>();
+        final HashMap<String, String> packageNames = new HashMap<>();
         String maxNumberPackageId = null;
         String directoryName = "";
         int maxNumber = 0;
@@ -181,33 +177,31 @@ public class ComponentAndTypeNaming {
                 } else if (KDMHelper.getJavaNodeSourceRegion(currentClass) != null) {
                     directoryName = KDMHelper.getJavaNodeSourceRegion(currentClass).getNamespacesAsString();
                 } else {
-                    this.logger.warn("found neither packages nor directories for GAST class "
+                    logger.warn("found neither packages nor directories for GAST class "
                             + KDMHelper.computeFullQualifiedName(currentClass));
                 }
             }
         }
 
-        returnComponentName = "";
         if (maxNumber > 0) {
             final String compName = packageNames.get(maxNumberPackageId);
             if (compName != null) {
-                returnComponentName += compName;
+                returnComponentName.append(compName);
             }
         }
 
-        if (!directoryName.equals("")) {
-            returnComponentName += "(dir: " + directoryName + ")";
+        if (!"".equals(directoryName)) {
+            returnComponentName.append("(dir: ").append(directoryName).append(")");
         }
 
-        return this.shorten(returnComponentName);
+        return this.shorten(returnComponentName.toString());
     }
 
     public String createComponentInstanceName(final RepositoryComponent repositoryComponent) {
         if (repositoryComponent != null) {
             return repositoryComponent.getEntityName() + "-instance";
-        } else {
-            return "class-level-instance";
         }
+        return "class-level-instance";
     }
 
     /**
@@ -225,13 +219,13 @@ public class ComponentAndTypeNaming {
                 final String[] subStrings = ifName.split("\\.", 0);
                 ifName = subStrings[subStrings.length - 1]; // last segment
             }
-            ifName += " " + this.providedPortNumber++;
+            ifName += " " + providedPortNumber++;
         }
         return this.shorten(ifName) + " (prov)";
     }
 
     public String createProvidedSystemPortName(final Interface provInterface, final RepositoryComponent component) {
-        return this.createProvidedPortName(provInterface, component) + "(sys)";
+        return createProvidedPortName(provInterface, component) + "(sys)";
     }
 
     /**
@@ -248,13 +242,13 @@ public class ComponentAndTypeNaming {
             final String[] subStrings = ifName.split("\\.", 0);
             ifName = subStrings[subStrings.length - 1]; // last segment
         }
-        ifName += " " + this.requiredPortNumber++;
+        ifName += " " + requiredPortNumber++;
 
         return this.shorten(ifName) + " (req)";
     }
 
     public String createRequiredSystemPortName(final Interface reqInterface, final RepositoryComponent component) {
-        return this.createRequiredPortName(reqInterface, component) + "(sys)";
+        return createRequiredPortName(reqInterface, component) + "(sys)";
     }
 
     /**
@@ -264,7 +258,7 @@ public class ComponentAndTypeNaming {
      * @return
      */
     public String createInterfaceName(final Type interfaceClass) {
-        final String interfaceName = this.segmentBasedInterfaceName(KDMHelper.computeFullQualifiedName(interfaceClass));
+        final String interfaceName = segmentBasedInterfaceName(KDMHelper.computeFullQualifiedName(interfaceClass));
         return this.shorten(interfaceName, true);
     }
 
@@ -275,7 +269,7 @@ public class ComponentAndTypeNaming {
      * @return
      */
     public String createInterfaceNameForClass(final Type interfaceClass) {
-        final String interfaceName = this.segmentBasedInterfaceName(KDMHelper.computeFullQualifiedName(interfaceClass));
+        final String interfaceName = segmentBasedInterfaceName(KDMHelper.computeFullQualifiedName(interfaceClass));
         return "I" + this.shorten(interfaceName, true);
     }
 
@@ -288,38 +282,35 @@ public class ComponentAndTypeNaming {
     private String segmentBasedInterfaceName(final String qualifiedName) {
         // last two segments:
         final String[] segments = qualifiedName.split("\\.");
-        String interfaceName = "";
+        final StringBuilder interfaceName = new StringBuilder();
 
         boolean first = true;
-        for (int i = this.MAX_NUMBER_OF_PATH_SEGMENTS_IN_INTERFACE_NAME; i > 0; i--) {
+        for (int i = MAX_NUMBER_OF_PATH_SEGMENTS_IN_INTERFACE_NAME; i > 0; i--) {
             if (segments.length >= i) {
                 if (!first) {
-                    interfaceName += ".";
+                    interfaceName.append(".");
                 }
-                interfaceName += segments[segments.length - i];
+                interfaceName.append(segments[segments.length - i]);
                 first = false;
             }
         }
-        return interfaceName;
+        return interfaceName.toString();
     }
 
     /**
      * Shorten long strings
      *
-     * @param theString
-     *            string to shorten
-     * @param removeStartOfString
-     *            switch between removing trail or head of string
+     * @param theString           string to shorten
+     * @param removeStartOfString switch between removing trail or head of string
      * @return
      */
     private String shorten(final String theString, final boolean removeStartOfString) {
         String name = theString;
-        if (theString.length() > this.MAXIMUM_NAME_LENGTH) {
+        if (theString.length() > MAXIMUM_NAME_LENGTH) {
             if (removeStartOfString) {
-                name = "..."
-                        + theString.substring(theString.length() - this.MAXIMUM_NAME_LENGTH + 3, theString.length());
+                name = "..." + theString.substring((theString.length() - MAXIMUM_NAME_LENGTH) + 3);
             } else {
-                name = theString.substring(0, this.MAXIMUM_NAME_LENGTH - 3) + "...";
+                name = theString.substring(0, MAXIMUM_NAME_LENGTH - 3) + "...";
             }
         }
 
@@ -329,13 +320,14 @@ public class ComponentAndTypeNaming {
     private String shorten(final String theString) {
         return this.shorten(theString, false);
     }
-    
 
     public void createProvidedDelegationConnectorName(final ProvidedDelegationConnector delegationConnector) {
-        delegationConnector.setEntityName(delegationConnector.getInnerProvidedRole_ProvidedDelegationConnector().getProvidedInterface__OperationProvidedRole().getEntityName());
+        delegationConnector.setEntityName(delegationConnector.getInnerProvidedRole_ProvidedDelegationConnector()
+                .getProvidedInterface__OperationProvidedRole().getEntityName());
     }
 
     public void createRequiredDelegationConnectorName(final RequiredDelegationConnector delegationConnector) {
-        delegationConnector.setEntityName(delegationConnector.getInnerRequiredRole_RequiredDelegationConnector().getRequiredInterface__OperationRequiredRole().getEntityName());
+        delegationConnector.setEntityName(delegationConnector.getInnerRequiredRole_RequiredDelegationConnector()
+                .getRequiredInterface__OperationRequiredRole().getEntityName());
     }
 }

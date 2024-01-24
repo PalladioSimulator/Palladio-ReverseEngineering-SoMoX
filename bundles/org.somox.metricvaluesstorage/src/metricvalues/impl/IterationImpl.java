@@ -20,19 +20,22 @@ import metricvalues.Iteration;
 import metricvalues.MetricvaluesPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Iteration</b></em>'. <!--
- * end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Iteration</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link metricvalues.impl.IterationImpl#getComponentCandidates <em>Component Candidates</em>}
- * </li>
- * <li>{@link metricvalues.impl.IterationImpl#getComponents <em>Components</em>}</li>
+ * <li>{@link metricvalues.impl.IterationImpl#getComponentCandidates
+ * <em>Component Candidates</em>}</li>
+ * <li>{@link metricvalues.impl.IterationImpl#getComponents
+ * <em>Components</em>}</li>
  * <li>{@link metricvalues.impl.IterationImpl#getNumber <em>Number</em>}</li>
- * <li>{@link metricvalues.impl.IterationImpl#getCurCompThreshold <em>Cur Comp Threshold</em>}</li>
- * <li>{@link metricvalues.impl.IterationImpl#getCurMergeThreshold <em>Cur Merge Threshold</em>}
- * </li>
- * <li>{@link metricvalues.impl.IterationImpl#isIsMergeIteration <em>Is Merge Iteration</em>}</li>
+ * <li>{@link metricvalues.impl.IterationImpl#getCurCompThreshold <em>Cur Comp
+ * Threshold</em>}</li>
+ * <li>{@link metricvalues.impl.IterationImpl#getCurMergeThreshold <em>Cur Merge
+ * Threshold</em>}</li>
+ * <li>{@link metricvalues.impl.IterationImpl#isIsMergeIteration <em>Is Merge
+ * Iteration</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,8 +43,9 @@ import metricvalues.MetricvaluesPackage;
  */
 public class IterationImpl extends MinimalEObjectImpl.Container implements Iteration {
     /**
-     * The cached value of the '{@link #getComponentCandidates() <em>Component Candidates</em>}'
-     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getComponentCandidates() <em>Component
+     * Candidates</em>}' containment reference list. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @see #getComponentCandidates()
      * @generated
@@ -50,8 +54,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected EList<ComponentCandidate> componentCandidates;
 
     /**
-     * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getComponents() <em>Components</em>}'
+     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getComponents()
      * @generated
@@ -60,8 +64,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected EList<Component> components;
 
     /**
-     * The default value of the '{@link #getNumber() <em>Number</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getNumber()
      * @generated
@@ -70,8 +74,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected static final int NUMBER_EDEFAULT = 0;
 
     /**
-     * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getNumber()
      * @generated
@@ -80,8 +84,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected int number = NUMBER_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getCurCompThreshold() <em>Cur Comp Threshold</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getCurCompThreshold() <em>Cur Comp
+     * Threshold</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getCurCompThreshold()
      * @generated
@@ -90,8 +94,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected static final double CUR_COMP_THRESHOLD_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getCurCompThreshold() <em>Cur Comp Threshold</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getCurCompThreshold() <em>Cur Comp
+     * Threshold</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getCurCompThreshold()
      * @generated
@@ -100,8 +104,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected double curCompThreshold = CUR_COMP_THRESHOLD_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getCurMergeThreshold() <em>Cur Merge Threshold</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getCurMergeThreshold() <em>Cur Merge
+     * Threshold</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getCurMergeThreshold()
      * @generated
@@ -110,8 +114,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected static final double CUR_MERGE_THRESHOLD_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getCurMergeThreshold() <em>Cur Merge Threshold</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getCurMergeThreshold() <em>Cur Merge
+     * Threshold</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getCurMergeThreshold()
      * @generated
@@ -120,8 +124,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected double curMergeThreshold = CUR_MERGE_THRESHOLD_EDEFAULT;
 
     /**
-     * The default value of the '{@link #isIsMergeIteration() <em>Is Merge Iteration</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #isIsMergeIteration() <em>Is Merge
+     * Iteration</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #isIsMergeIteration()
      * @generated
@@ -130,8 +134,8 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     protected static final boolean IS_MERGE_ITERATION_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isIsMergeIteration() <em>Is Merge Iteration</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #isIsMergeIteration() <em>Is Merge
+     * Iteration</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #isIsMergeIteration()
      * @generated
@@ -145,7 +149,6 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      * @generated
      */
     protected IterationImpl() {
-        super();
     }
 
     /**
@@ -165,11 +168,11 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public EList<ComponentCandidate> getComponentCandidates() {
-        if (this.componentCandidates == null) {
-            this.componentCandidates = new EObjectContainmentEList<ComponentCandidate>(ComponentCandidate.class, this,
+        if (componentCandidates == null) {
+            componentCandidates = new EObjectContainmentEList<>(ComponentCandidate.class, this,
                     MetricvaluesPackage.ITERATION__COMPONENT_CANDIDATES);
         }
-        return this.componentCandidates;
+        return componentCandidates;
     }
 
     /**
@@ -179,11 +182,11 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public EList<Component> getComponents() {
-        if (this.components == null) {
-            this.components = new EObjectContainmentEList<Component>(Component.class, this,
+        if (components == null) {
+            components = new EObjectContainmentEList<>(Component.class, this,
                     MetricvaluesPackage.ITERATION__COMPONENTS);
         }
-        return this.components;
+        return components;
     }
 
     /**
@@ -193,7 +196,7 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public int getNumber() {
-        return this.number;
+        return number;
     }
 
     /**
@@ -203,11 +206,11 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public void setNumber(final int newNumber) {
-        final int oldNumber = this.number;
-        this.number = newNumber;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.ITERATION__NUMBER, oldNumber,
-                    this.number));
+        final int oldNumber = number;
+        number = newNumber;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.ITERATION__NUMBER, oldNumber,
+                    number));
         }
     }
 
@@ -218,7 +221,7 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public double getCurCompThreshold() {
-        return this.curCompThreshold;
+        return curCompThreshold;
     }
 
     /**
@@ -228,11 +231,11 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public void setCurCompThreshold(final double newCurCompThreshold) {
-        final double oldCurCompThreshold = this.curCompThreshold;
-        this.curCompThreshold = newCurCompThreshold;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MetricvaluesPackage.ITERATION__CUR_COMP_THRESHOLD, oldCurCompThreshold, this.curCompThreshold));
+        final double oldCurCompThreshold = curCompThreshold;
+        curCompThreshold = newCurCompThreshold;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.ITERATION__CUR_COMP_THRESHOLD,
+                    oldCurCompThreshold, curCompThreshold));
         }
     }
 
@@ -243,7 +246,7 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public double getCurMergeThreshold() {
-        return this.curMergeThreshold;
+        return curMergeThreshold;
     }
 
     /**
@@ -253,11 +256,11 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public void setCurMergeThreshold(final double newCurMergeThreshold) {
-        final double oldCurMergeThreshold = this.curMergeThreshold;
-        this.curMergeThreshold = newCurMergeThreshold;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MetricvaluesPackage.ITERATION__CUR_MERGE_THRESHOLD, oldCurMergeThreshold, this.curMergeThreshold));
+        final double oldCurMergeThreshold = curMergeThreshold;
+        curMergeThreshold = newCurMergeThreshold;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.ITERATION__CUR_MERGE_THRESHOLD,
+                    oldCurMergeThreshold, curMergeThreshold));
         }
     }
 
@@ -268,7 +271,7 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public boolean isIsMergeIteration() {
-        return this.isMergeIteration;
+        return isMergeIteration;
     }
 
     /**
@@ -278,11 +281,11 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public void setIsMergeIteration(final boolean newIsMergeIteration) {
-        final boolean oldIsMergeIteration = this.isMergeIteration;
-        this.isMergeIteration = newIsMergeIteration;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MetricvaluesPackage.ITERATION__IS_MERGE_ITERATION, oldIsMergeIteration, this.isMergeIteration));
+        final boolean oldIsMergeIteration = isMergeIteration;
+        isMergeIteration = newIsMergeIteration;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricvaluesPackage.ITERATION__IS_MERGE_ITERATION,
+                    oldIsMergeIteration, isMergeIteration));
         }
     }
 
@@ -296,9 +299,9 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
             final NotificationChain msgs) {
         switch (featureID) {
         case MetricvaluesPackage.ITERATION__COMPONENT_CANDIDATES:
-            return ((InternalEList<?>) this.getComponentCandidates()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getComponentCandidates()).basicRemove(otherEnd, msgs);
         case MetricvaluesPackage.ITERATION__COMPONENTS:
-            return ((InternalEList<?>) this.getComponents()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getComponents()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -312,17 +315,17 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricvaluesPackage.ITERATION__COMPONENT_CANDIDATES:
-            return this.getComponentCandidates();
+            return getComponentCandidates();
         case MetricvaluesPackage.ITERATION__COMPONENTS:
-            return this.getComponents();
+            return getComponents();
         case MetricvaluesPackage.ITERATION__NUMBER:
-            return this.getNumber();
+            return getNumber();
         case MetricvaluesPackage.ITERATION__CUR_COMP_THRESHOLD:
-            return this.getCurCompThreshold();
+            return getCurCompThreshold();
         case MetricvaluesPackage.ITERATION__CUR_MERGE_THRESHOLD:
-            return this.getCurMergeThreshold();
+            return getCurMergeThreshold();
         case MetricvaluesPackage.ITERATION__IS_MERGE_ITERATION:
-            return this.isIsMergeIteration();
+            return isIsMergeIteration();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -337,24 +340,24 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricvaluesPackage.ITERATION__COMPONENT_CANDIDATES:
-            this.getComponentCandidates().clear();
-            this.getComponentCandidates().addAll((Collection<? extends ComponentCandidate>) newValue);
+            getComponentCandidates().clear();
+            getComponentCandidates().addAll((Collection<? extends ComponentCandidate>) newValue);
             return;
         case MetricvaluesPackage.ITERATION__COMPONENTS:
-            this.getComponents().clear();
-            this.getComponents().addAll((Collection<? extends Component>) newValue);
+            getComponents().clear();
+            getComponents().addAll((Collection<? extends Component>) newValue);
             return;
         case MetricvaluesPackage.ITERATION__NUMBER:
-            this.setNumber((Integer) newValue);
+            setNumber((Integer) newValue);
             return;
         case MetricvaluesPackage.ITERATION__CUR_COMP_THRESHOLD:
-            this.setCurCompThreshold((Double) newValue);
+            setCurCompThreshold((Double) newValue);
             return;
         case MetricvaluesPackage.ITERATION__CUR_MERGE_THRESHOLD:
-            this.setCurMergeThreshold((Double) newValue);
+            setCurMergeThreshold((Double) newValue);
             return;
         case MetricvaluesPackage.ITERATION__IS_MERGE_ITERATION:
-            this.setIsMergeIteration((Boolean) newValue);
+            setIsMergeIteration((Boolean) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -369,22 +372,22 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricvaluesPackage.ITERATION__COMPONENT_CANDIDATES:
-            this.getComponentCandidates().clear();
+            getComponentCandidates().clear();
             return;
         case MetricvaluesPackage.ITERATION__COMPONENTS:
-            this.getComponents().clear();
+            getComponents().clear();
             return;
         case MetricvaluesPackage.ITERATION__NUMBER:
-            this.setNumber(NUMBER_EDEFAULT);
+            setNumber(NUMBER_EDEFAULT);
             return;
         case MetricvaluesPackage.ITERATION__CUR_COMP_THRESHOLD:
-            this.setCurCompThreshold(CUR_COMP_THRESHOLD_EDEFAULT);
+            setCurCompThreshold(CUR_COMP_THRESHOLD_EDEFAULT);
             return;
         case MetricvaluesPackage.ITERATION__CUR_MERGE_THRESHOLD:
-            this.setCurMergeThreshold(CUR_MERGE_THRESHOLD_EDEFAULT);
+            setCurMergeThreshold(CUR_MERGE_THRESHOLD_EDEFAULT);
             return;
         case MetricvaluesPackage.ITERATION__IS_MERGE_ITERATION:
-            this.setIsMergeIteration(IS_MERGE_ITERATION_EDEFAULT);
+            setIsMergeIteration(IS_MERGE_ITERATION_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -399,17 +402,17 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricvaluesPackage.ITERATION__COMPONENT_CANDIDATES:
-            return this.componentCandidates != null && !this.componentCandidates.isEmpty();
+            return (componentCandidates != null) && !componentCandidates.isEmpty();
         case MetricvaluesPackage.ITERATION__COMPONENTS:
-            return this.components != null && !this.components.isEmpty();
+            return (components != null) && !components.isEmpty();
         case MetricvaluesPackage.ITERATION__NUMBER:
-            return this.number != NUMBER_EDEFAULT;
+            return number != NUMBER_EDEFAULT;
         case MetricvaluesPackage.ITERATION__CUR_COMP_THRESHOLD:
-            return this.curCompThreshold != CUR_COMP_THRESHOLD_EDEFAULT;
+            return curCompThreshold != CUR_COMP_THRESHOLD_EDEFAULT;
         case MetricvaluesPackage.ITERATION__CUR_MERGE_THRESHOLD:
-            return this.curMergeThreshold != CUR_MERGE_THRESHOLD_EDEFAULT;
+            return curMergeThreshold != CUR_MERGE_THRESHOLD_EDEFAULT;
         case MetricvaluesPackage.ITERATION__IS_MERGE_ITERATION:
-            return this.isMergeIteration != IS_MERGE_ITERATION_EDEFAULT;
+            return isMergeIteration != IS_MERGE_ITERATION_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -421,19 +424,19 @@ public class IterationImpl extends MinimalEObjectImpl.Container implements Itera
      */
     @Override
     public String toString() {
-        if (this.eIsProxy()) {
+        if (eIsProxy()) {
             return super.toString();
         }
 
-        final StringBuffer result = new StringBuffer(super.toString());
+        final StringBuilder result = new StringBuilder(super.toString());
         result.append(" (number: ");
-        result.append(this.number);
+        result.append(number);
         result.append(", curCompThreshold: ");
-        result.append(this.curCompThreshold);
+        result.append(curCompThreshold);
         result.append(", curMergeThreshold: ");
-        result.append(this.curMergeThreshold);
+        result.append(curMergeThreshold);
         result.append(", isMergeIteration: ");
-        result.append(this.isMergeIteration);
+        result.append(isMergeIteration);
         result.append(')');
         return result.toString();
     }

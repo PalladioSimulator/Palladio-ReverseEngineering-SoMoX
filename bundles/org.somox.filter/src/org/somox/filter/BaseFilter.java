@@ -9,8 +9,7 @@ import java.util.NoSuchElementException;
  * with-iterables/
  *
  * @author Steffen Becker
- * @param <T>
- *            type of the objects to be filtered
+ * @param <T> type of the objects to be filtered
  */
 public abstract class BaseFilter<T> {
     public abstract boolean passes(T object);
@@ -20,12 +19,7 @@ public abstract class BaseFilter<T> {
     }
 
     public Iterable<T> filter(final Iterable<T> iterable) {
-        return new Iterable<T>() {
-            @Override
-            public Iterator<T> iterator() {
-                return BaseFilter.this.filter(iterable.iterator());
-            }
-        };
+        return () -> BaseFilter.this.filter(iterable.iterator());
     }
 
     private class FilterIterator implements Iterator<T> {
@@ -39,15 +33,15 @@ public abstract class BaseFilter<T> {
 
         @Override
         public boolean hasNext() {
-            return this.next != null;
+            return next != null;
         }
 
         @Override
         public T next() {
-            if (this.next == null) {
+            if (next == null) {
                 throw new NoSuchElementException();
             }
-            final T returnValue = this.next;
+            final T returnValue = next;
             this.toNext();
             return returnValue;
         }
@@ -58,11 +52,11 @@ public abstract class BaseFilter<T> {
         }
 
         private void toNext() {
-            this.next = null;
-            while (this.iterator.hasNext()) {
-                final T item = this.iterator.next();
-                if (item != null && BaseFilter.this.passes(item)) {
-                    this.next = item;
+            next = null;
+            while (iterator.hasNext()) {
+                final T item = iterator.next();
+                if ((item != null) && BaseFilter.this.passes(item)) {
+                    next = item;
                     break;
                 }
             }

@@ -12,12 +12,12 @@ import org.palladiosimulator.pcm.seff.ProbabilisticBranchTransition;
 import org.palladiosimulator.pcm.seff.ServiceEffectSpecification;
 import org.palladiosimulator.pcm.seff.seff_performance.ParametricResourceDemand;
 import org.palladiosimulator.pcm.seff.seff_performance.SeffPerformanceFactory;
-import org.somox.util.DefaultResourceEnvironment;
 import org.somox.sourcecodedecorator.SEFF2MethodMapping;
+import org.somox.util.DefaultResourceEnvironment;
 
 /**
- * Creates default QoS annotations for behaviour. Same probabilities for all branches and 1
- * execution per loop.
+ * Creates default QoS annotations for behaviour. Same probabilities for all
+ * branches and 1 execution per loop.
  *
  * @author Klaus Krogmann
  *
@@ -30,7 +30,8 @@ public class DefaultQosAnnotationsBuilder {
     }
 
     /**
-     * Creates a QoS Annotation model with equal branch probabilities and 1 fixed loop execution.
+     * Creates a QoS Annotation model with equal branch probabilities and 1 fixed
+     * loop execution.
      *
      * @param listofSEFF2MethodMappings
      *
@@ -43,17 +44,14 @@ public class DefaultQosAnnotationsBuilder {
             while (elements.hasNext()) {
                 final EObject eObject = (EObject) elements.next();
 
-                if (eObject instanceof org.palladiosimulator.pcm.seff.LoopAction) {
-                    final org.palladiosimulator.pcm.seff.LoopAction loopAction = (org.palladiosimulator.pcm.seff.LoopAction) eObject;
-                    this.createDefaultLoopCount(loopAction);
+                if (eObject instanceof final org.palladiosimulator.pcm.seff.LoopAction loopAction) {
+                    createDefaultLoopCount(loopAction);
                 }
-                if (eObject instanceof org.palladiosimulator.pcm.seff.BranchAction) {
-                    final org.palladiosimulator.pcm.seff.BranchAction branchAction = (org.palladiosimulator.pcm.seff.BranchAction) eObject;
-                    this.createDefaultBranchProbability(branchAction);
+                if (eObject instanceof final org.palladiosimulator.pcm.seff.BranchAction branchAction) {
+                    createDefaultBranchProbability(branchAction);
                 }
-                if (eObject instanceof org.palladiosimulator.pcm.seff.InternalAction) {
-                    final org.palladiosimulator.pcm.seff.InternalAction internalAction = (org.palladiosimulator.pcm.seff.InternalAction) eObject;
-                    this.createDefaultCpuResourceDemand(internalAction);
+                if (eObject instanceof final org.palladiosimulator.pcm.seff.InternalAction internalAction) {
+                    createDefaultCpuResourceDemand(internalAction);
                 }
             }
         }
@@ -65,13 +63,12 @@ public class DefaultQosAnnotationsBuilder {
 
         for (final org.palladiosimulator.pcm.seff.AbstractBranchTransition branchTransition : branchAction
                 .getBranches_Branch()) {
-            if (branchTransition instanceof ProbabilisticBranchTransition) {
-                final ProbabilisticBranchTransition probabilisticBranchTransition = (ProbabilisticBranchTransition) branchTransition;
+            if (branchTransition instanceof final ProbabilisticBranchTransition probabilisticBranchTransition) {
                 final double probability = 1.0d / branchAction.getBranches_Branch().size();
                 probabilisticBranchTransition.setBranchProbability(probability);
                 probabilisticBranchTransition.setEntityName("SoMoX default branch probability");
             } else {
-                this.logger.warn("Unsupported branch transition type. Only ProbabilisticBranchTransition supported");
+                logger.warn("Unsupported branch transition type. Only ProbabilisticBranchTransition supported");
             }
         }
     }

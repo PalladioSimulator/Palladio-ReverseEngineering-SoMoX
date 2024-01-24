@@ -25,11 +25,12 @@ import metricvalues.MetricvaluesPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link metricvalues.impl.ComponentCandidateImpl#getMetricValues <em>Metric Values</em>}</li>
- * <li>{@link metricvalues.impl.ComponentCandidateImpl#getFirstComponent <em>First Component</em>}
- * </li>
- * <li>{@link metricvalues.impl.ComponentCandidateImpl#getSecondComponent <em>Second Component</em>}
- * </li>
+ * <li>{@link metricvalues.impl.ComponentCandidateImpl#getMetricValues
+ * <em>Metric Values</em>}</li>
+ * <li>{@link metricvalues.impl.ComponentCandidateImpl#getFirstComponent
+ * <em>First Component</em>}</li>
+ * <li>{@link metricvalues.impl.ComponentCandidateImpl#getSecondComponent
+ * <em>Second Component</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,8 +38,8 @@ import metricvalues.MetricvaluesPackage;
  */
 public class ComponentCandidateImpl extends MinimalEObjectImpl.Container implements ComponentCandidate {
     /**
-     * The cached value of the '{@link #getMetricValues() <em>Metric Values</em>}' containment
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getMetricValues() <em>Metric Values</em>}'
+     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getMetricValues()
      * @generated
@@ -47,8 +48,8 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
     protected EList<MetricValue> metricValues;
 
     /**
-     * The cached value of the '{@link #getFirstComponent() <em>First Component</em>}' reference.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getFirstComponent() <em>First
+     * Component</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getFirstComponent()
      * @generated
@@ -57,8 +58,8 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
     protected Component firstComponent;
 
     /**
-     * The cached value of the '{@link #getSecondComponent() <em>Second Component</em>}' reference.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getSecondComponent() <em>Second
+     * Component</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getSecondComponent()
      * @generated
@@ -72,7 +73,6 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     protected ComponentCandidateImpl() {
-        super();
     }
 
     /**
@@ -92,11 +92,11 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public EList<MetricValue> getMetricValues() {
-        if (this.metricValues == null) {
-            this.metricValues = new EObjectContainmentEList<MetricValue>(MetricValue.class, this,
+        if (metricValues == null) {
+            metricValues = new EObjectContainmentEList<>(MetricValue.class, this,
                     MetricvaluesPackage.COMPONENT_CANDIDATE__METRIC_VALUES);
         }
-        return this.metricValues;
+        return metricValues;
     }
 
     /**
@@ -106,18 +106,15 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public Component getFirstComponent() {
-        if (this.firstComponent != null && this.firstComponent.eIsProxy()) {
-            final InternalEObject oldFirstComponent = (InternalEObject) this.firstComponent;
-            this.firstComponent = (Component) this.eResolveProxy(oldFirstComponent);
-            if (this.firstComponent != oldFirstComponent) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            MetricvaluesPackage.COMPONENT_CANDIDATE__FIRST_COMPONENT, oldFirstComponent,
-                            this.firstComponent));
-                }
+        if ((firstComponent != null) && firstComponent.eIsProxy()) {
+            final InternalEObject oldFirstComponent = (InternalEObject) firstComponent;
+            firstComponent = (Component) eResolveProxy(oldFirstComponent);
+            if ((firstComponent != oldFirstComponent) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        MetricvaluesPackage.COMPONENT_CANDIDATE__FIRST_COMPONENT, oldFirstComponent, firstComponent));
             }
         }
-        return this.firstComponent;
+        return firstComponent;
     }
 
     /**
@@ -126,7 +123,7 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     public Component basicGetFirstComponent() {
-        return this.firstComponent;
+        return firstComponent;
     }
 
     /**
@@ -136,11 +133,11 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public void setFirstComponent(final Component newFirstComponent) {
-        final Component oldFirstComponent = this.firstComponent;
-        this.firstComponent = newFirstComponent;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MetricvaluesPackage.COMPONENT_CANDIDATE__FIRST_COMPONENT, oldFirstComponent, this.firstComponent));
+        final Component oldFirstComponent = firstComponent;
+        firstComponent = newFirstComponent;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET,
+                    MetricvaluesPackage.COMPONENT_CANDIDATE__FIRST_COMPONENT, oldFirstComponent, firstComponent));
         }
     }
 
@@ -151,18 +148,16 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public Component getSecondComponent() {
-        if (this.secondComponent != null && this.secondComponent.eIsProxy()) {
-            final InternalEObject oldSecondComponent = (InternalEObject) this.secondComponent;
-            this.secondComponent = (Component) this.eResolveProxy(oldSecondComponent);
-            if (this.secondComponent != oldSecondComponent) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            MetricvaluesPackage.COMPONENT_CANDIDATE__SECOND_COMPONENT, oldSecondComponent,
-                            this.secondComponent));
-                }
+        if ((secondComponent != null) && secondComponent.eIsProxy()) {
+            final InternalEObject oldSecondComponent = (InternalEObject) secondComponent;
+            secondComponent = (Component) eResolveProxy(oldSecondComponent);
+            if ((secondComponent != oldSecondComponent) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        MetricvaluesPackage.COMPONENT_CANDIDATE__SECOND_COMPONENT, oldSecondComponent,
+                        secondComponent));
             }
         }
-        return this.secondComponent;
+        return secondComponent;
     }
 
     /**
@@ -171,7 +166,7 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     public Component basicGetSecondComponent() {
-        return this.secondComponent;
+        return secondComponent;
     }
 
     /**
@@ -181,12 +176,11 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public void setSecondComponent(final Component newSecondComponent) {
-        final Component oldSecondComponent = this.secondComponent;
-        this.secondComponent = newSecondComponent;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MetricvaluesPackage.COMPONENT_CANDIDATE__SECOND_COMPONENT, oldSecondComponent,
-                    this.secondComponent));
+        final Component oldSecondComponent = secondComponent;
+        secondComponent = newSecondComponent;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET,
+                    MetricvaluesPackage.COMPONENT_CANDIDATE__SECOND_COMPONENT, oldSecondComponent, secondComponent));
         }
     }
 
@@ -200,7 +194,7 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
             final NotificationChain msgs) {
         switch (featureID) {
         case MetricvaluesPackage.COMPONENT_CANDIDATE__METRIC_VALUES:
-            return ((InternalEList<?>) this.getMetricValues()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getMetricValues()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -214,17 +208,17 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricvaluesPackage.COMPONENT_CANDIDATE__METRIC_VALUES:
-            return this.getMetricValues();
+            return getMetricValues();
         case MetricvaluesPackage.COMPONENT_CANDIDATE__FIRST_COMPONENT:
             if (resolve) {
-                return this.getFirstComponent();
+                return getFirstComponent();
             }
-            return this.basicGetFirstComponent();
+            return basicGetFirstComponent();
         case MetricvaluesPackage.COMPONENT_CANDIDATE__SECOND_COMPONENT:
             if (resolve) {
-                return this.getSecondComponent();
+                return getSecondComponent();
             }
-            return this.basicGetSecondComponent();
+            return basicGetSecondComponent();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -239,14 +233,14 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricvaluesPackage.COMPONENT_CANDIDATE__METRIC_VALUES:
-            this.getMetricValues().clear();
-            this.getMetricValues().addAll((Collection<? extends MetricValue>) newValue);
+            getMetricValues().clear();
+            getMetricValues().addAll((Collection<? extends MetricValue>) newValue);
             return;
         case MetricvaluesPackage.COMPONENT_CANDIDATE__FIRST_COMPONENT:
-            this.setFirstComponent((Component) newValue);
+            setFirstComponent((Component) newValue);
             return;
         case MetricvaluesPackage.COMPONENT_CANDIDATE__SECOND_COMPONENT:
-            this.setSecondComponent((Component) newValue);
+            setSecondComponent((Component) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -261,13 +255,13 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricvaluesPackage.COMPONENT_CANDIDATE__METRIC_VALUES:
-            this.getMetricValues().clear();
+            getMetricValues().clear();
             return;
         case MetricvaluesPackage.COMPONENT_CANDIDATE__FIRST_COMPONENT:
-            this.setFirstComponent((Component) null);
+            setFirstComponent((Component) null);
             return;
         case MetricvaluesPackage.COMPONENT_CANDIDATE__SECOND_COMPONENT:
-            this.setSecondComponent((Component) null);
+            setSecondComponent((Component) null);
             return;
         }
         super.eUnset(featureID);
@@ -282,11 +276,11 @@ public class ComponentCandidateImpl extends MinimalEObjectImpl.Container impleme
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricvaluesPackage.COMPONENT_CANDIDATE__METRIC_VALUES:
-            return this.metricValues != null && !this.metricValues.isEmpty();
+            return (metricValues != null) && !metricValues.isEmpty();
         case MetricvaluesPackage.COMPONENT_CANDIDATE__FIRST_COMPONENT:
-            return this.firstComponent != null;
+            return firstComponent != null;
         case MetricvaluesPackage.COMPONENT_CANDIDATE__SECOND_COMPONENT:
-            return this.secondComponent != null;
+            return secondComponent != null;
         }
         return super.eIsSet(featureID);
     }

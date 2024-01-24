@@ -29,28 +29,28 @@ public class DefaultInterfaceOfExternalCallFinder implements InterfaceOfExternal
     }
 
     /**
-     * Query the interface port for the function access using the source code decorator.
+     * Query the interface port for the function access using the source code
+     * decorator.
      *
-     * @param calledMethod
-     *            The access to find in the PCM
+     * @param calledMethod The access to find in the PCM
      * @return interface port and operation for corresponding to the access.
      */
     @Override
-    public InterfacePortOperationTuple getCalledInterfacePort(final Method calledMethod, Statement statement) { // GAST2SEFFCHANGE
+    public InterfacePortOperationTuple getCalledInterfacePort(final Method calledMethod, final Statement statement) { // GAST2SEFFCHANGE
         final InterfacePortOperationTuple interfacePortOperationTuple = new InterfacePortOperationTuple();
         final ConcreteClassifier accessedConcreteClassifier = calledMethod.getContainingConcreteClassifier();
 
-        for (final RequiredRole requiredRole : this.getBasicComponent().getRequiredRoles_InterfaceRequiringEntity()) {
-            Interface pcmInterface = this.getInterfaceFromRequiredRole(requiredRole);
-            for (final InterfaceSourceCodeLink ifLink : this.getSourceCodeDecoratorRepository()
+        for (final RequiredRole requiredRole : getBasicComponent().getRequiredRoles_InterfaceRequiringEntity()) {
+            final Interface pcmInterface = getInterfaceFromRequiredRole(requiredRole);
+            for (final InterfaceSourceCodeLink ifLink : getSourceCodeDecoratorRepository()
                     .getInterfaceSourceCodeLink()) {
-                if (pcmInterface != null && pcmInterface.equals(ifLink.getInterface())) {
+                if ((pcmInterface != null) && pcmInterface.equals(ifLink.getInterface())) {
                     final ConcreteClassifier gastClass = ifLink.getGastClass();
                     if (gastClass.equals(accessedConcreteClassifier)) {
                         logger.trace("accessed interface port " + requiredRole.getEntityName());
                         interfacePortOperationTuple.role = requiredRole;
                         // query operation:
-                        interfacePortOperationTuple.signature = this.queryInterfaceOperation(calledMethod);
+                        interfacePortOperationTuple.signature = queryInterfaceOperation(calledMethod);
                         return interfacePortOperationTuple;
                     }
                 }
@@ -63,31 +63,29 @@ public class DefaultInterfaceOfExternalCallFinder implements InterfaceOfExternal
     protected SourceCodeDecoratorRepository getSourceCodeDecoratorRepository() {
         return sourceCodeDecoratorRepository;
     }
-    
+
     protected BasicComponent getBasicComponent() {
         return basicComponent;
     }
 
-    private Interface getInterfaceFromRequiredRole(RequiredRole requiredRole) {
-        if (requiredRole instanceof OperationRequiredRole) {
-            final OperationRequiredRole operReqRole = (OperationRequiredRole) requiredRole;
+    private Interface getInterfaceFromRequiredRole(final RequiredRole requiredRole) {
+        if (requiredRole instanceof final OperationRequiredRole operReqRole) {
             return operReqRole.getRequiredInterface__OperationRequiredRole();
-        } else if (requiredRole instanceof SourceRole) {
-            final SourceRole sourceRole = (SourceRole) requiredRole;
+        }
+        if (requiredRole instanceof final SourceRole sourceRole) {
             return sourceRole.getEventGroup__SourceRole();
         }
         return null;
     }
-    
+
     /**
      * Signature query
      *
-     * @param invokedMethod
-     *            The method invocation to find in the SAMM
+     * @param invokedMethod The method invocation to find in the SAMM
      * @return Signature corresponding to function access
      */
     private Signature queryInterfaceOperation(final Method invokedMethod) { // GAST2SEFFCHANGE
-        for (final MethodLevelSourceCodeLink methodLink : this.getSourceCodeDecoratorRepository()
+        for (final MethodLevelSourceCodeLink methodLink : getSourceCodeDecoratorRepository()
                 .getMethodLevelSourceCodeLink()) {
 
             final Member methodSourceCodeDecorator = methodLink.getFunction();

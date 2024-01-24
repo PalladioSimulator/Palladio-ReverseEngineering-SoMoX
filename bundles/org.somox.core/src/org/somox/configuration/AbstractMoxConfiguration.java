@@ -26,18 +26,20 @@ public abstract class AbstractMoxConfiguration extends AbstractComposedJobConfig
      */
     public static final String SOMOX_PROJECT_NAME = "org.somox.project";
     /**
-     * attribute key for {@link #getFileLocations()}.{@code getAnalyserInputFile()} /
-     * {@link #getFileLocations()}.{@code setAnalyserInputFile(String)}
+     * attribute key for {@link #getFileLocations()}.{@code getAnalyserInputFile()}
+     * / {@link #getFileLocations()}.{@code setAnalyserInputFile(String)}
      */
     public static final String SOMOX_ANALYZER_INPUT_FILE = "org.somox.analyzer.inputfile";
     /**
-     * attribute key for {@link #isReverseEngineerInterfacesNotAssignedToComponent()} /
+     * attribute key for
+     * {@link #isReverseEngineerInterfacesNotAssignedToComponent()} /
      * {@link #setReverseEngineerInterfacesNotAssignedToComponent(boolean)}
      */
     public static final String SOMOX_ANALYZER_REVERSE_ENGINEER_INTERFACES_NOT_ASSIGNED_TO_INTERFACES = "org.somox.analyzer.ReverseEngineerInterfacesNotAssignedToComponent";
     /**
      * attribute key for
-     * {@link #isReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour()} /
+     * {@link #isReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour()}
+     * /
      * {@link #setReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour(boolean)}
      */
     public static final String SOMOX_ANALYZER_REVERSE_ENGINEER_INTERNAL_METHODS_AS_RESOURCE_DEMANDING_INTERNAL_BEHAVIOUR = "org.somox.analyzer.ReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour";
@@ -49,11 +51,11 @@ public abstract class AbstractMoxConfiguration extends AbstractComposedJobConfig
      * @return the locations
      */
     public FileLocationConfiguration getFileLocations() {
-        return this.locations;
+        return locations;
     }
 
     public boolean isReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour() {
-        return this.reverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour;
+        return reverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour;
     }
 
     public void setReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour(
@@ -62,16 +64,18 @@ public abstract class AbstractMoxConfiguration extends AbstractComposedJobConfig
     }
 
     /**
-     * Switch for interface reverse engineering. Serves for debugging-like use of SoMoX.
+     * Switch for interface reverse engineering. Serves for debugging-like use of
+     * SoMoX.
      *
      * @return
      */
     public boolean isReverseEngineerInterfacesNotAssignedToComponent() {
-        return this.reverseEngineerInterfacesNotAssignedToComponent;
+        return reverseEngineerInterfacesNotAssignedToComponent;
     }
 
     /**
-     * Switch for interface reverse engineering. Serves for debugging-like use of SoMoX.
+     * Switch for interface reverse engineering. Serves for debugging-like use of
+     * SoMoX.
      *
      * @param reverseEngineerInterfacesNotAssignedToComponent
      */
@@ -92,9 +96,9 @@ public abstract class AbstractMoxConfiguration extends AbstractComposedJobConfig
             }
 
         }
-        final FileLocationConfiguration fileLocations = this.getFileLocations();
+        final FileLocationConfiguration fileLocations = getFileLocations();
         if (attributeMap.get(AbstractMoxConfiguration.SOMOX_PROJECT_NAME) != null) {
-            fileLocations.setProjectNames((Set<String>) attributeMap.get(AbstractMoxConfiguration.SOMOX_PROJECT_NAME));
+            fileLocations.setProjectNames(Set.of((String)attributeMap.get(AbstractMoxConfiguration.SOMOX_PROJECT_NAME)));
         }
 
         if (attributeMap.get(AbstractMoxConfiguration.SOMOX_ANALYZER_INPUT_FILE) != null) {
@@ -104,38 +108,36 @@ public abstract class AbstractMoxConfiguration extends AbstractComposedJobConfig
 
         if (attributeMap.get(AbstractMoxConfiguration.SOMOX_OUTPUT_FOLDER) != null) {
             fileLocations.setOutputFolder((String) attributeMap.get(AbstractMoxConfiguration.SOMOX_OUTPUT_FOLDER));
-        } else {
-            if (fileLocations.getProjectNames() != null && fileLocations.getProjectNames().size() > 0) {
-                fileLocations.setOutputFolder(
-                        "/" + fileLocations.getProjectNames().iterator().next() + SOMOX_OUTPUT_FOLDER_DEFAULT);
-            }
+        } else if ((fileLocations.getProjectNames() != null) && (fileLocations.getProjectNames().size() > 0)) {
+            fileLocations.setOutputFolder(
+                    "/" + fileLocations.getProjectNames().iterator().next() + SOMOX_OUTPUT_FOLDER_DEFAULT);
         }
 
         if (attributeMap.get(
                 AbstractMoxConfiguration.SOMOX_ANALYZER_REVERSE_ENGINEER_INTERFACES_NOT_ASSIGNED_TO_INTERFACES) != null) {
             final boolean allInterfacesStrategy = (Boolean) attributeMap.get(
                     AbstractMoxConfiguration.SOMOX_ANALYZER_REVERSE_ENGINEER_INTERFACES_NOT_ASSIGNED_TO_INTERFACES);
-            this.setReverseEngineerInterfacesNotAssignedToComponent(allInterfacesStrategy);
+            setReverseEngineerInterfacesNotAssignedToComponent(allInterfacesStrategy);
         }
 
         if (attributeMap.get(
                 AbstractMoxConfiguration.SOMOX_ANALYZER_REVERSE_ENGINEER_INTERNAL_METHODS_AS_RESOURCE_DEMANDING_INTERNAL_BEHAVIOUR) != null) {
             final boolean reverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour = (Boolean) attributeMap
                     .get(AbstractMoxConfiguration.SOMOX_ANALYZER_REVERSE_ENGINEER_INTERNAL_METHODS_AS_RESOURCE_DEMANDING_INTERNAL_BEHAVIOUR);
-            this.setReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour(
+            setReverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour(
                     reverseEngineerInternalMethodsAsResourceDemandingInternalBehaviour);
         }
 
     }
 
     public Map<String, Object> toMap() {
-        final Map<String, Object> result = new HashMap<String, Object>();
+        final Map<String, Object> result = new HashMap<>();
 
-        result.put(AbstractMoxConfiguration.SOMOX_PROJECT_NAME, this.getFileLocations().getProjectNames());
-        result.put(AbstractMoxConfiguration.SOMOX_ANALYZER_INPUT_FILE, this.getFileLocations().getAnalyserInputFile());
+        result.put(AbstractMoxConfiguration.SOMOX_PROJECT_NAME, getFileLocations().getProjectNames());
+        result.put(AbstractMoxConfiguration.SOMOX_ANALYZER_INPUT_FILE, getFileLocations().getAnalyserInputFile());
         result.put(AbstractMoxConfiguration.SOMOX_ANALYZER_REVERSE_ENGINEER_INTERFACES_NOT_ASSIGNED_TO_INTERFACES,
-                this.isReverseEngineerInterfacesNotAssignedToComponent());
-        result.put(AbstractMoxConfiguration.SOMOX_OUTPUT_FOLDER, this.getFileLocations().getOutputFolder());
+                isReverseEngineerInterfacesNotAssignedToComponent());
+        result.put(AbstractMoxConfiguration.SOMOX_OUTPUT_FOLDER, getFileLocations().getOutputFolder());
         return result;
     }
 

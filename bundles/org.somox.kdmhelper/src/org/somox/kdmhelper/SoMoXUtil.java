@@ -18,7 +18,8 @@ public class SoMoXUtil {
     }
 
     /**
-     * Determines whether SoMoX is executed within a new Eclipse or whether it runs standalone
+     * Determines whether SoMoX is executed within a new Eclipse or whether it runs
+     * standalone
      *
      * @return
      */
@@ -35,14 +36,14 @@ public class SoMoXUtil {
     public static Collection<StatementListContainer> findImplementingMethods(final InterfaceMethod interfaceMethod,
             final Collection<ConcreteClassifier> implementingClasses) {
         final ConcreteClassifier interfaceOfMethod = interfaceMethod.getContainingConcreteClassifier();
-        final Set<StatementListContainer> implementingStatementListContainers = new HashSet<StatementListContainer>();
+        final Set<StatementListContainer> implementingStatementListContainers = new HashSet<>();
         if (null != implementingClasses) {
             for (final ConcreteClassifier classInComponent : implementingClasses) {
                 if (KDMHelper.getSuperTypes(classInComponent).contains(interfaceOfMethod)) {
                     // find the overriden interface method
                     for (final Method methodInClass : classInComponent.getMethods()) {
                         if (EqualityChecker.areFunctionsEqual(interfaceMethod, methodInClass)
-                                && methodInClass instanceof ClassMethod) {
+                                && (methodInClass instanceof ClassMethod)) {
                             implementingStatementListContainers.add(KDMHelper.getBody(methodInClass));
                         }
                     }

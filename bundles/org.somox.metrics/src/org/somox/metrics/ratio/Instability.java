@@ -13,9 +13,10 @@ import org.somox.metrics.basic.EfferentCoupling;
 /**
  * Instability metric
  *
- * The ratio of efferent coupling (Ce) to total coupling. I = Ce / (Ce + Ca). This metric is an
- * indicator of the package's resilience to change. The range for this metric is 0 to 1, with I=0
- * indicating a completely stable package and I=1 indicating a completely instable package. see
+ * The ratio of efferent coupling (Ce) to total coupling. I = Ce / (Ce + Ca).
+ * This metric is an indicator of the package's resilience to change. The range
+ * for this metric is 0 to 1, with I=0 indicating a completely stable package
+ * and I=1 indicating a completely instable package. see
  * http://www.ndepend.com/Metrics.aspx#Instability
  *
  * @author Steffen Becker, Grischa Liebel
@@ -24,29 +25,24 @@ import org.somox.metrics.basic.EfferentCoupling;
 public class Instability extends AbstractComposedMetric {
     public static final MetricID METRIC_ID = new MetricID("org.somox.metrics.Instability");
 
-    private final ICompositionFunction instabilityFunction = new ICompositionFunction() {
-
-        @Override
-        public double computeOverallDirectedMetricValue(final Map<MetricID, Double> metricValues) {
-            final double denominator = metricValues.get(EfferentCoupling.METRIC_ID)
-                    + metricValues.get(AfferentCoupling.METRIC_ID);
-            if (denominator == 0.0) {
-                return 0;
-            }
-            return metricValues.get(EfferentCoupling.METRIC_ID) / denominator;
+    private final ICompositionFunction instabilityFunction = metricValues -> {
+        final double denominator = metricValues.get(EfferentCoupling.METRIC_ID)
+                + metricValues.get(AfferentCoupling.METRIC_ID);
+        if (denominator == 0.0) {
+            return 0;
         }
-
+        return metricValues.get(EfferentCoupling.METRIC_ID) / denominator;
     };
 
     @Override
     protected IMetric[] getChildMetrics(final Map<MetricID, IMetric> allMetrics) {
-        return new IMetric[] { this.getMetric(allMetrics, EfferentCoupling.METRIC_ID),
-                this.getMetric(allMetrics, AfferentCoupling.METRIC_ID) };
+        return new IMetric[] { getMetric(allMetrics, EfferentCoupling.METRIC_ID),
+                getMetric(allMetrics, AfferentCoupling.METRIC_ID) };
     }
 
     @Override
     protected ICompositionFunction getCompositionFunction(final SoMoXConfiguration somoxConfiguration) {
-        return this.instabilityFunction;
+        return instabilityFunction;
     }
 
     /*

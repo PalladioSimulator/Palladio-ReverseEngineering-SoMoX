@@ -5,7 +5,8 @@ import org.somox.analyzer.SimpleAnalysisResult;
 import org.somox.configuration.AbstractMoxConfiguration;
 
 /**
- * Strategy for cleaning up components, remove potentially initial components, etc.
+ * Strategy for cleaning up components, remove potentially initial components,
+ * etc.
  *
  * @author Klaus Krogmann
  *
@@ -20,6 +21,6 @@ public interface IPostComponentDetectionStrategy {
      * @param analysisResult
      * @param progressMonitor
      */
-    public void postComponentDetection(AbstractMoxConfiguration somoxConfiguration, SimpleAnalysisResult analysisResult,
+    void postComponentDetection(AbstractMoxConfiguration somoxConfiguration, SimpleAnalysisResult analysisResult,
             IProgressMonitor progressMonitor);
 }

@@ -9,8 +9,8 @@ import org.somox.metrics.MetricID;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 
 /**
- * A pair of component candidate nodes. Used as immutable data structure to store component
- * candidates to compute pairwise comparisons.
+ * A pair of component candidate nodes. Used as immutable data structure to
+ * store component candidates to compute pairwise comparisons.
  */
 public final class NodePair {
 
@@ -25,9 +25,7 @@ public final class NodePair {
     private final ComponentImplementingClassesLink second;
 
     public NodePair(final ComponentImplementingClassesLink first, final ComponentImplementingClassesLink second) {
-        super();
-
-        if (first == null || second == null) {
+        if ((first == null) || (second == null)) {
             throw new IllegalArgumentException("None of the nodes must be null");
         }
 
@@ -37,8 +35,8 @@ public final class NodePair {
 
     public Callable<ClusteringRelation[]> getWorkTask(final IMetric overallMetric,
             final Map<MetricID, IMetric> allMetrics) {
-        return new PairwiseRelationComputationTask(overallMetric, new ClusteringRelation(this.first, this.second),
-                new ClusteringRelation(this.second, this.first), allMetrics);
+        return new PairwiseRelationComputationTask(overallMetric, new ClusteringRelation(first, second),
+                new ClusteringRelation(second, first), allMetrics);
     }
 
     /*
@@ -48,7 +46,7 @@ public final class NodePair {
      */
     @Override
     public int hashCode() {
-        return this.first.hashCode() ^ this.second.hashCode();
+        return first.hashCode() ^ second.hashCode();
     }
 
     /*
@@ -61,15 +59,12 @@ public final class NodePair {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
-            return false;
-        }
-        if (this.getClass() != obj.getClass()) {
+        if ((obj == null) || (this.getClass() != obj.getClass())) {
             return false;
         }
         final NodePair other = (NodePair) obj;
-        return (this.first == other.first && this.second == other.second)
-                || (this.first == other.second && this.second == other.first);
+        return ((first == other.first) && (second == other.second))
+                || ((first == other.second) && (second == other.first));
     }
 
 }

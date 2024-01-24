@@ -16,10 +16,9 @@ public class CheckboxContentProvider implements ITreeContentProvider {
     public Object[] getChildren(final Object parentElement) {
         if (parentElement instanceof Root) {
             return ((Root) parentElement).getPackages().toArray();
-        } else if (parentElement instanceof Package) {
-            final Object[] packages = KDMHelper
-                    .getOwnedPackages((org.emftext.language.java.containers.Package) parentElement).toArray();
-            return packages;
+        }
+        if (parentElement instanceof Package) {
+            return KDMHelper.getOwnedPackages((org.emftext.language.java.containers.Package) parentElement).toArray();
             // Object [] classes = ((Package) parentElement).getOwnedElements().toArray();
             //
             // Object [] elements = new Object [packages.length + classes.length];
@@ -34,7 +33,8 @@ public class CheckboxContentProvider implements ITreeContentProvider {
     public Object getParent(final Object element) {
         if (element instanceof Type) {
             return KDMHelper.getSurroundingPackage(((Type) element));
-        } else if (element instanceof Package) {
+        }
+        if (element instanceof Package) {
             return KDMHelper.getPackage((Package) element);
         }
         return null;
@@ -45,16 +45,17 @@ public class CheckboxContentProvider implements ITreeContentProvider {
         if (element instanceof Root) {
             // return ((Root) element).getPackages().size()>0;
             return true;
-        } else if (element instanceof Package) {
-            return KDMHelper.getOwnedPackages(((Package) element)).size()
-                    + KDMHelper.getOwnedElements((Package) element).size() > 0;
+        }
+        if (element instanceof Package) {
+            return (KDMHelper.getOwnedPackages(((Package) element)).size()
+                    + KDMHelper.getOwnedElements((Package) element).size()) > 0;
         }
         return false;
     }
 
     @Override
     public Object[] getElements(final Object inputElement) {
-        return this.getChildren(inputElement);
+        return getChildren(inputElement);
     }
 
     @Override

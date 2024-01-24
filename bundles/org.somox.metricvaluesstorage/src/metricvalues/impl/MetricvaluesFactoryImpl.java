@@ -17,13 +17,15 @@ import metricvalues.MetricvaluesFactory;
 import metricvalues.MetricvaluesPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
+ * end-user-doc -->
  *
  * @generated
  */
 public class MetricvaluesFactoryImpl extends EFactoryImpl implements MetricvaluesFactory {
     /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
@@ -41,12 +43,12 @@ public class MetricvaluesFactoryImpl extends EFactoryImpl implements Metricvalue
     }
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
      *
      * @generated
      */
     public MetricvaluesFactoryImpl() {
-        super();
     }
 
     /**
@@ -56,20 +58,14 @@ public class MetricvaluesFactoryImpl extends EFactoryImpl implements Metricvalue
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID()) {
-        case MetricvaluesPackage.COMPONENT:
-            return this.createComponent();
-        case MetricvaluesPackage.COMPONENT_CANDIDATE:
-            return this.createComponentCandidate();
-        case MetricvaluesPackage.ITERATION:
-            return this.createIteration();
-        case MetricvaluesPackage.METRIC_VALUE:
-            return this.createMetricValue();
-        case MetricvaluesPackage.METRIC_VALUES_MODEL:
-            return this.createMetricValuesModel();
-        default:
-            throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
+        return switch (eClass.getClassifierID()) {
+        case MetricvaluesPackage.COMPONENT -> createComponent();
+        case MetricvaluesPackage.COMPONENT_CANDIDATE -> createComponentCandidate();
+        case MetricvaluesPackage.ITERATION -> createIteration();
+        case MetricvaluesPackage.METRIC_VALUE -> createMetricValue();
+        case MetricvaluesPackage.METRIC_VALUES_MODEL -> createMetricValuesModel();
+        default -> throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        };
     }
 
     /**
@@ -79,8 +75,7 @@ public class MetricvaluesFactoryImpl extends EFactoryImpl implements Metricvalue
      */
     @Override
     public Component createComponent() {
-        final ComponentImpl component = new ComponentImpl();
-        return component;
+        return new ComponentImpl();
     }
 
     /**
@@ -90,8 +85,7 @@ public class MetricvaluesFactoryImpl extends EFactoryImpl implements Metricvalue
      */
     @Override
     public ComponentCandidate createComponentCandidate() {
-        final ComponentCandidateImpl componentCandidate = new ComponentCandidateImpl();
-        return componentCandidate;
+        return new ComponentCandidateImpl();
     }
 
     /**
@@ -101,8 +95,7 @@ public class MetricvaluesFactoryImpl extends EFactoryImpl implements Metricvalue
      */
     @Override
     public Iteration createIteration() {
-        final IterationImpl iteration = new IterationImpl();
-        return iteration;
+        return new IterationImpl();
     }
 
     /**
@@ -112,8 +105,7 @@ public class MetricvaluesFactoryImpl extends EFactoryImpl implements Metricvalue
      */
     @Override
     public MetricValue createMetricValue() {
-        final MetricValueImpl metricValue = new MetricValueImpl();
-        return metricValue;
+        return new MetricValueImpl();
     }
 
     /**
@@ -123,8 +115,7 @@ public class MetricvaluesFactoryImpl extends EFactoryImpl implements Metricvalue
      */
     @Override
     public MetricValuesModel createMetricValuesModel() {
-        final MetricValuesModelImpl metricValuesModel = new MetricValuesModelImpl();
-        return metricValuesModel;
+        return new MetricValuesModelImpl();
     }
 
     /**
@@ -134,7 +125,7 @@ public class MetricvaluesFactoryImpl extends EFactoryImpl implements Metricvalue
      */
     @Override
     public MetricvaluesPackage getMetricvaluesPackage() {
-        return (MetricvaluesPackage) this.getEPackage();
+        return (MetricvaluesPackage) getEPackage();
     }
 
     /**

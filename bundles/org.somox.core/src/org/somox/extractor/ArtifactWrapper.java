@@ -6,12 +6,12 @@ package org.somox.extractor;
 public interface ArtifactWrapper {
 
     /** Get the id of the wrapped artifact */
-    public String getId();
+    String getId();
 
     /** Get the identifier for the extractor instance this artifact has come from */
-    public String getExtractorId();
+    String getExtractorId();
 
     /** Get the wrapped software artifact */
-    public Object getArtefact();
+    Object getArtefact();
 
 }

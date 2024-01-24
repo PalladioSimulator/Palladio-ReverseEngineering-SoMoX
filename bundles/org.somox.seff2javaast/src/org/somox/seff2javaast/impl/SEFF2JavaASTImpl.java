@@ -16,8 +16,8 @@ import org.somox.seff2javaast.SEFF2MethodMapping;
 import org.somox.seff2javaast.Seff2javaastPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>SEFF2 Java AST</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>SEFF2
+ * Java AST</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -30,8 +30,9 @@ import org.somox.seff2javaast.Seff2javaastPackage;
  */
 public class SEFF2JavaASTImpl extends MinimalEObjectImpl.Container implements SEFF2JavaAST {
     /**
-     * The cached value of the '{@link #getSeff2MethodMappings() <em>Seff2 Method Mappings</em>}'
-     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getSeff2MethodMappings() <em>Seff2 Method
+     * Mappings</em>}' containment reference list. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @see #getSeff2MethodMappings()
      * @generated
@@ -45,7 +46,6 @@ public class SEFF2JavaASTImpl extends MinimalEObjectImpl.Container implements SE
      * @generated
      */
     protected SEFF2JavaASTImpl() {
-        super();
     }
 
     /**
@@ -65,11 +65,11 @@ public class SEFF2JavaASTImpl extends MinimalEObjectImpl.Container implements SE
      */
     @Override
     public EList<SEFF2MethodMapping> getSeff2MethodMappings() {
-        if (this.seff2MethodMappings == null) {
-            this.seff2MethodMappings = new EObjectContainmentEList<SEFF2MethodMapping>(SEFF2MethodMapping.class, this,
+        if (seff2MethodMappings == null) {
+            seff2MethodMappings = new EObjectContainmentEList<>(SEFF2MethodMapping.class, this,
                     Seff2javaastPackage.SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS);
         }
-        return this.seff2MethodMappings;
+        return seff2MethodMappings;
     }
 
     /**
@@ -82,7 +82,7 @@ public class SEFF2JavaASTImpl extends MinimalEObjectImpl.Container implements SE
             final NotificationChain msgs) {
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS:
-            return ((InternalEList<?>) this.getSeff2MethodMappings()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getSeff2MethodMappings()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -96,7 +96,7 @@ public class SEFF2JavaASTImpl extends MinimalEObjectImpl.Container implements SE
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS:
-            return this.getSeff2MethodMappings();
+            return getSeff2MethodMappings();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -111,8 +111,8 @@ public class SEFF2JavaASTImpl extends MinimalEObjectImpl.Container implements SE
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS:
-            this.getSeff2MethodMappings().clear();
-            this.getSeff2MethodMappings().addAll((Collection<? extends SEFF2MethodMapping>) newValue);
+            getSeff2MethodMappings().clear();
+            getSeff2MethodMappings().addAll((Collection<? extends SEFF2MethodMapping>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -127,7 +127,7 @@ public class SEFF2JavaASTImpl extends MinimalEObjectImpl.Container implements SE
     public void eUnset(final int featureID) {
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS:
-            this.getSeff2MethodMappings().clear();
+            getSeff2MethodMappings().clear();
             return;
         }
         super.eUnset(featureID);
@@ -142,7 +142,7 @@ public class SEFF2JavaASTImpl extends MinimalEObjectImpl.Container implements SE
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case Seff2javaastPackage.SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS:
-            return this.seff2MethodMappings != null && !this.seff2MethodMappings.isEmpty();
+            return (seff2MethodMappings != null) && !seff2MethodMappings.isEmpty();
         }
         return super.eIsSet(featureID);
     }

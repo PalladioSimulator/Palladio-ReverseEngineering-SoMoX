@@ -60,8 +60,8 @@ public class WeightsTab extends MetricTab {
     @Override
     public void createControl(final Composite parent) {
 
-        this.control = new Composite(parent, SWT.BORDER);
-        this.control.setLayout(new GridLayout(3, false));
+        control = new Composite(parent, SWT.BORDER);
+        control.setLayout(new GridLayout(3, false));
 
         // final ScrolledComposite scrollContainer = new ScrolledComposite(control,
         // SWT.BORDER | SWT.V_SCROLL);
@@ -71,26 +71,25 @@ public class WeightsTab extends MetricTab {
         //
         // container.setLayout(new GridLayout(3,false));
 
-        this.keyLabels = new ArrayList<Label>();
-        this.valueSliders = new ArrayList<Slider>();
-        this.valueLabels = new ArrayList<Label>();
+        keyLabels = new ArrayList<>();
+        valueSliders = new ArrayList<>();
+        valueLabels = new ArrayList<>();
 
-        int weightCounter = 0;
         for (final MetricsDetails metricDetail : projectPreferences.orderedMetricDetails) {
-            final Label keyLabel = new Label(this.control, SWT.NONE);
+            final Label keyLabel = new Label(control, SWT.NONE);
             keyLabel.setText(metricDetail.metricLabel); // metric label
             keyLabel.setToolTipText(metricDetail.metricExplanantion); // metric explanation text
-            this.keyLabels.add(keyLabel);
+            keyLabels.add(keyLabel);
 
-            final Label valueLabel = new Label(this.control, SWT.BORDER);
+            final Label valueLabel = new Label(control, SWT.BORDER);
             final GridData gd = new GridData();
             gd.minimumWidth = 100;
             gd.widthHint = 30;
             valueLabel.setAlignment(SWT.CENTER);
             valueLabel.setLayoutData(gd);
-            this.valueLabels.add(valueLabel);
+            valueLabels.add(valueLabel);
 
-            final Slider slider = new Slider(this.control, SWT.HORIZONTAL);
+            final Slider slider = new Slider(control, SWT.HORIZONTAL);
             slider.setMinimum(0);
             slider.setMaximum(110);
             slider.setIncrement(1);
@@ -106,9 +105,7 @@ public class WeightsTab extends MetricTab {
                 public void widgetDefaultSelected(final SelectionEvent e) {
                 }
             });
-            this.valueSliders.add(slider);
-
-            weightCounter++;
+            valueSliders.add(slider);
         }
 
         // important for the scrollbars
@@ -130,7 +127,7 @@ public class WeightsTab extends MetricTab {
 
     @Override
     public Control getControl() {
-        return this.control;
+        return control;
     }
 
     @Override
@@ -156,12 +153,12 @@ public class WeightsTab extends MetricTab {
     @Override
     public void initializeFrom(final ILaunchConfiguration configuration) {
         try {
-            for (int i = 0; i < this.valueSliders.size(); i++) {
+            for (int i = 0; i < valueSliders.size(); i++) {
                 final String value = configuration
                         .getAttribute(projectPreferences.orderedMetricDetails.get(i).metricWeightPeferenceName, "");
                 // System.out.println("value was:" + value);
-                this.valueSliders.get(i).setSelection(Integer.valueOf(value));
-                this.valueLabels.get(i).setText(value + "");
+                valueSliders.get(i).setSelection(Integer.parseInt(value));
+                valueLabels.get(i).setText(value + "");
 
             }
 
@@ -184,8 +181,8 @@ public class WeightsTab extends MetricTab {
 
     @Override
     public void performApply(final ILaunchConfigurationWorkingCopy configuration) {
-        for (int i = 0; i < this.valueSliders.size(); i++) {
-            final int value = this.valueSliders.get(i).getSelection();
+        for (int i = 0; i < valueSliders.size(); i++) {
+            final int value = valueSliders.get(i).getSelection();
             configuration.setAttribute(projectPreferences.orderedMetricDetails.get(i).metricWeightPeferenceName,
                     String.valueOf(value));
         }

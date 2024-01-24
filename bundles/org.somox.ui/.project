@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>org.somox.ui</name>
-	<comment>@key 32303037303533312D31303030206F72672E736F6D6F782E75692F536E6F7762616C6C </comment>
 	<projects>
 		<project>SoMoX Core</project>
 	</projects>

@@ -7,6 +7,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="lib/jgrapht-0.8.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

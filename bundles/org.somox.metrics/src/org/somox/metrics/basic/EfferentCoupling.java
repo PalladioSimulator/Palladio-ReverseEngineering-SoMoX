@@ -10,8 +10,9 @@ import org.somox.metrics.abstractmetrics.AbstractCountingMetric;
 //import de.fzi.gast.types.GASTClass;
 
 /**
- * Efferent coupling (Ce): The number of types inside this assembly that depends on types outside
- * this assembly. High efferent coupling indicates that the concerned assembly is dependant. see
+ * Efferent coupling (Ce): The number of types inside this assembly that depends
+ * on types outside this assembly. High efferent coupling indicates that the
+ * concerned assembly is dependant. see
  * http://www.ndepend.com/Metrics.aspx#EfferentCoupling
  *
  * @author Steffen Becker
@@ -27,7 +28,7 @@ public class EfferentCoupling extends AbstractCountingMetric {
                 relationToCompute.getTargetComponent());
 
         relationToCompute.setResultMetric(METRIC_ID,
-                this.getAccessGraphCache().calculateNumberOfExternalAccesses(internalClasses));
+                getAccessGraphCache().calculateNumberOfExternalAccesses(internalClasses));
     }
 
     @Override

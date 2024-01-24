@@ -1,14 +1,15 @@
 package org.somox.filter.tests;
 
+import java.util.List;
+import java.util.stream.Stream;
+
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.AbstractTypeDeclaration;
 import org.eclipse.jdt.core.dom.BodyDeclaration;
 
-import java.util.List;
-import java.util.stream.Stream;
-
 /**
- * Utility class containing convenience methods to interact with the Eclipse AST.
+ * Utility class containing convenience methods to interact with the Eclipse
+ * AST.
  *
  * @author Joshua Gleitze
  */
@@ -21,14 +22,14 @@ public final class EclipseAst {
     }
 
     /**
-     * Creates a stream of all body declarations recursively contained in the provided
-     * {@code declaration}, including {@code declaration} itself.
+     * Creates a stream of all body declarations recursively contained in the
+     * provided {@code declaration}, including {@code declaration} itself.
      *
-     * @param declaration
-     *            A body declaration.
-     * @return If {@code declaration} is a type declaration, a stream of all body declarations
-     *         contained in {@code declaration}, including {@code declaration} itself. A stream of
-     *         {@code declaration} otherwise.
+     * @param declaration A body declaration.
+     * @return If {@code declaration} is a type declaration, a stream of all body
+     *         declarations contained in {@code declaration}, including
+     *         {@code declaration} itself. A stream of {@code declaration}
+     *         otherwise.
      */
     @SuppressWarnings("unchecked")
     public static Stream<BodyDeclaration> withSubDeclarations(final BodyDeclaration declaration) {
@@ -45,18 +46,14 @@ public final class EclipseAst {
     /**
      * Checks whether the given {@code declaration} declares any java type.
      *
-     * @param declaration
-     *            A declaration. Must not be {@code null}.
-     * @return {@code true} iff the {@code declaration} declares an annotation, class or enum.
+     * @param declaration A declaration. Must not be {@code null}.
+     * @return {@code true} iff the {@code declaration} declares an annotation,
+     *         class or enum.
      */
     public static boolean isTypeDeclaration(final BodyDeclaration declaration) {
-        switch (declaration.getNodeType()) {
-        case ASTNode.TYPE_DECLARATION:
-        case ASTNode.ANNOTATION_TYPE_DECLARATION:
-        case ASTNode.ENUM_DECLARATION:
-            return true;
-        default:
-            return false;
-        }
+        return switch (declaration.getNodeType()) {
+        case ASTNode.TYPE_DECLARATION, ASTNode.ANNOTATION_TYPE_DECLARATION, ASTNode.ENUM_DECLARATION -> true;
+        default -> false;
+        };
     }
 }

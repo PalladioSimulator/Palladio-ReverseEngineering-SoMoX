@@ -6,7 +6,7 @@ public class SoMoXModelAnalyzerConfiguration extends ModelAnalyzerConfiguration<
 
     @Override
     public void setDefaults() {
-        this.moxConfiguration = new SoMoXConfiguration();
+        moxConfiguration = new SoMoXConfiguration();
     }
 
 }

@@ -32,7 +32,8 @@ import org.somox.seff2javaast.Seff2javaastFactory;
 import org.somox.seff2javaast.Seff2javaastPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
+ * end-user-doc -->
  *
  * @generated
  */
@@ -53,12 +54,13 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
-     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI
-     * value.
+     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+     * package package URI value.
      * <p>
-     * Note: the correct way to create the package is via the static factory method {@link #init
-     * init()}, which also performs initialization of the package, or returns the registered
-     * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Note: the correct way to create the package is via the static factory method
+     * {@link #init init()}, which also performs initialization of the package, or
+     * returns the registered package, if one already exists. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
      *
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see org.somox.seff2javaast.Seff2javaastPackage#eNS_URI
@@ -77,13 +79,14 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
     private static boolean isInited = false;
 
     /**
-     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others
-     * upon which it depends.
+     * Creates, registers, and initializes the <b>Package</b> for this model, and
+     * for any others upon which it depends.
      *
      * <p>
-     * This method is used to initialize {@link Seff2javaastPackage#eINSTANCE} when that field is
-     * accessed. Clients should not invoke it directly. Instead, they should simply access that
-     * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This method is used to initialize {@link Seff2javaastPackage#eINSTANCE} when
+     * that field is accessed. Clients should not invoke it directly. Instead, they
+     * should simply access that field to obtain the package. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
      *
      * @see #eNS_URI
      * @see #createPackageContents()
@@ -144,7 +147,7 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
      */
     @Override
     public EClass getSEFF2MethodMapping() {
-        return this.seff2MethodMappingEClass;
+        return seff2MethodMappingEClass;
     }
 
     /**
@@ -154,7 +157,7 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
      */
     @Override
     public EReference getSEFF2MethodMapping_Blockstatement() {
-        return (EReference) this.seff2MethodMappingEClass.getEStructuralFeatures().get(0);
+        return (EReference) seff2MethodMappingEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -164,7 +167,7 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
      */
     @Override
     public EReference getSEFF2MethodMapping_Seff() {
-        return (EReference) this.seff2MethodMappingEClass.getEStructuralFeatures().get(1);
+        return (EReference) seff2MethodMappingEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -174,7 +177,7 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
      */
     @Override
     public EClass getSEFF2JavaAST() {
-        return this.seff2JavaASTEClass;
+        return seff2JavaASTEClass;
     }
 
     /**
@@ -184,7 +187,7 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
      */
     @Override
     public EReference getSEFF2JavaAST_Seff2MethodMappings() {
-        return (EReference) this.seff2JavaASTEClass.getEStructuralFeatures().get(0);
+        return (EReference) seff2JavaASTEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -194,7 +197,7 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
      */
     @Override
     public Seff2javaastFactory getSeff2javaastFactory() {
-        return (Seff2javaastFactory) this.getEFactoryInstance();
+        return (Seff2javaastFactory) getEFactoryInstance();
     }
 
     /**
@@ -205,24 +208,25 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
     private boolean isCreated = false;
 
     /**
-     * Creates the meta-model objects for the package. This method is guarded to have no affect on
-     * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates the meta-model objects for the package. This method is guarded to
+     * have no affect on any invocation but its first. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
     public void createPackageContents() {
-        if (this.isCreated) {
+        if (isCreated) {
             return;
         }
-        this.isCreated = true;
+        isCreated = true;
 
         // Create classes and their features
-        this.seff2MethodMappingEClass = this.createEClass(SEFF2_METHOD_MAPPING);
-        this.createEReference(this.seff2MethodMappingEClass, SEFF2_METHOD_MAPPING__BLOCKSTATEMENT);
-        this.createEReference(this.seff2MethodMappingEClass, SEFF2_METHOD_MAPPING__SEFF);
+        seff2MethodMappingEClass = createEClass(SEFF2_METHOD_MAPPING);
+        createEReference(seff2MethodMappingEClass, SEFF2_METHOD_MAPPING__BLOCKSTATEMENT);
+        createEReference(seff2MethodMappingEClass, SEFF2_METHOD_MAPPING__SEFF);
 
-        this.seff2JavaASTEClass = this.createEClass(SEFF2_JAVA_AST);
-        this.createEReference(this.seff2JavaASTEClass, SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS);
+        seff2JavaASTEClass = createEClass(SEFF2_JAVA_AST);
+        createEReference(seff2JavaASTEClass, SEFF2_JAVA_AST__SEFF2_METHOD_MAPPINGS);
     }
 
     /**
@@ -233,21 +237,22 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
     private boolean isInitialized = false;
 
     /**
-     * Complete the initialization of the package and its meta-model. This method is guarded to have
-     * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Complete the initialization of the package and its meta-model. This method is
+     * guarded to have no affect on any invocation but its first. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     public void initializePackageContents() {
-        if (this.isInitialized) {
+        if (isInitialized) {
             return;
         }
-        this.isInitialized = true;
+        isInitialized = true;
 
         // Initialize package
-        this.setName(eNAME);
-        this.setNsPrefix(eNS_PREFIX);
-        this.setNsURI(eNS_URI);
+        setName(eNAME);
+        setNsPrefix(eNS_PREFIX);
+        setNsURI(eNS_URI);
 
         // Obtain other dependent packages
         final StatementsPackage theStatementsPackage = (StatementsPackage) EPackage.Registry.INSTANCE
@@ -261,24 +266,23 @@ public class Seff2javaastPackageImpl extends EPackageImpl implements Seff2javaas
         // Add supertypes to classes
 
         // Initialize classes, features, and operations; add parameters
-        this.initEClass(this.seff2MethodMappingEClass, SEFF2MethodMapping.class, "SEFF2MethodMapping", !IS_ABSTRACT,
+        this.initEClass(seff2MethodMappingEClass, SEFF2MethodMapping.class, "SEFF2MethodMapping", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getSEFF2MethodMapping_Blockstatement(),
-                theStatementsPackage.getStatementListContainer(), null, "blockstatement", null, 1, 1,
-                SEFF2MethodMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        this.initEReference(this.getSEFF2MethodMapping_Seff(), theSeffPackage.getServiceEffectSpecification(), null,
-                "seff", null, 1, 1, SEFF2MethodMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+        this.initEReference(getSEFF2MethodMapping_Blockstatement(), theStatementsPackage.getStatementListContainer(),
+                null, "blockstatement", null, 1, 1, SEFF2MethodMapping.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        this.initEReference(getSEFF2MethodMapping_Seff(), theSeffPackage.getServiceEffectSpecification(), null, "seff",
+                null, 1, 1, SEFF2MethodMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-        this.initEClass(this.seff2JavaASTEClass, SEFF2JavaAST.class, "SEFF2JavaAST", !IS_ABSTRACT, !IS_INTERFACE,
+        this.initEClass(seff2JavaASTEClass, SEFF2JavaAST.class, "SEFF2JavaAST", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getSEFF2JavaAST_Seff2MethodMappings(), this.getSEFF2MethodMapping(), null,
-                "seff2MethodMappings", null, 0, -1, SEFF2JavaAST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        this.initEReference(getSEFF2JavaAST_Seff2MethodMappings(), getSEFF2MethodMapping(), null, "seff2MethodMappings",
+                null, 0, -1, SEFF2JavaAST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         // Create resource
-        this.createResource(eNS_URI);
+        createResource(eNS_URI);
     }
 
 } // Seff2javaastPackageImpl

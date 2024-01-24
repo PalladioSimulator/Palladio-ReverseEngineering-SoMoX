@@ -25,8 +25,8 @@ import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 import de.uka.ipd.sdq.workflow.ExecutionTimeLoggingProgressMonitor;
 
 /**
- * This class runs a component detection based on a GAST input model and returns the results to the
- * SoMoX core for storing or further processing
+ * This class runs a component detection based on a GAST input model and returns
+ * the results to the SoMoX core for storing or further processing
  *
  * @author Michael Hauck, Klaus Krogmann, Steffen Becker
  */
@@ -66,11 +66,9 @@ public class SimpleModelAnalyzer implements ModelAnalyzer<SoMoXConfiguration> {
     public AnalysisResult analyze(final SoMoXConfiguration somoxConfiguration,
             final HashMap<String, ExtractionResult> extractionResultMap, final IProgressMonitor progressMonitor)
             throws ModelAnalyzerException {
-        this.status = ModelAnalyzer.Status.RUNNING;
+        status = ModelAnalyzer.Status.RUNNING;
         SimpleModelAnalyzer.logger.info("SISSy Analyzer started with" + "\n SOMOX Configuration: " + somoxConfiguration
                 + "\n extractionResultMap " + extractionResultMap);
-
-        AnalysisResult analysisResult = null;
 
         final KDMReader modelReader = new KDMReader();
         try {
@@ -80,28 +78,26 @@ public class SimpleModelAnalyzer implements ModelAnalyzer<SoMoXConfiguration> {
             throw new ModelAnalyzerException("Failed to load GAST model", e);
         }
         final Root root = modelReader.getRoot();
-        analysisResult = this.analyzeGASTModel(root, somoxConfiguration, progressMonitor);
+        final AnalysisResult analysisResult = analyzeGASTModel(root, somoxConfiguration, progressMonitor);
         analysisResult.setRoot(root);
-        this.status = ModelAnalyzer.Status.FINISHED;
+        status = ModelAnalyzer.Status.FINISHED;
         return analysisResult;
     }
 
     /**
      * Analyze the given GAST model to find components
      *
-     * @param astModel
-     *            The root of the GAST model to analyze
-     * @param preferences
-     *            Preferences containing the configuration of the analysis
-     * @param progressMonitor
-     *            Progress monitor used to indicate detection progress
+     * @param astModel        The root of the GAST model to analyze
+     * @param preferences     Preferences containing the configuration of the
+     *                        analysis
+     * @param progressMonitor Progress monitor used to indicate detection progress
      * @throws ModelAnalyzerException
      */
     private SimpleAnalysisResult analyzeGASTModel(final Root astModel, final SoMoXConfiguration somoxConfiguration,
             final IProgressMonitor progressMonitor) throws ModelAnalyzerException {
 
         // Set up result
-        final SimpleAnalysisResult analysisResult = this.initializeAnalysisResult();
+        final SimpleAnalysisResult analysisResult = initializeAnalysisResult();
         analysisResult.setResultStatus(AnalysisResult.ResultStatus.FAILED);
 
         // Set up model builder
@@ -109,14 +105,15 @@ public class SimpleModelAnalyzer implements ModelAnalyzer<SoMoXConfiguration> {
         final ISoMoXStrategiesFactory strategiesFactory = new BasicSoMoXStrategiesFactory(astModel, somoxConfiguration);
 
         // Initial Components
-        final List<ComponentImplementingClassesLink> initialComponents = this.detectInitialComponentCandidates(astModel,
+        final List<ComponentImplementingClassesLink> initialComponents = detectInitialComponentCandidates(astModel,
                 somoxConfiguration, pcmComponentBuilder, strategiesFactory, progressMonitor);
 
         // removelater
         // String fileName = "01initialComponentsPCKDM.txt";
         // int PCnumber = 0;
         // for(ComponentImplementingClassesLink element : initialComponents){
-        // // org.somox.changetest.Helper.writeToFile(fileName, String.valueOf(PCnumber++));
+        // // org.somox.changetest.Helper.writeToFile(fileName,
+        // String.valueOf(PCnumber++));
         // for(Type type : element.getImplementingClasses()){
         // org.somox.changetest.Helper.writeToFile(fileName,
         // GASTClassHelper.computeFullQualifiedName(type));
@@ -125,11 +122,11 @@ public class SimpleModelAnalyzer implements ModelAnalyzer<SoMoXConfiguration> {
         // org.somox.changetest.Helper.sortFile(fileName);
 
         // Component Detection
-        this.clusterComponents(initialComponents, somoxConfiguration, pcmComponentBuilder, strategiesFactory,
+        clusterComponents(initialComponents, somoxConfiguration, pcmComponentBuilder, strategiesFactory,
                 progressMonitor);
 
         // Post Detection Phase
-        this.postComponentDetection(somoxConfiguration, analysisResult, strategiesFactory, progressMonitor);
+        postComponentDetection(somoxConfiguration, analysisResult, strategiesFactory, progressMonitor);
 
         // Create PCM System
         final PCMSystemBuilder pcmSystemBuilder = new PCMSystemBuilder(astModel, somoxConfiguration, analysisResult,
@@ -149,23 +146,21 @@ public class SimpleModelAnalyzer implements ModelAnalyzer<SoMoXConfiguration> {
     }
 
     /**
-     * Runs the clustering step on the detected initial components. In the clustering step, the
-     * initial components can either be merged or composed. Details are implemented in a clustering
-     * strategy.
+     * Runs the clustering step on the detected initial components. In the
+     * clustering step, the initial components can either be merged or composed.
+     * Details are implemented in a clustering strategy.
      *
-     * @param initialComponentCandidates
-     *            List of initial components detected in the source code
-     * @param somoxConfiguration
-     *            The configuration of this SoMoX run
-     * @param sammBuilder
-     *            The SAM model builder used to create the component SAM model elements
-     * @param strategiesFactory
-     *            Factory used to create the clustering strategy
-     * @param progressMonitor
-     *            Progress monitor to update the Eclipse UI
+     * @param initialComponentCandidates List of initial components detected in the
+     *                                   source code
+     * @param somoxConfiguration         The configuration of this SoMoX run
+     * @param sammBuilder                The SAM model builder used to create the
+     *                                   component SAM model elements
+     * @param strategiesFactory          Factory used to create the clustering
+     *                                   strategy
+     * @param progressMonitor            Progress monitor to update the Eclipse UI
      * @return list of detected components
-     * @throws ModelAnalyzerException
-     *             Thrown if some initialization or metric computation fails
+     * @throws ModelAnalyzerException Thrown if some initialization or metric
+     *                                computation fails
      */
     private void clusterComponents(final List<ComponentImplementingClassesLink> initialComponentCandidates,
             final AbstractMoxConfiguration somoxConfiguration, final ComponentBuilder sammBuilder,
@@ -187,22 +182,20 @@ public class SimpleModelAnalyzer implements ModelAnalyzer<SoMoXConfiguration> {
     }
 
     /**
-     * Method called to derive initial component candidates based on the passed source code in GAST
-     * format
+     * Method called to derive initial component candidates based on the passed
+     * source code in GAST format
      *
-     * @param gastModel
-     *            The source code in its GAST representation //ESTIMATEDBYDOCQUERY
-     * @param somoxConfiguration
-     *            The SoMoX configuration containing configuration options for the component
-     *            detecting like the name blacklist
-     * @param sammBuilder
-     *            The SAM model builder used to create the component SAM model elements
-     * @param strategiesFactory
-     *            Factory used to create the clustering strategy
-     * @param progressMonitor
-     *            Progess monitor to update the Eclipse UI
-     * @return A list of initial component candidates as defined by the source code decorator
-     *         meta-model
+     * @param gastModel          The source code in its GAST representation
+     *                           //ESTIMATEDBYDOCQUERY
+     * @param somoxConfiguration The SoMoX configuration containing configuration
+     *                           options for the component detecting like the name
+     *                           blacklist
+     * @param sammBuilder        The SAM model builder used to create the component
+     *                           SAM model elements
+     * @param strategiesFactory  Factory used to create the clustering strategy
+     * @param progressMonitor    Progess monitor to update the Eclipse UI
+     * @return A list of initial component candidates as defined by the source code
+     *         decorator meta-model
      */
     private List<ComponentImplementingClassesLink> detectInitialComponentCandidates(final Root gastModel,
             final SoMoXConfiguration somoxConfiguration, final ComponentBuilder sammBuilder,
@@ -226,6 +219,6 @@ public class SimpleModelAnalyzer implements ModelAnalyzer<SoMoXConfiguration> {
      */
     @Override
     public ModelAnalyzer.Status getStatus() {
-        return this.status;
+        return status;
     }
 }

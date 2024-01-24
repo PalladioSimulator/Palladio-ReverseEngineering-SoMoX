@@ -68,10 +68,10 @@ public class Activator extends Plugin {
     public void start(final BundleContext context) throws Exception {
         super.start(context);
         plugin = this;
-        this.somoxCore = new SoMoXCoreStandard();
-        this.connectCoreControllerExtensions();
-        this.loadSoftwareExtractors();
-        this.loadModelAnalyzers();
+        somoxCore = new SoMoXCoreStandard();
+        connectCoreControllerExtensions();
+        loadSoftwareExtractors();
+        loadModelAnalyzers();
     }
 
     @Override
@@ -91,7 +91,8 @@ public class Activator extends Plugin {
     // ---------------------------------
 
     /**
-     * Check the installed software extractor plugins and register them in the SoMoX Core
+     * Check the installed software extractor plugins and register them in the SoMoX
+     * Core
      *
      * @return The number of checked plugins
      */
@@ -104,19 +105,20 @@ public class Activator extends Plugin {
         final IExtension[] extensions = point.getExtensions();
         int i = 0;
         for (; i < extensions.length; i++) {
-            final SoftwareExtractor extractor = this.buildSoftwareExtractor(extensions[i].getConfigurationElements());
+            final SoftwareExtractor extractor = buildSoftwareExtractor(extensions[i].getConfigurationElements());
             if (extractor != null) {
                 // TODO: Do not set the software extractor list directly in the core.
                 // Better store a list of the available extractors and define in
                 // the configuration which one to use and their specific configurations
-                this.somoxCore.addSoftwareExtractor(extractor.getClass().getName(), extractor);
+                somoxCore.addSoftwareExtractor(extractor.getClass().getName(), extractor);
             }
         }
         return i;
     }
 
     /**
-     * Check the installed Model Analyzer plug-ins and register them in the SoMoX Core
+     * Check the installed Model Analyzer plug-ins and register them in the SoMoX
+     * Core
      *
      * @return The number of checked plugins
      */
@@ -132,12 +134,12 @@ public class Activator extends Plugin {
         final IExtension[] extensions = point.getExtensions();
         int i = 0;
         for (; i < extensions.length; i++) {
-            final ModelAnalyzer analyzer = this.buildModelAnalyzer(extensions[i].getConfigurationElements());
+            final ModelAnalyzer analyzer = buildModelAnalyzer(extensions[i].getConfigurationElements());
             if (analyzer != null) {
                 // TODO: Do not set the model analyzer list directly in the core.
                 // Better store a list of the available analyzers and define in
                 // the configuration which one to use and their specific configurations
-                this.somoxCore.addModelAnalyzer(analyzer.getClass().getName(), analyzer);
+                somoxCore.addModelAnalyzer(analyzer.getClass().getName(), analyzer);
             }
         }
         return i;
@@ -157,9 +159,9 @@ public class Activator extends Plugin {
         final IExtension[] extensions = point.getExtensions();
         int i = 0;
         for (; i < extensions.length; i++) {
-            final SoMoXCoreController controller = this.buildController(extensions[i].getConfigurationElements());
+            final SoMoXCoreController controller = buildController(extensions[i].getConfigurationElements());
             if (controller != null) {
-                controller.setSoMoXCore(this.somoxCore);
+                controller.setSoMoXCore(somoxCore);
             }
         }
         return i;
@@ -168,8 +170,7 @@ public class Activator extends Plugin {
     /**
      * Create a SoMoX Controller out of an extension point configuration
      *
-     * @param configuration
-     *            The configuration
+     * @param configuration The configuration
      * @return The build SoMoX Controller or null if this was not possible
      */
     private SoMoXCoreController buildController(final IConfigurationElement[] configurations) {
@@ -179,12 +180,12 @@ public class Activator extends Plugin {
             if (EXTENSION_POINT_ID_CONTROLLER.equals(configuration.getName())) {
                 try {
                     controller = (SoMoXCoreController) configuration.createExecutableExtension("class");
-                    controller.setSoMoXCore(this.somoxCore);
+                    controller.setSoMoXCore(somoxCore);
                 } catch (final CoreException e) {
                     e.printStackTrace();
                 }
             }
-            this.getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID, "contoller loaded"));
+            getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID, "contoller loaded"));
         }
 
         return controller;
@@ -193,8 +194,7 @@ public class Activator extends Plugin {
     /**
      * Create a SoMoX Controller out of an extension point configuration
      *
-     * @param configuration
-     *            The configuration
+     * @param configuration The configuration
      * @return The build SoMoX Controller or null if this was not possible
      */
     private SoftwareExtractor buildSoftwareExtractor(final IConfigurationElement[] configurations) {
@@ -208,7 +208,7 @@ public class Activator extends Plugin {
                     e.printStackTrace();
                 }
             }
-            this.getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID, "extractor loaded"));
+            getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID, "extractor loaded"));
         }
 
         return extractor;
@@ -217,8 +217,7 @@ public class Activator extends Plugin {
     /**
      * Create a SoMoX Model Analyzer out of an extension point configuration
      *
-     * @param configuration
-     *            The configuration
+     * @param configuration The configuration
      * @return The build SoMoX Model Analyzer or null if this was not possible
      */
     private ModelAnalyzer buildModelAnalyzer(final IConfigurationElement[] configurations) {
@@ -232,10 +231,9 @@ public class Activator extends Plugin {
                     e.printStackTrace();
                 }
             } else {
-                this.getLog()
-                        .log(new Status(IStatus.INFO, Activator.PLUGIN_ID,
-                                "Tried to build a model analyzer from a non model analyzer plug-in: "
-                                        + configuration.getName()));
+                getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID,
+                        "Tried to build a model analyzer from a non model analyzer plug-in: "
+                                + configuration.getName()));
             }
         }
 

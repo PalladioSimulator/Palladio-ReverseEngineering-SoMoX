@@ -11,13 +11,12 @@ import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 public class ComponentPrinter {
 
     /**
-     * Print the given list of components detected in source code including the classes used to
-     * implement them
+     * Print the given list of components detected in source code including the
+     * classes used to implement them
      *
-     * @param components
-     *            The list of components to print to the debug facility of the given logger
-     * @param logger
-     *            The logger used to print the components
+     * @param components The list of components to print to the debug facility of
+     *                   the given logger
+     * @param logger     The logger used to print the components
      */
     public static void printComponents(final List<ComponentImplementingClassesLink> components, final Logger logger) {
 
@@ -28,7 +27,8 @@ public class ComponentPrinter {
         for (final ComponentImplementingClassesLink currentComponent : components) {
             i++;
             logger.debug("Comp Nr." + i + ":");
-            // org.somox.changetest.Helper.writeToFile(fileName, "Comp Nr." + i + ":");//removelater
+            // org.somox.changetest.Helper.writeToFile(fileName, "Comp Nr." + i +
+            // ":");//removelater
 
             for (final Type clazz : currentComponent.getImplementingClasses()) {
                 logger.debug(KDMHelper.computeFullQualifiedName(clazz));

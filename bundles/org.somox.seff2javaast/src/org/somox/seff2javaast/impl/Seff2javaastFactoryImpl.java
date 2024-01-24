@@ -13,13 +13,15 @@ import org.somox.seff2javaast.Seff2javaastFactory;
 import org.somox.seff2javaast.Seff2javaastPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
+ * end-user-doc -->
  *
  * @generated
  */
 public class Seff2javaastFactoryImpl extends EFactoryImpl implements Seff2javaastFactory {
     /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
@@ -37,12 +39,12 @@ public class Seff2javaastFactoryImpl extends EFactoryImpl implements Seff2javaas
     }
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
      *
      * @generated
      */
     public Seff2javaastFactoryImpl() {
-        super();
     }
 
     /**
@@ -52,14 +54,11 @@ public class Seff2javaastFactoryImpl extends EFactoryImpl implements Seff2javaas
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID()) {
-        case Seff2javaastPackage.SEFF2_METHOD_MAPPING:
-            return this.createSEFF2MethodMapping();
-        case Seff2javaastPackage.SEFF2_JAVA_AST:
-            return this.createSEFF2JavaAST();
-        default:
-            throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
+        return switch (eClass.getClassifierID()) {
+        case Seff2javaastPackage.SEFF2_METHOD_MAPPING -> createSEFF2MethodMapping();
+        case Seff2javaastPackage.SEFF2_JAVA_AST -> createSEFF2JavaAST();
+        default -> throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        };
     }
 
     /**
@@ -69,8 +68,7 @@ public class Seff2javaastFactoryImpl extends EFactoryImpl implements Seff2javaas
      */
     @Override
     public SEFF2MethodMapping createSEFF2MethodMapping() {
-        final SEFF2MethodMappingImpl seff2MethodMapping = new SEFF2MethodMappingImpl();
-        return seff2MethodMapping;
+        return new SEFF2MethodMappingImpl();
     }
 
     /**
@@ -80,8 +78,7 @@ public class Seff2javaastFactoryImpl extends EFactoryImpl implements Seff2javaas
      */
     @Override
     public SEFF2JavaAST createSEFF2JavaAST() {
-        final SEFF2JavaASTImpl seff2JavaAST = new SEFF2JavaASTImpl();
-        return seff2JavaAST;
+        return new SEFF2JavaASTImpl();
     }
 
     /**
@@ -91,7 +88,7 @@ public class Seff2javaastFactoryImpl extends EFactoryImpl implements Seff2javaas
      */
     @Override
     public Seff2javaastPackage getSeff2javaastPackage() {
-        return (Seff2javaastPackage) this.getEPackage();
+        return (Seff2javaastPackage) getEPackage();
     }
 
     /**

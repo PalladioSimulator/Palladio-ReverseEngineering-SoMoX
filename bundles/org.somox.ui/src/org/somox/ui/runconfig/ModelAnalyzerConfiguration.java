@@ -10,11 +10,10 @@ public abstract class ModelAnalyzerConfiguration<T extends AbstractMoxConfigurat
     protected T moxConfiguration = null;
 
     public ModelAnalyzerConfiguration() {
-        super();
     }
 
     public T getMoxConfiguration() {
-        return this.moxConfiguration;
+        return moxConfiguration;
     }
 
     public void setMoxConfiguration(final T moxConfiguration) {

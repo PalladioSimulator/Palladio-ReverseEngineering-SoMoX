@@ -30,8 +30,10 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
     protected void internalComputeDirected(final ClusteringRelation relationToCompute) {
 
         // removelater
-        // java.util.List<Type> type1 = relationToCompute.getComponentA().getImplementingClasses();
-        // java.util.List<Type> type2 = relationToCompute.getComponentB().getImplementingClasses();
+        // java.util.List<Type> type1 =
+        // relationToCompute.getComponentA().getImplementingClasses();
+        // java.util.List<Type> type2 =
+        // relationToCompute.getComponentB().getImplementingClasses();
         // if(type1!= null & type2!=null & type1.size()>0 & type2.size()>0){
         // if(type1.get(0).getName().equals("Store") &
         // type2.get(0).getName().equals("ApplicationEventHandlerImpl")){
@@ -39,16 +41,16 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
         // }
         // }
 
-        final Set<ConcreteClassifier> classes1 = this.getComponentToClassHelper()
+        final Set<ConcreteClassifier> classes1 = getComponentToClassHelper()
                 .deriveImplementingClasses(relationToCompute.getSourceComponent());
-        final Set<ConcreteClassifier> classes2 = this.getComponentToClassHelper()
+        final Set<ConcreteClassifier> classes2 = getComponentToClassHelper()
                 .deriveImplementingClasses(relationToCompute.getTargetComponent());
 
         // compute overall prefix
-        final org.emftext.language.java.containers.Package prefixPackage = this.computePrefix(classes1, classes2);
+        final org.emftext.language.java.containers.Package prefixPackage = computePrefix(classes1, classes2);
 
         if (prefixPackage == null) {
-            relationToCompute.setResultMetric(this.getMID(), 0.0);
+            relationToCompute.setResultMetric(getMID(), 0.0);
             return;
         }
         final EList<org.emftext.language.java.containers.Package> slices = KDMHelper.getOwnedPackages(prefixPackage);
@@ -65,8 +67,7 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
 
         // check how many of the computed layers exist in every slice
         if (max == 0) {
-            relationToCompute.setResultMetric(this.getMID(), 1.0);
-            return;
+            relationToCompute.setResultMetric(getMID(), 1.0);
         } else {
             final int expectedSubsystems = slices.size() * layers.size();
             int existingSubsystems = 0;
@@ -85,10 +86,9 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
             }
 
             if (expectedSubsystems == 0) {
-                relationToCompute.setResultMetric(this.getMID(), 1.0);
+                relationToCompute.setResultMetric(getMID(), 1.0);
             } else {
-                relationToCompute.setResultMetric(this.getMID(),
-                        (double) existingSubsystems / (double) expectedSubsystems);
+                relationToCompute.setResultMetric(getMID(), (double) existingSubsystems / (double) expectedSubsystems);
             }
         }
     }
@@ -112,15 +112,13 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
     /**
      * Computes the longest prefix for the given elements
      *
-     * @param elements1
-     *            first list of elements
-     * @param elements2
-     *            second list of elements
-     * @return the last package in the package-hierarchy in which all elements are included
+     * @param elements1 first list of elements
+     * @param elements2 second list of elements
+     * @return the last package in the package-hierarchy in which all elements are
+     *         included
      */
     private org.emftext.language.java.containers.Package computePrefix(final Set<ConcreteClassifier> elements1,
             final Set<ConcreteClassifier> elements2) {
-        String prefix = "";
         boolean prefixFound = false;
         org.emftext.language.java.containers.Package currentPackage = null;
 
@@ -144,20 +142,17 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
             return null;
         }
 
-        prefix = KDMHelper.computeFullQualifiedName(currentPackage);
+        String prefix = KDMHelper.computeFullQualifiedName(currentPackage);
 
         while (!prefixFound) {
             prefixFound = true;
 
             for (final ConcreteClassifier current : elements1) {
-                if (!KDMHelper.isInnerClass(current)) {
-                    if (KDMHelper.getSurroundingPackage(current) != null) {
-                        if (!KDMHelper.computeFullQualifiedName(KDMHelper.getSurroundingPackage(current))
+                if ((!KDMHelper.isInnerClass(current) && (KDMHelper.getSurroundingPackage(current) != null))
+                        && !KDMHelper.computeFullQualifiedName(KDMHelper.getSurroundingPackage(current))
                                 .contains(prefix)) {
-                            prefixFound = false;
-                            break;
-                        }
-                    }
+                    prefixFound = false;
+                    break;
                 }
             }
 
@@ -165,9 +160,8 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
                 // currentPackage = currentPackage.getPackage();
                 if (currentPackage == null) {
                     return null;
-                } else {
-                    prefix = KDMHelper.computeFullQualifiedName(currentPackage);
                 }
+                prefix = KDMHelper.computeFullQualifiedName(currentPackage);
             }
         }
         prefixFound = false;
@@ -176,14 +170,11 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
             prefixFound = true;
 
             for (final ConcreteClassifier current : elements2) {
-                if (!KDMHelper.isInnerClass(current)) {
-                    if (KDMHelper.getSurroundingPackage(current) != null) {
-                        if (!KDMHelper.computeFullQualifiedName(KDMHelper.getSurroundingPackage(current))
+                if ((!KDMHelper.isInnerClass(current) && (KDMHelper.getSurroundingPackage(current) != null))
+                        && !KDMHelper.computeFullQualifiedName(KDMHelper.getSurroundingPackage(current))
                                 .contains(prefix)) {
-                            prefixFound = false;
-                            break;
-                        }
-                    }
+                    prefixFound = false;
+                    break;
                 }
             }
 
@@ -191,9 +182,8 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
                 // currentPackage = currentPackage.getPackage();
                 if (currentPackage == null) {
                     return null;
-                } else {
-                    prefix = KDMHelper.computeFullQualifiedName(currentPackage);
                 }
+                prefix = KDMHelper.computeFullQualifiedName(currentPackage);
             }
         }
         return currentPackage;

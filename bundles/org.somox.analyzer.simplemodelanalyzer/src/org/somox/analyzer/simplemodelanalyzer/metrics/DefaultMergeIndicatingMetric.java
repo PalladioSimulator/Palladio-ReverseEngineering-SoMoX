@@ -19,8 +19,8 @@ import org.somox.metrics.structure.SubsystemComponent;
 import org.somox.metrics.tabs.MetricTab;
 
 /**
- * This class encapsulates the strategy used to compute the overall metric of the relationship of
- * two components indicating a merge into one component.
+ * This class encapsulates the strategy used to compute the overall metric of
+ * the relationship of two components indicating a merge into one component.
  *
  * @author Klaus Krogmann
  */
@@ -50,9 +50,8 @@ public class DefaultMergeIndicatingMetric extends AbstractComposedMetric {
     /*
      * (non-Javadoc)
      *
-     * @see
-     * org.somox.analyzer.simplemodelanalyzer.metrics.ComposedMetric#getCompositionFunction(org.
-     * somox.configuration.SoMoXConfiguration)
+     * @see org.somox.analyzer.simplemodelanalyzer.metrics.ComposedMetric#
+     * getCompositionFunction(org. somox.configuration.SoMoXConfiguration)
      */
     @Override
     protected ICompositionFunction getCompositionFunction(final SoMoXConfiguration somoxConfiguration) {
@@ -64,7 +63,8 @@ public class DefaultMergeIndicatingMetric extends AbstractComposedMetric {
      * (non-Javadoc)
      *
      * @see
-     * org.somox.analyzer.simplemodelanalyzer.metrics.ComposedMetric#getChildMetrics(java.util.Map)
+     * org.somox.analyzer.simplemodelanalyzer.metrics.ComposedMetric#getChildMetrics
+     * (java.util.Map)
      */
     @Override
     protected IMetric[] getChildMetrics(final Map<MetricID, IMetric> allMetrics) {
@@ -74,18 +74,18 @@ public class DefaultMergeIndicatingMetric extends AbstractComposedMetric {
                  * AdherenceToInterfaceCommunication.METRIC_ID), getMetric(allMetrics,
                  * NameResemblance.METRIC_ID), getMetric(allMetrics, DMS.METRIC_ID),
                  * getMetric(allMetrics, PackageMapping.METRIC_ID), getMetric(allMetrics,
-                 * DirectoryMapping.METRIC_ID), getMetric(allMetrics, SubsystemComponent.METRIC_ID),
-                 * getMetric(allMetrics, SliceLayerArchitectureQuality.METRIC_ID)
+                 * DirectoryMapping.METRIC_ID), getMetric(allMetrics,
+                 * SubsystemComponent.METRIC_ID), getMetric(allMetrics,
+                 * SliceLayerArchitectureQuality.METRIC_ID)
                  */
-                this.getMetric(allMetrics, Coupling.METRIC_ID),
-                this.getMetric(allMetrics, AdherenceToInterfaceCommunication.METRIC_ID),
-                this.getMetric(allMetrics, NameResemblance.METRIC_ID), this.getMetric(allMetrics, DMS.METRIC_ID),
-                this.getMetric(allMetrics, PackageMapping.METRIC_ID),
-                this.getMetric(allMetrics, DirectoryMapping.METRIC_ID),
-                this.getMetric(allMetrics, SubsystemComponent.METRIC_ID),
-                this.getMetric(allMetrics, SliceLayerArchitectureQuality.METRIC_ID),
+                getMetric(allMetrics, Coupling.METRIC_ID),
+                getMetric(allMetrics, AdherenceToInterfaceCommunication.METRIC_ID),
+                getMetric(allMetrics, NameResemblance.METRIC_ID), getMetric(allMetrics, DMS.METRIC_ID),
+                getMetric(allMetrics, PackageMapping.METRIC_ID), getMetric(allMetrics, DirectoryMapping.METRIC_ID),
+                getMetric(allMetrics, SubsystemComponent.METRIC_ID),
+                getMetric(allMetrics, SliceLayerArchitectureQuality.METRIC_ID),
 
-                this.getMetric(allMetrics, DefaultCompositionIndicatingMetric.METRIC_ID), // FIXME:
+                getMetric(allMetrics, DefaultCompositionIndicatingMetric.METRIC_ID), // FIXME:
                 // unwanted
                 // dependency
                 // to

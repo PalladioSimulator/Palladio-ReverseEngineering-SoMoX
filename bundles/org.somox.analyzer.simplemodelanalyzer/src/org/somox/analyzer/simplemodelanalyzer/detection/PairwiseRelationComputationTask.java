@@ -21,8 +21,6 @@ public class PairwiseRelationComputationTask implements Callable<ClusteringRelat
 
     public PairwiseRelationComputationTask(final IMetric overallMetric, final ClusteringRelation firstRelation,
             final ClusteringRelation secondRelation, final Map<MetricID, IMetric> allMetrics) {
-        super();
-
         this.overallMetric = overallMetric;
         this.firstRelation = firstRelation;
         this.secondRelation = secondRelation;
@@ -32,23 +30,20 @@ public class PairwiseRelationComputationTask implements Callable<ClusteringRelat
     @Override
     public ClusteringRelation[] call() throws Exception {
         final ClusteringRelation result[] = new ClusteringRelation[2];
-        result[0] = this.computeClusteringRelation(this.firstRelation, null);
-        result[1] = this.computeClusteringRelation(this.secondRelation, this.firstRelation);
+        result[0] = computeClusteringRelation(firstRelation, null);
+        result[1] = computeClusteringRelation(secondRelation, firstRelation);
         return result;
     }
 
     /**
-     * Create a new {@link ClusteringRelation} based on the metrics computed for two given class
-     * links.
+     * Create a new {@link ClusteringRelation} based on the metrics computed for two
+     * given class links.
      *
-     * @param componentCandidates
-     *            list of all component candidates found so far.
-     * @param metricComputationStrategy
-     *            metric calculation strategy
-     * @param firstComponentCandidate
-     *            first component candidate
-     * @param secondComponentCandidate
-     *            second component candidate
+     * @param componentCandidates       list of all component candidates found so
+     *                                  far.
+     * @param metricComputationStrategy metric calculation strategy
+     * @param firstComponentCandidate   first component candidate
+     * @param secondComponentCandidate  second component candidate
      * @return Evaluation of a pair of component candidates using the passed
      *
      *         <pre>
@@ -62,12 +57,12 @@ public class PairwiseRelationComputationTask implements Callable<ClusteringRelat
             final ClusteringRelation oppositeRelation) throws ModelAnalyzerException {
         if (oppositeRelation != null) {
             for (final Map.Entry<MetricID, Double> entry : oppositeRelation.getResult().entrySet()) {
-                if (this.allMetrics.get(entry.getKey()).isCommutative()) {
+                if (allMetrics.get(entry.getKey()).isCommutative()) {
                     relationToCompute.setResultMetric(entry.getKey(), entry.getValue());
                 }
             }
         }
-        this.overallMetric.computeDirected(relationToCompute);
+        overallMetric.computeDirected(relationToCompute);
         return relationToCompute;
     }
 }

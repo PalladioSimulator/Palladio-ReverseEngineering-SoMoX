@@ -17,8 +17,8 @@ import org.somox.kdmhelper.KDMHelper;
 //import de.fzi.gast.types.Visibilities;
 
 /**
- * Filter all classes which are only data classes, i.e., all public methods are only getter and
- * setter methods
+ * Filter all classes which are only data classes, i.e., all public methods are
+ * only getter and setter methods
  *
  * @author Steffen Becker
  */
@@ -33,22 +33,20 @@ public class DataObjectFilter extends BaseFilter<ConcreteClassifier> {
         } // REALLYADDED
         final List<Method> allMethods = KDMHelper.getMethods(object);
         for (final Method m : allMethods) {
-            if (m.isPublic()) {
-                if (this.isNotGetterOrSetter(m)) {
-                    return true;
-                }
+            if (m.isPublic() && isNotGetterOrSetter(m)) {
+                return true;
             }
         }
         logger.debug("Removed GAST Class " + object.toString() + " from component candidates as it is a datatype");
         return false;
     }
 
-    private final String[] filteredPrefixes = new String[] { "is", "get", "set", "equals", "hashcode" };
+    private final String[] filteredPrefixes = { "is", "get", "set", "equals", "hashcode" };
 
     private boolean isNotGetterOrSetter(final Method m) {
         boolean result = false;
         final String simpleMethodName = m.getName().toLowerCase();
-        for (final String prefix : this.filteredPrefixes) {
+        for (final String prefix : filteredPrefixes) {
             result |= simpleMethodName.startsWith(prefix);
         }
         return !result;

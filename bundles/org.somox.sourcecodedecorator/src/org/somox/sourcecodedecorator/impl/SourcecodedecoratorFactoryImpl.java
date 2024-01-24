@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.somox.sourcecodedecorator.*;
 import org.somox.sourcecodedecorator.AbstractActionClassMethodLink;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 import org.somox.sourcecodedecorator.ControlFlowLevelSourceCodeLink;
@@ -18,208 +17,217 @@ import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 import org.somox.sourcecodedecorator.MethodLevelResourceDemandingInternalBehaviorLink;
 import org.somox.sourcecodedecorator.MethodLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.PCMSystemImplementatingClassesLink;
+import org.somox.sourcecodedecorator.SEFF2MethodMapping;
+import org.somox.sourcecodedecorator.SeffElementSourceCodeLink;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
 import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
+ * end-user-doc -->
+ *
  * @generated
  */
 public class SourcecodedecoratorFactoryImpl extends EFactoryImpl implements SourcecodedecoratorFactory {
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
      * @generated
      */
     public static SourcecodedecoratorFactory init() {
         try {
-            SourcecodedecoratorFactory theSourcecodedecoratorFactory = (SourcecodedecoratorFactory)EPackage.Registry.INSTANCE.getEFactory(SourcecodedecoratorPackage.eNS_URI);
+            final SourcecodedecoratorFactory theSourcecodedecoratorFactory = (SourcecodedecoratorFactory) EPackage.Registry.INSTANCE
+                    .getEFactory(SourcecodedecoratorPackage.eNS_URI);
             if (theSourcecodedecoratorFactory != null) {
                 return theSourcecodedecoratorFactory;
             }
-        }
-        catch (Exception exception) {
+        } catch (final Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new SourcecodedecoratorFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
      * @generated
      */
     public SourcecodedecoratorFactoryImpl() {
-        super();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
-    public EObject create(EClass eClass) {
-        switch (eClass.getClassifierID()) {
-            case SourcecodedecoratorPackage.FILE_LEVEL_SOURCE_CODE_LINK: return createFileLevelSourceCodeLink();
-            case SourcecodedecoratorPackage.METHOD_LEVEL_SOURCE_CODE_LINK: return createMethodLevelSourceCodeLink();
-            case SourcecodedecoratorPackage.CONTROL_FLOW_LEVEL_SOURCE_CODE_LINK: return createControlFlowLevelSourceCodeLink();
-            case SourcecodedecoratorPackage.SOURCE_CODE_DECORATOR_REPOSITORY: return createSourceCodeDecoratorRepository();
-            case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK: return createInterfaceSourceCodeLink();
-            case SourcecodedecoratorPackage.COMPONENT_IMPLEMENTING_CLASSES_LINK: return createComponentImplementingClassesLink();
-            case SourcecodedecoratorPackage.PCM_SYSTEM_IMPLEMENTATING_CLASSES_LINK: return createPCMSystemImplementatingClassesLink();
-            case SourcecodedecoratorPackage.DATA_TYPE_SOURCE_CODE_LINK: return createDataTypeSourceCodeLink();
-            case SourcecodedecoratorPackage.INNER_DATATYPE_SOURCE_CODE_LINK: return createInnerDatatypeSourceCodeLink();
-            case SourcecodedecoratorPackage.ABSTRACT_ACTION_CLASS_METHOD_LINK: return createAbstractActionClassMethodLink();
-            case SourcecodedecoratorPackage.METHOD_LEVEL_RESOURCE_DEMANDING_INTERNAL_BEHAVIOR_LINK: return createMethodLevelResourceDemandingInternalBehaviorLink();
-            case SourcecodedecoratorPackage.SEFF2_METHOD_MAPPING: return createSEFF2MethodMapping();
-            case SourcecodedecoratorPackage.SEFF_ELEMENT_SOURCE_CODE_LINK: return createSeffElementSourceCodeLink();
-            default:
-                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
+    public EObject create(final EClass eClass) {
+        return switch (eClass.getClassifierID()) {
+        case SourcecodedecoratorPackage.FILE_LEVEL_SOURCE_CODE_LINK -> createFileLevelSourceCodeLink();
+        case SourcecodedecoratorPackage.METHOD_LEVEL_SOURCE_CODE_LINK -> createMethodLevelSourceCodeLink();
+        case SourcecodedecoratorPackage.CONTROL_FLOW_LEVEL_SOURCE_CODE_LINK -> createControlFlowLevelSourceCodeLink();
+        case SourcecodedecoratorPackage.SOURCE_CODE_DECORATOR_REPOSITORY -> createSourceCodeDecoratorRepository();
+        case SourcecodedecoratorPackage.INTERFACE_SOURCE_CODE_LINK -> createInterfaceSourceCodeLink();
+        case SourcecodedecoratorPackage.COMPONENT_IMPLEMENTING_CLASSES_LINK -> createComponentImplementingClassesLink();
+        case SourcecodedecoratorPackage.PCM_SYSTEM_IMPLEMENTATING_CLASSES_LINK ->
+            createPCMSystemImplementatingClassesLink();
+        case SourcecodedecoratorPackage.DATA_TYPE_SOURCE_CODE_LINK -> createDataTypeSourceCodeLink();
+        case SourcecodedecoratorPackage.INNER_DATATYPE_SOURCE_CODE_LINK -> createInnerDatatypeSourceCodeLink();
+        case SourcecodedecoratorPackage.ABSTRACT_ACTION_CLASS_METHOD_LINK -> createAbstractActionClassMethodLink();
+        case SourcecodedecoratorPackage.METHOD_LEVEL_RESOURCE_DEMANDING_INTERNAL_BEHAVIOR_LINK ->
+            createMethodLevelResourceDemandingInternalBehaviorLink();
+        case SourcecodedecoratorPackage.SEFF2_METHOD_MAPPING -> createSEFF2MethodMapping();
+        case SourcecodedecoratorPackage.SEFF_ELEMENT_SOURCE_CODE_LINK -> createSeffElementSourceCodeLink();
+        default -> throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        };
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public FileLevelSourceCodeLink createFileLevelSourceCodeLink() {
-        FileLevelSourceCodeLinkImpl fileLevelSourceCodeLink = new FileLevelSourceCodeLinkImpl();
-        return fileLevelSourceCodeLink;
+        return new FileLevelSourceCodeLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public MethodLevelSourceCodeLink createMethodLevelSourceCodeLink() {
-        MethodLevelSourceCodeLinkImpl methodLevelSourceCodeLink = new MethodLevelSourceCodeLinkImpl();
-        return methodLevelSourceCodeLink;
+        return new MethodLevelSourceCodeLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public ControlFlowLevelSourceCodeLink createControlFlowLevelSourceCodeLink() {
-        ControlFlowLevelSourceCodeLinkImpl controlFlowLevelSourceCodeLink = new ControlFlowLevelSourceCodeLinkImpl();
-        return controlFlowLevelSourceCodeLink;
+        return new ControlFlowLevelSourceCodeLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public SourceCodeDecoratorRepository createSourceCodeDecoratorRepository() {
-        SourceCodeDecoratorRepositoryImpl sourceCodeDecoratorRepository = new SourceCodeDecoratorRepositoryImpl();
-        return sourceCodeDecoratorRepository;
+        return new SourceCodeDecoratorRepositoryImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public InterfaceSourceCodeLink createInterfaceSourceCodeLink() {
-        InterfaceSourceCodeLinkImpl interfaceSourceCodeLink = new InterfaceSourceCodeLinkImpl();
-        return interfaceSourceCodeLink;
+        return new InterfaceSourceCodeLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public ComponentImplementingClassesLink createComponentImplementingClassesLink() {
-        ComponentImplementingClassesLinkImpl componentImplementingClassesLink = new ComponentImplementingClassesLinkImpl();
-        return componentImplementingClassesLink;
+        return new ComponentImplementingClassesLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public PCMSystemImplementatingClassesLink createPCMSystemImplementatingClassesLink() {
-        PCMSystemImplementatingClassesLinkImpl pcmSystemImplementatingClassesLink = new PCMSystemImplementatingClassesLinkImpl();
-        return pcmSystemImplementatingClassesLink;
+        return new PCMSystemImplementatingClassesLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public DataTypeSourceCodeLink createDataTypeSourceCodeLink() {
-        DataTypeSourceCodeLinkImpl dataTypeSourceCodeLink = new DataTypeSourceCodeLinkImpl();
-        return dataTypeSourceCodeLink;
+        return new DataTypeSourceCodeLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public InnerDatatypeSourceCodeLink createInnerDatatypeSourceCodeLink() {
-        InnerDatatypeSourceCodeLinkImpl innerDatatypeSourceCodeLink = new InnerDatatypeSourceCodeLinkImpl();
-        return innerDatatypeSourceCodeLink;
+        return new InnerDatatypeSourceCodeLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public AbstractActionClassMethodLink createAbstractActionClassMethodLink() {
-        AbstractActionClassMethodLinkImpl abstractActionClassMethodLink = new AbstractActionClassMethodLinkImpl();
-        return abstractActionClassMethodLink;
+        return new AbstractActionClassMethodLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public MethodLevelResourceDemandingInternalBehaviorLink createMethodLevelResourceDemandingInternalBehaviorLink() {
-        MethodLevelResourceDemandingInternalBehaviorLinkImpl methodLevelResourceDemandingInternalBehaviorLink = new MethodLevelResourceDemandingInternalBehaviorLinkImpl();
-        return methodLevelResourceDemandingInternalBehaviorLink;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public SEFF2MethodMapping createSEFF2MethodMapping() {
-        SEFF2MethodMappingImpl seff2MethodMapping = new SEFF2MethodMappingImpl();
-        return seff2MethodMapping;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public SeffElementSourceCodeLink createSeffElementSourceCodeLink() {
-        SeffElementSourceCodeLinkImpl seffElementSourceCodeLink = new SeffElementSourceCodeLinkImpl();
-        return seffElementSourceCodeLink;
+        return new MethodLevelResourceDemandingInternalBehaviorLinkImpl();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public SEFF2MethodMapping createSEFF2MethodMapping() {
+        return new SEFF2MethodMappingImpl();
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public SeffElementSourceCodeLink createSeffElementSourceCodeLink() {
+        return new SeffElementSourceCodeLinkImpl();
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
     public SourcecodedecoratorPackage getSourcecodedecoratorPackage() {
-        return (SourcecodedecoratorPackage)getEPackage();
+        return (SourcecodedecoratorPackage) getEPackage();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @deprecated
      * @generated
      */

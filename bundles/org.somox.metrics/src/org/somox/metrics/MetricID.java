@@ -1,5 +1,7 @@
 package org.somox.metrics;
 
+import java.util.Objects;
+
 /**
  * A string based identifier of a metric used in SoMoX.
  *
@@ -10,22 +12,20 @@ public class MetricID {
     private final String metricID;
 
     public MetricID(final String id) {
-        super();
-
         if (id == null) {
             throw new IllegalArgumentException("Metric ID must not be null");
         }
 
-        this.metricID = id;
+        metricID = id;
     }
 
     public String getMetricID() {
-        return this.metricID;
+        return metricID;
     }
 
     @Override
     public String toString() {
-        return this.metricID;
+        return metricID;
     }
 
     /*
@@ -35,10 +35,7 @@ public class MetricID {
      */
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((this.metricID == null) ? 0 : this.metricID.hashCode());
-        return result;
+        return Objects.hash(metricID);
     }
 
     /*
@@ -51,14 +48,11 @@ public class MetricID {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
-            return false;
-        }
-        if (this.getClass() != obj.getClass()) {
+        if ((obj == null) || (this.getClass() != obj.getClass())) {
             return false;
         }
         final MetricID other = (MetricID) obj;
-        if (!this.metricID.equals(other.metricID)) {
+        if (!metricID.equals(other.metricID)) {
             return false;
         }
         return true;

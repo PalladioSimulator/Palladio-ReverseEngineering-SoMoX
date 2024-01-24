@@ -35,16 +35,16 @@ public class SoMoXCoreStandard implements SoMoXCore {
     // ---------------------------------
 
     /** The map of all configured Software Extractors */
-    private final HashMap<String, SoftwareExtractor> softwareExtractorMap = new HashMap<String, SoftwareExtractor>();
+    private final HashMap<String, SoftwareExtractor> softwareExtractorMap = new HashMap<>();
 
     /** The map of all configured Model Analyzers */
-    private final HashMap<String, ModelAnalyzer> modelAnalyzerMap = new HashMap<String, ModelAnalyzer>();
+    private final HashMap<String, ModelAnalyzer> modelAnalyzerMap = new HashMap<>();
 
     /** The map of all existing extraction results [etxractorID,resultObject] */
-    private final HashMap<String, ExtractionResult> extractionResultMap = new HashMap<String, ExtractionResult>();
+    private final HashMap<String, ExtractionResult> extractionResultMap = new HashMap<>();
 
     /** The list of executed software extractors */
-    private final List<SoftwareExtractor> executedList = new LinkedList<SoftwareExtractor>();
+    private final List<SoftwareExtractor> executedList = new LinkedList<>();
 
     /** The resource set of the core to work with */
     private ResourceSet resourceSet = null;
@@ -59,8 +59,8 @@ public class SoMoXCoreStandard implements SoMoXCore {
      * Default constructor preparing the ecore resource set
      */
     public SoMoXCoreStandard() {
-        this.resourceSet = new ResourceSetImpl();
-        this.resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
+        resourceSet = new ResourceSetImpl();
+        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
                 .put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 
     }
@@ -82,35 +82,32 @@ public class SoMoXCoreStandard implements SoMoXCore {
     // TODO Handle multiple extractors
     @Override
     public void runExtraction(final IProgressMonitor progressMonitor, final HashMap<String, String> preferences) {
-        this.logger.info("extraction started");
-        final Iterator<Entry<String, SoftwareExtractor>> iter = this.softwareExtractorMap.entrySet().iterator();
-        ;
-        while (iter.hasNext()) {
-            final Entry<String, SoftwareExtractor> entry = iter.next();
+        logger.info("extraction started");
+        for (final Entry<String, SoftwareExtractor> entry : softwareExtractorMap.entrySet()) {
             final ExtractionResult result = entry.getValue().runExtraction(entry.getKey(), preferences);
-            this.extractionResultMap.put(entry.getKey(), result);
-            this.executedList.add(entry.getValue());
+            extractionResultMap.put(entry.getKey(), result);
+            executedList.add(entry.getValue());
         }
-        this.logger.info("extraction finished");
+        logger.info("extraction finished");
     }
 
     @Override
     public AnalysisResult runAnalyzer(final String analyzerID, final IProgressMonitor progressMonitor,
             final HashMap<String, String> preferences, final SoMoXConfiguration somoxConfiguration)
-                    throws ModelAnalyzerException {
-        this.logger.info("analysis started");
-        this.logger.info("analysis of results: " + this.extractionResultMap);
+            throws ModelAnalyzerException {
+        logger.info("analysis started");
+        logger.info("analysis of results: " + extractionResultMap);
 
         // perform the analysis
-        this.logger.info("Start model analyzer (" + analyzerID + ")");
-        final ModelAnalyzer analyzer = this.modelAnalyzerMap.get(analyzerID);
+        logger.info("Start model analyzer (" + analyzerID + ")");
+        final ModelAnalyzer analyzer = modelAnalyzerMap.get(analyzerID);
         if (analyzer == null) {
-            this.logger.error("Model Analyzer " + analyzerID + " not available.", null);
+            logger.error("Model Analyzer " + analyzerID + " not available.", null);
             throw new ModelAnalyzerException("Model Analyzer not available");
         }
 
-        final AnalysisResult result = analyzer.analyze(somoxConfiguration, this.extractionResultMap, progressMonitor);
-        this.logger.info("Analysis finished with result: " + result.getResultStatus());
+        final AnalysisResult result = analyzer.analyze(somoxConfiguration, extractionResultMap, progressMonitor);
+        logger.info("Analysis finished with result: " + result.getResultStatus());
 
         return result;
     }
@@ -126,22 +123,22 @@ public class SoMoXCoreStandard implements SoMoXCore {
 
     @Override
     public void addSoftwareExtractor(final String id, final SoftwareExtractor extractor) {
-        this.softwareExtractorMap.put(id, extractor);
+        softwareExtractorMap.put(id, extractor);
     }
 
     @Override
     public void removeSoftwareExtractor(final String id) {
-        this.softwareExtractorMap.remove(id);
+        softwareExtractorMap.remove(id);
     }
 
     @Override
     public void addModelAnalyzer(final String id, final ModelAnalyzer analyzer) {
-        this.modelAnalyzerMap.put(id, analyzer);
+        modelAnalyzerMap.put(id, analyzer);
     }
 
     @Override
     public void removeModelAnalyzer(final String id) {
-        this.modelAnalyzerMap.remove(id);
+        modelAnalyzerMap.remove(id);
     }
 
     // ---------------------------------
@@ -150,18 +147,15 @@ public class SoMoXCoreStandard implements SoMoXCore {
 
     @Override
     public List<SoftwareExtractor> getExecutedSoftwareExtractors() {
-        return this.executedList;
+        return executedList;
     }
 
     @Override
     public LinkedList<ConfigurationDefinition> getConfigurationDefinitions() {
-        final LinkedList<ConfigurationDefinition> definitions = new LinkedList<ConfigurationDefinition>();
-
-        // add core configurations
-        definitions.addAll(this.getCoreConfigurationDefinitions());
+        final LinkedList<ConfigurationDefinition> definitions = new LinkedList<>(getCoreConfigurationDefinitions());
 
         // add extractor configurations
-        final Iterator<SoftwareExtractor> extractors = this.softwareExtractorMap.values().iterator();
+        final Iterator<SoftwareExtractor> extractors = softwareExtractorMap.values().iterator();
         while (extractors.hasNext()) {
             definitions.addAll(extractors.next().getConfigurationDefinitions());
         }
@@ -174,9 +168,7 @@ public class SoMoXCoreStandard implements SoMoXCore {
 
     @Override
     public LinkedList<ConfigurationDefinition> getGlobalConfigurationDefinitions() {
-        final LinkedList<ConfigurationDefinition> definitions = new LinkedList<ConfigurationDefinition>();
-
-        return definitions;
+        return new LinkedList<>();
     }
 
     /**
@@ -185,7 +177,6 @@ public class SoMoXCoreStandard implements SoMoXCore {
      * @return The list of configuration definition objects
      */
     private Collection<ConfigurationDefinition> getCoreConfigurationDefinitions() {
-        final LinkedList<ConfigurationDefinition> configs = new LinkedList<ConfigurationDefinition>();
-        return configs;
+        return new LinkedList<>();
     }
 }

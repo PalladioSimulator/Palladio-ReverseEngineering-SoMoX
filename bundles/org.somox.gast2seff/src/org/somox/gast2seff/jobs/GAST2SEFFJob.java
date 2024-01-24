@@ -4,7 +4,6 @@
 package org.somox.gast2seff.jobs;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -41,8 +40,8 @@ import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
 import de.uka.ipd.sdq.workflow.jobs.UserCanceledException;
 
 /**
- * Transformation Job transforming a SAM instance with GAST Behaviours into a SAM instance with SEFF
- * behaviours
+ * Transformation Job transforming a SAM instance with GAST Behaviours into a
+ * SAM instance with SEFF behaviours
  *
  * @author Steffen Becker, Klaus Krogmann
  */
@@ -54,7 +53,8 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
     private SoMoXBlackboard blackboard;
 
     /**
-     * The resource set used to load and store all resources needed for the transformation
+     * The resource set used to load and store all resources needed for the
+     * transformation
      */
     private final ResourceSet resourceSet = new ResourceSetImpl();
 
@@ -69,9 +69,10 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
     private MethodCallFinder methodCallFinder;
 
     /**
-     * Field that indicates whether ResourceDemandingInternalBehaviour should be created for
-     * internal method calls or not. If set to true one RDIB will be created for each internal
-     * method. If set to false the intern method are inlined in the SEFF directly.
+     * Field that indicates whether ResourceDemandingInternalBehaviour should be
+     * created for internal method calls or not. If set to true one RDIB will be
+     * created for each internal method. If set to false the intern method are
+     * inlined in the SEFF directly.
      */
     private final boolean createResourceDemandingInternalBehaviour;
 
@@ -80,7 +81,7 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
      */
     private final IFunctionClassificationStrategyFactory iFunctionClassificationStrategyFactory;
 
-    private InterfaceOfExternalCallFindingFactory interfaceOfExternalCallFindingFactory;
+    private final InterfaceOfExternalCallFindingFactory interfaceOfExternalCallFindingFactory;
 
     public GAST2SEFFJob() {
         this(false, new IFunctionClassificationStrategyFactory() {
@@ -96,48 +97,46 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
 
     public GAST2SEFFJob(final boolean createResourceDemandingInternalBehaviour,
             final IFunctionClassificationStrategyFactory iFunctionClassificationStrategyFactory,
-            InterfaceOfExternalCallFindingFactory interfaceOfExternalCallFindingFactory) {
-        super();
+            final InterfaceOfExternalCallFindingFactory interfaceOfExternalCallFindingFactory) {
         this.createResourceDemandingInternalBehaviour = createResourceDemandingInternalBehaviour;
         this.iFunctionClassificationStrategyFactory = iFunctionClassificationStrategyFactory;
         this.interfaceOfExternalCallFindingFactory = interfaceOfExternalCallFindingFactory;
         // performance optimisation:
-        final Map<URI, Resource> cache = new HashMap<URI, Resource>();
-        ((ResourceSetImpl) this.resourceSet).setURIResourceMap(cache);
+        final Map<URI, Resource> cache = new HashMap<>();
+        ((ResourceSetImpl) resourceSet).setURIResourceMap(cache);
     }
 
     /*
      * (non-Javadoc)
      *
-     * @see de.uka.ipd.sdq.workflow.IJob#execute(org.eclipse.core.runtime.IProgressMonitor)
+     * @see de.uka.ipd.sdq.workflow.IJob#execute(org.eclipse.core.runtime.
+     * IProgressMonitor)
      */
     @Override
     public void execute(final IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
 
         monitor.subTask("loading models from blackboard");
 
-        final AnalysisResult result = this.blackboard.getAnalysisResult();
-        this.sourceCodeDecoratorModel = result.getSourceCodeDecoratorRepository();
-        this.root = result.getRoot();
-        this.methodCallFinder = new MethodCallFinder();
+        final AnalysisResult result = blackboard.getAnalysisResult();
+        sourceCodeDecoratorModel = result.getSourceCodeDecoratorRepository();
+        root = result.getRoot();
+        methodCallFinder = new MethodCallFinder();
 
         final IProgressMonitor subMonitor = new SubProgressMonitor(monitor, IProgressMonitor.UNKNOWN);
         subMonitor.setTaskName("Creating SEFF behaviour");
 
-        final Iterator<SEFF2MethodMapping> iterator = this.sourceCodeDecoratorModel.getSeff2MethodMappings().iterator();
-        while (iterator.hasNext()) {
-            final SEFF2MethodMapping astBehaviour = iterator.next();
+        for (final SEFF2MethodMapping astBehaviour : sourceCodeDecoratorModel.getSeff2MethodMappings()) {
             final ResourceDemandingSEFF seff = (ResourceDemandingSEFF) astBehaviour.getSeff();
             final String name = seff.getId();
-            this.logger.info("Found AST behaviour, generating SEFF behaviour for it: " + name);
+            logger.info("Found AST behaviour, generating SEFF behaviour for it: " + name);
 
-            this.generateSEFFForGASTBehaviour(seff);
+            generateSEFFForGASTBehaviour(seff);
             monitor.worked(1);
         }
 
         // Create default annotations
         final DefaultQosAnnotationsBuilder qosAnnotationBuilder = new DefaultQosAnnotationsBuilder();
-        qosAnnotationBuilder.buildDefaultQosAnnotations(this.sourceCodeDecoratorModel.getSeff2MethodMappings());
+        qosAnnotationBuilder.buildDefaultQosAnnotations(sourceCodeDecoratorModel.getSeff2MethodMappings());
 
         subMonitor.done();
     }
@@ -155,8 +154,7 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
     /**
      * Create a new PCM SEFF.
      *
-     * @param seff
-     *            The SEFF which is filled by this method
+     * @param seff The SEFF which is filled by this method
      * @return The completed SEFF, returned for convenience
      * @throws JobFailedException
      */
@@ -167,28 +165,27 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
 
         // initialise for new component / seff to reverse engineer:
         final BasicComponent basicComponent = (BasicComponent) seff.eContainer();
-        final IFunctionClassificationStrategy basicFunctionClassifierStrategy = this.iFunctionClassificationStrategyFactory
-                .createIFunctionClassificationStrategy(this.sourceCodeDecoratorModel, basicComponent, this.root,
-                        this.methodCallFinder);
-        this.typeVisitor = new FunctionCallClassificationVisitor(basicFunctionClassifierStrategy,
-                this.methodCallFinder);
+        final IFunctionClassificationStrategy basicFunctionClassifierStrategy = iFunctionClassificationStrategyFactory
+                .createIFunctionClassificationStrategy(sourceCodeDecoratorModel, basicComponent, root,
+                        methodCallFinder);
+        typeVisitor = new FunctionCallClassificationVisitor(basicFunctionClassifierStrategy, methodCallFinder);
 
-        final StatementListContainer body = this.findBody(seff);// GAST2SEFFCHANGE
-        this.logger.trace("visiting (seff entry): " + seff.getId());
+        final StatementListContainer body = findBody(seff);// GAST2SEFFCHANGE
+        logger.trace("visiting (seff entry): " + seff.getId());
         if (body != null) {
-            if (this.createResourceDemandingInternalBehaviour) {
+            if (createResourceDemandingInternalBehaviour) {
                 final ResourceDemandingBehaviourForClassMethodFinding defaultResourceDemandingBehaviourForClassMethodFinder = new DefaultResourceDemandingBehaviourForClassMethodFinder(
-                        this.sourceCodeDecoratorModel, basicComponent);
-                VisitorUtils.visitJaMoPPMethod(seff, basicComponent, body, this.sourceCodeDecoratorModel,
-                        this.typeVisitor, interfaceOfExternalCallFindingFactory,
-                        defaultResourceDemandingBehaviourForClassMethodFinder, this.methodCallFinder);
+                        sourceCodeDecoratorModel, basicComponent);
+                VisitorUtils.visitJaMoPPMethod(seff, basicComponent, body, sourceCodeDecoratorModel, typeVisitor,
+                        interfaceOfExternalCallFindingFactory, defaultResourceDemandingBehaviourForClassMethodFinder,
+                        methodCallFinder);
             } else {
-                VisitorUtils.visitJaMoPPMethod(seff, basicComponent, body, this.sourceCodeDecoratorModel,
-                        this.typeVisitor, interfaceOfExternalCallFindingFactory, this.methodCallFinder);
+                VisitorUtils.visitJaMoPPMethod(seff, basicComponent, body, sourceCodeDecoratorModel, typeVisitor,
+                        interfaceOfExternalCallFindingFactory, methodCallFinder);
             }
 
         } else {
-            this.logger.warn("Found GAST behaviour (" + seff.getId() + ") without a method body... Skipping it...");
+            logger.warn("Found GAST behaviour (" + seff.getId() + ") without a method body... Skipping it...");
         }
 
         seff.getSteps_Behaviour().add(stop);
@@ -200,11 +197,11 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
     /**
      * Retrieve the matching GAST behaviour stub from the GAST Behaviour repository
      *
-     * @param seff
-     *            The gast behaviour stub for which a matching GAST behaviour is needed
+     * @param seff The gast behaviour stub for which a matching GAST behaviour is
+     *             needed
      * @return The GAST behaviour matching the gast behaviour stub
-     * @throws JobFailedException
-     *             Thrown if the gast behaviour is missing in the model file
+     * @throws JobFailedException Thrown if the gast behaviour is missing in the
+     *                            model file
      */
     private StatementListContainer findBody(final ResourceDemandingSEFF seff) throws JobFailedException {// GAST2SEFFCHANGE
 
@@ -212,15 +209,15 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
         // onlyOnceAsGastBehaviour(this.gastBehaviourRepositoryModel.getSeff2MethodMappings(),
         // seff);
         // TODO burkha 16.05.2013 remove this after checking
-        this.onlyOnceAsGastBehaviour(this.sourceCodeDecoratorModel.getSeff2MethodMappings(), seff);
+        onlyOnceAsGastBehaviour(sourceCodeDecoratorModel.getSeff2MethodMappings(), seff);
 
-        for (final SEFF2MethodMapping behaviour : this.sourceCodeDecoratorModel.getSeff2MethodMappings()) {
+        for (final SEFF2MethodMapping behaviour : sourceCodeDecoratorModel.getSeff2MethodMappings()) {
             if (((ResourceDemandingSEFF) behaviour.getSeff()).getId().equals(seff.getId())) {
-                this.logger.debug("Matching SEFF found " + seff.getId());
+                logger.debug("Matching SEFF found " + seff.getId());
                 return behaviour.getStatementListContainer();
             }
         }
-        this.logger.warn("Checked gastBehaviourRepository for " + seff.getId() + " but found none");
+        logger.warn("Checked gastBehaviourRepository for " + seff.getId() + " but found none");
         throw new JobFailedException("Unable to find operation body for given method");
     }
 
@@ -243,7 +240,7 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
         }
 
         if (i != 1) {
-            this.logger.error("Assertion fails - onlyOnceAsGastBehaviour: i = " + i + " for "
+            logger.error("Assertion fails - onlyOnceAsGastBehaviour: i = " + i + " for "
                     + ((ResourceDemandingSEFF) seff).getId());
         }
 
@@ -253,8 +250,8 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
     /**
      * Generate a SEFF for the given GAST behaviour
      *
-     * @param gastBehaviourStub
-     *            The gast behaviour stub for whose behaviour a SEFF is generated
+     * @param gastBehaviourStub The gast behaviour stub for whose behaviour a SEFF
+     *                          is generated
      * @return The generated SEFF
      * @throws JobFailedException
      */
@@ -264,25 +261,28 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
         // SeffFactory.eINSTANCE.createResourceDemandingSEFF();
 
         // createSeff(gastBehaviourStub,resourceDemandingSEFF);
-        this.createSeff(gastBehaviourStub);
+        createSeff(gastBehaviourStub);
 
-        // SeffBehaviourStub seffBehaviourStub = findOrCreateBehaviourStub(gastBehaviourStub);
+        // SeffBehaviourStub seffBehaviourStub =
+        // findOrCreateBehaviourStub(gastBehaviourStub);
         // resourceDemandingSEFF.setSeffBehaviourStub(seffBehaviourStub);
 
         return gastBehaviourStub;
     }
 
     /**
-     * Finds an existing SEFF behaviour stub and reuses it or creates a new SEFF behaviour stub if
-     * there is none for the given GAST behaviour stub
+     * Finds an existing SEFF behaviour stub and reuses it or creates a new SEFF
+     * behaviour stub if there is none for the given GAST behaviour stub
      *
-     * @param gastBehaviourStub
-     *            The GAST behaviour stub for which a matching SEFF behaviour stub is searched
+     * @param gastBehaviourStub The GAST behaviour stub for which a matching SEFF
+     *                          behaviour stub is searched
      * @return The found or newly created SEFF behaviour stub
      */
-    // private SeffBehaviourStub findOrCreateBehaviourStub(ResourceDemandingSEFF gastBehaviourStub)
+    // private SeffBehaviourStub findOrCreateBehaviourStub(ResourceDemandingSEFF
+    // gastBehaviourStub)
     // {
-    // BasicComponent parentComponent = (BasicComponent) gastBehaviourStub.eContainer();
+    // BasicComponent parentComponent = (BasicComponent)
+    // gastBehaviourStub.eContainer();
     // SeffBehaviourStub seffBehaviourStub = null;
     //
     // for (ServiceEffectSpecification behaviour :
@@ -307,12 +307,11 @@ public class GAST2SEFFJob implements IBlackboardInteractingJob<SoMoXBlackboard> 
     // }
 
     /**
-     * @param blackBoard
-     *            the blackBoard to set
+     * @param blackBoard the blackBoard to set
      */
     @Override
     public void setBlackboard(final SoMoXBlackboard blackBoard) {
-        this.blackboard = blackBoard;
+        blackboard = blackBoard;
     }
 
     @Override

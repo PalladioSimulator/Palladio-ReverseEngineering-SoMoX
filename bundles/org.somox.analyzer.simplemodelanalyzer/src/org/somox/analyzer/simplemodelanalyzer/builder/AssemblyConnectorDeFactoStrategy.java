@@ -15,8 +15,9 @@ import org.somox.metrics.ClusteringRelation;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 
 /**
- * Try to add assembly connectors for each edge in the subgraph of relations which formed the parent
- * composite component. Assembly connector are established along the graph structure.
+ * Try to add assembly connectors for each edge in the subgraph of relations
+ * which formed the parent composite component. Assembly connector are
+ * established along the graph structure.
  *
  * @author Klaus Krogmann
  *
@@ -28,8 +29,8 @@ public class AssemblyConnectorDeFactoStrategy implements IAssemblyConnectorStrat
     /**
      * Default ctor.
      *
-     * @param connectorBuilder
-     *            The builder to use when actually creating instances of assembly connectors.
+     * @param connectorBuilder The builder to use when actually creating instances
+     *                         of assembly connectors.
      */
     public AssemblyConnectorDeFactoStrategy(final AssemblyConnectorBuilder connectorBuilder) {
     }
@@ -37,9 +38,10 @@ public class AssemblyConnectorDeFactoStrategy implements IAssemblyConnectorStrat
     /*
      * (non-Javadoc)
      *
-     * @see org.somox.analyzer.simplemodelanalyzer.builder.IAssemblyConnectorStrategy#
-     * buildAssemblyConnectors(eu.qimpress.sourcecodedecorator.ComponentImplementingClassesLink,
-     * org.jgrapht.Graph)
+     * @see
+     * org.somox.analyzer.simplemodelanalyzer.builder.IAssemblyConnectorStrategy#
+     * buildAssemblyConnectors(eu.qimpress.sourcecodedecorator.
+     * ComponentImplementingClassesLink, org.jgrapht.Graph)
      */
     @Override
     public void buildAssemblyConnectors(final ComponentImplementingClassesLink compositeComponentCandidate,
@@ -48,14 +50,14 @@ public class AssemblyConnectorDeFactoStrategy implements IAssemblyConnectorStrat
             throw new IllegalArgumentException("Add assembly connectors not allowed for primitive components");
         }
         for (final ClusteringRelation edge : compositeComponentSubgraph.edgeSet()) {
-            this.probeAssemblyConnector((CompositeComponent) compositeComponentCandidate.getComponent(),
+            probeAssemblyConnector((CompositeComponent) compositeComponentCandidate.getComponent(),
                     compositeComponentSubgraph.getEdgeSource(edge), compositeComponentSubgraph.getEdgeTarget(edge));
         }
     }
 
     /**
-     * Tries to establish an assembly connector for matching interfaces; i.e. a provided and
-     * required role match within a component.
+     * Tries to establish an assembly connector for matching interfaces; i.e. a
+     * provided and required role match within a component.
      *
      * @param component
      * @param edgeSource
@@ -72,9 +74,8 @@ public class AssemblyConnectorDeFactoStrategy implements IAssemblyConnectorStrat
                 logger.debug("compare reqrole.getReqEnt and prorole.getProEnt");
                 logger.debug("reqrole.getReqEnt = " + requiredRole.getRequiringEntity_RequiredRole());
                 logger.debug("prorole.getProEnt = " + providedRole.getProvidingEntity_ProvidedRole());
-                if (requiredRole instanceof OperationRequiredRole && providedRole instanceof OperationProvidedRole) {
-                    final OperationRequiredRole opReqRole = (OperationRequiredRole) requiredRole;
-                    final OperationProvidedRole opProvRole = (OperationProvidedRole) providedRole;
+                if ((requiredRole instanceof final OperationRequiredRole opReqRole)
+                        && (providedRole instanceof final OperationProvidedRole opProvRole)) {
                     if (opReqRole.getRequiredInterface__OperationRequiredRole()
                             .equals(opProvRole.getProvidedInterface__OperationProvidedRole())) {
                         AssemblyConnectorBuilder.createAssemblyConnector(component, opReqRole, opProvRole,
@@ -92,9 +93,10 @@ public class AssemblyConnectorDeFactoStrategy implements IAssemblyConnectorStrat
     /*
      * (non-Javadoc)
      *
-     * @see org.somox.analyzer.simplemodelanalyzer.builder.IAssemblyConnectorStrategy#
-     * buildAssemblyConnectors(eu.qimpress.samm.staticstructure.ServiceArchitectureModel,
-     * java.util.List)
+     * @see
+     * org.somox.analyzer.simplemodelanalyzer.builder.IAssemblyConnectorStrategy#
+     * buildAssemblyConnectors(eu.qimpress.samm.staticstructure.
+     * ServiceArchitectureModel, java.util.List)
      */
     @Override
     public void buildAssemblyConnectors(final ComposedProvidingRequiringEntity compositeStructure,

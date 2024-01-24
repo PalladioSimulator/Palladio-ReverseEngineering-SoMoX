@@ -17,9 +17,9 @@ import de.uka.ipd.sdq.workflow.launchconfig.tabs.DebugEnabledCommonTab;
 
 /**
  * The main job of a tab group is to specify the tabs that will appear in the
- * LaunchConfigurationDelegate and set their order. These tabs may have been specially written for
- * the particular config type in question, or they may be general purpose tabs that appear for
- * multiple config types.
+ * LaunchConfigurationDelegate and set their order. These tabs may have been
+ * specially written for the particular config type in question, or they may be
+ * general purpose tabs that appear for multiple config types.
  *
  * @author Michael Hauck
  */
@@ -28,26 +28,28 @@ public class SimpleModelAnalyzerTabGroup extends ModelAnalyzerTabGroup {
     /*
      * (non-Javadoc)
      *
-     * @see org.eclipse.debug.ui.ILaunchConfigurationTabGroup#createTabs(org.eclipse.debug.ui.
-     * ILaunchConfigurationDialog, java.lang.String)
+     * @see
+     * org.eclipse.debug.ui.ILaunchConfigurationTabGroup#createTabs(org.eclipse.
+     * debug.ui. ILaunchConfigurationDialog, java.lang.String)
      */
     @Override
     public void createTabs(final ILaunchConfigurationDialog dialog, final String mode) {
-        final ArrayList<ILaunchConfigurationTab> tabList = this.getCoreAnalyzerTabs();
+        final ArrayList<ILaunchConfigurationTab> tabList = getCoreAnalyzerTabs();
 
-        // TODO: Introduce a Config Tab extension point here with the latest Palladio Workflow
+        // TODO: Introduce a Config Tab extension point here with the latest Palladio
+        // Workflow
         // engine
-        final MetricTabGroup tab = new MetricTabGroup(this.getModelAnalyzerTabGroupBlackboard(),
-                getMetricTabs(this.getModelAnalyzerTabGroupBlackboard()));
+        final MetricTabGroup tab = new MetricTabGroup(getModelAnalyzerTabGroupBlackboard(),
+                getMetricTabs(getModelAnalyzerTabGroupBlackboard()));
 
         tabList.add(tab);
         tabList.add(new DebugEnabledCommonTab());
-        this.setTabs(tabList.toArray(new ILaunchConfigurationTab[0]));
+        setTabs(tabList.toArray(new ILaunchConfigurationTab[0]));
     }
 
     public static ArrayList<MetricTab> getMetricTabs(
             final ModelAnalyzerTabGroupBlackboard modelAnalyzerTabGroupBlackboard) {
-        final ArrayList<MetricTab> tabList = new ArrayList<MetricTab>();
+        final ArrayList<MetricTab> tabList = new ArrayList<>();
         final IConfigurationElement[] metrics = Platform.getExtensionRegistry()
                 .getConfigurationElementsFor("org.somox.core.metric");
         for (final IConfigurationElement metric2 : metrics) {
@@ -55,14 +57,14 @@ public class SimpleModelAnalyzerTabGroup extends ModelAnalyzerTabGroup {
             try {
                 o = metric2.createExecutableExtension("class");
             } catch (final CoreException e) {
-                // Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Warning:
+                // Activator.getDefault().getLog().log(new Status(IStatus.ERROR,
+                // Activator.PLUGIN_ID, "Warning:
                 // Specified Analyzer Metric " + metric2.getName() + " cannot be loaded."));
             }
             if (o == null) {
                 continue;
             }
-            if (o instanceof AbstractMetric) {
-                final AbstractMetric metric = (AbstractMetric) o;
+            if (o instanceof final AbstractMetric metric) {
                 final MetricTab metricTab = metric.getLaunchConfigurationTab();
                 if (metricTab != null) {
                     metricTab.setModelAnalyzerTabGroupBlackboard(modelAnalyzerTabGroupBlackboard);

@@ -17,12 +17,10 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.jgrapht.DirectedGraph;
 import org.jgrapht.Graph;
-import org.jgrapht.alg.ConnectivityInspector;
-import org.jgrapht.graph.DirectedSubgraph;
-import org.jgrapht.graph.SimpleDirectedGraph;
-import org.jgrapht.graph.Subgraph;
+import org.jgrapht.alg.connectivity.ConnectivityInspector;
+import org.jgrapht.graph.AsSubgraph;
+import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.analyzer.ModelAnalyzerException;
 import org.somox.analyzer.simplemodelanalyzer.builder.ComponentBuilder;
 import org.somox.analyzer.simplemodelanalyzer.detection.util.ComponentPrinter;
@@ -49,8 +47,8 @@ import org.somox.metrics.util.GraphPrinter;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 
 /**
- * Detection strategy for composite component which relies on clustering of metrics computed for
- * pair-wise component relationships
+ * Detection strategy for composite component which relies on clustering of
+ * metrics computed for pair-wise component relationships
  *
  * @author Steffen Becker, Klaus Krogmann, Michael Hauck
  */
@@ -78,24 +76,26 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
     final private ComponentToImplementingClassesHelper componentToImplementingClassHelper = new ComponentToImplementingClassesHelper();
 
     /**
-     * Metric used when computing the relationship graph that indicates a composition of two or more
-     * components
+     * Metric used when computing the relationship graph that indicates a
+     * composition of two or more components
      */
     private final IMetric compositionIndicatingMetric;
 
     /**
-     * Metric used when merging the relationship graph that indicates a composition of two or more
-     * components
+     * Metric used when merging the relationship graph that indicates a composition
+     * of two or more components
      */
     private final IMetric mergeIndicatingMetric;
 
     /**
-     * Map of all metrics in the Eclipse system and initialized for this clustering algorithm
+     * Map of all metrics in the Eclipse system and initialized for this clustering
+     * algorithm
      */
     private final Map<MetricID, IMetric> allMetrics;
 
     /**
-     * Executor service which is used to compute any damage to the clustering graph in parallel
+     * Executor service which is used to compute any damage to the clustering graph
+     * in parallel
      */
     private final ExecutorCompletionService<ClusteringRelation[]> completionService;
 
@@ -104,17 +104,14 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
     public ComponentDetectionByClustering(final Root kdmModelToAnalyze,
             final List<ComponentImplementingClassesLink> initialComponentCandidates,
             final SoMoXConfiguration somoxConfig) {
-        super();
+        validateConfiguration(somoxConfig);
 
-        this.validateConfiguration(somoxConfig);
-
-        this.kdmModel = kdmModelToAnalyze;
-        this.somoxConfiguration = somoxConfig;
-        this.allMetrics = this.initializeMetrics(initialComponentCandidates);
-        this.compositionIndicatingMetric = this.getMetric(this.allMetrics,
-                DefaultCompositionIndicatingMetric.METRIC_ID);
-        this.mergeIndicatingMetric = this.getMetric(this.allMetrics, DefaultMergeIndicatingMetric.METRIC_ID);
-        this.completionService = this.initializeExecutorCompletionService();
+        kdmModel = kdmModelToAnalyze;
+        somoxConfiguration = somoxConfig;
+        allMetrics = initializeMetrics(initialComponentCandidates);
+        compositionIndicatingMetric = getMetric(allMetrics, DefaultCompositionIndicatingMetric.METRIC_ID);
+        mergeIndicatingMetric = getMetric(allMetrics, DefaultMergeIndicatingMetric.METRIC_ID);
+        completionService = initializeExecutorCompletionService();
 
         GraphPrinter.cleanOutputFolder(somoxConfig.getFileLocations().getAnalyserInputFile());
     }
@@ -123,21 +120,20 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
      * Check the configuration for necessary preconditions. If checks fail, an
      * {@link IllegalArgumentException} is thrown
      *
-     * @param somoxConfig
-     *            configuration to check
+     * @param somoxConfig configuration to check
      */
     private void validateConfiguration(final SoMoXConfiguration somoxConfig) {
-        if (!(somoxConfig.getClusteringConfig().getClusteringMergeThresholdDecrement() > 0
-                && somoxConfig.getClusteringConfig().getClusteringComposeThresholdDecrement() > 0)) {
+        if (((somoxConfig.getClusteringConfig().getClusteringMergeThresholdDecrement() <= 0)
+                || (somoxConfig.getClusteringConfig().getClusteringComposeThresholdDecrement() <= 0))) {
             throw new IllegalArgumentException(
                     "The merge and compose threshold increment/decrement have to be positive numbers");
         }
-        if (!(somoxConfig.getClusteringConfig().getMinComposeClusteringThreshold() < somoxConfig.getClusteringConfig()
+        if ((somoxConfig.getClusteringConfig().getMinComposeClusteringThreshold() >= somoxConfig.getClusteringConfig()
                 .getMaxComposeClusteringThreshold())) {
             throw new IllegalArgumentException(
                     "The minimum clustering threshold must be lower than maximum clustering threshold");
         }
-        if (!(somoxConfig.getClusteringConfig().getMinMergeClusteringThreshold() < somoxConfig.getClusteringConfig()
+        if ((somoxConfig.getClusteringConfig().getMinMergeClusteringThreshold() >= somoxConfig.getClusteringConfig()
                 .getMaxMergeClusteringThreshold())) {
             throw new IllegalArgumentException(
                     "The minimum merge threshold must be lower than maximum merge threshold");
@@ -145,18 +141,18 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
     }
 
     /**
-     * Initialize the {@link ExecutorCompletionService} used to compute repair tasks of the
-     * clustering graph
+     * Initialize the {@link ExecutorCompletionService} used to compute repair tasks
+     * of the clustering graph
      *
-     * @return the created {@link ExecutorCompletionService} initialized to the number of CPU cores
-     *         or 1 in debug mode
+     * @return the created {@link ExecutorCompletionService} initialized to the
+     *         number of CPU cores or 1 in debug mode
      */
     private ExecutorCompletionService<ClusteringRelation[]> initializeExecutorCompletionService() {
         final int poolSize = LOG.isDebugEnabled() ? 1 : Runtime.getRuntime().availableProcessors() + 1;
         LOG.debug("Initialized thread pool to compute repair actions of the clustering graph with " + poolSize
                 + " threads");
-        this.pool = Executors.newFixedThreadPool(poolSize);
-        return new ExecutorCompletionService<ClusteringRelation[]>(this.pool);
+        pool = Executors.newFixedThreadPool(poolSize);
+        return new ExecutorCompletionService<>(pool);
     }
 
     private enum OperationMode {
@@ -166,9 +162,8 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
     /*
      * (non-Javadoc)
      *
-     * @see
-     * org.somox.analyzer.simplemodelanalyzer.detection.IDetectionStrategy#startDetection(org.somox
-     * .analyzer.simplemodelanalyzer.SimpleAnalysisResult,
+     * @see org.somox.analyzer.simplemodelanalyzer.detection.IDetectionStrategy#
+     * startDetection(org.somox .analyzer.simplemodelanalyzer.SimpleAnalysisResult,
      * org.eclipse.core.runtime.IProgressMonitor, java.util.List)
      */
     @Override
@@ -178,18 +173,18 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
 
         // merge or compose in a iteration; by default first try to merge
         OperationMode currentMode = OperationMode.MERGE;
-        double currentThreshold = this.somoxConfiguration.getClusteringConfig().getMinMergeClusteringThreshold();
-        double currentThresholdBound = this.somoxConfiguration.getClusteringConfig().getMaxMergeClusteringThreshold();
-        double currentDelta = this.somoxConfiguration.getClusteringConfig().getClusteringMergeThresholdDecrement();
+        double currentThreshold = somoxConfiguration.getClusteringConfig().getMinMergeClusteringThreshold();
+        double currentThresholdBound = somoxConfiguration.getClusteringConfig().getMaxMergeClusteringThreshold();
+        double currentDelta = somoxConfiguration.getClusteringConfig().getClusteringMergeThresholdDecrement();
 
         int componentCountPreviousIteration = componentCandidates.size();
         boolean newComponentsFound = true;
         int iteration = 0;
-        final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> componentIndicatingGraph = this
-                .setupGraph(componentCandidates);
+        final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> componentIndicatingGraph = setupGraph();
 
-        // Cluster as long as there is a chance to find new components in the clustering step
-        while (this.clusteringCanContinue(componentCandidates, currentMode, currentThreshold, currentThresholdBound)) {
+        // Cluster as long as there is a chance to find new components in the clustering
+        // step
+        while (clusteringCanContinue(componentCandidates, currentMode, currentThreshold, currentThresholdBound)) {
 
             iteration++;
 
@@ -203,25 +198,26 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
             if (newComponentsFound) {
                 // Recompute missing metrics and add their corresponding vertices and edges
                 LOG.debug("Computing clustering graphs");
-                this.computeAllMetrics(componentCandidates, this.mergeIndicatingMetric, componentIndicatingGraph,
+                computeAllMetrics(componentCandidates, mergeIndicatingMetric, componentIndicatingGraph,
                         progressMonitor);
 
-                this.saveMetricValuesModel(componentIndicatingGraph, iteration, currentThreshold, currentMode,
+                saveMetricValuesModel(componentIndicatingGraph, iteration, currentThreshold, currentMode,
                         componentCandidates);
             }
 
             // 2. create projected graph from one with evaluated metrics:
             LOG.debug("Projecting graph based on current threshold " + currentThreshold);
-            final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> projectedGraph = this
-                    .createProjectedGraph(componentIndicatingGraph, currentThreshold, currentMode);
-            this.createDebugOutputForIteration(currentMode, iteration, componentIndicatingGraph, projectedGraph);
+            final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> projectedGraph = createProjectedGraph(
+                    componentIndicatingGraph, currentThreshold, currentMode);
+            createDebugOutputForIteration(currentMode, iteration, componentIndicatingGraph, projectedGraph);
 
             // 3. Component Clustering
-            componentCandidates = this.componentComposition(pcmBuilder, projectedGraph, iteration,
+            componentCandidates = componentComposition(pcmBuilder, projectedGraph, iteration,
                     currentMode == OperationMode.MERGE);
 
             // update existing components for new interfaces
-            // TODO: the following line causes a lot of performance overhead and is only useful if
+            // TODO: the following line causes a lot of performance overhead and is only
+            // useful if
             // public methods are being recognized as interfaces in a fall back strategy
             pcmBuilder.updateRequiredInterfacesOfExistingPrimitiveComponents();
 
@@ -236,15 +232,13 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
             // 5. adapt thresholds if necessary
             if (!newComponentsFound) {
                 currentThreshold += currentDelta;
-                if (currentMode == OperationMode.MERGE
-                        && this.isSwitchToCompose(currentThreshold, currentThresholdBound)) {
+                if ((currentMode == OperationMode.MERGE)
+                        && isSwitchToCompose(currentThreshold, currentThresholdBound)) {
                     LOG.info("Done merging primitive components, now starting to compose.");
                     currentMode = OperationMode.COMPOSE;
-                    currentThreshold = this.somoxConfiguration.getClusteringConfig().getMaxComposeClusteringThreshold();
-                    currentThresholdBound = this.somoxConfiguration.getClusteringConfig()
-                            .getMinComposeClusteringThreshold();
-                    currentDelta = -this.somoxConfiguration.getClusteringConfig()
-                            .getClusteringComposeThresholdDecrement();
+                    currentThreshold = somoxConfiguration.getClusteringConfig().getMaxComposeClusteringThreshold();
+                    currentThresholdBound = somoxConfiguration.getClusteringConfig().getMinComposeClusteringThreshold();
+                    currentDelta = -somoxConfiguration.getClusteringConfig().getClusteringComposeThresholdDecrement();
                 }
             }
         }
@@ -253,7 +247,7 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
             ComponentPrinter.printComponents(componentCandidates, LOG);
         }
 
-        this.pool.shutdown();
+        pool.shutdown();
 
         return componentCandidates;
     }
@@ -285,10 +279,10 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
     }
 
     private void saveMetricValuesModel(
-            final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> metricsGraph, final int iteration,
-            final double currentThreshold, final OperationMode mode,
+            final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> metricsGraph,
+            final int iteration, final double currentThreshold, final OperationMode mode,
             final List<ComponentImplementingClassesLink> componentCandidates) {
-        final MetricValuesWriter mvWriter = new MetricValuesWriter(this.somoxConfiguration);
+        final MetricValuesWriter mvWriter = new MetricValuesWriter(somoxConfiguration);
         mvWriter.saveMetricValuesModel(metricsGraph, iteration, currentThreshold, componentCandidates,
                 mode == OperationMode.MERGE);
 
@@ -303,117 +297,117 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
      * @param projectedGraph
      */
     private void createDebugOutputForIteration(final OperationMode currentMode, final int iteration,
-            final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> componentIndicatingGraph,
-            final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> projectedGraph) {
+            final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> componentIndicatingGraph,
+            final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> projectedGraph) {
         if (LOG.isTraceEnabled()) {
             LOG.trace("graph in mode = " + currentMode + " contains " + projectedGraph.edgeSet().size() + " edges, "
                     + projectedGraph.vertexSet().size() + " vertices / orig graph: "
                     + componentIndicatingGraph.edgeSet().size() + " edges, " + projectedGraph.vertexSet().size()
                     + " vertices");
 
-            GraphPrinter.dumpGraph(this.componentToImplementingClassHelper, componentIndicatingGraph,
-                    this.somoxConfiguration.getFileLocations().getAnalyserInputFile(), iteration,
+            GraphPrinter.dumpGraph(componentToImplementingClassHelper, componentIndicatingGraph,
+                    somoxConfiguration.getFileLocations().getAnalyserInputFile(), iteration,
                     GraphPrinter.ORIGINAL_GRAPH);
 
             if (projectedGraph.edgeSet().size() > 0) {
-                GraphPrinter.dumpGraph(this.componentToImplementingClassHelper, projectedGraph,
-                        this.somoxConfiguration.getFileLocations().getAnalyserInputFile(), iteration,
+                GraphPrinter.dumpGraph(componentToImplementingClassHelper, projectedGraph,
+                        somoxConfiguration.getFileLocations().getAnalyserInputFile(), iteration,
                         GraphPrinter.PROJECTED_GRAPH);
             }
         }
     }
 
     /**
-     * Computes a graph containing GAST classes as nodes and directed edges which contain the number
-     * of accesses from the class in the source node to the class in the target node. The nodes are
-     * filtered, i.e., only classes not filtered by the blacklist are contained.
+     * Computes a graph containing GAST classes as nodes and directed edges which
+     * contain the number of accesses from the class in the source node to the class
+     * in the target node. The nodes are filtered, i.e., only classes not filtered
+     * by the blacklist are contained.
      *
-     * @param componentCandidates
-     *            The list of initial component candidates. Used to further narrow the graph
+     * @param componentCandidates The list of initial component candidates. Used to
+     *                            further narrow the graph
      * @return The graph as described in the methods main description
      */
-    private DirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> getAccessGraph(
+    private DefaultDirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> getAccessGraph(
             final List<ComponentImplementingClassesLink> componentCandidates) {
-        // Graph whose nodes are GASTClasses and whose Edges
-        final DirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph = Class2ClassAccessGraphHelper
-                .computeFilteredClass2ClassAccessGraph(this.somoxConfiguration,
-                        this.componentToImplementingClassHelper.collectAllClasses(componentCandidates));
-
-        return accessGraph;
+        return Class2ClassAccessGraphHelper.computeFilteredClass2ClassAccessGraph(somoxConfiguration,
+                componentToImplementingClassHelper.collectAllClasses(componentCandidates));
     }
 
     /**
-     * This method is used to initialize all metrics used in the clustering algorithm
+     * This method is used to initialize all metrics used in the clustering
+     * algorithm
      *
-     * @param componentCandidates
-     *            The set of component candidates. They will be used to limit the size of the
-     *            caching graph which is sent to the metric instances.
+     * @param componentCandidates The set of component candidates. They will be used
+     *                            to limit the size of the caching graph which is
+     *                            sent to the metric instances.
      * @return The initialized set of metrics mapped on their IDs
-     * @throws AnalyzerRuleException
-     *             If the initialization of a metric fails, an {@link AnalyzerRuleException} is
-     *             thrown
+     * @throws AnalyzerRuleException If the initialization of a metric fails, an
+     *                               {@link AnalyzerRuleException} is thrown
      */
     private Map<MetricID, IMetric> initializeMetrics(final List<ComponentImplementingClassesLink> componentCandidates) {
         final Map<MetricID, IMetric> allMetrics = MetricsRegistry.getRegisteredMetrics();
 
-        final DirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph = this
-                .getAccessGraph(componentCandidates);
+        final DefaultDirectedGraph<ConcreteClassifier, ClassAccessGraphEdge> accessGraph = getAccessGraph(
+                componentCandidates);
         for (final IMetric metric : allMetrics.values()) {
-            metric.initialize(this.kdmModel, this.somoxConfiguration, allMetrics, accessGraph,
-                    this.componentToImplementingClassHelper);
+            metric.initialize(kdmModel, somoxConfiguration, allMetrics, accessGraph,
+                    componentToImplementingClassHelper);
         }
 
         return allMetrics;
     }
 
     /**
-     * Create projected graph from one with evaluated metrics. Only edges passing the threshold are
-     * contained in the resulting graph.
+     * Create projected graph from one with evaluated metrics. Only edges passing
+     * the threshold are contained in the resulting graph.
      *
-     * @param currentComposeThreshold
-     *            Current threshold to check against for compose cases.
-     * @param currentMergeThreshold
-     *            Current threshold to check against for merge cases.
-     * @param isMergeIteration
-     *            indicates compose or merge case
-     * @param componentIndicatingGraph
-     *            The original graph.
+     * @param currentComposeThreshold  Current threshold to check against for
+     *                                 compose cases.
+     * @param currentMergeThreshold    Current threshold to check against for merge
+     *                                 cases.
+     * @param isMergeIteration         indicates compose or merge case
+     * @param componentIndicatingGraph The original graph.
      * @return The projected graphs with removed edges.
      */
-    private DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> createProjectedGraph(
-            final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> componentIndicatingGraph,
+    private DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> createProjectedGraph(
+            final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> componentIndicatingGraph,
             final double currentThreshold, final OperationMode currentMode) {
 
         final BaseFilter<ClusteringRelation> filter = currentMode == OperationMode.MERGE
-                ? new VertexTypeAndEdgeThresholdFilter(this.mergeIndicatingMetric.getMID(), currentThreshold)
-                : new EdgeThresholdFilter(this.compositionIndicatingMetric.getMID(), currentThreshold);
-        return new DirectedSubgraph<ComponentImplementingClassesLink, ClusteringRelation>(componentIndicatingGraph,
-                componentIndicatingGraph.vertexSet(),
-                FilteredCollectionsFactory.getFilteredHashSet(filter, componentIndicatingGraph.edgeSet()));
+                ? new VertexTypeAndEdgeThresholdFilter(mergeIndicatingMetric.getMID(), currentThreshold)
+                : new EdgeThresholdFilter(compositionIndicatingMetric.getMID(), currentThreshold);
+
+        final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> projectedGraph = new DefaultDirectedGraph<>(
+                ClusteringRelation.class);
+        componentIndicatingGraph.vertexSet().forEach(projectedGraph::addVertex);
+        FilteredCollectionsFactory.getFilteredHashSet(filter, componentIndicatingGraph.edgeSet()).forEach(e -> {
+            projectedGraph.addEdge(e.getSourceComponent(), e.getTargetComponent());
+        });
+
+        return projectedGraph;
     }
 
     /**
-     * For the given list of potential components, i.e., classes, compute a triangular matrix of
-     * metrics indicating the relationship of the two classes.
+     * For the given list of potential components, i.e., classes, compute a
+     * triangular matrix of metrics indicating the relationship of the two classes.
      *
-     * @param newComponentCandidates
-     *            The list of potential components
-     * @param metricComputationStrategy
-     *            A class which encapsulates the computation of the metrics. The top level metric
-     *            which is to be computed (merge or compose).
-     * @param progressMonitor
-     *            The progress monitor used to indicate clustering progress
-     * @return The elements of the triangular matrix showing the relationship of all classes
-     *         pairwise
-     * @throws ModelAnalyzerException
-     *             Thrown if the metric computation fails unexpectedly
+     * @param newComponentCandidates    The list of potential components
+     * @param metricComputationStrategy A class which encapsulates the computation
+     *                                  of the metrics. The top level metric which
+     *                                  is to be computed (merge or compose).
+     * @param progressMonitor           The progress monitor used to indicate
+     *                                  clustering progress
+     * @return The elements of the triangular matrix showing the relationship of all
+     *         classes pairwise
+     * @throws ModelAnalyzerException Thrown if the metric computation fails
+     *                                unexpectedly
      */
     private void computeAllMetrics(final List<ComponentImplementingClassesLink> newComponentCandidates,
             final IMetric metricComputationStrategy,
-            final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> previousGraph,
+            final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> previousGraph,
             final IProgressMonitor progressMonitor) throws ModelAnalyzerException {
 
-        final Collection<NodePair> work = this.deriveComputationWork(newComponentCandidates, previousGraph);
+        final Collection<NodePair> work = deriveComputationWork(newComponentCandidates, previousGraph);
         final int totalCount = work.size();
 
         final IProgressMonitor clusteringProgressMonitor = new SubProgressMonitor(progressMonitor, totalCount);
@@ -421,20 +415,18 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
         LOG.debug("Creating weighted directed graph for " + newComponentCandidates.size() + " components.");
 
         for (final NodePair nodePair : work) {
-            this.completionService.submit(nodePair.getWorkTask(metricComputationStrategy, this.allMetrics));
+            completionService.submit(nodePair.getWorkTask(metricComputationStrategy, allMetrics));
         }
 
         try {
             for (int stepNo = 0; stepNo < totalCount; stepNo++) {
-                final ClusteringRelation[] computedRelationPair = this.completionService.take().get();
+                final ClusteringRelation[] computedRelationPair = completionService.take().get();
                 for (final ClusteringRelation relation : computedRelationPair) {
                     previousGraph.addEdge(relation.getSourceComponent(), relation.getTargetComponent(), relation);
                 }
-                LOG.debug(stepNo * 100 / totalCount + "% of clustering done.");
+                LOG.debug(((stepNo * 100) / totalCount) + "% of clustering done.");
             }
-        } catch (final InterruptedException e) {
-            throw new RuntimeException("Parallel execution failed unexpectedly", e);
-        } catch (final ExecutionException e) {
+        } catch (final InterruptedException | ExecutionException e) {
             throw new RuntimeException("Parallel execution failed unexpectedly", e);
         }
 
@@ -445,9 +437,9 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
     }
 
     private Collection<NodePair> deriveComputationWork(final List<ComponentImplementingClassesLink> componentCandidates,
-            final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> previousGraph) {
-        final Set<ComponentImplementingClassesLink> newNodes = new HashSet<ComponentImplementingClassesLink>();
-        final Set<ComponentImplementingClassesLink> nodesToRemove = new HashSet<ComponentImplementingClassesLink>();
+            final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> previousGraph) {
+        final Set<ComponentImplementingClassesLink> newNodes = new HashSet<>();
+        final Set<ComponentImplementingClassesLink> nodesToRemove = new HashSet<>();
 
         for (final ComponentImplementingClassesLink link : previousGraph.vertexSet()) {
             if (!componentCandidates.contains(link)) {
@@ -456,8 +448,7 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
         }
 
         previousGraph.removeAllVertices(nodesToRemove);
-        final Set<ComponentImplementingClassesLink> oldNodesSet = new HashSet<ComponentImplementingClassesLink>(
-                previousGraph.vertexSet());
+        final Set<ComponentImplementingClassesLink> oldNodesSet = new HashSet<>(previousGraph.vertexSet());
 
         for (final ComponentImplementingClassesLink link : componentCandidates) {
             if (!previousGraph.vertexSet().contains(link)) {
@@ -468,9 +459,9 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
 
         assert Collections.disjoint(newNodes, oldNodesSet);
 
-        final int totalCount = newNodes.size() * (newNodes.size() - 1) / 2 + newNodes.size() * oldNodesSet.size();
+        final int totalCount = ((newNodes.size() * (newNodes.size() - 1)) / 2) + (newNodes.size() * oldNodesSet.size());
 
-        final Collection<NodePair> pairsToCompute = this.derivePairsToCompute(newNodes, oldNodesSet);
+        final Collection<NodePair> pairsToCompute = derivePairsToCompute(newNodes, oldNodesSet);
         assert pairsToCompute.size() == totalCount;
 
         return pairsToCompute;
@@ -478,7 +469,7 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
 
     private Collection<NodePair> derivePairsToCompute(final Set<ComponentImplementingClassesLink> newNodes,
             final Set<ComponentImplementingClassesLink> oldNodesSet) {
-        final Set<NodePair> result = new HashSet<NodePair>();
+        final Set<NodePair> result = new HashSet<>();
         for (final ComponentImplementingClassesLink oldNode : oldNodesSet) {
             for (final ComponentImplementingClassesLink newNode : newNodes) {
                 result.add(new NodePair(newNode, oldNode));
@@ -497,38 +488,32 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
         return result;
     }
 
-    private DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> setupGraph(
-            final List<ComponentImplementingClassesLink> componentCandidates) {
-        final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> result = new SimpleDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation>(
-                ClusteringRelation.class);
-        return result;
+    private DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> setupGraph() {
+        return new DefaultDirectedGraph<>(ClusteringRelation.class);
     }
 
     /**
      * Perform the actual clustering of classes into composite components
      *
-     * @param sammBuilder
-     *            Builder strategy
-     * @param relationshipGraph
-     *            The triangular matrix containing the metrics for the relationship of pairwise
-     *            classes
-     * @param iteration
-     *            current iteration count
-     * @param isMergeCase
-     *            indicates a merge or compose creation
-     * @return A new list of component candidates which resulted from merging old component
-     *         candidates into new components plus all non-clustered components
+     * @param sammBuilder       Builder strategy
+     * @param relationshipGraph The triangular matrix containing the metrics for the
+     *                          relationship of pairwise classes
+     * @param iteration         current iteration count
+     * @param isMergeCase       indicates a merge or compose creation
+     * @return A new list of component candidates which resulted from merging old
+     *         component candidates into new components plus all non-clustered
+     *         components
      */
     private List<ComponentImplementingClassesLink> componentComposition(final ComponentBuilder sammBuilder,
-            final DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> relationshipGraph,
+            final DefaultDirectedGraph<ComponentImplementingClassesLink, ClusteringRelation> relationshipGraph,
             final int iteration, final boolean isMergeCase) {
 
-        final LinkedList<ComponentImplementingClassesLink> result = new LinkedList<ComponentImplementingClassesLink>();
+        final LinkedList<ComponentImplementingClassesLink> result = new LinkedList<>();
 
         if (LOG.isTraceEnabled()) {
             LOG.trace(relationshipGraph.toString());
         }
-        final ConnectivityInspector<ComponentImplementingClassesLink, ClusteringRelation> connectivityInspector = new ConnectivityInspector<ComponentImplementingClassesLink, ClusteringRelation>(
+        final ConnectivityInspector<ComponentImplementingClassesLink, ClusteringRelation> connectivityInspector = new ConnectivityInspector<>(
                 relationshipGraph);
 
         final List<Set<ComponentImplementingClassesLink>> subGraphs = connectivityInspector.connectedSets();
@@ -540,13 +525,14 @@ public class ComponentDetectionByClustering implements IDetectionStrategy {
 
                 LOG.debug("Found a cluster of " + componentsToMerge.size()
                         + " related components. Merging them into a composite component");
-                final Graph<ComponentImplementingClassesLink, ClusteringRelation> compositeComponentSubgraph = new Subgraph<ComponentImplementingClassesLink, ClusteringRelation, DirectedGraph<ComponentImplementingClassesLink, ClusteringRelation>>(
+                final Graph<ComponentImplementingClassesLink, ClusteringRelation> compositeComponentSubgraph = new AsSubgraph<>(
                         relationshipGraph, componentsToMerge);
 
                 // debug:
-                if (compositeComponentSubgraph.edgeSet().size() > 0 && LOG.isTraceEnabled()) {
-                    GraphPrinter.dumpGraph(this.componentToImplementingClassHelper, compositeComponentSubgraph,
-                            this.somoxConfiguration.getFileLocations().getAnalyserInputFile(), iteration, subgraphNo++);
+                if ((compositeComponentSubgraph.edgeSet().size() > 0) && LOG.isTraceEnabled()) {
+                    GraphPrinter.dumpGraph(componentToImplementingClassHelper, compositeComponentSubgraph,
+                            somoxConfiguration.getFileLocations().getAnalyserInputFile(), iteration, subgraphNo);
+                    subgraphNo++;
                 }
 
                 // trigger the builders:

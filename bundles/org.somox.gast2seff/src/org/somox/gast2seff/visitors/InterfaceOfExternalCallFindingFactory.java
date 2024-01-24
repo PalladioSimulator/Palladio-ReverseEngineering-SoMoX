@@ -4,9 +4,10 @@ import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 
 /**
- * InterfaceOfExternalCallFindingStrategy allows the creation of project or technology specific
- * {@link InterfaceOfExternalCallFinding}, which is used within {@link JaMoPPStatementVisitor}.
- * 
+ * InterfaceOfExternalCallFindingStrategy allows the creation of project or
+ * technology specific {@link InterfaceOfExternalCallFinding}, which is used
+ * within {@link JaMoPPStatementVisitor}.
+ *
  * @author langhamm
  *
  */

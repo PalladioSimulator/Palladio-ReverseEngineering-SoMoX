@@ -5,10 +5,10 @@ Bundle-SymbolicName: org.somox.ui; singleton:=true
 Bundle-Version: 5.2.0.qualifier
 Bundle-Activator: org.somox.ui.Activator
 Bundle-Vendor: %providerName
-Require-Bundle: org.somox.core;bundle-version="1.0.0",
- org.eclipse.debug.ui;bundle-version="3.4.1",
- org.eclipse.emf.common.ui;bundle-version="2.4.0",
- de.uka.ipd.sdq.workflow.launchconfig;bundle-version="1.1.0",
+Require-Bundle: org.somox.core,
+ org.eclipse.debug.ui,
+ org.eclipse.emf.common.ui,
+ de.uka.ipd.sdq.workflow.launchconfig,
  org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy

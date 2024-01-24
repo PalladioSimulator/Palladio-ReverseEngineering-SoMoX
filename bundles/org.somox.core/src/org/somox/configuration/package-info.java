@@ -1,4 +1,4 @@
 /**
- * Classes to create and manage SoMoX' configuration. 
+ * Classes to create and manage SoMoX' configuration.
  */
 package org.somox.configuration;

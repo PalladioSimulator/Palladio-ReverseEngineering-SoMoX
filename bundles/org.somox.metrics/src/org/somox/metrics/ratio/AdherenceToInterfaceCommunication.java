@@ -8,9 +8,9 @@ import org.somox.metrics.basic.InternalAccessesCount;
 /**
  * AdherenceToInterfaceCommunication metric
  *
- * This metric evaluates to amount of communication between two components going over interfaces.
- * 1.0 means all communication goes over interfaces, 0.0 means no communication goes over
- * interfaces.
+ * This metric evaluates to amount of communication between two components going
+ * over interfaces. 1.0 means all communication goes over interfaces, 0.0 means
+ * no communication goes over interfaces.
  *
  * @author Steffen Becker, Grischa Liebel
  *
