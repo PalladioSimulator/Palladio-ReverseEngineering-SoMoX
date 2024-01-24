@@ -1,6 +1,10 @@
 # Software Model Extractor (SoMoX)
 
-SoMoX is a reverse engineering tool developed at the Karlsruhe Institute of Technology (KIT) for generating software component models from source code. It automatically extracts different types of software components, including basic components, composite structures, interfaces, ports, and connectors. SoMoX uses various source code metrics to guide its extraction process, allowing it to adapt to the specific component definitions and needs of individual projects. Currently, SoMoX supports source code written in C/C++, Delphi and Java.
+[![Build Pipeline](https://github.com/PalladioSimulator/Palladio-ReverseEngineering-SoMoX/actions/workflows/build.yml/badge.svg)](https://github.com/PalladioSimulator/Palladio-ReverseEngineering-SoMoX/actions/workflows/build.yml) [![Continual Improvement Process](https://github.com/PalladioSimulator/Palladio-ReverseEngineering-SoMoX/actions/workflows/quality.yml/badge.svg)](https://github.com/PalladioSimulator/Palladio-ReverseEngineering-SoMoX/actions/workflows/quality.yml)
+
+SoMoX is a reverse engineering tool developed at the Karlsruhe Institute of Technology (KIT) for generating software component models from source code. It automatically extracts different types of software components, including basic components, composite structures, interfaces, ports, and connectors. SoMoX uses various source code metrics to guide its extraction process, allowing it to adapt to the specific component definitions and needs of individual projects. SoMoX supported source code written in C/C++, Delphi and Java.
+
+![The SoMoX logo](https://sdq.kastel.kit.edu/mediawiki-sdq-extern/images/4/45/Somox-logo01.png)
 
 ## Overview
 ### Key Features
@@ -41,7 +45,7 @@ SoMoX is available as an Eclipse update site and requires Java 17 and Eclipse 20
 
 ## Documentation
 This README provides basic information. For detailed instructions, examples, and advanced usage, please refer to:
-- [The official documentation](https://sdq.kastel.kit.edu/wiki/SoMoX):
+- [The official documentation](https://sdq.kastel.kit.edu/wiki/SoMoX)
 - [SoMoX Metric Documentation (PDF)](https://sdq.kastel.kit.edu/mediawiki-sdq-extern/images/4/49/SoMoX_Metric_Documentation.pdf)
 - [Reconstruction of Software Component Architectures and Behaviour Models using Static and Dynamic Analysis](https://primo.bibliothek.kit.edu/permalink/f/4jne3t/KITSRCE1000025617)
 - [Automated Coevolution of Source Code and Software Architecture Models](https://primo.bibliothek.kit.edu/permalink/f/4jne3t/KITSRCE1000081447)
