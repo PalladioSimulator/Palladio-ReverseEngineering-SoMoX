@@ -28,11 +28,12 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
-import org.emftext.language.java.commons.Commentable;
-import org.emftext.language.java.types.Type;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.kdmhelper.metamodeladdition.Root;
+
+import tools.mdsd.jamopp.model.java.commons.Commentable;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 //import de.fzi.gast.core.Root;
 //import de.fzi.gast.types.GASTClass;
@@ -306,9 +307,9 @@ public class BlacklistTab extends MetricTab {
         checkboxTreeViewer.collapseAll();
 
         for (final Object currentElement : elements) {
-            if (currentElement instanceof org.emftext.language.java.containers.Package) {
-                if (wildcardSet.contains(KDMHelper
-                        .computeFullQualifiedName(((org.emftext.language.java.containers.Package) currentElement)))) {
+            if (currentElement instanceof tools.mdsd.jamopp.model.java.containers.Package) {
+                if (wildcardSet.contains(KDMHelper.computeFullQualifiedName(
+                        ((tools.mdsd.jamopp.model.java.containers.Package) currentElement)))) {
                     checkboxTreeViewer.setChecked(currentElement, true);
                 }
             } else if ((currentElement instanceof Type)
@@ -347,12 +348,12 @@ public class BlacklistTab extends MetricTab {
             if (current instanceof Type) {
                 // wildcards[i] = ((GASTClass) current).getQualifiedName();
                 wildcards.add(KDMHelper.computeFullQualifiedName(((Type) current)));
-            } else if (current instanceof org.emftext.language.java.containers.Package) {
+            } else if (current instanceof tools.mdsd.jamopp.model.java.containers.Package) {
                 // wildcards[i] = ((de.fzi.gast.core.Package) current).getQualifiedName()+ ".*";
 
                 // TODO: wildcard for packages conflict with usability
-                wildcards.add(
-                        KDMHelper.computeFullQualifiedName(((org.emftext.language.java.containers.Package) current)));
+                wildcards.add(KDMHelper
+                        .computeFullQualifiedName(((tools.mdsd.jamopp.model.java.containers.Package) current)));
             }
             // i++;
         }

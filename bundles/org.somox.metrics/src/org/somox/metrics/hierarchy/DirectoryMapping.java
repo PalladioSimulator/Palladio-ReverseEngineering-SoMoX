@@ -1,12 +1,13 @@
 package org.somox.metrics.hierarchy;
 
-import org.emftext.language.java.containers.Package;
+import org.somox.kdmhelper.KDMHelper;
+import org.somox.metrics.MetricID;
+
+import tools.mdsd.jamopp.model.java.containers.Package;
 
 //package org.somox.metrics.hierarchy;
 
-import org.emftext.language.java.types.Type;
-import org.somox.kdmhelper.KDMHelper;
-import org.somox.metrics.MetricID;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 //import de.fzi.gast.core.Package;
 //import de.fzi.gast.types.GASTClass;

@@ -37,7 +37,6 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -59,14 +58,15 @@ import org.somox.seff2javaast.Seff2javaastPackage;
 import org.somox.seff2javaast.provider.Seff2java_astEditPlugin;
 
 /**
- * This is a simple wizard for creating a new model file. <!-- begin-user-doc --> <!-- end-user-doc
- * -->
+ * This is a simple wizard for creating a new model file. <!-- begin-user-doc
+ * --> <!-- end-user-doc -->
  *
  * @generated
  */
 public class Seff2javaastModelWizard extends Wizard implements INewWizard {
     /**
-     * The supported extensions for created files. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The supported extensions for created files. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
@@ -75,8 +75,8 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
                     .getString("_UI_Seff2javaastEditorFilenameExtensions").split("\\s*,\\s*")));
 
     /**
-     * A formatted list of supported file extensions, suitable for display. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * A formatted list of supported file extensions, suitable for display. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
@@ -84,18 +84,20 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
             .getString("_UI_Seff2javaastEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
     /**
-     * This caches an instance of the model package. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This caches an instance of the model package. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
     protected Seff2javaastPackage seff2javaastPackage = Seff2javaastPackage.eINSTANCE;
 
     /**
-     * This caches an instance of the model factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This caches an instance of the model factory. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
-    protected Seff2javaastFactory seff2javaastFactory = this.seff2javaastPackage.getSeff2javaastFactory();
+    protected Seff2javaastFactory seff2javaastFactory = seff2javaastPackage.getSeff2javaastFactory();
 
     /**
      * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -105,37 +107,40 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
     protected Seff2javaastModelWizardNewFileCreationPage newFileCreationPage;
 
     /**
-     * This is the initial object creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is the initial object creation page. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
     protected Seff2javaastModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
     /**
-     * Remember the selection during initialization for populating the default container. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * Remember the selection during initialization for populating the default
+     * container. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     protected IStructuredSelection selection;
 
     /**
-     * Remember the workbench during initialization. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Remember the workbench during initialization. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
     protected IWorkbench workbench;
 
     /**
-     * Caches the names of the types that can be created as the root object. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Caches the names of the types that can be created as the root object. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     protected List<String> initialObjectNames;
 
     /**
-     * This just records the information. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This just records the information. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
      *
      * @generated
      */
@@ -143,31 +148,28 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
     public void init(final IWorkbench workbench, final IStructuredSelection selection) {
         this.workbench = workbench;
         this.selection = selection;
-        this.setWindowTitle(Seff2java_astEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-        this.setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE
+        setWindowTitle(Seff2java_astEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+        setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE
                 .getImageDescriptor(Seff2java_astEditorPlugin.INSTANCE.getImage("full/wizban/NewSeff2javaast")));
     }
 
     /**
-     * Returns the names of the types that can be created as the root object. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * Returns the names of the types that can be created as the root object. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     protected Collection<String> getInitialObjectNames() {
-        if (this.initialObjectNames == null) {
-            this.initialObjectNames = new ArrayList<String>();
-            for (final EClassifier eClassifier : this.seff2javaastPackage.getEClassifiers()) {
-                if (eClassifier instanceof EClass) {
-                    final EClass eClass = (EClass) eClassifier;
-                    if (!eClass.isAbstract()) {
-                        this.initialObjectNames.add(eClass.getName());
-                    }
+        if (initialObjectNames == null) {
+            initialObjectNames = new ArrayList<>();
+            for (final EClassifier eClassifier : seff2javaastPackage.getEClassifiers()) {
+                if ((eClassifier instanceof final EClass eClass) && !eClass.isAbstract()) {
+                    initialObjectNames.add(eClass.getName());
                 }
             }
-            Collections.sort(this.initialObjectNames, CommonPlugin.INSTANCE.getComparator());
+            Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
         }
-        return this.initialObjectNames;
+        return initialObjectNames;
     }
 
     /**
@@ -176,14 +178,14 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
      * @generated
      */
     protected EObject createInitialModel() {
-        final EClass eClass = (EClass) this.seff2javaastPackage
-                .getEClassifier(this.initialObjectCreationPage.getInitialObjectName());
-        final EObject rootObject = this.seff2javaastFactory.create(eClass);
-        return rootObject;
+        final EClass eClass = (EClass) seff2javaastPackage
+                .getEClassifier(initialObjectCreationPage.getInitialObjectName());
+        return seff2javaastFactory.create(eClass);
     }
 
     /**
-     * Do the work after everything is specified. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Do the work after everything is specified. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
@@ -192,7 +194,7 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
         try {
             // Remember the file.
             //
-            final IFile modelFile = this.getModelFile();
+            final IFile modelFile = getModelFile();
 
             // Do the work within an operation.
             //
@@ -221,9 +223,8 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
 
                         // Save the contents of the resource to the file system.
                         //
-                        final Map<Object, Object> options = new HashMap<Object, Object>();
-                        options.put(XMLResource.OPTION_ENCODING,
-                                Seff2javaastModelWizard.this.initialObjectCreationPage.getEncoding());
+                        final Map<Object, Object> options = new HashMap<>();
+                        options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
                         resource.save(options);
                     } catch (final Exception exception) {
                         Seff2java_astEditorPlugin.INSTANCE.log(exception);
@@ -233,28 +234,24 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
                 }
             };
 
-            this.getContainer().run(false, false, operation);
+            getContainer().run(false, false, operation);
 
             // Select the new file resource in the current view.
             //
-            final IWorkbenchWindow workbenchWindow = this.workbench.getActiveWorkbenchWindow();
+            final IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
             final IWorkbenchPage page = workbenchWindow.getActivePage();
             final IWorkbenchPart activePart = page.getActivePart();
             if (activePart instanceof ISetSelectionTarget) {
                 final ISelection targetSelection = new StructuredSelection(modelFile);
-                this.getShell().getDisplay().asyncExec(new Runnable() {
-                    @Override
-                    public void run() {
-                        ((ISetSelectionTarget) activePart).selectReveal(targetSelection);
-                    }
-                });
+                getShell().getDisplay()
+                        .asyncExec(() -> ((ISetSelectionTarget) activePart).selectReveal(targetSelection));
             }
 
             // Open an editor on the new file.
             //
             try {
-                page.openEditor(new FileEditorInput(modelFile), this.workbench.getEditorRegistry()
-                        .getDefaultEditor(modelFile.getFullPath().toString()).getId());
+                page.openEditor(new FileEditorInput(modelFile),
+                        workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
             } catch (final PartInitException exception) {
                 MessageDialog.openError(workbenchWindow.getShell(),
                         Seff2java_astEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"),
@@ -270,7 +267,8 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
     }
 
     /**
-     * This is the one page of the wizard. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is the one page of the wizard. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
      *
      * @generated
      */
@@ -285,19 +283,19 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
         }
 
         /**
-         * The framework calls this to see if the file is correct. <!-- begin-user-doc --> <!--
-         * end-user-doc -->
+         * The framework calls this to see if the file is correct. <!-- begin-user-doc
+         * --> <!-- end-user-doc -->
          *
          * @generated
          */
         @Override
         protected boolean validatePage() {
             if (super.validatePage()) {
-                final String extension = new Path(this.getFileName()).getFileExtension();
-                if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+                final String extension = new Path(getFileName()).getFileExtension();
+                if ((extension == null) || !FILE_EXTENSIONS.contains(extension)) {
                     final String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions"
                             : "_WARN_FilenameExtension";
-                    this.setErrorMessage(Seff2java_astEditorPlugin.INSTANCE.getString(key,
+                    setErrorMessage(Seff2java_astEditorPlugin.INSTANCE.getString(key,
                             new Object[] { FORMATTED_FILE_EXTENSIONS }));
                     return false;
                 }
@@ -312,14 +310,13 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
          * @generated
          */
         public IFile getModelFile() {
-            return ResourcesPlugin.getWorkspace().getRoot()
-                    .getFile(this.getContainerFullPath().append(this.getFileName()));
+            return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
         }
     }
 
     /**
-     * This is the page where the type of object to create is selected. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * This is the page where the type of object to create is selected. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
@@ -382,22 +379,22 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
                 containerLabel.setLayoutData(data);
             }
 
-            this.initialObjectField = new Combo(composite, SWT.BORDER);
+            initialObjectField = new Combo(composite, SWT.BORDER);
             {
                 final GridData data = new GridData();
                 data.horizontalAlignment = GridData.FILL;
                 data.grabExcessHorizontalSpace = true;
-                this.initialObjectField.setLayoutData(data);
+                initialObjectField.setLayoutData(data);
             }
 
-            for (final String objectName : Seff2javaastModelWizard.this.getInitialObjectNames()) {
-                this.initialObjectField.add(this.getLabel(objectName));
+            for (final String objectName : getInitialObjectNames()) {
+                initialObjectField.add(getLabel(objectName));
             }
 
-            if (this.initialObjectField.getItemCount() == 1) {
-                this.initialObjectField.select(0);
+            if (initialObjectField.getItemCount() == 1) {
+                initialObjectField.select(0);
             }
-            this.initialObjectField.addModifyListener(this.validator);
+            initialObjectField.addModifyListener(validator);
 
             final Label encodingLabel = new Label(composite, SWT.LEFT);
             {
@@ -407,23 +404,23 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
                 data.horizontalAlignment = GridData.FILL;
                 encodingLabel.setLayoutData(data);
             }
-            this.encodingField = new Combo(composite, SWT.BORDER);
+            encodingField = new Combo(composite, SWT.BORDER);
             {
                 final GridData data = new GridData();
                 data.horizontalAlignment = GridData.FILL;
                 data.grabExcessHorizontalSpace = true;
-                this.encodingField.setLayoutData(data);
+                encodingField.setLayoutData(data);
             }
 
-            for (final String encoding : this.getEncodings()) {
-                this.encodingField.add(encoding);
+            for (final String encoding : getEncodings()) {
+                encodingField.add(encoding);
             }
 
-            this.encodingField.select(0);
-            this.encodingField.addModifyListener(this.validator);
+            encodingField.select(0);
+            encodingField.addModifyListener(validator);
 
-            this.setPageComplete(this.validatePage());
-            this.setControl(composite);
+            setPageComplete(validatePage());
+            setControl(composite);
         }
 
         /**
@@ -431,13 +428,7 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
          *
          * @generated
          */
-        protected ModifyListener validator = new ModifyListener() {
-            @Override
-            public void modifyText(final ModifyEvent e) {
-                Seff2javaastModelWizardInitialObjectCreationPage.this
-                        .setPageComplete(Seff2javaastModelWizardInitialObjectCreationPage.this.validatePage());
-            }
-        };
+        protected ModifyListener validator = e -> setPageComplete(validatePage());
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -445,7 +436,7 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
          * @generated
          */
         protected boolean validatePage() {
-            return this.getInitialObjectName() != null && this.getEncodings().contains(this.encodingField.getText());
+            return (getInitialObjectName() != null) && getEncodings().contains(encodingField.getText());
         }
 
         /**
@@ -457,12 +448,12 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
         public void setVisible(final boolean visible) {
             super.setVisible(visible);
             if (visible) {
-                if (this.initialObjectField.getItemCount() == 1) {
-                    this.initialObjectField.clearSelection();
-                    this.encodingField.setFocus();
+                if (initialObjectField.getItemCount() == 1) {
+                    initialObjectField.clearSelection();
+                    encodingField.setFocus();
                 } else {
-                    this.encodingField.clearSelection();
-                    this.initialObjectField.setFocus();
+                    encodingField.clearSelection();
+                    initialObjectField.setFocus();
                 }
             }
         }
@@ -473,10 +464,10 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
          * @generated
          */
         public String getInitialObjectName() {
-            final String label = this.initialObjectField.getText();
+            final String label = initialObjectField.getText();
 
-            for (final String name : Seff2javaastModelWizard.this.getInitialObjectNames()) {
-                if (this.getLabel(name).equals(label)) {
+            for (final String name : getInitialObjectNames()) {
+                if (getLabel(name).equals(label)) {
                     return name;
                 }
             }
@@ -489,12 +480,12 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
          * @generated
          */
         public String getEncoding() {
-            return this.encodingField.getText();
+            return encodingField.getText();
         }
 
         /**
-         * Returns the label for the specified type name. <!-- begin-user-doc --> <!-- end-user-doc
-         * -->
+         * Returns the label for the specified type name. <!-- begin-user-doc --> <!--
+         * end-user-doc -->
          *
          * @generated
          */
@@ -513,21 +504,21 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
          * @generated
          */
         protected Collection<String> getEncodings() {
-            if (this.encodings == null) {
-                this.encodings = new ArrayList<String>();
+            if (encodings == null) {
+                encodings = new ArrayList<>();
                 for (final StringTokenizer stringTokenizer = new StringTokenizer(
                         Seff2java_astEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer
                                 .hasMoreTokens();) {
-                    this.encodings.add(stringTokenizer.nextToken());
+                    encodings.add(stringTokenizer.nextToken());
                 }
             }
-            return this.encodings;
+            return encodings;
         }
     }
 
     /**
-     * The framework calls this to create the contents of the wizard. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The framework calls this to create the contents of the wizard. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
@@ -535,36 +526,33 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
     public void addPages() {
         // Create a page, set the title, and the initial model file name.
         //
-        this.newFileCreationPage = new Seff2javaastModelWizardNewFileCreationPage("Whatever", this.selection);
-        this.newFileCreationPage
-                .setTitle(Seff2java_astEditorPlugin.INSTANCE.getString("_UI_Seff2javaastModelWizard_label"));
-        this.newFileCreationPage.setDescription(
+        newFileCreationPage = new Seff2javaastModelWizardNewFileCreationPage("Whatever", selection);
+        newFileCreationPage.setTitle(Seff2java_astEditorPlugin.INSTANCE.getString("_UI_Seff2javaastModelWizard_label"));
+        newFileCreationPage.setDescription(
                 Seff2java_astEditorPlugin.INSTANCE.getString("_UI_Seff2javaastModelWizard_description"));
-        this.newFileCreationPage
+        newFileCreationPage
                 .setFileName(Seff2java_astEditorPlugin.INSTANCE.getString("_UI_Seff2javaastEditorFilenameDefaultBase")
                         + "." + FILE_EXTENSIONS.get(0));
-        this.addPage(this.newFileCreationPage);
+        addPage(newFileCreationPage);
 
-        // Try and get the resource selection to determine a current directory for the file dialog.
+        // Try and get the resource selection to determine a current directory for the
+        // file dialog.
         //
-        if (this.selection != null && !this.selection.isEmpty()) {
+        if ((selection != null) && !selection.isEmpty()) {
             // Get the resource...
             //
-            final Object selectedElement = this.selection.iterator().next();
-            if (selectedElement instanceof IResource) {
-                // Get the resource parent, if its a file.
-                //
-                IResource selectedResource = (IResource) selectedElement;
+            final Object selectedElement = selection.iterator().next();
+            if (selectedElement instanceof IResource selectedResource) {
                 if (selectedResource.getType() == IResource.FILE) {
                     selectedResource = selectedResource.getParent();
                 }
 
                 // This gives us a directory...
                 //
-                if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+                if ((selectedResource instanceof IFolder) || (selectedResource instanceof IProject)) {
                     // Set this for the container.
                     //
-                    this.newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
+                    newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
 
                     // Make up a unique new name here.
                     //
@@ -575,16 +563,16 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
                     for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
                         modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
                     }
-                    this.newFileCreationPage.setFileName(modelFilename);
+                    newFileCreationPage.setFileName(modelFilename);
                 }
             }
         }
-        this.initialObjectCreationPage = new Seff2javaastModelWizardInitialObjectCreationPage("Whatever2");
-        this.initialObjectCreationPage
+        initialObjectCreationPage = new Seff2javaastModelWizardInitialObjectCreationPage("Whatever2");
+        initialObjectCreationPage
                 .setTitle(Seff2java_astEditorPlugin.INSTANCE.getString("_UI_Seff2javaastModelWizard_label"));
-        this.initialObjectCreationPage
+        initialObjectCreationPage
                 .setDescription(Seff2java_astEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-        this.addPage(this.initialObjectCreationPage);
+        addPage(initialObjectCreationPage);
     }
 
     /**
@@ -593,7 +581,7 @@ public class Seff2javaastModelWizard extends Wizard implements INewWizard {
      * @generated
      */
     public IFile getModelFile() {
-        return this.newFileCreationPage.getModelFile();
+        return newFileCreationPage.getModelFile();
     }
 
 }

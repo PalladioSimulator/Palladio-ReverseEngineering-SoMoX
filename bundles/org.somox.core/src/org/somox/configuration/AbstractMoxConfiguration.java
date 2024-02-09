@@ -98,7 +98,8 @@ public abstract class AbstractMoxConfiguration extends AbstractComposedJobConfig
         }
         final FileLocationConfiguration fileLocations = getFileLocations();
         if (attributeMap.get(AbstractMoxConfiguration.SOMOX_PROJECT_NAME) != null) {
-            fileLocations.setProjectNames(Set.of((String)attributeMap.get(AbstractMoxConfiguration.SOMOX_PROJECT_NAME)));
+            fileLocations
+                    .setProjectNames(Set.of((String) attributeMap.get(AbstractMoxConfiguration.SOMOX_PROJECT_NAME)));
         }
 
         if (attributeMap.get(AbstractMoxConfiguration.SOMOX_ANALYZER_INPUT_FILE) != null) {

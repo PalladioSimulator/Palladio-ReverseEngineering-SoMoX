@@ -3,10 +3,11 @@ package org.somox.analyzer.simplemodelanalyzer.detection.util;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.types.Type;
 import org.somox.kdmhelper.KDMHelper;
 //import de.fzi.gast.types.GASTClass;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
+
+import tools.mdsd.jamopp.model.java.types.Type;
 
 public class ComponentPrinter {
 

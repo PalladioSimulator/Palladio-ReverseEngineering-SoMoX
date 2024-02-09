@@ -11,15 +11,15 @@ import org.somox.metrics.dsl.metricDSL.BoundAndWeight;
 import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Bound And Weight</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Bound
+ * And Weight</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
  * <li>{@link org.somox.metrics.dsl.metricDSL.impl.BoundAndWeightImpl#getUpperBound
  * <em>Upper Bound</em>}</li>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.BoundAndWeightImpl#getWeight <em>Weight</em>}
- * </li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.BoundAndWeightImpl#getWeight
+ * <em>Weight</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,8 +27,8 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
  */
 public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements BoundAndWeight {
     /**
-     * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}'
+     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getUpperBound()
      * @generated
@@ -37,8 +37,8 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
     protected org.somox.metrics.dsl.metricDSL.Number upperBound;
 
     /**
-     * The cached value of the '{@link #getWeight() <em>Weight</em>}' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getWeight() <em>Weight</em>}' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getWeight()
      * @generated
@@ -52,7 +52,6 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
      * @generated
      */
     protected BoundAndWeightImpl() {
-        super();
     }
 
     /**
@@ -72,17 +71,15 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
      */
     @Override
     public org.somox.metrics.dsl.metricDSL.Number getUpperBound() {
-        if (this.upperBound != null && this.upperBound.eIsProxy()) {
-            final InternalEObject oldUpperBound = (InternalEObject) this.upperBound;
-            this.upperBound = (org.somox.metrics.dsl.metricDSL.Number) this.eResolveProxy(oldUpperBound);
-            if (this.upperBound != oldUpperBound) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            MetricDSLPackage.BOUND_AND_WEIGHT__UPPER_BOUND, oldUpperBound, this.upperBound));
-                }
+        if ((upperBound != null) && upperBound.eIsProxy()) {
+            final InternalEObject oldUpperBound = (InternalEObject) upperBound;
+            upperBound = (org.somox.metrics.dsl.metricDSL.Number) eResolveProxy(oldUpperBound);
+            if ((upperBound != oldUpperBound) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        MetricDSLPackage.BOUND_AND_WEIGHT__UPPER_BOUND, oldUpperBound, upperBound));
             }
         }
-        return this.upperBound;
+        return upperBound;
     }
 
     /**
@@ -91,7 +88,7 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
      * @generated
      */
     public org.somox.metrics.dsl.metricDSL.Number basicGetUpperBound() {
-        return this.upperBound;
+        return upperBound;
     }
 
     /**
@@ -101,11 +98,11 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
      */
     @Override
     public void setUpperBound(final org.somox.metrics.dsl.metricDSL.Number newUpperBound) {
-        final org.somox.metrics.dsl.metricDSL.Number oldUpperBound = this.upperBound;
-        this.upperBound = newUpperBound;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.BOUND_AND_WEIGHT__UPPER_BOUND,
-                    oldUpperBound, this.upperBound));
+        final org.somox.metrics.dsl.metricDSL.Number oldUpperBound = upperBound;
+        upperBound = newUpperBound;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.BOUND_AND_WEIGHT__UPPER_BOUND,
+                    oldUpperBound, upperBound));
         }
     }
 
@@ -116,17 +113,15 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
      */
     @Override
     public org.somox.metrics.dsl.metricDSL.Number getWeight() {
-        if (this.weight != null && this.weight.eIsProxy()) {
-            final InternalEObject oldWeight = (InternalEObject) this.weight;
-            this.weight = (org.somox.metrics.dsl.metricDSL.Number) this.eResolveProxy(oldWeight);
-            if (this.weight != oldWeight) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            MetricDSLPackage.BOUND_AND_WEIGHT__WEIGHT, oldWeight, this.weight));
-                }
+        if ((weight != null) && weight.eIsProxy()) {
+            final InternalEObject oldWeight = (InternalEObject) weight;
+            weight = (org.somox.metrics.dsl.metricDSL.Number) eResolveProxy(oldWeight);
+            if ((weight != oldWeight) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE, MetricDSLPackage.BOUND_AND_WEIGHT__WEIGHT,
+                        oldWeight, weight));
             }
         }
-        return this.weight;
+        return weight;
     }
 
     /**
@@ -135,7 +130,7 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
      * @generated
      */
     public org.somox.metrics.dsl.metricDSL.Number basicGetWeight() {
-        return this.weight;
+        return weight;
     }
 
     /**
@@ -145,11 +140,11 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
      */
     @Override
     public void setWeight(final org.somox.metrics.dsl.metricDSL.Number newWeight) {
-        final org.somox.metrics.dsl.metricDSL.Number oldWeight = this.weight;
-        this.weight = newWeight;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.BOUND_AND_WEIGHT__WEIGHT,
-                    oldWeight, this.weight));
+        final org.somox.metrics.dsl.metricDSL.Number oldWeight = weight;
+        weight = newWeight;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.BOUND_AND_WEIGHT__WEIGHT, oldWeight,
+                    weight));
         }
     }
 
@@ -163,14 +158,14 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
         switch (featureID) {
         case MetricDSLPackage.BOUND_AND_WEIGHT__UPPER_BOUND:
             if (resolve) {
-                return this.getUpperBound();
+                return getUpperBound();
             }
-            return this.basicGetUpperBound();
+            return basicGetUpperBound();
         case MetricDSLPackage.BOUND_AND_WEIGHT__WEIGHT:
             if (resolve) {
-                return this.getWeight();
+                return getWeight();
             }
-            return this.basicGetWeight();
+            return basicGetWeight();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -184,10 +179,10 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.BOUND_AND_WEIGHT__UPPER_BOUND:
-            this.setUpperBound((org.somox.metrics.dsl.metricDSL.Number) newValue);
+            setUpperBound((org.somox.metrics.dsl.metricDSL.Number) newValue);
             return;
         case MetricDSLPackage.BOUND_AND_WEIGHT__WEIGHT:
-            this.setWeight((org.somox.metrics.dsl.metricDSL.Number) newValue);
+            setWeight((org.somox.metrics.dsl.metricDSL.Number) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -202,10 +197,10 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.BOUND_AND_WEIGHT__UPPER_BOUND:
-            this.setUpperBound((org.somox.metrics.dsl.metricDSL.Number) null);
+            setUpperBound((org.somox.metrics.dsl.metricDSL.Number) null);
             return;
         case MetricDSLPackage.BOUND_AND_WEIGHT__WEIGHT:
-            this.setWeight((org.somox.metrics.dsl.metricDSL.Number) null);
+            setWeight((org.somox.metrics.dsl.metricDSL.Number) null);
             return;
         }
         super.eUnset(featureID);
@@ -220,9 +215,9 @@ public class BoundAndWeightImpl extends MinimalEObjectImpl.Container implements 
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.BOUND_AND_WEIGHT__UPPER_BOUND:
-            return this.upperBound != null;
+            return upperBound != null;
         case MetricDSLPackage.BOUND_AND_WEIGHT__WEIGHT:
-            return this.weight != null;
+            return weight != null;
         }
         return super.eIsSet(featureID);
     }

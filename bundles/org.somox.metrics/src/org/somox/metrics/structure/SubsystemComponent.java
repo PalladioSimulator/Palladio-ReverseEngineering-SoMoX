@@ -5,9 +5,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.containers.Package;
-import org.emftext.language.java.types.Type;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.KDMHelper;
@@ -18,6 +15,10 @@ import org.somox.metrics.MetricID;
 import org.somox.metrics.abstractmetrics.AbstractMetric;
 import org.somox.metrics.helper.ClassAccessGraphEdge;
 import org.somox.metrics.helper.ComponentToImplementingClassesHelper;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.containers.Package;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 //import de.fzi.gast.core.Package;
 //import de.fzi.gast.core.Root;

@@ -3,8 +3,9 @@
 package org.somox.sourcecodedecorator;
 
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.palladiosimulator.pcm.repository.Interface;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '

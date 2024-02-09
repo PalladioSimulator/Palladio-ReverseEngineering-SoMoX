@@ -17,13 +17,13 @@ Require-Bundle: org.somox.core,
  org.somox.sourcecodedecorator,
  org.palladiosimulator.pcm,
  org.palladiosimulator.pcm.resources,
- org.emftext.language.java,
  org.eclipse.emf.common,
  org.somox.metricvaluesstorage,
  org.somox.metrics,
  org.somox.util,
  org.somox.gast2seff,
- org.jgrapht.core
+ org.jgrapht.core,
+ tools.mdsd.jamopp.model.java
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.somox.analyzer.simplemodelanalyzer,

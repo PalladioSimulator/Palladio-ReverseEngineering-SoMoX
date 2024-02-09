@@ -1,6 +1,6 @@
 package org.somox.analyzer.simplemodelanalyzer.detection;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 //import de.fzi.gast.types.GASTClass;
 

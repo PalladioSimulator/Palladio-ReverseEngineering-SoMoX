@@ -3,8 +3,9 @@
 package org.somox.sourcecodedecorator;
 
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.members.ClassMethod;
 import org.palladiosimulator.pcm.seff.AbstractAction;
+
+import tools.mdsd.jamopp.model.java.members.ClassMethod;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '

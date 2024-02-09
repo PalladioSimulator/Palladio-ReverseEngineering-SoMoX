@@ -3,8 +3,8 @@
 package org.somox.metrics.dsl.metricDSL;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>External Metric</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>External
+ * Metric</b></em>'. <!-- end-user-doc -->
  *
  *
  * @see org.somox.metrics.dsl.metricDSL.MetricDSLPackage#getExternalMetric()

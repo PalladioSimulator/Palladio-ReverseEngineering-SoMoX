@@ -3,17 +3,15 @@ package org.somox.analyzer.simplemodelanalyzer.detection;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.somox.analyzer.simplemodelanalyzer.builder.ComponentBuilder;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.filter.ComposedFilter;
 import org.somox.filter.EClassBasedFilter;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.kdmhelper.metamodeladdition.Root;
-//import de.fzi.gast.core.Root;
-//import de.fzi.gast.types.GASTClass;
-//import de.fzi.gast.types.typesPackage;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 /**
  * Initialization class which only lists a filtered set of classes which

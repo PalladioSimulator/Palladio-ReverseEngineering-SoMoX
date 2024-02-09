@@ -3,13 +3,14 @@ package org.somox.metrics.basic;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.somox.filter.BaseFilter;
 import org.somox.filter.FilteredCollectionsFactory;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.metrics.ClusteringRelation;
 import org.somox.metrics.MetricID;
 import org.somox.metrics.abstractmetrics.AbstractCountingMetric;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 public class InterfaceAccessesCount extends AbstractCountingMetric {
 

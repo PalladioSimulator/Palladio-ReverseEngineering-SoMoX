@@ -18,14 +18,15 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 import org.somox.metrics.dsl.metricDSL.StepwiseMetric;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Stepwise Metric</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Stepwise Metric</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
  * <li>{@link org.somox.metrics.dsl.metricDSL.impl.StepwiseMetricImpl#getInnerMetric
  * <em>Inner Metric</em>}</li>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.StepwiseMetricImpl#getSteps <em>Steps</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.StepwiseMetricImpl#getSteps
+ * <em>Steps</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,8 +34,8 @@ import org.somox.metrics.dsl.metricDSL.StepwiseMetric;
  */
 public class StepwiseMetricImpl extends MetricDefinitionImpl implements StepwiseMetric {
     /**
-     * The cached value of the '{@link #getInnerMetric() <em>Inner Metric</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getInnerMetric() <em>Inner Metric</em>}'
+     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getInnerMetric()
      * @generated
@@ -43,8 +44,8 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
     protected Metric innerMetric;
 
     /**
-     * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment reference list. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment
+     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getSteps()
      * @generated
@@ -58,7 +59,6 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
      * @generated
      */
     protected StepwiseMetricImpl() {
-        super();
     }
 
     /**
@@ -78,17 +78,15 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
      */
     @Override
     public Metric getInnerMetric() {
-        if (this.innerMetric != null && this.innerMetric.eIsProxy()) {
-            final InternalEObject oldInnerMetric = (InternalEObject) this.innerMetric;
-            this.innerMetric = (Metric) this.eResolveProxy(oldInnerMetric);
-            if (this.innerMetric != oldInnerMetric) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            MetricDSLPackage.STEPWISE_METRIC__INNER_METRIC, oldInnerMetric, this.innerMetric));
-                }
+        if ((innerMetric != null) && innerMetric.eIsProxy()) {
+            final InternalEObject oldInnerMetric = (InternalEObject) innerMetric;
+            innerMetric = (Metric) eResolveProxy(oldInnerMetric);
+            if ((innerMetric != oldInnerMetric) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        MetricDSLPackage.STEPWISE_METRIC__INNER_METRIC, oldInnerMetric, innerMetric));
             }
         }
-        return this.innerMetric;
+        return innerMetric;
     }
 
     /**
@@ -97,7 +95,7 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
      * @generated
      */
     public Metric basicGetInnerMetric() {
-        return this.innerMetric;
+        return innerMetric;
     }
 
     /**
@@ -107,11 +105,11 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
      */
     @Override
     public void setInnerMetric(final Metric newInnerMetric) {
-        final Metric oldInnerMetric = this.innerMetric;
-        this.innerMetric = newInnerMetric;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.STEPWISE_METRIC__INNER_METRIC,
-                    oldInnerMetric, this.innerMetric));
+        final Metric oldInnerMetric = innerMetric;
+        innerMetric = newInnerMetric;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.STEPWISE_METRIC__INNER_METRIC,
+                    oldInnerMetric, innerMetric));
         }
     }
 
@@ -122,11 +120,10 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
      */
     @Override
     public EList<BoundAndWeight> getSteps() {
-        if (this.steps == null) {
-            this.steps = new EObjectContainmentEList<BoundAndWeight>(BoundAndWeight.class, this,
-                    MetricDSLPackage.STEPWISE_METRIC__STEPS);
+        if (steps == null) {
+            steps = new EObjectContainmentEList<>(BoundAndWeight.class, this, MetricDSLPackage.STEPWISE_METRIC__STEPS);
         }
-        return this.steps;
+        return steps;
     }
 
     /**
@@ -139,7 +136,7 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
             final NotificationChain msgs) {
         switch (featureID) {
         case MetricDSLPackage.STEPWISE_METRIC__STEPS:
-            return ((InternalEList<?>) this.getSteps()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getSteps()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -154,11 +151,11 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
         switch (featureID) {
         case MetricDSLPackage.STEPWISE_METRIC__INNER_METRIC:
             if (resolve) {
-                return this.getInnerMetric();
+                return getInnerMetric();
             }
-            return this.basicGetInnerMetric();
+            return basicGetInnerMetric();
         case MetricDSLPackage.STEPWISE_METRIC__STEPS:
-            return this.getSteps();
+            return getSteps();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -173,11 +170,11 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.STEPWISE_METRIC__INNER_METRIC:
-            this.setInnerMetric((Metric) newValue);
+            setInnerMetric((Metric) newValue);
             return;
         case MetricDSLPackage.STEPWISE_METRIC__STEPS:
-            this.getSteps().clear();
-            this.getSteps().addAll((Collection<? extends BoundAndWeight>) newValue);
+            getSteps().clear();
+            getSteps().addAll((Collection<? extends BoundAndWeight>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -192,10 +189,10 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.STEPWISE_METRIC__INNER_METRIC:
-            this.setInnerMetric((Metric) null);
+            setInnerMetric((Metric) null);
             return;
         case MetricDSLPackage.STEPWISE_METRIC__STEPS:
-            this.getSteps().clear();
+            getSteps().clear();
             return;
         }
         super.eUnset(featureID);
@@ -210,9 +207,9 @@ public class StepwiseMetricImpl extends MetricDefinitionImpl implements Stepwise
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.STEPWISE_METRIC__INNER_METRIC:
-            return this.innerMetric != null;
+            return innerMetric != null;
         case MetricDSLPackage.STEPWISE_METRIC__STEPS:
-            return this.steps != null && !this.steps.isEmpty();
+            return (steps != null) && !steps.isEmpty();
         }
         return super.eIsSet(featureID);
     }

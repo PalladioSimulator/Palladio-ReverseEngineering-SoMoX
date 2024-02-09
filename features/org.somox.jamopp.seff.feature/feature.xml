@@ -14,7 +14,7 @@
       <import plugin="de.uka.ipd.sdq.workflow"/>
       <import plugin="de.uka.ipd.sdq.workflow.mdsd"/>
       <import plugin="org.eclipse.emf"/>
-      <import plugin="org.emftext.language.java"/>
+      <import plugin="tools.mdsd.jamopp.model.java"/>
       <import plugin="org.somox.sourcecodedecorator"/>
       <import plugin="org.somox.core"/>
       <import plugin="org.somox.kdmhelper"/>

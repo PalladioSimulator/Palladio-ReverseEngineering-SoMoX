@@ -8,10 +8,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.emftext.language.java.members.Field;
 import org.palladiosimulator.pcm.repository.InnerDeclaration;
 import org.somox.sourcecodedecorator.InnerDatatypeSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
+
+import tools.mdsd.jamopp.model.java.members.Field;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Inner

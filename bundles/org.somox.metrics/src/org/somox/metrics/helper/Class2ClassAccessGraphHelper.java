@@ -4,9 +4,6 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.types.Type;
-import org.emftext.language.java.types.TypeReference;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.configuration.SoMoXConfiguration;
@@ -15,6 +12,10 @@ import org.somox.filter.EClassBasedFilter;
 import org.somox.kdmhelper.GetAccessedType;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.metrics.util.GraphPrinter;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.types.Type;
+import tools.mdsd.jamopp.model.java.types.TypeReference;
 
 //import de.fzi.gast.accesses.Access;
 //import de.fzi.gast.accesses.accessesPackage;

@@ -6,10 +6,11 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.types.Type;
 import org.somox.metrics.ClusteringRelation;
 import org.somox.metrics.abstractmetrics.AbstractMetric;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 //import de.fzi.gast.core.ModelElement;
 //import de.fzi.gast.types.GASTClass;

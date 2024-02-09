@@ -12,25 +12,26 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.ComposedSwitch;
-import org.emftext.language.java.commons.Commentable;
-import org.emftext.language.java.expressions.util.ExpressionsSwitch;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.members.util.MembersSwitch;
-import org.emftext.language.java.statements.Assert;
-import org.emftext.language.java.statements.Block;
-import org.emftext.language.java.statements.CatchBlock;
-import org.emftext.language.java.statements.Condition;
-import org.emftext.language.java.statements.DoWhileLoop;
-import org.emftext.language.java.statements.ExpressionStatement;
-import org.emftext.language.java.statements.ForEachLoop;
-import org.emftext.language.java.statements.ForLoop;
-import org.emftext.language.java.statements.LocalVariableStatement;
-import org.emftext.language.java.statements.Statement;
-import org.emftext.language.java.statements.StatementListContainer;
-import org.emftext.language.java.statements.TryBlock;
-import org.emftext.language.java.statements.WhileLoop;
-import org.emftext.language.java.statements.util.StatementsSwitch;
 import org.somox.kdmhelper.KDMHelper;
+
+import tools.mdsd.jamopp.model.java.commons.Commentable;
+import tools.mdsd.jamopp.model.java.expressions.util.ExpressionsSwitch;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.members.util.MembersSwitch;
+import tools.mdsd.jamopp.model.java.statements.Assert;
+import tools.mdsd.jamopp.model.java.statements.Block;
+import tools.mdsd.jamopp.model.java.statements.CatchBlock;
+import tools.mdsd.jamopp.model.java.statements.Condition;
+import tools.mdsd.jamopp.model.java.statements.DoWhileLoop;
+import tools.mdsd.jamopp.model.java.statements.ExpressionStatement;
+import tools.mdsd.jamopp.model.java.statements.ForEachLoop;
+import tools.mdsd.jamopp.model.java.statements.ForLoop;
+import tools.mdsd.jamopp.model.java.statements.LocalVariableStatement;
+import tools.mdsd.jamopp.model.java.statements.Statement;
+import tools.mdsd.jamopp.model.java.statements.StatementListContainer;
+import tools.mdsd.jamopp.model.java.statements.TryBlock;
+import tools.mdsd.jamopp.model.java.statements.WhileLoop;
+import tools.mdsd.jamopp.model.java.statements.util.StatementsSwitch;
 
 /**
  * Classifies function calls are internal, library, or external calls.
@@ -139,7 +140,7 @@ public class FunctionCallClassificationVisitor extends ComposedSwitch<Collection
         }
 
         @Override
-        public Collection<BitSet> caseSwitch(final org.emftext.language.java.statements.Switch switchStatement) {
+        public Collection<BitSet> caseSwitch(final tools.mdsd.jamopp.model.java.statements.Switch switchStatement) {
             if (annotations.containsKey(switchStatement)) {
                 return annotations.get(switchStatement);
             }

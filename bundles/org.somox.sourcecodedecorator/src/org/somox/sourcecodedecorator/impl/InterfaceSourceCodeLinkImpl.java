@@ -8,10 +8,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.palladiosimulator.pcm.repository.Interface;
 import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '

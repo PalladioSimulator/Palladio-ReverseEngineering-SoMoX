@@ -3,8 +3,9 @@ package org.somox.metrics.tabs;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
-import org.emftext.language.java.types.Type;
 import org.somox.kdmhelper.metamodeladdition.Root;
+
+import tools.mdsd.jamopp.model.java.types.Type;
 
 //import de.fzi.gast.core.Root;
 //import de.fzi.gast.types.GASTClass;

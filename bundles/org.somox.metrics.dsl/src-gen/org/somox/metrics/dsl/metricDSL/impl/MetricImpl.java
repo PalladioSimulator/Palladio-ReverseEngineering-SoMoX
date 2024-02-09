@@ -10,12 +10,13 @@ import org.somox.metrics.dsl.metricDSL.Metric;
 import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Metric</b></em>'. <!--
- * end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Metric</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.MetricImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.MetricImpl#getName
+ * <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,8 +24,8 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
  */
 public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getName()
      * @generated
@@ -33,8 +34,8 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getName()
      * @generated
@@ -48,7 +49,6 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
      * @generated
      */
     protected MetricImpl() {
-        super();
     }
 
     /**
@@ -68,7 +68,7 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
      */
     @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**
@@ -78,11 +78,10 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
      */
     @Override
     public void setName(final String newName) {
-        final String oldName = this.name;
-        this.name = newName;
-        if (this.eNotificationRequired()) {
-            this.eNotify(
-                    new ENotificationImpl(this, Notification.SET, MetricDSLPackage.METRIC__NAME, oldName, this.name));
+        final String oldName = name;
+        name = newName;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.METRIC__NAME, oldName, name));
         }
     }
 
@@ -95,7 +94,7 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricDSLPackage.METRIC__NAME:
-            return this.getName();
+            return getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -109,7 +108,7 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.METRIC__NAME:
-            this.setName((String) newValue);
+            setName((String) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -124,7 +123,7 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.METRIC__NAME:
-            this.setName(NAME_EDEFAULT);
+            setName(NAME_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -139,7 +138,7 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.METRIC__NAME:
-            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
+            return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
         }
         return super.eIsSet(featureID);
     }
@@ -151,13 +150,13 @@ public class MetricImpl extends MinimalEObjectImpl.Container implements Metric {
      */
     @Override
     public String toString() {
-        if (this.eIsProxy()) {
+        if (eIsProxy()) {
             return super.toString();
         }
 
-        final StringBuffer result = new StringBuffer(super.toString());
+        final StringBuilder result = new StringBuilder(super.toString());
         result.append(" (name: ");
-        result.append(this.name);
+        result.append(name);
         result.append(')');
         return result.toString();
     }

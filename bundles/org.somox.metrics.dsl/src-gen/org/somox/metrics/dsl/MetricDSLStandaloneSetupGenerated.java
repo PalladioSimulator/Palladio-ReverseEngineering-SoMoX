@@ -20,8 +20,8 @@ public class MetricDSLStandaloneSetupGenerated implements ISetup {
     public Injector createInjectorAndDoEMFRegistration() {
         org.eclipse.xtext.common.TerminalsStandaloneSetup.doSetup();
 
-        final Injector injector = this.createInjector();
-        this.register(injector);
+        final Injector injector = createInjector();
+        register(injector);
         return injector;
     }
 

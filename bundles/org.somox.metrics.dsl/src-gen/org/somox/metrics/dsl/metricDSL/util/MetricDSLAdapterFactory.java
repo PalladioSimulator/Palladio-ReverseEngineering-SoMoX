@@ -21,8 +21,9 @@ import org.somox.metrics.dsl.metricDSL.StepwiseMetric;
 import org.somox.metrics.dsl.metricDSL.WeightedMetric;
 
 /**
- * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
- * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
+ * an adapter <code>createXXX</code> method for each class of the model. <!--
+ * end-user-doc -->
  *
  * @see org.somox.metrics.dsl.metricDSL.MetricDSLPackage
  * @generated
@@ -36,7 +37,8 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
     protected static MetricDSLPackage modelPackage;
 
     /**
-     * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
@@ -47,9 +49,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc
-     * --> This implementation returns <code>true</code> if the object is either the model's package
-     * or is an instance object of the model. <!-- end-user-doc -->
+     * Returns whether this factory is applicable for the type of the object. <!--
+     * begin-user-doc --> This implementation returns <code>true</code> if the
+     * object is either the model's package or is an instance object of the model.
+     * <!-- end-user-doc -->
      *
      * @return whether this factory is applicable for the type of the object.
      * @generated
@@ -66,12 +69,12 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The switch that delegates to the <code>createXXX</code> methods. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    protected MetricDSLSwitch<Adapter> modelSwitch = new MetricDSLSwitch<Adapter>() {
+    protected MetricDSLSwitch<Adapter> modelSwitch = new MetricDSLSwitch<>() {
         @Override
         public Adapter caseMetricModel(final MetricModel object) {
             return MetricDSLAdapterFactory.this.createMetricModelAdapter();
@@ -144,24 +147,24 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
     };
 
     /**
-     * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
-     * @param target
-     *            the object to adapt.
+     * @param target the object to adapt.
      * @return the adapter for the <code>target</code>.
      * @generated
      */
     @Override
     public Adapter createAdapter(final Notifier target) {
-        return this.modelSwitch.doSwitch((EObject) target);
+        return modelSwitch.doSwitch((EObject) target);
     }
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.MetricModel <em>Metric Model</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.MetricModel <em>Metric Model</em>}'.
+     * <!-- begin-user-doc --> This default implementation returns null so that we
+     * can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.MetricModel
@@ -172,10 +175,11 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.somox.metrics.dsl.metricDSL.Metric
-     * <em>Metric</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-     * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
-     * cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link org.somox.metrics.dsl.metricDSL.Metric <em>Metric</em>}'. <!--
+     * begin-user-doc --> This default implementation returns null so that we can
+     * easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.Metric
@@ -187,10 +191,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.ExternalMetric <em>External Metric</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.ExternalMetric <em>External
+     * Metric</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.ExternalMetric
@@ -202,10 +206,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.InternalMetric <em>Internal Metric</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.InternalMetric <em>Internal
+     * Metric</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.InternalMetric
@@ -216,10 +220,11 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.somox.metrics.dsl.metricDSL.Number
-     * <em>Number</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-     * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
-     * cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link org.somox.metrics.dsl.metricDSL.Number <em>Number</em>}'. <!--
+     * begin-user-doc --> This default implementation returns null so that we can
+     * easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.Number
@@ -231,9 +236,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.Parameter <em>Parameter</em>}'. <!-- begin-user-doc
-     * --> This default implementation returns null so that we can easily ignore cases; it's useful
-     * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.Parameter <em>Parameter</em>}'. <!--
+     * begin-user-doc --> This default implementation returns null so that we can
+     * easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.Parameter
@@ -244,10 +250,11 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.somox.metrics.dsl.metricDSL.Constant
-     * <em>Constant</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-     * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
-     * cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link org.somox.metrics.dsl.metricDSL.Constant <em>Constant</em>}'. <!--
+     * begin-user-doc --> This default implementation returns null so that we can
+     * easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.Constant
@@ -259,10 +266,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.MetricDefinition <em>Metric Definition</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.MetricDefinition <em>Metric
+     * Definition</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case
+     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.MetricDefinition
@@ -274,10 +281,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.WeightedMetric <em>Weighted Metric</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.WeightedMetric <em>Weighted
+     * Metric</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.WeightedMetric
@@ -289,10 +296,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.StepwiseMetric <em>Stepwise Metric</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.StepwiseMetric <em>Stepwise
+     * Metric</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.StepwiseMetric
@@ -304,10 +311,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.RatioMetric <em>Ratio Metric</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.RatioMetric <em>Ratio Metric</em>}'.
+     * <!-- begin-user-doc --> This default implementation returns null so that we
+     * can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.RatioMetric
@@ -319,10 +326,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.BoundAndWeight <em>Bound And Weight</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.BoundAndWeight <em>Bound And
+     * Weight</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.BoundAndWeight
@@ -334,10 +341,10 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.somox.metrics.dsl.metricDSL.MetricAndWeight <em>Metric And Weight</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * {@link org.somox.metrics.dsl.metricDSL.MetricAndWeight <em>Metric And
+     * Weight</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.somox.metrics.dsl.metricDSL.MetricAndWeight
@@ -348,8 +355,8 @@ public class MetricDSLAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
-     * implementation returns null. <!-- end-user-doc -->
+     * Creates a new adapter for the default case. <!-- begin-user-doc --> This
+     * default implementation returns null. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @generated

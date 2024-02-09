@@ -2,7 +2,7 @@
  */
 package org.somox.sourcecodedecorator;
 
-import org.emftext.language.java.members.Member;
+import tools.mdsd.jamopp.model.java.members.Member;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '

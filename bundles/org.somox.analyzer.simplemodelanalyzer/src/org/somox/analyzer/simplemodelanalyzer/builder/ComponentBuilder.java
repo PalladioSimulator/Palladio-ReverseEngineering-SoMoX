@@ -8,8 +8,6 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.types.Type;
 import org.jgrapht.Graph;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.composition.ComposedStructure;
@@ -27,6 +25,9 @@ import org.somox.metrics.ClusteringRelation;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 import org.somox.sourcecodedecorator.FileLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 /**
  * Builder for SAMM structures. Takes care of updating the source code

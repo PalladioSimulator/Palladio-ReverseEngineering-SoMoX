@@ -6,9 +6,10 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.statements.Statement;
 import org.somox.gast2seff.visitors.FunctionCallClassificationVisitor.FunctionCallType;
+
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.statements.Statement;
 
 /**
  * Base implementation of {@link IFunctionClassificationStrategy}. Delagates the

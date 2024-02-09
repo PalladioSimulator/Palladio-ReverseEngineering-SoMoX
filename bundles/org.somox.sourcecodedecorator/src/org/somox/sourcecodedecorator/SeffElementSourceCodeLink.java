@@ -4,9 +4,9 @@ package org.somox.sourcecodedecorator;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.statements.Statement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
+import tools.mdsd.jamopp.model.java.statements.Statement;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Seff
@@ -58,8 +58,9 @@ public interface SeffElementSourceCodeLink extends EObject {
 
     /**
      * Returns the value of the '<em><b>Statement</b></em>' reference list. The list
-     * contents are of type {@link org.emftext.language.java.statements.Statement}.
-     * <!-- begin-user-doc -->
+     * contents are of type
+     * {@link tools.mdsd.jamopp.model.java.statements.Statement}. <!--
+     * begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Statement</em>' reference list isn't clear, there
      * really should be more of a description here...

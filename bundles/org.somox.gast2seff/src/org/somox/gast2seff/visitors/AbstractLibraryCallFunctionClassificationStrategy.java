@@ -1,10 +1,11 @@
 package org.somox.gast2seff.visitors;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.containers.CompilationUnit;
-import org.emftext.language.java.members.Method;
 import org.somox.kdmhelper.metamodeladdition.Root;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
+
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
+import tools.mdsd.jamopp.model.java.members.Method;
 
 /**
  * Class that defines how library calls are marked but not how external calls

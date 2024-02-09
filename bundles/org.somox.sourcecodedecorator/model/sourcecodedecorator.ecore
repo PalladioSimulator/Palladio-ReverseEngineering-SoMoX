@@ -18,7 +18,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="file"
             ordered="false"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#//containers/CompilationUnit" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#//containers/CompilationUnit" />
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass"
         name="MethodLevelSourceCodeLink"
@@ -38,7 +38,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="statement"
             ordered="false"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#_Wo2YzNz1Ed2bJ_pQViWxFg" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#_Wo2YzNz1Ed2bJ_pQViWxFg" />
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass"
         name="SourceCodeDecoratorRepository">
@@ -109,7 +109,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="gastClass"
             ordered="false"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#//classifiers/ConcreteClassifier" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#//classifiers/ConcreteClassifier" />
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass"
         name="ComponentImplementingClassesLink">
@@ -134,7 +134,7 @@
             ordered="false"
             lowerBound="1"
             upperBound="-1"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#//classifiers/ConcreteClassifier" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#//classifiers/ConcreteClassifier" />
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="subComponents"
             ordered="false"
@@ -174,7 +174,7 @@
         eSuperTypes="#//FileLevelSourceCodeLink">
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="jaMoPPType"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#_Wo2ZO9z1Ed2bJ_pQViWxFg" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#_Wo2ZO9z1Ed2bJ_pQViWxFg" />
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="pcmDataType"
             eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/DataType" />
@@ -188,7 +188,7 @@
         name="InnerDatatypeSourceCodeLink">
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="field"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#//members/Field" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#//members/Field" />
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="innerDeclaration"
             eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/InnerDeclaration" />
@@ -197,7 +197,7 @@
         name="AbstractActionClassMethodLink">
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="classMethod"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#//members/ClassMethod" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#//members/ClassMethod" />
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="abstractAction"
             eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//seff/AbstractAction" />
@@ -216,7 +216,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="function"
             ordered="false"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#//members/Member" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#//members/Member" />
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass"
         name="SEFF2MethodMapping">
@@ -227,7 +227,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference"
             name="statementListContainer"
             lowerBound="1"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#//statements/StatementListContainer" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#//statements/StatementListContainer" />
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass"
         name="SeffElementSourceCodeLink">
@@ -239,6 +239,6 @@
             name="statement"
             lowerBound="1"
             upperBound="-1"
-            eType="ecore:EClass ../../org.emftext.language.java/metamodel/java.ecore#_Wo2YzNz1Ed2bJ_pQViWxFg" />
+            eType="ecore:EClass ../../tools.mdsd.jamopp.model.java/metamodel/java.ecore#_Wo2YzNz1Ed2bJ_pQViWxFg" />
     </eClassifiers>
 </ecore:EPackage>

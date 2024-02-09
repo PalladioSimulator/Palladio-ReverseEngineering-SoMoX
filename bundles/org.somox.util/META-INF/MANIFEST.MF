@@ -7,6 +7,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.apache.log4j,
  org.somox.sourcecodedecorator,
  org.somox.core,
- org.somox.kdmhelper
+ org.somox.kdmhelper,
+ tools.mdsd.jamopp.model.java,
+ org.eclipse.emf.common,
+ org.palladiosimulator.pcm.resources
 Automatic-Module-Name: org.somox.util
 Export-Package: org.somox.util

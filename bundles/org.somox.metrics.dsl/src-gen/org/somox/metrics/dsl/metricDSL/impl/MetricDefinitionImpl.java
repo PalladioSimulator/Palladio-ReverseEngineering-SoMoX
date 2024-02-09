@@ -8,8 +8,8 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 import org.somox.metrics.dsl.metricDSL.MetricDefinition;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Metric Definition</b></em>
- * '. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Metric
+ * Definition</b></em> '. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -22,7 +22,6 @@ public class MetricDefinitionImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     protected MetricDefinitionImpl() {
-        super();
     }
 
     /**

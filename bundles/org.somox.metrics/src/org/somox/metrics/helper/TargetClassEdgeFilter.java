@@ -2,8 +2,9 @@ package org.somox.metrics.helper;
 
 import java.util.Set;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.somox.filter.BaseFilter;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 //import de.fzi.gast.types.GASTClass;
 

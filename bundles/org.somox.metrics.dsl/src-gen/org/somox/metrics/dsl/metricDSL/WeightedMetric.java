@@ -5,13 +5,14 @@ package org.somox.metrics.dsl.metricDSL;
 import org.eclipse.emf.common.util.EList;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Weighted Metric</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Weighted
+ * Metric</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.somox.metrics.dsl.metricDSL.WeightedMetric#getWeights <em>Weights</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.WeightedMetric#getWeights
+ * <em>Weights</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,12 +22,13 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface WeightedMetric extends MetricDefinition {
     /**
-     * Returns the value of the '<em><b>Weights</b></em>' containment reference list. The list
-     * contents are of type {@link org.somox.metrics.dsl.metricDSL.MetricAndWeight}. <!--
-     * begin-user-doc -->
+     * Returns the value of the '<em><b>Weights</b></em>' containment reference
+     * list. The list contents are of type
+     * {@link org.somox.metrics.dsl.metricDSL.MetricAndWeight}. <!-- begin-user-doc
+     * -->
      * <p>
-     * If the meaning of the '<em>Weights</em>' containment reference list isn't clear, there really
-     * should be more of a description here...
+     * If the meaning of the '<em>Weights</em>' containment reference list isn't
+     * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *

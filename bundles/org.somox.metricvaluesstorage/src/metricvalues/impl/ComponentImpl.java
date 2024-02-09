@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.emftext.language.java.types.Type;
 
 import metricvalues.Component;
 import metricvalues.MetricvaluesPackage;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object

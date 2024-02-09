@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.emftext.language.java.statements.Statement;
 import org.somox.sourcecodedecorator.SeffElementSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
 
 import de.uka.ipd.sdq.identifier.Identifier;
+import tools.mdsd.jamopp.model.java.statements.Statement;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Seff

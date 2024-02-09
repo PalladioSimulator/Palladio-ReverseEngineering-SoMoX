@@ -18,7 +18,8 @@ import com.google.inject.Injector;
 import com.google.inject.Module;
 
 /**
- * This class was generated. Customizations should only happen in a newly introduced subclass.
+ * This class was generated. Customizations should only happen in a newly
+ * introduced subclass.
  */
 public class MetricDSLActivator extends AbstractUIPlugin {
 
@@ -29,7 +30,7 @@ public class MetricDSLActivator extends AbstractUIPlugin {
     private static MetricDSLActivator INSTANCE;
 
     private final Map<String, Injector> injectors = Collections
-            .synchronizedMap(Maps.<String, Injector> newHashMapWithExpectedSize(1));
+            .synchronizedMap(Maps.<String, Injector>newHashMapWithExpectedSize(1));
 
     @Override
     public void start(final BundleContext context) throws Exception {
@@ -39,7 +40,7 @@ public class MetricDSLActivator extends AbstractUIPlugin {
 
     @Override
     public void stop(final BundleContext context) throws Exception {
-        this.injectors.clear();
+        injectors.clear();
         INSTANCE = null;
         super.stop(context);
     }
@@ -49,10 +50,10 @@ public class MetricDSLActivator extends AbstractUIPlugin {
     }
 
     public Injector getInjector(final String language) {
-        synchronized (this.injectors) {
-            Injector injector = this.injectors.get(language);
+        synchronized (injectors) {
+            Injector injector = injectors.get(language);
             if (injector == null) {
-                this.injectors.put(language, injector = this.createInjector(language));
+                injectors.put(language, injector = createInjector(language));
             }
             return injector;
         }
@@ -60,9 +61,9 @@ public class MetricDSLActivator extends AbstractUIPlugin {
 
     protected Injector createInjector(final String language) {
         try {
-            final Module runtimeModule = this.getRuntimeModule(language);
-            final Module sharedStateModule = this.getSharedStateModule();
-            final Module uiModule = this.getUiModule(language);
+            final Module runtimeModule = getRuntimeModule(language);
+            final Module sharedStateModule = getSharedStateModule();
+            final Module uiModule = getUiModule(language);
             final Module mergedModule = Modules2.mixin(runtimeModule, sharedStateModule, uiModule);
             return Guice.createInjector(mergedModule);
         } catch (final Exception e) {

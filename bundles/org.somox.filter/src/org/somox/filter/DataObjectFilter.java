@@ -3,18 +3,11 @@ package org.somox.filter;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.members.EnumConstant;
-import org.emftext.language.java.members.Method;
-//import org.eclipse.gmt.modisco.java.EnumDeclaration;
-//import org.eclipse.gmt.modisco.java.MethodDeclaration;
-//import org.eclipse.gmt.modisco.java.Type;
-//import org.eclipse.gmt.modisco.java.VisibilityKind;
 import org.somox.kdmhelper.KDMHelper;
 
-//import de.fzi.gast.functions.Method;
-//import de.fzi.gast.types.GASTClass;
-//import de.fzi.gast.types.Visibilities;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.members.EnumConstant;
+import tools.mdsd.jamopp.model.java.members.Method;
 
 /**
  * Filter all classes which are only data classes, i.e., all public methods are

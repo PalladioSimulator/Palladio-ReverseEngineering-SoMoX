@@ -5,15 +5,16 @@ package org.somox.metrics.dsl.metricDSL;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Bound And Weight</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Bound
+ * And Weight</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.somox.metrics.dsl.metricDSL.BoundAndWeight#getUpperBound <em>Upper Bound</em>}
- * </li>
- * <li>{@link org.somox.metrics.dsl.metricDSL.BoundAndWeight#getWeight <em>Weight</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.BoundAndWeight#getUpperBound
+ * <em>Upper Bound</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.BoundAndWeight#getWeight
+ * <em>Weight</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,10 +24,11 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface BoundAndWeight extends EObject {
     /**
-     * Returns the value of the '<em><b>Upper Bound</b></em>' reference. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Upper Bound</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Upper Bound</em>' reference isn't clear, there really should be
-     * more of a description here...
+     * If the meaning of the '<em>Upper Bound</em>' reference isn't clear, there
+     * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
@@ -39,21 +41,23 @@ public interface BoundAndWeight extends EObject {
     org.somox.metrics.dsl.metricDSL.Number getUpperBound();
 
     /**
-     * Sets the value of the '{@link org.somox.metrics.dsl.metricDSL.BoundAndWeight#getUpperBound
-     * <em>Upper Bound</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Sets the value of the
+     * '{@link org.somox.metrics.dsl.metricDSL.BoundAndWeight#getUpperBound
+     * <em>Upper Bound</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
      *
-     * @param value
-     *            the new value of the '<em>Upper Bound</em>' reference.
+     * @param value the new value of the '<em>Upper Bound</em>' reference.
      * @see #getUpperBound()
      * @generated
      */
     void setUpperBound(org.somox.metrics.dsl.metricDSL.Number value);
 
     /**
-     * Returns the value of the '<em><b>Weight</b></em>' reference. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Weight</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Weight</em>' reference isn't clear, there really should be more of
-     * a description here...
+     * If the meaning of the '<em>Weight</em>' reference isn't clear, there really
+     * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
@@ -66,11 +70,11 @@ public interface BoundAndWeight extends EObject {
     org.somox.metrics.dsl.metricDSL.Number getWeight();
 
     /**
-     * Sets the value of the '{@link org.somox.metrics.dsl.metricDSL.BoundAndWeight#getWeight
+     * Sets the value of the
+     * '{@link org.somox.metrics.dsl.metricDSL.BoundAndWeight#getWeight
      * <em>Weight</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @param value
-     *            the new value of the '<em>Weight</em>' reference.
+     * @param value the new value of the '<em>Weight</em>' reference.
      * @see #getWeight()
      * @generated
      */

@@ -9,12 +9,13 @@ import org.somox.metrics.dsl.metricDSL.Constant;
 import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Constant</b></em>'. <!--
- * end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Constant</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.ConstantImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.ConstantImpl#getValue
+ * <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,8 +23,8 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
  */
 public class ConstantImpl extends NumberImpl implements Constant {
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getValue()
      * @generated
@@ -32,8 +33,8 @@ public class ConstantImpl extends NumberImpl implements Constant {
     protected static final double VALUE_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getValue()
      * @generated
@@ -47,7 +48,6 @@ public class ConstantImpl extends NumberImpl implements Constant {
      * @generated
      */
     protected ConstantImpl() {
-        super();
     }
 
     /**
@@ -67,7 +67,7 @@ public class ConstantImpl extends NumberImpl implements Constant {
      */
     @Override
     public double getValue() {
-        return this.value;
+        return value;
     }
 
     /**
@@ -77,11 +77,10 @@ public class ConstantImpl extends NumberImpl implements Constant {
      */
     @Override
     public void setValue(final double newValue) {
-        final double oldValue = this.value;
-        this.value = newValue;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.CONSTANT__VALUE, oldValue,
-                    this.value));
+        final double oldValue = value;
+        value = newValue;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.CONSTANT__VALUE, oldValue, value));
         }
     }
 
@@ -94,7 +93,7 @@ public class ConstantImpl extends NumberImpl implements Constant {
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricDSLPackage.CONSTANT__VALUE:
-            return this.getValue();
+            return getValue();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -108,7 +107,7 @@ public class ConstantImpl extends NumberImpl implements Constant {
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.CONSTANT__VALUE:
-            this.setValue((Double) newValue);
+            setValue((Double) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -123,7 +122,7 @@ public class ConstantImpl extends NumberImpl implements Constant {
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.CONSTANT__VALUE:
-            this.setValue(VALUE_EDEFAULT);
+            setValue(VALUE_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -138,7 +137,7 @@ public class ConstantImpl extends NumberImpl implements Constant {
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.CONSTANT__VALUE:
-            return this.value != VALUE_EDEFAULT;
+            return value != VALUE_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -150,13 +149,13 @@ public class ConstantImpl extends NumberImpl implements Constant {
      */
     @Override
     public String toString() {
-        if (this.eIsProxy()) {
+        if (eIsProxy()) {
             return super.toString();
         }
 
-        final StringBuffer result = new StringBuffer(super.toString());
+        final StringBuilder result = new StringBuilder(super.toString());
         result.append(" (value: ");
-        result.append(this.value);
+        result.append(value);
         result.append(')');
         return result.toString();
     }

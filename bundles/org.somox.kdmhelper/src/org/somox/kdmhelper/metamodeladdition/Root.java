@@ -8,12 +8,13 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.emftext.language.java.classifiers.Class;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.classifiers.Enumeration;
-import org.emftext.language.java.commons.Commentable;
-import org.emftext.language.java.containers.CompilationUnit;
 import org.somox.kdmhelper.KDMHelper;
+
+import tools.mdsd.jamopp.model.java.classifiers.Class;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.classifiers.Enumeration;
+import tools.mdsd.jamopp.model.java.commons.Commentable;
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
 
 public class Root {
 

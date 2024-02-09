@@ -4,8 +4,9 @@ package org.somox.sourcecodedecorator;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -98,7 +99,7 @@ public interface ComponentImplementingClassesLink extends EObject {
     /**
      * Returns the value of the '<em><b>Implementing Classes</b></em>' reference
      * list. The list contents are of type
-     * {@link org.emftext.language.java.classifiers.ConcreteClassifier}. <!--
+     * {@link tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier}. <!--
      * begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Implementing Classes</em>' reference list isn't

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.types.Type;
-import org.emftext.language.java.types.TypeReference;
 //import org.eclipse.gmt.modisco.java.Commentable;
 //import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 //import org.eclipse.gmt.modisco.java.EnumConstantDeclaration;
@@ -16,6 +13,10 @@ import org.emftext.language.java.types.TypeReference;
 import org.somox.filter.EClassBasedFilter;
 import org.somox.kdmhelper.GetAccessedType;
 import org.somox.kdmhelper.KDMHelper;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.types.Type;
+import tools.mdsd.jamopp.model.java.types.TypeReference;
 
 //import de.fzi.gast.accesses.Access;
 //import de.fzi.gast.accesses.CompositeAccess;

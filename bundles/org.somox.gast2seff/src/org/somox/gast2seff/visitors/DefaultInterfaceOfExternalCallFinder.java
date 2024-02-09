@@ -1,10 +1,6 @@
 package org.somox.gast2seff.visitors;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.members.Member;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.statements.Statement;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.Interface;
 import org.palladiosimulator.pcm.repository.OperationRequiredRole;
@@ -14,6 +10,11 @@ import org.palladiosimulator.pcm.repository.SourceRole;
 import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 import org.somox.sourcecodedecorator.MethodLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.members.Member;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.statements.Statement;
 
 public class DefaultInterfaceOfExternalCallFinder implements InterfaceOfExternalCallFinding {
 

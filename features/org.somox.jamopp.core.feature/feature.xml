@@ -20,8 +20,8 @@
       <import plugin="de.uka.ipd.sdq.units"/>
       <import plugin="org.palladiosimulator.pcm"/>
       <import plugin="de.uka.ipd.sdq.probfunction"/>
-      <import plugin="org.emftext.language.java"/>
-      <import plugin="org.emftext.language.java.edit"/>
+      <import plugin="tools.mdsd.jamopp.model.java"/>
+      <import plugin="tools.mdsd.jamopp.model.java.edit"/>
       <import plugin="de.uka.ipd.sdq.identifier.edit"/>
       <import plugin="org.palladiosimulator.pcm.edit"/>
       <import plugin="de.uka.ipd.sdq.probfunction.edit"/>
@@ -35,10 +35,10 @@
 	  <import plugin="org.somox.kdmhelper"/>
 	  <import plugin="org.somox.ui"/>
 	  <import plugin="org.somox.util"/>
- 
-   
+
+
    </requires>
- 
+
 	 <plugin
          id="org.somox.core"
          download-size="0"
@@ -51,14 +51,14 @@
          install-size="0"
          version="5.2.0.qualifier"
          unpack="false"/>
-	
+
 	 <plugin
          id="org.somox.kdmhelper"
          download-size="0"
          install-size="0"
          version="5.2.0.qualifier"
          unpack="false"/>
-		 
+
 		 <plugin
          id="org.somox.ui"
          download-size="0"
@@ -70,5 +70,5 @@
          download-size="0"
          install-size="0"
          version="5.2.0.qualifier"
-         unpack="false"/>		 
+         unpack="false"/>
 </feature>

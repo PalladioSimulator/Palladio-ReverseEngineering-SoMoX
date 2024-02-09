@@ -2,10 +2,11 @@ package org.somox.metrics.basic;
 
 import java.util.Set;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.somox.metrics.ClusteringRelation;
 import org.somox.metrics.MetricID;
 import org.somox.metrics.abstractmetrics.AbstractCountingMetric;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 public class TotalTypesCount extends AbstractCountingMetric {
 

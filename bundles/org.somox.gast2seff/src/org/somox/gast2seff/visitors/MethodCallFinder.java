@@ -10,12 +10,13 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-// import org.emftext.language.java.annotations.AnnotationAttribute;
-import org.emftext.language.java.expressions.Expression;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.references.MethodCall;
-import org.emftext.language.java.references.Reference;
-import org.emftext.language.java.statements.Statement;
+
+// import tools.mdsd.jamopp.model.java.annotations.AnnotationAttribute;
+import tools.mdsd.jamopp.model.java.expressions.Expression;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.references.MethodCall;
+import tools.mdsd.jamopp.model.java.references.Reference;
+import tools.mdsd.jamopp.model.java.statements.Statement;
 
 /**
  * The class finds methodCalls within a statement. It also caches the found

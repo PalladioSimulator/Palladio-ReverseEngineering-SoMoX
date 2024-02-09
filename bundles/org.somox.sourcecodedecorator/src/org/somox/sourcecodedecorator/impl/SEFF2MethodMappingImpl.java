@@ -8,10 +8,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.emftext.language.java.statements.StatementListContainer;
 import org.palladiosimulator.pcm.seff.ServiceEffectSpecification;
 import org.somox.sourcecodedecorator.SEFF2MethodMapping;
 import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
+
+import tools.mdsd.jamopp.model.java.statements.StatementListContainer;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>SEFF2

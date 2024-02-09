@@ -5,14 +5,15 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.commons.Commentable;
-import org.emftext.language.java.members.ClassMethod;
-import org.emftext.language.java.members.Field;
-import org.emftext.language.java.members.InterfaceMethod;
-import org.emftext.language.java.members.Member;
-import org.emftext.language.java.types.Type;
 import org.somox.kdmhelper.KDMHelper;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.commons.Commentable;
+import tools.mdsd.jamopp.model.java.members.ClassMethod;
+import tools.mdsd.jamopp.model.java.members.Field;
+import tools.mdsd.jamopp.model.java.members.InterfaceMethod;
+import tools.mdsd.jamopp.model.java.members.Member;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 public class BlacklistFilter extends BaseFilter<ConcreteClassifier> {
 

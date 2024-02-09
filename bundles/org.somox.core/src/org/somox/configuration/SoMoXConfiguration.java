@@ -5,11 +5,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.somox.filter.BaseFilter;
 import org.somox.filter.BlacklistFilter;
 import org.somox.filter.ComposedFilter;
 import org.somox.filter.tests.TestFileFilter;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 /**
  * SoMoX’ central configuration.

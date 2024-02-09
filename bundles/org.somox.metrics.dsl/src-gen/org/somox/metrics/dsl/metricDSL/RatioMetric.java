@@ -3,8 +3,8 @@
 package org.somox.metrics.dsl.metricDSL;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Ratio Metric</b></em>'. <!--
- * end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Ratio
+ * Metric</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -22,11 +22,11 @@ package org.somox.metrics.dsl.metricDSL;
  */
 public interface RatioMetric extends MetricDefinition {
     /**
-     * Returns the value of the '<em><b>Nominator Metric</b></em>' reference. <!-- begin-user-doc
-     * -->
+     * Returns the value of the '<em><b>Nominator Metric</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Nominator Metric</em>' reference isn't clear, there really should
-     * be more of a description here...
+     * If the meaning of the '<em>Nominator Metric</em>' reference isn't clear,
+     * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
@@ -39,22 +39,23 @@ public interface RatioMetric extends MetricDefinition {
     Metric getNominatorMetric();
 
     /**
-     * Sets the value of the '{@link org.somox.metrics.dsl.metricDSL.RatioMetric#getNominatorMetric
-     * <em>Nominator Metric</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Sets the value of the
+     * '{@link org.somox.metrics.dsl.metricDSL.RatioMetric#getNominatorMetric
+     * <em>Nominator Metric</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
-     * @param value
-     *            the new value of the '<em>Nominator Metric</em>' reference.
+     * @param value the new value of the '<em>Nominator Metric</em>' reference.
      * @see #getNominatorMetric()
      * @generated
      */
     void setNominatorMetric(Metric value);
 
     /**
-     * Returns the value of the '<em><b>Denominator Metric</b></em>' reference. <!-- begin-user-doc
-     * -->
+     * Returns the value of the '<em><b>Denominator Metric</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Denominator Metric</em>' reference isn't clear, there really
-     * should be more of a description here...
+     * If the meaning of the '<em>Denominator Metric</em>' reference isn't clear,
+     * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
@@ -69,10 +70,10 @@ public interface RatioMetric extends MetricDefinition {
     /**
      * Sets the value of the '
      * {@link org.somox.metrics.dsl.metricDSL.RatioMetric#getDenominatorMetric
-     * <em>Denominator Metric</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * <em>Denominator Metric</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
-     * @param value
-     *            the new value of the '<em>Denominator Metric</em>' reference.
+     * @param value the new value of the '<em>Denominator Metric</em>' reference.
      * @see #getDenominatorMetric()
      * @generated
      */

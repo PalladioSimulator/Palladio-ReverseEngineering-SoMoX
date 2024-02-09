@@ -17,8 +17,8 @@
       <import plugin="de.uka.ipd.sdq.units"/>
       <import plugin="org.palladiosimulator.pcm"/>
       <import plugin="de.uka.ipd.sdq.probfunction"/>
-      <import plugin="org.emftext.language.java"/>
-      <import plugin="org.emftext.language.java.edit"/>
+      <import plugin="tools.mdsd.jamopp.model.java"/>
+      <import plugin="tools.mdsd.jamopp.model.java.edit"/>
       <import plugin="org.somox.sourcecodedecorator"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.palladiosimulator.pcm.edit"/>

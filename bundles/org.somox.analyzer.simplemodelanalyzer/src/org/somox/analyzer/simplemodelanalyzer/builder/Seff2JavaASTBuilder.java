@@ -8,15 +8,6 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.containers.CompilationUnit;
-import org.emftext.language.java.members.ClassMethod;
-import org.emftext.language.java.members.Constructor;
-import org.emftext.language.java.members.InterfaceMethod;
-import org.emftext.language.java.members.Member;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.statements.StatementListContainer;
-import org.emftext.language.java.types.Type;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.EventGroup;
 import org.palladiosimulator.pcm.repository.EventType;
@@ -41,6 +32,16 @@ import org.somox.sourcecodedecorator.MethodLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SEFF2MethodMapping;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
+import tools.mdsd.jamopp.model.java.members.ClassMethod;
+import tools.mdsd.jamopp.model.java.members.Constructor;
+import tools.mdsd.jamopp.model.java.members.InterfaceMethod;
+import tools.mdsd.jamopp.model.java.members.Member;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.statements.StatementListContainer;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 /**
  * Builder used to add GAST behaviour to methods detected as provided operations

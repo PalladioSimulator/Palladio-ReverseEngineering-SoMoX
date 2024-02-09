@@ -6,9 +6,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.emftext.language.java.members.Member;
 import org.somox.sourcecodedecorator.AbstractMethodLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
+
+import tools.mdsd.jamopp.model.java.members.Member;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '

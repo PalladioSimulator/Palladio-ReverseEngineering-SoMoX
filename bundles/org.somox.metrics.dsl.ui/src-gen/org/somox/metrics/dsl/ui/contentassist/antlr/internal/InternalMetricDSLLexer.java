@@ -53,7 +53,7 @@ public class InternalMetricDSLLexer extends Lexer {
     // delegators
 
     public InternalMetricDSLLexer() {
-        ;
+
     }
 
     public InternalMetricDSLLexer(final CharStream input) {
@@ -84,8 +84,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -105,8 +105,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -126,8 +126,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -147,8 +147,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -168,8 +168,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -189,8 +189,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -210,8 +210,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -231,8 +231,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -252,8 +252,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -273,8 +273,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -294,8 +294,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -315,8 +315,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -336,8 +336,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -357,8 +357,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -378,8 +378,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -399,8 +399,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -420,8 +420,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -441,8 +441,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -462,8 +462,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -483,8 +483,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -504,8 +504,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -525,8 +525,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -546,8 +546,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -567,8 +567,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -587,7 +587,7 @@ public class InternalMetricDSLLexer extends Lexer {
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3220:15:
                 // ( '-' )?
                 int alt1 = 2;
-                final int LA1_0 = this.input.LA(1);
+                final int LA1_0 = input.LA(1);
 
                 if ((LA1_0 == '-')) {
                     alt1 = 1;
@@ -604,14 +604,14 @@ public class InternalMetricDSLLexer extends Lexer {
 
                 }
 
-                this.mRULE_INT();
+                mRULE_INT();
                 this.match('.');
-                this.mRULE_INT();
+                mRULE_INT();
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -623,16 +623,18 @@ public class InternalMetricDSLLexer extends Lexer {
             final int _type = RULE_ID;
             final int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3222:9:
-            // ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' ..
+            // ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_'
+            // | '0' ..
             // '9' )* )
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3222:11:
-            // ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' ..
+            // ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' |
+            // '0' ..
             // '9' )*
             {
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3222:11:
                 // ( '^' )?
                 int alt2 = 2;
-                final int LA2_0 = this.input.LA(1);
+                final int LA2_0 = input.LA(1);
 
                 if ((LA2_0 == '^')) {
                     alt2 = 1;
@@ -649,24 +651,22 @@ public class InternalMetricDSLLexer extends Lexer {
 
                 }
 
-                if ((this.input.LA(1) >= 'A' && this.input.LA(1) <= 'Z') || this.input.LA(1) == '_'
-                        || (this.input.LA(1) >= 'a' && this.input.LA(1) <= 'z')) {
-                    this.input.consume();
-
-                } else {
-                    final MismatchedSetException mse = new MismatchedSetException(null, this.input);
+                if (((input.LA(1) < 'A') || (input.LA(1) > 'Z')) && (input.LA(1) != '_')
+                        && ((input.LA(1) < 'a') || (input.LA(1) > 'z'))) {
+                    final MismatchedSetException mse = new MismatchedSetException(null, input);
                     this.recover(mse);
                     throw mse;
                 }
+                input.consume();
 
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3222:40:
                 // ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
                 loop3: do {
                     int alt3 = 2;
-                    final int LA3_0 = this.input.LA(1);
+                    final int LA3_0 = input.LA(1);
 
-                    if (((LA3_0 >= '0' && LA3_0 <= '9') || (LA3_0 >= 'A' && LA3_0 <= 'Z') || LA3_0 == '_'
-                            || (LA3_0 >= 'a' && LA3_0 <= 'z'))) {
+                    if ((((LA3_0 >= '0') && (LA3_0 <= '9')) || ((LA3_0 >= 'A') && (LA3_0 <= 'Z')) || (LA3_0 == '_')
+                            || ((LA3_0 >= 'a') && (LA3_0 <= 'z')))) {
                         alt3 = 1;
                     }
 
@@ -674,16 +674,13 @@ public class InternalMetricDSLLexer extends Lexer {
                     case 1:
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:
                     {
-                        if ((this.input.LA(1) >= '0' && this.input.LA(1) <= '9')
-                                || (this.input.LA(1) >= 'A' && this.input.LA(1) <= 'Z') || this.input.LA(1) == '_'
-                                || (this.input.LA(1) >= 'a' && this.input.LA(1) <= 'z')) {
-                            this.input.consume();
-
-                        } else {
-                            final MismatchedSetException mse = new MismatchedSetException(null, this.input);
+                        if (((input.LA(1) < '0') || (input.LA(1) > '9')) && ((input.LA(1) < 'A') || (input.LA(1) > 'Z'))
+                                && (input.LA(1) != '_') && ((input.LA(1) < 'a') || (input.LA(1) > 'z'))) {
+                            final MismatchedSetException mse = new MismatchedSetException(null, input);
                             this.recover(mse);
                             throw mse;
                         }
+                        input.consume();
 
                     }
                         break;
@@ -695,8 +692,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -717,9 +714,9 @@ public class InternalMetricDSLLexer extends Lexer {
                 int cnt4 = 0;
                 loop4: do {
                     int alt4 = 2;
-                    final int LA4_0 = this.input.LA(1);
+                    final int LA4_0 = input.LA(1);
 
-                    if (((LA4_0 >= '0' && LA4_0 <= '9'))) {
+                    if ((((LA4_0 >= '0') && (LA4_0 <= '9')))) {
                         alt4 = 1;
                     }
 
@@ -728,7 +725,7 @@ public class InternalMetricDSLLexer extends Lexer {
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3224:13:
                     // '0' .. '9'
                     {
-                        this.matchRange('0', '9');
+                        matchRange('0', '9');
 
                     }
                         break;
@@ -737,7 +734,7 @@ public class InternalMetricDSLLexer extends Lexer {
                         if (cnt4 >= 1) {
                             break loop4;
                         }
-                        final EarlyExitException eee = new EarlyExitException(4, this.input);
+                        final EarlyExitException eee = new EarlyExitException(4, input);
                         throw eee;
                     }
                     cnt4++;
@@ -745,8 +742,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -758,34 +755,41 @@ public class InternalMetricDSLLexer extends Lexer {
             final int _type = RULE_STRING;
             final int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3226:13:
-            // ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ (
-            // ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' |
+            // ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\'
+            // ) | ~ (
+            // ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' |
+            // 'u' |
             // '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3226:15:
-            // ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( (
-            // '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"'
+            // ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            // | ~ ( (
+            // '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' |
+            // 'u' | '\"'
             // | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3226:15:
-                // ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~
-                // ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' |
+                // ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                // | ~
+                // ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r'
+                // |
                 // 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
                 int alt7 = 2;
-                final int LA7_0 = this.input.LA(1);
+                final int LA7_0 = input.LA(1);
 
                 if ((LA7_0 == '\"')) {
                     alt7 = 1;
                 } else if ((LA7_0 == '\'')) {
                     alt7 = 2;
                 } else {
-                    final NoViableAltException nvae = new NoViableAltException("", 7, 0, this.input);
+                    final NoViableAltException nvae = new NoViableAltException("", 7, 0, input);
 
                     throw nvae;
                 }
                 switch (alt7) {
                 case 1:
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3226:16:
-                // '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ (
+                // '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) |
+                // ~ (
                 // ( '\\\\' | '\"' ) ) )* '\"'
                 {
                     this.match('\"');
@@ -794,12 +798,12 @@ public class InternalMetricDSLLexer extends Lexer {
                     // ( '\\\\' | '\"' ) ) )*
                     loop5: do {
                         int alt5 = 3;
-                        final int LA5_0 = this.input.LA(1);
+                        final int LA5_0 = input.LA(1);
 
                         if ((LA5_0 == '\\')) {
                             alt5 = 1;
-                        } else if (((LA5_0 >= '\u0000' && LA5_0 <= '!') || (LA5_0 >= '#' && LA5_0 <= '[')
-                                || (LA5_0 >= ']' && LA5_0 <= '\uFFFF'))) {
+                        } else if ((((LA5_0 >= '\u0000') && (LA5_0 <= '!')) || ((LA5_0 >= '#') && (LA5_0 <= '['))
+                                || ((LA5_0 >= ']') && (LA5_0 <= '\uFFFF')))) {
                             alt5 = 2;
                         }
 
@@ -809,17 +813,14 @@ public class InternalMetricDSLLexer extends Lexer {
                         // '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                         {
                             this.match('\\');
-                            if (this.input.LA(1) == '\"' || this.input.LA(1) == '\'' || this.input.LA(1) == '\\'
-                                    || this.input.LA(1) == 'b' || this.input.LA(1) == 'f' || this.input.LA(1) == 'n'
-                                    || this.input.LA(1) == 'r'
-                                    || (this.input.LA(1) >= 't' && this.input.LA(1) <= 'u')) {
-                                this.input.consume();
-
-                            } else {
-                                final MismatchedSetException mse = new MismatchedSetException(null, this.input);
+                            if ((input.LA(1) != '\"') && (input.LA(1) != '\'') && (input.LA(1) != '\\')
+                                    && (input.LA(1) != 'b') && (input.LA(1) != 'f') && (input.LA(1) != 'n')
+                                    && (input.LA(1) != 'r') && ((input.LA(1) < 't') || (input.LA(1) > 'u'))) {
+                                final MismatchedSetException mse = new MismatchedSetException(null, input);
                                 this.recover(mse);
                                 throw mse;
                             }
+                            input.consume();
 
                         }
                             break;
@@ -827,16 +828,14 @@ public class InternalMetricDSLLexer extends Lexer {
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3226:66:
                         // ~ ( ( '\\\\' | '\"' ) )
                         {
-                            if ((this.input.LA(1) >= '\u0000' && this.input.LA(1) <= '!')
-                                    || (this.input.LA(1) >= '#' && this.input.LA(1) <= '[')
-                                    || (this.input.LA(1) >= ']' && this.input.LA(1) <= '\uFFFF')) {
-                                this.input.consume();
-
-                            } else {
-                                final MismatchedSetException mse = new MismatchedSetException(null, this.input);
+                            if (((input.LA(1) < '\u0000') || (input.LA(1) > '!'))
+                                    && ((input.LA(1) < '#') || (input.LA(1) > '['))
+                                    && ((input.LA(1) < ']') || (input.LA(1) > '\uFFFF'))) {
+                                final MismatchedSetException mse = new MismatchedSetException(null, input);
                                 this.recover(mse);
                                 throw mse;
                             }
+                            input.consume();
 
                         }
                             break;
@@ -852,7 +851,8 @@ public class InternalMetricDSLLexer extends Lexer {
                     break;
                 case 2:
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3226:86:
-                // '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~
+                // '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                // | ~
                 // ( ( '\\\\' | '\\'' ) ) )* '\\''
                 {
                     this.match('\'');
@@ -861,12 +861,12 @@ public class InternalMetricDSLLexer extends Lexer {
                     // ( '\\\\' | '\\'' ) ) )*
                     loop6: do {
                         int alt6 = 3;
-                        final int LA6_0 = this.input.LA(1);
+                        final int LA6_0 = input.LA(1);
 
                         if ((LA6_0 == '\\')) {
                             alt6 = 1;
-                        } else if (((LA6_0 >= '\u0000' && LA6_0 <= '&') || (LA6_0 >= '(' && LA6_0 <= '[')
-                                || (LA6_0 >= ']' && LA6_0 <= '\uFFFF'))) {
+                        } else if ((((LA6_0 >= '\u0000') && (LA6_0 <= '&')) || ((LA6_0 >= '(') && (LA6_0 <= '['))
+                                || ((LA6_0 >= ']') && (LA6_0 <= '\uFFFF')))) {
                             alt6 = 2;
                         }
 
@@ -876,17 +876,14 @@ public class InternalMetricDSLLexer extends Lexer {
                         // '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                         {
                             this.match('\\');
-                            if (this.input.LA(1) == '\"' || this.input.LA(1) == '\'' || this.input.LA(1) == '\\'
-                                    || this.input.LA(1) == 'b' || this.input.LA(1) == 'f' || this.input.LA(1) == 'n'
-                                    || this.input.LA(1) == 'r'
-                                    || (this.input.LA(1) >= 't' && this.input.LA(1) <= 'u')) {
-                                this.input.consume();
-
-                            } else {
-                                final MismatchedSetException mse = new MismatchedSetException(null, this.input);
+                            if ((input.LA(1) != '\"') && (input.LA(1) != '\'') && (input.LA(1) != '\\')
+                                    && (input.LA(1) != 'b') && (input.LA(1) != 'f') && (input.LA(1) != 'n')
+                                    && (input.LA(1) != 'r') && ((input.LA(1) < 't') || (input.LA(1) > 'u'))) {
+                                final MismatchedSetException mse = new MismatchedSetException(null, input);
                                 this.recover(mse);
                                 throw mse;
                             }
+                            input.consume();
 
                         }
                             break;
@@ -894,16 +891,14 @@ public class InternalMetricDSLLexer extends Lexer {
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3226:137:
                         // ~ ( ( '\\\\' | '\\'' ) )
                         {
-                            if ((this.input.LA(1) >= '\u0000' && this.input.LA(1) <= '&')
-                                    || (this.input.LA(1) >= '(' && this.input.LA(1) <= '[')
-                                    || (this.input.LA(1) >= ']' && this.input.LA(1) <= '\uFFFF')) {
-                                this.input.consume();
-
-                            } else {
-                                final MismatchedSetException mse = new MismatchedSetException(null, this.input);
+                            if (((input.LA(1) < '\u0000') || (input.LA(1) > '&'))
+                                    && ((input.LA(1) < '(') || (input.LA(1) > '['))
+                                    && ((input.LA(1) < ']') || (input.LA(1) > '\uFFFF'))) {
+                                final MismatchedSetException mse = new MismatchedSetException(null, input);
                                 this.recover(mse);
                                 throw mse;
                             }
+                            input.consume();
 
                         }
                             break;
@@ -922,8 +917,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -945,18 +940,19 @@ public class InternalMetricDSLLexer extends Lexer {
                 // ( options {greedy=false; } : . )*
                 loop8: do {
                     int alt8 = 2;
-                    final int LA8_0 = this.input.LA(1);
+                    final int LA8_0 = input.LA(1);
 
                     if ((LA8_0 == '*')) {
-                        final int LA8_1 = this.input.LA(2);
+                        final int LA8_1 = input.LA(2);
 
                         if ((LA8_1 == '/')) {
                             alt8 = 2;
-                        } else if (((LA8_1 >= '\u0000' && LA8_1 <= '.') || (LA8_1 >= '0' && LA8_1 <= '\uFFFF'))) {
+                        } else if ((((LA8_1 >= '\u0000') && (LA8_1 <= '.'))
+                                || ((LA8_1 >= '0') && (LA8_1 <= '\uFFFF')))) {
                             alt8 = 1;
                         }
 
-                    } else if (((LA8_0 >= '\u0000' && LA8_0 <= ')') || (LA8_0 >= '+' && LA8_0 <= '\uFFFF'))) {
+                    } else if ((((LA8_0 >= '\u0000') && (LA8_0 <= ')')) || ((LA8_0 >= '+') && (LA8_0 <= '\uFFFF')))) {
                         alt8 = 1;
                     }
 
@@ -979,8 +975,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -1002,10 +998,10 @@ public class InternalMetricDSLLexer extends Lexer {
                 // (~ ( ( '\\n' | '\\r' ) ) )*
                 loop9: do {
                     int alt9 = 2;
-                    final int LA9_0 = this.input.LA(1);
+                    final int LA9_0 = input.LA(1);
 
-                    if (((LA9_0 >= '\u0000' && LA9_0 <= '\t') || (LA9_0 >= '\u000B' && LA9_0 <= '\f')
-                            || (LA9_0 >= '\u000E' && LA9_0 <= '\uFFFF'))) {
+                    if ((((LA9_0 >= '\u0000') && (LA9_0 <= '\t')) || ((LA9_0 >= '\u000B') && (LA9_0 <= '\f'))
+                            || ((LA9_0 >= '\u000E') && (LA9_0 <= '\uFFFF')))) {
                         alt9 = 1;
                     }
 
@@ -1014,16 +1010,14 @@ public class InternalMetricDSLLexer extends Lexer {
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3230:24:
                     // ~ ( ( '\\n' | '\\r' ) )
                     {
-                        if ((this.input.LA(1) >= '\u0000' && this.input.LA(1) <= '\t')
-                                || (this.input.LA(1) >= '\u000B' && this.input.LA(1) <= '\f')
-                                || (this.input.LA(1) >= '\u000E' && this.input.LA(1) <= '\uFFFF')) {
-                            this.input.consume();
-
-                        } else {
-                            final MismatchedSetException mse = new MismatchedSetException(null, this.input);
+                        if (((input.LA(1) < '\u0000') || (input.LA(1) > '\t'))
+                                && ((input.LA(1) < '\u000B') || (input.LA(1) > '\f'))
+                                && ((input.LA(1) < '\u000E') || (input.LA(1) > '\uFFFF'))) {
+                            final MismatchedSetException mse = new MismatchedSetException(null, input);
                             this.recover(mse);
                             throw mse;
                         }
+                        input.consume();
 
                     }
                         break;
@@ -1036,9 +1030,9 @@ public class InternalMetricDSLLexer extends Lexer {
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3230:40:
                 // ( ( '\\r' )? '\\n' )?
                 int alt11 = 2;
-                final int LA11_0 = this.input.LA(1);
+                final int LA11_0 = input.LA(1);
 
-                if ((LA11_0 == '\n' || LA11_0 == '\r')) {
+                if (((LA11_0 == '\n') || (LA11_0 == '\r'))) {
                     alt11 = 1;
                 }
                 switch (alt11) {
@@ -1049,7 +1043,7 @@ public class InternalMetricDSLLexer extends Lexer {
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3230:41:
                     // ( '\\r' )?
                     int alt10 = 2;
-                    final int LA10_0 = this.input.LA(1);
+                    final int LA10_0 = input.LA(1);
 
                     if ((LA10_0 == '\r')) {
                         alt10 = 1;
@@ -1075,8 +1069,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -1097,9 +1091,9 @@ public class InternalMetricDSLLexer extends Lexer {
                 int cnt12 = 0;
                 loop12: do {
                     int alt12 = 2;
-                    final int LA12_0 = this.input.LA(1);
+                    final int LA12_0 = input.LA(1);
 
-                    if (((LA12_0 >= '\t' && LA12_0 <= '\n') || LA12_0 == '\r' || LA12_0 == ' ')) {
+                    if ((((LA12_0 >= '\t') && (LA12_0 <= '\n')) || (LA12_0 == '\r') || (LA12_0 == ' '))) {
                         alt12 = 1;
                     }
 
@@ -1107,15 +1101,13 @@ public class InternalMetricDSLLexer extends Lexer {
                     case 1:
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:
                     {
-                        if ((this.input.LA(1) >= '\t' && this.input.LA(1) <= '\n') || this.input.LA(1) == '\r'
-                                || this.input.LA(1) == ' ') {
-                            this.input.consume();
-
-                        } else {
-                            final MismatchedSetException mse = new MismatchedSetException(null, this.input);
+                        if (((input.LA(1) < '\t') || (input.LA(1) > '\n')) && (input.LA(1) != '\r')
+                                && (input.LA(1) != ' ')) {
+                            final MismatchedSetException mse = new MismatchedSetException(null, input);
                             this.recover(mse);
                             throw mse;
                         }
+                        input.consume();
 
                     }
                         break;
@@ -1124,7 +1116,7 @@ public class InternalMetricDSLLexer extends Lexer {
                         if (cnt12 >= 1) {
                             break loop12;
                         }
-                        final EarlyExitException eee = new EarlyExitException(12, this.input);
+                        final EarlyExitException eee = new EarlyExitException(12, input);
                         throw eee;
                     }
                     cnt12++;
@@ -1132,8 +1124,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -1153,8 +1145,8 @@ public class InternalMetricDSLLexer extends Lexer {
 
             }
 
-            this.state.type = _type;
-            this.state.channel = _channel;
+            state.type = _type;
+            state.channel = _channel;
         } finally {
         }
     }
@@ -1162,19 +1154,13 @@ public class InternalMetricDSLLexer extends Lexer {
 
     @Override
     public void mTokens() throws RecognitionException {
-        // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:8:
-        // ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 |
-        // T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 |
-        // T__34 | T__35 | RULE_DOUBLE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT |
-        // RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt13 = 32;
-        alt13 = this.dfa13.predict(this.input);
+        final int alt13 = dfa13.predict(input);
         switch (alt13) {
         case 1:
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:10:
         // T__12
         {
-            this.mT__12();
+            mT__12();
 
         }
             break;
@@ -1182,7 +1168,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:16:
         // T__13
         {
-            this.mT__13();
+            mT__13();
 
         }
             break;
@@ -1190,7 +1176,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:22:
         // T__14
         {
-            this.mT__14();
+            mT__14();
 
         }
             break;
@@ -1198,7 +1184,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:28:
         // T__15
         {
-            this.mT__15();
+            mT__15();
 
         }
             break;
@@ -1206,7 +1192,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:34:
         // T__16
         {
-            this.mT__16();
+            mT__16();
 
         }
             break;
@@ -1214,7 +1200,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:40:
         // T__17
         {
-            this.mT__17();
+            mT__17();
 
         }
             break;
@@ -1222,7 +1208,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:46:
         // T__18
         {
-            this.mT__18();
+            mT__18();
 
         }
             break;
@@ -1230,7 +1216,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:52:
         // T__19
         {
-            this.mT__19();
+            mT__19();
 
         }
             break;
@@ -1238,7 +1224,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:58:
         // T__20
         {
-            this.mT__20();
+            mT__20();
 
         }
             break;
@@ -1246,7 +1232,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:64:
         // T__21
         {
-            this.mT__21();
+            mT__21();
 
         }
             break;
@@ -1254,7 +1240,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:70:
         // T__22
         {
-            this.mT__22();
+            mT__22();
 
         }
             break;
@@ -1262,7 +1248,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:76:
         // T__23
         {
-            this.mT__23();
+            mT__23();
 
         }
             break;
@@ -1270,7 +1256,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:82:
         // T__24
         {
-            this.mT__24();
+            mT__24();
 
         }
             break;
@@ -1278,7 +1264,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:88:
         // T__25
         {
-            this.mT__25();
+            mT__25();
 
         }
             break;
@@ -1286,7 +1272,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:94:
         // T__26
         {
-            this.mT__26();
+            mT__26();
 
         }
             break;
@@ -1294,7 +1280,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:100:
         // T__27
         {
-            this.mT__27();
+            mT__27();
 
         }
             break;
@@ -1302,7 +1288,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:106:
         // T__28
         {
-            this.mT__28();
+            mT__28();
 
         }
             break;
@@ -1310,7 +1296,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:112:
         // T__29
         {
-            this.mT__29();
+            mT__29();
 
         }
             break;
@@ -1318,7 +1304,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:118:
         // T__30
         {
-            this.mT__30();
+            mT__30();
 
         }
             break;
@@ -1326,7 +1312,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:124:
         // T__31
         {
-            this.mT__31();
+            mT__31();
 
         }
             break;
@@ -1334,7 +1320,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:130:
         // T__32
         {
-            this.mT__32();
+            mT__32();
 
         }
             break;
@@ -1342,7 +1328,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:136:
         // T__33
         {
-            this.mT__33();
+            mT__33();
 
         }
             break;
@@ -1350,7 +1336,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:142:
         // T__34
         {
-            this.mT__34();
+            mT__34();
 
         }
             break;
@@ -1358,7 +1344,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:148:
         // T__35
         {
-            this.mT__35();
+            mT__35();
 
         }
             break;
@@ -1366,7 +1352,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:154:
         // RULE_DOUBLE
         {
-            this.mRULE_DOUBLE();
+            mRULE_DOUBLE();
 
         }
             break;
@@ -1374,7 +1360,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:166:
         // RULE_ID
         {
-            this.mRULE_ID();
+            mRULE_ID();
 
         }
             break;
@@ -1382,7 +1368,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:174:
         // RULE_INT
         {
-            this.mRULE_INT();
+            mRULE_INT();
 
         }
             break;
@@ -1390,7 +1376,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:183:
         // RULE_STRING
         {
-            this.mRULE_STRING();
+            mRULE_STRING();
 
         }
             break;
@@ -1398,7 +1384,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:195:
         // RULE_ML_COMMENT
         {
-            this.mRULE_ML_COMMENT();
+            mRULE_ML_COMMENT();
 
         }
             break;
@@ -1406,7 +1392,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:211:
         // RULE_SL_COMMENT
         {
-            this.mRULE_SL_COMMENT();
+            mRULE_SL_COMMENT();
 
         }
             break;
@@ -1414,7 +1400,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:227:
         // RULE_WS
         {
-            this.mRULE_WS();
+            mRULE_WS();
 
         }
             break;
@@ -1422,7 +1408,7 @@ public class InternalMetricDSLLexer extends Lexer {
         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1:235:
         // RULE_ANY_OTHER
         {
-            this.mRULE_ANY_OTHER();
+            mRULE_ANY_OTHER();
 
         }
             break;
@@ -1432,35 +1418,43 @@ public class InternalMetricDSLLexer extends Lexer {
     }
 
     protected DFA13 dfa13 = new DFA13(this);
-    static final String DFA13_eotS = "\1\uffff\1\40\1\uffff\1\43\1\40\1\uffff\1\40\3\uffff\3\40\1\uffff"
-            + "\2\40\2\uffff\1\40\1\65\3\uffff\1\36\1\72\1\36\1\uffff\2\36\2\uffff"
-            + "\1\40\4\uffff\1\40\1\uffff\1\40\3\uffff\3\40\1\uffff\2\40\2\uffff"
-            + "\1\40\10\uffff\1\72\2\uffff\27\40\1\136\2\40\1\141\1\143\1\144\1"
-            + "\145\2\40\1\uffff\2\40\1\uffff\1\152\3\uffff\4\40\1\uffff\3\40\1"
-            + "\162\1\40\1\164\1\40\1\uffff\1\166\1\uffff\1\40\1\uffff\1\170\1" + "\uffff";
+    static final String DFA13_eotS = """
+            \1\uffff\1\40\1\uffff\1\43\1\40\1\uffff\1\40\3\uffff\3\40\1\uffff\
+            \2\40\2\uffff\1\40\1\65\3\uffff\1\36\1\72\1\36\1\uffff\2\36\2\uffff\
+            \1\40\4\uffff\1\40\1\uffff\1\40\3\uffff\3\40\1\uffff\2\40\2\uffff\
+            \1\40\10\uffff\1\72\2\uffff\27\40\1\136\2\40\1\141\1\143\1\144\1\
+            \145\2\40\1\uffff\2\40\1\uffff\1\152\3\uffff\4\40\1\uffff\3\40\1\
+            \162\1\40\1\164\1\40\1\uffff\1\166\1\uffff\1\40\1\uffff\1\170\1\
+            \uffff""";
     static final String DFA13_eofS = "\171\uffff";
-    static final String DFA13_minS = "\1\0\1\145\1\uffff\1\73\1\155\1\uffff\1\170\3\uffff\2\141\1\157"
-            + "\1\uffff\1\145\1\164\2\uffff\1\141\1\52\3\uffff\1\60\1\56\1\101"
-            + "\1\uffff\2\0\2\uffff\1\164\4\uffff\1\160\1\uffff\1\164\3\uffff\2"
-            + "\162\1\156\1\uffff\1\151\1\145\2\uffff\1\164\10\uffff\1\56\2\uffff"
-            + "\1\162\1\157\1\145\2\141\1\163\1\147\1\160\2\151\2\162\2\155\2\164"
-            + "\1\167\1\157\1\143\1\164\1\156\2\145\1\60\1\150\1\151\4\60\2\164"
-            + "\1\uffff\1\145\1\163\1\uffff\1\60\3\uffff\2\145\1\144\1\145\1\uffff"
-            + "\2\162\1\123\1\60\1\163\1\60\1\165\1\uffff\1\60\1\uffff\1\155\1" + "\uffff\1\60\1\uffff";
-    static final String DFA13_maxS = "\1\uffff\1\145\1\uffff\1\73\1\155\1\uffff\1\170\3\uffff\2\141\1"
-            + "\157\1\uffff\1\145\1\164\2\uffff\1\141\1\57\3\uffff\2\71\1\172\1"
-            + "\uffff\2\uffff\2\uffff\1\164\4\uffff\1\160\1\uffff\1\164\3\uffff"
-            + "\2\162\1\156\1\uffff\1\151\1\145\2\uffff\1\164\10\uffff\1\71\2\uffff"
-            + "\1\162\1\157\1\145\2\141\1\163\1\147\1\160\2\151\2\162\2\155\2\164"
-            + "\1\167\1\157\1\143\1\164\1\156\2\145\1\172\1\150\1\151\4\172\2\164"
-            + "\1\uffff\1\145\1\163\1\uffff\1\172\3\uffff\2\145\1\144\1\145\1\uffff"
-            + "\2\162\1\123\1\172\1\163\1\172\1\165\1\uffff\1\172\1\uffff\1\155" + "\1\uffff\1\172\1\uffff";
-    static final String DFA13_acceptS = "\2\uffff\1\2\2\uffff\1\5\1\uffff\1\10\1\11\1\12\3\uffff\1\17\2\uffff"
-            + "\1\22\1\23\2\uffff\1\26\1\27\1\30\3\uffff\1\32\2\uffff\1\37\1\40"
-            + "\1\uffff\1\32\1\2\1\13\1\3\1\uffff\1\5\1\uffff\1\10\1\11\1\12\3"
-            + "\uffff\1\17\2\uffff\1\22\1\23\1\uffff\1\35\1\36\1\25\1\26\1\27\1"
-            + "\30\1\31\1\33\1\uffff\1\34\1\37\40\uffff\1\16\2\uffff\1\24\1\uffff"
-            + "\1\7\1\4\1\6\4\uffff\1\1\7\uffff\1\21\1\uffff\1\15\1\uffff\1\14" + "\1\uffff\1\20";
+    static final String DFA13_minS = """
+            \1\0\1\145\1\uffff\1\73\1\155\1\uffff\1\170\3\uffff\2\141\1\157\
+            \1\uffff\1\145\1\164\2\uffff\1\141\1\52\3\uffff\1\60\1\56\1\101\
+            \1\uffff\2\0\2\uffff\1\164\4\uffff\1\160\1\uffff\1\164\3\uffff\2\
+            \162\1\156\1\uffff\1\151\1\145\2\uffff\1\164\10\uffff\1\56\2\uffff\
+            \1\162\1\157\1\145\2\141\1\163\1\147\1\160\2\151\2\162\2\155\2\164\
+            \1\167\1\157\1\143\1\164\1\156\2\145\1\60\1\150\1\151\4\60\2\164\
+            \1\uffff\1\145\1\163\1\uffff\1\60\3\uffff\2\145\1\144\1\145\1\uffff\
+            \2\162\1\123\1\60\1\163\1\60\1\165\1\uffff\1\60\1\uffff\1\155\1\
+            \uffff\1\60\1\uffff""";
+    static final String DFA13_maxS = """
+            \1\uffff\1\145\1\uffff\1\73\1\155\1\uffff\1\170\3\uffff\2\141\1\
+            \157\1\uffff\1\145\1\164\2\uffff\1\141\1\57\3\uffff\2\71\1\172\1\
+            \uffff\2\uffff\2\uffff\1\164\4\uffff\1\160\1\uffff\1\164\3\uffff\
+            \2\162\1\156\1\uffff\1\151\1\145\2\uffff\1\164\10\uffff\1\71\2\uffff\
+            \1\162\1\157\1\145\2\141\1\163\1\147\1\160\2\151\2\162\2\155\2\164\
+            \1\167\1\157\1\143\1\164\1\156\2\145\1\172\1\150\1\151\4\172\2\164\
+            \1\uffff\1\145\1\163\1\uffff\1\172\3\uffff\2\145\1\144\1\145\1\uffff\
+            \2\162\1\123\1\172\1\163\1\172\1\165\1\uffff\1\172\1\uffff\1\155\
+            \1\uffff\1\172\1\uffff""";
+    static final String DFA13_acceptS = """
+            \2\uffff\1\2\2\uffff\1\5\1\uffff\1\10\1\11\1\12\3\uffff\1\17\2\uffff\
+            \1\22\1\23\2\uffff\1\26\1\27\1\30\3\uffff\1\32\2\uffff\1\37\1\40\
+            \1\uffff\1\32\1\2\1\13\1\3\1\uffff\1\5\1\uffff\1\10\1\11\1\12\3\
+            \uffff\1\17\2\uffff\1\22\1\23\1\uffff\1\35\1\36\1\25\1\26\1\27\1\
+            \30\1\31\1\33\1\uffff\1\34\1\37\40\uffff\1\16\2\uffff\1\24\1\uffff\
+            \1\7\1\4\1\6\4\uffff\1\1\7\uffff\1\21\1\uffff\1\15\1\uffff\1\14\
+            \1\uffff\1\20""";
     static final String DFA13_specialS = "\1\2\32\uffff\1\0\1\1\134\uffff}>";
     static final String[] DFA13_transitionS = {
             "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\33\4\36\1\34\1\7\1\11"
@@ -1505,14 +1499,14 @@ public class InternalMetricDSLLexer extends Lexer {
 
         public DFA13(final BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 13;
-            this.eot = DFA13_eot;
-            this.eof = DFA13_eof;
-            this.min = DFA13_min;
-            this.max = DFA13_max;
-            this.accept = DFA13_accept;
-            this.special = DFA13_special;
-            this.transition = DFA13_transition;
+            decisionNumber = 13;
+            eot = DFA13_eot;
+            eof = DFA13_eof;
+            min = DFA13_min;
+            max = DFA13_max;
+            accept = DFA13_accept;
+            special = DFA13_special;
+            transition = DFA13_transition;
         }
 
         @Override
@@ -1529,7 +1523,7 @@ public class InternalMetricDSLLexer extends Lexer {
                 final int LA13_27 = input.LA(1);
 
                 s = -1;
-                if (((LA13_27 >= '\u0000' && LA13_27 <= '\uFFFF'))) {
+                if ((((LA13_27 >= '\u0000') && (LA13_27 <= '\uFFFF')))) {
                     s = 60;
                 } else {
                     s = 30;
@@ -1543,7 +1537,7 @@ public class InternalMetricDSLLexer extends Lexer {
                 final int LA13_28 = input.LA(1);
 
                 s = -1;
-                if (((LA13_28 >= '\u0000' && LA13_28 <= '\uFFFF'))) {
+                if ((((LA13_28 >= '\u0000') && (LA13_28 <= '\uFFFF')))) {
                     s = 60;
                 } else {
                     s = 30;
@@ -1557,132 +1551,114 @@ public class InternalMetricDSLLexer extends Lexer {
                 final int LA13_0 = input.LA(1);
 
                 s = -1;
-                if ((LA13_0 == 'M')) {
+                switch (LA13_0) {
+                case 'M':
                     s = 1;
-                }
-
-                else if ((LA13_0 == '{')) {
+                    break;
+                case '{':
                     s = 2;
-                }
-
-                else if ((LA13_0 == '}')) {
+                    break;
+                case '}':
                     s = 3;
-                }
-
-                else if ((LA13_0 == 'i')) {
+                    break;
+                case 'i':
                     s = 4;
-                }
-
-                else if ((LA13_0 == ';')) {
+                    break;
+                case ';':
                     s = 5;
-                }
-
-                else if ((LA13_0 == 'e')) {
+                    break;
+                case 'e':
                     s = 6;
-                }
-
-                else if ((LA13_0 == '(')) {
+                    break;
+                case '(':
                     s = 7;
-                }
-
-                else if ((LA13_0 == ',')) {
+                    break;
+                case ',':
                     s = 8;
-                }
-
-                else if ((LA13_0 == ')')) {
+                    break;
+                case ')':
                     s = 9;
-                }
-
-                else if ((LA13_0 == 'p')) {
+                    break;
+                case 'p':
                     s = 10;
-                }
-
-                else if ((LA13_0 == 'P')) {
+                    break;
+                case 'P':
                     s = 11;
-                }
-
-                else if ((LA13_0 == 'C')) {
+                    break;
+                case 'C':
                     s = 12;
-                }
-
-                else if ((LA13_0 == '=')) {
+                    break;
+                case '=':
                     s = 13;
-                }
-
-                else if ((LA13_0 == 'W')) {
+                    break;
+                case 'W':
                     s = 14;
-                }
-
-                else if ((LA13_0 == 'S')) {
+                    break;
+                case 'S':
                     s = 15;
-                }
-
-                else if ((LA13_0 == '[')) {
+                    break;
+                case '[':
                     s = 16;
-                }
-
-                else if ((LA13_0 == ']')) {
+                    break;
+                case ']':
                     s = 17;
-                }
-
-                else if ((LA13_0 == 'R')) {
+                    break;
+                case 'R':
                     s = 18;
-                }
-
-                else if ((LA13_0 == '/')) {
+                    break;
+                case '/':
                     s = 19;
-                }
-
-                else if ((LA13_0 == '<')) {
+                    break;
+                case '<':
                     s = 20;
-                }
-
-                else if ((LA13_0 == '>')) {
+                    break;
+                case '>':
                     s = 21;
-                }
-
-                else if ((LA13_0 == '.')) {
+                    break;
+                case '.':
                     s = 22;
-                }
-
-                else if ((LA13_0 == '-')) {
+                    break;
+                case '-':
                     s = 23;
-                }
+                    break;
+                default:
+                    if ((((LA13_0 >= '0') && (LA13_0 <= '9')))) {
+                        s = 24;
+                    }
 
-                else if (((LA13_0 >= '0' && LA13_0 <= '9'))) {
-                    s = 24;
-                }
+                    else if ((LA13_0 == '^')) {
+                        s = 25;
+                    }
 
-                else if ((LA13_0 == '^')) {
-                    s = 25;
-                }
+                    else if ((((LA13_0 >= 'A') && (LA13_0 <= 'B')) || ((LA13_0 >= 'D') && (LA13_0 <= 'L'))
+                            || ((LA13_0 >= 'N') && (LA13_0 <= 'O')) || (LA13_0 == 'Q')
+                            || ((LA13_0 >= 'T') && (LA13_0 <= 'V')) || ((LA13_0 >= 'X') && (LA13_0 <= 'Z'))
+                            || (LA13_0 == '_') || ((LA13_0 >= 'a') && (LA13_0 <= 'd'))
+                            || ((LA13_0 >= 'f') && (LA13_0 <= 'h')) || ((LA13_0 >= 'j') && (LA13_0 <= 'o'))
+                            || ((LA13_0 >= 'q') && (LA13_0 <= 'z')))) {
+                        s = 26;
+                    }
 
-                else if (((LA13_0 >= 'A' && LA13_0 <= 'B') || (LA13_0 >= 'D' && LA13_0 <= 'L')
-                        || (LA13_0 >= 'N' && LA13_0 <= 'O') || LA13_0 == 'Q' || (LA13_0 >= 'T' && LA13_0 <= 'V')
-                        || (LA13_0 >= 'X' && LA13_0 <= 'Z') || LA13_0 == '_' || (LA13_0 >= 'a' && LA13_0 <= 'd')
-                        || (LA13_0 >= 'f' && LA13_0 <= 'h') || (LA13_0 >= 'j' && LA13_0 <= 'o')
-                        || (LA13_0 >= 'q' && LA13_0 <= 'z'))) {
-                    s = 26;
-                }
+                    else if ((LA13_0 == '\"')) {
+                        s = 27;
+                    }
 
-                else if ((LA13_0 == '\"')) {
-                    s = 27;
-                }
+                    else if ((LA13_0 == '\'')) {
+                        s = 28;
+                    }
 
-                else if ((LA13_0 == '\'')) {
-                    s = 28;
-                }
+                    else if ((((LA13_0 >= '\t') && (LA13_0 <= '\n')) || (LA13_0 == '\r') || (LA13_0 == ' '))) {
+                        s = 29;
+                    }
 
-                else if (((LA13_0 >= '\t' && LA13_0 <= '\n') || LA13_0 == '\r' || LA13_0 == ' ')) {
-                    s = 29;
-                }
-
-                else if (((LA13_0 >= '\u0000' && LA13_0 <= '\b') || (LA13_0 >= '\u000B' && LA13_0 <= '\f')
-                        || (LA13_0 >= '\u000E' && LA13_0 <= '\u001F') || LA13_0 == '!'
-                        || (LA13_0 >= '#' && LA13_0 <= '&') || (LA13_0 >= '*' && LA13_0 <= '+') || LA13_0 == ':'
-                        || (LA13_0 >= '?' && LA13_0 <= '@') || LA13_0 == '\\' || LA13_0 == '`' || LA13_0 == '|'
-                        || (LA13_0 >= '~' && LA13_0 <= '\uFFFF'))) {
-                    s = 30;
+                    else if ((((LA13_0 >= '\u0000') && (LA13_0 <= '\b')) || ((LA13_0 >= '\u000B') && (LA13_0 <= '\f'))
+                            || ((LA13_0 >= '\u000E') && (LA13_0 <= '\u001F')) || (LA13_0 == '!')
+                            || ((LA13_0 >= '#') && (LA13_0 <= '&')) || ((LA13_0 >= '*') && (LA13_0 <= '+'))
+                            || (LA13_0 == ':') || ((LA13_0 >= '?') && (LA13_0 <= '@')) || (LA13_0 == '\\')
+                            || (LA13_0 == '`') || (LA13_0 == '|') || ((LA13_0 >= '~') && (LA13_0 <= '\uFFFF')))) {
+                        s = 30;
+                    }
+                    break;
                 }
 
                 if (s >= 0) {
@@ -1690,8 +1666,8 @@ public class InternalMetricDSLLexer extends Lexer {
                 }
                 break;
             }
-            final NoViableAltException nvae = new NoViableAltException(this.getDescription(), 13, _s, input);
-            this.error(nvae);
+            final NoViableAltException nvae = new NoViableAltException(getDescription(), 13, _s, input);
+            error(nvae);
             throw nvae;
         }
     }

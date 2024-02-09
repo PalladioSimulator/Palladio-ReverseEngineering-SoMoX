@@ -10,7 +10,8 @@ import org.somox.metrics.dsl.ui.internal.MetricDSLActivator;
 import com.google.inject.Injector;
 
 /**
- * This class was generated. Customizations should only happen in a newly introduced subclass.
+ * This class was generated. Customizations should only happen in a newly
+ * introduced subclass.
  */
 public class MetricDSLExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 

@@ -2,9 +2,7 @@ package org.somox.filter;
 
 import java.util.Set;
 
-import org.emftext.language.java.types.Type;
-
-//import de.fzi.gast.types.GASTClass;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 /**
  * Removes one set from another set.

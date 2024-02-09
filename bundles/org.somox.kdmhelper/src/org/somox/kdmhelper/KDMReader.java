@@ -18,9 +18,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.emftext.language.java.containers.CompilationUnit;
 import org.somox.kdmhelper.metamodeladdition.Root;
 import org.splevo.jamopp.extraction.JaMoPPSoftwareModelExtractor;
+
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
 
 public class KDMReader {
 

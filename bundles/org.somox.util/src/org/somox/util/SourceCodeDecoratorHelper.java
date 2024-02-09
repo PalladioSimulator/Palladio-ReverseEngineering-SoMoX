@@ -1,9 +1,5 @@
 package org.somox.util;
 
-import org.emftext.language.java.classifiers.Class;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.members.Member;
-import org.emftext.language.java.types.Type;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.Interface;
 import org.palladiosimulator.pcm.repository.Signature;
@@ -12,6 +8,11 @@ import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 import org.somox.sourcecodedecorator.MethodLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
+
+import tools.mdsd.jamopp.model.java.classifiers.Class;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.members.Member;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 public class SourceCodeDecoratorHelper {
 

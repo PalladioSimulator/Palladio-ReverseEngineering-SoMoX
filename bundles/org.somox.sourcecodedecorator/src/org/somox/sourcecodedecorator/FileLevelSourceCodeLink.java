@@ -3,8 +3,9 @@
 package org.somox.sourcecodedecorator;
 
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.containers.CompilationUnit;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
+
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>File

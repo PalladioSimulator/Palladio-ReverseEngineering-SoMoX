@@ -2,10 +2,11 @@ package org.somox.metrics.tabs;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.emftext.language.java.containers.Package;
-import org.emftext.language.java.types.Type;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.kdmhelper.metamodeladdition.Root;
+
+import tools.mdsd.jamopp.model.java.containers.Package;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 //import de.fzi.gast.core.Root;
 //import de.fzi.gast.types.GASTClass;
@@ -18,7 +19,8 @@ public class CheckboxContentProvider implements ITreeContentProvider {
             return ((Root) parentElement).getPackages().toArray();
         }
         if (parentElement instanceof Package) {
-            return KDMHelper.getOwnedPackages((org.emftext.language.java.containers.Package) parentElement).toArray();
+            return KDMHelper.getOwnedPackages((tools.mdsd.jamopp.model.java.containers.Package) parentElement)
+                    .toArray();
             // Object [] classes = ((Package) parentElement).getOwnedElements().toArray();
             //
             // Object [] elements = new Object [packages.length + classes.length];

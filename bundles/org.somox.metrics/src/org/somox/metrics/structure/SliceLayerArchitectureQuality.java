@@ -3,12 +3,13 @@ package org.somox.metrics.structure;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.types.Type;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.metrics.ClusteringRelation;
 import org.somox.metrics.MetricID;
 import org.somox.metrics.abstractmetrics.AbstractMetric;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 //import de.fzi.gast.types.GASTClass;
 
@@ -47,18 +48,18 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
                 .deriveImplementingClasses(relationToCompute.getTargetComponent());
 
         // compute overall prefix
-        final org.emftext.language.java.containers.Package prefixPackage = computePrefix(classes1, classes2);
+        final tools.mdsd.jamopp.model.java.containers.Package prefixPackage = computePrefix(classes1, classes2);
 
         if (prefixPackage == null) {
             relationToCompute.setResultMetric(getMID(), 0.0);
             return;
         }
-        final EList<org.emftext.language.java.containers.Package> slices = KDMHelper.getOwnedPackages(prefixPackage);
-        EList<org.emftext.language.java.containers.Package> layers = null;
+        final EList<tools.mdsd.jamopp.model.java.containers.Package> slices = KDMHelper.getOwnedPackages(prefixPackage);
+        EList<tools.mdsd.jamopp.model.java.containers.Package> layers = null;
 
         // compute the maximum number of layers in a slice
         int max = 0;
-        for (final org.emftext.language.java.containers.Package current : slices) {
+        for (final tools.mdsd.jamopp.model.java.containers.Package current : slices) {
             if (KDMHelper.getOwnedPackages(current).size() >= max) {
                 layers = KDMHelper.getOwnedPackages(current);
                 max = layers.size();
@@ -72,11 +73,11 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
             final int expectedSubsystems = slices.size() * layers.size();
             int existingSubsystems = 0;
 
-            for (final org.emftext.language.java.containers.Package currentSlice : slices) {
-                final EList<org.emftext.language.java.containers.Package> currentLayers = KDMHelper
+            for (final tools.mdsd.jamopp.model.java.containers.Package currentSlice : slices) {
+                final EList<tools.mdsd.jamopp.model.java.containers.Package> currentLayers = KDMHelper
                         .getOwnedPackages(currentSlice);
-                for (final org.emftext.language.java.containers.Package currentReferencePackage : layers) {
-                    for (final org.emftext.language.java.containers.Package currentLayer : currentLayers) {
+                for (final tools.mdsd.jamopp.model.java.containers.Package currentReferencePackage : layers) {
+                    for (final tools.mdsd.jamopp.model.java.containers.Package currentLayer : currentLayers) {
                         if (currentLayer.getName().equals(currentReferencePackage.getName())) {
                             existingSubsystems++;
                             break;
@@ -117,10 +118,10 @@ public class SliceLayerArchitectureQuality extends AbstractMetric {
      * @return the last package in the package-hierarchy in which all elements are
      *         included
      */
-    private org.emftext.language.java.containers.Package computePrefix(final Set<ConcreteClassifier> elements1,
+    private tools.mdsd.jamopp.model.java.containers.Package computePrefix(final Set<ConcreteClassifier> elements1,
             final Set<ConcreteClassifier> elements2) {
         boolean prefixFound = false;
-        org.emftext.language.java.containers.Package currentPackage = null;
+        tools.mdsd.jamopp.model.java.containers.Package currentPackage = null;
 
         for (final Type current : elements1) {
             if (KDMHelper.getSurroundingPackage(current) != null) {

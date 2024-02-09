@@ -3,7 +3,6 @@ package org.somox.metrics.abstractmetrics;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.metamodeladdition.Root;
@@ -13,6 +12,8 @@ import org.somox.metrics.IMetric;
 import org.somox.metrics.MetricID;
 import org.somox.metrics.helper.ClassAccessGraphEdge;
 import org.somox.metrics.helper.ComponentToImplementingClassesHelper;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 //import de.fzi.gast.core.Root;
 //import de.fzi.gast.types.GASTClass;

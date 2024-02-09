@@ -7,14 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.commons.Commentable;
-import org.emftext.language.java.members.ClassMethod;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.statements.Condition;
-import org.emftext.language.java.statements.Statement;
-import org.emftext.language.java.statements.Switch;
-import org.emftext.language.java.statements.SynchronizedBlock;
-import org.emftext.language.java.statements.TryBlock;
 import org.palladiosimulator.pcm.core.CoreFactory;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.EventType;
@@ -44,6 +36,14 @@ import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
 
 import de.uka.ipd.sdq.identifier.Identifier;
+import tools.mdsd.jamopp.model.java.commons.Commentable;
+import tools.mdsd.jamopp.model.java.members.ClassMethod;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.statements.Condition;
+import tools.mdsd.jamopp.model.java.statements.Statement;
+import tools.mdsd.jamopp.model.java.statements.Switch;
+import tools.mdsd.jamopp.model.java.statements.SynchronizedBlock;
+import tools.mdsd.jamopp.model.java.statements.TryBlock;
 
 /**
  * A visitor which traverses a GAST behaviour and creates a SEFF matching the

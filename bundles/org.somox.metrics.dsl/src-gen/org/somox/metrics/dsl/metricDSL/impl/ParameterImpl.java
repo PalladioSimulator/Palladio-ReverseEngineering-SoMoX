@@ -9,15 +9,15 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 import org.somox.metrics.dsl.metricDSL.Parameter;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Parameter</b></em>'. <!--
- * end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Parameter</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.ParameterImpl#getShortname <em>Shortname</em>}
- * </li>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.ParameterImpl#getDescription <em>Description</em>
- * }</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.ParameterImpl#getShortname
+ * <em>Shortname</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.ParameterImpl#getDescription
+ * <em>Description</em> }</li>
  * <li>{@link org.somox.metrics.dsl.metricDSL.impl.ParameterImpl#getDefaultValue
  * <em>Default Value</em>}</li>
  * </ul>
@@ -27,8 +27,8 @@ import org.somox.metrics.dsl.metricDSL.Parameter;
  */
 public class ParameterImpl extends NumberImpl implements Parameter {
     /**
-     * The default value of the '{@link #getShortname() <em>Shortname</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getShortname() <em>Shortname</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getShortname()
      * @generated
@@ -37,8 +37,8 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     protected static final String SHORTNAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getShortname() <em>Shortname</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getShortname() <em>Shortname</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getShortname()
      * @generated
@@ -47,8 +47,8 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     protected String shortname = SHORTNAME_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getDescription() <em>Description</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getDescription() <em>Description</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getDescription()
      * @generated
@@ -57,8 +57,8 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     protected static final String DESCRIPTION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getDescription() <em>Description</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getDescription()
      * @generated
@@ -67,8 +67,8 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     protected String description = DESCRIPTION_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getDefaultValue()
      * @generated
@@ -77,8 +77,8 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     protected static final double DEFAULT_VALUE_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getDefaultValue()
      * @generated
@@ -92,7 +92,6 @@ public class ParameterImpl extends NumberImpl implements Parameter {
      * @generated
      */
     protected ParameterImpl() {
-        super();
     }
 
     /**
@@ -112,7 +111,7 @@ public class ParameterImpl extends NumberImpl implements Parameter {
      */
     @Override
     public String getShortname() {
-        return this.shortname;
+        return shortname;
     }
 
     /**
@@ -122,11 +121,11 @@ public class ParameterImpl extends NumberImpl implements Parameter {
      */
     @Override
     public void setShortname(final String newShortname) {
-        final String oldShortname = this.shortname;
-        this.shortname = newShortname;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.PARAMETER__SHORTNAME,
-                    oldShortname, this.shortname));
+        final String oldShortname = shortname;
+        shortname = newShortname;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.PARAMETER__SHORTNAME, oldShortname,
+                    shortname));
         }
     }
 
@@ -137,7 +136,7 @@ public class ParameterImpl extends NumberImpl implements Parameter {
      */
     @Override
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     /**
@@ -147,11 +146,11 @@ public class ParameterImpl extends NumberImpl implements Parameter {
      */
     @Override
     public void setDescription(final String newDescription) {
-        final String oldDescription = this.description;
-        this.description = newDescription;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.PARAMETER__DESCRIPTION,
-                    oldDescription, this.description));
+        final String oldDescription = description;
+        description = newDescription;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.PARAMETER__DESCRIPTION,
+                    oldDescription, description));
         }
     }
 
@@ -162,7 +161,7 @@ public class ParameterImpl extends NumberImpl implements Parameter {
      */
     @Override
     public double getDefaultValue() {
-        return this.defaultValue;
+        return defaultValue;
     }
 
     /**
@@ -172,11 +171,11 @@ public class ParameterImpl extends NumberImpl implements Parameter {
      */
     @Override
     public void setDefaultValue(final double newDefaultValue) {
-        final double oldDefaultValue = this.defaultValue;
-        this.defaultValue = newDefaultValue;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.PARAMETER__DEFAULT_VALUE,
-                    oldDefaultValue, this.defaultValue));
+        final double oldDefaultValue = defaultValue;
+        defaultValue = newDefaultValue;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.PARAMETER__DEFAULT_VALUE,
+                    oldDefaultValue, defaultValue));
         }
     }
 
@@ -189,11 +188,11 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricDSLPackage.PARAMETER__SHORTNAME:
-            return this.getShortname();
+            return getShortname();
         case MetricDSLPackage.PARAMETER__DESCRIPTION:
-            return this.getDescription();
+            return getDescription();
         case MetricDSLPackage.PARAMETER__DEFAULT_VALUE:
-            return this.getDefaultValue();
+            return getDefaultValue();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -207,13 +206,13 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.PARAMETER__SHORTNAME:
-            this.setShortname((String) newValue);
+            setShortname((String) newValue);
             return;
         case MetricDSLPackage.PARAMETER__DESCRIPTION:
-            this.setDescription((String) newValue);
+            setDescription((String) newValue);
             return;
         case MetricDSLPackage.PARAMETER__DEFAULT_VALUE:
-            this.setDefaultValue((Double) newValue);
+            setDefaultValue((Double) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -228,13 +227,13 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.PARAMETER__SHORTNAME:
-            this.setShortname(SHORTNAME_EDEFAULT);
+            setShortname(SHORTNAME_EDEFAULT);
             return;
         case MetricDSLPackage.PARAMETER__DESCRIPTION:
-            this.setDescription(DESCRIPTION_EDEFAULT);
+            setDescription(DESCRIPTION_EDEFAULT);
             return;
         case MetricDSLPackage.PARAMETER__DEFAULT_VALUE:
-            this.setDefaultValue(DEFAULT_VALUE_EDEFAULT);
+            setDefaultValue(DEFAULT_VALUE_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -249,12 +248,11 @@ public class ParameterImpl extends NumberImpl implements Parameter {
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.PARAMETER__SHORTNAME:
-            return SHORTNAME_EDEFAULT == null ? this.shortname != null : !SHORTNAME_EDEFAULT.equals(this.shortname);
+            return SHORTNAME_EDEFAULT == null ? shortname != null : !SHORTNAME_EDEFAULT.equals(shortname);
         case MetricDSLPackage.PARAMETER__DESCRIPTION:
-            return DESCRIPTION_EDEFAULT == null ? this.description != null
-                    : !DESCRIPTION_EDEFAULT.equals(this.description);
+            return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
         case MetricDSLPackage.PARAMETER__DEFAULT_VALUE:
-            return this.defaultValue != DEFAULT_VALUE_EDEFAULT;
+            return defaultValue != DEFAULT_VALUE_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -266,17 +264,17 @@ public class ParameterImpl extends NumberImpl implements Parameter {
      */
     @Override
     public String toString() {
-        if (this.eIsProxy()) {
+        if (eIsProxy()) {
             return super.toString();
         }
 
-        final StringBuffer result = new StringBuffer(super.toString());
+        final StringBuilder result = new StringBuilder(super.toString());
         result.append(" (shortname: ");
-        result.append(this.shortname);
+        result.append(shortname);
         result.append(", description: ");
-        result.append(this.description);
+        result.append(description);
         result.append(", defaultValue: ");
-        result.append(this.defaultValue);
+        result.append(defaultValue);
         result.append(')');
         return result.toString();
     }

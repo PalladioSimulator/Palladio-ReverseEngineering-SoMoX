@@ -2,7 +2,6 @@ package org.somox.metrics;
 
 import java.util.Map;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.configuration.SoMoXConfiguration;
 import org.somox.kdmhelper.metamodeladdition.Root;
@@ -10,6 +9,8 @@ import org.somox.metrics.helper.ClassAccessGraphEdge;
 import org.somox.metrics.helper.ComponentToImplementingClassesHelper;
 import org.somox.metrics.parameter.ParameterDescriptor;
 import org.somox.metrics.tabs.MetricTab;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 /**
  * Base interface for all SoMoX metrics.

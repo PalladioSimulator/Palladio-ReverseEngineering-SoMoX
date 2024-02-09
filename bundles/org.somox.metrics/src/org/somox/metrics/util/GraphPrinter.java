@@ -10,13 +10,14 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.types.Type;
 import org.jgrapht.Graph;
 import org.somox.kdmhelper.KDMHelper;
 import org.somox.metrics.helper.ComponentToImplementingClassesHelper;
 //import de.fzi.gast.types.GASTClass;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 /**
  * Helper class used in SoMoX to dump internal graphs in GraphML and DOT file

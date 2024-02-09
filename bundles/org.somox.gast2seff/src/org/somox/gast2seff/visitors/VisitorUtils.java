@@ -1,11 +1,12 @@
 package org.somox.gast2seff.visitors;
 
-import org.emftext.language.java.statements.Statement;
-import org.emftext.language.java.statements.StatementListContainer;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.seff.AbstractAction;
 import org.palladiosimulator.pcm.seff.ResourceDemandingBehaviour;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
+
+import tools.mdsd.jamopp.model.java.statements.Statement;
+import tools.mdsd.jamopp.model.java.statements.StatementListContainer;
 
 public class VisitorUtils {
 

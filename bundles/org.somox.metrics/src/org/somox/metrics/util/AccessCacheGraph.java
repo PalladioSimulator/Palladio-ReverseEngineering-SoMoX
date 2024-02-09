@@ -4,13 +4,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.somox.filter.BaseFilter;
 import org.somox.filter.NotFilter;
 import org.somox.metrics.helper.ClassAccessGraphEdge;
 import org.somox.metrics.helper.SourceClassEdgeFilter;
 import org.somox.metrics.helper.TargetClassEdgeFilter;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 //import de.fzi.gast.types.GASTClass;
 

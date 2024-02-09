@@ -17,8 +17,8 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 import org.somox.metrics.dsl.metricDSL.MetricDefinition;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Internal Metric</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Internal Metric</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -37,8 +37,8 @@ import org.somox.metrics.dsl.metricDSL.MetricDefinition;
  */
 public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     /**
-     * The default value of the '{@link #getShortName() <em>Short Name</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getShortName() <em>Short Name</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getShortName()
      * @generated
@@ -47,8 +47,8 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     protected static final String SHORT_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getShortName() <em>Short Name</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getShortName() <em>Short Name</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getShortName()
      * @generated
@@ -57,8 +57,8 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     protected String shortName = SHORT_NAME_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getDescription() <em>Description</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The default value of the '{@link #getDescription() <em>Description</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getDescription()
      * @generated
@@ -67,8 +67,8 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     protected static final String DESCRIPTION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getDescription() <em>Description</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getDescription()
      * @generated
@@ -77,8 +77,8 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     protected String description = DESCRIPTION_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getParameter() <em>Parameter</em>}'
+     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getParameter()
      * @generated
@@ -87,8 +87,8 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     protected EList<org.somox.metrics.dsl.metricDSL.Number> parameter;
 
     /**
-     * The cached value of the '{@link #getDefinition() <em>Definition</em>}' containment reference.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getDefinition() <em>Definition</em>}'
+     * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getDefinition()
      * @generated
@@ -102,7 +102,6 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      * @generated
      */
     protected InternalMetricImpl() {
-        super();
     }
 
     /**
@@ -122,7 +121,7 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      */
     @Override
     public String getShortName() {
-        return this.shortName;
+        return shortName;
     }
 
     /**
@@ -132,11 +131,11 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      */
     @Override
     public void setShortName(final String newShortName) {
-        final String oldShortName = this.shortName;
-        this.shortName = newShortName;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.INTERNAL_METRIC__SHORT_NAME,
-                    oldShortName, this.shortName));
+        final String oldShortName = shortName;
+        shortName = newShortName;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.INTERNAL_METRIC__SHORT_NAME,
+                    oldShortName, shortName));
         }
     }
 
@@ -147,7 +146,7 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      */
     @Override
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     /**
@@ -157,11 +156,11 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      */
     @Override
     public void setDescription(final String newDescription) {
-        final String oldDescription = this.description;
-        this.description = newDescription;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.INTERNAL_METRIC__DESCRIPTION,
-                    oldDescription, this.description));
+        final String oldDescription = description;
+        description = newDescription;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.INTERNAL_METRIC__DESCRIPTION,
+                    oldDescription, description));
         }
     }
 
@@ -172,11 +171,11 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      */
     @Override
     public EList<org.somox.metrics.dsl.metricDSL.Number> getParameter() {
-        if (this.parameter == null) {
-            this.parameter = new EObjectContainmentEList<org.somox.metrics.dsl.metricDSL.Number>(
-                    org.somox.metrics.dsl.metricDSL.Number.class, this, MetricDSLPackage.INTERNAL_METRIC__PARAMETER);
+        if (parameter == null) {
+            parameter = new EObjectContainmentEList<>(org.somox.metrics.dsl.metricDSL.Number.class, this,
+                    MetricDSLPackage.INTERNAL_METRIC__PARAMETER);
         }
-        return this.parameter;
+        return parameter;
     }
 
     /**
@@ -186,7 +185,7 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      */
     @Override
     public MetricDefinition getDefinition() {
-        return this.definition;
+        return definition;
     }
 
     /**
@@ -195,9 +194,9 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      * @generated
      */
     public NotificationChain basicSetDefinition(final MetricDefinition newDefinition, NotificationChain msgs) {
-        final MetricDefinition oldDefinition = this.definition;
-        this.definition = newDefinition;
-        if (this.eNotificationRequired()) {
+        final MetricDefinition oldDefinition = definition;
+        definition = newDefinition;
+        if (eNotificationRequired()) {
             final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
                     MetricDSLPackage.INTERNAL_METRIC__DEFINITION, oldDefinition, newDefinition);
             if (msgs == null) {
@@ -216,22 +215,22 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      */
     @Override
     public void setDefinition(final MetricDefinition newDefinition) {
-        if (newDefinition != this.definition) {
+        if (newDefinition != definition) {
             NotificationChain msgs = null;
-            if (this.definition != null) {
-                msgs = ((InternalEObject) this.definition).eInverseRemove(this,
+            if (definition != null) {
+                msgs = ((InternalEObject) definition).eInverseRemove(this,
                         EOPPOSITE_FEATURE_BASE - MetricDSLPackage.INTERNAL_METRIC__DEFINITION, null, msgs);
             }
             if (newDefinition != null) {
                 msgs = ((InternalEObject) newDefinition).eInverseAdd(this,
                         EOPPOSITE_FEATURE_BASE - MetricDSLPackage.INTERNAL_METRIC__DEFINITION, null, msgs);
             }
-            msgs = this.basicSetDefinition(newDefinition, msgs);
+            msgs = basicSetDefinition(newDefinition, msgs);
             if (msgs != null) {
                 msgs.dispatch();
             }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.INTERNAL_METRIC__DEFINITION,
+        } else if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.INTERNAL_METRIC__DEFINITION,
                     newDefinition, newDefinition));
         }
     }
@@ -246,9 +245,9 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
             final NotificationChain msgs) {
         switch (featureID) {
         case MetricDSLPackage.INTERNAL_METRIC__PARAMETER:
-            return ((InternalEList<?>) this.getParameter()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getParameter()).basicRemove(otherEnd, msgs);
         case MetricDSLPackage.INTERNAL_METRIC__DEFINITION:
-            return this.basicSetDefinition(null, msgs);
+            return basicSetDefinition(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -262,13 +261,13 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricDSLPackage.INTERNAL_METRIC__SHORT_NAME:
-            return this.getShortName();
+            return getShortName();
         case MetricDSLPackage.INTERNAL_METRIC__DESCRIPTION:
-            return this.getDescription();
+            return getDescription();
         case MetricDSLPackage.INTERNAL_METRIC__PARAMETER:
-            return this.getParameter();
+            return getParameter();
         case MetricDSLPackage.INTERNAL_METRIC__DEFINITION:
-            return this.getDefinition();
+            return getDefinition();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -283,17 +282,17 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.INTERNAL_METRIC__SHORT_NAME:
-            this.setShortName((String) newValue);
+            setShortName((String) newValue);
             return;
         case MetricDSLPackage.INTERNAL_METRIC__DESCRIPTION:
-            this.setDescription((String) newValue);
+            setDescription((String) newValue);
             return;
         case MetricDSLPackage.INTERNAL_METRIC__PARAMETER:
-            this.getParameter().clear();
-            this.getParameter().addAll((Collection<? extends org.somox.metrics.dsl.metricDSL.Number>) newValue);
+            getParameter().clear();
+            getParameter().addAll((Collection<? extends org.somox.metrics.dsl.metricDSL.Number>) newValue);
             return;
         case MetricDSLPackage.INTERNAL_METRIC__DEFINITION:
-            this.setDefinition((MetricDefinition) newValue);
+            setDefinition((MetricDefinition) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -308,16 +307,16 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.INTERNAL_METRIC__SHORT_NAME:
-            this.setShortName(SHORT_NAME_EDEFAULT);
+            setShortName(SHORT_NAME_EDEFAULT);
             return;
         case MetricDSLPackage.INTERNAL_METRIC__DESCRIPTION:
-            this.setDescription(DESCRIPTION_EDEFAULT);
+            setDescription(DESCRIPTION_EDEFAULT);
             return;
         case MetricDSLPackage.INTERNAL_METRIC__PARAMETER:
-            this.getParameter().clear();
+            getParameter().clear();
             return;
         case MetricDSLPackage.INTERNAL_METRIC__DEFINITION:
-            this.setDefinition((MetricDefinition) null);
+            setDefinition((MetricDefinition) null);
             return;
         }
         super.eUnset(featureID);
@@ -332,14 +331,13 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.INTERNAL_METRIC__SHORT_NAME:
-            return SHORT_NAME_EDEFAULT == null ? this.shortName != null : !SHORT_NAME_EDEFAULT.equals(this.shortName);
+            return SHORT_NAME_EDEFAULT == null ? shortName != null : !SHORT_NAME_EDEFAULT.equals(shortName);
         case MetricDSLPackage.INTERNAL_METRIC__DESCRIPTION:
-            return DESCRIPTION_EDEFAULT == null ? this.description != null
-                    : !DESCRIPTION_EDEFAULT.equals(this.description);
+            return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
         case MetricDSLPackage.INTERNAL_METRIC__PARAMETER:
-            return this.parameter != null && !this.parameter.isEmpty();
+            return (parameter != null) && !parameter.isEmpty();
         case MetricDSLPackage.INTERNAL_METRIC__DEFINITION:
-            return this.definition != null;
+            return definition != null;
         }
         return super.eIsSet(featureID);
     }
@@ -351,15 +349,15 @@ public class InternalMetricImpl extends MetricImpl implements InternalMetric {
      */
     @Override
     public String toString() {
-        if (this.eIsProxy()) {
+        if (eIsProxy()) {
             return super.toString();
         }
 
-        final StringBuffer result = new StringBuffer(super.toString());
+        final StringBuilder result = new StringBuilder(super.toString());
         result.append(" (shortName: ");
-        result.append(this.shortName);
+        result.append(shortName);
         result.append(", description: ");
-        result.append(this.description);
+        result.append(description);
         result.append(')');
         return result.toString();
     }

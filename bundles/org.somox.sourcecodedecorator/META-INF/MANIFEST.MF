@@ -10,7 +10,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.somox.sourcecodedecorator,
  org.somox.sourcecodedecorator.impl,
  org.somox.sourcecodedecorator.util
-Require-Bundle: org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  de.uka.ipd.sdq.identifier;visibility:=reexport,
@@ -18,7 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.units;visibility:=reexport,
  org.palladiosimulator.pcm;visibility:=reexport,
  de.uka.ipd.sdq.probfunction;visibility:=reexport,
- org.emftext.language.java;visibility:=reexport,
- org.emftext.language.java.edit
+ tools.mdsd.jamopp.model.java;visibility:=reexport,
+ tools.mdsd.jamopp.model.java.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.somox.sourcecodedecorator

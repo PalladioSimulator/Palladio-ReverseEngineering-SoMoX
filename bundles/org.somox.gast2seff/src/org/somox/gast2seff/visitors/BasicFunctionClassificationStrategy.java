@@ -6,7 +6,6 @@ package org.somox.gast2seff.visitors;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.members.Method;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.somox.kdmhelper.EqualityChecker;
 import org.somox.kdmhelper.KDMHelper;
@@ -14,6 +13,8 @@ import org.somox.kdmhelper.metamodeladdition.Root;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
+
+import tools.mdsd.jamopp.model.java.members.Method;
 
 /**
  * Implementation of {@link IFunctionClassificationStrategy}. Uses basic

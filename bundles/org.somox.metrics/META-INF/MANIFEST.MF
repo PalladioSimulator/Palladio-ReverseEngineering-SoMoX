@@ -12,10 +12,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.somox.filter,
  org.somox.kdmhelper,
  org.somox.sourcecodedecorator,
- org.emftext.language.java,
  org.jgrapht.core,
  org.apache.log4j,
- org.somox.sourcecodedecorator
+ org.somox.sourcecodedecorator,
+ tools.mdsd.jamopp.model.java
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.somox.metrics,

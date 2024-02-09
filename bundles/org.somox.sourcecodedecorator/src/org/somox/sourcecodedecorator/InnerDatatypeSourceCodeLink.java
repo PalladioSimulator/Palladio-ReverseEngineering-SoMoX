@@ -3,8 +3,9 @@
 package org.somox.sourcecodedecorator;
 
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.members.Field;
 import org.palladiosimulator.pcm.repository.InnerDeclaration;
+
+import tools.mdsd.jamopp.model.java.members.Field;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Inner

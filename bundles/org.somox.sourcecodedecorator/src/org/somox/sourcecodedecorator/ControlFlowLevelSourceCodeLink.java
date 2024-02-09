@@ -2,8 +2,9 @@
  */
 package org.somox.sourcecodedecorator;
 
-import org.emftext.language.java.statements.Statement;
 import org.palladiosimulator.pcm.seff.AbstractAction;
+
+import tools.mdsd.jamopp.model.java.statements.Statement;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Control

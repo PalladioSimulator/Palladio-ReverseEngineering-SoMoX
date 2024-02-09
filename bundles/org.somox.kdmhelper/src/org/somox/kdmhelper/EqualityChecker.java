@@ -1,14 +1,12 @@
 package org.somox.kdmhelper;
 
-import org.emftext.language.java.commons.NamedElement;
-import org.emftext.language.java.members.Constructor;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.parameters.Parametrizable;
-import org.emftext.language.java.types.PrimitiveType;
-import org.emftext.language.java.types.Type;
-import org.emftext.language.java.types.TypeReference;
-
-//import de.fzi.gast.functions.Function;
+import tools.mdsd.jamopp.model.java.commons.NamedElement;
+import tools.mdsd.jamopp.model.java.members.Constructor;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.parameters.Parametrizable;
+import tools.mdsd.jamopp.model.java.types.PrimitiveType;
+import tools.mdsd.jamopp.model.java.types.Type;
+import tools.mdsd.jamopp.model.java.types.TypeReference;
 
 /**
  * Helper class

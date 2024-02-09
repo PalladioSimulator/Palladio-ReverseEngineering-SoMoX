@@ -8,10 +8,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.emftext.language.java.containers.CompilationUnit;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.somox.sourcecodedecorator.FileLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
+
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object ' <em><b>File

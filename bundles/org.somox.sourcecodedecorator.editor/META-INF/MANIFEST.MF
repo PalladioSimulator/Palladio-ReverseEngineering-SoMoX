@@ -17,9 +17,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui,
  org.eclipse.ui.ide,
  de.uka.ipd.sdq.identifier.edit,
- org.emftext.language.java.edit,
  org.palladiosimulator.pcm.edit,
  de.uka.ipd.sdq.probfunction.edit,
  de.uka.ipd.sdq.stoex.edit,
- de.uka.ipd.sdq.units.edit
+ de.uka.ipd.sdq.units.edit,
+ tools.mdsd.jamopp.model.java.editor
 Bundle-ActivationPolicy: lazy

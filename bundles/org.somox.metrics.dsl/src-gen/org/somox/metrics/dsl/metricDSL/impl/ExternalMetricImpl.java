@@ -7,8 +7,8 @@ import org.somox.metrics.dsl.metricDSL.ExternalMetric;
 import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>External Metric</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>External Metric</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -21,7 +21,6 @@ public class ExternalMetricImpl extends MetricImpl implements ExternalMetric {
      * @generated
      */
     protected ExternalMetricImpl() {
-        super();
     }
 
     /**

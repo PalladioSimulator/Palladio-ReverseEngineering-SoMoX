@@ -15,8 +15,8 @@ Require-Bundle: org.eclipse.ui,
  org.somox.kdmhelper,
  org.somox.core,
  org.palladiosimulator.pcm,
- org.emftext.language.java,
- org.somox.util
+ org.somox.util,
+ tools.mdsd.jamopp.model.java
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.somox.gast2seff.jobs,

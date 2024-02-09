@@ -3,8 +3,9 @@
 package org.somox.sourcecodedecorator;
 
 import org.eclipse.emf.common.util.EList;
-import org.emftext.language.java.types.Type;
 import org.palladiosimulator.pcm.repository.DataType;
+
+import tools.mdsd.jamopp.model.java.types.Type;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Data

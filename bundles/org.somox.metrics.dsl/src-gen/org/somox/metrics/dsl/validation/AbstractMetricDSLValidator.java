@@ -12,7 +12,7 @@ public class AbstractMetricDSLValidator extends org.eclipse.xtext.validation.Abs
 
     @Override
     protected List<EPackage> getEPackages() {
-        final List<EPackage> result = new ArrayList<EPackage>();
+        final List<EPackage> result = new ArrayList<>();
         result.add(org.somox.metrics.dsl.metricDSL.MetricDSLPackage.eINSTANCE);
         return result;
     }

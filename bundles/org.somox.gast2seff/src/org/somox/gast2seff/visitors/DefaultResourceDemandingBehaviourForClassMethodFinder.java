@@ -1,6 +1,5 @@
 package org.somox.gast2seff.visitors;
 
-import org.emftext.language.java.members.ClassMethod;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.Signature;
 import org.palladiosimulator.pcm.seff.ResourceDemandingInternalBehaviour;
@@ -9,6 +8,8 @@ import org.palladiosimulator.pcm.seff.ServiceEffectSpecification;
 import org.somox.sourcecodedecorator.MethodLevelResourceDemandingInternalBehaviorLink;
 import org.somox.sourcecodedecorator.MethodLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
+
+import tools.mdsd.jamopp.model.java.members.ClassMethod;
 
 public class DefaultResourceDemandingBehaviourForClassMethodFinder
         implements ResourceDemandingBehaviourForClassMethodFinding {

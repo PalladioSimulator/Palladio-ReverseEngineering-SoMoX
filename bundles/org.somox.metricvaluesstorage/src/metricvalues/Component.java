@@ -4,7 +4,8 @@ package metricvalues;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.types.Type;
+
+import tools.mdsd.jamopp.model.java.types.Type;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object
@@ -100,7 +101,7 @@ public interface Component extends EObject {
 
     /**
      * Returns the value of the '<em><b>Classes</b></em>' reference list. The list
-     * contents are of type {@link org.emftext.language.java.types.Type}. <!--
+     * contents are of type {@link tools.mdsd.jamopp.model.java.types.Type}. <!--
      * begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Classes</em>' reference list isn't clear, there

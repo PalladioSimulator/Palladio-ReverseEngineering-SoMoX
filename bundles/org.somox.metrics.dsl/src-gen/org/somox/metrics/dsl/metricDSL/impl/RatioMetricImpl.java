@@ -11,8 +11,8 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 import org.somox.metrics.dsl.metricDSL.RatioMetric;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Ratio Metric</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Ratio
+ * Metric</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -27,8 +27,8 @@ import org.somox.metrics.dsl.metricDSL.RatioMetric;
  */
 public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric {
     /**
-     * The cached value of the '{@link #getNominatorMetric() <em>Nominator Metric</em>}' reference.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getNominatorMetric() <em>Nominator
+     * Metric</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getNominatorMetric()
      * @generated
@@ -37,8 +37,8 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
     protected Metric nominatorMetric;
 
     /**
-     * The cached value of the '{@link #getDenominatorMetric() <em>Denominator Metric</em>}'
-     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getDenominatorMetric() <em>Denominator
+     * Metric</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getDenominatorMetric()
      * @generated
@@ -52,7 +52,6 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
      * @generated
      */
     protected RatioMetricImpl() {
-        super();
     }
 
     /**
@@ -72,17 +71,15 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
      */
     @Override
     public Metric getNominatorMetric() {
-        if (this.nominatorMetric != null && this.nominatorMetric.eIsProxy()) {
-            final InternalEObject oldNominatorMetric = (InternalEObject) this.nominatorMetric;
-            this.nominatorMetric = (Metric) this.eResolveProxy(oldNominatorMetric);
-            if (this.nominatorMetric != oldNominatorMetric) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            MetricDSLPackage.RATIO_METRIC__NOMINATOR_METRIC, oldNominatorMetric, this.nominatorMetric));
-                }
+        if ((nominatorMetric != null) && nominatorMetric.eIsProxy()) {
+            final InternalEObject oldNominatorMetric = (InternalEObject) nominatorMetric;
+            nominatorMetric = (Metric) eResolveProxy(oldNominatorMetric);
+            if ((nominatorMetric != oldNominatorMetric) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        MetricDSLPackage.RATIO_METRIC__NOMINATOR_METRIC, oldNominatorMetric, nominatorMetric));
             }
         }
-        return this.nominatorMetric;
+        return nominatorMetric;
     }
 
     /**
@@ -91,7 +88,7 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
      * @generated
      */
     public Metric basicGetNominatorMetric() {
-        return this.nominatorMetric;
+        return nominatorMetric;
     }
 
     /**
@@ -101,11 +98,11 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
      */
     @Override
     public void setNominatorMetric(final Metric newNominatorMetric) {
-        final Metric oldNominatorMetric = this.nominatorMetric;
-        this.nominatorMetric = newNominatorMetric;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.RATIO_METRIC__NOMINATOR_METRIC,
-                    oldNominatorMetric, this.nominatorMetric));
+        final Metric oldNominatorMetric = nominatorMetric;
+        nominatorMetric = newNominatorMetric;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.RATIO_METRIC__NOMINATOR_METRIC,
+                    oldNominatorMetric, nominatorMetric));
         }
     }
 
@@ -116,18 +113,15 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
      */
     @Override
     public Metric getDenominatorMetric() {
-        if (this.denominatorMetric != null && this.denominatorMetric.eIsProxy()) {
-            final InternalEObject oldDenominatorMetric = (InternalEObject) this.denominatorMetric;
-            this.denominatorMetric = (Metric) this.eResolveProxy(oldDenominatorMetric);
-            if (this.denominatorMetric != oldDenominatorMetric) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            MetricDSLPackage.RATIO_METRIC__DENOMINATOR_METRIC, oldDenominatorMetric,
-                            this.denominatorMetric));
-                }
+        if ((denominatorMetric != null) && denominatorMetric.eIsProxy()) {
+            final InternalEObject oldDenominatorMetric = (InternalEObject) denominatorMetric;
+            denominatorMetric = (Metric) eResolveProxy(oldDenominatorMetric);
+            if ((denominatorMetric != oldDenominatorMetric) && eNotificationRequired()) {
+                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                        MetricDSLPackage.RATIO_METRIC__DENOMINATOR_METRIC, oldDenominatorMetric, denominatorMetric));
             }
         }
-        return this.denominatorMetric;
+        return denominatorMetric;
     }
 
     /**
@@ -136,7 +130,7 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
      * @generated
      */
     public Metric basicGetDenominatorMetric() {
-        return this.denominatorMetric;
+        return denominatorMetric;
     }
 
     /**
@@ -146,11 +140,11 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
      */
     @Override
     public void setDenominatorMetric(final Metric newDenominatorMetric) {
-        final Metric oldDenominatorMetric = this.denominatorMetric;
-        this.denominatorMetric = newDenominatorMetric;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MetricDSLPackage.RATIO_METRIC__DENOMINATOR_METRIC, oldDenominatorMetric, this.denominatorMetric));
+        final Metric oldDenominatorMetric = denominatorMetric;
+        denominatorMetric = newDenominatorMetric;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, MetricDSLPackage.RATIO_METRIC__DENOMINATOR_METRIC,
+                    oldDenominatorMetric, denominatorMetric));
         }
     }
 
@@ -164,14 +158,14 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
         switch (featureID) {
         case MetricDSLPackage.RATIO_METRIC__NOMINATOR_METRIC:
             if (resolve) {
-                return this.getNominatorMetric();
+                return getNominatorMetric();
             }
-            return this.basicGetNominatorMetric();
+            return basicGetNominatorMetric();
         case MetricDSLPackage.RATIO_METRIC__DENOMINATOR_METRIC:
             if (resolve) {
-                return this.getDenominatorMetric();
+                return getDenominatorMetric();
             }
-            return this.basicGetDenominatorMetric();
+            return basicGetDenominatorMetric();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -185,10 +179,10 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.RATIO_METRIC__NOMINATOR_METRIC:
-            this.setNominatorMetric((Metric) newValue);
+            setNominatorMetric((Metric) newValue);
             return;
         case MetricDSLPackage.RATIO_METRIC__DENOMINATOR_METRIC:
-            this.setDenominatorMetric((Metric) newValue);
+            setDenominatorMetric((Metric) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -203,10 +197,10 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.RATIO_METRIC__NOMINATOR_METRIC:
-            this.setNominatorMetric((Metric) null);
+            setNominatorMetric((Metric) null);
             return;
         case MetricDSLPackage.RATIO_METRIC__DENOMINATOR_METRIC:
-            this.setDenominatorMetric((Metric) null);
+            setDenominatorMetric((Metric) null);
             return;
         }
         super.eUnset(featureID);
@@ -221,9 +215,9 @@ public class RatioMetricImpl extends MetricDefinitionImpl implements RatioMetric
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.RATIO_METRIC__NOMINATOR_METRIC:
-            return this.nominatorMetric != null;
+            return nominatorMetric != null;
         case MetricDSLPackage.RATIO_METRIC__DENOMINATOR_METRIC:
-            return this.denominatorMetric != null;
+            return denominatorMetric != null;
         }
         return super.eIsSet(featureID);
     }

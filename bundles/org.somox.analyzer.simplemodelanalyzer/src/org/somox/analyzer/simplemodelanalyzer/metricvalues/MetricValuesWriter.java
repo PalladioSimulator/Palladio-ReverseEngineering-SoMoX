@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.somox.analyzer.simplemodelanalyzer.Activator;
@@ -31,6 +30,7 @@ import metricvalues.Iteration;
 import metricvalues.MetricValue;
 import metricvalues.MetricValuesModel;
 import metricvalues.MetricvaluesFactory;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 public class MetricValuesWriter {
 

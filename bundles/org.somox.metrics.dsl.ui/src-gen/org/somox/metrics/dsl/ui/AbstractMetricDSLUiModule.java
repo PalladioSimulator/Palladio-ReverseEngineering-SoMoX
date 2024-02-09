@@ -22,19 +22,22 @@ public abstract class AbstractMetricDSLUiModule extends DefaultUiModule {
         return org.eclipse.xtext.ui.shared.Access.getJavaProjectsState();
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IProposalConflictHelper> bindIProposalConflictHelper() {
         return org.eclipse.xtext.ui.editor.contentassist.antlr.AntlrProposalConflictHelper.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     public void configureHighlightingLexer(final com.google.inject.Binder binder) {
         binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
                 .annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING))
                 .to(org.somox.metrics.dsl.parser.antlr.internal.InternalMetricDSLLexer.class);
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     public void configureHighlightingTokenDefProvider(final com.google.inject.Binder binder) {
         binder.bind(org.eclipse.xtext.parser.antlr.ITokenDefProvider.class)
                 .annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING))
@@ -103,74 +106,87 @@ public abstract class AbstractMetricDSLUiModule extends DefaultUiModule {
                 .to(org.somox.metrics.dsl.ui.labeling.MetricDSLDescriptionLabelProvider.class);
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
     public Class<? extends org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider> bindIOutlineTreeProvider() {
         return org.somox.metrics.dsl.ui.outline.MetricDSLOutlineTreeProvider.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
     public Class<? extends org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
         return org.somox.metrics.dsl.ui.outline.MetricDSLOutlineTreeProvider.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
     @Override
     public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
         return org.somox.metrics.dsl.ui.quickfix.MetricDSLQuickfixProvider.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.contentAssist.ContentAssistFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.contentAssist.ContentAssistFragment
     public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
         return org.somox.metrics.dsl.ui.contentassist.MetricDSLProposalProvider.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
     public Class<? extends org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext.Factory> bindContentAssistContext$Factory() {
         return org.eclipse.xtext.ui.editor.contentassist.antlr.ParserBasedContentAssistContextFactory.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
     public Class<? extends org.eclipse.xtext.ui.editor.contentassist.antlr.IContentAssistParser> bindIContentAssistParser() {
         return org.somox.metrics.dsl.ui.contentassist.antlr.MetricDSLParser.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
     public void configureContentAssistLexerProvider(final com.google.inject.Binder binder) {
         binder.bind(org.somox.metrics.dsl.ui.contentassist.antlr.internal.InternalMetricDSLLexer.class)
                 .toProvider(org.eclipse.xtext.parser.antlr.LexerProvider
                         .create(org.somox.metrics.dsl.ui.contentassist.antlr.internal.InternalMetricDSLLexer.class));
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
     public void configureContentAssistLexer(final com.google.inject.Binder binder) {
         binder.bind(org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer.class)
                 .annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.CONTENT_ASSIST))
                 .to(org.somox.metrics.dsl.ui.contentassist.antlr.internal.InternalMetricDSLLexer.class);
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
     public Class<? extends org.eclipse.xtext.ui.refactoring.IRenameStrategy> bindIRenameStrategy() {
         return org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategy.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
     public Class<? extends org.eclipse.xtext.ui.refactoring.IReferenceUpdater> bindIReferenceUpdater() {
         return org.eclipse.xtext.ui.refactoring.impl.DefaultReferenceUpdater.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
     public void configureIPreferenceStoreInitializer(final com.google.inject.Binder binder) {
         binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class)
                 .annotatedWith(com.google.inject.name.Names.named("RefactoringPreferences"))
                 .to(org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferences.Initializer.class);
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
     public Class<? extends org.eclipse.xtext.ui.refactoring.IRenameRefactoringProvider> bindIRenameRefactoringProvider() {
         return org.eclipse.xtext.ui.refactoring.impl.DefaultRenameRefactoringProvider.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
     public Class<? extends org.eclipse.xtext.ui.refactoring.ui.IRenameSupport.Factory> bindIRenameSupport$Factory() {
         return org.eclipse.xtext.ui.refactoring.ui.DefaultRenameSupport.Factory.class;
     }
@@ -230,29 +246,34 @@ public abstract class AbstractMetricDSLUiModule extends DefaultUiModule {
         return org.eclipse.xtext.common.types.ui.query.IJavaSearchParticipation.Yes.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
     public com.google.inject.Provider<org.eclipse.xtext.ui.codetemplates.ui.preferences.TemplatesLanguageConfiguration> provideTemplatesLanguageConfiguration() {
         return org.eclipse.xtext.ui.codetemplates.ui.AccessibleCodetemplatesActivator
                 .getTemplatesLanguageConfigurationProvider();
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
     public com.google.inject.Provider<org.eclipse.xtext.ui.codetemplates.ui.registry.LanguageRegistry> provideLanguageRegistry() {
         return org.eclipse.xtext.ui.codetemplates.ui.AccessibleCodetemplatesActivator.getLanguageRegistry();
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
     @org.eclipse.xtext.service.SingletonBinding(eager = true)
     public Class<? extends org.eclipse.xtext.ui.codetemplates.ui.registry.LanguageRegistrar> bindLanguageRegistrar() {
         return org.eclipse.xtext.ui.codetemplates.ui.registry.LanguageRegistrar.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
     public Class<? extends org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage> bindXtextTemplatePreferencePage() {
         return org.eclipse.xtext.ui.codetemplates.ui.preferences.AdvancedTemplatesPreferencePage.class;
     }
 
-    // contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
     public Class<? extends org.eclipse.xtext.ui.codetemplates.ui.partialEditing.IPartialContentAssistParser> bindIPartialContentAssistParser() {
         return org.somox.metrics.dsl.ui.contentassist.antlr.PartialMetricDSLContentAssistParser.class;
     }

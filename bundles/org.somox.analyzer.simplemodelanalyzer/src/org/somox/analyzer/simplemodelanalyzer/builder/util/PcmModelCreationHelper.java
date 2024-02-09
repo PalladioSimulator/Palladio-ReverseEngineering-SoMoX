@@ -1,12 +1,6 @@
 package org.somox.analyzer.simplemodelanalyzer.builder.util;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.arrays.ArrayTypeable;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.members.Constructor;
-import org.emftext.language.java.members.Member;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.types.Type;
 import org.palladiosimulator.pcm.repository.DataType;
 import org.palladiosimulator.pcm.repository.EventGroup;
 import org.palladiosimulator.pcm.repository.EventType;
@@ -19,6 +13,13 @@ import org.somox.analyzer.AnalysisResult;
 import org.somox.analyzer.simplemodelanalyzer.builder.OperationBuilder;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.util.SourceCodeDecoratorHelper;
+
+import tools.mdsd.jamopp.model.java.arrays.ArrayTypeable;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.members.Constructor;
+import tools.mdsd.jamopp.model.java.members.Member;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 public class PcmModelCreationHelper {
 
@@ -51,7 +52,7 @@ public class PcmModelCreationHelper {
         }
         final OperationSignature opSignature = RepositoryFactory.eINSTANCE.createOperationSignature();
         opSignature.setEntityName(jaMoPPMember.getName());
-        if (jaMoPPMember instanceof final org.emftext.language.java.members.Method jaMoPPMethod) {
+        if (jaMoPPMember instanceof final tools.mdsd.jamopp.model.java.members.Method jaMoPPMethod) {
             if ((null != jaMoPPMethod.getTypeReference()) && (null != jaMoPPMethod.getTypeReference().getTarget())) {
                 final DataType returnType = getDataTypeAndUpdateSourceCodeDecorator(repo,
                         jaMoPPMethod.getTypeReference().getTarget(), (ArrayTypeable) jaMoPPMethod.getTypeReference());
@@ -65,11 +66,11 @@ public class PcmModelCreationHelper {
                 opSignature.setReturnType__OperationSignature(defaultDataType);
 
             }
-            for (final org.emftext.language.java.parameters.Parameter jaMoPPParam : jaMoPPMethod.getParameters()) {
+            for (final tools.mdsd.jamopp.model.java.parameters.Parameter jaMoPPParam : jaMoPPMethod.getParameters()) {
                 createParameterAndAddParameter(repo, opSignature, jaMoPPParam);
             }
         } else if (jaMoPPMember instanceof final Constructor ctor) {
-            for (final org.emftext.language.java.parameters.Parameter ctorParam : ctor.getParameters()) {
+            for (final tools.mdsd.jamopp.model.java.parameters.Parameter ctorParam : ctor.getParameters()) {
                 createParameterAndAddParameter(repo, opSignature, ctorParam);
             }
         }
@@ -86,7 +87,8 @@ public class PcmModelCreationHelper {
 
     public EventGroup createEventGroupAndEventTypeAndUpdateSourceCodeDecorator(
             final ConcreteClassifier observedEventDataType, final Repository repository,
-            final org.emftext.language.java.parameters.Parameter observedJaMoPPParameter, final Member jaMoPPMember) {
+            final tools.mdsd.jamopp.model.java.parameters.Parameter observedJaMoPPParameter,
+            final Member jaMoPPMember) {
         final EventGroup eventGroup = createEventGroupAndUpdateSCDM(observedEventDataType);
         createEventType(eventGroup, repository, observedEventDataType, observedJaMoPPParameter, jaMoPPMember);
         return eventGroup;
@@ -94,7 +96,8 @@ public class PcmModelCreationHelper {
 
     private EventType createEventType(final EventGroup eventGroup, final Repository repoitory,
             final ConcreteClassifier observedEventDataType,
-            final org.emftext.language.java.parameters.Parameter observedJaMoPPParameter, final Member jaMoPPMember) {
+            final tools.mdsd.jamopp.model.java.parameters.Parameter observedJaMoPPParameter,
+            final Member jaMoPPMember) {
         final EventType eventType = RepositoryFactory.eINSTANCE.createEventType();
         eventType.setEntityName(observedEventDataType.getName());
         eventGroup.getEventTypes__EventGroup().add(eventType);
@@ -142,13 +145,13 @@ public class PcmModelCreationHelper {
     }
 
     private void createParameterAndAddParameter(final Repository repo, final OperationSignature opSignature,
-            final org.emftext.language.java.parameters.Parameter jaMoPPParam) {
+            final tools.mdsd.jamopp.model.java.parameters.Parameter jaMoPPParam) {
         final Parameter pcmParam = createParameter(repo, jaMoPPParam);
         opSignature.getParameters__OperationSignature().add(pcmParam);
     }
 
     private Parameter createParameter(final Repository repo,
-            final org.emftext.language.java.parameters.Parameter jaMoPPParam) {
+            final tools.mdsd.jamopp.model.java.parameters.Parameter jaMoPPParam) {
         final Parameter pcmParam = RepositoryFactory.eINSTANCE.createParameter();
         pcmParam.setParameterName(jaMoPPParam.getName());
 

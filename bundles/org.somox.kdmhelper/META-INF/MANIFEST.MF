@@ -9,18 +9,18 @@ Require-Bundle: org.apache.log4j,
  org.eclipse.emf.common,
  org.eclipse.emf.ecore,
  org.eclipse.jdt.core,
- org.emftext.language.java,
  org.eclipse.core.resources,
  org.eclipse.equinox.registry,
- jamopp.resource,
  org.eclipse.osgi,
- org.apache.commons.io
+ org.apache.commons.io,
+ tools.mdsd.jamopp.model.java,
+ tools.mdsd.jamopp.resource,
+ tools.mdsd.jamopp.parser
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.somox.kdmhelper,
  org.somox.kdmhelper.metamodeladdition,
  org.splevo.jamopp.extraction
-Import-Package: jamopp.parser.jdt,
- org.eclipse.emf.ecore.xmi,
+Import-Package: org.eclipse.emf.ecore.xmi,
  org.eclipse.emf.ecore.xmi.impl
 Automatic-Module-Name: org.somox.kdmhelper

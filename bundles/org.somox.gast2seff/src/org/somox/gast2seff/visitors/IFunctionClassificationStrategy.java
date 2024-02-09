@@ -4,7 +4,7 @@ import java.util.BitSet;
 import java.util.Collection;
 import java.util.List;
 
-import org.emftext.language.java.statements.Statement;
+import tools.mdsd.jamopp.model.java.statements.Statement;
 
 /**
  * Interface for the function call classification strategy. Implementing classes

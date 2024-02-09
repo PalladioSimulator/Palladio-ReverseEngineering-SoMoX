@@ -23,13 +23,15 @@ import org.somox.metrics.dsl.metricDSL.StepwiseMetric;
 import org.somox.metrics.dsl.metricDSL.WeightedMetric;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
+ * end-user-doc -->
  *
  * @generated
  */
 public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFactory {
     /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
@@ -47,12 +49,12 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
     }
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
      *
      * @generated
      */
     public MetricDSLFactoryImpl() {
-        super();
     }
 
     /**
@@ -62,36 +64,22 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID()) {
-        case MetricDSLPackage.METRIC_MODEL:
-            return this.createMetricModel();
-        case MetricDSLPackage.METRIC:
-            return this.createMetric();
-        case MetricDSLPackage.EXTERNAL_METRIC:
-            return this.createExternalMetric();
-        case MetricDSLPackage.INTERNAL_METRIC:
-            return this.createInternalMetric();
-        case MetricDSLPackage.NUMBER:
-            return this.createNumber();
-        case MetricDSLPackage.PARAMETER:
-            return this.createParameter();
-        case MetricDSLPackage.CONSTANT:
-            return this.createConstant();
-        case MetricDSLPackage.METRIC_DEFINITION:
-            return this.createMetricDefinition();
-        case MetricDSLPackage.WEIGHTED_METRIC:
-            return this.createWeightedMetric();
-        case MetricDSLPackage.STEPWISE_METRIC:
-            return this.createStepwiseMetric();
-        case MetricDSLPackage.RATIO_METRIC:
-            return this.createRatioMetric();
-        case MetricDSLPackage.BOUND_AND_WEIGHT:
-            return this.createBoundAndWeight();
-        case MetricDSLPackage.METRIC_AND_WEIGHT:
-            return this.createMetricAndWeight();
-        default:
-            throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
+        return switch (eClass.getClassifierID()) {
+        case MetricDSLPackage.METRIC_MODEL -> createMetricModel();
+        case MetricDSLPackage.METRIC -> createMetric();
+        case MetricDSLPackage.EXTERNAL_METRIC -> createExternalMetric();
+        case MetricDSLPackage.INTERNAL_METRIC -> createInternalMetric();
+        case MetricDSLPackage.NUMBER -> createNumber();
+        case MetricDSLPackage.PARAMETER -> createParameter();
+        case MetricDSLPackage.CONSTANT -> createConstant();
+        case MetricDSLPackage.METRIC_DEFINITION -> createMetricDefinition();
+        case MetricDSLPackage.WEIGHTED_METRIC -> createWeightedMetric();
+        case MetricDSLPackage.STEPWISE_METRIC -> createStepwiseMetric();
+        case MetricDSLPackage.RATIO_METRIC -> createRatioMetric();
+        case MetricDSLPackage.BOUND_AND_WEIGHT -> createBoundAndWeight();
+        case MetricDSLPackage.METRIC_AND_WEIGHT -> createMetricAndWeight();
+        default -> throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        };
     }
 
     /**
@@ -101,8 +89,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public MetricModel createMetricModel() {
-        final MetricModelImpl metricModel = new MetricModelImpl();
-        return metricModel;
+        return new MetricModelImpl();
     }
 
     /**
@@ -112,8 +99,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public Metric createMetric() {
-        final MetricImpl metric = new MetricImpl();
-        return metric;
+        return new MetricImpl();
     }
 
     /**
@@ -123,8 +109,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public ExternalMetric createExternalMetric() {
-        final ExternalMetricImpl externalMetric = new ExternalMetricImpl();
-        return externalMetric;
+        return new ExternalMetricImpl();
     }
 
     /**
@@ -134,8 +119,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public InternalMetric createInternalMetric() {
-        final InternalMetricImpl internalMetric = new InternalMetricImpl();
-        return internalMetric;
+        return new InternalMetricImpl();
     }
 
     /**
@@ -145,8 +129,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public org.somox.metrics.dsl.metricDSL.Number createNumber() {
-        final NumberImpl number = new NumberImpl();
-        return number;
+        return new NumberImpl();
     }
 
     /**
@@ -156,8 +139,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public Parameter createParameter() {
-        final ParameterImpl parameter = new ParameterImpl();
-        return parameter;
+        return new ParameterImpl();
     }
 
     /**
@@ -167,8 +149,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public Constant createConstant() {
-        final ConstantImpl constant = new ConstantImpl();
-        return constant;
+        return new ConstantImpl();
     }
 
     /**
@@ -178,8 +159,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public MetricDefinition createMetricDefinition() {
-        final MetricDefinitionImpl metricDefinition = new MetricDefinitionImpl();
-        return metricDefinition;
+        return new MetricDefinitionImpl();
     }
 
     /**
@@ -189,8 +169,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public WeightedMetric createWeightedMetric() {
-        final WeightedMetricImpl weightedMetric = new WeightedMetricImpl();
-        return weightedMetric;
+        return new WeightedMetricImpl();
     }
 
     /**
@@ -200,8 +179,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public StepwiseMetric createStepwiseMetric() {
-        final StepwiseMetricImpl stepwiseMetric = new StepwiseMetricImpl();
-        return stepwiseMetric;
+        return new StepwiseMetricImpl();
     }
 
     /**
@@ -211,8 +189,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public RatioMetric createRatioMetric() {
-        final RatioMetricImpl ratioMetric = new RatioMetricImpl();
-        return ratioMetric;
+        return new RatioMetricImpl();
     }
 
     /**
@@ -222,8 +199,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public BoundAndWeight createBoundAndWeight() {
-        final BoundAndWeightImpl boundAndWeight = new BoundAndWeightImpl();
-        return boundAndWeight;
+        return new BoundAndWeightImpl();
     }
 
     /**
@@ -233,8 +209,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public MetricAndWeight createMetricAndWeight() {
-        final MetricAndWeightImpl metricAndWeight = new MetricAndWeightImpl();
-        return metricAndWeight;
+        return new MetricAndWeightImpl();
     }
 
     /**
@@ -244,7 +219,7 @@ public class MetricDSLFactoryImpl extends EFactoryImpl implements MetricDSLFacto
      */
     @Override
     public MetricDSLPackage getMetricDSLPackage() {
-        return (MetricDSLPackage) this.getEPackage();
+        return (MetricDSLPackage) getEPackage();
     }
 
     /**

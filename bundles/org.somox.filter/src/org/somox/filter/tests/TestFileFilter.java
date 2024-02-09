@@ -7,10 +7,11 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.apache.log4j.Logger;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.containers.CompilationUnit;
 import org.somox.filter.BaseFilter;
 import org.somox.filter.BlacklistFilter;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
 
 public class TestFileFilter extends BaseFilter<ConcreteClassifier> {
 

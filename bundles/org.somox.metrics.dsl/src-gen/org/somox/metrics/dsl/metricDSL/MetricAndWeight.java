@@ -5,14 +5,16 @@ package org.somox.metrics.dsl.metricDSL;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Metric And Weight</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Metric
+ * And Weight</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.somox.metrics.dsl.metricDSL.MetricAndWeight#getMetric <em>Metric</em>}</li>
- * <li>{@link org.somox.metrics.dsl.metricDSL.MetricAndWeight#getWeight <em>Weight</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.MetricAndWeight#getMetric
+ * <em>Metric</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.MetricAndWeight#getWeight
+ * <em>Weight</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,10 +24,11 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MetricAndWeight extends EObject {
     /**
-     * Returns the value of the '<em><b>Metric</b></em>' reference. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Metric</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Metric</em>' reference isn't clear, there really should be more of
-     * a description here...
+     * If the meaning of the '<em>Metric</em>' reference isn't clear, there really
+     * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
@@ -38,21 +41,22 @@ public interface MetricAndWeight extends EObject {
     Metric getMetric();
 
     /**
-     * Sets the value of the '{@link org.somox.metrics.dsl.metricDSL.MetricAndWeight#getMetric
+     * Sets the value of the
+     * '{@link org.somox.metrics.dsl.metricDSL.MetricAndWeight#getMetric
      * <em>Metric</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @param value
-     *            the new value of the '<em>Metric</em>' reference.
+     * @param value the new value of the '<em>Metric</em>' reference.
      * @see #getMetric()
      * @generated
      */
     void setMetric(Metric value);
 
     /**
-     * Returns the value of the '<em><b>Weight</b></em>' reference. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Weight</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Weight</em>' reference isn't clear, there really should be more of
-     * a description here...
+     * If the meaning of the '<em>Weight</em>' reference isn't clear, there really
+     * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
@@ -65,11 +69,11 @@ public interface MetricAndWeight extends EObject {
     org.somox.metrics.dsl.metricDSL.Number getWeight();
 
     /**
-     * Sets the value of the '{@link org.somox.metrics.dsl.metricDSL.MetricAndWeight#getWeight
+     * Sets the value of the
+     * '{@link org.somox.metrics.dsl.metricDSL.MetricAndWeight#getWeight
      * <em>Weight</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @param value
-     *            the new value of the '<em>Weight</em>' reference.
+     * @param value the new value of the '<em>Weight</em>' reference.
      * @see #getWeight()
      * @generated
      */

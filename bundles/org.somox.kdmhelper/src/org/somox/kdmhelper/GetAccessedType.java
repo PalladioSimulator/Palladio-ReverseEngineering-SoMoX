@@ -1,13 +1,13 @@
 package org.somox.kdmhelper;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.commons.Commentable;
-import org.emftext.language.java.references.IdentifierReference;
-import org.emftext.language.java.references.MethodCall;
-import org.emftext.language.java.references.ReferenceableElement;
-import org.emftext.language.java.types.PrimitiveType;
-import org.emftext.language.java.types.Type;
-import org.emftext.language.java.types.TypeReference;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.commons.Commentable;
+import tools.mdsd.jamopp.model.java.references.IdentifierReference;
+import tools.mdsd.jamopp.model.java.references.MethodCall;
+import tools.mdsd.jamopp.model.java.references.ReferenceableElement;
+import tools.mdsd.jamopp.model.java.types.PrimitiveType;
+import tools.mdsd.jamopp.model.java.types.Type;
+import tools.mdsd.jamopp.model.java.types.TypeReference;
 
 public class GetAccessedType {
 

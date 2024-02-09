@@ -24,14 +24,13 @@ public class MetricDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
     @Inject
     protected void init(final IGrammarAccess access) {
-        this.grammarAccess = (MetricDSLGrammarAccess) access;
-        this.match_InternalMetric___ParametersKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q = new GroupAlias(
+        grammarAccess = (MetricDSLGrammarAccess) access;
+        match_InternalMetric___ParametersKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q = new GroupAlias(
                 false, true,
-                new TokenAlias(false, false, this.grammarAccess.getInternalMetricAccess().getParametersKeyword_8_0()),
+                new TokenAlias(false, false, grammarAccess.getInternalMetricAccess().getParametersKeyword_8_0()),
+                new TokenAlias(false, false, grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_8_1()),
                 new TokenAlias(false, false,
-                        this.grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_8_1()),
-                new TokenAlias(false, false,
-                        this.grammarAccess.getInternalMetricAccess().getRightCurlyBracketKeyword_8_3()));
+                        grammarAccess.getInternalMetricAccess().getRightCurlyBracketKeyword_8_3()));
     }
 
     @Override
@@ -46,15 +45,15 @@ public class MetricDSLSyntacticSequencer extends AbstractSyntacticSequencer {
         if (transition.getAmbiguousSyntaxes().isEmpty()) {
             return;
         }
-        final List<INode> transitionNodes = this.collectNodes(fromNode, toNode);
+        final List<INode> transitionNodes = collectNodes(fromNode, toNode);
         for (final AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
-            final List<INode> syntaxNodes = this.getNodesFor(transitionNodes, syntax);
-            if (this.match_InternalMetric___ParametersKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q
+            final List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
+            if (match_InternalMetric___ParametersKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q
                     .equals(syntax)) {
-                this.emit_InternalMetric___ParametersKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q(
-                        semanticObject, this.getLastNavigableState(), syntaxNodes);
+                emit_InternalMetric___ParametersKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q(
+                        semanticObject, getLastNavigableState(), syntaxNodes);
             } else {
-                this.acceptNodes(this.getLastNavigableState(), syntaxNodes);
+                this.acceptNodes(getLastNavigableState(), syntaxNodes);
             }
         }
     }

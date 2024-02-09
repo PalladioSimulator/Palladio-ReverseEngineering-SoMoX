@@ -4,15 +4,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
-import org.emftext.language.java.arrays.ArrayTypeable;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.commons.Commentable;
-import org.emftext.language.java.containers.CompilationUnit;
-import org.emftext.language.java.generics.QualifiedTypeArgument;
-import org.emftext.language.java.members.Field;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.types.Type;
-import org.emftext.language.java.variables.Variable;
 import org.palladiosimulator.pcm.core.entity.NamedElement;
 import org.palladiosimulator.pcm.repository.CollectionDataType;
 import org.palladiosimulator.pcm.repository.CompositeDataType;
@@ -35,6 +26,16 @@ import org.somox.sourcecodedecorator.MethodLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
 import org.somox.util.DefaultResourceEnvironment;
+
+import tools.mdsd.jamopp.model.java.arrays.ArrayTypeable;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.commons.Commentable;
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
+import tools.mdsd.jamopp.model.java.generics.QualifiedTypeArgument;
+import tools.mdsd.jamopp.model.java.members.Field;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.types.Type;
+import tools.mdsd.jamopp.model.java.variables.Variable;
 
 /**
  * Builder for operations, parameters, message types, and data types. Keeps the
@@ -109,7 +110,7 @@ public class OperationBuilder extends AbstractBuilder {
         }
         for (final ConcreteClassifier superClass : KDMHelper.getSuperTypes(implementationClass)) {
             if (!KDMHelper.isAbstract(superClass) && !KDMHelper.isInterface(superClass)
-                    && (superClass instanceof org.emftext.language.java.classifiers.Class)) {
+                    && (superClass instanceof tools.mdsd.jamopp.model.java.classifiers.Class)) {
                 final Method real = getRealMethod(superClass, inputMethod);
                 if (real != null) {
                     return real;
@@ -163,12 +164,12 @@ public class OperationBuilder extends AbstractBuilder {
         }
 
         if ((null != method.getTypeReference()) && (null != GetAccessedType.getAccessedType(method.getTypeReference()))
-                && !(method.getTypeReference() instanceof org.emftext.language.java.types.Void)) {
+                && !(method.getTypeReference() instanceof tools.mdsd.jamopp.model.java.types.Void)) {
             final DataType returnType = getType(GetAccessedType.getAccessedType(method.getTypeReference()),
                     analysisResult.getInternalArchitectureModel(), (ArrayTypeable) method.getTypeReference());
             operation.setReturnType__OperationSignature(returnType);
         } else if ((null != method.getTypeReference())
-                && !(method.getTypeReference() instanceof org.emftext.language.java.types.Void)) {
+                && !(method.getTypeReference() instanceof tools.mdsd.jamopp.model.java.types.Void)) {
             final Type accessedType = GetAccessedType.getAccessedType(method.getTypeReference());
             final DataType type = getType(accessedType, analysisResult.getInternalArchitectureModel(),
                     (ArrayTypeable) method.getTypeReference());

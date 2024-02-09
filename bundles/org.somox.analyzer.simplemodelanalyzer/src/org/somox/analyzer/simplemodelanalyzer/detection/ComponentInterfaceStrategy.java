@@ -1,14 +1,13 @@
 package org.somox.analyzer.simplemodelanalyzer.detection;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.members.ClassMethod;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.types.Type;
 import org.somox.kdmhelper.KDMHelper;
-//import de.fzi.gast.functions.Method;
-//import de.fzi.gast.types.GASTClass;
 import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 import org.somox.sourcecodedecorator.SourceCodeDecoratorRepository;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.members.ClassMethod;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.types.Type;
 
 /**
  * Default interface detection strategy. Conditions in GAST: interface or only

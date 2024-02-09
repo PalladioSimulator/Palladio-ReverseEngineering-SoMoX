@@ -7,10 +7,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.emftext.language.java.statements.Statement;
 import org.palladiosimulator.pcm.seff.AbstractAction;
 import org.somox.sourcecodedecorator.ControlFlowLevelSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorPackage;
+
+import tools.mdsd.jamopp.model.java.statements.Statement;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '

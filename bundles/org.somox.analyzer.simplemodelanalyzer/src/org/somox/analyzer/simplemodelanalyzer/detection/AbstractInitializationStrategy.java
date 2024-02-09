@@ -1,13 +1,10 @@
 package org.somox.analyzer.simplemodelanalyzer.detection;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.somox.filter.BaseFilter;
 import org.somox.filter.DataObjectFilter;
 import org.somox.kdmhelper.KDMHelper;
 
-//import de.fzi.gast.functions.Method;
-//import de.fzi.gast.types.GASTClass;
-//import de.fzi.gast.types.GASTStruct;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
 
 /**
  * Abstract class for {@link IInitializationStrategy} providing default class

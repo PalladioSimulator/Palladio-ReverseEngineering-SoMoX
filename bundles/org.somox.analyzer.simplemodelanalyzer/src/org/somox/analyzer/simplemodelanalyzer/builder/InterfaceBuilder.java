@@ -8,13 +8,6 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.emftext.language.java.classifiers.Classifier;
-//import org.eclipse.gmt.modisco.java.ASTNode;
-//Commentable statt AstNode
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.types.ClassifierReference;
-import org.emftext.language.java.types.Type;
-import org.emftext.language.java.types.TypeReference;
 import org.palladiosimulator.pcm.core.entity.ComposedProvidingRequiringEntity;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.Interface;
@@ -26,13 +19,6 @@ import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.palladiosimulator.pcm.repository.RepositoryFactory;
 import org.palladiosimulator.pcm.repository.RequiredRole;
 import org.palladiosimulator.pcm.repository.Role;
-//import de.fzi.gast.accesses.Access;
-//import de.fzi.gast.accesses.InheritanceTypeAccess;
-//import de.fzi.gast.accesses.accessesPackage;
-//import de.fzi.gast.core.Root;
-//import de.fzi.gast.types.GASTClass;
-//import org.eclipse.gmt.modisco.java.TypeReference;
-//import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 import org.somox.analyzer.AnalysisResult;
 import org.somox.analyzer.simplemodelanalyzer.builder.util.InterfacePortBuilderHelper;
 import org.somox.analyzer.simplemodelanalyzer.detection.ComponentInterfaceStrategy;
@@ -45,6 +31,12 @@ import org.somox.kdmhelper.metamodeladdition.Root;
 import org.somox.sourcecodedecorator.ComponentImplementingClassesLink;
 import org.somox.sourcecodedecorator.InterfaceSourceCodeLink;
 import org.somox.sourcecodedecorator.SourcecodedecoratorFactory;
+
+import tools.mdsd.jamopp.model.java.classifiers.Classifier;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.types.ClassifierReference;
+import tools.mdsd.jamopp.model.java.types.Type;
+import tools.mdsd.jamopp.model.java.types.TypeReference;
 
 /**
  * Builder used to create {@link Interface}s in the SAMM instance based on

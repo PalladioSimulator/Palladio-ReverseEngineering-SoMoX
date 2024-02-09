@@ -16,37 +16,36 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.BodyDeclaration;
-import org.emftext.language.java.classifiers.Class;
-import org.emftext.language.java.classifiers.Classifier;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.classifiers.Interface;
-import org.emftext.language.java.commons.Commentable;
-import org.emftext.language.java.commons.NamedElement;
-import org.emftext.language.java.containers.CompilationUnit;
-import org.emftext.language.java.containers.Package;
-import org.emftext.language.java.generics.TypeArgument;
-import org.emftext.language.java.members.Constructor;
-import org.emftext.language.java.members.Member;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.modifiers.AnnotableAndModifiable;
-import org.emftext.language.java.modifiers.Final;
-import org.emftext.language.java.modifiers.Modifier;
-import org.emftext.language.java.modifiers.ModifiersFactory;
-import org.emftext.language.java.modifiers.Private;
-import org.emftext.language.java.modifiers.Static;
-import org.emftext.language.java.parameters.Parameter;
-import org.emftext.language.java.parameters.VariableLengthParameter;
-import org.emftext.language.java.references.IdentifierReference;
-import org.emftext.language.java.references.MethodCall;
-import org.emftext.language.java.references.ReferenceableElement;
-import org.emftext.language.java.statements.StatementListContainer;
-import org.emftext.language.java.statements.StatementsFactory;
-import org.emftext.language.java.types.ClassifierReference;
-import org.emftext.language.java.types.PrimitiveType;
-import org.emftext.language.java.types.Type;
-//CompilationUnit statt Model
-//Commentable statt AstNode
-import org.emftext.language.java.types.TypeReference;
+
+import tools.mdsd.jamopp.model.java.classifiers.Class;
+import tools.mdsd.jamopp.model.java.classifiers.Classifier;
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.classifiers.Interface;
+import tools.mdsd.jamopp.model.java.commons.Commentable;
+import tools.mdsd.jamopp.model.java.commons.NamedElement;
+import tools.mdsd.jamopp.model.java.containers.CompilationUnit;
+import tools.mdsd.jamopp.model.java.containers.Package;
+import tools.mdsd.jamopp.model.java.generics.TypeArgument;
+import tools.mdsd.jamopp.model.java.members.Constructor;
+import tools.mdsd.jamopp.model.java.members.Member;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.modifiers.AnnotableAndModifiable;
+import tools.mdsd.jamopp.model.java.modifiers.Final;
+import tools.mdsd.jamopp.model.java.modifiers.Modifier;
+import tools.mdsd.jamopp.model.java.modifiers.ModifiersFactory;
+import tools.mdsd.jamopp.model.java.modifiers.Private;
+import tools.mdsd.jamopp.model.java.modifiers.Static;
+import tools.mdsd.jamopp.model.java.parameters.Parameter;
+import tools.mdsd.jamopp.model.java.parameters.VariableLengthParameter;
+import tools.mdsd.jamopp.model.java.references.IdentifierReference;
+import tools.mdsd.jamopp.model.java.references.MethodCall;
+import tools.mdsd.jamopp.model.java.references.ReferenceableElement;
+import tools.mdsd.jamopp.model.java.statements.StatementListContainer;
+import tools.mdsd.jamopp.model.java.statements.StatementsFactory;
+import tools.mdsd.jamopp.model.java.types.ClassifierReference;
+import tools.mdsd.jamopp.model.java.types.PrimitiveType;
+import tools.mdsd.jamopp.model.java.types.Type;
+import tools.mdsd.jamopp.model.java.types.TypeReference;
 
 /**
  * This class contains a set of methods that are missing in the MoDisco Java
@@ -122,31 +121,31 @@ public class KDMHelper {
     }
 
     public static String getName(final PrimitiveType type) {
-        if (type instanceof org.emftext.language.java.types.Boolean) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Boolean) {
             return "bool";
         }
-        if (type instanceof org.emftext.language.java.types.Byte) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Byte) {
             return "byte";
         }
-        if (type instanceof org.emftext.language.java.types.Char) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Char) {
             return "char";
         }
-        if (type instanceof org.emftext.language.java.types.Double) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Double) {
             return "double";
         }
-        if (type instanceof org.emftext.language.java.types.Float) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Float) {
             return "float";
         }
-        if (type instanceof org.emftext.language.java.types.Int) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Int) {
             return "int";
         }
-        if (type instanceof org.emftext.language.java.types.Long) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Long) {
             return "long";
         }
-        if (type instanceof org.emftext.language.java.types.Short) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Short) {
             return "short";
         }
-        if (type instanceof org.emftext.language.java.types.Void) {
+        if (type instanceof tools.mdsd.jamopp.model.java.types.Void) {
             return "void";
         }
         return type.toString();
@@ -555,7 +554,7 @@ public class KDMHelper {
         return null;// ( (Object) prefixPackage).getSubpackages();
 
         // EList<Package> ownedPackages=null;
-        // org.emftext.language.java.containers.Package p;
+        // tools.mdsd.jamopp.model.java.containers.Package p;
         //
         // for (CompilationUnit comUnit :prefixPackage.getCompilationUnits())
         // {

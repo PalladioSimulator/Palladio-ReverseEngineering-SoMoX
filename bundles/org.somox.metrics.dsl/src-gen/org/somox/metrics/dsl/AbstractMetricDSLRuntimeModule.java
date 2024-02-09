@@ -21,7 +21,7 @@ public abstract class AbstractMetricDSLRuntimeModule extends DefaultRuntimeModul
 
     @Override
     public void configure(final Binder binder) {
-        this.properties = this.tryBindProperties(binder, "org/somox/metrics/dsl/MetricDSL.properties");
+        properties = tryBindProperties(binder, "org/somox/metrics/dsl/MetricDSL.properties");
         super.configure(binder);
     }
 
@@ -31,12 +31,13 @@ public abstract class AbstractMetricDSLRuntimeModule extends DefaultRuntimeModul
     }
 
     public void configureFileExtensions(final Binder binder) {
-        if (this.properties == null || this.properties.getProperty(Constants.FILE_EXTENSIONS) == null) {
+        if ((properties == null) || (properties.getProperty(Constants.FILE_EXTENSIONS) == null)) {
             binder.bind(String.class).annotatedWith(Names.named(Constants.FILE_EXTENSIONS)).toInstance("metrics");
         }
     }
 
-    // contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
+    // contributed by
+    // org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
     public Class<? extends org.eclipse.xtext.IGrammarAccess> bindIGrammarAccess() {
         return org.somox.metrics.dsl.services.MetricDSLGrammarAccess.class;
     }
@@ -58,41 +59,48 @@ public abstract class AbstractMetricDSLRuntimeModule extends DefaultRuntimeModul
         return org.eclipse.xtext.serializer.impl.Serializer.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     public Class<? extends org.eclipse.xtext.parser.IParser> bindIParser() {
         return org.somox.metrics.dsl.parser.antlr.MetricDSLParser.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     @Override
     public Class<? extends org.eclipse.xtext.parser.ITokenToStringConverter> bindITokenToStringConverter() {
         return org.eclipse.xtext.parser.antlr.AntlrTokenToStringConverter.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     public Class<? extends org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider> bindIAntlrTokenFileProvider() {
         return org.somox.metrics.dsl.parser.antlr.MetricDSLAntlrTokenFileProvider.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     public Class<? extends org.eclipse.xtext.parser.antlr.Lexer> bindLexer() {
         return org.somox.metrics.dsl.parser.antlr.internal.InternalMetricDSLLexer.class;
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     public com.google.inject.Provider<org.somox.metrics.dsl.parser.antlr.internal.InternalMetricDSLLexer> provideInternalMetricDSLLexer() {
         return org.eclipse.xtext.parser.antlr.LexerProvider
                 .create(org.somox.metrics.dsl.parser.antlr.internal.InternalMetricDSLLexer.class);
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     public void configureRuntimeLexer(final com.google.inject.Binder binder) {
         binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
                 .annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.parser.antlr.LexerBindings.RUNTIME))
                 .to(org.somox.metrics.dsl.parser.antlr.internal.InternalMetricDSLLexer.class);
     }
 
-    // contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+    // contributed by
+    // org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
     @Override
     public Class<? extends org.eclipse.xtext.parser.antlr.ITokenDefProvider> bindITokenDefProvider() {
         return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;

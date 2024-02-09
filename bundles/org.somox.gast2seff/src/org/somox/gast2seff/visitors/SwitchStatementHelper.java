@@ -5,10 +5,11 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
-import org.emftext.language.java.statements.Break;
-import org.emftext.language.java.statements.Statement;
-import org.emftext.language.java.statements.Switch;
-import org.emftext.language.java.statements.SwitchCase;
+
+import tools.mdsd.jamopp.model.java.statements.Break;
+import tools.mdsd.jamopp.model.java.statements.Statement;
+import tools.mdsd.jamopp.model.java.statements.Switch;
+import tools.mdsd.jamopp.model.java.statements.SwitchCase;
 
 /**
  * Computes for a {@link SwitchStatement} the case branches in a way that to the

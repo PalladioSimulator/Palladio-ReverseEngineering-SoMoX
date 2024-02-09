@@ -21,15 +21,15 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaModelException;
-import org.emftext.language.java.JavaClasspath;
 import org.splevo.jamopp.extraction.FileResourceHandling.ResourceHandlingOptions;
 import org.splevo.jamopp.extraction.cache.ReferenceCache;
 import org.splevo.jamopp.extraction.resource.JavaSourceOrClassFileResourceCachingFactoryImpl;
 
 import com.google.common.collect.Lists;
 
-import jamopp.parser.jdt.JaMoPPJDTParser;
-import jamopp.resource.JavaResource2Factory;
+import tools.mdsd.jamopp.model.java.JavaClasspath;
+import tools.mdsd.jamopp.parser.JaMoPPJDTParser;
+import tools.mdsd.jamopp.resource.JavaResource2Factory;
 
 /**
  * Software Model Extractor for the Java technology based on the Java Model

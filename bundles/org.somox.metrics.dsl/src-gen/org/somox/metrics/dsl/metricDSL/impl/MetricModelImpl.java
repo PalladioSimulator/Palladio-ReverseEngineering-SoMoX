@@ -17,14 +17,15 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 import org.somox.metrics.dsl.metricDSL.MetricModel;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Metric Model</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Metric
+ * Model</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.MetricModelImpl#getImportURI <em>Import URI</em>}
- * </li>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.MetricModelImpl#getMetrics <em>Metrics</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.MetricModelImpl#getImportURI
+ * <em>Import URI</em>}</li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.MetricModelImpl#getMetrics
+ * <em>Metrics</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,8 +33,8 @@ import org.somox.metrics.dsl.metricDSL.MetricModel;
  */
 public class MetricModelImpl extends MinimalEObjectImpl.Container implements MetricModel {
     /**
-     * The cached value of the '{@link #getImportURI() <em>Import URI</em>}' attribute list. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getImportURI() <em>Import URI</em>}'
+     * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getImportURI()
      * @generated
@@ -42,8 +43,8 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
     protected EList<String> importURI;
 
     /**
-     * The cached value of the '{@link #getMetrics() <em>Metrics</em>}' containment reference list.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getMetrics() <em>Metrics</em>}' containment
+     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getMetrics()
      * @generated
@@ -57,7 +58,6 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
      * @generated
      */
     protected MetricModelImpl() {
-        super();
     }
 
     /**
@@ -77,10 +77,10 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
      */
     @Override
     public EList<String> getImportURI() {
-        if (this.importURI == null) {
-            this.importURI = new EDataTypeEList<String>(String.class, this, MetricDSLPackage.METRIC_MODEL__IMPORT_URI);
+        if (importURI == null) {
+            importURI = new EDataTypeEList<>(String.class, this, MetricDSLPackage.METRIC_MODEL__IMPORT_URI);
         }
-        return this.importURI;
+        return importURI;
     }
 
     /**
@@ -90,11 +90,10 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
      */
     @Override
     public EList<Metric> getMetrics() {
-        if (this.metrics == null) {
-            this.metrics = new EObjectContainmentEList<Metric>(Metric.class, this,
-                    MetricDSLPackage.METRIC_MODEL__METRICS);
+        if (metrics == null) {
+            metrics = new EObjectContainmentEList<>(Metric.class, this, MetricDSLPackage.METRIC_MODEL__METRICS);
         }
-        return this.metrics;
+        return metrics;
     }
 
     /**
@@ -107,7 +106,7 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
             final NotificationChain msgs) {
         switch (featureID) {
         case MetricDSLPackage.METRIC_MODEL__METRICS:
-            return ((InternalEList<?>) this.getMetrics()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getMetrics()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -121,9 +120,9 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricDSLPackage.METRIC_MODEL__IMPORT_URI:
-            return this.getImportURI();
+            return getImportURI();
         case MetricDSLPackage.METRIC_MODEL__METRICS:
-            return this.getMetrics();
+            return getMetrics();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -138,12 +137,12 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.METRIC_MODEL__IMPORT_URI:
-            this.getImportURI().clear();
-            this.getImportURI().addAll((Collection<? extends String>) newValue);
+            getImportURI().clear();
+            getImportURI().addAll((Collection<? extends String>) newValue);
             return;
         case MetricDSLPackage.METRIC_MODEL__METRICS:
-            this.getMetrics().clear();
-            this.getMetrics().addAll((Collection<? extends Metric>) newValue);
+            getMetrics().clear();
+            getMetrics().addAll((Collection<? extends Metric>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -158,10 +157,10 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.METRIC_MODEL__IMPORT_URI:
-            this.getImportURI().clear();
+            getImportURI().clear();
             return;
         case MetricDSLPackage.METRIC_MODEL__METRICS:
-            this.getMetrics().clear();
+            getMetrics().clear();
             return;
         }
         super.eUnset(featureID);
@@ -176,9 +175,9 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.METRIC_MODEL__IMPORT_URI:
-            return this.importURI != null && !this.importURI.isEmpty();
+            return (importURI != null) && !importURI.isEmpty();
         case MetricDSLPackage.METRIC_MODEL__METRICS:
-            return this.metrics != null && !this.metrics.isEmpty();
+            return (metrics != null) && !metrics.isEmpty();
         }
         return super.eIsSet(featureID);
     }
@@ -190,13 +189,13 @@ public class MetricModelImpl extends MinimalEObjectImpl.Container implements Met
      */
     @Override
     public String toString() {
-        if (this.eIsProxy()) {
+        if (eIsProxy()) {
             return super.toString();
         }
 
-        final StringBuffer result = new StringBuffer(super.toString());
+        final StringBuilder result = new StringBuilder(super.toString());
         result.append(" (importURI: ");
-        result.append(this.importURI);
+        result.append(importURI);
         result.append(')');
         return result.toString();
     }

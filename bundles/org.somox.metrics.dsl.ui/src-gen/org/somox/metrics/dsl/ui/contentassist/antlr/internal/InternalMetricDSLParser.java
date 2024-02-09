@@ -11,11 +11,11 @@ import org.somox.metrics.dsl.services.MetricDSLGrammarAccess;
 
 @SuppressWarnings("all")
 public class InternalMetricDSLParser extends AbstractInternalContentAssistParser {
-    public static final String[] tokenNames = new String[] { "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID",
-            "RULE_STRING", "RULE_DOUBLE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER",
-            "'Metrics'", "'{'", "'}'", "'import'", "';'", "'extern'", "'Metric'", "'('", "','", "')'", "'};'",
-            "'parameters'", "'Parameter'", "'Const'", "'='", "'WeigthedSum'", "'Stepwise'", "'['", "']'", "'Ratio'",
-            "'/'", "'<'", "'>'", "'.'" };
+    public static final String[] tokenNames = { "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING",
+            "RULE_DOUBLE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Metrics'",
+            "'{'", "'}'", "'import'", "';'", "'extern'", "'Metric'", "'('", "','", "')'", "'};'", "'parameters'",
+            "'Parameter'", "'Const'", "'='", "'WeigthedSum'", "'Stepwise'", "'['", "']'", "'Ratio'", "'/'", "'<'",
+            "'>'", "'.'" };
     public static final int RULE_ID = 4;
     public static final int T__29 = 29;
     public static final int T__28 = 28;
@@ -80,7 +80,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
 
     @Override
     protected Grammar getGrammar() {
-        return this.grammarAccess.getGrammar();
+        return grammarAccess.getGrammar();
     }
 
     @Override
@@ -98,23 +98,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:62:1:
             // ruleMetricModel EOF
             {
-                this.before(this.grammarAccess.getMetricModelRule());
-                this.pushFollow(FOLLOW_ruleMetricModel_in_entryRuleMetricModel61);
-                this.ruleMetricModel();
+                this.before(grammarAccess.getMetricModelRule());
+                pushFollow(FOLLOW_ruleMetricModel_in_entryRuleMetricModel61);
+                ruleMetricModel();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getMetricModelRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleMetricModel68);
+                this.after(grammarAccess.getMetricModelRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleMetricModel68);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleMetricModel"
 
@@ -123,7 +122,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleMetricModel : ( ( rule__MetricModel__Group__0 ) ) ;
     public final void ruleMetricModel() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:73:2:
@@ -136,34 +135,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:75:1:
                 // ( rule__MetricModel__Group__0 )
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getGroup());
+                    this.before(grammarAccess.getMetricModelAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:76:1:
                     // ( rule__MetricModel__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:76:2:
                     // rule__MetricModel__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__MetricModel__Group__0_in_ruleMetricModel94);
-                        this.rule__MetricModel__Group__0();
+                        pushFollow(FOLLOW_rule__MetricModel__Group__0_in_ruleMetricModel94);
+                        rule__MetricModel__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getMetricModelAccess().getGroup());
+                    this.after(grammarAccess.getMetricModelAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleMetricModel"
 
@@ -177,23 +175,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:92:1:
             // ruleExternalMetric EOF
             {
-                this.before(this.grammarAccess.getExternalMetricRule());
-                this.pushFollow(FOLLOW_ruleExternalMetric_in_entryRuleExternalMetric123);
-                this.ruleExternalMetric();
+                this.before(grammarAccess.getExternalMetricRule());
+                pushFollow(FOLLOW_ruleExternalMetric_in_entryRuleExternalMetric123);
+                ruleExternalMetric();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getExternalMetricRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleExternalMetric130);
+                this.after(grammarAccess.getExternalMetricRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleExternalMetric130);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleExternalMetric"
 
@@ -202,7 +199,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleExternalMetric : ( ( rule__ExternalMetric__NameAssignment ) ) ;
     public final void ruleExternalMetric() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:103:2:
@@ -215,34 +212,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:105:1:
                 // ( rule__ExternalMetric__NameAssignment )
                 {
-                    this.before(this.grammarAccess.getExternalMetricAccess().getNameAssignment());
+                    this.before(grammarAccess.getExternalMetricAccess().getNameAssignment());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:106:1:
                     // ( rule__ExternalMetric__NameAssignment )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:106:2:
                     // rule__ExternalMetric__NameAssignment
                     {
-                        this.pushFollow(FOLLOW_rule__ExternalMetric__NameAssignment_in_ruleExternalMetric156);
-                        this.rule__ExternalMetric__NameAssignment();
+                        pushFollow(FOLLOW_rule__ExternalMetric__NameAssignment_in_ruleExternalMetric156);
+                        rule__ExternalMetric__NameAssignment();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getExternalMetricAccess().getNameAssignment());
+                    this.after(grammarAccess.getExternalMetricAccess().getNameAssignment());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleExternalMetric"
 
@@ -256,23 +252,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:120:1:
             // ruleInternalMetric EOF
             {
-                this.before(this.grammarAccess.getInternalMetricRule());
-                this.pushFollow(FOLLOW_ruleInternalMetric_in_entryRuleInternalMetric183);
-                this.ruleInternalMetric();
+                this.before(grammarAccess.getInternalMetricRule());
+                pushFollow(FOLLOW_ruleInternalMetric_in_entryRuleInternalMetric183);
+                ruleInternalMetric();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getInternalMetricRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleInternalMetric190);
+                this.after(grammarAccess.getInternalMetricRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleInternalMetric190);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleInternalMetric"
 
@@ -281,7 +276,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleInternalMetric : ( ( rule__InternalMetric__Group__0 ) ) ;
     public final void ruleInternalMetric() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:131:2:
@@ -294,34 +289,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:133:1:
                 // ( rule__InternalMetric__Group__0 )
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getGroup());
+                    this.before(grammarAccess.getInternalMetricAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:134:1:
                     // ( rule__InternalMetric__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:134:2:
                     // rule__InternalMetric__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__InternalMetric__Group__0_in_ruleInternalMetric216);
-                        this.rule__InternalMetric__Group__0();
+                        pushFollow(FOLLOW_rule__InternalMetric__Group__0_in_ruleInternalMetric216);
+                        rule__InternalMetric__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getGroup());
+                    this.after(grammarAccess.getInternalMetricAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleInternalMetric"
 
@@ -335,23 +329,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:148:1:
             // ruleNumber EOF
             {
-                this.before(this.grammarAccess.getNumberRule());
-                this.pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber243);
-                this.ruleNumber();
+                this.before(grammarAccess.getNumberRule());
+                pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber243);
+                ruleNumber();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getNumberRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleNumber250);
+                this.after(grammarAccess.getNumberRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleNumber250);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleNumber"
 
@@ -360,7 +353,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleNumber : ( ( rule__Number__Alternatives ) ) ;
     public final void ruleNumber() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:159:2:
@@ -373,34 +366,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:161:1:
                 // ( rule__Number__Alternatives )
                 {
-                    this.before(this.grammarAccess.getNumberAccess().getAlternatives());
+                    this.before(grammarAccess.getNumberAccess().getAlternatives());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:162:1:
                     // ( rule__Number__Alternatives )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:162:2:
                     // rule__Number__Alternatives
                     {
-                        this.pushFollow(FOLLOW_rule__Number__Alternatives_in_ruleNumber276);
-                        this.rule__Number__Alternatives();
+                        pushFollow(FOLLOW_rule__Number__Alternatives_in_ruleNumber276);
+                        rule__Number__Alternatives();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getNumberAccess().getAlternatives());
+                    this.after(grammarAccess.getNumberAccess().getAlternatives());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleNumber"
 
@@ -414,23 +406,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:176:1:
             // ruleParameter EOF
             {
-                this.before(this.grammarAccess.getParameterRule());
-                this.pushFollow(FOLLOW_ruleParameter_in_entryRuleParameter303);
-                this.ruleParameter();
+                this.before(grammarAccess.getParameterRule());
+                pushFollow(FOLLOW_ruleParameter_in_entryRuleParameter303);
+                ruleParameter();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getParameterRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleParameter310);
+                this.after(grammarAccess.getParameterRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleParameter310);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleParameter"
 
@@ -439,7 +430,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleParameter : ( ( rule__Parameter__Group__0 ) ) ;
     public final void ruleParameter() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:187:2:
@@ -452,34 +443,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:189:1:
                 // ( rule__Parameter__Group__0 )
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getGroup());
+                    this.before(grammarAccess.getParameterAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:190:1:
                     // ( rule__Parameter__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:190:2:
                     // rule__Parameter__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__Parameter__Group__0_in_ruleParameter336);
-                        this.rule__Parameter__Group__0();
+                        pushFollow(FOLLOW_rule__Parameter__Group__0_in_ruleParameter336);
+                        rule__Parameter__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getParameterAccess().getGroup());
+                    this.after(grammarAccess.getParameterAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleParameter"
 
@@ -493,23 +483,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:204:1:
             // ruleConstant EOF
             {
-                this.before(this.grammarAccess.getConstantRule());
-                this.pushFollow(FOLLOW_ruleConstant_in_entryRuleConstant363);
-                this.ruleConstant();
+                this.before(grammarAccess.getConstantRule());
+                pushFollow(FOLLOW_ruleConstant_in_entryRuleConstant363);
+                ruleConstant();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getConstantRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleConstant370);
+                this.after(grammarAccess.getConstantRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleConstant370);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleConstant"
 
@@ -518,7 +507,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleConstant : ( ( rule__Constant__Group__0 ) ) ;
     public final void ruleConstant() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:215:2:
@@ -531,34 +520,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:217:1:
                 // ( rule__Constant__Group__0 )
                 {
-                    this.before(this.grammarAccess.getConstantAccess().getGroup());
+                    this.before(grammarAccess.getConstantAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:218:1:
                     // ( rule__Constant__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:218:2:
                     // rule__Constant__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__Constant__Group__0_in_ruleConstant396);
-                        this.rule__Constant__Group__0();
+                        pushFollow(FOLLOW_rule__Constant__Group__0_in_ruleConstant396);
+                        rule__Constant__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getConstantAccess().getGroup());
+                    this.after(grammarAccess.getConstantAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleConstant"
 
@@ -572,23 +560,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:232:1:
             // ruleMetricDefinition EOF
             {
-                this.before(this.grammarAccess.getMetricDefinitionRule());
-                this.pushFollow(FOLLOW_ruleMetricDefinition_in_entryRuleMetricDefinition423);
-                this.ruleMetricDefinition();
+                this.before(grammarAccess.getMetricDefinitionRule());
+                pushFollow(FOLLOW_ruleMetricDefinition_in_entryRuleMetricDefinition423);
+                ruleMetricDefinition();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getMetricDefinitionRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleMetricDefinition430);
+                this.after(grammarAccess.getMetricDefinitionRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleMetricDefinition430);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleMetricDefinition"
 
@@ -597,7 +584,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleMetricDefinition : ( ( rule__MetricDefinition__Alternatives ) ) ;
     public final void ruleMetricDefinition() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:243:2:
@@ -610,34 +597,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:245:1:
                 // ( rule__MetricDefinition__Alternatives )
                 {
-                    this.before(this.grammarAccess.getMetricDefinitionAccess().getAlternatives());
+                    this.before(grammarAccess.getMetricDefinitionAccess().getAlternatives());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:246:1:
                     // ( rule__MetricDefinition__Alternatives )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:246:2:
                     // rule__MetricDefinition__Alternatives
                     {
-                        this.pushFollow(FOLLOW_rule__MetricDefinition__Alternatives_in_ruleMetricDefinition456);
-                        this.rule__MetricDefinition__Alternatives();
+                        pushFollow(FOLLOW_rule__MetricDefinition__Alternatives_in_ruleMetricDefinition456);
+                        rule__MetricDefinition__Alternatives();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getMetricDefinitionAccess().getAlternatives());
+                    this.after(grammarAccess.getMetricDefinitionAccess().getAlternatives());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleMetricDefinition"
 
@@ -651,23 +637,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:260:1:
             // ruleWeightedMetric EOF
             {
-                this.before(this.grammarAccess.getWeightedMetricRule());
-                this.pushFollow(FOLLOW_ruleWeightedMetric_in_entryRuleWeightedMetric483);
-                this.ruleWeightedMetric();
+                this.before(grammarAccess.getWeightedMetricRule());
+                pushFollow(FOLLOW_ruleWeightedMetric_in_entryRuleWeightedMetric483);
+                ruleWeightedMetric();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getWeightedMetricRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleWeightedMetric490);
+                this.after(grammarAccess.getWeightedMetricRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleWeightedMetric490);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleWeightedMetric"
 
@@ -676,7 +661,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleWeightedMetric : ( ( rule__WeightedMetric__Group__0 ) ) ;
     public final void ruleWeightedMetric() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:271:2:
@@ -689,34 +674,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:273:1:
                 // ( rule__WeightedMetric__Group__0 )
                 {
-                    this.before(this.grammarAccess.getWeightedMetricAccess().getGroup());
+                    this.before(grammarAccess.getWeightedMetricAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:274:1:
                     // ( rule__WeightedMetric__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:274:2:
                     // rule__WeightedMetric__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__WeightedMetric__Group__0_in_ruleWeightedMetric516);
-                        this.rule__WeightedMetric__Group__0();
+                        pushFollow(FOLLOW_rule__WeightedMetric__Group__0_in_ruleWeightedMetric516);
+                        rule__WeightedMetric__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getWeightedMetricAccess().getGroup());
+                    this.after(grammarAccess.getWeightedMetricAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleWeightedMetric"
 
@@ -730,23 +714,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:288:1:
             // ruleStepwiseMetric EOF
             {
-                this.before(this.grammarAccess.getStepwiseMetricRule());
-                this.pushFollow(FOLLOW_ruleStepwiseMetric_in_entryRuleStepwiseMetric543);
-                this.ruleStepwiseMetric();
+                this.before(grammarAccess.getStepwiseMetricRule());
+                pushFollow(FOLLOW_ruleStepwiseMetric_in_entryRuleStepwiseMetric543);
+                ruleStepwiseMetric();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getStepwiseMetricRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleStepwiseMetric550);
+                this.after(grammarAccess.getStepwiseMetricRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleStepwiseMetric550);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleStepwiseMetric"
 
@@ -755,7 +738,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleStepwiseMetric : ( ( rule__StepwiseMetric__Group__0 ) ) ;
     public final void ruleStepwiseMetric() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:299:2:
@@ -768,34 +751,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:301:1:
                 // ( rule__StepwiseMetric__Group__0 )
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getGroup());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:302:1:
                     // ( rule__StepwiseMetric__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:302:2:
                     // rule__StepwiseMetric__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__0_in_ruleStepwiseMetric576);
-                        this.rule__StepwiseMetric__Group__0();
+                        pushFollow(FOLLOW_rule__StepwiseMetric__Group__0_in_ruleStepwiseMetric576);
+                        rule__StepwiseMetric__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getGroup());
+                    this.after(grammarAccess.getStepwiseMetricAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleStepwiseMetric"
 
@@ -809,23 +791,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:316:1:
             // ruleRatioMetric EOF
             {
-                this.before(this.grammarAccess.getRatioMetricRule());
-                this.pushFollow(FOLLOW_ruleRatioMetric_in_entryRuleRatioMetric603);
-                this.ruleRatioMetric();
+                this.before(grammarAccess.getRatioMetricRule());
+                pushFollow(FOLLOW_ruleRatioMetric_in_entryRuleRatioMetric603);
+                ruleRatioMetric();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getRatioMetricRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleRatioMetric610);
+                this.after(grammarAccess.getRatioMetricRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleRatioMetric610);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleRatioMetric"
 
@@ -834,7 +815,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleRatioMetric : ( ( rule__RatioMetric__Group__0 ) ) ;
     public final void ruleRatioMetric() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:327:2:
@@ -847,34 +828,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:329:1:
                 // ( rule__RatioMetric__Group__0 )
                 {
-                    this.before(this.grammarAccess.getRatioMetricAccess().getGroup());
+                    this.before(grammarAccess.getRatioMetricAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:330:1:
                     // ( rule__RatioMetric__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:330:2:
                     // rule__RatioMetric__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__RatioMetric__Group__0_in_ruleRatioMetric636);
-                        this.rule__RatioMetric__Group__0();
+                        pushFollow(FOLLOW_rule__RatioMetric__Group__0_in_ruleRatioMetric636);
+                        rule__RatioMetric__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getRatioMetricAccess().getGroup());
+                    this.after(grammarAccess.getRatioMetricAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleRatioMetric"
 
@@ -888,23 +868,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:344:1:
             // ruleBoundAndWeight EOF
             {
-                this.before(this.grammarAccess.getBoundAndWeightRule());
-                this.pushFollow(FOLLOW_ruleBoundAndWeight_in_entryRuleBoundAndWeight663);
-                this.ruleBoundAndWeight();
+                this.before(grammarAccess.getBoundAndWeightRule());
+                pushFollow(FOLLOW_ruleBoundAndWeight_in_entryRuleBoundAndWeight663);
+                ruleBoundAndWeight();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getBoundAndWeightRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleBoundAndWeight670);
+                this.after(grammarAccess.getBoundAndWeightRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleBoundAndWeight670);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleBoundAndWeight"
 
@@ -913,7 +892,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleBoundAndWeight : ( ( rule__BoundAndWeight__Group__0 ) ) ;
     public final void ruleBoundAndWeight() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:355:2:
@@ -926,34 +905,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:357:1:
                 // ( rule__BoundAndWeight__Group__0 )
                 {
-                    this.before(this.grammarAccess.getBoundAndWeightAccess().getGroup());
+                    this.before(grammarAccess.getBoundAndWeightAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:358:1:
                     // ( rule__BoundAndWeight__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:358:2:
                     // rule__BoundAndWeight__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__0_in_ruleBoundAndWeight696);
-                        this.rule__BoundAndWeight__Group__0();
+                        pushFollow(FOLLOW_rule__BoundAndWeight__Group__0_in_ruleBoundAndWeight696);
+                        rule__BoundAndWeight__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getBoundAndWeightAccess().getGroup());
+                    this.after(grammarAccess.getBoundAndWeightAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleBoundAndWeight"
 
@@ -967,23 +945,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:372:1:
             // ruleMetricAndWeight EOF
             {
-                this.before(this.grammarAccess.getMetricAndWeightRule());
-                this.pushFollow(FOLLOW_ruleMetricAndWeight_in_entryRuleMetricAndWeight723);
-                this.ruleMetricAndWeight();
+                this.before(grammarAccess.getMetricAndWeightRule());
+                pushFollow(FOLLOW_ruleMetricAndWeight_in_entryRuleMetricAndWeight723);
+                ruleMetricAndWeight();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getMetricAndWeightRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleMetricAndWeight730);
+                this.after(grammarAccess.getMetricAndWeightRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleMetricAndWeight730);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleMetricAndWeight"
 
@@ -992,7 +969,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleMetricAndWeight : ( ( rule__MetricAndWeight__Group__0 ) ) ;
     public final void ruleMetricAndWeight() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:383:2:
@@ -1005,34 +982,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:385:1:
                 // ( rule__MetricAndWeight__Group__0 )
                 {
-                    this.before(this.grammarAccess.getMetricAndWeightAccess().getGroup());
+                    this.before(grammarAccess.getMetricAndWeightAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:386:1:
                     // ( rule__MetricAndWeight__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:386:2:
                     // rule__MetricAndWeight__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__0_in_ruleMetricAndWeight756);
-                        this.rule__MetricAndWeight__Group__0();
+                        pushFollow(FOLLOW_rule__MetricAndWeight__Group__0_in_ruleMetricAndWeight756);
+                        rule__MetricAndWeight__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getMetricAndWeightAccess().getGroup());
+                    this.after(grammarAccess.getMetricAndWeightAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleMetricAndWeight"
 
@@ -1046,23 +1022,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:400:1:
             // ruleMYID EOF
             {
-                this.before(this.grammarAccess.getMYIDRule());
-                this.pushFollow(FOLLOW_ruleMYID_in_entryRuleMYID783);
-                this.ruleMYID();
+                this.before(grammarAccess.getMYIDRule());
+                pushFollow(FOLLOW_ruleMYID_in_entryRuleMYID783);
+                ruleMYID();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.after(this.grammarAccess.getMYIDRule());
-                this.match(this.input, EOF, FOLLOW_EOF_in_entryRuleMYID790);
+                this.after(grammarAccess.getMYIDRule());
+                match(input, EOF, FOLLOW_EOF_in_entryRuleMYID790);
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
         }
-        return;
     }
     // $ANTLR end "entryRuleMYID"
 
@@ -1071,7 +1046,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // ruleMYID : ( ( rule__MYID__Group__0 ) ) ;
     public final void ruleMYID() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:411:2:
@@ -1084,34 +1059,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:413:1:
                 // ( rule__MYID__Group__0 )
                 {
-                    this.before(this.grammarAccess.getMYIDAccess().getGroup());
+                    this.before(grammarAccess.getMYIDAccess().getGroup());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:414:1:
                     // ( rule__MYID__Group__0 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:414:2:
                     // rule__MYID__Group__0
                     {
-                        this.pushFollow(FOLLOW_rule__MYID__Group__0_in_ruleMYID816);
-                        this.rule__MYID__Group__0();
+                        pushFollow(FOLLOW_rule__MYID__Group__0_in_ruleMYID816);
+                        rule__MYID__Group__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getMYIDAccess().getGroup());
+                    this.after(grammarAccess.getMYIDAccess().getGroup());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "ruleMYID"
 
@@ -1120,20 +1094,20 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Number__Alternatives : ( ( ruleParameter ) | ( ruleConstant ) );
     public final void rule__Number__Alternatives() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:431:1:
             // ( ( ruleParameter ) | ( ruleConstant ) )
             int alt1 = 2;
-            final int LA1_0 = this.input.LA(1);
+            final int LA1_0 = input.LA(1);
 
             if ((LA1_0 == 24)) {
                 alt1 = 1;
             } else if ((LA1_0 == 25)) {
                 alt1 = 2;
             } else {
-                final NoViableAltException nvae = new NoViableAltException("", 1, 0, this.input);
+                final NoViableAltException nvae = new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
@@ -1147,13 +1121,13 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:433:1:
                 // ruleParameter
                 {
-                    this.before(this.grammarAccess.getNumberAccess().getParameterParserRuleCall_0());
-                    this.pushFollow(FOLLOW_ruleParameter_in_rule__Number__Alternatives853);
-                    this.ruleParameter();
+                    this.before(grammarAccess.getNumberAccess().getParameterParserRuleCall_0());
+                    pushFollow(FOLLOW_ruleParameter_in_rule__Number__Alternatives853);
+                    ruleParameter();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getNumberAccess().getParameterParserRuleCall_0());
+                    this.after(grammarAccess.getNumberAccess().getParameterParserRuleCall_0());
 
                 }
 
@@ -1168,13 +1142,13 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:439:1:
                 // ruleConstant
                 {
-                    this.before(this.grammarAccess.getNumberAccess().getConstantParserRuleCall_1());
-                    this.pushFollow(FOLLOW_ruleConstant_in_rule__Number__Alternatives870);
-                    this.ruleConstant();
+                    this.before(grammarAccess.getNumberAccess().getConstantParserRuleCall_1());
+                    pushFollow(FOLLOW_ruleConstant_in_rule__Number__Alternatives870);
+                    ruleConstant();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getNumberAccess().getConstantParserRuleCall_1());
+                    this.after(grammarAccess.getNumberAccess().getConstantParserRuleCall_1());
 
                 }
 
@@ -1183,47 +1157,38 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
 
             }
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Number__Alternatives"
 
     // $ANTLR start "rule__MetricDefinition__Alternatives"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:449:1:
-    // rule__MetricDefinition__Alternatives : ( ( ruleWeightedMetric ) | ( ruleStepwiseMetric ) | (
+    // rule__MetricDefinition__Alternatives : ( ( ruleWeightedMetric ) | (
+    // ruleStepwiseMetric ) | (
     // ruleRatioMetric ) );
     public final void rule__MetricDefinition__Alternatives() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:453:1:
             // ( ( ruleWeightedMetric ) | ( ruleStepwiseMetric ) | ( ruleRatioMetric ) )
             int alt2 = 3;
-            switch (this.input.LA(1)) {
-            case 27: {
-                alt2 = 1;
-            }
-                break;
-            case 28: {
-                alt2 = 2;
-            }
-                break;
-            case 31: {
-                alt2 = 3;
-            }
-                break;
-            default:
-                final NoViableAltException nvae = new NoViableAltException("", 2, 0, this.input);
-
+            alt2 = switch (input.LA(1)) {
+            case 27 -> 1;
+            case 28 -> 2;
+            case 31 -> 3;
+            default -> {
+                final NoViableAltException nvae = new NoViableAltException("", 2, 0, input);
                 throw nvae;
             }
+            };
 
             switch (alt2) {
             case 1:
@@ -1235,13 +1200,13 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:455:1:
                 // ruleWeightedMetric
                 {
-                    this.before(this.grammarAccess.getMetricDefinitionAccess().getWeightedMetricParserRuleCall_0());
-                    this.pushFollow(FOLLOW_ruleWeightedMetric_in_rule__MetricDefinition__Alternatives902);
-                    this.ruleWeightedMetric();
+                    this.before(grammarAccess.getMetricDefinitionAccess().getWeightedMetricParserRuleCall_0());
+                    pushFollow(FOLLOW_ruleWeightedMetric_in_rule__MetricDefinition__Alternatives902);
+                    ruleWeightedMetric();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getMetricDefinitionAccess().getWeightedMetricParserRuleCall_0());
+                    this.after(grammarAccess.getMetricDefinitionAccess().getWeightedMetricParserRuleCall_0());
 
                 }
 
@@ -1256,13 +1221,13 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:461:1:
                 // ruleStepwiseMetric
                 {
-                    this.before(this.grammarAccess.getMetricDefinitionAccess().getStepwiseMetricParserRuleCall_1());
-                    this.pushFollow(FOLLOW_ruleStepwiseMetric_in_rule__MetricDefinition__Alternatives919);
-                    this.ruleStepwiseMetric();
+                    this.before(grammarAccess.getMetricDefinitionAccess().getStepwiseMetricParserRuleCall_1());
+                    pushFollow(FOLLOW_ruleStepwiseMetric_in_rule__MetricDefinition__Alternatives919);
+                    ruleStepwiseMetric();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getMetricDefinitionAccess().getStepwiseMetricParserRuleCall_1());
+                    this.after(grammarAccess.getMetricDefinitionAccess().getStepwiseMetricParserRuleCall_1());
 
                 }
 
@@ -1277,13 +1242,13 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:467:1:
                 // ruleRatioMetric
                 {
-                    this.before(this.grammarAccess.getMetricDefinitionAccess().getRatioMetricParserRuleCall_2());
-                    this.pushFollow(FOLLOW_ruleRatioMetric_in_rule__MetricDefinition__Alternatives936);
-                    this.ruleRatioMetric();
+                    this.before(grammarAccess.getMetricDefinitionAccess().getRatioMetricParserRuleCall_2());
+                    pushFollow(FOLLOW_ruleRatioMetric_in_rule__MetricDefinition__Alternatives936);
+                    ruleRatioMetric();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getMetricDefinitionAccess().getRatioMetricParserRuleCall_2());
+                    this.after(grammarAccess.getMetricDefinitionAccess().getRatioMetricParserRuleCall_2());
 
                 }
 
@@ -1292,23 +1257,23 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
 
             }
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricDefinition__Alternatives"
 
     // $ANTLR start "rule__MetricModel__Group__0"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:479:1:
-    // rule__MetricModel__Group__0 : rule__MetricModel__Group__0__Impl rule__MetricModel__Group__1 ;
+    // rule__MetricModel__Group__0 : rule__MetricModel__Group__0__Impl
+    // rule__MetricModel__Group__1 ;
     public final void rule__MetricModel__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:483:1:
@@ -1316,27 +1281,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:484:2:
             // rule__MetricModel__Group__0__Impl rule__MetricModel__Group__1
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__0__Impl_in_rule__MetricModel__Group__0966);
-                this.rule__MetricModel__Group__0__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group__0__Impl_in_rule__MetricModel__Group__0966);
+                rule__MetricModel__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__1_in_rule__MetricModel__Group__0969);
-                this.rule__MetricModel__Group__1();
+                pushFollow(FOLLOW_rule__MetricModel__Group__1_in_rule__MetricModel__Group__0969);
+                rule__MetricModel__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__0"
 
@@ -1345,7 +1309,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group__0__Impl : ( ( rule__MetricModel__Group_0__0 )* ) ;
     public final void rule__MetricModel__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:495:1:
@@ -1358,12 +1322,12 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:497:1:
                 // ( rule__MetricModel__Group_0__0 )*
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getGroup_0());
+                    this.before(grammarAccess.getMetricModelAccess().getGroup_0());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:498:1:
                     // ( rule__MetricModel__Group_0__0 )*
                     loop3: do {
                         int alt3 = 2;
-                        final int LA3_0 = this.input.LA(1);
+                        final int LA3_0 = input.LA(1);
 
                         if ((LA3_0 == 15)) {
                             alt3 = 1;
@@ -1374,11 +1338,10 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:498:2:
                         // rule__MetricModel__Group_0__0
                         {
-                            this.pushFollow(
-                                    FOLLOW_rule__MetricModel__Group_0__0_in_rule__MetricModel__Group__0__Impl996);
-                            this.rule__MetricModel__Group_0__0();
+                            pushFollow(FOLLOW_rule__MetricModel__Group_0__0_in_rule__MetricModel__Group__0__Impl996);
+                            rule__MetricModel__Group_0__0();
 
-                            this.state._fsp--;
+                            state._fsp--;
 
                         }
                             break;
@@ -1388,30 +1351,30 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         }
                     } while (true);
 
-                    this.after(this.grammarAccess.getMetricModelAccess().getGroup_0());
+                    this.after(grammarAccess.getMetricModelAccess().getGroup_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__0__Impl"
 
     // $ANTLR start "rule__MetricModel__Group__1"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:508:1:
-    // rule__MetricModel__Group__1 : rule__MetricModel__Group__1__Impl rule__MetricModel__Group__2 ;
+    // rule__MetricModel__Group__1 : rule__MetricModel__Group__1__Impl
+    // rule__MetricModel__Group__2 ;
     public final void rule__MetricModel__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:512:1:
@@ -1419,27 +1382,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:513:2:
             // rule__MetricModel__Group__1__Impl rule__MetricModel__Group__2
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__1__Impl_in_rule__MetricModel__Group__11027);
-                this.rule__MetricModel__Group__1__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group__1__Impl_in_rule__MetricModel__Group__11027);
+                rule__MetricModel__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__2_in_rule__MetricModel__Group__11030);
-                this.rule__MetricModel__Group__2();
+                pushFollow(FOLLOW_rule__MetricModel__Group__2_in_rule__MetricModel__Group__11030);
+                rule__MetricModel__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__1"
 
@@ -1448,7 +1410,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group__1__Impl : ( ( rule__MetricModel__Group_1__0 )* ) ;
     public final void rule__MetricModel__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:524:1:
@@ -1461,12 +1423,12 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:526:1:
                 // ( rule__MetricModel__Group_1__0 )*
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getGroup_1());
+                    this.before(grammarAccess.getMetricModelAccess().getGroup_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:527:1:
                     // ( rule__MetricModel__Group_1__0 )*
                     loop4: do {
                         int alt4 = 2;
-                        final int LA4_0 = this.input.LA(1);
+                        final int LA4_0 = input.LA(1);
 
                         if ((LA4_0 == 17)) {
                             alt4 = 1;
@@ -1477,11 +1439,10 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:527:2:
                         // rule__MetricModel__Group_1__0
                         {
-                            this.pushFollow(
-                                    FOLLOW_rule__MetricModel__Group_1__0_in_rule__MetricModel__Group__1__Impl1057);
-                            this.rule__MetricModel__Group_1__0();
+                            pushFollow(FOLLOW_rule__MetricModel__Group_1__0_in_rule__MetricModel__Group__1__Impl1057);
+                            rule__MetricModel__Group_1__0();
 
-                            this.state._fsp--;
+                            state._fsp--;
 
                         }
                             break;
@@ -1491,30 +1452,30 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         }
                     } while (true);
 
-                    this.after(this.grammarAccess.getMetricModelAccess().getGroup_1());
+                    this.after(grammarAccess.getMetricModelAccess().getGroup_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__1__Impl"
 
     // $ANTLR start "rule__MetricModel__Group__2"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:537:1:
-    // rule__MetricModel__Group__2 : rule__MetricModel__Group__2__Impl rule__MetricModel__Group__3 ;
+    // rule__MetricModel__Group__2 : rule__MetricModel__Group__2__Impl
+    // rule__MetricModel__Group__3 ;
     public final void rule__MetricModel__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:541:1:
@@ -1522,27 +1483,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:542:2:
             // rule__MetricModel__Group__2__Impl rule__MetricModel__Group__3
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__2__Impl_in_rule__MetricModel__Group__21088);
-                this.rule__MetricModel__Group__2__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group__2__Impl_in_rule__MetricModel__Group__21088);
+                rule__MetricModel__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__3_in_rule__MetricModel__Group__21091);
-                this.rule__MetricModel__Group__3();
+                pushFollow(FOLLOW_rule__MetricModel__Group__3_in_rule__MetricModel__Group__21091);
+                rule__MetricModel__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__2"
 
@@ -1551,7 +1511,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group__2__Impl : ( 'Metrics' ) ;
     public final void rule__MetricModel__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:553:1:
@@ -1564,32 +1524,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:555:1:
                 // 'Metrics'
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getMetricsKeyword_2());
-                    this.match(this.input, 12, FOLLOW_12_in_rule__MetricModel__Group__2__Impl1119);
-                    this.after(this.grammarAccess.getMetricModelAccess().getMetricsKeyword_2());
+                    this.before(grammarAccess.getMetricModelAccess().getMetricsKeyword_2());
+                    match(input, 12, FOLLOW_12_in_rule__MetricModel__Group__2__Impl1119);
+                    this.after(grammarAccess.getMetricModelAccess().getMetricsKeyword_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__2__Impl"
 
     // $ANTLR start "rule__MetricModel__Group__3"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:568:1:
-    // rule__MetricModel__Group__3 : rule__MetricModel__Group__3__Impl rule__MetricModel__Group__4 ;
+    // rule__MetricModel__Group__3 : rule__MetricModel__Group__3__Impl
+    // rule__MetricModel__Group__4 ;
     public final void rule__MetricModel__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:572:1:
@@ -1597,27 +1557,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:573:2:
             // rule__MetricModel__Group__3__Impl rule__MetricModel__Group__4
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__3__Impl_in_rule__MetricModel__Group__31150);
-                this.rule__MetricModel__Group__3__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group__3__Impl_in_rule__MetricModel__Group__31150);
+                rule__MetricModel__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__4_in_rule__MetricModel__Group__31153);
-                this.rule__MetricModel__Group__4();
+                pushFollow(FOLLOW_rule__MetricModel__Group__4_in_rule__MetricModel__Group__31153);
+                rule__MetricModel__Group__4();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__3"
 
@@ -1626,7 +1585,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group__3__Impl : ( '{' ) ;
     public final void rule__MetricModel__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:584:1:
@@ -1639,32 +1598,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:586:1:
                 // '{'
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getLeftCurlyBracketKeyword_3());
-                    this.match(this.input, 13, FOLLOW_13_in_rule__MetricModel__Group__3__Impl1181);
-                    this.after(this.grammarAccess.getMetricModelAccess().getLeftCurlyBracketKeyword_3());
+                    this.before(grammarAccess.getMetricModelAccess().getLeftCurlyBracketKeyword_3());
+                    match(input, 13, FOLLOW_13_in_rule__MetricModel__Group__3__Impl1181);
+                    this.after(grammarAccess.getMetricModelAccess().getLeftCurlyBracketKeyword_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__3__Impl"
 
     // $ANTLR start "rule__MetricModel__Group__4"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:599:1:
-    // rule__MetricModel__Group__4 : rule__MetricModel__Group__4__Impl rule__MetricModel__Group__5 ;
+    // rule__MetricModel__Group__4 : rule__MetricModel__Group__4__Impl
+    // rule__MetricModel__Group__5 ;
     public final void rule__MetricModel__Group__4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:603:1:
@@ -1672,37 +1631,37 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:604:2:
             // rule__MetricModel__Group__4__Impl rule__MetricModel__Group__5
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__4__Impl_in_rule__MetricModel__Group__41212);
-                this.rule__MetricModel__Group__4__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group__4__Impl_in_rule__MetricModel__Group__41212);
+                rule__MetricModel__Group__4__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__5_in_rule__MetricModel__Group__41215);
-                this.rule__MetricModel__Group__5();
+                pushFollow(FOLLOW_rule__MetricModel__Group__5_in_rule__MetricModel__Group__41215);
+                rule__MetricModel__Group__5();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__4"
 
     // $ANTLR start "rule__MetricModel__Group__4__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:611:1:
-    // rule__MetricModel__Group__4__Impl : ( ( ( rule__MetricModel__MetricsAssignment_4 ) ) ( (
+    // rule__MetricModel__Group__4__Impl : ( ( (
+    // rule__MetricModel__MetricsAssignment_4 ) ) ( (
     // rule__MetricModel__MetricsAssignment_4 )* ) ) ;
     public final void rule__MetricModel__Group__4__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:615:1:
@@ -1724,21 +1683,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:618:1:
                     // ( rule__MetricModel__MetricsAssignment_4 )
                     {
-                        this.before(this.grammarAccess.getMetricModelAccess().getMetricsAssignment_4());
+                        this.before(grammarAccess.getMetricModelAccess().getMetricsAssignment_4());
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:619:1:
                         // ( rule__MetricModel__MetricsAssignment_4 )
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:619:2:
                         // rule__MetricModel__MetricsAssignment_4
                         {
-                            this.pushFollow(
+                            pushFollow(
                                     FOLLOW_rule__MetricModel__MetricsAssignment_4_in_rule__MetricModel__Group__4__Impl1244);
-                            this.rule__MetricModel__MetricsAssignment_4();
+                            rule__MetricModel__MetricsAssignment_4();
 
-                            this.state._fsp--;
+                            state._fsp--;
 
                         }
 
-                        this.after(this.grammarAccess.getMetricModelAccess().getMetricsAssignment_4());
+                        this.after(grammarAccess.getMetricModelAccess().getMetricsAssignment_4());
 
                     }
 
@@ -1747,12 +1706,12 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:623:1:
                     // ( rule__MetricModel__MetricsAssignment_4 )*
                     {
-                        this.before(this.grammarAccess.getMetricModelAccess().getMetricsAssignment_4());
+                        this.before(grammarAccess.getMetricModelAccess().getMetricsAssignment_4());
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:624:1:
                         // ( rule__MetricModel__MetricsAssignment_4 )*
                         loop5: do {
                             int alt5 = 2;
-                            final int LA5_0 = this.input.LA(1);
+                            final int LA5_0 = input.LA(1);
 
                             if ((LA5_0 == 18)) {
                                 alt5 = 1;
@@ -1763,11 +1722,11 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:624:2:
                             // rule__MetricModel__MetricsAssignment_4
                             {
-                                this.pushFollow(
+                                pushFollow(
                                         FOLLOW_rule__MetricModel__MetricsAssignment_4_in_rule__MetricModel__Group__4__Impl1256);
-                                this.rule__MetricModel__MetricsAssignment_4();
+                                rule__MetricModel__MetricsAssignment_4();
 
-                                this.state._fsp--;
+                                state._fsp--;
 
                             }
                                 break;
@@ -1777,7 +1736,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                             }
                         } while (true);
 
-                        this.after(this.grammarAccess.getMetricModelAccess().getMetricsAssignment_4());
+                        this.after(grammarAccess.getMetricModelAccess().getMetricsAssignment_4());
 
                     }
 
@@ -1786,14 +1745,13 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__4__Impl"
 
@@ -1802,7 +1760,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group__5 : rule__MetricModel__Group__5__Impl ;
     public final void rule__MetricModel__Group__5() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:639:1:
@@ -1810,22 +1768,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:640:2:
             // rule__MetricModel__Group__5__Impl
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group__5__Impl_in_rule__MetricModel__Group__51289);
-                this.rule__MetricModel__Group__5__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group__5__Impl_in_rule__MetricModel__Group__51289);
+                rule__MetricModel__Group__5__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__5"
 
@@ -1834,7 +1791,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group__5__Impl : ( '}' ) ;
     public final void rule__MetricModel__Group__5__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:650:1:
@@ -1847,23 +1804,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:652:1:
                 // '}'
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getRightCurlyBracketKeyword_5());
-                    this.match(this.input, 14, FOLLOW_14_in_rule__MetricModel__Group__5__Impl1317);
-                    this.after(this.grammarAccess.getMetricModelAccess().getRightCurlyBracketKeyword_5());
+                    this.before(grammarAccess.getMetricModelAccess().getRightCurlyBracketKeyword_5());
+                    match(input, 14, FOLLOW_14_in_rule__MetricModel__Group__5__Impl1317);
+                    this.after(grammarAccess.getMetricModelAccess().getRightCurlyBracketKeyword_5());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group__5__Impl"
 
@@ -1873,7 +1829,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_0__1 ;
     public final void rule__MetricModel__Group_0__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:681:1:
@@ -1881,27 +1837,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:682:2:
             // rule__MetricModel__Group_0__0__Impl rule__MetricModel__Group_0__1
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_0__0__Impl_in_rule__MetricModel__Group_0__01360);
-                this.rule__MetricModel__Group_0__0__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group_0__0__Impl_in_rule__MetricModel__Group_0__01360);
+                rule__MetricModel__Group_0__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_0__1_in_rule__MetricModel__Group_0__01363);
-                this.rule__MetricModel__Group_0__1();
+                pushFollow(FOLLOW_rule__MetricModel__Group_0__1_in_rule__MetricModel__Group_0__01363);
+                rule__MetricModel__Group_0__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_0__0"
 
@@ -1910,7 +1865,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_0__0__Impl : ( 'import' ) ;
     public final void rule__MetricModel__Group_0__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:693:1:
@@ -1923,23 +1878,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:695:1:
                 // 'import'
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getImportKeyword_0_0());
-                    this.match(this.input, 15, FOLLOW_15_in_rule__MetricModel__Group_0__0__Impl1391);
-                    this.after(this.grammarAccess.getMetricModelAccess().getImportKeyword_0_0());
+                    this.before(grammarAccess.getMetricModelAccess().getImportKeyword_0_0());
+                    match(input, 15, FOLLOW_15_in_rule__MetricModel__Group_0__0__Impl1391);
+                    this.after(grammarAccess.getMetricModelAccess().getImportKeyword_0_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_0__0__Impl"
 
@@ -1949,7 +1903,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_0__2 ;
     public final void rule__MetricModel__Group_0__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:712:1:
@@ -1957,36 +1911,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:713:2:
             // rule__MetricModel__Group_0__1__Impl rule__MetricModel__Group_0__2
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_0__1__Impl_in_rule__MetricModel__Group_0__11422);
-                this.rule__MetricModel__Group_0__1__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group_0__1__Impl_in_rule__MetricModel__Group_0__11422);
+                rule__MetricModel__Group_0__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_0__2_in_rule__MetricModel__Group_0__11425);
-                this.rule__MetricModel__Group_0__2();
+                pushFollow(FOLLOW_rule__MetricModel__Group_0__2_in_rule__MetricModel__Group_0__11425);
+                rule__MetricModel__Group_0__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_0__1"
 
     // $ANTLR start "rule__MetricModel__Group_0__1__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:720:1:
-    // rule__MetricModel__Group_0__1__Impl : ( ( rule__MetricModel__ImportURIAssignment_0_1 ) ) ;
+    // rule__MetricModel__Group_0__1__Impl : ( (
+    // rule__MetricModel__ImportURIAssignment_0_1 ) ) ;
     public final void rule__MetricModel__Group_0__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:724:1:
@@ -1999,35 +1953,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:726:1:
                 // ( rule__MetricModel__ImportURIAssignment_0_1 )
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getImportURIAssignment_0_1());
+                    this.before(grammarAccess.getMetricModelAccess().getImportURIAssignment_0_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:727:1:
                     // ( rule__MetricModel__ImportURIAssignment_0_1 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:727:2:
                     // rule__MetricModel__ImportURIAssignment_0_1
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__MetricModel__ImportURIAssignment_0_1_in_rule__MetricModel__Group_0__1__Impl1452);
-                        this.rule__MetricModel__ImportURIAssignment_0_1();
+                        rule__MetricModel__ImportURIAssignment_0_1();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getMetricModelAccess().getImportURIAssignment_0_1());
+                    this.after(grammarAccess.getMetricModelAccess().getImportURIAssignment_0_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_0__1__Impl"
 
@@ -2036,7 +1989,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_0__2 : rule__MetricModel__Group_0__2__Impl ;
     public final void rule__MetricModel__Group_0__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:741:1:
@@ -2044,22 +1997,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:742:2:
             // rule__MetricModel__Group_0__2__Impl
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_0__2__Impl_in_rule__MetricModel__Group_0__21482);
-                this.rule__MetricModel__Group_0__2__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group_0__2__Impl_in_rule__MetricModel__Group_0__21482);
+                rule__MetricModel__Group_0__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_0__2"
 
@@ -2068,7 +2020,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_0__2__Impl : ( ';' ) ;
     public final void rule__MetricModel__Group_0__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:752:1:
@@ -2081,23 +2033,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:754:1:
                 // ';'
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getSemicolonKeyword_0_2());
-                    this.match(this.input, 16, FOLLOW_16_in_rule__MetricModel__Group_0__2__Impl1510);
-                    this.after(this.grammarAccess.getMetricModelAccess().getSemicolonKeyword_0_2());
+                    this.before(grammarAccess.getMetricModelAccess().getSemicolonKeyword_0_2());
+                    match(input, 16, FOLLOW_16_in_rule__MetricModel__Group_0__2__Impl1510);
+                    this.after(grammarAccess.getMetricModelAccess().getSemicolonKeyword_0_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_0__2__Impl"
 
@@ -2107,7 +2058,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_1__1 ;
     public final void rule__MetricModel__Group_1__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:777:1:
@@ -2115,27 +2066,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:778:2:
             // rule__MetricModel__Group_1__0__Impl rule__MetricModel__Group_1__1
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_1__0__Impl_in_rule__MetricModel__Group_1__01547);
-                this.rule__MetricModel__Group_1__0__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group_1__0__Impl_in_rule__MetricModel__Group_1__01547);
+                rule__MetricModel__Group_1__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_1__1_in_rule__MetricModel__Group_1__01550);
-                this.rule__MetricModel__Group_1__1();
+                pushFollow(FOLLOW_rule__MetricModel__Group_1__1_in_rule__MetricModel__Group_1__01550);
+                rule__MetricModel__Group_1__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_1__0"
 
@@ -2144,7 +2094,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_1__0__Impl : ( 'extern' ) ;
     public final void rule__MetricModel__Group_1__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:789:1:
@@ -2157,23 +2107,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:791:1:
                 // 'extern'
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getExternKeyword_1_0());
-                    this.match(this.input, 17, FOLLOW_17_in_rule__MetricModel__Group_1__0__Impl1578);
-                    this.after(this.grammarAccess.getMetricModelAccess().getExternKeyword_1_0());
+                    this.before(grammarAccess.getMetricModelAccess().getExternKeyword_1_0());
+                    match(input, 17, FOLLOW_17_in_rule__MetricModel__Group_1__0__Impl1578);
+                    this.after(grammarAccess.getMetricModelAccess().getExternKeyword_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_1__0__Impl"
 
@@ -2183,7 +2132,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_1__2 ;
     public final void rule__MetricModel__Group_1__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:808:1:
@@ -2191,36 +2140,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:809:2:
             // rule__MetricModel__Group_1__1__Impl rule__MetricModel__Group_1__2
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_1__1__Impl_in_rule__MetricModel__Group_1__11609);
-                this.rule__MetricModel__Group_1__1__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group_1__1__Impl_in_rule__MetricModel__Group_1__11609);
+                rule__MetricModel__Group_1__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_1__2_in_rule__MetricModel__Group_1__11612);
-                this.rule__MetricModel__Group_1__2();
+                pushFollow(FOLLOW_rule__MetricModel__Group_1__2_in_rule__MetricModel__Group_1__11612);
+                rule__MetricModel__Group_1__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_1__1"
 
     // $ANTLR start "rule__MetricModel__Group_1__1__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:816:1:
-    // rule__MetricModel__Group_1__1__Impl : ( ( rule__MetricModel__MetricsAssignment_1_1 ) ) ;
+    // rule__MetricModel__Group_1__1__Impl : ( (
+    // rule__MetricModel__MetricsAssignment_1_1 ) ) ;
     public final void rule__MetricModel__Group_1__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:820:1:
@@ -2233,35 +2182,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:822:1:
                 // ( rule__MetricModel__MetricsAssignment_1_1 )
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getMetricsAssignment_1_1());
+                    this.before(grammarAccess.getMetricModelAccess().getMetricsAssignment_1_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:823:1:
                     // ( rule__MetricModel__MetricsAssignment_1_1 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:823:2:
                     // rule__MetricModel__MetricsAssignment_1_1
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__MetricModel__MetricsAssignment_1_1_in_rule__MetricModel__Group_1__1__Impl1639);
-                        this.rule__MetricModel__MetricsAssignment_1_1();
+                        rule__MetricModel__MetricsAssignment_1_1();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getMetricModelAccess().getMetricsAssignment_1_1());
+                    this.after(grammarAccess.getMetricModelAccess().getMetricsAssignment_1_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_1__1__Impl"
 
@@ -2270,7 +2218,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_1__2 : rule__MetricModel__Group_1__2__Impl ;
     public final void rule__MetricModel__Group_1__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:837:1:
@@ -2278,22 +2226,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:838:2:
             // rule__MetricModel__Group_1__2__Impl
             {
-                this.pushFollow(FOLLOW_rule__MetricModel__Group_1__2__Impl_in_rule__MetricModel__Group_1__21669);
-                this.rule__MetricModel__Group_1__2__Impl();
+                pushFollow(FOLLOW_rule__MetricModel__Group_1__2__Impl_in_rule__MetricModel__Group_1__21669);
+                rule__MetricModel__Group_1__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_1__2"
 
@@ -2302,7 +2249,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__Group_1__2__Impl : ( ';' ) ;
     public final void rule__MetricModel__Group_1__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:848:1:
@@ -2315,23 +2262,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:850:1:
                 // ';'
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getSemicolonKeyword_1_2());
-                    this.match(this.input, 16, FOLLOW_16_in_rule__MetricModel__Group_1__2__Impl1697);
-                    this.after(this.grammarAccess.getMetricModelAccess().getSemicolonKeyword_1_2());
+                    this.before(grammarAccess.getMetricModelAccess().getSemicolonKeyword_1_2());
+                    match(input, 16, FOLLOW_16_in_rule__MetricModel__Group_1__2__Impl1697);
+                    this.after(grammarAccess.getMetricModelAccess().getSemicolonKeyword_1_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__Group_1__2__Impl"
 
@@ -2341,7 +2287,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__1 ;
     public final void rule__InternalMetric__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:873:1:
@@ -2349,27 +2295,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:874:2:
             // rule__InternalMetric__Group__0__Impl rule__InternalMetric__Group__1
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__0__Impl_in_rule__InternalMetric__Group__01734);
-                this.rule__InternalMetric__Group__0__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__0__Impl_in_rule__InternalMetric__Group__01734);
+                rule__InternalMetric__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__1_in_rule__InternalMetric__Group__01737);
-                this.rule__InternalMetric__Group__1();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__1_in_rule__InternalMetric__Group__01737);
+                rule__InternalMetric__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__0"
 
@@ -2378,7 +2323,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__0__Impl : ( 'Metric' ) ;
     public final void rule__InternalMetric__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:885:1:
@@ -2391,23 +2336,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:887:1:
                 // 'Metric'
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getMetricKeyword_0());
-                    this.match(this.input, 18, FOLLOW_18_in_rule__InternalMetric__Group__0__Impl1765);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getMetricKeyword_0());
+                    this.before(grammarAccess.getInternalMetricAccess().getMetricKeyword_0());
+                    match(input, 18, FOLLOW_18_in_rule__InternalMetric__Group__0__Impl1765);
+                    this.after(grammarAccess.getInternalMetricAccess().getMetricKeyword_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__0__Impl"
 
@@ -2417,7 +2361,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__2 ;
     public final void rule__InternalMetric__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:904:1:
@@ -2425,36 +2369,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:905:2:
             // rule__InternalMetric__Group__1__Impl rule__InternalMetric__Group__2
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__1__Impl_in_rule__InternalMetric__Group__11796);
-                this.rule__InternalMetric__Group__1__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__1__Impl_in_rule__InternalMetric__Group__11796);
+                rule__InternalMetric__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__2_in_rule__InternalMetric__Group__11799);
-                this.rule__InternalMetric__Group__2();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__2_in_rule__InternalMetric__Group__11799);
+                rule__InternalMetric__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__1"
 
     // $ANTLR start "rule__InternalMetric__Group__1__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:912:1:
-    // rule__InternalMetric__Group__1__Impl : ( ( rule__InternalMetric__NameAssignment_1 ) ) ;
+    // rule__InternalMetric__Group__1__Impl : ( (
+    // rule__InternalMetric__NameAssignment_1 ) ) ;
     public final void rule__InternalMetric__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:916:1:
@@ -2467,35 +2411,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:918:1:
                 // ( rule__InternalMetric__NameAssignment_1 )
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getNameAssignment_1());
+                    this.before(grammarAccess.getInternalMetricAccess().getNameAssignment_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:919:1:
                     // ( rule__InternalMetric__NameAssignment_1 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:919:2:
                     // rule__InternalMetric__NameAssignment_1
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__InternalMetric__NameAssignment_1_in_rule__InternalMetric__Group__1__Impl1826);
-                        this.rule__InternalMetric__NameAssignment_1();
+                        rule__InternalMetric__NameAssignment_1();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getNameAssignment_1());
+                    this.after(grammarAccess.getInternalMetricAccess().getNameAssignment_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__1__Impl"
 
@@ -2505,7 +2448,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__3 ;
     public final void rule__InternalMetric__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:933:1:
@@ -2513,27 +2456,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:934:2:
             // rule__InternalMetric__Group__2__Impl rule__InternalMetric__Group__3
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__2__Impl_in_rule__InternalMetric__Group__21856);
-                this.rule__InternalMetric__Group__2__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__2__Impl_in_rule__InternalMetric__Group__21856);
+                rule__InternalMetric__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__3_in_rule__InternalMetric__Group__21859);
-                this.rule__InternalMetric__Group__3();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__3_in_rule__InternalMetric__Group__21859);
+                rule__InternalMetric__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__2"
 
@@ -2542,7 +2484,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__2__Impl : ( '(' ) ;
     public final void rule__InternalMetric__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:945:1:
@@ -2555,23 +2497,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:947:1:
                 // '('
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getLeftParenthesisKeyword_2());
-                    this.match(this.input, 19, FOLLOW_19_in_rule__InternalMetric__Group__2__Impl1887);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getLeftParenthesisKeyword_2());
+                    this.before(grammarAccess.getInternalMetricAccess().getLeftParenthesisKeyword_2());
+                    match(input, 19, FOLLOW_19_in_rule__InternalMetric__Group__2__Impl1887);
+                    this.after(grammarAccess.getInternalMetricAccess().getLeftParenthesisKeyword_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__2__Impl"
 
@@ -2581,7 +2522,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__4 ;
     public final void rule__InternalMetric__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:964:1:
@@ -2589,36 +2530,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:965:2:
             // rule__InternalMetric__Group__3__Impl rule__InternalMetric__Group__4
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__3__Impl_in_rule__InternalMetric__Group__31918);
-                this.rule__InternalMetric__Group__3__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__3__Impl_in_rule__InternalMetric__Group__31918);
+                rule__InternalMetric__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__4_in_rule__InternalMetric__Group__31921);
-                this.rule__InternalMetric__Group__4();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__4_in_rule__InternalMetric__Group__31921);
+                rule__InternalMetric__Group__4();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__3"
 
     // $ANTLR start "rule__InternalMetric__Group__3__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:972:1:
-    // rule__InternalMetric__Group__3__Impl : ( ( rule__InternalMetric__ShortNameAssignment_3 ) ) ;
+    // rule__InternalMetric__Group__3__Impl : ( (
+    // rule__InternalMetric__ShortNameAssignment_3 ) ) ;
     public final void rule__InternalMetric__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:976:1:
@@ -2631,35 +2572,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:978:1:
                 // ( rule__InternalMetric__ShortNameAssignment_3 )
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getShortNameAssignment_3());
+                    this.before(grammarAccess.getInternalMetricAccess().getShortNameAssignment_3());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:979:1:
                     // ( rule__InternalMetric__ShortNameAssignment_3 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:979:2:
                     // rule__InternalMetric__ShortNameAssignment_3
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__InternalMetric__ShortNameAssignment_3_in_rule__InternalMetric__Group__3__Impl1948);
-                        this.rule__InternalMetric__ShortNameAssignment_3();
+                        rule__InternalMetric__ShortNameAssignment_3();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getShortNameAssignment_3());
+                    this.after(grammarAccess.getInternalMetricAccess().getShortNameAssignment_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__3__Impl"
 
@@ -2669,7 +2609,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__5 ;
     public final void rule__InternalMetric__Group__4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:993:1:
@@ -2677,27 +2617,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:994:2:
             // rule__InternalMetric__Group__4__Impl rule__InternalMetric__Group__5
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__4__Impl_in_rule__InternalMetric__Group__41978);
-                this.rule__InternalMetric__Group__4__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__4__Impl_in_rule__InternalMetric__Group__41978);
+                rule__InternalMetric__Group__4__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__5_in_rule__InternalMetric__Group__41981);
-                this.rule__InternalMetric__Group__5();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__5_in_rule__InternalMetric__Group__41981);
+                rule__InternalMetric__Group__5();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__4"
 
@@ -2706,7 +2645,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__4__Impl : ( ',' ) ;
     public final void rule__InternalMetric__Group__4__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1005:1:
@@ -2719,23 +2658,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1007:1:
                 // ','
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getCommaKeyword_4());
-                    this.match(this.input, 20, FOLLOW_20_in_rule__InternalMetric__Group__4__Impl2009);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getCommaKeyword_4());
+                    this.before(grammarAccess.getInternalMetricAccess().getCommaKeyword_4());
+                    match(input, 20, FOLLOW_20_in_rule__InternalMetric__Group__4__Impl2009);
+                    this.after(grammarAccess.getInternalMetricAccess().getCommaKeyword_4());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__4__Impl"
 
@@ -2745,7 +2683,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__6 ;
     public final void rule__InternalMetric__Group__5() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1024:1:
@@ -2753,37 +2691,37 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1025:2:
             // rule__InternalMetric__Group__5__Impl rule__InternalMetric__Group__6
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__5__Impl_in_rule__InternalMetric__Group__52040);
-                this.rule__InternalMetric__Group__5__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__5__Impl_in_rule__InternalMetric__Group__52040);
+                rule__InternalMetric__Group__5__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__6_in_rule__InternalMetric__Group__52043);
-                this.rule__InternalMetric__Group__6();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__6_in_rule__InternalMetric__Group__52043);
+                rule__InternalMetric__Group__6();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__5"
 
     // $ANTLR start "rule__InternalMetric__Group__5__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1032:1:
-    // rule__InternalMetric__Group__5__Impl : ( ( rule__InternalMetric__DescriptionAssignment_5 ) )
+    // rule__InternalMetric__Group__5__Impl : ( (
+    // rule__InternalMetric__DescriptionAssignment_5 ) )
     // ;
     public final void rule__InternalMetric__Group__5__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1036:1:
@@ -2796,35 +2734,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1038:1:
                 // ( rule__InternalMetric__DescriptionAssignment_5 )
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getDescriptionAssignment_5());
+                    this.before(grammarAccess.getInternalMetricAccess().getDescriptionAssignment_5());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1039:1:
                     // ( rule__InternalMetric__DescriptionAssignment_5 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1039:2:
                     // rule__InternalMetric__DescriptionAssignment_5
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__InternalMetric__DescriptionAssignment_5_in_rule__InternalMetric__Group__5__Impl2070);
-                        this.rule__InternalMetric__DescriptionAssignment_5();
+                        rule__InternalMetric__DescriptionAssignment_5();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getDescriptionAssignment_5());
+                    this.after(grammarAccess.getInternalMetricAccess().getDescriptionAssignment_5());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__5__Impl"
 
@@ -2834,7 +2771,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__7 ;
     public final void rule__InternalMetric__Group__6() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1053:1:
@@ -2842,27 +2779,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1054:2:
             // rule__InternalMetric__Group__6__Impl rule__InternalMetric__Group__7
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__6__Impl_in_rule__InternalMetric__Group__62100);
-                this.rule__InternalMetric__Group__6__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__6__Impl_in_rule__InternalMetric__Group__62100);
+                rule__InternalMetric__Group__6__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__7_in_rule__InternalMetric__Group__62103);
-                this.rule__InternalMetric__Group__7();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__7_in_rule__InternalMetric__Group__62103);
+                rule__InternalMetric__Group__7();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__6"
 
@@ -2871,7 +2807,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__6__Impl : ( ')' ) ;
     public final void rule__InternalMetric__Group__6__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1065:1:
@@ -2884,23 +2820,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1067:1:
                 // ')'
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getRightParenthesisKeyword_6());
-                    this.match(this.input, 21, FOLLOW_21_in_rule__InternalMetric__Group__6__Impl2131);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getRightParenthesisKeyword_6());
+                    this.before(grammarAccess.getInternalMetricAccess().getRightParenthesisKeyword_6());
+                    match(input, 21, FOLLOW_21_in_rule__InternalMetric__Group__6__Impl2131);
+                    this.after(grammarAccess.getInternalMetricAccess().getRightParenthesisKeyword_6());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__6__Impl"
 
@@ -2910,7 +2845,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__8 ;
     public final void rule__InternalMetric__Group__7() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1084:1:
@@ -2918,27 +2853,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1085:2:
             // rule__InternalMetric__Group__7__Impl rule__InternalMetric__Group__8
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__7__Impl_in_rule__InternalMetric__Group__72162);
-                this.rule__InternalMetric__Group__7__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__7__Impl_in_rule__InternalMetric__Group__72162);
+                rule__InternalMetric__Group__7__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__8_in_rule__InternalMetric__Group__72165);
-                this.rule__InternalMetric__Group__8();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__8_in_rule__InternalMetric__Group__72165);
+                rule__InternalMetric__Group__8();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__7"
 
@@ -2947,7 +2881,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__7__Impl : ( '{' ) ;
     public final void rule__InternalMetric__Group__7__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1096:1:
@@ -2960,23 +2894,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1098:1:
                 // '{'
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_7());
-                    this.match(this.input, 13, FOLLOW_13_in_rule__InternalMetric__Group__7__Impl2193);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_7());
+                    this.before(grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_7());
+                    match(input, 13, FOLLOW_13_in_rule__InternalMetric__Group__7__Impl2193);
+                    this.after(grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_7());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__7__Impl"
 
@@ -2986,7 +2919,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__9 ;
     public final void rule__InternalMetric__Group__8() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1115:1:
@@ -2994,36 +2927,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1116:2:
             // rule__InternalMetric__Group__8__Impl rule__InternalMetric__Group__9
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__8__Impl_in_rule__InternalMetric__Group__82224);
-                this.rule__InternalMetric__Group__8__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__8__Impl_in_rule__InternalMetric__Group__82224);
+                rule__InternalMetric__Group__8__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__9_in_rule__InternalMetric__Group__82227);
-                this.rule__InternalMetric__Group__9();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__9_in_rule__InternalMetric__Group__82227);
+                rule__InternalMetric__Group__9();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__8"
 
     // $ANTLR start "rule__InternalMetric__Group__8__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1123:1:
-    // rule__InternalMetric__Group__8__Impl : ( ( rule__InternalMetric__Group_8__0 )? ) ;
+    // rule__InternalMetric__Group__8__Impl : ( ( rule__InternalMetric__Group_8__0
+    // )? ) ;
     public final void rule__InternalMetric__Group__8__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1127:1:
@@ -3036,11 +2969,11 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1129:1:
                 // ( rule__InternalMetric__Group_8__0 )?
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getGroup_8());
+                    this.before(grammarAccess.getInternalMetricAccess().getGroup_8());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1130:1:
                     // ( rule__InternalMetric__Group_8__0 )?
                     int alt6 = 2;
-                    final int LA6_0 = this.input.LA(1);
+                    final int LA6_0 = input.LA(1);
 
                     if ((LA6_0 == 23)) {
                         alt6 = 1;
@@ -3050,32 +2983,30 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1130:2:
                     // rule__InternalMetric__Group_8__0
                     {
-                        this.pushFollow(
-                                FOLLOW_rule__InternalMetric__Group_8__0_in_rule__InternalMetric__Group__8__Impl2254);
-                        this.rule__InternalMetric__Group_8__0();
+                        pushFollow(FOLLOW_rule__InternalMetric__Group_8__0_in_rule__InternalMetric__Group__8__Impl2254);
+                        rule__InternalMetric__Group_8__0();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
                         break;
 
                     }
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getGroup_8());
+                    this.after(grammarAccess.getInternalMetricAccess().getGroup_8());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__8__Impl"
 
@@ -3085,7 +3016,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__10 ;
     public final void rule__InternalMetric__Group__9() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1144:1:
@@ -3093,36 +3024,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1145:2:
             // rule__InternalMetric__Group__9__Impl rule__InternalMetric__Group__10
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__9__Impl_in_rule__InternalMetric__Group__92285);
-                this.rule__InternalMetric__Group__9__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__9__Impl_in_rule__InternalMetric__Group__92285);
+                rule__InternalMetric__Group__9__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__10_in_rule__InternalMetric__Group__92288);
-                this.rule__InternalMetric__Group__10();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__10_in_rule__InternalMetric__Group__92288);
+                rule__InternalMetric__Group__10();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__9"
 
     // $ANTLR start "rule__InternalMetric__Group__9__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1152:1:
-    // rule__InternalMetric__Group__9__Impl : ( ( rule__InternalMetric__DefinitionAssignment_9 ) ) ;
+    // rule__InternalMetric__Group__9__Impl : ( (
+    // rule__InternalMetric__DefinitionAssignment_9 ) ) ;
     public final void rule__InternalMetric__Group__9__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1156:1:
@@ -3135,35 +3066,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1158:1:
                 // ( rule__InternalMetric__DefinitionAssignment_9 )
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getDefinitionAssignment_9());
+                    this.before(grammarAccess.getInternalMetricAccess().getDefinitionAssignment_9());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1159:1:
                     // ( rule__InternalMetric__DefinitionAssignment_9 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1159:2:
                     // rule__InternalMetric__DefinitionAssignment_9
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__InternalMetric__DefinitionAssignment_9_in_rule__InternalMetric__Group__9__Impl2315);
-                        this.rule__InternalMetric__DefinitionAssignment_9();
+                        rule__InternalMetric__DefinitionAssignment_9();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getDefinitionAssignment_9());
+                    this.after(grammarAccess.getInternalMetricAccess().getDefinitionAssignment_9());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__9__Impl"
 
@@ -3172,7 +3102,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__10 : rule__InternalMetric__Group__10__Impl ;
     public final void rule__InternalMetric__Group__10() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1173:1:
@@ -3180,22 +3110,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1174:2:
             // rule__InternalMetric__Group__10__Impl
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group__10__Impl_in_rule__InternalMetric__Group__102345);
-                this.rule__InternalMetric__Group__10__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group__10__Impl_in_rule__InternalMetric__Group__102345);
+                rule__InternalMetric__Group__10__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__10"
 
@@ -3204,7 +3133,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group__10__Impl : ( '};' ) ;
     public final void rule__InternalMetric__Group__10__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1184:1:
@@ -3217,23 +3146,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1186:1:
                 // '};'
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getRightCurlyBracketSemicolonKeyword_10());
-                    this.match(this.input, 22, FOLLOW_22_in_rule__InternalMetric__Group__10__Impl2373);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getRightCurlyBracketSemicolonKeyword_10());
+                    this.before(grammarAccess.getInternalMetricAccess().getRightCurlyBracketSemicolonKeyword_10());
+                    match(input, 22, FOLLOW_22_in_rule__InternalMetric__Group__10__Impl2373);
+                    this.after(grammarAccess.getInternalMetricAccess().getRightCurlyBracketSemicolonKeyword_10());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group__10__Impl"
 
@@ -3243,7 +3171,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group_8__1 ;
     public final void rule__InternalMetric__Group_8__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1225:1:
@@ -3251,27 +3179,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1226:2:
             // rule__InternalMetric__Group_8__0__Impl rule__InternalMetric__Group_8__1
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group_8__0__Impl_in_rule__InternalMetric__Group_8__02426);
-                this.rule__InternalMetric__Group_8__0__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group_8__0__Impl_in_rule__InternalMetric__Group_8__02426);
+                rule__InternalMetric__Group_8__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group_8__1_in_rule__InternalMetric__Group_8__02429);
-                this.rule__InternalMetric__Group_8__1();
+                pushFollow(FOLLOW_rule__InternalMetric__Group_8__1_in_rule__InternalMetric__Group_8__02429);
+                rule__InternalMetric__Group_8__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group_8__0"
 
@@ -3280,7 +3207,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group_8__0__Impl : ( 'parameters' ) ;
     public final void rule__InternalMetric__Group_8__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1237:1:
@@ -3293,23 +3220,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1239:1:
                 // 'parameters'
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getParametersKeyword_8_0());
-                    this.match(this.input, 23, FOLLOW_23_in_rule__InternalMetric__Group_8__0__Impl2457);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getParametersKeyword_8_0());
+                    this.before(grammarAccess.getInternalMetricAccess().getParametersKeyword_8_0());
+                    match(input, 23, FOLLOW_23_in_rule__InternalMetric__Group_8__0__Impl2457);
+                    this.after(grammarAccess.getInternalMetricAccess().getParametersKeyword_8_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group_8__0__Impl"
 
@@ -3319,7 +3245,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group_8__2 ;
     public final void rule__InternalMetric__Group_8__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1256:1:
@@ -3327,27 +3253,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1257:2:
             // rule__InternalMetric__Group_8__1__Impl rule__InternalMetric__Group_8__2
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group_8__1__Impl_in_rule__InternalMetric__Group_8__12488);
-                this.rule__InternalMetric__Group_8__1__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group_8__1__Impl_in_rule__InternalMetric__Group_8__12488);
+                rule__InternalMetric__Group_8__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group_8__2_in_rule__InternalMetric__Group_8__12491);
-                this.rule__InternalMetric__Group_8__2();
+                pushFollow(FOLLOW_rule__InternalMetric__Group_8__2_in_rule__InternalMetric__Group_8__12491);
+                rule__InternalMetric__Group_8__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group_8__1"
 
@@ -3356,7 +3281,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group_8__1__Impl : ( '{' ) ;
     public final void rule__InternalMetric__Group_8__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1268:1:
@@ -3369,23 +3294,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1270:1:
                 // '{'
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_8_1());
-                    this.match(this.input, 13, FOLLOW_13_in_rule__InternalMetric__Group_8__1__Impl2519);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_8_1());
+                    this.before(grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_8_1());
+                    match(input, 13, FOLLOW_13_in_rule__InternalMetric__Group_8__1__Impl2519);
+                    this.after(grammarAccess.getInternalMetricAccess().getLeftCurlyBracketKeyword_8_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group_8__1__Impl"
 
@@ -3395,7 +3319,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group_8__3 ;
     public final void rule__InternalMetric__Group_8__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1287:1:
@@ -3403,37 +3327,37 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1288:2:
             // rule__InternalMetric__Group_8__2__Impl rule__InternalMetric__Group_8__3
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group_8__2__Impl_in_rule__InternalMetric__Group_8__22550);
-                this.rule__InternalMetric__Group_8__2__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group_8__2__Impl_in_rule__InternalMetric__Group_8__22550);
+                rule__InternalMetric__Group_8__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group_8__3_in_rule__InternalMetric__Group_8__22553);
-                this.rule__InternalMetric__Group_8__3();
+                pushFollow(FOLLOW_rule__InternalMetric__Group_8__3_in_rule__InternalMetric__Group_8__22553);
+                rule__InternalMetric__Group_8__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group_8__2"
 
     // $ANTLR start "rule__InternalMetric__Group_8__2__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1295:1:
-    // rule__InternalMetric__Group_8__2__Impl : ( ( rule__InternalMetric__ParameterAssignment_8_2 )*
+    // rule__InternalMetric__Group_8__2__Impl : ( (
+    // rule__InternalMetric__ParameterAssignment_8_2 )*
     // ) ;
     public final void rule__InternalMetric__Group_8__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1299:1:
@@ -3446,14 +3370,14 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1301:1:
                 // ( rule__InternalMetric__ParameterAssignment_8_2 )*
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getParameterAssignment_8_2());
+                    this.before(grammarAccess.getInternalMetricAccess().getParameterAssignment_8_2());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1302:1:
                     // ( rule__InternalMetric__ParameterAssignment_8_2 )*
                     loop7: do {
                         int alt7 = 2;
-                        final int LA7_0 = this.input.LA(1);
+                        final int LA7_0 = input.LA(1);
 
-                        if (((LA7_0 >= 24 && LA7_0 <= 25))) {
+                        if ((((LA7_0 >= 24) && (LA7_0 <= 25)))) {
                             alt7 = 1;
                         }
 
@@ -3462,11 +3386,11 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1302:2:
                         // rule__InternalMetric__ParameterAssignment_8_2
                         {
-                            this.pushFollow(
+                            pushFollow(
                                     FOLLOW_rule__InternalMetric__ParameterAssignment_8_2_in_rule__InternalMetric__Group_8__2__Impl2580);
-                            this.rule__InternalMetric__ParameterAssignment_8_2();
+                            rule__InternalMetric__ParameterAssignment_8_2();
 
-                            this.state._fsp--;
+                            state._fsp--;
 
                         }
                             break;
@@ -3476,21 +3400,20 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         }
                     } while (true);
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getParameterAssignment_8_2());
+                    this.after(grammarAccess.getInternalMetricAccess().getParameterAssignment_8_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group_8__2__Impl"
 
@@ -3499,7 +3422,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group_8__3 : rule__InternalMetric__Group_8__3__Impl ;
     public final void rule__InternalMetric__Group_8__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1316:1:
@@ -3507,22 +3430,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1317:2:
             // rule__InternalMetric__Group_8__3__Impl
             {
-                this.pushFollow(FOLLOW_rule__InternalMetric__Group_8__3__Impl_in_rule__InternalMetric__Group_8__32611);
-                this.rule__InternalMetric__Group_8__3__Impl();
+                pushFollow(FOLLOW_rule__InternalMetric__Group_8__3__Impl_in_rule__InternalMetric__Group_8__32611);
+                rule__InternalMetric__Group_8__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group_8__3"
 
@@ -3531,7 +3453,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__Group_8__3__Impl : ( '}' ) ;
     public final void rule__InternalMetric__Group_8__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1327:1:
@@ -3544,32 +3466,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1329:1:
                 // '}'
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getRightCurlyBracketKeyword_8_3());
-                    this.match(this.input, 14, FOLLOW_14_in_rule__InternalMetric__Group_8__3__Impl2639);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getRightCurlyBracketKeyword_8_3());
+                    this.before(grammarAccess.getInternalMetricAccess().getRightCurlyBracketKeyword_8_3());
+                    match(input, 14, FOLLOW_14_in_rule__InternalMetric__Group_8__3__Impl2639);
+                    this.after(grammarAccess.getInternalMetricAccess().getRightCurlyBracketKeyword_8_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__Group_8__3__Impl"
 
     // $ANTLR start "rule__Parameter__Group__0"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1350:1:
-    // rule__Parameter__Group__0 : rule__Parameter__Group__0__Impl rule__Parameter__Group__1 ;
+    // rule__Parameter__Group__0 : rule__Parameter__Group__0__Impl
+    // rule__Parameter__Group__1 ;
     public final void rule__Parameter__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1354:1:
@@ -3577,27 +3499,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1355:2:
             // rule__Parameter__Group__0__Impl rule__Parameter__Group__1
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__0__Impl_in_rule__Parameter__Group__02678);
-                this.rule__Parameter__Group__0__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__0__Impl_in_rule__Parameter__Group__02678);
+                rule__Parameter__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__1_in_rule__Parameter__Group__02681);
-                this.rule__Parameter__Group__1();
+                pushFollow(FOLLOW_rule__Parameter__Group__1_in_rule__Parameter__Group__02681);
+                rule__Parameter__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__0"
 
@@ -3606,7 +3527,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__Group__0__Impl : ( 'Parameter' ) ;
     public final void rule__Parameter__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1366:1:
@@ -3619,32 +3540,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1368:1:
                 // 'Parameter'
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getParameterKeyword_0());
-                    this.match(this.input, 24, FOLLOW_24_in_rule__Parameter__Group__0__Impl2709);
-                    this.after(this.grammarAccess.getParameterAccess().getParameterKeyword_0());
+                    this.before(grammarAccess.getParameterAccess().getParameterKeyword_0());
+                    match(input, 24, FOLLOW_24_in_rule__Parameter__Group__0__Impl2709);
+                    this.after(grammarAccess.getParameterAccess().getParameterKeyword_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__0__Impl"
 
     // $ANTLR start "rule__Parameter__Group__1"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1381:1:
-    // rule__Parameter__Group__1 : rule__Parameter__Group__1__Impl rule__Parameter__Group__2 ;
+    // rule__Parameter__Group__1 : rule__Parameter__Group__1__Impl
+    // rule__Parameter__Group__2 ;
     public final void rule__Parameter__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1385:1:
@@ -3652,27 +3573,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1386:2:
             // rule__Parameter__Group__1__Impl rule__Parameter__Group__2
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__1__Impl_in_rule__Parameter__Group__12740);
-                this.rule__Parameter__Group__1__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__1__Impl_in_rule__Parameter__Group__12740);
+                rule__Parameter__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__2_in_rule__Parameter__Group__12743);
-                this.rule__Parameter__Group__2();
+                pushFollow(FOLLOW_rule__Parameter__Group__2_in_rule__Parameter__Group__12743);
+                rule__Parameter__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__1"
 
@@ -3681,7 +3601,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__Group__1__Impl : ( ( rule__Parameter__NameAssignment_1 ) ) ;
     public final void rule__Parameter__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1397:1:
@@ -3694,44 +3614,43 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1399:1:
                 // ( rule__Parameter__NameAssignment_1 )
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getNameAssignment_1());
+                    this.before(grammarAccess.getParameterAccess().getNameAssignment_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1400:1:
                     // ( rule__Parameter__NameAssignment_1 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1400:2:
                     // rule__Parameter__NameAssignment_1
                     {
-                        this.pushFollow(
-                                FOLLOW_rule__Parameter__NameAssignment_1_in_rule__Parameter__Group__1__Impl2770);
-                        this.rule__Parameter__NameAssignment_1();
+                        pushFollow(FOLLOW_rule__Parameter__NameAssignment_1_in_rule__Parameter__Group__1__Impl2770);
+                        rule__Parameter__NameAssignment_1();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getParameterAccess().getNameAssignment_1());
+                    this.after(grammarAccess.getParameterAccess().getNameAssignment_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__1__Impl"
 
     // $ANTLR start "rule__Parameter__Group__2"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1410:1:
-    // rule__Parameter__Group__2 : rule__Parameter__Group__2__Impl rule__Parameter__Group__3 ;
+    // rule__Parameter__Group__2 : rule__Parameter__Group__2__Impl
+    // rule__Parameter__Group__3 ;
     public final void rule__Parameter__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1414:1:
@@ -3739,27 +3658,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1415:2:
             // rule__Parameter__Group__2__Impl rule__Parameter__Group__3
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__2__Impl_in_rule__Parameter__Group__22800);
-                this.rule__Parameter__Group__2__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__2__Impl_in_rule__Parameter__Group__22800);
+                rule__Parameter__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__3_in_rule__Parameter__Group__22803);
-                this.rule__Parameter__Group__3();
+                pushFollow(FOLLOW_rule__Parameter__Group__3_in_rule__Parameter__Group__22803);
+                rule__Parameter__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__2"
 
@@ -3768,7 +3686,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__Group__2__Impl : ( '(' ) ;
     public final void rule__Parameter__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1426:1:
@@ -3781,32 +3699,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1428:1:
                 // '('
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getLeftParenthesisKeyword_2());
-                    this.match(this.input, 19, FOLLOW_19_in_rule__Parameter__Group__2__Impl2831);
-                    this.after(this.grammarAccess.getParameterAccess().getLeftParenthesisKeyword_2());
+                    this.before(grammarAccess.getParameterAccess().getLeftParenthesisKeyword_2());
+                    match(input, 19, FOLLOW_19_in_rule__Parameter__Group__2__Impl2831);
+                    this.after(grammarAccess.getParameterAccess().getLeftParenthesisKeyword_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__2__Impl"
 
     // $ANTLR start "rule__Parameter__Group__3"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1441:1:
-    // rule__Parameter__Group__3 : rule__Parameter__Group__3__Impl rule__Parameter__Group__4 ;
+    // rule__Parameter__Group__3 : rule__Parameter__Group__3__Impl
+    // rule__Parameter__Group__4 ;
     public final void rule__Parameter__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1445:1:
@@ -3814,36 +3732,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1446:2:
             // rule__Parameter__Group__3__Impl rule__Parameter__Group__4
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__3__Impl_in_rule__Parameter__Group__32862);
-                this.rule__Parameter__Group__3__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__3__Impl_in_rule__Parameter__Group__32862);
+                rule__Parameter__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__4_in_rule__Parameter__Group__32865);
-                this.rule__Parameter__Group__4();
+                pushFollow(FOLLOW_rule__Parameter__Group__4_in_rule__Parameter__Group__32865);
+                rule__Parameter__Group__4();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__3"
 
     // $ANTLR start "rule__Parameter__Group__3__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1453:1:
-    // rule__Parameter__Group__3__Impl : ( ( rule__Parameter__ShortnameAssignment_3 ) ) ;
+    // rule__Parameter__Group__3__Impl : ( ( rule__Parameter__ShortnameAssignment_3
+    // ) ) ;
     public final void rule__Parameter__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1457:1:
@@ -3856,44 +3774,44 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1459:1:
                 // ( rule__Parameter__ShortnameAssignment_3 )
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getShortnameAssignment_3());
+                    this.before(grammarAccess.getParameterAccess().getShortnameAssignment_3());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1460:1:
                     // ( rule__Parameter__ShortnameAssignment_3 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1460:2:
                     // rule__Parameter__ShortnameAssignment_3
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__Parameter__ShortnameAssignment_3_in_rule__Parameter__Group__3__Impl2892);
-                        this.rule__Parameter__ShortnameAssignment_3();
+                        rule__Parameter__ShortnameAssignment_3();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getParameterAccess().getShortnameAssignment_3());
+                    this.after(grammarAccess.getParameterAccess().getShortnameAssignment_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__3__Impl"
 
     // $ANTLR start "rule__Parameter__Group__4"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1470:1:
-    // rule__Parameter__Group__4 : rule__Parameter__Group__4__Impl rule__Parameter__Group__5 ;
+    // rule__Parameter__Group__4 : rule__Parameter__Group__4__Impl
+    // rule__Parameter__Group__5 ;
     public final void rule__Parameter__Group__4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1474:1:
@@ -3901,27 +3819,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1475:2:
             // rule__Parameter__Group__4__Impl rule__Parameter__Group__5
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__4__Impl_in_rule__Parameter__Group__42922);
-                this.rule__Parameter__Group__4__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__4__Impl_in_rule__Parameter__Group__42922);
+                rule__Parameter__Group__4__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__5_in_rule__Parameter__Group__42925);
-                this.rule__Parameter__Group__5();
+                pushFollow(FOLLOW_rule__Parameter__Group__5_in_rule__Parameter__Group__42925);
+                rule__Parameter__Group__5();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__4"
 
@@ -3930,7 +3847,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__Group__4__Impl : ( ',' ) ;
     public final void rule__Parameter__Group__4__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1486:1:
@@ -3943,32 +3860,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1488:1:
                 // ','
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getCommaKeyword_4());
-                    this.match(this.input, 20, FOLLOW_20_in_rule__Parameter__Group__4__Impl2953);
-                    this.after(this.grammarAccess.getParameterAccess().getCommaKeyword_4());
+                    this.before(grammarAccess.getParameterAccess().getCommaKeyword_4());
+                    match(input, 20, FOLLOW_20_in_rule__Parameter__Group__4__Impl2953);
+                    this.after(grammarAccess.getParameterAccess().getCommaKeyword_4());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__4__Impl"
 
     // $ANTLR start "rule__Parameter__Group__5"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1501:1:
-    // rule__Parameter__Group__5 : rule__Parameter__Group__5__Impl rule__Parameter__Group__6 ;
+    // rule__Parameter__Group__5 : rule__Parameter__Group__5__Impl
+    // rule__Parameter__Group__6 ;
     public final void rule__Parameter__Group__5() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1505:1:
@@ -3976,36 +3893,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1506:2:
             // rule__Parameter__Group__5__Impl rule__Parameter__Group__6
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__5__Impl_in_rule__Parameter__Group__52984);
-                this.rule__Parameter__Group__5__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__5__Impl_in_rule__Parameter__Group__52984);
+                rule__Parameter__Group__5__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__6_in_rule__Parameter__Group__52987);
-                this.rule__Parameter__Group__6();
+                pushFollow(FOLLOW_rule__Parameter__Group__6_in_rule__Parameter__Group__52987);
+                rule__Parameter__Group__6();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__5"
 
     // $ANTLR start "rule__Parameter__Group__5__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1513:1:
-    // rule__Parameter__Group__5__Impl : ( ( rule__Parameter__DescriptionAssignment_5 ) ) ;
+    // rule__Parameter__Group__5__Impl : ( (
+    // rule__Parameter__DescriptionAssignment_5 ) ) ;
     public final void rule__Parameter__Group__5__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1517:1:
@@ -4018,44 +3935,44 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1519:1:
                 // ( rule__Parameter__DescriptionAssignment_5 )
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getDescriptionAssignment_5());
+                    this.before(grammarAccess.getParameterAccess().getDescriptionAssignment_5());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1520:1:
                     // ( rule__Parameter__DescriptionAssignment_5 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1520:2:
                     // rule__Parameter__DescriptionAssignment_5
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__Parameter__DescriptionAssignment_5_in_rule__Parameter__Group__5__Impl3014);
-                        this.rule__Parameter__DescriptionAssignment_5();
+                        rule__Parameter__DescriptionAssignment_5();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getParameterAccess().getDescriptionAssignment_5());
+                    this.after(grammarAccess.getParameterAccess().getDescriptionAssignment_5());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__5__Impl"
 
     // $ANTLR start "rule__Parameter__Group__6"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1530:1:
-    // rule__Parameter__Group__6 : rule__Parameter__Group__6__Impl rule__Parameter__Group__7 ;
+    // rule__Parameter__Group__6 : rule__Parameter__Group__6__Impl
+    // rule__Parameter__Group__7 ;
     public final void rule__Parameter__Group__6() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1534:1:
@@ -4063,27 +3980,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1535:2:
             // rule__Parameter__Group__6__Impl rule__Parameter__Group__7
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__6__Impl_in_rule__Parameter__Group__63044);
-                this.rule__Parameter__Group__6__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__6__Impl_in_rule__Parameter__Group__63044);
+                rule__Parameter__Group__6__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__7_in_rule__Parameter__Group__63047);
-                this.rule__Parameter__Group__7();
+                pushFollow(FOLLOW_rule__Parameter__Group__7_in_rule__Parameter__Group__63047);
+                rule__Parameter__Group__7();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__6"
 
@@ -4092,7 +4008,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__Group__6__Impl : ( ',' ) ;
     public final void rule__Parameter__Group__6__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1546:1:
@@ -4105,32 +4021,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1548:1:
                 // ','
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getCommaKeyword_6());
-                    this.match(this.input, 20, FOLLOW_20_in_rule__Parameter__Group__6__Impl3075);
-                    this.after(this.grammarAccess.getParameterAccess().getCommaKeyword_6());
+                    this.before(grammarAccess.getParameterAccess().getCommaKeyword_6());
+                    match(input, 20, FOLLOW_20_in_rule__Parameter__Group__6__Impl3075);
+                    this.after(grammarAccess.getParameterAccess().getCommaKeyword_6());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__6__Impl"
 
     // $ANTLR start "rule__Parameter__Group__7"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1561:1:
-    // rule__Parameter__Group__7 : rule__Parameter__Group__7__Impl rule__Parameter__Group__8 ;
+    // rule__Parameter__Group__7 : rule__Parameter__Group__7__Impl
+    // rule__Parameter__Group__8 ;
     public final void rule__Parameter__Group__7() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1565:1:
@@ -4138,36 +4054,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1566:2:
             // rule__Parameter__Group__7__Impl rule__Parameter__Group__8
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__7__Impl_in_rule__Parameter__Group__73106);
-                this.rule__Parameter__Group__7__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__7__Impl_in_rule__Parameter__Group__73106);
+                rule__Parameter__Group__7__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__8_in_rule__Parameter__Group__73109);
-                this.rule__Parameter__Group__8();
+                pushFollow(FOLLOW_rule__Parameter__Group__8_in_rule__Parameter__Group__73109);
+                rule__Parameter__Group__8();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__7"
 
     // $ANTLR start "rule__Parameter__Group__7__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1573:1:
-    // rule__Parameter__Group__7__Impl : ( ( rule__Parameter__DefaultValueAssignment_7 ) ) ;
+    // rule__Parameter__Group__7__Impl : ( (
+    // rule__Parameter__DefaultValueAssignment_7 ) ) ;
     public final void rule__Parameter__Group__7__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1577:1:
@@ -4180,44 +4096,44 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1579:1:
                 // ( rule__Parameter__DefaultValueAssignment_7 )
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getDefaultValueAssignment_7());
+                    this.before(grammarAccess.getParameterAccess().getDefaultValueAssignment_7());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1580:1:
                     // ( rule__Parameter__DefaultValueAssignment_7 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1580:2:
                     // rule__Parameter__DefaultValueAssignment_7
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__Parameter__DefaultValueAssignment_7_in_rule__Parameter__Group__7__Impl3136);
-                        this.rule__Parameter__DefaultValueAssignment_7();
+                        rule__Parameter__DefaultValueAssignment_7();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getParameterAccess().getDefaultValueAssignment_7());
+                    this.after(grammarAccess.getParameterAccess().getDefaultValueAssignment_7());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__7__Impl"
 
     // $ANTLR start "rule__Parameter__Group__8"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1590:1:
-    // rule__Parameter__Group__8 : rule__Parameter__Group__8__Impl rule__Parameter__Group__9 ;
+    // rule__Parameter__Group__8 : rule__Parameter__Group__8__Impl
+    // rule__Parameter__Group__9 ;
     public final void rule__Parameter__Group__8() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1594:1:
@@ -4225,27 +4141,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1595:2:
             // rule__Parameter__Group__8__Impl rule__Parameter__Group__9
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__8__Impl_in_rule__Parameter__Group__83166);
-                this.rule__Parameter__Group__8__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__8__Impl_in_rule__Parameter__Group__83166);
+                rule__Parameter__Group__8__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Parameter__Group__9_in_rule__Parameter__Group__83169);
-                this.rule__Parameter__Group__9();
+                pushFollow(FOLLOW_rule__Parameter__Group__9_in_rule__Parameter__Group__83169);
+                rule__Parameter__Group__9();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__8"
 
@@ -4254,7 +4169,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__Group__8__Impl : ( ')' ) ;
     public final void rule__Parameter__Group__8__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1606:1:
@@ -4267,23 +4182,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1608:1:
                 // ')'
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getRightParenthesisKeyword_8());
-                    this.match(this.input, 21, FOLLOW_21_in_rule__Parameter__Group__8__Impl3197);
-                    this.after(this.grammarAccess.getParameterAccess().getRightParenthesisKeyword_8());
+                    this.before(grammarAccess.getParameterAccess().getRightParenthesisKeyword_8());
+                    match(input, 21, FOLLOW_21_in_rule__Parameter__Group__8__Impl3197);
+                    this.after(grammarAccess.getParameterAccess().getRightParenthesisKeyword_8());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__8__Impl"
 
@@ -4292,7 +4206,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__Group__9 : rule__Parameter__Group__9__Impl ;
     public final void rule__Parameter__Group__9() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1625:1:
@@ -4300,22 +4214,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1626:2:
             // rule__Parameter__Group__9__Impl
             {
-                this.pushFollow(FOLLOW_rule__Parameter__Group__9__Impl_in_rule__Parameter__Group__93228);
-                this.rule__Parameter__Group__9__Impl();
+                pushFollow(FOLLOW_rule__Parameter__Group__9__Impl_in_rule__Parameter__Group__93228);
+                rule__Parameter__Group__9__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__9"
 
@@ -4324,7 +4237,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__Group__9__Impl : ( ';' ) ;
     public final void rule__Parameter__Group__9__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1636:1:
@@ -4337,32 +4250,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1638:1:
                 // ';'
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getSemicolonKeyword_9());
-                    this.match(this.input, 16, FOLLOW_16_in_rule__Parameter__Group__9__Impl3256);
-                    this.after(this.grammarAccess.getParameterAccess().getSemicolonKeyword_9());
+                    this.before(grammarAccess.getParameterAccess().getSemicolonKeyword_9());
+                    match(input, 16, FOLLOW_16_in_rule__Parameter__Group__9__Impl3256);
+                    this.after(grammarAccess.getParameterAccess().getSemicolonKeyword_9());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__Group__9__Impl"
 
     // $ANTLR start "rule__Constant__Group__0"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1671:1:
-    // rule__Constant__Group__0 : rule__Constant__Group__0__Impl rule__Constant__Group__1 ;
+    // rule__Constant__Group__0 : rule__Constant__Group__0__Impl
+    // rule__Constant__Group__1 ;
     public final void rule__Constant__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1675:1:
@@ -4370,27 +4283,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1676:2:
             // rule__Constant__Group__0__Impl rule__Constant__Group__1
             {
-                this.pushFollow(FOLLOW_rule__Constant__Group__0__Impl_in_rule__Constant__Group__03307);
-                this.rule__Constant__Group__0__Impl();
+                pushFollow(FOLLOW_rule__Constant__Group__0__Impl_in_rule__Constant__Group__03307);
+                rule__Constant__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Constant__Group__1_in_rule__Constant__Group__03310);
-                this.rule__Constant__Group__1();
+                pushFollow(FOLLOW_rule__Constant__Group__1_in_rule__Constant__Group__03310);
+                rule__Constant__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__0"
 
@@ -4399,7 +4311,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Constant__Group__0__Impl : ( 'Const' ) ;
     public final void rule__Constant__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1687:1:
@@ -4412,32 +4324,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1689:1:
                 // 'Const'
                 {
-                    this.before(this.grammarAccess.getConstantAccess().getConstKeyword_0());
-                    this.match(this.input, 25, FOLLOW_25_in_rule__Constant__Group__0__Impl3338);
-                    this.after(this.grammarAccess.getConstantAccess().getConstKeyword_0());
+                    this.before(grammarAccess.getConstantAccess().getConstKeyword_0());
+                    match(input, 25, FOLLOW_25_in_rule__Constant__Group__0__Impl3338);
+                    this.after(grammarAccess.getConstantAccess().getConstKeyword_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__0__Impl"
 
     // $ANTLR start "rule__Constant__Group__1"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1702:1:
-    // rule__Constant__Group__1 : rule__Constant__Group__1__Impl rule__Constant__Group__2 ;
+    // rule__Constant__Group__1 : rule__Constant__Group__1__Impl
+    // rule__Constant__Group__2 ;
     public final void rule__Constant__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1706:1:
@@ -4445,27 +4357,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1707:2:
             // rule__Constant__Group__1__Impl rule__Constant__Group__2
             {
-                this.pushFollow(FOLLOW_rule__Constant__Group__1__Impl_in_rule__Constant__Group__13369);
-                this.rule__Constant__Group__1__Impl();
+                pushFollow(FOLLOW_rule__Constant__Group__1__Impl_in_rule__Constant__Group__13369);
+                rule__Constant__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Constant__Group__2_in_rule__Constant__Group__13372);
-                this.rule__Constant__Group__2();
+                pushFollow(FOLLOW_rule__Constant__Group__2_in_rule__Constant__Group__13372);
+                rule__Constant__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__1"
 
@@ -4474,7 +4385,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Constant__Group__1__Impl : ( ( rule__Constant__NameAssignment_1 ) ) ;
     public final void rule__Constant__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1718:1:
@@ -4487,43 +4398,43 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1720:1:
                 // ( rule__Constant__NameAssignment_1 )
                 {
-                    this.before(this.grammarAccess.getConstantAccess().getNameAssignment_1());
+                    this.before(grammarAccess.getConstantAccess().getNameAssignment_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1721:1:
                     // ( rule__Constant__NameAssignment_1 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1721:2:
                     // rule__Constant__NameAssignment_1
                     {
-                        this.pushFollow(FOLLOW_rule__Constant__NameAssignment_1_in_rule__Constant__Group__1__Impl3399);
-                        this.rule__Constant__NameAssignment_1();
+                        pushFollow(FOLLOW_rule__Constant__NameAssignment_1_in_rule__Constant__Group__1__Impl3399);
+                        rule__Constant__NameAssignment_1();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getConstantAccess().getNameAssignment_1());
+                    this.after(grammarAccess.getConstantAccess().getNameAssignment_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__1__Impl"
 
     // $ANTLR start "rule__Constant__Group__2"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1731:1:
-    // rule__Constant__Group__2 : rule__Constant__Group__2__Impl rule__Constant__Group__3 ;
+    // rule__Constant__Group__2 : rule__Constant__Group__2__Impl
+    // rule__Constant__Group__3 ;
     public final void rule__Constant__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1735:1:
@@ -4531,27 +4442,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1736:2:
             // rule__Constant__Group__2__Impl rule__Constant__Group__3
             {
-                this.pushFollow(FOLLOW_rule__Constant__Group__2__Impl_in_rule__Constant__Group__23429);
-                this.rule__Constant__Group__2__Impl();
+                pushFollow(FOLLOW_rule__Constant__Group__2__Impl_in_rule__Constant__Group__23429);
+                rule__Constant__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Constant__Group__3_in_rule__Constant__Group__23432);
-                this.rule__Constant__Group__3();
+                pushFollow(FOLLOW_rule__Constant__Group__3_in_rule__Constant__Group__23432);
+                rule__Constant__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__2"
 
@@ -4560,7 +4470,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Constant__Group__2__Impl : ( '=' ) ;
     public final void rule__Constant__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1747:1:
@@ -4573,32 +4483,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1749:1:
                 // '='
                 {
-                    this.before(this.grammarAccess.getConstantAccess().getEqualsSignKeyword_2());
-                    this.match(this.input, 26, FOLLOW_26_in_rule__Constant__Group__2__Impl3460);
-                    this.after(this.grammarAccess.getConstantAccess().getEqualsSignKeyword_2());
+                    this.before(grammarAccess.getConstantAccess().getEqualsSignKeyword_2());
+                    match(input, 26, FOLLOW_26_in_rule__Constant__Group__2__Impl3460);
+                    this.after(grammarAccess.getConstantAccess().getEqualsSignKeyword_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__2__Impl"
 
     // $ANTLR start "rule__Constant__Group__3"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1762:1:
-    // rule__Constant__Group__3 : rule__Constant__Group__3__Impl rule__Constant__Group__4 ;
+    // rule__Constant__Group__3 : rule__Constant__Group__3__Impl
+    // rule__Constant__Group__4 ;
     public final void rule__Constant__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1766:1:
@@ -4606,27 +4516,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1767:2:
             // rule__Constant__Group__3__Impl rule__Constant__Group__4
             {
-                this.pushFollow(FOLLOW_rule__Constant__Group__3__Impl_in_rule__Constant__Group__33491);
-                this.rule__Constant__Group__3__Impl();
+                pushFollow(FOLLOW_rule__Constant__Group__3__Impl_in_rule__Constant__Group__33491);
+                rule__Constant__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__Constant__Group__4_in_rule__Constant__Group__33494);
-                this.rule__Constant__Group__4();
+                pushFollow(FOLLOW_rule__Constant__Group__4_in_rule__Constant__Group__33494);
+                rule__Constant__Group__4();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__3"
 
@@ -4635,7 +4544,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Constant__Group__3__Impl : ( ( rule__Constant__ValueAssignment_3 ) ) ;
     public final void rule__Constant__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1778:1:
@@ -4648,34 +4557,33 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1780:1:
                 // ( rule__Constant__ValueAssignment_3 )
                 {
-                    this.before(this.grammarAccess.getConstantAccess().getValueAssignment_3());
+                    this.before(grammarAccess.getConstantAccess().getValueAssignment_3());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1781:1:
                     // ( rule__Constant__ValueAssignment_3 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1781:2:
                     // rule__Constant__ValueAssignment_3
                     {
-                        this.pushFollow(FOLLOW_rule__Constant__ValueAssignment_3_in_rule__Constant__Group__3__Impl3521);
-                        this.rule__Constant__ValueAssignment_3();
+                        pushFollow(FOLLOW_rule__Constant__ValueAssignment_3_in_rule__Constant__Group__3__Impl3521);
+                        rule__Constant__ValueAssignment_3();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getConstantAccess().getValueAssignment_3());
+                    this.after(grammarAccess.getConstantAccess().getValueAssignment_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__3__Impl"
 
@@ -4684,7 +4592,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Constant__Group__4 : rule__Constant__Group__4__Impl ;
     public final void rule__Constant__Group__4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1795:1:
@@ -4692,22 +4600,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1796:2:
             // rule__Constant__Group__4__Impl
             {
-                this.pushFollow(FOLLOW_rule__Constant__Group__4__Impl_in_rule__Constant__Group__43551);
-                this.rule__Constant__Group__4__Impl();
+                pushFollow(FOLLOW_rule__Constant__Group__4__Impl_in_rule__Constant__Group__43551);
+                rule__Constant__Group__4__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__4"
 
@@ -4716,7 +4623,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Constant__Group__4__Impl : ( ';' ) ;
     public final void rule__Constant__Group__4__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1806:1:
@@ -4729,23 +4636,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1808:1:
                 // ';'
                 {
-                    this.before(this.grammarAccess.getConstantAccess().getSemicolonKeyword_4());
-                    this.match(this.input, 16, FOLLOW_16_in_rule__Constant__Group__4__Impl3579);
-                    this.after(this.grammarAccess.getConstantAccess().getSemicolonKeyword_4());
+                    this.before(grammarAccess.getConstantAccess().getSemicolonKeyword_4());
+                    match(input, 16, FOLLOW_16_in_rule__Constant__Group__4__Impl3579);
+                    this.after(grammarAccess.getConstantAccess().getSemicolonKeyword_4());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__Group__4__Impl"
 
@@ -4755,7 +4661,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__WeightedMetric__Group__1 ;
     public final void rule__WeightedMetric__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1835:1:
@@ -4763,27 +4669,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1836:2:
             // rule__WeightedMetric__Group__0__Impl rule__WeightedMetric__Group__1
             {
-                this.pushFollow(FOLLOW_rule__WeightedMetric__Group__0__Impl_in_rule__WeightedMetric__Group__03620);
-                this.rule__WeightedMetric__Group__0__Impl();
+                pushFollow(FOLLOW_rule__WeightedMetric__Group__0__Impl_in_rule__WeightedMetric__Group__03620);
+                rule__WeightedMetric__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__WeightedMetric__Group__1_in_rule__WeightedMetric__Group__03623);
-                this.rule__WeightedMetric__Group__1();
+                pushFollow(FOLLOW_rule__WeightedMetric__Group__1_in_rule__WeightedMetric__Group__03623);
+                rule__WeightedMetric__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__Group__0"
 
@@ -4792,7 +4697,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__WeightedMetric__Group__0__Impl : ( 'WeigthedSum' ) ;
     public final void rule__WeightedMetric__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1847:1:
@@ -4805,23 +4710,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1849:1:
                 // 'WeigthedSum'
                 {
-                    this.before(this.grammarAccess.getWeightedMetricAccess().getWeigthedSumKeyword_0());
-                    this.match(this.input, 27, FOLLOW_27_in_rule__WeightedMetric__Group__0__Impl3651);
-                    this.after(this.grammarAccess.getWeightedMetricAccess().getWeigthedSumKeyword_0());
+                    this.before(grammarAccess.getWeightedMetricAccess().getWeigthedSumKeyword_0());
+                    match(input, 27, FOLLOW_27_in_rule__WeightedMetric__Group__0__Impl3651);
+                    this.after(grammarAccess.getWeightedMetricAccess().getWeigthedSumKeyword_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__Group__0__Impl"
 
@@ -4831,7 +4735,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__WeightedMetric__Group__2 ;
     public final void rule__WeightedMetric__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1866:1:
@@ -4839,27 +4743,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1867:2:
             // rule__WeightedMetric__Group__1__Impl rule__WeightedMetric__Group__2
             {
-                this.pushFollow(FOLLOW_rule__WeightedMetric__Group__1__Impl_in_rule__WeightedMetric__Group__13682);
-                this.rule__WeightedMetric__Group__1__Impl();
+                pushFollow(FOLLOW_rule__WeightedMetric__Group__1__Impl_in_rule__WeightedMetric__Group__13682);
+                rule__WeightedMetric__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__WeightedMetric__Group__2_in_rule__WeightedMetric__Group__13685);
-                this.rule__WeightedMetric__Group__2();
+                pushFollow(FOLLOW_rule__WeightedMetric__Group__2_in_rule__WeightedMetric__Group__13685);
+                rule__WeightedMetric__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__Group__1"
 
@@ -4868,7 +4771,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__WeightedMetric__Group__1__Impl : ( '{' ) ;
     public final void rule__WeightedMetric__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1878:1:
@@ -4881,23 +4784,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1880:1:
                 // '{'
                 {
-                    this.before(this.grammarAccess.getWeightedMetricAccess().getLeftCurlyBracketKeyword_1());
-                    this.match(this.input, 13, FOLLOW_13_in_rule__WeightedMetric__Group__1__Impl3713);
-                    this.after(this.grammarAccess.getWeightedMetricAccess().getLeftCurlyBracketKeyword_1());
+                    this.before(grammarAccess.getWeightedMetricAccess().getLeftCurlyBracketKeyword_1());
+                    match(input, 13, FOLLOW_13_in_rule__WeightedMetric__Group__1__Impl3713);
+                    this.after(grammarAccess.getWeightedMetricAccess().getLeftCurlyBracketKeyword_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__Group__1__Impl"
 
@@ -4907,7 +4809,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__WeightedMetric__Group__3 ;
     public final void rule__WeightedMetric__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1897:1:
@@ -4915,37 +4817,37 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1898:2:
             // rule__WeightedMetric__Group__2__Impl rule__WeightedMetric__Group__3
             {
-                this.pushFollow(FOLLOW_rule__WeightedMetric__Group__2__Impl_in_rule__WeightedMetric__Group__23744);
-                this.rule__WeightedMetric__Group__2__Impl();
+                pushFollow(FOLLOW_rule__WeightedMetric__Group__2__Impl_in_rule__WeightedMetric__Group__23744);
+                rule__WeightedMetric__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__WeightedMetric__Group__3_in_rule__WeightedMetric__Group__23747);
-                this.rule__WeightedMetric__Group__3();
+                pushFollow(FOLLOW_rule__WeightedMetric__Group__3_in_rule__WeightedMetric__Group__23747);
+                rule__WeightedMetric__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__Group__2"
 
     // $ANTLR start "rule__WeightedMetric__Group__2__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1905:1:
-    // rule__WeightedMetric__Group__2__Impl : ( ( ( rule__WeightedMetric__WeightsAssignment_2 ) ) (
+    // rule__WeightedMetric__Group__2__Impl : ( ( (
+    // rule__WeightedMetric__WeightsAssignment_2 ) ) (
     // ( rule__WeightedMetric__WeightsAssignment_2 )* ) ) ;
     public final void rule__WeightedMetric__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1909:1:
@@ -4967,21 +4869,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1912:1:
                     // ( rule__WeightedMetric__WeightsAssignment_2 )
                     {
-                        this.before(this.grammarAccess.getWeightedMetricAccess().getWeightsAssignment_2());
+                        this.before(grammarAccess.getWeightedMetricAccess().getWeightsAssignment_2());
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1913:1:
                         // ( rule__WeightedMetric__WeightsAssignment_2 )
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1913:2:
                         // rule__WeightedMetric__WeightsAssignment_2
                         {
-                            this.pushFollow(
+                            pushFollow(
                                     FOLLOW_rule__WeightedMetric__WeightsAssignment_2_in_rule__WeightedMetric__Group__2__Impl3776);
-                            this.rule__WeightedMetric__WeightsAssignment_2();
+                            rule__WeightedMetric__WeightsAssignment_2();
 
-                            this.state._fsp--;
+                            state._fsp--;
 
                         }
 
-                        this.after(this.grammarAccess.getWeightedMetricAccess().getWeightsAssignment_2());
+                        this.after(grammarAccess.getWeightedMetricAccess().getWeightsAssignment_2());
 
                     }
 
@@ -4990,12 +4892,12 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1917:1:
                     // ( rule__WeightedMetric__WeightsAssignment_2 )*
                     {
-                        this.before(this.grammarAccess.getWeightedMetricAccess().getWeightsAssignment_2());
+                        this.before(grammarAccess.getWeightedMetricAccess().getWeightsAssignment_2());
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1918:1:
                         // ( rule__WeightedMetric__WeightsAssignment_2 )*
                         loop8: do {
                             int alt8 = 2;
-                            final int LA8_0 = this.input.LA(1);
+                            final int LA8_0 = input.LA(1);
 
                             if ((LA8_0 == 33)) {
                                 alt8 = 1;
@@ -5006,11 +4908,11 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1918:2:
                             // rule__WeightedMetric__WeightsAssignment_2
                             {
-                                this.pushFollow(
+                                pushFollow(
                                         FOLLOW_rule__WeightedMetric__WeightsAssignment_2_in_rule__WeightedMetric__Group__2__Impl3788);
-                                this.rule__WeightedMetric__WeightsAssignment_2();
+                                rule__WeightedMetric__WeightsAssignment_2();
 
-                                this.state._fsp--;
+                                state._fsp--;
 
                             }
                                 break;
@@ -5020,7 +4922,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                             }
                         } while (true);
 
-                        this.after(this.grammarAccess.getWeightedMetricAccess().getWeightsAssignment_2());
+                        this.after(grammarAccess.getWeightedMetricAccess().getWeightsAssignment_2());
 
                     }
 
@@ -5029,14 +4931,13 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__Group__2__Impl"
 
@@ -5045,7 +4946,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__WeightedMetric__Group__3 : rule__WeightedMetric__Group__3__Impl ;
     public final void rule__WeightedMetric__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1933:1:
@@ -5053,22 +4954,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1934:2:
             // rule__WeightedMetric__Group__3__Impl
             {
-                this.pushFollow(FOLLOW_rule__WeightedMetric__Group__3__Impl_in_rule__WeightedMetric__Group__33821);
-                this.rule__WeightedMetric__Group__3__Impl();
+                pushFollow(FOLLOW_rule__WeightedMetric__Group__3__Impl_in_rule__WeightedMetric__Group__33821);
+                rule__WeightedMetric__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__Group__3"
 
@@ -5077,7 +4977,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__WeightedMetric__Group__3__Impl : ( '}' ) ;
     public final void rule__WeightedMetric__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1944:1:
@@ -5090,23 +4990,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1946:1:
                 // '}'
                 {
-                    this.before(this.grammarAccess.getWeightedMetricAccess().getRightCurlyBracketKeyword_3());
-                    this.match(this.input, 14, FOLLOW_14_in_rule__WeightedMetric__Group__3__Impl3849);
-                    this.after(this.grammarAccess.getWeightedMetricAccess().getRightCurlyBracketKeyword_3());
+                    this.before(grammarAccess.getWeightedMetricAccess().getRightCurlyBracketKeyword_3());
+                    match(input, 14, FOLLOW_14_in_rule__WeightedMetric__Group__3__Impl3849);
+                    this.after(grammarAccess.getWeightedMetricAccess().getRightCurlyBracketKeyword_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__Group__3__Impl"
 
@@ -5116,7 +5015,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__1 ;
     public final void rule__StepwiseMetric__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1971:1:
@@ -5124,27 +5023,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1972:2:
             // rule__StepwiseMetric__Group__0__Impl rule__StepwiseMetric__Group__1
             {
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__0__Impl_in_rule__StepwiseMetric__Group__03888);
-                this.rule__StepwiseMetric__Group__0__Impl();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__0__Impl_in_rule__StepwiseMetric__Group__03888);
+                rule__StepwiseMetric__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__1_in_rule__StepwiseMetric__Group__03891);
-                this.rule__StepwiseMetric__Group__1();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__1_in_rule__StepwiseMetric__Group__03891);
+                rule__StepwiseMetric__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__0"
 
@@ -5153,7 +5051,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__0__Impl : ( 'Stepwise' ) ;
     public final void rule__StepwiseMetric__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1983:1:
@@ -5166,23 +5064,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:1985:1:
                 // 'Stepwise'
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getStepwiseKeyword_0());
-                    this.match(this.input, 28, FOLLOW_28_in_rule__StepwiseMetric__Group__0__Impl3919);
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getStepwiseKeyword_0());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getStepwiseKeyword_0());
+                    match(input, 28, FOLLOW_28_in_rule__StepwiseMetric__Group__0__Impl3919);
+                    this.after(grammarAccess.getStepwiseMetricAccess().getStepwiseKeyword_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__0__Impl"
 
@@ -5192,7 +5089,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__2 ;
     public final void rule__StepwiseMetric__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2002:1:
@@ -5200,27 +5097,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2003:2:
             // rule__StepwiseMetric__Group__1__Impl rule__StepwiseMetric__Group__2
             {
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__1__Impl_in_rule__StepwiseMetric__Group__13950);
-                this.rule__StepwiseMetric__Group__1__Impl();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__1__Impl_in_rule__StepwiseMetric__Group__13950);
+                rule__StepwiseMetric__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__2_in_rule__StepwiseMetric__Group__13953);
-                this.rule__StepwiseMetric__Group__2();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__2_in_rule__StepwiseMetric__Group__13953);
+                rule__StepwiseMetric__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__1"
 
@@ -5229,7 +5125,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__1__Impl : ( '[' ) ;
     public final void rule__StepwiseMetric__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2014:1:
@@ -5242,23 +5138,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2016:1:
                 // '['
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getLeftSquareBracketKeyword_1());
-                    this.match(this.input, 29, FOLLOW_29_in_rule__StepwiseMetric__Group__1__Impl3981);
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getLeftSquareBracketKeyword_1());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getLeftSquareBracketKeyword_1());
+                    match(input, 29, FOLLOW_29_in_rule__StepwiseMetric__Group__1__Impl3981);
+                    this.after(grammarAccess.getStepwiseMetricAccess().getLeftSquareBracketKeyword_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__1__Impl"
 
@@ -5268,7 +5163,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__3 ;
     public final void rule__StepwiseMetric__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2033:1:
@@ -5276,37 +5171,37 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2034:2:
             // rule__StepwiseMetric__Group__2__Impl rule__StepwiseMetric__Group__3
             {
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__2__Impl_in_rule__StepwiseMetric__Group__24012);
-                this.rule__StepwiseMetric__Group__2__Impl();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__2__Impl_in_rule__StepwiseMetric__Group__24012);
+                rule__StepwiseMetric__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__3_in_rule__StepwiseMetric__Group__24015);
-                this.rule__StepwiseMetric__Group__3();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__3_in_rule__StepwiseMetric__Group__24015);
+                rule__StepwiseMetric__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__2"
 
     // $ANTLR start "rule__StepwiseMetric__Group__2__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2041:1:
-    // rule__StepwiseMetric__Group__2__Impl : ( ( rule__StepwiseMetric__InnerMetricAssignment_2 ) )
+    // rule__StepwiseMetric__Group__2__Impl : ( (
+    // rule__StepwiseMetric__InnerMetricAssignment_2 ) )
     // ;
     public final void rule__StepwiseMetric__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2045:1:
@@ -5319,35 +5214,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2047:1:
                 // ( rule__StepwiseMetric__InnerMetricAssignment_2 )
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getInnerMetricAssignment_2());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getInnerMetricAssignment_2());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2048:1:
                     // ( rule__StepwiseMetric__InnerMetricAssignment_2 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2048:2:
                     // rule__StepwiseMetric__InnerMetricAssignment_2
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__StepwiseMetric__InnerMetricAssignment_2_in_rule__StepwiseMetric__Group__2__Impl4042);
-                        this.rule__StepwiseMetric__InnerMetricAssignment_2();
+                        rule__StepwiseMetric__InnerMetricAssignment_2();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getInnerMetricAssignment_2());
+                    this.after(grammarAccess.getStepwiseMetricAccess().getInnerMetricAssignment_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__2__Impl"
 
@@ -5357,7 +5251,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__4 ;
     public final void rule__StepwiseMetric__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2062:1:
@@ -5365,27 +5259,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2063:2:
             // rule__StepwiseMetric__Group__3__Impl rule__StepwiseMetric__Group__4
             {
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__3__Impl_in_rule__StepwiseMetric__Group__34072);
-                this.rule__StepwiseMetric__Group__3__Impl();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__3__Impl_in_rule__StepwiseMetric__Group__34072);
+                rule__StepwiseMetric__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__4_in_rule__StepwiseMetric__Group__34075);
-                this.rule__StepwiseMetric__Group__4();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__4_in_rule__StepwiseMetric__Group__34075);
+                rule__StepwiseMetric__Group__4();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__3"
 
@@ -5394,7 +5287,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__3__Impl : ( ']' ) ;
     public final void rule__StepwiseMetric__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2074:1:
@@ -5407,23 +5300,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2076:1:
                 // ']'
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getRightSquareBracketKeyword_3());
-                    this.match(this.input, 30, FOLLOW_30_in_rule__StepwiseMetric__Group__3__Impl4103);
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getRightSquareBracketKeyword_3());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getRightSquareBracketKeyword_3());
+                    match(input, 30, FOLLOW_30_in_rule__StepwiseMetric__Group__3__Impl4103);
+                    this.after(grammarAccess.getStepwiseMetricAccess().getRightSquareBracketKeyword_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__3__Impl"
 
@@ -5433,7 +5325,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__5 ;
     public final void rule__StepwiseMetric__Group__4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2093:1:
@@ -5441,27 +5333,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2094:2:
             // rule__StepwiseMetric__Group__4__Impl rule__StepwiseMetric__Group__5
             {
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__4__Impl_in_rule__StepwiseMetric__Group__44134);
-                this.rule__StepwiseMetric__Group__4__Impl();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__4__Impl_in_rule__StepwiseMetric__Group__44134);
+                rule__StepwiseMetric__Group__4__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__5_in_rule__StepwiseMetric__Group__44137);
-                this.rule__StepwiseMetric__Group__5();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__5_in_rule__StepwiseMetric__Group__44137);
+                rule__StepwiseMetric__Group__5();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__4"
 
@@ -5470,7 +5361,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__4__Impl : ( '{' ) ;
     public final void rule__StepwiseMetric__Group__4__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2105:1:
@@ -5483,23 +5374,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2107:1:
                 // '{'
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getLeftCurlyBracketKeyword_4());
-                    this.match(this.input, 13, FOLLOW_13_in_rule__StepwiseMetric__Group__4__Impl4165);
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getLeftCurlyBracketKeyword_4());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getLeftCurlyBracketKeyword_4());
+                    match(input, 13, FOLLOW_13_in_rule__StepwiseMetric__Group__4__Impl4165);
+                    this.after(grammarAccess.getStepwiseMetricAccess().getLeftCurlyBracketKeyword_4());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__4__Impl"
 
@@ -5509,7 +5399,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__6 ;
     public final void rule__StepwiseMetric__Group__5() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2124:1:
@@ -5517,36 +5407,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2125:2:
             // rule__StepwiseMetric__Group__5__Impl rule__StepwiseMetric__Group__6
             {
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__5__Impl_in_rule__StepwiseMetric__Group__54196);
-                this.rule__StepwiseMetric__Group__5__Impl();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__5__Impl_in_rule__StepwiseMetric__Group__54196);
+                rule__StepwiseMetric__Group__5__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__6_in_rule__StepwiseMetric__Group__54199);
-                this.rule__StepwiseMetric__Group__6();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__6_in_rule__StepwiseMetric__Group__54199);
+                rule__StepwiseMetric__Group__6();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__5"
 
     // $ANTLR start "rule__StepwiseMetric__Group__5__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2132:1:
-    // rule__StepwiseMetric__Group__5__Impl : ( ( rule__StepwiseMetric__StepsAssignment_5 )* ) ;
+    // rule__StepwiseMetric__Group__5__Impl : ( (
+    // rule__StepwiseMetric__StepsAssignment_5 )* ) ;
     public final void rule__StepwiseMetric__Group__5__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2136:1:
@@ -5559,12 +5449,12 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2138:1:
                 // ( rule__StepwiseMetric__StepsAssignment_5 )*
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getStepsAssignment_5());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getStepsAssignment_5());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2139:1:
                     // ( rule__StepwiseMetric__StepsAssignment_5 )*
                     loop9: do {
                         int alt9 = 2;
-                        final int LA9_0 = this.input.LA(1);
+                        final int LA9_0 = input.LA(1);
 
                         if ((LA9_0 == 33)) {
                             alt9 = 1;
@@ -5575,11 +5465,11 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2139:2:
                         // rule__StepwiseMetric__StepsAssignment_5
                         {
-                            this.pushFollow(
+                            pushFollow(
                                     FOLLOW_rule__StepwiseMetric__StepsAssignment_5_in_rule__StepwiseMetric__Group__5__Impl4226);
-                            this.rule__StepwiseMetric__StepsAssignment_5();
+                            rule__StepwiseMetric__StepsAssignment_5();
 
-                            this.state._fsp--;
+                            state._fsp--;
 
                         }
                             break;
@@ -5589,21 +5479,20 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         }
                     } while (true);
 
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getStepsAssignment_5());
+                    this.after(grammarAccess.getStepwiseMetricAccess().getStepsAssignment_5());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__5__Impl"
 
@@ -5612,7 +5501,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__6 : rule__StepwiseMetric__Group__6__Impl ;
     public final void rule__StepwiseMetric__Group__6() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2153:1:
@@ -5620,22 +5509,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2154:2:
             // rule__StepwiseMetric__Group__6__Impl
             {
-                this.pushFollow(FOLLOW_rule__StepwiseMetric__Group__6__Impl_in_rule__StepwiseMetric__Group__64257);
-                this.rule__StepwiseMetric__Group__6__Impl();
+                pushFollow(FOLLOW_rule__StepwiseMetric__Group__6__Impl_in_rule__StepwiseMetric__Group__64257);
+                rule__StepwiseMetric__Group__6__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__6"
 
@@ -5644,7 +5532,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__Group__6__Impl : ( '}' ) ;
     public final void rule__StepwiseMetric__Group__6__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2164:1:
@@ -5657,32 +5545,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2166:1:
                 // '}'
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getRightCurlyBracketKeyword_6());
-                    this.match(this.input, 14, FOLLOW_14_in_rule__StepwiseMetric__Group__6__Impl4285);
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getRightCurlyBracketKeyword_6());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getRightCurlyBracketKeyword_6());
+                    match(input, 14, FOLLOW_14_in_rule__StepwiseMetric__Group__6__Impl4285);
+                    this.after(grammarAccess.getStepwiseMetricAccess().getRightCurlyBracketKeyword_6());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__Group__6__Impl"
 
     // $ANTLR start "rule__RatioMetric__Group__0"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2193:1:
-    // rule__RatioMetric__Group__0 : rule__RatioMetric__Group__0__Impl rule__RatioMetric__Group__1 ;
+    // rule__RatioMetric__Group__0 : rule__RatioMetric__Group__0__Impl
+    // rule__RatioMetric__Group__1 ;
     public final void rule__RatioMetric__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2197:1:
@@ -5690,27 +5578,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2198:2:
             // rule__RatioMetric__Group__0__Impl rule__RatioMetric__Group__1
             {
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__0__Impl_in_rule__RatioMetric__Group__04330);
-                this.rule__RatioMetric__Group__0__Impl();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__0__Impl_in_rule__RatioMetric__Group__04330);
+                rule__RatioMetric__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__1_in_rule__RatioMetric__Group__04333);
-                this.rule__RatioMetric__Group__1();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__1_in_rule__RatioMetric__Group__04333);
+                rule__RatioMetric__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__0"
 
@@ -5719,7 +5606,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__RatioMetric__Group__0__Impl : ( 'Ratio' ) ;
     public final void rule__RatioMetric__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2209:1:
@@ -5732,32 +5619,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2211:1:
                 // 'Ratio'
                 {
-                    this.before(this.grammarAccess.getRatioMetricAccess().getRatioKeyword_0());
-                    this.match(this.input, 31, FOLLOW_31_in_rule__RatioMetric__Group__0__Impl4361);
-                    this.after(this.grammarAccess.getRatioMetricAccess().getRatioKeyword_0());
+                    this.before(grammarAccess.getRatioMetricAccess().getRatioKeyword_0());
+                    match(input, 31, FOLLOW_31_in_rule__RatioMetric__Group__0__Impl4361);
+                    this.after(grammarAccess.getRatioMetricAccess().getRatioKeyword_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__0__Impl"
 
     // $ANTLR start "rule__RatioMetric__Group__1"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2224:1:
-    // rule__RatioMetric__Group__1 : rule__RatioMetric__Group__1__Impl rule__RatioMetric__Group__2 ;
+    // rule__RatioMetric__Group__1 : rule__RatioMetric__Group__1__Impl
+    // rule__RatioMetric__Group__2 ;
     public final void rule__RatioMetric__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2228:1:
@@ -5765,27 +5652,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2229:2:
             // rule__RatioMetric__Group__1__Impl rule__RatioMetric__Group__2
             {
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__1__Impl_in_rule__RatioMetric__Group__14392);
-                this.rule__RatioMetric__Group__1__Impl();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__1__Impl_in_rule__RatioMetric__Group__14392);
+                rule__RatioMetric__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__2_in_rule__RatioMetric__Group__14395);
-                this.rule__RatioMetric__Group__2();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__2_in_rule__RatioMetric__Group__14395);
+                rule__RatioMetric__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__1"
 
@@ -5794,7 +5680,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__RatioMetric__Group__1__Impl : ( '{' ) ;
     public final void rule__RatioMetric__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2240:1:
@@ -5807,32 +5693,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2242:1:
                 // '{'
                 {
-                    this.before(this.grammarAccess.getRatioMetricAccess().getLeftCurlyBracketKeyword_1());
-                    this.match(this.input, 13, FOLLOW_13_in_rule__RatioMetric__Group__1__Impl4423);
-                    this.after(this.grammarAccess.getRatioMetricAccess().getLeftCurlyBracketKeyword_1());
+                    this.before(grammarAccess.getRatioMetricAccess().getLeftCurlyBracketKeyword_1());
+                    match(input, 13, FOLLOW_13_in_rule__RatioMetric__Group__1__Impl4423);
+                    this.after(grammarAccess.getRatioMetricAccess().getLeftCurlyBracketKeyword_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__1__Impl"
 
     // $ANTLR start "rule__RatioMetric__Group__2"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2255:1:
-    // rule__RatioMetric__Group__2 : rule__RatioMetric__Group__2__Impl rule__RatioMetric__Group__3 ;
+    // rule__RatioMetric__Group__2 : rule__RatioMetric__Group__2__Impl
+    // rule__RatioMetric__Group__3 ;
     public final void rule__RatioMetric__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2259:1:
@@ -5840,36 +5726,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2260:2:
             // rule__RatioMetric__Group__2__Impl rule__RatioMetric__Group__3
             {
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__2__Impl_in_rule__RatioMetric__Group__24454);
-                this.rule__RatioMetric__Group__2__Impl();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__2__Impl_in_rule__RatioMetric__Group__24454);
+                rule__RatioMetric__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__3_in_rule__RatioMetric__Group__24457);
-                this.rule__RatioMetric__Group__3();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__3_in_rule__RatioMetric__Group__24457);
+                rule__RatioMetric__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__2"
 
     // $ANTLR start "rule__RatioMetric__Group__2__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2267:1:
-    // rule__RatioMetric__Group__2__Impl : ( ( rule__RatioMetric__NominatorMetricAssignment_2 ) ) ;
+    // rule__RatioMetric__Group__2__Impl : ( (
+    // rule__RatioMetric__NominatorMetricAssignment_2 ) ) ;
     public final void rule__RatioMetric__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2271:1:
@@ -5882,44 +5768,44 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2273:1:
                 // ( rule__RatioMetric__NominatorMetricAssignment_2 )
                 {
-                    this.before(this.grammarAccess.getRatioMetricAccess().getNominatorMetricAssignment_2());
+                    this.before(grammarAccess.getRatioMetricAccess().getNominatorMetricAssignment_2());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2274:1:
                     // ( rule__RatioMetric__NominatorMetricAssignment_2 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2274:2:
                     // rule__RatioMetric__NominatorMetricAssignment_2
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__RatioMetric__NominatorMetricAssignment_2_in_rule__RatioMetric__Group__2__Impl4484);
-                        this.rule__RatioMetric__NominatorMetricAssignment_2();
+                        rule__RatioMetric__NominatorMetricAssignment_2();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getRatioMetricAccess().getNominatorMetricAssignment_2());
+                    this.after(grammarAccess.getRatioMetricAccess().getNominatorMetricAssignment_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__2__Impl"
 
     // $ANTLR start "rule__RatioMetric__Group__3"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2284:1:
-    // rule__RatioMetric__Group__3 : rule__RatioMetric__Group__3__Impl rule__RatioMetric__Group__4 ;
+    // rule__RatioMetric__Group__3 : rule__RatioMetric__Group__3__Impl
+    // rule__RatioMetric__Group__4 ;
     public final void rule__RatioMetric__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2288:1:
@@ -5927,27 +5813,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2289:2:
             // rule__RatioMetric__Group__3__Impl rule__RatioMetric__Group__4
             {
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__3__Impl_in_rule__RatioMetric__Group__34514);
-                this.rule__RatioMetric__Group__3__Impl();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__3__Impl_in_rule__RatioMetric__Group__34514);
+                rule__RatioMetric__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__4_in_rule__RatioMetric__Group__34517);
-                this.rule__RatioMetric__Group__4();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__4_in_rule__RatioMetric__Group__34517);
+                rule__RatioMetric__Group__4();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__3"
 
@@ -5956,7 +5841,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__RatioMetric__Group__3__Impl : ( '/' ) ;
     public final void rule__RatioMetric__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2300:1:
@@ -5969,32 +5854,32 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2302:1:
                 // '/'
                 {
-                    this.before(this.grammarAccess.getRatioMetricAccess().getSolidusKeyword_3());
-                    this.match(this.input, 32, FOLLOW_32_in_rule__RatioMetric__Group__3__Impl4545);
-                    this.after(this.grammarAccess.getRatioMetricAccess().getSolidusKeyword_3());
+                    this.before(grammarAccess.getRatioMetricAccess().getSolidusKeyword_3());
+                    match(input, 32, FOLLOW_32_in_rule__RatioMetric__Group__3__Impl4545);
+                    this.after(grammarAccess.getRatioMetricAccess().getSolidusKeyword_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__3__Impl"
 
     // $ANTLR start "rule__RatioMetric__Group__4"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2315:1:
-    // rule__RatioMetric__Group__4 : rule__RatioMetric__Group__4__Impl rule__RatioMetric__Group__5 ;
+    // rule__RatioMetric__Group__4 : rule__RatioMetric__Group__4__Impl
+    // rule__RatioMetric__Group__5 ;
     public final void rule__RatioMetric__Group__4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2319:1:
@@ -6002,37 +5887,37 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2320:2:
             // rule__RatioMetric__Group__4__Impl rule__RatioMetric__Group__5
             {
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__4__Impl_in_rule__RatioMetric__Group__44576);
-                this.rule__RatioMetric__Group__4__Impl();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__4__Impl_in_rule__RatioMetric__Group__44576);
+                rule__RatioMetric__Group__4__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__5_in_rule__RatioMetric__Group__44579);
-                this.rule__RatioMetric__Group__5();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__5_in_rule__RatioMetric__Group__44579);
+                rule__RatioMetric__Group__5();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__4"
 
     // $ANTLR start "rule__RatioMetric__Group__4__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2327:1:
-    // rule__RatioMetric__Group__4__Impl : ( ( rule__RatioMetric__DenominatorMetricAssignment_4 ) )
+    // rule__RatioMetric__Group__4__Impl : ( (
+    // rule__RatioMetric__DenominatorMetricAssignment_4 ) )
     // ;
     public final void rule__RatioMetric__Group__4__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2331:1:
@@ -6045,35 +5930,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2333:1:
                 // ( rule__RatioMetric__DenominatorMetricAssignment_4 )
                 {
-                    this.before(this.grammarAccess.getRatioMetricAccess().getDenominatorMetricAssignment_4());
+                    this.before(grammarAccess.getRatioMetricAccess().getDenominatorMetricAssignment_4());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2334:1:
                     // ( rule__RatioMetric__DenominatorMetricAssignment_4 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2334:2:
                     // rule__RatioMetric__DenominatorMetricAssignment_4
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__RatioMetric__DenominatorMetricAssignment_4_in_rule__RatioMetric__Group__4__Impl4606);
-                        this.rule__RatioMetric__DenominatorMetricAssignment_4();
+                        rule__RatioMetric__DenominatorMetricAssignment_4();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getRatioMetricAccess().getDenominatorMetricAssignment_4());
+                    this.after(grammarAccess.getRatioMetricAccess().getDenominatorMetricAssignment_4());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__4__Impl"
 
@@ -6082,7 +5966,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__RatioMetric__Group__5 : rule__RatioMetric__Group__5__Impl ;
     public final void rule__RatioMetric__Group__5() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2348:1:
@@ -6090,22 +5974,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2349:2:
             // rule__RatioMetric__Group__5__Impl
             {
-                this.pushFollow(FOLLOW_rule__RatioMetric__Group__5__Impl_in_rule__RatioMetric__Group__54636);
-                this.rule__RatioMetric__Group__5__Impl();
+                pushFollow(FOLLOW_rule__RatioMetric__Group__5__Impl_in_rule__RatioMetric__Group__54636);
+                rule__RatioMetric__Group__5__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__5"
 
@@ -6114,7 +5997,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__RatioMetric__Group__5__Impl : ( '}' ) ;
     public final void rule__RatioMetric__Group__5__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2359:1:
@@ -6127,23 +6010,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2361:1:
                 // '}'
                 {
-                    this.before(this.grammarAccess.getRatioMetricAccess().getRightCurlyBracketKeyword_5());
-                    this.match(this.input, 14, FOLLOW_14_in_rule__RatioMetric__Group__5__Impl4664);
-                    this.after(this.grammarAccess.getRatioMetricAccess().getRightCurlyBracketKeyword_5());
+                    this.before(grammarAccess.getRatioMetricAccess().getRightCurlyBracketKeyword_5());
+                    match(input, 14, FOLLOW_14_in_rule__RatioMetric__Group__5__Impl4664);
+                    this.after(grammarAccess.getRatioMetricAccess().getRightCurlyBracketKeyword_5());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__Group__5__Impl"
 
@@ -6153,7 +6035,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__Group__1 ;
     public final void rule__BoundAndWeight__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2390:1:
@@ -6161,27 +6043,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2391:2:
             // rule__BoundAndWeight__Group__0__Impl rule__BoundAndWeight__Group__1
             {
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__0__Impl_in_rule__BoundAndWeight__Group__04707);
-                this.rule__BoundAndWeight__Group__0__Impl();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__0__Impl_in_rule__BoundAndWeight__Group__04707);
+                rule__BoundAndWeight__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__1_in_rule__BoundAndWeight__Group__04710);
-                this.rule__BoundAndWeight__Group__1();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__1_in_rule__BoundAndWeight__Group__04710);
+                rule__BoundAndWeight__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__0"
 
@@ -6190,7 +6071,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__Group__0__Impl : ( '<' ) ;
     public final void rule__BoundAndWeight__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2402:1:
@@ -6203,23 +6084,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2404:1:
                 // '<'
                 {
-                    this.before(this.grammarAccess.getBoundAndWeightAccess().getLessThanSignKeyword_0());
-                    this.match(this.input, 33, FOLLOW_33_in_rule__BoundAndWeight__Group__0__Impl4738);
-                    this.after(this.grammarAccess.getBoundAndWeightAccess().getLessThanSignKeyword_0());
+                    this.before(grammarAccess.getBoundAndWeightAccess().getLessThanSignKeyword_0());
+                    match(input, 33, FOLLOW_33_in_rule__BoundAndWeight__Group__0__Impl4738);
+                    this.after(grammarAccess.getBoundAndWeightAccess().getLessThanSignKeyword_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__0__Impl"
 
@@ -6229,7 +6109,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__Group__2 ;
     public final void rule__BoundAndWeight__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2421:1:
@@ -6237,36 +6117,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2422:2:
             // rule__BoundAndWeight__Group__1__Impl rule__BoundAndWeight__Group__2
             {
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__1__Impl_in_rule__BoundAndWeight__Group__14769);
-                this.rule__BoundAndWeight__Group__1__Impl();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__1__Impl_in_rule__BoundAndWeight__Group__14769);
+                rule__BoundAndWeight__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__2_in_rule__BoundAndWeight__Group__14772);
-                this.rule__BoundAndWeight__Group__2();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__2_in_rule__BoundAndWeight__Group__14772);
+                rule__BoundAndWeight__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__1"
 
     // $ANTLR start "rule__BoundAndWeight__Group__1__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2429:1:
-    // rule__BoundAndWeight__Group__1__Impl : ( ( rule__BoundAndWeight__UpperBoundAssignment_1 ) ) ;
+    // rule__BoundAndWeight__Group__1__Impl : ( (
+    // rule__BoundAndWeight__UpperBoundAssignment_1 ) ) ;
     public final void rule__BoundAndWeight__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2433:1:
@@ -6279,35 +6159,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2435:1:
                 // ( rule__BoundAndWeight__UpperBoundAssignment_1 )
                 {
-                    this.before(this.grammarAccess.getBoundAndWeightAccess().getUpperBoundAssignment_1());
+                    this.before(grammarAccess.getBoundAndWeightAccess().getUpperBoundAssignment_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2436:1:
                     // ( rule__BoundAndWeight__UpperBoundAssignment_1 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2436:2:
                     // rule__BoundAndWeight__UpperBoundAssignment_1
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__BoundAndWeight__UpperBoundAssignment_1_in_rule__BoundAndWeight__Group__1__Impl4799);
-                        this.rule__BoundAndWeight__UpperBoundAssignment_1();
+                        rule__BoundAndWeight__UpperBoundAssignment_1();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getBoundAndWeightAccess().getUpperBoundAssignment_1());
+                    this.after(grammarAccess.getBoundAndWeightAccess().getUpperBoundAssignment_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__1__Impl"
 
@@ -6317,7 +6196,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__Group__3 ;
     public final void rule__BoundAndWeight__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2450:1:
@@ -6325,27 +6204,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2451:2:
             // rule__BoundAndWeight__Group__2__Impl rule__BoundAndWeight__Group__3
             {
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__2__Impl_in_rule__BoundAndWeight__Group__24829);
-                this.rule__BoundAndWeight__Group__2__Impl();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__2__Impl_in_rule__BoundAndWeight__Group__24829);
+                rule__BoundAndWeight__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__3_in_rule__BoundAndWeight__Group__24832);
-                this.rule__BoundAndWeight__Group__3();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__3_in_rule__BoundAndWeight__Group__24832);
+                rule__BoundAndWeight__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__2"
 
@@ -6354,7 +6232,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__Group__2__Impl : ( ',' ) ;
     public final void rule__BoundAndWeight__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2462:1:
@@ -6367,23 +6245,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2464:1:
                 // ','
                 {
-                    this.before(this.grammarAccess.getBoundAndWeightAccess().getCommaKeyword_2());
-                    this.match(this.input, 20, FOLLOW_20_in_rule__BoundAndWeight__Group__2__Impl4860);
-                    this.after(this.grammarAccess.getBoundAndWeightAccess().getCommaKeyword_2());
+                    this.before(grammarAccess.getBoundAndWeightAccess().getCommaKeyword_2());
+                    match(input, 20, FOLLOW_20_in_rule__BoundAndWeight__Group__2__Impl4860);
+                    this.after(grammarAccess.getBoundAndWeightAccess().getCommaKeyword_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__2__Impl"
 
@@ -6393,7 +6270,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__Group__4 ;
     public final void rule__BoundAndWeight__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2481:1:
@@ -6401,36 +6278,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2482:2:
             // rule__BoundAndWeight__Group__3__Impl rule__BoundAndWeight__Group__4
             {
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__3__Impl_in_rule__BoundAndWeight__Group__34891);
-                this.rule__BoundAndWeight__Group__3__Impl();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__3__Impl_in_rule__BoundAndWeight__Group__34891);
+                rule__BoundAndWeight__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__4_in_rule__BoundAndWeight__Group__34894);
-                this.rule__BoundAndWeight__Group__4();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__4_in_rule__BoundAndWeight__Group__34894);
+                rule__BoundAndWeight__Group__4();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__3"
 
     // $ANTLR start "rule__BoundAndWeight__Group__3__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2489:1:
-    // rule__BoundAndWeight__Group__3__Impl : ( ( rule__BoundAndWeight__WeightAssignment_3 ) ) ;
+    // rule__BoundAndWeight__Group__3__Impl : ( (
+    // rule__BoundAndWeight__WeightAssignment_3 ) ) ;
     public final void rule__BoundAndWeight__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2493:1:
@@ -6443,35 +6320,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2495:1:
                 // ( rule__BoundAndWeight__WeightAssignment_3 )
                 {
-                    this.before(this.grammarAccess.getBoundAndWeightAccess().getWeightAssignment_3());
+                    this.before(grammarAccess.getBoundAndWeightAccess().getWeightAssignment_3());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2496:1:
                     // ( rule__BoundAndWeight__WeightAssignment_3 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2496:2:
                     // rule__BoundAndWeight__WeightAssignment_3
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__BoundAndWeight__WeightAssignment_3_in_rule__BoundAndWeight__Group__3__Impl4921);
-                        this.rule__BoundAndWeight__WeightAssignment_3();
+                        rule__BoundAndWeight__WeightAssignment_3();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getBoundAndWeightAccess().getWeightAssignment_3());
+                    this.after(grammarAccess.getBoundAndWeightAccess().getWeightAssignment_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__3__Impl"
 
@@ -6480,7 +6356,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__Group__4 : rule__BoundAndWeight__Group__4__Impl ;
     public final void rule__BoundAndWeight__Group__4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2510:1:
@@ -6488,22 +6364,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2511:2:
             // rule__BoundAndWeight__Group__4__Impl
             {
-                this.pushFollow(FOLLOW_rule__BoundAndWeight__Group__4__Impl_in_rule__BoundAndWeight__Group__44951);
-                this.rule__BoundAndWeight__Group__4__Impl();
+                pushFollow(FOLLOW_rule__BoundAndWeight__Group__4__Impl_in_rule__BoundAndWeight__Group__44951);
+                rule__BoundAndWeight__Group__4__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__4"
 
@@ -6512,7 +6387,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__Group__4__Impl : ( '>' ) ;
     public final void rule__BoundAndWeight__Group__4__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2521:1:
@@ -6525,23 +6400,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2523:1:
                 // '>'
                 {
-                    this.before(this.grammarAccess.getBoundAndWeightAccess().getGreaterThanSignKeyword_4());
-                    this.match(this.input, 34, FOLLOW_34_in_rule__BoundAndWeight__Group__4__Impl4979);
-                    this.after(this.grammarAccess.getBoundAndWeightAccess().getGreaterThanSignKeyword_4());
+                    this.before(grammarAccess.getBoundAndWeightAccess().getGreaterThanSignKeyword_4());
+                    match(input, 34, FOLLOW_34_in_rule__BoundAndWeight__Group__4__Impl4979);
+                    this.after(grammarAccess.getBoundAndWeightAccess().getGreaterThanSignKeyword_4());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__Group__4__Impl"
 
@@ -6551,7 +6425,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__Group__1 ;
     public final void rule__MetricAndWeight__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2550:1:
@@ -6559,27 +6433,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2551:2:
             // rule__MetricAndWeight__Group__0__Impl rule__MetricAndWeight__Group__1
             {
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__0__Impl_in_rule__MetricAndWeight__Group__05020);
-                this.rule__MetricAndWeight__Group__0__Impl();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__0__Impl_in_rule__MetricAndWeight__Group__05020);
+                rule__MetricAndWeight__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__1_in_rule__MetricAndWeight__Group__05023);
-                this.rule__MetricAndWeight__Group__1();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__1_in_rule__MetricAndWeight__Group__05023);
+                rule__MetricAndWeight__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__0"
 
@@ -6588,7 +6461,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__Group__0__Impl : ( '<' ) ;
     public final void rule__MetricAndWeight__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2562:1:
@@ -6601,23 +6474,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2564:1:
                 // '<'
                 {
-                    this.before(this.grammarAccess.getMetricAndWeightAccess().getLessThanSignKeyword_0());
-                    this.match(this.input, 33, FOLLOW_33_in_rule__MetricAndWeight__Group__0__Impl5051);
-                    this.after(this.grammarAccess.getMetricAndWeightAccess().getLessThanSignKeyword_0());
+                    this.before(grammarAccess.getMetricAndWeightAccess().getLessThanSignKeyword_0());
+                    match(input, 33, FOLLOW_33_in_rule__MetricAndWeight__Group__0__Impl5051);
+                    this.after(grammarAccess.getMetricAndWeightAccess().getLessThanSignKeyword_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__0__Impl"
 
@@ -6627,7 +6499,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__Group__2 ;
     public final void rule__MetricAndWeight__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2581:1:
@@ -6635,36 +6507,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2582:2:
             // rule__MetricAndWeight__Group__1__Impl rule__MetricAndWeight__Group__2
             {
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__1__Impl_in_rule__MetricAndWeight__Group__15082);
-                this.rule__MetricAndWeight__Group__1__Impl();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__1__Impl_in_rule__MetricAndWeight__Group__15082);
+                rule__MetricAndWeight__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__2_in_rule__MetricAndWeight__Group__15085);
-                this.rule__MetricAndWeight__Group__2();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__2_in_rule__MetricAndWeight__Group__15085);
+                rule__MetricAndWeight__Group__2();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__1"
 
     // $ANTLR start "rule__MetricAndWeight__Group__1__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2589:1:
-    // rule__MetricAndWeight__Group__1__Impl : ( ( rule__MetricAndWeight__MetricAssignment_1 ) ) ;
+    // rule__MetricAndWeight__Group__1__Impl : ( (
+    // rule__MetricAndWeight__MetricAssignment_1 ) ) ;
     public final void rule__MetricAndWeight__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2593:1:
@@ -6677,35 +6549,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2595:1:
                 // ( rule__MetricAndWeight__MetricAssignment_1 )
                 {
-                    this.before(this.grammarAccess.getMetricAndWeightAccess().getMetricAssignment_1());
+                    this.before(grammarAccess.getMetricAndWeightAccess().getMetricAssignment_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2596:1:
                     // ( rule__MetricAndWeight__MetricAssignment_1 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2596:2:
                     // rule__MetricAndWeight__MetricAssignment_1
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__MetricAndWeight__MetricAssignment_1_in_rule__MetricAndWeight__Group__1__Impl5112);
-                        this.rule__MetricAndWeight__MetricAssignment_1();
+                        rule__MetricAndWeight__MetricAssignment_1();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getMetricAndWeightAccess().getMetricAssignment_1());
+                    this.after(grammarAccess.getMetricAndWeightAccess().getMetricAssignment_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__1__Impl"
 
@@ -6715,7 +6586,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__Group__3 ;
     public final void rule__MetricAndWeight__Group__2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2610:1:
@@ -6723,27 +6594,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2611:2:
             // rule__MetricAndWeight__Group__2__Impl rule__MetricAndWeight__Group__3
             {
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__2__Impl_in_rule__MetricAndWeight__Group__25142);
-                this.rule__MetricAndWeight__Group__2__Impl();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__2__Impl_in_rule__MetricAndWeight__Group__25142);
+                rule__MetricAndWeight__Group__2__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__3_in_rule__MetricAndWeight__Group__25145);
-                this.rule__MetricAndWeight__Group__3();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__3_in_rule__MetricAndWeight__Group__25145);
+                rule__MetricAndWeight__Group__3();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__2"
 
@@ -6752,7 +6622,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__Group__2__Impl : ( ',' ) ;
     public final void rule__MetricAndWeight__Group__2__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2622:1:
@@ -6765,23 +6635,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2624:1:
                 // ','
                 {
-                    this.before(this.grammarAccess.getMetricAndWeightAccess().getCommaKeyword_2());
-                    this.match(this.input, 20, FOLLOW_20_in_rule__MetricAndWeight__Group__2__Impl5173);
-                    this.after(this.grammarAccess.getMetricAndWeightAccess().getCommaKeyword_2());
+                    this.before(grammarAccess.getMetricAndWeightAccess().getCommaKeyword_2());
+                    match(input, 20, FOLLOW_20_in_rule__MetricAndWeight__Group__2__Impl5173);
+                    this.after(grammarAccess.getMetricAndWeightAccess().getCommaKeyword_2());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__2__Impl"
 
@@ -6791,7 +6660,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__Group__4 ;
     public final void rule__MetricAndWeight__Group__3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2641:1:
@@ -6799,36 +6668,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2642:2:
             // rule__MetricAndWeight__Group__3__Impl rule__MetricAndWeight__Group__4
             {
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__3__Impl_in_rule__MetricAndWeight__Group__35204);
-                this.rule__MetricAndWeight__Group__3__Impl();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__3__Impl_in_rule__MetricAndWeight__Group__35204);
+                rule__MetricAndWeight__Group__3__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__4_in_rule__MetricAndWeight__Group__35207);
-                this.rule__MetricAndWeight__Group__4();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__4_in_rule__MetricAndWeight__Group__35207);
+                rule__MetricAndWeight__Group__4();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__3"
 
     // $ANTLR start "rule__MetricAndWeight__Group__3__Impl"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2649:1:
-    // rule__MetricAndWeight__Group__3__Impl : ( ( rule__MetricAndWeight__WeightAssignment_3 ) ) ;
+    // rule__MetricAndWeight__Group__3__Impl : ( (
+    // rule__MetricAndWeight__WeightAssignment_3 ) ) ;
     public final void rule__MetricAndWeight__Group__3__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2653:1:
@@ -6841,35 +6710,34 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2655:1:
                 // ( rule__MetricAndWeight__WeightAssignment_3 )
                 {
-                    this.before(this.grammarAccess.getMetricAndWeightAccess().getWeightAssignment_3());
+                    this.before(grammarAccess.getMetricAndWeightAccess().getWeightAssignment_3());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2656:1:
                     // ( rule__MetricAndWeight__WeightAssignment_3 )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2656:2:
                     // rule__MetricAndWeight__WeightAssignment_3
                     {
-                        this.pushFollow(
+                        pushFollow(
                                 FOLLOW_rule__MetricAndWeight__WeightAssignment_3_in_rule__MetricAndWeight__Group__3__Impl5234);
-                        this.rule__MetricAndWeight__WeightAssignment_3();
+                        rule__MetricAndWeight__WeightAssignment_3();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
                     }
 
-                    this.after(this.grammarAccess.getMetricAndWeightAccess().getWeightAssignment_3());
+                    this.after(grammarAccess.getMetricAndWeightAccess().getWeightAssignment_3());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__3__Impl"
 
@@ -6878,7 +6746,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__Group__4 : rule__MetricAndWeight__Group__4__Impl ;
     public final void rule__MetricAndWeight__Group__4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2670:1:
@@ -6886,22 +6754,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2671:2:
             // rule__MetricAndWeight__Group__4__Impl
             {
-                this.pushFollow(FOLLOW_rule__MetricAndWeight__Group__4__Impl_in_rule__MetricAndWeight__Group__45264);
-                this.rule__MetricAndWeight__Group__4__Impl();
+                pushFollow(FOLLOW_rule__MetricAndWeight__Group__4__Impl_in_rule__MetricAndWeight__Group__45264);
+                rule__MetricAndWeight__Group__4__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__4"
 
@@ -6910,7 +6777,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__Group__4__Impl : ( '>' ) ;
     public final void rule__MetricAndWeight__Group__4__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2681:1:
@@ -6923,23 +6790,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2683:1:
                 // '>'
                 {
-                    this.before(this.grammarAccess.getMetricAndWeightAccess().getGreaterThanSignKeyword_4());
-                    this.match(this.input, 34, FOLLOW_34_in_rule__MetricAndWeight__Group__4__Impl5292);
-                    this.after(this.grammarAccess.getMetricAndWeightAccess().getGreaterThanSignKeyword_4());
+                    this.before(grammarAccess.getMetricAndWeightAccess().getGreaterThanSignKeyword_4());
+                    match(input, 34, FOLLOW_34_in_rule__MetricAndWeight__Group__4__Impl5292);
+                    this.after(grammarAccess.getMetricAndWeightAccess().getGreaterThanSignKeyword_4());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__Group__4__Impl"
 
@@ -6948,7 +6814,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MYID__Group__0 : rule__MYID__Group__0__Impl rule__MYID__Group__1 ;
     public final void rule__MYID__Group__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2710:1:
@@ -6956,27 +6822,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2711:2:
             // rule__MYID__Group__0__Impl rule__MYID__Group__1
             {
-                this.pushFollow(FOLLOW_rule__MYID__Group__0__Impl_in_rule__MYID__Group__05333);
-                this.rule__MYID__Group__0__Impl();
+                pushFollow(FOLLOW_rule__MYID__Group__0__Impl_in_rule__MYID__Group__05333);
+                rule__MYID__Group__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MYID__Group__1_in_rule__MYID__Group__05336);
-                this.rule__MYID__Group__1();
+                pushFollow(FOLLOW_rule__MYID__Group__1_in_rule__MYID__Group__05336);
+                rule__MYID__Group__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MYID__Group__0"
 
@@ -6985,7 +6850,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MYID__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__MYID__Group__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2722:1:
@@ -6998,23 +6863,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2724:1:
                 // RULE_ID
                 {
-                    this.before(this.grammarAccess.getMYIDAccess().getIDTerminalRuleCall_0());
-                    this.match(this.input, RULE_ID, FOLLOW_RULE_ID_in_rule__MYID__Group__0__Impl5363);
-                    this.after(this.grammarAccess.getMYIDAccess().getIDTerminalRuleCall_0());
+                    this.before(grammarAccess.getMYIDAccess().getIDTerminalRuleCall_0());
+                    match(input, RULE_ID, FOLLOW_RULE_ID_in_rule__MYID__Group__0__Impl5363);
+                    this.after(grammarAccess.getMYIDAccess().getIDTerminalRuleCall_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MYID__Group__0__Impl"
 
@@ -7023,7 +6887,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MYID__Group__1 : rule__MYID__Group__1__Impl ;
     public final void rule__MYID__Group__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2739:1:
@@ -7031,22 +6895,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2740:2:
             // rule__MYID__Group__1__Impl
             {
-                this.pushFollow(FOLLOW_rule__MYID__Group__1__Impl_in_rule__MYID__Group__15392);
-                this.rule__MYID__Group__1__Impl();
+                pushFollow(FOLLOW_rule__MYID__Group__1__Impl_in_rule__MYID__Group__15392);
+                rule__MYID__Group__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MYID__Group__1"
 
@@ -7055,7 +6918,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MYID__Group__1__Impl : ( ( rule__MYID__Group_1__0 )* ) ;
     public final void rule__MYID__Group__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2750:1:
@@ -7068,12 +6931,12 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2752:1:
                 // ( rule__MYID__Group_1__0 )*
                 {
-                    this.before(this.grammarAccess.getMYIDAccess().getGroup_1());
+                    this.before(grammarAccess.getMYIDAccess().getGroup_1());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2753:1:
                     // ( rule__MYID__Group_1__0 )*
                     loop10: do {
                         int alt10 = 2;
-                        final int LA10_0 = this.input.LA(1);
+                        final int LA10_0 = input.LA(1);
 
                         if ((LA10_0 == 35)) {
                             alt10 = 1;
@@ -7084,10 +6947,10 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2753:2:
                         // rule__MYID__Group_1__0
                         {
-                            this.pushFollow(FOLLOW_rule__MYID__Group_1__0_in_rule__MYID__Group__1__Impl5419);
-                            this.rule__MYID__Group_1__0();
+                            pushFollow(FOLLOW_rule__MYID__Group_1__0_in_rule__MYID__Group__1__Impl5419);
+                            rule__MYID__Group_1__0();
 
-                            this.state._fsp--;
+                            state._fsp--;
 
                         }
                             break;
@@ -7097,30 +6960,30 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                         }
                     } while (true);
 
-                    this.after(this.grammarAccess.getMYIDAccess().getGroup_1());
+                    this.after(grammarAccess.getMYIDAccess().getGroup_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MYID__Group__1__Impl"
 
     // $ANTLR start "rule__MYID__Group_1__0"
     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2767:1:
-    // rule__MYID__Group_1__0 : rule__MYID__Group_1__0__Impl rule__MYID__Group_1__1 ;
+    // rule__MYID__Group_1__0 : rule__MYID__Group_1__0__Impl rule__MYID__Group_1__1
+    // ;
     public final void rule__MYID__Group_1__0() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2771:1:
@@ -7128,27 +6991,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2772:2:
             // rule__MYID__Group_1__0__Impl rule__MYID__Group_1__1
             {
-                this.pushFollow(FOLLOW_rule__MYID__Group_1__0__Impl_in_rule__MYID__Group_1__05454);
-                this.rule__MYID__Group_1__0__Impl();
+                pushFollow(FOLLOW_rule__MYID__Group_1__0__Impl_in_rule__MYID__Group_1__05454);
+                rule__MYID__Group_1__0__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
-                this.pushFollow(FOLLOW_rule__MYID__Group_1__1_in_rule__MYID__Group_1__05457);
-                this.rule__MYID__Group_1__1();
+                pushFollow(FOLLOW_rule__MYID__Group_1__1_in_rule__MYID__Group_1__05457);
+                rule__MYID__Group_1__1();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MYID__Group_1__0"
 
@@ -7157,7 +7019,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MYID__Group_1__0__Impl : ( '.' ) ;
     public final void rule__MYID__Group_1__0__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2783:1:
@@ -7170,23 +7032,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2785:1:
                 // '.'
                 {
-                    this.before(this.grammarAccess.getMYIDAccess().getFullStopKeyword_1_0());
-                    this.match(this.input, 35, FOLLOW_35_in_rule__MYID__Group_1__0__Impl5485);
-                    this.after(this.grammarAccess.getMYIDAccess().getFullStopKeyword_1_0());
+                    this.before(grammarAccess.getMYIDAccess().getFullStopKeyword_1_0());
+                    match(input, 35, FOLLOW_35_in_rule__MYID__Group_1__0__Impl5485);
+                    this.after(grammarAccess.getMYIDAccess().getFullStopKeyword_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MYID__Group_1__0__Impl"
 
@@ -7195,7 +7056,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MYID__Group_1__1 : rule__MYID__Group_1__1__Impl ;
     public final void rule__MYID__Group_1__1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2802:1:
@@ -7203,22 +7064,21 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2803:2:
             // rule__MYID__Group_1__1__Impl
             {
-                this.pushFollow(FOLLOW_rule__MYID__Group_1__1__Impl_in_rule__MYID__Group_1__15516);
-                this.rule__MYID__Group_1__1__Impl();
+                pushFollow(FOLLOW_rule__MYID__Group_1__1__Impl_in_rule__MYID__Group_1__15516);
+                rule__MYID__Group_1__1__Impl();
 
-                this.state._fsp--;
+                state._fsp--;
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MYID__Group_1__1"
 
@@ -7227,7 +7087,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MYID__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__MYID__Group_1__1__Impl() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2813:1:
@@ -7240,23 +7100,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2815:1:
                 // RULE_ID
                 {
-                    this.before(this.grammarAccess.getMYIDAccess().getIDTerminalRuleCall_1_1());
-                    this.match(this.input, RULE_ID, FOLLOW_RULE_ID_in_rule__MYID__Group_1__1__Impl5543);
-                    this.after(this.grammarAccess.getMYIDAccess().getIDTerminalRuleCall_1_1());
+                    this.before(grammarAccess.getMYIDAccess().getIDTerminalRuleCall_1_1());
+                    match(input, RULE_ID, FOLLOW_RULE_ID_in_rule__MYID__Group_1__1__Impl5543);
+                    this.after(grammarAccess.getMYIDAccess().getIDTerminalRuleCall_1_1());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MYID__Group_1__1__Impl"
 
@@ -7265,7 +7124,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__ImportURIAssignment_0_1 : ( RULE_STRING ) ;
     public final void rule__MetricModel__ImportURIAssignment_0_1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2835:1:
@@ -7278,24 +7137,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2837:1:
                 // RULE_STRING
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getImportURISTRINGTerminalRuleCall_0_1_0());
-                    this.match(this.input, RULE_STRING,
-                            FOLLOW_RULE_STRING_in_rule__MetricModel__ImportURIAssignment_0_15581);
-                    this.after(this.grammarAccess.getMetricModelAccess().getImportURISTRINGTerminalRuleCall_0_1_0());
+                    this.before(grammarAccess.getMetricModelAccess().getImportURISTRINGTerminalRuleCall_0_1_0());
+                    match(input, RULE_STRING, FOLLOW_RULE_STRING_in_rule__MetricModel__ImportURIAssignment_0_15581);
+                    this.after(grammarAccess.getMetricModelAccess().getImportURISTRINGTerminalRuleCall_0_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__ImportURIAssignment_0_1"
 
@@ -7304,7 +7161,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__MetricsAssignment_1_1 : ( ruleExternalMetric ) ;
     public final void rule__MetricModel__MetricsAssignment_1_1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2850:1:
@@ -7317,29 +7174,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2852:1:
                 // ruleExternalMetric
                 {
-                    this.before(
-                            this.grammarAccess.getMetricModelAccess().getMetricsExternalMetricParserRuleCall_1_1_0());
-                    this.pushFollow(FOLLOW_ruleExternalMetric_in_rule__MetricModel__MetricsAssignment_1_15612);
-                    this.ruleExternalMetric();
+                    this.before(grammarAccess.getMetricModelAccess().getMetricsExternalMetricParserRuleCall_1_1_0());
+                    pushFollow(FOLLOW_ruleExternalMetric_in_rule__MetricModel__MetricsAssignment_1_15612);
+                    ruleExternalMetric();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(
-                            this.grammarAccess.getMetricModelAccess().getMetricsExternalMetricParserRuleCall_1_1_0());
+                    this.after(grammarAccess.getMetricModelAccess().getMetricsExternalMetricParserRuleCall_1_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__MetricsAssignment_1_1"
 
@@ -7348,7 +7202,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricModel__MetricsAssignment_4 : ( ruleInternalMetric ) ;
     public final void rule__MetricModel__MetricsAssignment_4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2865:1:
@@ -7361,27 +7215,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2867:1:
                 // ruleInternalMetric
                 {
-                    this.before(this.grammarAccess.getMetricModelAccess().getMetricsInternalMetricParserRuleCall_4_0());
-                    this.pushFollow(FOLLOW_ruleInternalMetric_in_rule__MetricModel__MetricsAssignment_45643);
-                    this.ruleInternalMetric();
+                    this.before(grammarAccess.getMetricModelAccess().getMetricsInternalMetricParserRuleCall_4_0());
+                    pushFollow(FOLLOW_ruleInternalMetric_in_rule__MetricModel__MetricsAssignment_45643);
+                    ruleInternalMetric();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getMetricModelAccess().getMetricsInternalMetricParserRuleCall_4_0());
+                    this.after(grammarAccess.getMetricModelAccess().getMetricsInternalMetricParserRuleCall_4_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricModel__MetricsAssignment_4"
 
@@ -7390,7 +7243,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__ExternalMetric__NameAssignment : ( ruleMYID ) ;
     public final void rule__ExternalMetric__NameAssignment() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2880:1:
@@ -7403,27 +7256,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2882:1:
                 // ruleMYID
                 {
-                    this.before(this.grammarAccess.getExternalMetricAccess().getNameMYIDParserRuleCall_0());
-                    this.pushFollow(FOLLOW_ruleMYID_in_rule__ExternalMetric__NameAssignment5674);
-                    this.ruleMYID();
+                    this.before(grammarAccess.getExternalMetricAccess().getNameMYIDParserRuleCall_0());
+                    pushFollow(FOLLOW_ruleMYID_in_rule__ExternalMetric__NameAssignment5674);
+                    ruleMYID();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getExternalMetricAccess().getNameMYIDParserRuleCall_0());
+                    this.after(grammarAccess.getExternalMetricAccess().getNameMYIDParserRuleCall_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__ExternalMetric__NameAssignment"
 
@@ -7432,7 +7284,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__NameAssignment_1 : ( ruleMYID ) ;
     public final void rule__InternalMetric__NameAssignment_1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2895:1:
@@ -7445,27 +7297,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2897:1:
                 // ruleMYID
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getNameMYIDParserRuleCall_1_0());
-                    this.pushFollow(FOLLOW_ruleMYID_in_rule__InternalMetric__NameAssignment_15705);
-                    this.ruleMYID();
+                    this.before(grammarAccess.getInternalMetricAccess().getNameMYIDParserRuleCall_1_0());
+                    pushFollow(FOLLOW_ruleMYID_in_rule__InternalMetric__NameAssignment_15705);
+                    ruleMYID();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getNameMYIDParserRuleCall_1_0());
+                    this.after(grammarAccess.getInternalMetricAccess().getNameMYIDParserRuleCall_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__NameAssignment_1"
 
@@ -7474,7 +7325,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__ShortNameAssignment_3 : ( RULE_STRING ) ;
     public final void rule__InternalMetric__ShortNameAssignment_3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2910:1:
@@ -7487,24 +7338,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2912:1:
                 // RULE_STRING
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getShortNameSTRINGTerminalRuleCall_3_0());
-                    this.match(this.input, RULE_STRING,
-                            FOLLOW_RULE_STRING_in_rule__InternalMetric__ShortNameAssignment_35736);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getShortNameSTRINGTerminalRuleCall_3_0());
+                    this.before(grammarAccess.getInternalMetricAccess().getShortNameSTRINGTerminalRuleCall_3_0());
+                    match(input, RULE_STRING, FOLLOW_RULE_STRING_in_rule__InternalMetric__ShortNameAssignment_35736);
+                    this.after(grammarAccess.getInternalMetricAccess().getShortNameSTRINGTerminalRuleCall_3_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__ShortNameAssignment_3"
 
@@ -7513,7 +7362,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__DescriptionAssignment_5 : ( RULE_STRING ) ;
     public final void rule__InternalMetric__DescriptionAssignment_5() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2925:1:
@@ -7526,25 +7375,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2927:1:
                 // RULE_STRING
                 {
-                    this.before(
-                            this.grammarAccess.getInternalMetricAccess().getDescriptionSTRINGTerminalRuleCall_5_0());
-                    this.match(this.input, RULE_STRING,
-                            FOLLOW_RULE_STRING_in_rule__InternalMetric__DescriptionAssignment_55767);
-                    this.after(this.grammarAccess.getInternalMetricAccess().getDescriptionSTRINGTerminalRuleCall_5_0());
+                    this.before(grammarAccess.getInternalMetricAccess().getDescriptionSTRINGTerminalRuleCall_5_0());
+                    match(input, RULE_STRING, FOLLOW_RULE_STRING_in_rule__InternalMetric__DescriptionAssignment_55767);
+                    this.after(grammarAccess.getInternalMetricAccess().getDescriptionSTRINGTerminalRuleCall_5_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__DescriptionAssignment_5"
 
@@ -7553,7 +7399,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__ParameterAssignment_8_2 : ( ruleNumber ) ;
     public final void rule__InternalMetric__ParameterAssignment_8_2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2940:1:
@@ -7566,27 +7412,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2942:1:
                 // ruleNumber
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess().getParameterNumberParserRuleCall_8_2_0());
-                    this.pushFollow(FOLLOW_ruleNumber_in_rule__InternalMetric__ParameterAssignment_8_25798);
-                    this.ruleNumber();
+                    this.before(grammarAccess.getInternalMetricAccess().getParameterNumberParserRuleCall_8_2_0());
+                    pushFollow(FOLLOW_ruleNumber_in_rule__InternalMetric__ParameterAssignment_8_25798);
+                    ruleNumber();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getInternalMetricAccess().getParameterNumberParserRuleCall_8_2_0());
+                    this.after(grammarAccess.getInternalMetricAccess().getParameterNumberParserRuleCall_8_2_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__ParameterAssignment_8_2"
 
@@ -7595,7 +7440,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__InternalMetric__DefinitionAssignment_9 : ( ruleMetricDefinition ) ;
     public final void rule__InternalMetric__DefinitionAssignment_9() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2955:1:
@@ -7608,29 +7453,28 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2957:1:
                 // ruleMetricDefinition
                 {
-                    this.before(this.grammarAccess.getInternalMetricAccess()
-                            .getDefinitionMetricDefinitionParserRuleCall_9_0());
-                    this.pushFollow(FOLLOW_ruleMetricDefinition_in_rule__InternalMetric__DefinitionAssignment_95829);
-                    this.ruleMetricDefinition();
+                    this.before(
+                            grammarAccess.getInternalMetricAccess().getDefinitionMetricDefinitionParserRuleCall_9_0());
+                    pushFollow(FOLLOW_ruleMetricDefinition_in_rule__InternalMetric__DefinitionAssignment_95829);
+                    ruleMetricDefinition();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getInternalMetricAccess()
-                            .getDefinitionMetricDefinitionParserRuleCall_9_0());
+                    this.after(
+                            grammarAccess.getInternalMetricAccess().getDefinitionMetricDefinitionParserRuleCall_9_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__InternalMetric__DefinitionAssignment_9"
 
@@ -7639,7 +7483,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__NameAssignment_1 : ( ruleMYID ) ;
     public final void rule__Parameter__NameAssignment_1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2970:1:
@@ -7652,27 +7496,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2972:1:
                 // ruleMYID
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getNameMYIDParserRuleCall_1_0());
-                    this.pushFollow(FOLLOW_ruleMYID_in_rule__Parameter__NameAssignment_15860);
-                    this.ruleMYID();
+                    this.before(grammarAccess.getParameterAccess().getNameMYIDParserRuleCall_1_0());
+                    pushFollow(FOLLOW_ruleMYID_in_rule__Parameter__NameAssignment_15860);
+                    ruleMYID();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getParameterAccess().getNameMYIDParserRuleCall_1_0());
+                    this.after(grammarAccess.getParameterAccess().getNameMYIDParserRuleCall_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__NameAssignment_1"
 
@@ -7681,7 +7524,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__ShortnameAssignment_3 : ( RULE_STRING ) ;
     public final void rule__Parameter__ShortnameAssignment_3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2985:1:
@@ -7694,24 +7537,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:2987:1:
                 // RULE_STRING
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getShortnameSTRINGTerminalRuleCall_3_0());
-                    this.match(this.input, RULE_STRING,
-                            FOLLOW_RULE_STRING_in_rule__Parameter__ShortnameAssignment_35891);
-                    this.after(this.grammarAccess.getParameterAccess().getShortnameSTRINGTerminalRuleCall_3_0());
+                    this.before(grammarAccess.getParameterAccess().getShortnameSTRINGTerminalRuleCall_3_0());
+                    match(input, RULE_STRING, FOLLOW_RULE_STRING_in_rule__Parameter__ShortnameAssignment_35891);
+                    this.after(grammarAccess.getParameterAccess().getShortnameSTRINGTerminalRuleCall_3_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__ShortnameAssignment_3"
 
@@ -7720,7 +7561,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__DescriptionAssignment_5 : ( RULE_STRING ) ;
     public final void rule__Parameter__DescriptionAssignment_5() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3000:1:
@@ -7733,24 +7574,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3002:1:
                 // RULE_STRING
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getDescriptionSTRINGTerminalRuleCall_5_0());
-                    this.match(this.input, RULE_STRING,
-                            FOLLOW_RULE_STRING_in_rule__Parameter__DescriptionAssignment_55922);
-                    this.after(this.grammarAccess.getParameterAccess().getDescriptionSTRINGTerminalRuleCall_5_0());
+                    this.before(grammarAccess.getParameterAccess().getDescriptionSTRINGTerminalRuleCall_5_0());
+                    match(input, RULE_STRING, FOLLOW_RULE_STRING_in_rule__Parameter__DescriptionAssignment_55922);
+                    this.after(grammarAccess.getParameterAccess().getDescriptionSTRINGTerminalRuleCall_5_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__DescriptionAssignment_5"
 
@@ -7759,7 +7598,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Parameter__DefaultValueAssignment_7 : ( RULE_DOUBLE ) ;
     public final void rule__Parameter__DefaultValueAssignment_7() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3015:1:
@@ -7772,24 +7611,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3017:1:
                 // RULE_DOUBLE
                 {
-                    this.before(this.grammarAccess.getParameterAccess().getDefaultValueDOUBLETerminalRuleCall_7_0());
-                    this.match(this.input, RULE_DOUBLE,
-                            FOLLOW_RULE_DOUBLE_in_rule__Parameter__DefaultValueAssignment_75953);
-                    this.after(this.grammarAccess.getParameterAccess().getDefaultValueDOUBLETerminalRuleCall_7_0());
+                    this.before(grammarAccess.getParameterAccess().getDefaultValueDOUBLETerminalRuleCall_7_0());
+                    match(input, RULE_DOUBLE, FOLLOW_RULE_DOUBLE_in_rule__Parameter__DefaultValueAssignment_75953);
+                    this.after(grammarAccess.getParameterAccess().getDefaultValueDOUBLETerminalRuleCall_7_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Parameter__DefaultValueAssignment_7"
 
@@ -7798,7 +7635,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Constant__NameAssignment_1 : ( ruleMYID ) ;
     public final void rule__Constant__NameAssignment_1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3030:1:
@@ -7811,27 +7648,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3032:1:
                 // ruleMYID
                 {
-                    this.before(this.grammarAccess.getConstantAccess().getNameMYIDParserRuleCall_1_0());
-                    this.pushFollow(FOLLOW_ruleMYID_in_rule__Constant__NameAssignment_15984);
-                    this.ruleMYID();
+                    this.before(grammarAccess.getConstantAccess().getNameMYIDParserRuleCall_1_0());
+                    pushFollow(FOLLOW_ruleMYID_in_rule__Constant__NameAssignment_15984);
+                    ruleMYID();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getConstantAccess().getNameMYIDParserRuleCall_1_0());
+                    this.after(grammarAccess.getConstantAccess().getNameMYIDParserRuleCall_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__NameAssignment_1"
 
@@ -7840,7 +7676,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__Constant__ValueAssignment_3 : ( RULE_DOUBLE ) ;
     public final void rule__Constant__ValueAssignment_3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3045:1:
@@ -7853,23 +7689,22 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3047:1:
                 // RULE_DOUBLE
                 {
-                    this.before(this.grammarAccess.getConstantAccess().getValueDOUBLETerminalRuleCall_3_0());
-                    this.match(this.input, RULE_DOUBLE, FOLLOW_RULE_DOUBLE_in_rule__Constant__ValueAssignment_36015);
-                    this.after(this.grammarAccess.getConstantAccess().getValueDOUBLETerminalRuleCall_3_0());
+                    this.before(grammarAccess.getConstantAccess().getValueDOUBLETerminalRuleCall_3_0());
+                    match(input, RULE_DOUBLE, FOLLOW_RULE_DOUBLE_in_rule__Constant__ValueAssignment_36015);
+                    this.after(grammarAccess.getConstantAccess().getValueDOUBLETerminalRuleCall_3_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__Constant__ValueAssignment_3"
 
@@ -7878,7 +7713,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__WeightedMetric__WeightsAssignment_2 : ( ruleMetricAndWeight ) ;
     public final void rule__WeightedMetric__WeightsAssignment_2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3060:1:
@@ -7891,29 +7726,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3062:1:
                 // ruleMetricAndWeight
                 {
-                    this.before(
-                            this.grammarAccess.getWeightedMetricAccess().getWeightsMetricAndWeightParserRuleCall_2_0());
-                    this.pushFollow(FOLLOW_ruleMetricAndWeight_in_rule__WeightedMetric__WeightsAssignment_26046);
-                    this.ruleMetricAndWeight();
+                    this.before(grammarAccess.getWeightedMetricAccess().getWeightsMetricAndWeightParserRuleCall_2_0());
+                    pushFollow(FOLLOW_ruleMetricAndWeight_in_rule__WeightedMetric__WeightsAssignment_26046);
+                    ruleMetricAndWeight();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(
-                            this.grammarAccess.getWeightedMetricAccess().getWeightsMetricAndWeightParserRuleCall_2_0());
+                    this.after(grammarAccess.getWeightedMetricAccess().getWeightsMetricAndWeightParserRuleCall_2_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__WeightedMetric__WeightsAssignment_2"
 
@@ -7922,7 +7754,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__InnerMetricAssignment_2 : ( ( ruleMYID ) ) ;
     public final void rule__StepwiseMetric__InnerMetricAssignment_2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3075:1:
@@ -7935,39 +7767,38 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3077:1:
                 // ( ruleMYID )
                 {
-                    this.before(this.grammarAccess.getStepwiseMetricAccess().getInnerMetricMetricCrossReference_2_0());
+                    this.before(grammarAccess.getStepwiseMetricAccess().getInnerMetricMetricCrossReference_2_0());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3078:1:
                     // ( ruleMYID )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3079:1:
                     // ruleMYID
                     {
-                        this.before(this.grammarAccess.getStepwiseMetricAccess()
-                                .getInnerMetricMetricMYIDParserRuleCall_2_0_1());
-                        this.pushFollow(FOLLOW_ruleMYID_in_rule__StepwiseMetric__InnerMetricAssignment_26081);
-                        this.ruleMYID();
+                        this.before(
+                                grammarAccess.getStepwiseMetricAccess().getInnerMetricMetricMYIDParserRuleCall_2_0_1());
+                        pushFollow(FOLLOW_ruleMYID_in_rule__StepwiseMetric__InnerMetricAssignment_26081);
+                        ruleMYID();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
-                        this.after(this.grammarAccess.getStepwiseMetricAccess()
-                                .getInnerMetricMetricMYIDParserRuleCall_2_0_1());
+                        this.after(
+                                grammarAccess.getStepwiseMetricAccess().getInnerMetricMetricMYIDParserRuleCall_2_0_1());
 
                     }
 
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getInnerMetricMetricCrossReference_2_0());
+                    this.after(grammarAccess.getStepwiseMetricAccess().getInnerMetricMetricCrossReference_2_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__InnerMetricAssignment_2"
 
@@ -7976,7 +7807,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__StepwiseMetric__StepsAssignment_5 : ( ruleBoundAndWeight ) ;
     public final void rule__StepwiseMetric__StepsAssignment_5() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3094:1:
@@ -7989,28 +7820,26 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3096:1:
                 // ruleBoundAndWeight
                 {
-                    this.before(
-                            this.grammarAccess.getStepwiseMetricAccess().getStepsBoundAndWeightParserRuleCall_5_0());
-                    this.pushFollow(FOLLOW_ruleBoundAndWeight_in_rule__StepwiseMetric__StepsAssignment_56116);
-                    this.ruleBoundAndWeight();
+                    this.before(grammarAccess.getStepwiseMetricAccess().getStepsBoundAndWeightParserRuleCall_5_0());
+                    pushFollow(FOLLOW_ruleBoundAndWeight_in_rule__StepwiseMetric__StepsAssignment_56116);
+                    ruleBoundAndWeight();
 
-                    this.state._fsp--;
+                    state._fsp--;
 
-                    this.after(this.grammarAccess.getStepwiseMetricAccess().getStepsBoundAndWeightParserRuleCall_5_0());
+                    this.after(grammarAccess.getStepwiseMetricAccess().getStepsBoundAndWeightParserRuleCall_5_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__StepwiseMetric__StepsAssignment_5"
 
@@ -8019,7 +7848,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__RatioMetric__NominatorMetricAssignment_2 : ( ( ruleMYID ) ) ;
     public final void rule__RatioMetric__NominatorMetricAssignment_2() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3109:1:
@@ -8032,39 +7861,38 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3111:1:
                 // ( ruleMYID )
                 {
-                    this.before(this.grammarAccess.getRatioMetricAccess().getNominatorMetricMetricCrossReference_2_0());
+                    this.before(grammarAccess.getRatioMetricAccess().getNominatorMetricMetricCrossReference_2_0());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3112:1:
                     // ( ruleMYID )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3113:1:
                     // ruleMYID
                     {
-                        this.before(this.grammarAccess.getRatioMetricAccess()
+                        this.before(grammarAccess.getRatioMetricAccess()
                                 .getNominatorMetricMetricMYIDParserRuleCall_2_0_1());
-                        this.pushFollow(FOLLOW_ruleMYID_in_rule__RatioMetric__NominatorMetricAssignment_26151);
-                        this.ruleMYID();
+                        pushFollow(FOLLOW_ruleMYID_in_rule__RatioMetric__NominatorMetricAssignment_26151);
+                        ruleMYID();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
-                        this.after(this.grammarAccess.getRatioMetricAccess()
+                        this.after(grammarAccess.getRatioMetricAccess()
                                 .getNominatorMetricMetricMYIDParserRuleCall_2_0_1());
 
                     }
 
-                    this.after(this.grammarAccess.getRatioMetricAccess().getNominatorMetricMetricCrossReference_2_0());
+                    this.after(grammarAccess.getRatioMetricAccess().getNominatorMetricMetricCrossReference_2_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__NominatorMetricAssignment_2"
 
@@ -8073,7 +7901,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__RatioMetric__DenominatorMetricAssignment_4 : ( ( ruleMYID ) ) ;
     public final void rule__RatioMetric__DenominatorMetricAssignment_4() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3128:1:
@@ -8086,41 +7914,38 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3130:1:
                 // ( ruleMYID )
                 {
-                    this.before(
-                            this.grammarAccess.getRatioMetricAccess().getDenominatorMetricMetricCrossReference_4_0());
+                    this.before(grammarAccess.getRatioMetricAccess().getDenominatorMetricMetricCrossReference_4_0());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3131:1:
                     // ( ruleMYID )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3132:1:
                     // ruleMYID
                     {
-                        this.before(this.grammarAccess.getRatioMetricAccess()
+                        this.before(grammarAccess.getRatioMetricAccess()
                                 .getDenominatorMetricMetricMYIDParserRuleCall_4_0_1());
-                        this.pushFollow(FOLLOW_ruleMYID_in_rule__RatioMetric__DenominatorMetricAssignment_46190);
-                        this.ruleMYID();
+                        pushFollow(FOLLOW_ruleMYID_in_rule__RatioMetric__DenominatorMetricAssignment_46190);
+                        ruleMYID();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
-                        this.after(this.grammarAccess.getRatioMetricAccess()
+                        this.after(grammarAccess.getRatioMetricAccess()
                                 .getDenominatorMetricMetricMYIDParserRuleCall_4_0_1());
 
                     }
 
-                    this.after(
-                            this.grammarAccess.getRatioMetricAccess().getDenominatorMetricMetricCrossReference_4_0());
+                    this.after(grammarAccess.getRatioMetricAccess().getDenominatorMetricMetricCrossReference_4_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__RatioMetric__DenominatorMetricAssignment_4"
 
@@ -8129,7 +7954,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__UpperBoundAssignment_1 : ( ( ruleMYID ) ) ;
     public final void rule__BoundAndWeight__UpperBoundAssignment_1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3147:1:
@@ -8142,39 +7967,38 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3149:1:
                 // ( ruleMYID )
                 {
-                    this.before(this.grammarAccess.getBoundAndWeightAccess().getUpperBoundNumberCrossReference_1_0());
+                    this.before(grammarAccess.getBoundAndWeightAccess().getUpperBoundNumberCrossReference_1_0());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3150:1:
                     // ( ruleMYID )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3151:1:
                     // ruleMYID
                     {
-                        this.before(this.grammarAccess.getBoundAndWeightAccess()
-                                .getUpperBoundNumberMYIDParserRuleCall_1_0_1());
-                        this.pushFollow(FOLLOW_ruleMYID_in_rule__BoundAndWeight__UpperBoundAssignment_16229);
-                        this.ruleMYID();
+                        this.before(
+                                grammarAccess.getBoundAndWeightAccess().getUpperBoundNumberMYIDParserRuleCall_1_0_1());
+                        pushFollow(FOLLOW_ruleMYID_in_rule__BoundAndWeight__UpperBoundAssignment_16229);
+                        ruleMYID();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
-                        this.after(this.grammarAccess.getBoundAndWeightAccess()
-                                .getUpperBoundNumberMYIDParserRuleCall_1_0_1());
+                        this.after(
+                                grammarAccess.getBoundAndWeightAccess().getUpperBoundNumberMYIDParserRuleCall_1_0_1());
 
                     }
 
-                    this.after(this.grammarAccess.getBoundAndWeightAccess().getUpperBoundNumberCrossReference_1_0());
+                    this.after(grammarAccess.getBoundAndWeightAccess().getUpperBoundNumberCrossReference_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__UpperBoundAssignment_1"
 
@@ -8183,7 +8007,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__BoundAndWeight__WeightAssignment_3 : ( ( ruleMYID ) ) ;
     public final void rule__BoundAndWeight__WeightAssignment_3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3166:1:
@@ -8196,39 +8020,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3168:1:
                 // ( ruleMYID )
                 {
-                    this.before(this.grammarAccess.getBoundAndWeightAccess().getWeightNumberCrossReference_3_0());
+                    this.before(grammarAccess.getBoundAndWeightAccess().getWeightNumberCrossReference_3_0());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3169:1:
                     // ( ruleMYID )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3170:1:
                     // ruleMYID
                     {
-                        this.before(
-                                this.grammarAccess.getBoundAndWeightAccess().getWeightNumberMYIDParserRuleCall_3_0_1());
-                        this.pushFollow(FOLLOW_ruleMYID_in_rule__BoundAndWeight__WeightAssignment_36268);
-                        this.ruleMYID();
+                        this.before(grammarAccess.getBoundAndWeightAccess().getWeightNumberMYIDParserRuleCall_3_0_1());
+                        pushFollow(FOLLOW_ruleMYID_in_rule__BoundAndWeight__WeightAssignment_36268);
+                        ruleMYID();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
-                        this.after(
-                                this.grammarAccess.getBoundAndWeightAccess().getWeightNumberMYIDParserRuleCall_3_0_1());
+                        this.after(grammarAccess.getBoundAndWeightAccess().getWeightNumberMYIDParserRuleCall_3_0_1());
 
                     }
 
-                    this.after(this.grammarAccess.getBoundAndWeightAccess().getWeightNumberCrossReference_3_0());
+                    this.after(grammarAccess.getBoundAndWeightAccess().getWeightNumberCrossReference_3_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__BoundAndWeight__WeightAssignment_3"
 
@@ -8237,7 +8058,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__MetricAssignment_1 : ( ( ruleMYID ) ) ;
     public final void rule__MetricAndWeight__MetricAssignment_1() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3185:1:
@@ -8250,39 +8071,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3187:1:
                 // ( ruleMYID )
                 {
-                    this.before(this.grammarAccess.getMetricAndWeightAccess().getMetricMetricCrossReference_1_0());
+                    this.before(grammarAccess.getMetricAndWeightAccess().getMetricMetricCrossReference_1_0());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3188:1:
                     // ( ruleMYID )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3189:1:
                     // ruleMYID
                     {
-                        this.before(this.grammarAccess.getMetricAndWeightAccess()
-                                .getMetricMetricMYIDParserRuleCall_1_0_1());
-                        this.pushFollow(FOLLOW_ruleMYID_in_rule__MetricAndWeight__MetricAssignment_16307);
-                        this.ruleMYID();
+                        this.before(grammarAccess.getMetricAndWeightAccess().getMetricMetricMYIDParserRuleCall_1_0_1());
+                        pushFollow(FOLLOW_ruleMYID_in_rule__MetricAndWeight__MetricAssignment_16307);
+                        ruleMYID();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
-                        this.after(this.grammarAccess.getMetricAndWeightAccess()
-                                .getMetricMetricMYIDParserRuleCall_1_0_1());
+                        this.after(grammarAccess.getMetricAndWeightAccess().getMetricMetricMYIDParserRuleCall_1_0_1());
 
                     }
 
-                    this.after(this.grammarAccess.getMetricAndWeightAccess().getMetricMetricCrossReference_1_0());
+                    this.after(grammarAccess.getMetricAndWeightAccess().getMetricMetricCrossReference_1_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__MetricAssignment_1"
 
@@ -8291,7 +8109,7 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
     // rule__MetricAndWeight__WeightAssignment_3 : ( ( ruleMYID ) ) ;
     public final void rule__MetricAndWeight__WeightAssignment_3() throws RecognitionException {
 
-        final int stackSize = this.keepStackSize();
+        final int stackSize = keepStackSize();
 
         try {
             // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3204:1:
@@ -8304,39 +8122,36 @@ public class InternalMetricDSLParser extends AbstractInternalContentAssistParser
                 // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3206:1:
                 // ( ruleMYID )
                 {
-                    this.before(this.grammarAccess.getMetricAndWeightAccess().getWeightNumberCrossReference_3_0());
+                    this.before(grammarAccess.getMetricAndWeightAccess().getWeightNumberCrossReference_3_0());
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3207:1:
                     // ( ruleMYID )
                     // ../org.somox.metrics.dsl.ui/src-gen/org/somox/metrics/dsl/ui/contentassist/antlr/internal/InternalMetricDSL.g:3208:1:
                     // ruleMYID
                     {
-                        this.before(this.grammarAccess.getMetricAndWeightAccess()
-                                .getWeightNumberMYIDParserRuleCall_3_0_1());
-                        this.pushFollow(FOLLOW_ruleMYID_in_rule__MetricAndWeight__WeightAssignment_36346);
-                        this.ruleMYID();
+                        this.before(grammarAccess.getMetricAndWeightAccess().getWeightNumberMYIDParserRuleCall_3_0_1());
+                        pushFollow(FOLLOW_ruleMYID_in_rule__MetricAndWeight__WeightAssignment_36346);
+                        ruleMYID();
 
-                        this.state._fsp--;
+                        state._fsp--;
 
-                        this.after(this.grammarAccess.getMetricAndWeightAccess()
-                                .getWeightNumberMYIDParserRuleCall_3_0_1());
+                        this.after(grammarAccess.getMetricAndWeightAccess().getWeightNumberMYIDParserRuleCall_3_0_1());
 
                     }
 
-                    this.after(this.grammarAccess.getMetricAndWeightAccess().getWeightNumberCrossReference_3_0());
+                    this.after(grammarAccess.getMetricAndWeightAccess().getWeightNumberCrossReference_3_0());
 
                 }
 
             }
 
         } catch (final RecognitionException re) {
-            this.reportError(re);
-            this.recover(this.input, re);
+            reportError(re);
+            recover(input, re);
         } finally {
 
-            this.restoreStackSize(stackSize);
+            restoreStackSize(stackSize);
 
         }
-        return;
     }
     // $ANTLR end "rule__MetricAndWeight__WeightAssignment_3"
 

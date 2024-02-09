@@ -3,8 +3,9 @@
 package org.somox.seff2javaast;
 
 import org.eclipse.emf.ecore.EObject;
-import org.emftext.language.java.statements.StatementListContainer;
 import org.palladiosimulator.pcm.seff.ServiceEffectSpecification;
+
+import tools.mdsd.jamopp.model.java.statements.StatementListContainer;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>SEFF2

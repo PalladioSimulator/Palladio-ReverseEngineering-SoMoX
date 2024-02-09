@@ -18,7 +18,7 @@ import org.splevo.jamopp.extraction.cache.ReferenceCache;
 
 import com.google.common.base.Strings;
 
-import jamopp.resource.JavaResource2;
+import tools.mdsd.jamopp.resource.JavaResource2;
 
 /***
  * JaMoPP java resource using an internal cache for reference resolving.

@@ -5,11 +5,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.members.ClassMethod;
-import org.emftext.language.java.members.InterfaceMethod;
-import org.emftext.language.java.members.Method;
-import org.emftext.language.java.statements.StatementListContainer;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.members.ClassMethod;
+import tools.mdsd.jamopp.model.java.members.InterfaceMethod;
+import tools.mdsd.jamopp.model.java.members.Method;
+import tools.mdsd.jamopp.model.java.statements.StatementListContainer;
 
 public class SoMoXUtil {
 

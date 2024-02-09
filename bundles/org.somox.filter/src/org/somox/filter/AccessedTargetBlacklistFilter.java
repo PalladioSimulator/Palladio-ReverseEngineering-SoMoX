@@ -1,8 +1,9 @@
 package org.somox.filter;
 
-import org.emftext.language.java.classifiers.ConcreteClassifier;
-import org.emftext.language.java.members.Member;
 import org.somox.kdmhelper.GetAccessedType;
+
+import tools.mdsd.jamopp.model.java.classifiers.ConcreteClassifier;
+import tools.mdsd.jamopp.model.java.members.Member;
 
 //import de.fzi.gast.accesses.Access;
 //import de.fzi.gast.types.GASTClass;
@@ -26,7 +27,7 @@ public class AccessedTargetBlacklistFilter extends BaseFilter<Member> {
 
     @Override
     public boolean passes(final Member access) {
-        final org.emftext.language.java.types.Type accessedClass = GetAccessedType.getAccessedType(access);
+        final tools.mdsd.jamopp.model.java.types.Type accessedClass = GetAccessedType.getAccessedType(access);
         if ((accessedClass == null) && !(accessedClass instanceof ConcreteClassifier)) {
             return false;
         }

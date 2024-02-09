@@ -21,7 +21,7 @@ public class MetricDSLParser extends org.eclipse.xtext.parser.antlr.AbstractAntl
     @Override
     protected org.somox.metrics.dsl.parser.antlr.internal.InternalMetricDSLParser createParser(
             final XtextTokenStream stream) {
-        return new org.somox.metrics.dsl.parser.antlr.internal.InternalMetricDSLParser(stream, this.getGrammarAccess());
+        return new org.somox.metrics.dsl.parser.antlr.internal.InternalMetricDSLParser(stream, getGrammarAccess());
     }
 
     @Override
@@ -30,7 +30,7 @@ public class MetricDSLParser extends org.eclipse.xtext.parser.antlr.AbstractAntl
     }
 
     public MetricDSLGrammarAccess getGrammarAccess() {
-        return this.grammarAccess;
+        return grammarAccess;
     }
 
     public void setGrammarAccess(final MetricDSLGrammarAccess grammarAccess) {

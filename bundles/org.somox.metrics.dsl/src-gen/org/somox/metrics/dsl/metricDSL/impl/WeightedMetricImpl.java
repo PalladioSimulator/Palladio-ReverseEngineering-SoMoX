@@ -15,13 +15,13 @@ import org.somox.metrics.dsl.metricDSL.MetricDSLPackage;
 import org.somox.metrics.dsl.metricDSL.WeightedMetric;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Weighted Metric</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Weighted Metric</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.somox.metrics.dsl.metricDSL.impl.WeightedMetricImpl#getWeights <em>Weights</em>}
- * </li>
+ * <li>{@link org.somox.metrics.dsl.metricDSL.impl.WeightedMetricImpl#getWeights
+ * <em>Weights</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,8 +29,8 @@ import org.somox.metrics.dsl.metricDSL.WeightedMetric;
  */
 public class WeightedMetricImpl extends MetricDefinitionImpl implements WeightedMetric {
     /**
-     * The cached value of the '{@link #getWeights() <em>Weights</em>}' containment reference list.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The cached value of the '{@link #getWeights() <em>Weights</em>}' containment
+     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see #getWeights()
      * @generated
@@ -44,7 +44,6 @@ public class WeightedMetricImpl extends MetricDefinitionImpl implements Weighted
      * @generated
      */
     protected WeightedMetricImpl() {
-        super();
     }
 
     /**
@@ -64,11 +63,11 @@ public class WeightedMetricImpl extends MetricDefinitionImpl implements Weighted
      */
     @Override
     public EList<MetricAndWeight> getWeights() {
-        if (this.weights == null) {
-            this.weights = new EObjectContainmentEList<MetricAndWeight>(MetricAndWeight.class, this,
+        if (weights == null) {
+            weights = new EObjectContainmentEList<>(MetricAndWeight.class, this,
                     MetricDSLPackage.WEIGHTED_METRIC__WEIGHTS);
         }
-        return this.weights;
+        return weights;
     }
 
     /**
@@ -81,7 +80,7 @@ public class WeightedMetricImpl extends MetricDefinitionImpl implements Weighted
             final NotificationChain msgs) {
         switch (featureID) {
         case MetricDSLPackage.WEIGHTED_METRIC__WEIGHTS:
-            return ((InternalEList<?>) this.getWeights()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getWeights()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -95,7 +94,7 @@ public class WeightedMetricImpl extends MetricDefinitionImpl implements Weighted
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case MetricDSLPackage.WEIGHTED_METRIC__WEIGHTS:
-            return this.getWeights();
+            return getWeights();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -110,8 +109,8 @@ public class WeightedMetricImpl extends MetricDefinitionImpl implements Weighted
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case MetricDSLPackage.WEIGHTED_METRIC__WEIGHTS:
-            this.getWeights().clear();
-            this.getWeights().addAll((Collection<? extends MetricAndWeight>) newValue);
+            getWeights().clear();
+            getWeights().addAll((Collection<? extends MetricAndWeight>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -126,7 +125,7 @@ public class WeightedMetricImpl extends MetricDefinitionImpl implements Weighted
     public void eUnset(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.WEIGHTED_METRIC__WEIGHTS:
-            this.getWeights().clear();
+            getWeights().clear();
             return;
         }
         super.eUnset(featureID);
@@ -141,7 +140,7 @@ public class WeightedMetricImpl extends MetricDefinitionImpl implements Weighted
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MetricDSLPackage.WEIGHTED_METRIC__WEIGHTS:
-            return this.weights != null && !this.weights.isEmpty();
+            return (weights != null) && !weights.isEmpty();
         }
         return super.eIsSet(featureID);
     }
