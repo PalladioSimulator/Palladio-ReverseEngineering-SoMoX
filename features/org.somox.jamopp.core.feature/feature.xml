@@ -2,73 +2,199 @@
 <feature
       id="org.somox.core.feature"
       label="SoMoX core"
-      version="5.2.0.qualifier"
+      version="0.0.0"
       provider-name="somox.org"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license.epl2"
       license-feature-version="1.0.0">
 
    <requires>
-
-      <import plugin="de.uka.ipd.sdq.workflow"/>
-  	  <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="de.uka.ipd.sdq.identifier"/>
-      <import plugin="de.uka.ipd.sdq.stoex"/>
-      <import plugin="de.uka.ipd.sdq.units"/>
-      <import plugin="org.palladiosimulator.pcm"/>
-      <import plugin="de.uka.ipd.sdq.probfunction"/>
-      <import plugin="tools.mdsd.jamopp.model.java"/>
-      <import plugin="tools.mdsd.jamopp.model.java.edit"/>
+      <import plugin="com.google.guava"/>
       <import plugin="de.uka.ipd.sdq.identifier.edit"/>
-      <import plugin="org.palladiosimulator.pcm.edit"/>
+      <import plugin="de.uka.ipd.sdq.identifier"/>
       <import plugin="de.uka.ipd.sdq.probfunction.edit"/>
+      <import plugin="de.uka.ipd.sdq.probfunction"/>
       <import plugin="de.uka.ipd.sdq.stoex.edit"/>
+      <import plugin="de.uka.ipd.sdq.stoex"/>
       <import plugin="de.uka.ipd.sdq.units.edit"/>
+      <import plugin="de.uka.ipd.sdq.units"/>
+      <import plugin="de.uka.ipd.sdq.workflow.launchconfig"/>
+      <import plugin="de.uka.ipd.sdq.workflow.mdsd"/>
+      <import plugin="de.uka.ipd.sdq.workflow"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.apache.commons.io"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.compare"/>
       <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.emf.codegen.ecore"/>
+      <import plugin="org.eclipse.emf.common.ui"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.emf.mwe.utils"/>
+      <import plugin="org.eclipse.emf"/>
+      <import plugin="org.eclipse.equinox.registry"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.ui.ide"/>
-	  <import plugin="org.somox.core"/>
-	  <import plugin="org.somox.filter"/>
-	  <import plugin="org.somox.kdmhelper"/>
-	  <import plugin="org.somox.ui"/>
-	  <import plugin="org.somox.util"/>
-
-
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.xtext.common.types.ui"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.xtext.ui"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="org.eclipse.xtext.xbase"/>
+      <import plugin="org.eclipse.xtext.xtext.generator"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.jgrapht.core"/>
+      <import plugin="org.palladiosimulator.pcm.edit"/>
+      <import plugin="org.palladiosimulator.pcm.resources"/>
+      <import plugin="org.palladiosimulator.pcm"/>
+      <import plugin="org.somox.core"/>
+      <import plugin="org.somox.filter"/>
+      <import plugin="org.somox.kdmhelper"/>
+      <import plugin="org.somox.ui"/>
+      <import plugin="org.somox.util"/>
+      <import plugin="tools.mdsd.jamopp.model.java.edit"/>
+      <import plugin="tools.mdsd.jamopp.model.java.editor"/>
+      <import plugin="tools.mdsd.jamopp.model.java"/>
+      <import plugin="tools.mdsd.jamopp.parser"/>
+      <import plugin="tools.mdsd.jamopp.resource"/>
    </requires>
 
-	 <plugin
+   <plugin
          id="org.somox.core"
          download-size="0"
          install-size="0"
-         version="5.2.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
-	 <plugin
+
+   <plugin
          id="org.somox.filter"
          download-size="0"
          install-size="0"
-         version="5.2.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
-	 <plugin
+   <plugin
          id="org.somox.kdmhelper"
          download-size="0"
          install-size="0"
-         version="5.2.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
-		 <plugin
+   <plugin
          id="org.somox.ui"
          download-size="0"
          install-size="0"
-         version="5.2.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
-	 <plugin
+
+   <plugin
          id="org.somox.util"
          download-size="0"
          install-size="0"
-         version="5.2.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="org.somox.analyzer.simplemodelanalyzer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.analyzer.simplemodelanalyzer.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.gast2seff"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.metrics"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.metrics.dsl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.metrics.dsl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.metricvaluesstorage"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.seff2javaast"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.seff2javaast.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.seff2javaast.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.sourcecodedecorator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.sourcecodedecorator.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.somox.sourcecodedecorator.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>
