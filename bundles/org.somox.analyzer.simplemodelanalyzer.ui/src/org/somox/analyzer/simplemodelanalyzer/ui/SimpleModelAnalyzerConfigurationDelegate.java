@@ -1,6 +1,6 @@
 package org.somox.analyzer.simplemodelanalyzer.ui;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Level;
@@ -18,23 +18,19 @@ import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedLaunchConfigura
 import de.uka.ipd.sdq.workflow.logging.console.LoggerAppenderStruct;
 
 /**
- * The class is defined by the delegate attribute of a launchConfigurationType
- * extension and performs launching for a Model Analyzer launch
- * configuration.<br />
- * It offers extension points through the Palladio Workflow Engine. Plugins
- * whishing to extend the launch may register their jobs at the extension point
- * {@code de.uka.ipd.sdq.workflow.job} offered by
- * {@link de.uka.ipd.sdq.workflow}. SoMoX offers three points to extend the
- * workflow (defined by the extension point’s {@code workflowId} attribute:
+ * The class is defined by the delegate attribute of a launchConfigurationType extension and
+ * performs launching for a Model Analyzer launch configuration.<br />
+ * It offers extension points through the Palladio Workflow Engine. Plugins whishing to extend the
+ * launch may register their jobs at the extension point {@code de.uka.ipd.sdq.workflow.job} offered
+ * by {@link de.uka.ipd.sdq.workflow}. SoMoX offers three points to extend the workflow (defined by
+ * the extension point’s {@code workflowId} attribute:
  * <ul>
- * <li>{@code org.somox.launch.start}: Jobs registering at this workflow id will
- * be executed before any job is run by SoMoX
- * <li>{@code org.somox.launch.modelavailable}: Jobs registering at this
- * workflow id will be executed when all of SoMoX’ internal analysis jobs have
- * run, but before the result is saved.
- * <li>{@code org.somox.launch.end}: Jobs registering at this workflow id will
- * be executed after all jobs have finished. The model will have been saved at
- * this point.
+ * <li>{@code org.somox.launch.start}: Jobs registering at this workflow id will be executed before
+ * any job is run by SoMoX
+ * <li>{@code org.somox.launch.modelavailable}: Jobs registering at this workflow id will be
+ * executed when all of SoMoX’ internal analysis jobs have run, but before the result is saved.
+ * <li>{@code org.somox.launch.end}: Jobs registering at this workflow id will be executed after all
+ * jobs have finished. The model will have been saved at this point.
  * </ul>
  *
  * @author Michael Hauck, Joshua Gleitze
@@ -48,9 +44,8 @@ public class SimpleModelAnalyzerConfigurationDelegate
     private static final String[] LOG_PACKAGES = { "org.somox", "org.splevo.jamopp" };
 
     /**
-     * Keys of attributes that shall be interpreted as Doubles when being received
-     * from the launch configuration. They will be parsed using
-     * {@link Double#parseDouble(String)}.
+     * Keys of attributes that shall be interpreted as Doubles when being received from the launch
+     * configuration. They will be parsed using {@link Double#parseDouble(String)}.
      */
     private static final String[] DOUBLE_ATTRIBUTES = { SoMoXConfiguration.SOMOX_WEIGHT_PACKAGE_MAPPING,
             SoMoXConfiguration.SOMOX_WEIGHT_MID_NAME_RESEMBLANCE, SoMoXConfiguration.SOMOX_WEIGHT_LOW_SLAQ,
@@ -62,9 +57,9 @@ public class SimpleModelAnalyzerConfigurationDelegate
             SoMoXConfiguration.SOMOX_WEIGHT_DMS, SoMoXConfiguration.SOMOX_WEIGHT_DIRECTORY_MAPPING };
 
     /**
-     * Keys of attributes that shall be interpreted as Percentages when being
-     * received from the launch configuration. They will be parsed using
-     * {@link Double#parseDouble(String)} and divided by 100.
+     * Keys of attributes that shall be interpreted as Percentages when being received from the
+     * launch configuration. They will be parsed using {@link Double#parseDouble(String)} and
+     * divided by 100.
      */
     private static final String[] PERCENTAGE_ATTRIBUTES = {
             SoMoXConfiguration.SOMOX_WEIGHT_CLUSTERING_THRESHOLD_MAX_COMPOSE,
@@ -114,8 +109,8 @@ public class SimpleModelAnalyzerConfigurationDelegate
     }
 
     @Override
-    protected ArrayList<LoggerAppenderStruct> setupLogging(final Level logLevel) throws CoreException {
-        final ArrayList<LoggerAppenderStruct> loggerList = super.setupLogging(logLevel);
+    protected List<LoggerAppenderStruct> setupLogging(final Level logLevel) throws CoreException {
+        final List<LoggerAppenderStruct> loggerList = super.setupLogging(logLevel);
         for (final String logPackage : LOG_PACKAGES) {
             loggerList.add(setupLogger(logPackage, logLevel,
                     logLevel.isGreaterOrEqual(Level.DEBUG) ? DETAILED_LOG_PATTERN : SHORT_LOG_PATTERN));
