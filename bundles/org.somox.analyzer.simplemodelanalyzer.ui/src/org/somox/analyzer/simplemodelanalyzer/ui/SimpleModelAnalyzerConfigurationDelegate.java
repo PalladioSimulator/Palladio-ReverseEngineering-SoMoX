@@ -15,7 +15,7 @@ import de.uka.ipd.sdq.workflow.Workflow;
 import de.uka.ipd.sdq.workflow.WorkflowExceptionHandler;
 import de.uka.ipd.sdq.workflow.jobs.IJob;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
-import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedLaunchConfigurationDelegate;
+import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedLaunchConfigurationDelegate;
 import de.uka.ipd.sdq.workflow.logging.console.LoggerAppenderStruct;
 import de.uka.ipd.sdq.workflow.ui.UIBasedWorkflowExceptionHandler;
 
