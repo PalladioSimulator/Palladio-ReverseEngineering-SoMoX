@@ -6,7 +6,7 @@ import org.somox.configuration.SoMoXConfiguration;
 import org.somox.ui.runconfig.ModelAnalyzerConfiguration;
 import org.somox.ui.runconfig.SoMoXModelAnalyzerConfiguration;
 
-import de.uka.ipd.sdq.workflow.launchconfig.configbuilder.AbstractJobConfigurationBuilder;
+import de.uka.ipd.sdq.workflow.launchconfig.core.configbuilder.AbstractJobConfigurationBuilder;
 
 public class UIBasedSomoxConfigurationBuilder
         extends AbstractJobConfigurationBuilder<ModelAnalyzerConfiguration<?>> {
