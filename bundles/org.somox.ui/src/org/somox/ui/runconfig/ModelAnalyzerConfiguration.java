@@ -2,7 +2,7 @@ package org.somox.ui.runconfig;
 
 import org.somox.configuration.AbstractMoxConfiguration;
 
-import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedRunConfiguration;
+import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfiguration;
 
 public abstract class ModelAnalyzerConfiguration<T extends AbstractMoxConfiguration>
         extends AbstractWorkflowBasedRunConfiguration {

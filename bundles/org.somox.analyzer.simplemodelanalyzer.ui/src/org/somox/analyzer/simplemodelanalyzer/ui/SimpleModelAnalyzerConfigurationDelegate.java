@@ -12,10 +12,12 @@ import org.somox.gast2seff.jobs.SoMoXBlackboard;
 import org.somox.ui.runconfig.SoMoXModelAnalyzerConfiguration;
 
 import de.uka.ipd.sdq.workflow.Workflow;
+import de.uka.ipd.sdq.workflow.WorkflowExceptionHandler;
 import de.uka.ipd.sdq.workflow.jobs.IJob;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
-import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedLaunchConfigurationDelegate;
+import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedLaunchConfigurationDelegate;
 import de.uka.ipd.sdq.workflow.logging.console.LoggerAppenderStruct;
+import de.uka.ipd.sdq.workflow.ui.UIBasedWorkflowExceptionHandler;
 
 /**
  * The class is defined by the delegate attribute of a launchConfigurationType extension and
@@ -37,6 +39,11 @@ import de.uka.ipd.sdq.workflow.logging.console.LoggerAppenderStruct;
  */
 public class SimpleModelAnalyzerConfigurationDelegate
         extends AbstractWorkflowBasedLaunchConfigurationDelegate<SoMoXModelAnalyzerConfiguration, Workflow> {
+
+    @Override
+    protected WorkflowExceptionHandler createExceptionHandler(boolean interactive) {
+        return new UIBasedWorkflowExceptionHandler(!interactive);
+    }
 
     /**
      * Package prefixes of classes that may log to the user.
