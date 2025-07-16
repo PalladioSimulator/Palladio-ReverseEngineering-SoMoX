@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="SoMoX - SOftware MOdel eXtractor" sequenceNumber="1">
+<?pde version="3.8"?><target name="SoMoX - SOftware MOdel eXtractor" sequenceNumber="2">
 	<locations>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" refresh="true" type="InstallableUnit">
+		<location type="Target" uri="mvn:org.palladiosimulator:palladio-target-platforms:0.1.0:target:palladio-2023-03"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="de.uka.ipd.sdq.identifier.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-core-commons/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" refresh="true" type="InstallableUnit">
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="org.palladiosimulator.pcm.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" refresh="true" type="InstallableUnit">
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="de.uka.ipd.sdq.workflow" version="0.0.0"/>
 			<unit id="de.uka.ipd.sdq.workflow.mdsd" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-workflowengine/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" refresh="true" type="InstallableUnit">
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-branding/nightly/"/>
-			<unit id="org.palladiosimulator.branding.feature.feature.group" version="2.0.0"/>
+			<unit id="org.palladiosimulator.branding.feature.feature.group" version="0.0.0"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" refresh="true" type="InstallableUnit">
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="org.palladiosimulator.pcm.edit" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" refresh="true" type="InstallableUnit">
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-library/nightly/"/>
-			<unit id="org.jgrapht.feature.feature.group" version="1.3.0"/>
+			<unit id="org.jgrapht.feature.feature.group" version="0.0.0"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" refresh="true" type="InstallableUnit">
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="tools.mdsd.jamopp.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.mdsd.tools/jamopp/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" refresh="true" type="InstallableUnit">
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="tools.mdsd.library.emfeditutils" version="0.0.0"/>
 			<repository location="https://updatesite.mdsd.tools/library-emfeditutils/nightly/"/>
 		</location>
