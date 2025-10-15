@@ -2,7 +2,7 @@
 <feature
       id="org.somox.seff.feature"
       label="Seff reconstructor"
-      version="5.2.1.qualifier"
+      version="5.2.2"
       provider-name="somox.org"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license.epl2"
@@ -27,28 +27,28 @@
          id="org.somox.gast2seff"
          download-size="0"
          install-size="0"
-         version="5.2.1.qualifier"
+         version="5.2.2"
          unpack="false"/>
 
    <plugin
          id="org.somox.core"
          download-size="0"
          install-size="0"
-         version="5.2.1.qualifier"
+         version="5.2.2"
          unpack="false"/>
 
    <plugin
          id="org.somox.sourcecodedecorator"
          download-size="0"
          install-size="0"
-         version="5.2.1.qualifier"
+         version="5.2.2"
          unpack="false"/>
 
    <plugin
          id="org.somox.kdmhelper"
          download-size="0"
          install-size="0"
-         version="5.2.1.qualifier"
+         version="5.2.2"
          unpack="false"/>
 
 </feature>
