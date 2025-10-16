@@ -29,11 +29,11 @@
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="tools.mdsd.jamopp.feature.feature.group" version="0.0.0"/>
-			<repository location="https://updatesite.mdsd.tools/jamopp/nightly/"/>
+			<repository location="https://updatesite.mdsd.tools/jamopp/releases/1.0.0/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="tools.mdsd.library.emfeditutils" version="0.0.0"/>
-			<repository location="https://updatesite.mdsd.tools/library-emfeditutils/nightly/"/>
+			<repository location="https://updatesite.mdsd.tools/library-emfeditutils/releases/1.0.0/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<repository location="https://download.eclipse.org/releases/2023-03/202303151000/"/>
