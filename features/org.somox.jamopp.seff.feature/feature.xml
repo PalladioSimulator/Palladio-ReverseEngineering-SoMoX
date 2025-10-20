@@ -27,28 +27,28 @@
          id="org.somox.gast2seff"
          download-size="0"
          install-size="0"
-         version="6.0.0"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.somox.core"
          download-size="0"
          install-size="0"
-         version="6.0.0"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.somox.sourcecodedecorator"
          download-size="0"
          install-size="0"
-         version="6.0.0"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.somox.kdmhelper"
          download-size="0"
          install-size="0"
-         version="6.0.0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>
