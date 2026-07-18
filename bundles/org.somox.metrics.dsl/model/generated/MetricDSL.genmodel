@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.somox.metrics.dsl/src-gen" editDirectory="/org.somox.metrics.dsl.edit/src"
     editorDirectory="/org.somox.metrics.dsl.editor/src" modelPluginID="org.somox.metrics.dsl"
     forceOverwrite="true" modelName="MetricDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="org.somox.metrics.dsl.edit"
+    complianceLevel="17.0" copyrightFields="false" editPluginID="org.somox.metrics.dsl.edit"
     editorPluginID="org.somox.metrics.dsl.editor" runtimeVersion="2.9">
   <genPackages prefix="MetricDSL" basePackage="org.somox.metrics.dsl" disposableProviderFactory="true"
       fileExtensions="metrics" ecorePackage="MetricDSL.ecore#/">

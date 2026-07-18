@@ -5,7 +5,7 @@
   modelDirectory="/org.somox.metricvaluesstorage/src" modelPluginID="org.somox.metricvaluesstorage"
   modelName="MetricValues2"
   rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-  importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+  importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
   usedGenPackages="../tools.mdsd.jamopp.model.java/metamodel/java.genmodel#//java ../tools.mdsd.jamopp.commons.layout/metamodel/layout.genmodel#//layout"
   operationReflection="true" importOrganizing="true">
   <foreignModel>MetricValues2.ecore</foreignModel>
