@@ -13,7 +13,7 @@ Require-Bundle: de.uka.ipd.sdq.workflow.launchconfig,
  org.eclipse.emf.common,
  org.somox.sourcecodedecorator,
  org.somox.gast2seff
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-Vendor: SDQ, KIT + FZI Karlsruhe + EU Q-ImPrESS
 Export-Package: org.somox.analyzer.simplemodelanalyzer.ui
 Automatic-Module-Name: org.somox.analyzer.simplemodelanalyzer.ui

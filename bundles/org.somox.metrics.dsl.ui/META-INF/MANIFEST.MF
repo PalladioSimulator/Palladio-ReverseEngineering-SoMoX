@@ -18,7 +18,7 @@ Require-Bundle: org.somox.metrics.dsl,
  org.eclipse.compare
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.somox.metrics.dsl.ui.quickfix,
  org.somox.metrics.dsl.ui.contentassist,
  org.somox.metrics.dsl.ui.contentassist.antlr,
