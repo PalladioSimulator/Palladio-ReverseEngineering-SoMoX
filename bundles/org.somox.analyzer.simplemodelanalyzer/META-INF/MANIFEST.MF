@@ -24,7 +24,7 @@ Require-Bundle: org.somox.core,
  org.somox.gast2seff,
  org.jgrapht.core,
  tools.mdsd.jamopp.model.java
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Export-Package: org.somox.analyzer.simplemodelanalyzer,
  org.somox.analyzer.simplemodelanalyzer.builder,

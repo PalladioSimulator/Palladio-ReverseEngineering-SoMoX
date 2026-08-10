@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.somox.sourcecodedecorator,
  tools.mdsd.jamopp.model.java
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.somox.metrics,
  org.somox.metrics.abstractmetrics,
  org.somox.metrics.basic,

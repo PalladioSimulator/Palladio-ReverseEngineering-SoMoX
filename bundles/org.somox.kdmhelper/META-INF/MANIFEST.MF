@@ -17,7 +17,7 @@ Require-Bundle: org.apache.log4j,
  tools.mdsd.jamopp.resource,
  tools.mdsd.jamopp.parser
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.somox.kdmhelper,
  org.somox.kdmhelper.metamodeladdition,
  org.splevo.jamopp.extraction

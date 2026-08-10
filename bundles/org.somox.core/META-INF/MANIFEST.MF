@@ -11,7 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.somox.sourcecodedecorator,
  org.palladiosimulator.pcm,
  tools.mdsd.jamopp.model.java
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-Activator: org.somox.core.Activator
 Export-Package: org.somox.analyzer,
  org.somox.common,

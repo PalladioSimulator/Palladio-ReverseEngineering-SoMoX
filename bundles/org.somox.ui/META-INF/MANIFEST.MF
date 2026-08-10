@@ -10,7 +10,7 @@ Require-Bundle: org.somox.core,
  org.eclipse.emf.common.ui,
  de.uka.ipd.sdq.workflow.launchconfig,
  org.eclipse.core.resources
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Export-Package: org.somox.ui,
  org.somox.ui.runconfig,
