@@ -22,7 +22,7 @@
       <import plugin="de.uka.ipd.sdq.workflow.mdsd"/>
       <import plugin="de.uka.ipd.sdq.workflow"/>
       <import plugin="org.antlr.runtime"/>
-      <import plugin="org.apache.commons.io"/>
+      <import plugin="org.apache.commons.commons-io"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.compare"/>
       <import plugin="org.eclipse.core.resources"/>
